@@ -1,0 +1,45 @@
+﻿<?php
+
+/***说明
+	获取对应模块的 滑动菜单
+	传入参数module_id 
+	用户session
+	以下简易输出
+****/
+
+?>
+<?php
+$module_id = $_REQUEST['module_id'];
+if($module_id=="10"){
+?>
+[{"Menu_id":"1010","Menu_name":"用户权限管理","parentid":"10","Menu_url":"","Menu_icon":"images/icon/37.png","children":[{"Menu_id":"101010","Menu_name":"角色管理","parentid":"1010","Menu_url":"module_sys/sys.roles_show.php","Menu_icon":"images/icon/33.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys"},{"Menu_id":"101011","Menu_name":"用户管理","parentid":"1010","Menu_url":"module_sys/sys.users_show.php","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"20","Menu_type":"sys"}]},{"Menu_id":"1011","Menu_name":"基本数据管理","parentid":"10","Menu_url":"","Menu_icon":"images/icon/1.png","Menu_handler":"","Menu_order":"20","Menu_type":"sys","children":[{"Menu_id":"101110","Menu_name":"车队(仓库)管理","parentid":"1011","Menu_url":"module_sys/sys.store_show.php","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"20","Menu_type":"sys"},{"Menu_id":"101111","Menu_name":"手持终端管理","parentid":"1011","Menu_url":"module_sys/sys.terminal_show.php","Menu_icon":"images/icon/sc.png","Menu_handler":"","Menu_order":"20","Menu_type":"sys"},{"Menu_id":"101112","Menu_name":"轮胎品牌管理","parentid":"1011","Menu_url":"module_sys/sys.brand_show.php","Menu_icon":"images/icon/27.png","Menu_handler":"","Menu_order":"30","Menu_type":"sys"},{"Menu_id":"101113","Menu_name":"轮胎规格管理","parentid":"1011","Menu_url":"module_sys/sys.norms_show.php","Menu_icon":"images/icon/27.png","Menu_handler":"","Menu_order":"30","Menu_type":"sys"},{"Menu_id":"101114","Menu_name":"轮胎层级管理","parentid":"1011","Menu_url":"module_sys/sys.class_show.php","Menu_icon":"images/icon/27.png","Menu_handler":"","Menu_order":"30","Menu_type":"sys"},{"Menu_id":"101115","Menu_name":"轮胎花纹管理","parentid":"1011","Menu_url":"module_sys/sys.figure_show.php","Menu_icon":"images/icon/27.png","Menu_handler":"","Menu_order":"30","Menu_type":"sys"},{"Menu_id":"101116","Menu_name":"车载终端管理","parentid":"1011","Menu_url":"module_sys/sys.vehicle_show.php","Menu_icon":"images/icon/27.png","Menu_handler":"","Menu_order":"30","Menu_type":"sys"}]}]
+<?php
+}
+if($module_id=="11"){
+?>
+[{"Menu_id":"1110","Menu_name":"轮胎相关管理","parentid":"11","Menu_url":"","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys","children":[{"Menu_id":"111010","Menu_name":"轮胎参数管理","parentid":"1110","Menu_url":"module_11/sys.tireparam_show.php","Menu_icon":"images/icon/33.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys"},{"Menu_id":"111011","Menu_name":"传感器管理","parentid":"1110","Menu_url":"module_11/sys.sensor_show.php","Menu_icon":"images/icon/33.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys"}]},{"Menu_id":"1111","Menu_name":"轮胎维护","parentid":"11","Menu_url":"","Menu_icon":"images/icon/1.png","Menu_handler":"","Menu_order":"20","Menu_type":"sys","children":[
+	{"Menu_id":"111110","Menu_name":"轮胎管理","parentid":"1111","Menu_url":"module_11/sys.tireinfo_show.php","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"20","Menu_type":"sys"},
+	{"Menu_id":"111111","Menu_name":"轮胎配送","parentid":"1111","Menu_url":"module_11/sys.tire_manage.php","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"20","Menu_type":"sys"}]}]
+<?php
+}
+if($module_id=="12"){
+?>
+[{"Menu_id":"1210","Menu_name":"车辆管理","parentid":"12","Menu_url":"","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys","children":[{"Menu_id":"121010","Menu_name":"车辆维护","parentid":"1210","Menu_url":"module_12/sys.bus_manage.php","Menu_icon":"images/icon/33.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys"}]}]
+<?php
+}
+if($module_id=="13"){
+?>
+[{"Menu_id":"1310","Menu_name":"实时状态","parentid":"13","Menu_url":"","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys","children":[{"Menu_id":"131010","Menu_name":"车辆轮胎状态","parentid":"1310","Menu_url":"module_13/sys.real_show.php","Menu_icon":"images/icon/33.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys"}]},{"Menu_id":"1311","Menu_name":"历史状态","parentid":"13","Menu_url":"","Menu_icon":"images/icon/1.png","Menu_handler":"","Menu_order":"20","Menu_type":"sys","children":[{"Menu_id":"131110","Menu_name":"车辆轮胎历史状态","parentid":"1311","Menu_url":"module_13/sys.his_show.php","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"20","Menu_type":"sys"},{"Menu_id":"131210","Menu_name":"告警历史状态","parentid":"1311","Menu_url":"module_13/sys.alarm_his131210_show.php","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"20","Menu_type":"sys"}]},
+{"Menu_id":"1313","Menu_name":"轮胎使用查询","parentid":"13","Menu_url":"","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys","children":[{"Menu_id":"131310","Menu_name":"轮胎使用总时间查询","parentid":"1310","Menu_url":"module_13/sys.tire_usedhis_show.php","Menu_icon":"images/icon/33.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys"},{"Menu_id":"131311","Menu_name":"轮胎运行总时长总里程查询","parentid":"1310","Menu_url":"module_13/sys.tire_runhis_show.php","Menu_icon":"images/icon/33.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys"}]},
+{"Menu_id":"1315","Menu_name":"库存状态查询","parentid":"13","Menu_url":"","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys","children":[{"Menu_id":"131510","Menu_name":"轮胎库存查询","parentid":"1315","Menu_url":"module_13/sys.tirestore_charts_show.php","Menu_icon":"images/icon/33.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys"}]},
+{"Menu_id":"1316","Menu_name":"统计分析","parentid":"13","Menu_url":"","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys","children":[{"Menu_id":"131610","Menu_name":"轮胎历史曲线","parentid":"1316","Menu_url":"module_13/sys.tirehis_charts_10.php","Menu_icon":"images/icon/33.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys"},
+																																											{"Menu_id":"131612","Menu_name":"轮胎历史告警","parentid":"1316","Menu_url":"module_13/sys.tirehis_charts_12.php","Menu_icon":"images/icon/33.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys"},
+																																											{"Menu_id":"131614","Menu_name":"车辆车速分析","parentid":"1316","Menu_url":"module_13/sys.carspeed_charts_show.php","Menu_icon":"images/icon/33.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys"}]}]
+<?php
+}
+if($module_id=="14"){
+?>
+[{"Menu_id":"1410","Menu_name":"历史记录","parentid":"14","Menu_url":"","Menu_icon":"images/icon/37.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys","children":[{"Menu_id":"141010","Menu_name":"历史记录查询","parentid":"1210","Menu_url":"module_14/sys.sys_his141010_show.php","Menu_icon":"images/icon/33.png","Menu_handler":"","Menu_order":"10","Menu_type":"sys"}]}]
+<?php
+}
+?>

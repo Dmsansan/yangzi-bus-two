@@ -1,0 +1,145 @@
+﻿<%
+'SQL_UID="gjp"
+'SQL_PWD="gjp"
+SQL_UID="sa"
+SQL_PWD="sqlpwd"
+SQL_DATABASE="hamsgSystem"
+SQL_TYPE="ACCESS"
+SQL_HOST=""
+dim conn,connstr,startime,db,rs,rs_s,rs_s1,DataCon
+startime=timer()
+	
+Set conn = Server.CreateObject("ADODB.Connection")
+Set Rs      = Server.CreateObject("ADODB.Recordset")
+Set Rs1      = Server.CreateObject("ADODB.Recordset")
+Set Rs2      = Server.CreateObject("ADODB.Recordset")
+Set Rs3      = Server.CreateObject("ADODB.Recordset")
+strConn="Provider=Microsoft.Jet.OLEDB.4.0;Data Source="
+'connstr = "driver={SQL Server};server="&SQL_HOST&";uid="&SQL_UID&";pwd="&SQL_PWD&";database="&SQL_DATABASE
+'connstr ="provider=microsoft.jet.oledb.4.0;data source=" &server.mappath("/data/db20151026.mdb")
+connstr ="provider=microsoft.ACE.oledb.12.0;data source=" &server.mappath("/ajdata/data/db20151026.accdb")
+conn.Open connstr
+
+If Err Then
+      Err.Clear
+      conn.close
+      Set conn = Nothing
+      Response.Write "数据库连接出错，请检查连接字串。"
+      Response.End
+End If
+
+
+Set rs=Server.CreateObject("ADODB.RECORDSET")
+Set rs1=Server.CreateObject("ADODB.RECORDSET")
+system_title="平台"
+
+'字母与数字
+function isX(s)
+	for i=1 to len(s)
+		c = asc(mid(s,i,1))
+		if (c <=asc("9") and c >= asc("0")) or (c <=asc("Z") and c >= asc("A")) or (c <=asc("z") and c >= asc("a")) or c = asc(".")  then
+		else
+			isX=false
+			exit function
+		end if
+	next
+	isX=true
+end function
+
+
+
+Sub ShowFolderList(folderspec)
+	Dim fs, f, f1, fc, s, schild,p,fsize
+	Set fs = CreateObject("Scripting.FileSystemObject")
+	Set f = fs.GetFolder(folderspec)
+	Set fc = f.Files
+	For Each f1 in fc
+		Response.Write f1.name & "," & f1.Size & "," & vbCrlf
+	Next
+End Sub
+
+function SafeData(s)
+	dim ret
+	ret = request(s)
+	ret = replace(ret,"'","''")
+	'ret = replace(ret,"%","")	
+	SafeData = ret
+end function 
+
+
+
+function GetDate()
+start=Year(Now())&"-"
+
+if(Cint(Month(Now())))<10 then start=start+"0" end if
+start=start&Month(Now())&"-"
+if(Cint(Day(Now())))<10 then start=start+"0" end if
+start=start&Day(Now())
+GetDate=start
+end function
+
+
+function GetLastMonthDate()
+start=Year(Now())&"-"
+start=start&"12"&"-"
+start=start&"31"
+GetLastMonthDate=start
+end function
+
+
+Public Function ForMatDate(DateAndTime, Para) '格式化日期(日期时间,格式) 
+Dim Y, M, D, H, F, S 
+IF Not ISNumeric(Para) Or Not ISDate(DateAndTime) Then Exit Function  
+Y = CStr(Year(DateAndTime)) 
+M = CStr(Month(DateAndTime)):IF Len(M) = 1 Then M = "0" & M  
+D = CStr(Day(DateAndTime)):IF Len(D) = 1 Then D = "0" & D  
+H = CStr(Hour(DateAndTime)):IF Len(H) = 1 Then H = "0" & H  
+F = CStr(Minute(DateAndTime)):IF Len(F) = 1 Then F = "0" & F  
+S = CStr(Second(DateAndTime)):IF Len(S) = 1 Then S = "0" & S  
+Select Case Para 
+    Case "0" 
+        ForMatDate = Y & "-" & M & "-" & D & " " & H & ":" & F & ":" & S 
+    Case "1" 
+        ForMatDate = Y & "-" & M & "-" & D & " " & H & ":" & F 
+    Case "2" 
+        ForMatDate = Y & "-" & M & "-" & D  
+    Case "3" 
+        ForMatDate = Y & "/" & M & "/" & D  
+    Case "4" 
+        ForMatDate = Y & "年" & M & "月" & D & "日"  
+    Case "5"  
+        ForMatDate = M & "-" & D & " " & H & ":" & F  
+    Case "6"  
+        ForMatDate = M & "/" & D  
+    Case "7"  
+        ForMatDate = M & "月" & D & "日"  
+    Case "8"  
+        ForMatDate = Y & "年" & M & "月"  
+    Case "9"  
+        ForMatDate = Y & "-" & M  
+    Case "10"  
+        ForMatDate = Y & "/" & M  
+    Case "11"  
+        ForMatDate = right(Y,2) & "-" &M & "-" & D & " " & H & ":" & F  
+    Case "12"  
+        ForMatDate = right(Y,2) & "-" &M & "-" & D  
+    Case "13"  
+        ForMatDate = M & "-" & D  
+    Case Else  
+        ForMatDate = DateAndTime 
+End Select 
+End Function
+
+'SELECT HTDQTX.ID, HTDQTX.DWM, HTDQTX.DQRQ, HTDQTX.USERID,datediff('d',dqrq,now())<0 即将到期
+'FROM HTDQTX;
+
+rs.open "select * from usertable",conn,1,1
+while(not rs.eof)
+response.write "xxx"
+rs.movenext
+wend
+rs.close
+
+response.write "ok"
+
+%>

@@ -1,0 +1,3 @@
+﻿<%
+Response.ContentType = "text/JSON"
+%>{Rows:[{"userid":"test","userpass":"test","username":"test"}]}
