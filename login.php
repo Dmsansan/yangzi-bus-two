@@ -50,7 +50,7 @@ function LoginSystem()
 		url: "ajaction/v1/?menuid=0", type: "POST",
         data: { cmd:"login",userid: userid,password:userpass ,rnd: Math.random() },
         success: function (responseText) {
-				alert(responseText);
+				//alert(responseText);
 			responseText=$.trim(responseText);
 			
 			if(typeof(responseText)=="undefined" || responseText=="" || responseText==null){

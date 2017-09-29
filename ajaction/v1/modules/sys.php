@@ -601,7 +601,7 @@ class sys {
 
 		$sql="select * from admins where admin_name='$admin_name' and password='$password'";
 		$ret=$this->conn->query_first($sql);
-		echo 3131;die;
+		//echo 3131;die;
 		//echo $ret;die;
 		if($ret){
 			/*先做SESSION处理，后返回JSON结果*/
