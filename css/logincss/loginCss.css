@@ -1,0 +1,95 @@
+*{margin: 0;padding: 0; overflow: hidden;}
+body{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+}
+.top{
+    width:100%;
+    height:10%;
+    background:url("../img/top.png") no-repeat;
+    background-size:100% 100%;
+}
+.main{
+    width: 100%;
+    height:90%;
+    bottom:0;
+    background: #ffa no-repeat;
+}
+
+.right,.left,.center{float: left;height: 100%;}
+.right,.left{width:30%;}
+.center{
+    width:40%;
+    background: #fca;
+}
+.left{
+    background:url("../img/left.png") no-repeat;
+    background-size:100% 100%;
+}
+.right{
+    background:url("../img/right.png") no-repeat;
+    background-size:100% 100%;
+}
+.c_center{
+    float: left;
+    width: 100%;
+    height: 46%;
+    background: url("../img/c_center.png") no-repeat;
+    background-size: 100% 100%;
+
+}
+.c_top{
+    float: left;
+    width: 100%;
+    height: 19%;
+    background:url("../img/c_top.png") no-repeat;
+    background-size: 100% 100%;
+}
+.c_bottom{
+    float: left;
+    width: 100%;
+    height:35%;
+    background:url("../img/c_bottom.png") no-repeat;
+    background-size: 100% 100%;
+    text-align: center;
+}
+.loginForm{
+    display: block;
+    margin-top:15%;
+    margin-left:40%;
+}
+label{
+    font-size: 12px;
+    font-family: 宋体;
+    color: #c5deff;
+}
+label.error {
+    margin-left: 10px;
+    color: red;
+}
+#login{
+    border: hidden;
+    padding: 5px 20px;
+    background: url("../../css/img/login.png") no-repeat;
+    background-size: 100% 100%;
+}
+span{
+    font-size: 12px;
+    line-height: 12px;
+}
+#reset{
+    margin-left: 30px;
+    color: #568ff6;
+    padding: 5px 20px;
+    background: url("../../css/img/login.png") no-repeat;
+    background-size: 100% 100%;
+    border: hidden;
+}
+.c_bottom p{
+    display:block;
+    margin: 26% 25% 25% 25%;
+    font-size: 14px;
+    font-family: Microsoft YaHei;
+    color: #568ff6;
+}

@@ -1,47 +1,23 @@
-<?php
-	/****ËµÃ÷,
-	ÕâÊÇÒ»¸öµÇÂ½Ò³
-	ÅĞ¶ÏÓĞÃ»ÓĞ session ,Èç¹ûÓĞ session ÔÚÖ±½Ó×ªµ½ main.html
-	·ñÔò×ªµ½µÇÂ½µÄÒ³ÃæÉÏ
-	****/
-	include 'config.inc.php';
-	/*echo $_SESSION["UserName"];
-	if($_SESSION["UserName"]!=""){
-		
-		header("location:main.php");
-	}*/
-	$_SESSION["UserName"]="";
-?>
+<!DOCTYPE html>
+<html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title></title>
-<style type="text/css">
-<!--
-*{overflow:hidden; font-size:9pt;}
-body {
-	margin-left: 0px;
-	margin-top: 0px;
-	margin-right: 0px;
-	margin-bottom: 0px;
-	background-image: url(images/bg.gif);
-	background-repeat: repeat-x;
-}
-#frmLogin table tr td table tr td table tr td h1 strong font {
-	font-size: 30pt;
-	color: #06F;
-}
--->
-</style></head>
-<script src="lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
-<script src="lib/jquery.md5.js" type="text/javascript"></script>
-<link href="lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
-<!--<link href="lib/ligerUI/skins/ext/css/ligerui-fix.css" rel="stylesheet" type="text/css" />-->
-<script src="lib/json2.js" type="text/javascript"></script>
-<script src="lib/ligerUI/js/core/base.js" type="text/javascript"></script>   
-<script src="lib/ligerUI/js/core/inject.js" type="text/javascript"></script>   
-<script src="lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>        
+    <meta charset="UTF-8" content="text/html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>ç™»å½•é¡µé¢</title>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
+    <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
+    <link href="./css/logincss/loginCss.css" rel="stylesheet" type="text/css">
+	
+	<script src="lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
+	<script src="lib/jquery.md5.js" type="text/javascript"></script>
+	<link href="lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
+	<!--<link href="lib/ligerUI/skins/ext/css/ligerui-fix.css" rel="stylesheet" type="text/css" />-->
+	<script src="lib/json2.js" type="text/javascript"></script>
+	<script src="lib/ligerUI/js/core/base.js" type="text/javascript"></script>   
+	<script src="lib/ligerUI/js/core/inject.js" type="text/javascript"></script>   
+	<script src="lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script> 
 
-<script>
+	<script type="text/javascript">
 function f_redirect()
 {
 	window.location.href="main.php";
@@ -50,7 +26,7 @@ function f_redirect()
 function f_error()
 {
 	return;
-	$.ligerDialog.confirm("µÇÂ½Ê§°Ü£¬¼ÌĞø½øÈë£¿", function (yes) {
+	$.ligerDialog.confirm("ç™»é™†å¤±è´¥ï¼Œç»§ç»­è¿›å…¥ï¼Ÿ", function (yes) {
                     if (yes){
 							window.location.href="main.php";
 					}
@@ -64,22 +40,22 @@ function LoginSystem()
 	userpass=$.md5(userpass);
 	if(userid==""){
 		//alert("ee");
-		top.$.ligerDialog.error(' ÇëÊäÈëÓÃ»§Ãû!');
+		top.$.ligerDialog.error(' è¯·è¾“å…¥ç”¨æˆ·å!');
 		//document.getElementById("userid").focus();
 		return;
 	}
 	
-	//ÕâÀï¿ªÊ¼µÇÂ½
+	//è¿™é‡Œå¼€å§‹ç™»é™†
 	$.ajax({
 		url: "ajaction/v1/?menuid=0", type: "POST",
         data: { cmd:"login",userid: userid,password:userpass ,rnd: Math.random() },
         success: function (responseText) {
-								//
+				alert(responseText);
 			responseText=$.trim(responseText);
 			
 			if(typeof(responseText)=="undefined" || responseText=="" || responseText==null){
-				//·şÎñÆ÷Ã»ÓĞÊı¾İ·´»Ø
-				top.$.ligerDialog.error("Î´Öª´íÎó");
+				//æœåŠ¡å™¨æ²¡æœ‰æ•°æ®åå›
+				top.$.ligerDialog.error("æœªçŸ¥é”™è¯¯");
 				f_error();
 			}else{
 				var dataObj = eval("("+responseText+")");
@@ -93,72 +69,52 @@ function LoginSystem()
 			}
         },
         error: function () {
-			top.$.ligerDialog.error('µÇÂ½Ê§°Ü!Çë¼ì²éÍøÂç');
+			top.$.ligerDialog.error('ç™»é™†å¤±è´¥!è¯·æ£€æŸ¥ç½‘ç»œ');
 			f_error();
         }
     });
 	
-	
-	
 }
 </script>
+
+</head>
 <body>
-	
-<table width="100%"  height="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td>
-    	
-    	<table width="1732" height="1040" border="0" cellspacing="0" cellpadding="0" filter="progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod='scale')";
-   -moz-background-size="100% 100%"; background-size="100% 100%";>
-      <tr>
-        <td style="background:url(images/background1.png)">
-        <table width="940" border="0" align="center" cellpadding="0" cellspacing="0">
-          <tr>
-            <td height="238" align="center" style="background:url(images/login01.jpg)"><div style="width: 450px; float: center; font-size:38px; color:#06F">
-                    ÂÖÌ¥È«ÉúÃüÖÜÆÚ¹ÜÀíÏµÍ³
-                </div></td>
-          </tr>
-          <tr>
-            <td height="190">
-            	
-            	<table width="100%" border="0" cellspacing="0" cellpadding="0">
-              <tr>
-                <td width="208" height="190" style="background:url(images/login02.jpg)">&nbsp;</td>
-                <td width="518" style="background:url(images/login03.jpg)"><table width="320" border="0" align="center" cellpadding="0" cellspacing="0">
-                  <tr>
-                    <td width="40" height="50"><img src="images/user.gif" width="30" height="30"></td>
-                    <td width="38" height="50">ÓÃ»§</td>
-                    <td width="242" height="50"><input type="text" name="userid" id="userid" style="width:164px; height:32px; line-height:34px; background:url(images/inputbg.gif) repeat-x; border:solid 1px #d1d1d1; font-size:9pt; font-family:Verdana, Geneva, sans-serif;"></td>
-                  </tr>
-                  <tr>
-                    <td height="50"><img src="images/password.gif" width="28" height="32"></td>
-                    <td height="50">ÃÜÂë</td>
-                    <td height="50"><input type="password" name="userkey" id="userkey" style="width:164px; height:32px; line-height:34px; background:url(images/inputbg.gif) repeat-x; border:solid 1px #d1d1d1; font-size:9pt; "></td>
-                  </tr>
-                  <tr>
-                    <td height="40">&nbsp;</td>
-                    <td height="40">&nbsp;</td>
-                    <td height="60">
-                    	<!--<input type="submit" name="submit">tijiao</>-->
-                    	<input name="imgbtn" type="image" style="cursor:hand" src="images/login.gif" width="95" height="34" border="0" onclick="LoginSystem();">
-                    	<!--<img src="images/login.gif"  style="cursor:hand" width="95" height="34" onclick="document.frmLogin.submit;"/>--></td>
-                  </tr>
-                </table></td>
-                <td width="214" style="background:url(images/login04.jpg)" >&nbsp;</td>
-              </tr>
-            </table>            
-            </td>
-          </tr>
-          <tr>
-            <td height="133" style="background:url(images/login05.jpg)">&nbsp;</td>
-          </tr>
-        </table></td>
-      </tr>
-    </table></td>
-  </tr>
-</table>
+<div class="top">
+
+</div><!--topç»“æŸ -->
+<div class="main">
+    <div class="left">
+
+    </div>
+    <div class="center">
+        <div class="c_top"></div>
+        <div class="c_center">
+           
+                <p>
+                    <label for="userid">ç”¨æˆ·åï¼š</label>
+                    <input  id="userid" name="userid" type="text" placeholder="è¯·è¾“å…¥ç”¨æˆ·å" name="userName">
+                </p><br>
+                <p>
+                    <label for="userkey">å¯†&nbsp;ç ï¼š</label>
+                    <input id="userkey" name="userkey" type="password" placeholder="è¯·è¾“å…¥å¯†ç " name="userPassword">
+                </p><br>
+                <p>
+                    <input id="renamePassword" type="checkbox"> <span>è®°ä½å¯†ç </span>
+                </p>
+                <p><br>
+                    <input id="login" type="submit" onclick="LoginSystem()" value="ç™»å½•">
+                    <input id="reset" type="reset" value="é‡ç½®">
+                </p>
+
+           
+        </div>
+        <div class="c_bottom">
+            <p>ç‰ˆæƒæ‰€æœ‰ï¼šå—äº¬æ³°æ™Ÿç§‘æŠ€å®ä¸šæœ‰é™å…¬å¸</p>
+        </div>
+    </div>
+    <div class="right">
+
+    </div>
+</div>
 </body>
 </html>
-
-
-

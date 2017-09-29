@@ -601,6 +601,8 @@ class sys {
 
 		$sql="select * from admins where admin_name='$admin_name' and password='$password'";
 		$ret=$this->conn->query_first($sql);
+		echo 3131;die;
+		//echo $ret;die;
 		if($ret){
 			/*先做SESSION处理，后返回JSON结果*/
 			$_SESSION["Msg"]="这是您的第".$ret['login_times']."次登录，您上次登录的IP地址是：".$ret['last_ip']."，登录时间是：".$ret['last_stamp']."。";

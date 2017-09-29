@@ -1,0 +1,297 @@
+
+------------------
+-时间:04:58:46-
+-错误信息:数据库连接失败!-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:04:58:46-
+-错误信息:无法连接到数据库!! [ttms_yangzi]-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:04:58:46-
+-错误信息:错误的SQL语句: [select * from admins where admin_name='admin' and password='e10adc3949ba59abbe56e057f20f883e']-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:04:58:56-
+-错误信息:数据库连接失败!-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:04:58:56-
+-错误信息:无法连接到数据库!! [ttms_yangzi]-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:04:58:56-
+-错误信息:错误的SQL语句: [select * from admins where admin_name='admn' and password='e10adc3949ba59abbe56e057f20f883e']-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:02:33-
+-错误信息:数据库连接失败!-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:02:33-
+-错误信息:无法连接到数据库!! [ttms_yangzi]-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:02:33-
+-错误信息:错误的SQL语句: [select * from admins where admin_name='admin' and password='e10adc3949ba59abbe56e057f20f883e']-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:02:39-
+-错误信息:数据库连接失败!-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:02:39-
+-错误信息:无法连接到数据库!! [ttms_yangzi]-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:02:39-
+-错误信息:错误的SQL语句: [select * from admins where admin_name='admin' and password='25d55ad283aa400af464c76d713c07ad']-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:04:23-
+-错误信息:数据库连接失败!-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:04:23-
+-错误信息:无法连接到数据库!! [ttms_yangzi]-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:04:23-
+-错误信息:错误的SQL语句: [select * from admins where admin_name='admin' and password='e10adc3949ba59abbe56e057f20f883e']-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:04:49-
+-错误信息:数据库连接失败!-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:04:49-
+-错误信息:无法连接到数据库!! [ttms_yangzi]-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:04:49-
+-错误信息:错误的SQL语句: [select * from admins where admin_name='admin' and password='e10adc3949ba59abbe56e057f20f883e']-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:05:26-
+-错误信息:数据库连接失败!-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:05:26-
+-错误信息:无法连接到数据库!! [ttms_yangzi]-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:05:26-
+-错误信息:错误的SQL语句: [select * from admins where admin_name='admin' and password='e10adc3949ba59abbe56e057f20f883e']-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:07:29-
+-错误信息:数据库连接失败!-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:07:29-
+-错误信息:无法连接到数据库!! [ttms_yangzi]-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:07:29-
+-错误信息:错误的SQL语句: [select * from admins where admin_name='admin' and password='e10adc3949ba59abbe56e057f20f883e']-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:07:32-
+-错误信息:数据库连接失败!-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:07:32-
+-错误信息:无法连接到数据库!! [ttms_yangzi]-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:07:32-
+-错误信息:错误的SQL语句: [select * from admins where admin_name='admin' and password='e10adc3949ba59abbe56e057f20f883e']-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:07:37-
+-错误信息:数据库连接失败!-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:07:37-
+-错误信息:无法连接到数据库!! [ttms_yangzi]-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:07:37-
+-错误信息:错误的SQL语句: [select * from admins where admin_name='admin' and password='25d55ad283aa400af464c76d713c07ad']-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:07:44-
+-错误信息:数据库连接失败!-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:07:44-
+-错误信息:无法连接到数据库!! [ttms_yangzi]-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:07:44-
+-错误信息:错误的SQL语句: [select * from admins where admin_name='admin' and password='25d55ad283aa400af464c76d713c07ad']-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------

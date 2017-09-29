@@ -1,0 +1,297 @@
+
+------------------
+-时间:10:50:21-
+-错误信息:数据库连接失败!-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:50:21-
+-错误信息:无法连接到数据库!! [ttms_yangzi]-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:50:21-
+-错误信息:错误的SQL语句: [select * from admins where admin_name='admin' and password='e10adc3949ba59abbe56e057f20f883e']-
+-错误内容:Access denied for user 'root'@'localhost' (using password: YES)-
+-错误号:1045-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:51:30-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:10:52:16-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:10:53:01-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:10:53:46-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:10:54:31-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:10:55:17-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:10:56:02-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:10:56:48-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:10:57:34-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:10:58:20-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:10:59:06-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:10:59:52-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:00:38-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:01:24-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:02:10-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:02:56-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:03:43-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:04:29-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:05:15-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:06:01-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:06:47-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:07:33-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:08:19-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:09:05-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:09:51-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:10:37-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
+
+------------------
+-时间:11:11:24-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php?MenuNo=131010-
+------------------
