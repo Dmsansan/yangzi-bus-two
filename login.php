@@ -89,7 +89,7 @@ function LoginSystem()
     <div class="center">
         <div class="c_top"></div>
         <div class="c_center">
-           
+           	<div style="width:300px;margin:auto;margin-top:100px;">
                 <p>
                     <label for="userid">用户名：</label>
                     <input  id="userid" name="userid" type="text" placeholder="请输入用户名" name="userName">
@@ -105,7 +105,7 @@ function LoginSystem()
                     <input id="login" type="submit" onclick="LoginSystem()" value="登录">
                     <input id="reset" type="reset" value="重置">
                 </p>
-
+			</div>
            
         </div>
         <div class="c_bottom">
