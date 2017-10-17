@@ -248,6 +248,7 @@
 		$("#pageloading").hide(); 
 		function f_onSucess(data,grid)
 		{
+			console.log('data',grid);
 			$("#pageloading").hide(); 
 			//alert("加载完成");
 		}

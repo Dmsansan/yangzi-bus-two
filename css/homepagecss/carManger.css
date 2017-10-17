@@ -1,0 +1,29 @@
+.panel-body{
+    background-color: #dddddd;!important;
+}
+#t-top span{
+    font-weight: bold;
+    display:inline-block;
+    font-size: 14px;
+}
+#dd span{
+    font-weight: bold;
+    display: inline-block;
+    font-size: 14px;
+}
+.datagrid-toolbar{
+    background-color: #dddddd;
+}
+button{
+    border: none;
+    padding: 5px 5px;
+    vertical-align: middle;
+    background-color: #4c4c4c;
+}
+button:visited,button:link{
+    background-color: #4c4c4c;
+}
+button:active,button:hover{
+    background-color: #2A2E33;
+}
+

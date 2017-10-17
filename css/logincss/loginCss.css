@@ -7,7 +7,7 @@ body{
 .top{
     width:100%;
     height:10%;
-    background:url("../img/top.png") no-repeat;
+    background:url("../../css/img/top.png") no-repeat;
     background-size:100% 100%;
 }
 .main{
@@ -24,18 +24,18 @@ body{
     background: #fca;
 }
 .left{
-    background:url("../img/left.png") no-repeat;
+    background:url("../../css/img/left.png") no-repeat;
     background-size:100% 100%;
 }
 .right{
-    background:url("../img/right.png") no-repeat;
+    background:url("../../css/img/right.png") no-repeat;
     background-size:100% 100%;
 }
 .c_center{
     float: left;
     width: 100%;
     height: 46%;
-    background: url("../img/c_center.png") no-repeat;
+    background: url("../../css/img/c_center.png") no-repeat;
     background-size: 100% 100%;
 
 }
@@ -43,14 +43,14 @@ body{
     float: left;
     width: 100%;
     height: 19%;
-    background:url("../img/c_top.png") no-repeat;
+    background:url("../../css/img/c_top.png") no-repeat;
     background-size: 100% 100%;
 }
 .c_bottom{
     float: left;
     width: 100%;
     height:35%;
-    background:url("../img/c_bottom.png") no-repeat;
+    background:url("../../css/img/c_bottom.png") no-repeat;
     background-size: 100% 100%;
     text-align: center;
 }

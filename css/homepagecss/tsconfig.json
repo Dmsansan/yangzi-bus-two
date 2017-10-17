@@ -1,0 +1,18 @@
+
+[{
+  "id":1,
+  "text":"texta"
+},{
+  "id":2,
+  "text":"textb"
+},{
+  "id":3,
+  "text":"textc",
+  "selected":true
+},{
+  "id":4,
+  "text":"textd"
+},{
+  "id":5,
+  "text":"textf"
+}]
