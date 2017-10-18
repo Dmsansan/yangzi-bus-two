@@ -1,6 +1,10 @@
 
 ------------------
+<<<<<<< HEAD
 -时间:10:41:31-
+=======
+-时间:11:37:28-
+>>>>>>> e33808513dd1eac879a4e7e1f29dbf6661f8f4de
 -错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
                 on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
 -错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
@@ -10,6 +14,7 @@
 ------------------
 
 ------------------
+<<<<<<< HEAD
 -时间:10:42:16-
 -错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
                 on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
@@ -261,6 +266,9 @@
 
 ------------------
 -时间:10:59:54-
+=======
+-时间:11:41:48-
+>>>>>>> e33808513dd1eac879a4e7e1f29dbf6661f8f4de
 -错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
                 on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
 -错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-

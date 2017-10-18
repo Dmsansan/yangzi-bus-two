@@ -52,3 +52,102 @@
 -错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
 -错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
 ------------------
+
+------------------
+-时间:01:35:45-
+-错误信息:错误的SQL语句: [update roles set remark='主任', title='', role_name='', modules_list='用户权限管理,角色管理,用户管理', modules_list_val='1010', operlist='' where role_id=6]-
+-错误内容:Duplicate entry '' for key 'role_name'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:01:36:15-
+-错误信息:错误的SQL语句: [update roles set remark='主任', title='', role_name='', modules_list='用户权限管理,角色管理,用户管理', modules_list_val='1010', operlist='' where role_id=6]-
+-错误内容:Duplicate entry '' for key 'role_name'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:01:36:30-
+-错误信息:错误的SQL语句: [update roles set remark='主任', title='', role_name='', modules_list='车队(仓库)管理,用户权限管理,角色管理,用户管理', modules_list_val='1010', operlist='' where role_id=6]-
+-错误内容:Duplicate entry '' for key 'role_name'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:06:24:24-
+-错误信息:错误的SQL语句: [update roles set remark='主任', title='', role_name='', modules_list='用户权限管理,角色管理,用户管理', modules_list_val='1010', operlist='' where role_id=8]-
+-错误内容:Duplicate entry '' for key 'role_name'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:06:24:34-
+-错误信息:错误的SQL语句: [update roles set remark='主任', title='', role_name='', modules_list='用户权限管理,角色管理,用户管理', modules_list_val='1010', operlist='' where role_id=8]-
+-错误内容:Duplicate entry '' for key 'role_name'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:06:25:25-
+-错误信息:错误的SQL语句: [update roles set remark='主管', title='', role_name='', modules_list='用户权限管理,角色管理,用户管理', modules_list_val='1010', operlist='' where role_id=8]-
+-错误内容:Duplicate entry '' for key 'role_name'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:06:58:31-
+-错误信息:错误的SQL语句: [select * from admins where admin_id=]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2//ajaction/v1/?menuid=101011&cmd=qrybyone-
+-错误页面地址:-
+------------------
+
+------------------
+-时间:06:58:40-
+-错误信息:错误的SQL语句: [select * from admins where admin_id=]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101011&cmd=qrybyone-
+-错误页面地址:-
+------------------
+
+------------------
+-时间:06:58:44-
+-错误信息:错误的SQL语句: [select * from admins where admin_id=]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101011&cmd=qrybyone-
+-错误页面地址:-
+------------------
+
+------------------
+-时间:06:59:22-
+-错误信息:错误的SQL语句: [select * from admins where admin_id=]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101011&cmd=qrybyone-
+-错误页面地址:-
+------------------
+
+------------------
+-时间:07:22:46-
+-错误信息:错误的SQL语句: [select * from admins where admin_id=]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101011&cmd=qrybyone-
+-错误页面地址:-
+------------------

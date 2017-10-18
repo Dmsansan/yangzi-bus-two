@@ -1,381 +1,415 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html lang="en">
+
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>用户管理</title>
-<link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
-<link href="../lib/ligerUI/skins/ext/css/ligerui-fix.css" rel="stylesheet" type="text/css" />
-<link href="../css/input.css" rel="stylesheet" />
-<script src="../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
-<script src="../lib/json2.js" type="text/javascript"></script>
-<script src="../lib/ligerUI/js/core/base.js" type="text/javascript"></script>   
-<script src="../lib/ligerUI/js/core/inject.js" type="text/javascript"></script>   
-<script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>        
-<script src="../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script> 
-<script src="../lib/ligerUI/js/plugins/ligerLayout.js" type="text/javascript"> </script> 
-<script src="../js/XHD.js" type="text/javascript"> </script>
-<script src="../lib/jquery.form.js" type="text/javascript"> </script>
-<script src="../CheckOper.php" type="text/javascript"> </script>
-</head>
-
- <script type="text/javascript">
-	var manager;
-	var menu;
-	function EditRow()
-	{
-		var row = manager.getSelectedRow();
-            if (!row) { alert('请选择行'); return; }
-			alert(row.userid);
-            alert(JSON.stringify(row));  //这里只有一条记录，打开编缉的页面编辑吧
-	}
-	
-	 function trim(str){ //删除左右两端的空格
-　　     return str.replace(/(^\s*)|(\s*$)/g, "");
-　　 }
-　　 function ltrim(str){ //删除左边的空格
-　　     return str.replace(/(^\s*)/g,"");
-　　 }
-　　 function rtrim(str){ //删除右边的空格
-　　     return str.replace(/(\s*$)/g,"");
-　　 }
-
-	
-	function deleteRow()
-       { 
-            //manager.deleteSelectedRow();
-			//f_getChecked();
-			var sid=checkedCustomer.join(',');
-			var row=manager.getSelectedRow();
-			if (row) {
-                $.ligerDialog.confirm("账户删除无法恢复，确定删除？", function (yes) {
-                    if (yes) {
-                        $.ajax({
-                            url: "../ajaction/v1/?menuid=101011&cmd=del", type: "POST",
-                            data: { admin_id: row.admin_id, rnd: Math.random() },
-                            success: function (responseText) {
-								
-								//
-								responseText=trim(responseText);
-								//top.$.ligerDialog.error(responseText);
-								if(typeof(responseText)=="undefined" || responseText=="" || responseText==null){
-										//服务器没有数据反回
-										top.$.ligerDialog.error("未知错误");
-								}else{
-									var dataObj = eval("("+responseText+")");
-									//alert(JSON2.stringify(dataObj));
-									if (dataObj.status == "OK") {
-										f_reload();
-									}
-									else {
-										top.$.ligerDialog.error(dataObj.reason);
-									}
-								}
-                            },
-                            error: function () {
-                                top.$.ligerDialog.error('删除失败!');
-                            }
-                        });
-                    }
-                })
-            }
-            else {
-                $.ligerDialog.warn("请选择记录");
-            }
+    <meta charset="UTF-8">
+    <title>用户管理</title>
+    <link href="../jquery-easyui/themes/default/easyui.css" rel="stylesheet" type="text/css">
+    <link href="../jquery-easyui/themes/icon.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src=" ../jquery-easyui/jquery.min.js"></script>
+    <link href="../jquery-easyui/demo.css" rel="stylesheet" type="text/css">
+    <link href="../css/homepagecss/usermanger.css" type="text/css" rel="stylesheet">
+    <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        function addUser() {
+            $('#addUser').dialog('open').dialog('setTitle', '新增角色');
 			
-			
-       }
-	   
-	   //编缉
-	   function edit() {
-            //var manager = $("#maingrid4").ligerGetGridManager();
-            var row = manager.getSelectedRow();
-            if (row) {
-                f_openWindow('module_sys/sys.users_add.php?r_admin_id=' +row.admin_id, "修改用户", 770, 490, f_save);
-            } else {
-                $.ligerDialog.warn('请选择行！');
-            }
-        }
-	
- 		      //工具条事件
-		function itemclick(item) {
-			switch (item.id) {
-				case "add":
-                  //var selected = grid.getSelected();
-                  //if (!selected) { LG.tip('请选择行!'); return }
-                  //alert("增加");
-				   f_openWindow("module_sys/sys.users_add.php", "新增用户", 770, 300, f_save);
-                  break;
-				case "clearbtn":
-					deleteRow();
-                  //var selected = grid.getSelected();
-                  //if (!selected) { LG.tip('请选择行!'); return }
-                  //top.f_addTab(null, '查看', 'watch.aspx?No=1');  // 增加新标签，并打开新页
-                  
-				  break;
-				case "edit":
-					//修改
-					edit();
-					break;
-				case "searchbtn":
-					serchpanel();
-                  break;
- 
-          }
-      }
-		//处理保存
-	    function f_save(item, dialog) {
-            var issave = dialog.frame.f_save();
-            if (issave!="") {
-                				
-				$.ajax({
-                    url: "../ajaction/v1/?menuid=101011",
-                    type: "POST",
-                    data: issave,					
-                    beforesend: function () {
-                        top.$.ligerDialog.waitting('数据保存中,请稍候...');
-                    },
-                    success: function (responseText) {
-                        //return "ok";
-						top.$.ligerDialog.closeWaitting();
-						responseText=$.trim(responseText);
-			
-						if(typeof(responseText)=="undefined" || responseText=="" || responseText==null){
-						//服务器没有数据反回
-							top.$.ligerDialog.error("未知错误");
-							//f_error();
-						}else{
-							var dataObj = eval("("+responseText+")");
-									
-							if (dataObj.status == "OK") {
-									dialog.close();
-									f_reload();
-							}else {
-								top.$.ligerDialog.error(dataObj.reason);
-								//f_error();
-							}
-						}
-                    },
-                    error: function () {
-                        top.$.ligerDialog.error('操作失败！');
-                    },
-                    complete: function () {
-                        top.$.ligerDialog.closeWaitting();
-                    }
-                });
-            }
-        }
-	  
-	  function f_reload() {
-            var manager = $("#maingrid4").ligerGetGridManager();
-            manager.loadData(true);
         };
-		
-		function doclear() {
-            $("input:hidden", "#serchform").val("");
-            $("input:text", "#serchform").val("");
-            $(".l-selected").removeClass("l-selected");
-        }
-		
-		function doserch() {
-            var sendtxt = "&rnd=" + Math.random();
-            var serchtxt = $("#serchform :input").fieldSerialize() + sendtxt;
-			$('.pcontrol input', manager.toolbar).val(1);
-			manager.changePage('input');
-			manager.set({url:'../ajaction/v1/?menuid=101011&cmd=qry&'+serchtxt});
-			manager.loadData(true);
-        }
-	
-		function toolbar() {
-				//这里需要改成根据用户权限来获取
-                var toolbarOptions = {
-          				items: [
-            		{ text:'增加',id:'add', click:itemclick,img:"../lib/ligerUI/skins/icons/add.gif",disable:CheckOper("添加") },
-            		{ line:true},
-					{ text:'编缉',id:'edit',click:itemclick,img:"../lib/ligerUI/skins/icons/edit.gif",disable:CheckOper("修改") },
-            		{ line:true},
-            		{ text:'删除',id:'clearbtn',click:itemclick,img:"../lib/ligerUI/skins/icons/candle.gif",disable:CheckOper("删除") },
-					{ line:true},
-					{ text:'查询',id:'searchbtn',click:itemclick,img:"../lib/ligerUI/skins/icons/search.gif" },
-					]};
-				$("#toolbar").ligerToolBar({items: toolbarOptions.items});
-				menu = $.ligerMenu({ width: 120, items:toolbarOptions.items});         
+        $(function() {
+			//获得角色列表；
+			$.ajax({
+				url: '../ajaction/v1/?menuid=0&cmd=get_all_roles',
+				dataType:'json',
+				success:function(data){
+					var msg=data.items;
+					$("#userRole").combobox('loadData',msg);
+					$("#up_userRole").combobox('loadData',msg);
+					
+				}
+			});
+            $("#userRole").combobox({       
+                valueField: 'role_id',
+                textField: 'role_title',
+				type:'json',
+                editable: false,
+            });
 
-           }
- 		
-        $(function () {
-				
-				  
-                //$("#grid").height(document.documentElement.clientHeight - $(".toolbar").height());
-				$('form').ligerForm();
-				toolbar();
-				//
-				serchpanel();
-				  
-				  
-				  
-            
-            manager=$("#maingrid4").ligerGrid({
-                checkbox: false,
-                columns: [
-                { display: '用户编号', name:'admin_id', align: 'left', width: 60 },
-                { display: '用户名', name:'admin_name', width:150,isSort:false },
-				{ display: '姓名', name:'real_name', width: 300,align:'left' },
-				{ display: '角色',name:'role_title',width: 300,align:'left'},
-				{ display: '归属车队', name:'store_name', width: 150,align:'left',isSort:false },
-                { display: '说明', name:'remark',minWidth:60,align:'left' }
-                ], pageSize:10,
-                url:'../ajaction/v1/?menuid=101011&cmd=qry&t=1',
-				/*url:'../ajaction/sysaction/sys.roles_grid_show.php?a=3',*/
-                /*toolbar:toolbarOptions,*/
-                width: '100%',height:'97%',
-				dataAction: 'server', //服务器排序
-                usePager: true,       //服务器分页
-				onSuccess:f_onSucess,
-				onError:f_onError,
-				isChecked: f_isChecked, 
-				/*
-				onCheckRow: f_onCheckRow, 
-				onCheckAllRow: f_onCheckAllRow,*/
-				onContextmenu : function (parm,e)
-                {
-                    //actionCustomerID = parm.data.CustomerID;
-                    menu.show({ top: e.pageY, left: e.pageX });
-                    return false;
+            $("#up_carTeam").combobox({
+                valueField: 'store_id',
+                textField: 'store_name',
+                editable: false
+            }); 
+            $("#up_userRole").combobox({
+                valueField: 'role_id',
+                textField: 'role_title',
+                editable: false
+            });
+			//获取车队列表
+			$.ajax({
+				url:'../ajaction/v1/?menuid=0&cmd=get_all_stores',
+				dataType:'json',
+				success:function(data){
+					var team=data.items;
+					$('#carTeam').combobox('loadData',team);
+					$('#up_carTeam').combobox('loadData',team);
+					console.log('msg',data);
+				}
+			});
+            $('#carTeam').combobox({
+                valueField: 'store_id',
+                textField: 'store_name',
+                editable: false
+            });
+            $('#operate').combobox({
+                url: '',
+                panelHeight: 200,
+                valueField: 'id',
+                textField: 'text',
+                multiple: true,
+                formatter: function(row) {
+                    var opts = $(this).combobox('options');
+                    return '<input type="checkbox" class="combobox-checkbox">' + row[opts.textField];
+                    console.log("row", ops.textField);
+                }
+
+            });
+            $.ajax({
+                url: '../ajaction/v1/?menuid=101011&cmd=qry&t=1',
+                type: 'post',
+                dataType: 'json',
+                success: function(data) {
+                    var obj = eval(data);
+                    $("#dg").datagrid("loadData", data.Rows);
+                    console.log('data', obj);
                 }
             });
-			
-            
-        });
-		$("#pageloading").hide(); 
-		function f_onSucess(data,grid)
-		{
-			console.log('data',grid);
-			$("#pageloading").hide(); 
-			//alert("加载完成");
-		}
-		function f_onError(req,status,e)
-		{
-			var s=status+" : "+req.status+","+req.statusText;
-			alert(s);
-		}
-		
-		function f_onCheckAllRow(checked)
-        {
-            for (var rowid in this.records)
-            {
-                if(checked)
-                    addCheckedCustomer(this.records[rowid]['userid']);
-                else
-                    removeCheckedCustomer(this.records[rowid]['userid']);
-            }
-        }
- 
-        /*
-        该例子实现 表单分页多选
-        即利用onCheckRow将选中的行记忆下来，并利用isChecked将记忆下来的行初始化选中
-        */
-        var checkedCustomer = [];
-        function findCheckedCustomer(userid)
-        {
-            for(var i =0;i<checkedCustomer.length;i++)
-            {
-                if(checkedCustomer[i] == userid) return i;
-            }
-            return -1;
-        }
-        function addCheckedCustomer(userid)
-        {
-            if(findCheckedCustomer(userid) == -1)
-                checkedCustomer.push(userid);
-        }
-        function removeCheckedCustomer(userid)
-        {
-            var i = findCheckedCustomer(userid);
-            if(i==-1) return;
-            checkedCustomer.splice(i,1);
-        }
-        function f_isChecked(rowdata)
-        {
-            if (findCheckedCustomer(rowdata.userid) == -1)
-                return false;
-            return true;
-        }
-        function f_onCheckRow(checked, data)
-        {
-            if (checked) addCheckedCustomer(data.userid);
-            else removeCheckedCustomer(data.userid);
-        }
-        function f_getChecked()
-        {
-            alert(checkedCustomer.join(','));
-        }
-		
-		
-		//表单搜索
-		 function initSerchForm() {
-            //$('#title').ligerComboBox({ width: 97, emptyText: '（空）'});         
-            
-        }
-		
-		function serchpanel() {
-            initSerchForm();
-            if ($(".az").css("display") == "none") {
-                $("#grid").css("margin-top", $(".az").height() + "px");
-                //$("#maingrid4").ligerGetGridManager().onResize();
-                //$("#maingrid5").ligerGetGridManager().onResize();
-				$(".az").css("display","inline");
-				$(".az").css("position","absolute");
-				$(".az").css("left","5px");
-				$(".az").css("top","30px");
+			//修改操作：
+			$('#up_save').bind('click',function(){
+			var admin_id=$('#admin_id').val();
+			var admin_name=$('#up_userName').textbox('getText');
+			var role_id=$('#up_roleId').val();
+			var admin_pass=$('#up_password').textbox('getText');
+			var real_name= $('#up_truthName').textbox('getText');
+			var tel=$('#up_tel').textbox('getText');
+			var mobile=$('#up_phone').textbox('getText');
+			var email=$('#up_email').textbox('getText');
+			var remark=$('#up_remark').textbox('getText');
+			var is_term;
+			if($('#up_check').is(':checked')){
+					is_term='N';
+				}else{
+					is_term='Y';
+				}
+			var store_id_val=$('#up_storeid').val();
+			$.ajax({
+				url:'../ajaction/v1/?menuid=101011&cmd=edit',
+				type:'post',
+				data:{'admin_id':admin_id,'admin_name':admin_name,'role_id_val':role_id,'admin_pass':admin_pass,'real_name':real_name,'tel':tel,'mobile':mobile,'email':email,'remark':remark,'is_term':is_term,
+				'store_id_val':store_id_val},
+				success:function(data){
+					reload();
+					console.log('updata',data);
+				}
+			})
+			});
+            //增加操作：
+            $('#save').bind('click', function() {
+                var admin_name = $('#userName').textbox('getText');
+                var role_id_val=$('#userRole').combobox('getValue');				
+                var real_name = $('#truthName').textbox('getText');
+                var tel=$('#tel').textbox('getText');
+                var mobile=$('#phone').textbox('getText');
+                var email =$('#email').textbox('getText');
+				var remark=$('#remark').textbox('getText');
+				var admin_pass=$('#password').textbox('getText');
+                var is_term;
+				if($('#check').is(':checked')){
+					is_term='N';
+				}else{
+					is_term='Y';
+				}
 				
-				//alert("1");
-            } else {
-                $("#grid").css("margin-top", "0px");
-				$(".az").css("display","none");
-				
-                //$("#maingrid4").ligerGetGridManager().onResize();
-                //$("#maingrid5").ligerGetGridManager().onResize();
-				//alert("2");
-            }
-            $("#company").focus();
-        }		
-		//serchpanel();
-    </script>
+				console.log('role_id',is_term);
+                var store_id=$('#carTeam').combobox('getValue');
+                $.ajax({
+                url:'../ajaction/v1/?menuid=101011&cmd=add',
+				data:{'admin_name':admin_name,'real_name':real_name,'role_id_val':role_id_val,'tel':tel,'admin_pass':admin_pass,'mobile':mobile,'email':email,'remark':remark,'is_term':is_term,'store_id':store_id},
+				success:function(data){
+					reload();
+					console.log("loadDa",data);
+				}
+                });
+            })
 
-<body style="margin-top:0px">
- <div id="message" style="width:800px"></div>
-<div class="l-loading" style="display:block" id="pageloading"></div> 
-    <div id="toolbar" ></div>	
-	<div id="grid">
-		<div id="maingrid4" style="margin:-1px"></div>
-		<!--<div id="toolbar1"></div>-->		
-	</div>
-  <div class="az">
-        <form id='serchform'>
-            <table style='width: 960px' class="bodytable1">
+        })
+
+        function reload() {
+            $.ajax({
+                url: '../ajaction/v1/?menuid=101011&cmd=qry&t=1',
+                type: 'post',
+                dataType: 'json',
+                success: function(data) {
+                    var Idata = data.Rows;
+                    $("#dg").datagrid("loadData", data.Rows);
+                    console.log('data', Idata.admin_name);
+                }
+            });
+        }
+
+        function formatOption(value, row, index) {
+            return '<a href="#" onclick="editUser(' + index + ')">修改</a> <a href="#" onclick="deletData(' + index + ')">删除</a>';
+        }
+        var url;
+
+        function editUser(index) {
+            $('#dg').datagrid('selectRow', index);
+            var row = $('#dg').datagrid('getSelected');
+
+            if (row) {
+                console.log("row", row);
+					$('#dlg').dialog('open').dialog('setTitle', '修改角色');
+					$('#admin_id').val(row.admin_id);
+					$('#up_roleId').val(row.role_id);
+					$('#up_userName').textbox('setValue',row.admin_name);
+					$('#up_userRole').combobox('setValue',row.role_title);
+					$('#up_password').textbox('setValue',row.password);
+					$('#up_truthName').textbox('setValue',row.real_name);
+				 if(row.is_term==="N"){
+					$('#up_check').attr('checked',true); 
+				 }else{
+					$('#up_check').attr('checked',false); 
+				 }
+					$('#up_carTeam').combobox('setValue',row.store_name);
+					$('#up_tel').textbox('setValue',row.tel);
+					$('#up_phone').textbox('setValue',row.mobile);
+					$('#up_email').textbox('setValue',row.email);
+					$('#up_remark').textbox('setValue',row.remark);
+					$('#up_storeid').val(row.store_id);
+            }
+        };
+        //删除操作
+        function deletData(index) {
+            $('#dg').datagrid('selectRow', index);
+            var row = $('#dg').datagrid('getSelected');
+            if (row) {
+                var id = row.admin_id;
+                $('#alarm').dialog('open').dialog('setTitle', '提示');
+                $('#sure').bind('click', function() {
+                    $.ajax({
+                        url: '../ajaction/v1/?menuid=101011&cmd=del',
+                        type: 'post',
+                        data: {
+                            'admin_id': id
+                        },
+                        success: function(data) {
+                            console.log('delete', data);
+                            reload();
+                        }
+                    })
+                })
+
+
+
+            }
+        };
+    </script>
+</head>
+
+<body class="easyui-layout">
+    <div class="u-content">
+        <table id="dg" class="easyui-datagrid" data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
+            <thead>
                 <tr>
-                    <td style='width:200px'>
-                        <div style='float: left; text-align: right; width: 60px;'>账户名称：</div>
-						<div style='float: left;'>
-						<input type='text' id='admin_name' name='admin_name' ltype='text' ligerui='{width:120}' />
-						</div>
-                    </td>					
-                    <td style='align:left'>
-                        <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;'
-                            onclick=" doclear() " />						
-                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;' onclick=" doserch() " />
+                    <th data-options="field:'admin_id',width:'10%'">用户编号</th>
+                    <th data-options="field:'admin_name',width:'10%'">用户名称</th>
+                    <th data-options="field:'real_name',width:'10%'">姓名</th>
+                    <th data-options="field:'role_title',width:'10%'">角色</th>
+                    <th data-options="field:'store_name',width:'10%'">归属车队</th>
+                    <th data-options="field:'remark',width:'25%'">说明</th>
+                    <th data-options="field:'_operate',width:'26%',formatter:formatOption">操作</th>
+                </tr>
+            </thead>
+        </table>
+        <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
+            <input type="text" placeholder="用户名称" />
+            <button>搜索</button>
+            <button>重置</button>
+            <button style="float: right;" onclick="addUser()">+增加</button>
+        </div>
+        <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:600px;height: 400px;">
+            <span>基本信息</span>
+            <hr/>
+            <table style="width: 100%;height:30%;padding-right: 10px;padding-left: 10px;">
+                <tr>
+                    <td>
+                        用户名称：
+                    </td>
+                    <td>
+					
+                        <input id="up_userName" class="easyui-textbox" style="width: 150px;" />
+                    </td>
+                    <td>
+                        用户角色：
+                    </td>
+                    <td>
+					 <input id="up_roleId" style="display:none; width: 150px;" />
+                        <input id="up_userRole" style="width: 150px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        密码：
+                    </td>
+                    <td>
+                        <input id="up_password" type="password" class="easyui-textbox" style="width: 150px;" />
+                    </td>
+                    <td>
+                        真实姓名：
+                    </td>
+                    <td>
+                        <input id="up_truthName" class="easyui-textbox" style="width: 150px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        手持终端：
+                    </td>
+                    <td>
+                        <input id="up_check" type="checkbox" style="width: 150px;" />
+                    </td>
+                    <td>
+                        所属车队：
+                    </td>
+                    <td>
+					<input id="up_storeid" style="width: 150px;" />
+                        <input id="up_carTeam" class="easyui-textbox" style="width: 150px;" />
                     </td>
                 </tr>
             </table>
-        </form>
+            <span>其他信息</span>
+            <hr/>
+            <table style="width: 100%;height:28%;padding-right: 10px;padding-left: 10px;">
+                <tr>
+                    <td>
+                        联系电话：
+						 <input id="admin_id" style="display:none; width: 150px;" />
+                        <input id="up_tel" class="easyui-textbox" style="width: 150px;" />
+                    </td>
+                    <td>
+                        手机号码：
+                        <input id="up_phone" class="easyui-textbox" style="width: 150px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        邮箱：
+                        <input id="up_email" class="easyui-textbox" style="width: 200px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        说明：
+                        <input id="up_remark" class="easyui-textbox" style="width: 200px;" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <!--增加角色 -->
+        <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#btn_dlg'" style="width:600px;height: 400px;">
+            <span id="addMessage">基本信息</span>
+            <hr/>
+            <table id="aa" style="width: 100%;height:30%;padding-right: 10px;padding-left: 10px;">
+                <tr>
+                    <td>
+                        用户名称：
+                    </td>
+                    <td>
+                        <input id="userName" class="easyui-textbox" style="width: 150px;" />
+                    </td>
+                    <td>
+                        用户角色：
+                    </td>
+                    <td>
+                        <input id="userRole" style="width: 150px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        密码：
+                    </td>
+                    <td>
+                        <input id="password" class="easyui-textbox" style="width: 150px;" />
+                    </td>
+                    <td>
+                        真实姓名：
+                    </td>
+                    <td>
+                        <input id="truthName" class="easyui-textbox" style="width: 150px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        手持终端：
+                    </td>
+                    <td>
+                        <input id="check" type="checkbox" style="width: 150px;" />
+                    </td>
+                    <td>
+                        所属车队：
+                    </td>
+                    <td>
+                        <input id="carTeam"  style="width: 150px;" />
+                    </td>
+                </tr>
+            </table>
+            <span>其他信息</span>
+            <hr/>
+            <table style="width: 100%;height:28%;padding-right: 10px;padding-left: 10px;">
+                <tr>
+                    <td>
+                        联系电话：
+                        <input id="tel" class="easyui-textbox" style="width: 150px;" />
+                    </td>
+                    <td>
+                        手机号码：
+                        <input id="phone" class="easyui-textbox" style="width: 150px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        邮箱：
+                        <input id="email" class="easyui-textbox" style="width: 200px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        说明：
+                        <input id="remark" class="easyui-textbox" style="width: 200px;" />
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id="alarm" class="easyui-dialog" style="text-align: center;width:600px;height: 300px;" data-options="closed:true,modal:true">
+            <span style="height: 70%;font-size: 24px;font-weight: bold;">确定删除？</span>
+            <div style="width:100%; height: 20%;margin-top: 150px;">
+                <button id="sure">确定</button>
+                <button id="cancel">取消</button>
+            </div>
+        </div>
+        <div id="btn_dlg">
+            <button id="save"><a style="text-decoration: none;" href="#">保存</a>
+            </button>
+            <button id="cancle"><a style="text-decoration: none" href="#">关闭</a>
+            </button>
+        </div>
+        <div id="upbtn_dlg">
+            <button id="up_save"><a style="text-decoration: none;" href="#">保存</a>
+            </button>
+            <button><a style="text-decoration: none" href="#">关闭</a>
+            </button>
+        </div>
     </div>
-  
-  
-  
-
-
-  <div style="display:none;">
-  
-</div>
-
 </body>
+
 </html>

@@ -96,7 +96,9 @@ class roles {
 		$module_list=mysql_escape_string(trim($_REQUEST["module_list"].""));
 		$module_list_val=mysql_escape_string(trim($_REQUEST["module_list_val"].""));
 		$operlist=mysql_escape_string(trim($_REQUEST["operlist"].""));
-
+		
+		//print_r($_REQUEST);die;
+		
 		if($role_id == ""){
 			$arr = array ('status'=>'ERROR','reason'=>'缺少必要的参数');
 			echo json_encode($arr);

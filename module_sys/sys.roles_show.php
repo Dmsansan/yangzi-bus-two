@@ -62,12 +62,13 @@
 				type:'post',
 				dataType:'json',
 				success:function(data){
-				$("#dg").datagrid("loadData", data.Rows); 
+				$("#dg").datagrid("loadData", data.Rows);  
 					console.log('data',data);
 				}							
 			});
 			//更新操作
 			$('#updata_save').bind('click',function(){
+				var title=$('#title').textbox('getText');
 				var role_id=$('#role_id').val();
 				var remark=$('#remark').textbox('getText');							
 				var module_list=$('#roles').combotree('getText');
@@ -78,9 +79,10 @@
 				$.ajax({
 					url:'../ajaction/v1/?menuid=101010&cmd=edit',
 					type:'POST',
-					data:{'role_id':role_id,'remark':remark,'module_list':module_list,'module_list_val':module_list_val,'Operlist':operlist},
+					data:{'title':title,'role_id':role_id,'remark':remark,'module_list':module_list,'module_list_val':module_list_val,'Operlist':operlist},
 					success:function(data){
-						console.log('data',data);
+						console.log("data",data);
+							reload();
 					}
 					
 				})
@@ -98,6 +100,7 @@
 				type:'POST',
 				data:{'title':addrole,'remark':addremark,'module_list':rolePower,'module_list_val':module_list_val,'operlist':addoper},
 				success:function(data){
+					reload();
 				console.log('data',data);
 				}
 			})
@@ -106,7 +109,17 @@
 			);
 			
         })
-
+		function reload(){
+		$.ajax({
+				url:'../ajaction/v1/?menuid=101010&cmd=qry&t=1',
+				type:'post',
+				dataType:'json',
+				success:function(data){
+				$("#dg").datagrid("loadData", data.Rows);  
+					console.log('data',data);
+				}							
+			});
+		}
 
         function formatOption(value, row, index) {
         return '<a href="#" onclick="editUser('+index+')">修改</a> <a href="#" onclick="deletData('+index+')">删除</a>';
@@ -141,7 +154,7 @@
 					data:{'role_id':id},
 					success:function(data){
 					console.log('delete',data);
-					$('#dg').datagrid('reload');  
+					reload();
 					}
 				})
 			}
@@ -196,7 +209,7 @@
     <table id="dg" class="easyui-datagrid" data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true',width:'100%'" >
         <thead>
         <tr>
-            <th data-options="field:'role_id',width:'15%'">角色编号</th>
+            <th field="role_id" width="15%" sortable="true">角色编号</th>
             <th data-options="field:'title',width:'15%'">角色名称</th>
             <th data-options="field:'modules_list',width:'15%'">模块列表</th>
             <th data-options="field:'remark',width:'30%'">说明</th>

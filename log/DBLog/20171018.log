@@ -1,0 +1,18 @@
+
+------------------
+-时间:10:32:30-
+-错误信息:错误的SQL语句: [update admins set admin_name='bbb', role_id=, password='93b8004c63cb098c7c7cf5ca98d9898b', real_name='', tel='6666', mobile='122', remark='111', email='444', is_term='N', store_id='0' where admin_id=3]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' password='93b8004c63cb098c7c7cf5ca98d9898b', real_name='', tel='6666', mobile='' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101011&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.users_show.php-
+------------------
+
+------------------
+-时间:10:32:58-
+-错误信息:错误的SQL语句: [update admins set admin_name='aaa1', role_id=, password='93b8004c63cb098c7c7cf5ca98d9898b', real_name='', tel='33331', mobile='122', remark='111', email='4441', is_term='N', store_id='0' where admin_id=3]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ' password='93b8004c63cb098c7c7cf5ca98d9898b', real_name='', tel='33331', mobile=' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101011&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.users_show.php-
+------------------
