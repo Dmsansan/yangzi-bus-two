@@ -5,6 +5,7 @@ body {
     margin:0;
     width: 100%;
     height: 100%;
+    background-color: #bdc4d4;
 }
 h2 {
     font-size:18px;
@@ -26,36 +27,33 @@ h2 {
 }
 #top{
     overflow: hidden;
-    height:102px;
+    height:90px;
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #00bbee;
+    background-color: #f1f6fd;
 }
 #top_left{
-    width: 192px;
-    height: 100px;
+    width: 210px;
+    height: 90px;
     float: left;
-    background-color:#0088CC;
-}
-.top_title{
-    width: 100%;
-    line-height: 100px;
-
-    color: #ffffff;
-    font-size: 46px;
-    font-family: 微软雅黑;
-
+   background: url("../css/img/logo.png") no-repeat ;
 }
 #top_right{
     height: 100px;
     float: right;
-    background-color:#00bbee;
+    padding-left: 6px;
+    padding-right: 6px;
+    padding-top: 6px;
+    background-color: #f1f6fd;
     text-align: right;
 }
-
+.panel-icon {
+    left: 35px;!important;
+    width: 20px;
+}
 .panel-title {
-    background-color: #222222;
+    background-color: #353c49;
     color: #ffffff;
     text-align: center;
 }
@@ -63,22 +61,33 @@ h2 {
     background-color: #222222;
 }
 #west{
-    width:192px;
-    background-color: #222222;
+    width:210px;
+    background-color: #353c49;
     overflow: hidden;
 
 }
+.accordion .accordion-header {
+    background: #353c49;!important;
+    filter: none;
+}
+.accordion .accordion-header-selected {
+    background: #353c49;!important;
+    filter: none;
+}
 .accordion {
-    background: #3f3f3f;
+    background: #21262f;
     border-bottom: none;
-    border-color: #222222;
+    border-color: #353c49;
+}
+.panel-header{
+    border-color: #0d0d0d;!important;
 }
 .panel-header {
-    background-color:#222222;
-    background: -webkit-linear-gradient(top,#222222 0,#222222 100%);
-    background: -moz-linear-gradient(top,#222222 0,#222222 100%);
-    background: -o-linear-gradient(top,#222222 0,#222222 100%);
-    background: linear-gradient(to bottom,#222222 0,#222222 100%);
+    background-color:#353c49;
+    background: -webkit-linear-gradient(top,#353c49 0,#353c49 100%);
+    background: -moz-linear-gradient(top,#353c49 0,#353c49 100%);
+    background: -o-linear-gradient(top,#353c49 0,#353c49 100%);
+    background: linear-gradient(to bottom,#353c49 0,#353c49 100%);
     background-repeat: repeat-x;
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#EFF5FF,endColorstr=#E0ECFF,GradientType=0);
 }
@@ -117,7 +126,7 @@ h2 {
 }
 #south{
     overflow: hidden;
-    background-color: #6a6a6a;
+    background-color: #bdc4d4;
     text-align: center;
 }
 #south span{
@@ -128,6 +137,7 @@ h2 {
     width: 100%;
     height: 100%;
     border: none;
+    background-color: #f1f6fd;
 }
 #i-top{
     height:31px;
@@ -136,7 +146,7 @@ h2 {
 }
 #i-center{
     height: 92%;
-    background-color: #ffffff;
+    background-color: #f1f6fd;
 }
 #i-top span{
     line-height: 31px;
@@ -144,17 +154,25 @@ h2 {
 }
 #center_top{
     height: 10%;
+    margin-top: 6px;
+    margin-right: 10px;
+    margin-left: 10px;
+    background-color: #ffffff;
+}
+#center_top input{
+    margin-top: 10px;
 }
 #center_center{
     height: 30%;
-    background-color: #e0e0e0;
+    background-color: #ffffff;
+    margin-top: 6px;
     margin-left: 10px;
     margin-right: 10px;
 }
 #center_bottom{
-    margin-top: 10px;
+    margin-top: 6px;
     height: 30%;
-    background-color: #e0e0e0;
+    background-color: #ffffff;
     margin-right: 10px;
     margin-left: 10px;
 }

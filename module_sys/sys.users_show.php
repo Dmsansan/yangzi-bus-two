@@ -74,6 +74,7 @@
                 }
 
             });
+			//获取user
             $.ajax({
                 url: '../ajaction/v1/?menuid=101011&cmd=qry&t=1',
                 type: 'post',
@@ -214,6 +215,46 @@
             }
         };
     </script>
+	 <style type="text/css">
+        #btn_dlg{
+            text-align: center;
+            border-bottom: none;
+            border-left:none;
+            border-right: none;
+        }
+        #btn_dlg button{
+            border: none;
+            padding: 8px 10px;
+            vertical-align: middle;
+            margin-right: 10px;
+
+        }
+        #btn_dlg button:visited,#btn_dlg button:link{
+            background-color: #D3D3D3;
+        }
+        #btn_dlg button:active,#btn_dlg button:hover{
+            background-color: #3f3f3f;
+        }
+		 #upbtn_dlg{
+            text-align: center;
+            border-bottom: none;
+            border-left:none;
+            border-right: none;
+        }
+        #upbtn_dlg button{
+            border: none;
+            padding: 8px 10px;
+            vertical-align: middle;
+            margin-right: 10px;
+
+        }
+        #upbtn_dlg button:visited,#upbtn_dlg button:link{
+            background-color: #D3D3D3;
+        }
+        #upbtn_dlg button:active,#upbtn_dlg button:hover{
+            background-color: #3f3f3f;
+        }
+		</style>
 </head>
 
 <body class="easyui-layout">

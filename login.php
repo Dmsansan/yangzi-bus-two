@@ -89,12 +89,12 @@ function LoginSystem()
     <div class="center">
         <div class="c_top"></div>
         <div class="c_center">
-<<<<<<< HEAD
+
                       <div class="loginForm">
 		   
-=======
+
            	<div style="width:300px;margin:auto;margin-top:100px;">
->>>>>>> e33808513dd1eac879a4e7e1f29dbf6661f8f4de
+
                 <p>
                     <label for="userid">用户名：</label>
                     <input  id="userid" name="userid" type="text" placeholder="请输入用户名" name="userName">
@@ -110,13 +110,12 @@ function LoginSystem()
                     <input id="login" type="submit" onclick="LoginSystem()" value="登录">
                     <input id="reset" type="reset" value="重置">
                 </p>
-<<<<<<< HEAD
+
 
 			</div>
-=======
+
 			</div>
            
->>>>>>> e33808513dd1eac879a4e7e1f29dbf6661f8f4de
         </div>
         <div class="c_bottom">
             <p>版权所有：南京泰晟科技实业有限公司</p>

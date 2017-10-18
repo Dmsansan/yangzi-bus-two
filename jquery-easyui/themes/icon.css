@@ -20,6 +20,10 @@
 	background:url('icons/cut.png') no-repeat center center;
 }
 .icon-ok{
+	background: url("icons/set_normal.png") no-repeat center center;
+}
+.icon-ok1{
+
 	background:url('icons/ok.png') no-repeat center center;
 }
 .icon-no{
@@ -32,18 +36,32 @@
 	background:url('icons/reload.png') no-repeat center center;
 }
 .icon-search{
+	background:url('icons/Vehicle_normal.png') no-repeat center center;
+}
+.icon-search1{
 	background:url('icons/search.png') no-repeat center center;
 }
 .icon-print{
 	background:url('icons/print.png') no-repeat center center;
 }
 .icon-help{
+	background:url('icons/Tires_normal.png') no-repeat center center;
+}
+
+.icon-help1{
 	background:url('icons/help.png') no-repeat center center;
 }
 .icon-undo{
+	background:url('icons/statistics_normal.png') no-repeat center center;
+}
+.icon-undo1{
 	background:url('icons/undo.png') no-repeat center center;
 }
 .icon-redo{
+	background:url('icons/Detection_normal.png') no-repeat center center;
+}
+
+.icon-redo1{
 	background:url('icons/redo.png') no-repeat center center;
 }
 .icon-back{
@@ -56,6 +74,9 @@
 	background:url('icons/tip.png') no-repeat center center;
 }
 .icon-filter{
+	background:url('icons/Report_normal.png') no-repeat center center;
+}
+.icon-filter1{
 	background:url('icons/filter.png') no-repeat center center;
 }
 .icon-man{

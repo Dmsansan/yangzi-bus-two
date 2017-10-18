@@ -47,7 +47,7 @@
 <body  class="easyui-layout">
     <div id="top" data-options="region:'north'">
         <div id="top_left">
-               <span class="top_title">Tire Info</span>
+              
         </div>
         <div id="top_right">
            <img src="jquery-easyui/themes/icons/back.png"> <p>你好，admin</p> <input type="button" onclick="addTab('首页','')" value="首页">
@@ -57,18 +57,18 @@
     </div>
     <div id="west" data-options="region:'west',title:'功能菜单'">
         <div  class="easyui-accordion" style="width:100%;height:99%;">
-            <div title="系统管理" data-options="iconCls:'icon-ok'" style="background-color: #222222;overflow: hidden">
+            <div title="系统管理" data-options="iconCls:'icon-ok'" style="background-color: #353c49;overflow: hidden">
                 <div class="easyui-accordion" style="width:100%;height:99%;">
 
-                    <div id="userManger" title="用户权限管理" style="background-color: #6a6a6a" >
+                    <div id="userManger" title="用户权限管理" style="background-color: #21262f" >
                         <ul>
                             <li><a onclick="addTab('角色管理','module_sys/sys.roles_show.php')" >角色管理</a></li>
                             <li><a onclick="addTab('用户管理','module_sys/sys.users_show.php')" >用户管理</a></li>
                         </ul>
                     </div>
-                    <div id="dataManger" title="基本数据管理" style="background-color: #6a6a6a">
+                    <div id="dataManger" title="基本数据管理" style="background-color: #21262f">
                         <ul>
-                            <li><a onclick="addTab('修理厂管理','../systemmanger/repairDepotManger.html')">修理厂管理</a></li>
+                            <li><a onclick="addTab('修理厂管理','module_sys/repairDepotManger.php')">修理厂管理</a></li>
                             <li><a onclick="addTab('轮胎基础参数管理','../systemmanger/TireParameter.html')">轮胎基础参数管理</a></li>
                             <li><a onclick="addTab('车载终端管理','../systemmanger/machine.html')">车载终端管理</a></li>
                         </ul>
@@ -77,7 +77,7 @@
                 </div>
 
             </div>
-            <div id="tireManger" title="轮胎管理" data-options="iconCls:'icon-help'" style="padding:10px;background-color: #6a6a6a">
+            <div id="tireManger" title="轮胎管理" data-options="iconCls:'icon-help'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
                         <a onclick="addTab('轮胎参数管理','../tiremanger/tireParameterManger.html')">轮胎参数管理 </a>
@@ -90,14 +90,14 @@
                     </li>
                 </ul>
             </div>
-            <div title="车辆管理" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #6a6a6a">
+            <div title="车辆管理" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
                         <a onclick="addTab('车辆维护','../carmanger/Vehicle.html')"> 车辆维护</a>
                     </li>
                 </ul>
             </div>
-            <div title="监测系统" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #6a6a6a">
+            <div title="监测系统" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
                         <a onclick="addTab('车辆轮胎状态','../monitorsystem/carTire.html')"> 车辆轮胎状态</a>
@@ -110,7 +110,7 @@
                     </li>
                 </ul>
             </div>
-            <div title="统计分析" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #6a6a6a">
+            <div title="统计分析" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
                         <a onclick="addTab('轮胎运行总时长总里程','../statisticalanalysis/allTimeLong.html')"> 轮胎运行总时长总里程</a>
@@ -129,7 +129,7 @@
                     </li>
                 </ul>
             </div>
-            <div title="报表分析" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #6a6a6a">
+            <div title="报表分析" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
                         <a onclick="addTab('轮胎里程报表','../reportstatistics/TireCourse.html')"> 轮胎里程报表</a>
