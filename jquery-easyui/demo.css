@@ -31,7 +31,7 @@ h2 {
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #f1f6fd;
+    background-color: #bdc4d4;
 }
 #top_left{
     width: 210px;
@@ -40,8 +40,10 @@ h2 {
    background: url("../css/img/logo.png") no-repeat ;
 }
 #top_right{
+    margin-left: 215px;
+    margin-top: 6px;
+    margin-right: 6px;
     height: 100px;
-    float: right;
     padding-left: 6px;
     padding-right: 6px;
     padding-top: 6px;
@@ -54,8 +56,11 @@ h2 {
 }
 .panel-title {
     background-color: #353c49;
-    color: #ffffff;
+    color: #cfd0d2;
     text-align: center;
+}
+.accordion .accordion-header-selected .panel-title {
+    color: #ffffff;!important;
 }
 .layout-expand {
     background-color: #222222;
@@ -64,7 +69,7 @@ h2 {
     width:210px;
     background-color: #353c49;
     overflow: hidden;
-
+height: 100%;
 }
 .accordion .accordion-header {
     background: #353c49;!important;
@@ -103,13 +108,13 @@ h2 {
 #top_right input{
     border-radius: 1px;
 }
-#top_right a:visited,#top_right a:link{
-    color: #3f3f3f;
-    text-decoration: none;
+#updatePassword{}
+#updatePassword:visited,#updatePassword link{
+    src:url('../css/img/Report_highlighted.png');
+
 }
-#top_right a:hover,#top_right a:active{
-    color: #ffffff;
-    text-decoration: none;
+#updatePassword hover,#updatePassword active{
+    src:url('../css/img/Report_normal.png');
 }
 
 #top_right a{
@@ -152,29 +157,47 @@ h2 {
     line-height: 31px;
     margin-left: 10px;
 }
+.combo-arrow {
+    background-color: #ffffff;!important;
+}
+.combo-arrow-hover {
+    background-color: #ffffff;!important;
+}
+.combo-arrow:hover {
+    background-color: #ffffff;!important;
+}
+.textbox {
+    position: relative;
+    border: 1px solid #bdc4d4;!important;
+    background-color: #fff;
+    vertical-align: middle;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    margin: 0;
+    padding: 0;
+    -moz-border-radius: 3px 3px 3px 3px;
+    -webkit-border-radius: 3px 3px 3px 3px;
+    border-radius: 3px 3px 3px 3px;
+}
 #center_top{
-    height: 10%;
+    height: 34px;
     margin-top: 6px;
-    margin-right: 10px;
-    margin-left: 10px;
     background-color: #ffffff;
 }
 #center_top input{
     margin-top: 10px;
 }
 #center_center{
-    height: 30%;
+    height: 40%;
     background-color: #ffffff;
     margin-top: 6px;
-    margin-left: 10px;
-    margin-right: 10px;
+
 }
 #center_bottom{
     margin-top: 6px;
-    height: 30%;
+    height: 40%;
     background-color: #ffffff;
-    margin-right: 10px;
-    margin-left: 10px;
 }
 
 .easyui-accordion div{
@@ -185,10 +208,10 @@ ul{
     padding: 0;
 }
 ul li{
-    border-bottom: 1px solid #3f3f3f;
-    font-size: 12px;
+text-align: left;
+    font-size: 14px;
     padding: 5px;
-    margin: 5px;
+    margin:5px 5px 5px 25px;
     list-style-type: none;
 }
  ul li a:visited, ul li a:link{
@@ -216,3 +239,46 @@ ul li a:hover,  ul li a:active{
     font-size: 14px;
     font-family:宋体;
 }
+#alarmMessage{
+    width: 100px;
+    height: 90px;
+    background: url('../css/img/card3.png') no-repeat;
+    background-size: 100% 80%;
+}
+#c_top{
+    height: 20%;
+}
+#c_top span{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 22px;
+    margin-left: 19px;
+    margin-bottom: 39px;
+}
+#c_center{
+
+    height: 80%;
+}
+#b_top{
+    height: 20%;
+}
+#b_top span{
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 22px;
+    margin-left: 19px;
+    margin-bottom: 39px;
+}
+.panel-title{
+    text-align: left;!important;
+    padding: 5px 5px;
+    font-size: 14px;
+
+}
+
+
+
+
+

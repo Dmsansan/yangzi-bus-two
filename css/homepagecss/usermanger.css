@@ -1,4 +1,6 @@
-
+body{
+    background-color: #f1f6fd;
+}
 .panel-title{
     text-align: left;!important;
     padding: 10px 5px;
