@@ -353,5 +353,4 @@ class sensor {
 		return;
 	}
 }
-
 ?>
