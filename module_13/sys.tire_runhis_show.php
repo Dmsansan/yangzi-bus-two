@@ -79,9 +79,7 @@
 
            }
  		*/
-        $(function () {
-				
-				  
+        $(function () {	  
                 //$("#grid").height(document.documentElement.clientHeight - $(".toolbar").height());
 				$('form').ligerForm();
 				//toolbar();
@@ -89,14 +87,14 @@
 				serchpanel();
 			/*
 			时间
-车辆编号
-轮胎号位
-车载控制器编号
-轮胎胎号
-轮胎压力
-压力阀值
-轮胎温度
-温度上限
+			车辆编号
+			轮胎号位
+			车载控制器编号
+			轮胎胎号
+			轮胎压力
+			压力阀值
+			轮胎温度
+			温度上限
 			*/	  
             
             manager=$("#maingrid4").ligerGrid({
