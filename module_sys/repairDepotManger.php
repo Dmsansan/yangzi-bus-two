@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -21,41 +21,27 @@
                 type: 'post',
                 dataType: 'json',
                 success: function(data) {
-                    var obj =data.Rows;
-                    $("#repairID").combobox("loadData", obj);
+                    var obj = eval(data);
+                    $("#dg").datagrid("loadData", data.Rows);
                     console.log('data', obj);
-                }
-            });
-		$('#repairID').combobox({
-			valueField:'store_id',
-			textField:'store_name',
-			
-		});
-		//加载全部信息；
-			$.ajax({
-                url: '../ajaction/v1/?menuid=101115&cmd=qry&t=1',
-                type: 'post',
-                dataType: 'json',
-                success: function(data) {
-                   
-                    
-                    console.log('data', data);
                 }
             });
 			//增加操作
 			$('#save').bind('click',function(){
-				var v_term_no=$('#vehicleNumber').textbox('getText');
-				var v_term_name=$('#vehicleName').textbox('getText');
-				var plate_no=$('#plateNumber').textbox('getText');
-				var store_id_val=$('#repairID').combobox('getText');
+				var store_no=$('#repairNumber').textbox('getText');
+				var store_name=$('#repairName').textbox('getText');
+				var contact	=$('#contract').textbox('getText');
+				var tel=$('#tel').textbox('getText');
+				var mobile=$('#phone').textbox('getText');
+				var address	=$('#address').textbox('getText');
 				var remark=$('#remark').textbox('getText');
-				console.log('shuju',v_term_no+v_term_name+plate_no+store_id_val+remark);
 				$.ajax({
-					url:'../ajaction/v1/?menuid=101115&cmd=add	',
+					url:'../ajaction/v1/?menuid=101110&cmd=add',
 					type:'POST',
-					data:{'v_term_no':v_term_no,'v_term_name':v_term_name,'plate_no':plate_no,'store_id_val':store_id_val,'remark':remark},
+					dataType:'json',
+					data:{'store_no':store_no,'store_name':store_name,'contact':contact,'tel':tel,'mobile':mobile,'address':address,'remark':remark},
 					success:function(data){
-						//reload();
+						reload();
 						console.log('data',data);
 					}
 				})
@@ -186,15 +172,17 @@
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
 <div  class="u-content">
     <table id="dg" class="easyui-datagrid"
-           data-options="singleSelect:true,url:'../../datagrid_data1.json',method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
+           data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true',width:'100%'">
         <thead>
         <tr>
-            <th data-options="field:'v_term_no',width:'15%'">终端编号</th>
-            <th data-options="field:'v_term_name',width:'15%'">终端名称</th>
-            <th data-options="field:'listprice',width:'15%'">累计里程</th>
-            <th data-options="field:'unitcost',width:'15%'">所属工厂</th>
-            <th data-options="field:'unitcost',width:'15%'">备注</th>
-            <th data-options="field:'_operate',width:'26%',formatter:formatOption">操作</th>
+            <th data-options="field:'store_no',width:'15%'">修理厂编号</th>
+            <th data-options="field:'store_name',width:'15%'">修理厂名称</th>
+            <th data-options="field:'contact',width:'15%'">联系人</th>
+            <th data-options="field:'mobile',width:'15%'">联系电话</th>
+            <th data-options="field:'tel',width:'10%'">手机号码</th>
+            <th data-options="field:'address',width:'20%'">详细地址</th>
+            <th data-options="field:'remark',width:'20%'">说明</th>
+            <th data-options="field:'_operate',width:'15%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
@@ -205,29 +193,41 @@
     <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:600px;height: 400px;">
         <span id="message">基本信息</span><hr/>
         <table id="cc" style="width: 100%;height: 80%;padding-left: 10px;padding-right: 10px">
-             <tr>
+            <tr>
                 <td>
-                    车载终端编号：
-                      <input id="up_vehicleNumber" class="easyui-textbox" style="width: 150px;" />
+                    修理厂编号：
+					 <input id="up_repairId" style="display:none; width: 150px;" />
+                      <input id="up_repairNumber" class="easyui-textbox" style="width: 150px;" />
                 </td>
                 <td>
-                    车载终端名称：
-                     <input id="up_vehicleName" class="easyui-textbox" style="width: 150px;" />
+                    修理厂名称：
+                     <input id="up_repairName" class="easyui-textbox" style="width: 150px;" />
                 </td>
             </tr>
             <tr>
                 <td>
-                    车牌号码：
-                     <input id="up_plateNumber" class="easyui-textbox" style="width: 150px;" />
+                    联&nbsp;系&nbsp;人:
+                     <input id="up_contract" class="easyui-textbox" style="width: 150px;" />
                 </td>
 				<td>
-                    修理厂名称：
-                     <input id="up_repairID"  style="width: 150px;" />
+                    联系&nbsp;电话:
+                     <input id="up_tel" class="easyui-textbox" style="width: 150px;" />
                 </td>
+            </tr>
+            <tr>
+                <td>
+                    手机&nbsp;号码：
+                     <input id="up_phone" class="easyui-textbox" style="width: 150px;" />
+                </td>
+				 <td>
+                    详细&nbsp;地址：
+                     <input id="up_address" class="easyui-textbox" style="width: 150px;" />
+                </td>
+
             </tr>
 			<tr>
                 <td>
-                    备注：
+                    备&nbsp;&nbsp;&nbsp;注：
                       <input id="up_remark" class="easyui-textbox" style="width: 150px;" />
                 </td>
 
@@ -239,23 +239,34 @@
         <table  style="width: 100%;height: 80%;padding-right: 10px;padding-left: 10px;">
              <tr>
                 <td>
-                    车载终端编号：
-                      <input id="vehicleNumber" class="easyui-textbox" style="width: 150px;" />
+                    修理厂编号：
+                      <input id="repairNumber" class="easyui-textbox" style="width: 150px;" />
                 </td>
                 <td>
-                    车载终端名称：
-                     <input id="vehicleName" class="easyui-textbox" style="width: 150px;" />
+                    修理厂名称：
+                     <input id="repairName" class="easyui-textbox" style="width: 150px;" />
                 </td>
             </tr>
             <tr>
                 <td>
-                    车牌号码：
-                     <input id="plateNumber" class="easyui-textbox" style="width: 150px;" />
+                    联系人：
+                     <input id="contract" class="easyui-textbox" style="width: 150px;" />
                 </td>
 				<td>
-                    修理厂名称：
-                     <input id="repairID"  style="width: 150px;" />
+                    联系电话：
+                     <input id="tel" class="easyui-textbox" style="width: 150px;" />
                 </td>
+            </tr>
+            <tr>
+                <td>
+                    手机号码：
+                     <input id="phone" class="easyui-textbox" style="width: 150px;" />
+                </td>
+				 <td>
+                    详细地址：
+                     <input id="address" class="easyui-textbox" style="width: 150px;" />
+                </td>
+
             </tr>
 			<tr>
                 <td>

@@ -16,3 +16,21 @@
 -错误脚本:/YangziBus2/ajaction/v1/?menuid=101011&cmd=edit-
 -错误页面地址:http://localhost/YangziBus2/module_sys/sys.users_show.php-
 ------------------
+
+------------------
+-时间:07:23:03-
+-错误信息:错误的SQL语句: [select * from admins where admin_id=]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101011&cmd=qrybyone-
+-错误页面地址:-
+------------------
+
+------------------
+-时间:07:25:16-
+-错误信息:错误的SQL语句: [select * from vehicle_term where v_term_id=]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=qrybyone-
+-错误页面地址:-
+------------------

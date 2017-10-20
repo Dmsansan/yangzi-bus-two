@@ -7,7 +7,6 @@
     <link href="jquery-easyui/themes/icon.css" rel="stylesheet" type="text/css">
     <script src="jquery-easyui/jquery.min.js" type="text/javascript"></script>
     <link href="jquery-easyui/demo.css" rel="stylesheet" type="text/css">
-    <link href="css/homepagecss/usermanger.css" type="text/css" rel="stylesheet">
     <script src="jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(function () {
@@ -47,37 +46,41 @@
 <body  class="easyui-layout">
     <div id="top" data-options="region:'north'">
         <div id="top_left">
-               <span class="top_title">Tire Info</span>
+              
         </div>
-        <div id="top_right">
-           <img src="jquery-easyui/themes/icons/back.png"> <p>你好，admin</p> <input type="button" onclick="addTab('首页','')" value="首页">
-            <a href="javascript:0">修改密码</a> <span>|</span><a href="javascript:0">退出</a>
+         <div id="top_right">
+            <div style="height: 84px;  margin-right: 41px;padding-bottom: 40px;">
+                <p style="font-size: 12px;color: #333333;line-height: 84px;vertical-align: middle;">你好，admin,欢迎回来！</p>
+
+                <img id="back" src="css/img/Report_normal.png"  style="margin-left:50px;margin-right: 10px">  <span>|</span><img src="css/img/out_highlighted.png" style="margin-left: 10px;">
+            </div>
+
         </div>
 
     </div>
     <div id="west" data-options="region:'west',title:'功能菜单'">
         <div  class="easyui-accordion" style="width:100%;height:99%;">
-            <div title="系统管理" data-options="iconCls:'icon-ok'" style="background-color: #222222;overflow: hidden">
+            <div title="系统管理" data-options="iconCls:'icon-ok'" style="background-color: #353c49;overflow: hidden">
                 <div class="easyui-accordion" style="width:100%;height:99%;">
 
-                    <div id="userManger" title="用户权限管理" style="background-color: #6a6a6a" >
+                    <div id="userManger" title="用户权限管理" style="background-color: #21262f" >
                         <ul>
                             <li><a onclick="addTab('角色管理','module_sys/sys.roles_show.php')" >角色管理</a></li>
                             <li><a onclick="addTab('用户管理','module_sys/sys.users_show.php')" >用户管理</a></li>
                         </ul>
                     </div>
-                    <div id="dataManger" title="基本数据管理" style="background-color: #6a6a6a">
+                    <div id="dataManger" title="基本数据管理" style="background-color: #21262f">
                         <ul>
-                            <li><a onclick="addTab('修理厂管理','../systemmanger/repairDepotManger.html')">修理厂管理</a></li>
+                            <li><a onclick="addTab('修理厂管理','module_sys/repairDepotManger.php')">修理厂管理</a></li>
                             <li><a onclick="addTab('轮胎基础参数管理','../systemmanger/TireParameter.html')">轮胎基础参数管理</a></li>
-                            <li><a onclick="addTab('车载终端管理','../systemmanger/machine.html')">车载终端管理</a></li>
+                            <li><a onclick="addTab('车载终端管理','module_sys/sys.vehicle_show.php')">车载终端管理</a></li>
                         </ul>
 
                     </div>
                 </div>
 
             </div>
-            <div id="tireManger" title="轮胎管理" data-options="iconCls:'icon-help'" style="padding:10px;background-color: #6a6a6a">
+			<div id="tireManger" title="轮胎管理" data-options="iconCls:'icon-help'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
                         <a onclick="addTab('轮胎参数管理','../tiremanger/tireParameterManger.html')">轮胎参数管理 </a>
@@ -90,14 +93,14 @@
                     </li>
                 </ul>
             </div>
-            <div title="车辆管理" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #6a6a6a">
+            <div title="车辆管理" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
                         <a onclick="addTab('车辆维护','../carmanger/Vehicle.html')"> 车辆维护</a>
                     </li>
                 </ul>
             </div>
-            <div title="监测系统" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #6a6a6a">
+            <div title="监测系统" data-options="iconCls:'icon-redo'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
                         <a onclick="addTab('车辆轮胎状态','../monitorsystem/carTire.html')"> 车辆轮胎状态</a>
@@ -110,7 +113,7 @@
                     </li>
                 </ul>
             </div>
-            <div title="统计分析" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #6a6a6a">
+            <div title="统计分析" data-options="iconCls:'icon-undo'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
                         <a onclick="addTab('轮胎运行总时长总里程','../statisticalanalysis/allTimeLong.html')"> 轮胎运行总时长总里程</a>
@@ -129,7 +132,7 @@
                     </li>
                 </ul>
             </div>
-            <div title="报表分析" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #6a6a6a">
+            <div title="报表分析" data-options="iconCls:'icon-filter'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
                         <a onclick="addTab('轮胎里程报表','../reportstatistics/TireCourse.html')"> 轮胎里程报表</a>
@@ -141,102 +144,87 @@
             </div>
         </div>
     </div>
-    <div  id="center_content" class="easyui-tabs" style="width:90%;height: 90%"  data-options="region:'center',width:'80%'" >
+     <div  id="center_content" class="easyui-tabs" style="width:90%;height: 90%;background-color: #bdc4d4;margin-left: 6px;padding-bottom: 6px;padding-right: 6px;"  data-options="region:'center',width:'80%'" >
 
         <div id="center_page" title="首页">
             <div id="i-center">
-                <div id="center_top">
+                <div id="center_top" style="padding-top: 20px;padding-left: 1%">
                     <label for="company">公司：</label>
                     <input id="company" name="company" />
                     <label for="carteam">车队：</label>
-                    <input id="carteam" name="carteam"  data-options="valueField:'id',textField:'text'"/>
+                    <input id="carteam" name="carteam" />
                 </div>
                 <div id="center_center">
-                    <table>
-                        <th>信息综述:</th>
-                        <tr>
-                            <td>
-                                注册轮胎数量：
-                            </td>
-                            <td>
-                            999999999999999999999999999999999999999
-                            </td>
-                            <td>
-                                库存轮胎数辆：
-                            </td>
-                            <td>
-                            99999999999999999999999999999999999999999
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                装车轮胎数量：
-                            </td>
-                            <td>
+                   <div id="c_top">
+                       <span>信息综述：</span>
+                   </div>
+                    <div id="c_center">
+                        <div id="c_center_top" style="height:50%">
+                            <div style="float: left;width: 100px;height: 80px;text-align:center;margin-left:5%;margin-right: 5%; background: url('css/img/card1.png')">
+                                <p style="font-size: 16px;font-weight: bold;color: #ffffff;margin: 0;padding: 10px 0 0 0 ;">轮胎总数
 
-                            </td>
-                            <td>
-                                报废轮胎数量：
-                            </td>
-                            <td>
+                                </p>
+                                <p style="font-size: 24px;color: #ffffff;margin: 0;padding: 0">22222</p>
+                            </div>
+                            <div style="margin-left: 150px; height: 80px; background-color: #ffffff">
+                                <div style="height: 40px;">
+                                    <span style="display:inline-block;font-size: 12px;font-weight: bold;line-height:40px;">注册轮胎数量：</span>
+                                    <span style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd ">400</span>
+                                    <span style="display:inline-block;font-size: 12px;margin-left:5%;font-weight: bold;line-height:40px;">库存轮胎数量：</span>
+                                    <span style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd ">400</span>
+                                </div>
+                                <div style="height: 40px;">
+                                    <span style="display:inline-block;font-size: 12px;font-weight: bold;line-height:40px;">装车轮胎数量：</span>
+                                    <span style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd ">400</span>
+                                    <span style="display:inline-block;font-size: 12px;margin-left:5%;font-weight: bold;line-height:40px;">报废轮胎数量：</span>
+                                    <span style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd ">400</span>
 
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                运营中车辆数：
-                            </td>
-                            <td>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="c_center_center" style="height: 20%;vertical-align: middle">
+                            <div  style="float: left;text-align:center;width: 100px;height: 80px;margin-left:5%;margin-right: 5%; background: url('css/img/card2.png')">
+                                <p style="font-size: 16px;font-weight: bold;color: #ffffff;margin: 0;padding: 10px 0 0 0 ;">轮胎总数
+                                </p>
+                                <p style="font-size: 24px;color: #ffffff;margin: 0;padding: 0">22222</p>
+                            </div>
+                            <div style="margin-left: 150px; height: 80px; background-color: #ffffff;">
 
-                            </td>
-                            <td>
-                                报废车辆数量：
-                            </td>
-                            <td>
+                                <span style="display:inline-block;font-size: 12px;font-weight: bold;line-height:80px;">运营中车辆数：</span>
+                                <span style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd ">400</span>
+                                <span style="display:inline-block;font-size: 12px;margin-left:5%;font-weight: bold;line-height:80px;">报废车辆数量：</span>
+                                <span style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd ">400</span>
+                            </div>
+                        </div>
 
-                            </td>
-                        </tr>
-
-                    </table>
-
+                    </div>
                 </div>
                 <div id="center_bottom">
-                    <table>
-                        <th>胎温胎压未读报警信息：</th>
-                        <tr>
-                            <td rowspan="3">
-                                未报警条数：<a href="javaScript(0)">9条</a>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                高压报警条数：
-                            </td>
-                            <td>
+                    <div id="b_top">
+                        <span>胎温胎压未读报警信息：</span>
+                    </div>
+                    <div id="b_center">
+                        <div  style="float: left;text-align:center;width: 100px;height: 80px;margin-left:5%;margin-right: 5%; background: url('css/img/card3.png')">
+                            <p style="font-size: 16px;font-weight: bold;color: #ffffff;margin: 0;padding: 10px 0 0 0 ;">未读条数
+                            </p>
+                            <p style="font-size: 24px;color: #ffffff;margin: 0;padding: 0">22222</p>
+                        </div>
+                        <div style="margin-left: 150px; height: 80px; background-color: #ffffff">
+                            <div style="height: 40px;">
+                                <span style="display:inline-block;font-size: 12px;font-weight: bold;line-height:40px;">高压报警条数：</span>
+                                <span style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd ">400</span>
+                                <span style="display:inline-block;font-size: 12px;margin-left:5%;font-weight: bold;line-height:40px;">高温报警条数：</span>
+                                <span style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd ">400</span>
+                            </div>
+                            <div style="height: 40px;">
+                                <span style="display:inline-block;font-size: 12px;font-weight: bold;line-height:40px;">低压报警条数：</span>
+                                <span style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd ">400</span>
+                                <span style="display:inline-block;font-size: 12px;margin-left:5%;font-weight: bold;line-height:40px;">漏气报警条数：</span>
+                                <span style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd ">400</span>
 
-                            </td>
-                            <td>
-                                高温报警条数：
-                            </td>
-                            <td>
-
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                低压报警条数：
-                            </td>
-                            <td>
-
-                            </td>
-                            <td>
-                                快速漏气报警条数：
-                            </td>
-                            <td>
-
-                            </td>
-                        </tr>
-                    </table>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

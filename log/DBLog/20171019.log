@@ -1,0 +1,9 @@
+
+------------------
+-时间:09:09:54-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'新增','添加了新车载终端ddd')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新车载终端ddd')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
