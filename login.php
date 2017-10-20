@@ -118,7 +118,7 @@ function LoginSystem()
            
         </div>
         <div class="c_bottom">
-            <p>版权所有：南京泰晟科技实业有限公司</p>
+            <p>版权所有：南京泰晟科技实业有限公司1233</p>
         </div>
     </div>
     <div class="right">
