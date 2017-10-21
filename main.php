@@ -237,7 +237,7 @@
 
 
     </div>
-    <div id="south" data-options="region:'south',split:'true'" style="height:50px;border-top: 2px solid #ffffff;">
+    <div id="south" data-options="region:'south',split:'true'" style="height:48px;border-top: 2px solid #ffffff;text-align:center;">
         <span> @2015 轮胎全生命管理周期系统 版权所有 v1.17</span>
     </div>
 

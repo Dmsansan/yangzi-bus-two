@@ -309,9 +309,8 @@
            <button style="float: right; margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
         </div>
         <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:600px;height: 400px;background-color: #bdc4d4">
-		<div style="background-color: #ffffff;height:240px;margin:10px;">           
+		<div style="background-color: #ffffff;height:296px;margin:10px;">           
 		   <span>基本信息</span>
-            <hr/>
             <table style="width: 100%;height:30%;padding-right: 10px;padding-left: 10px;">
                 <tr>
                     <td>
@@ -348,19 +347,19 @@
                         手持终端：
                     </td>
                     <td>
-                        <input id="up_check" type="checkbox" style="width: 150px;" />
+                        <input id="up_check"  type="checkbox" style="width:16px;height:16px;" />
                     </td>
                     <td>
                         所属车队：
                     </td>
                     <td>
-					<input id="up_storeid" style="width: 150px;" />
+					<input id="up_storeid" style="display:none; width: 150px;" />
                         <input id="up_carTeam" class="easyui-textbox" style="width: 150px;" />
                     </td>
                 </tr>
             </table>
+			<hr/>
             <span>其他信息</span>
-            <hr/>
             <table style="width: 100%;height:28%;padding-right: 10px;padding-left: 10px;">
                 <tr>
                     <td>
@@ -390,8 +389,8 @@
         </div>
         <!--增加角色 -->
         <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#btn_dlg'" style="width:600px;height: 400px;background-color: #bdc4d4">
+		<div style="background-color: #ffffff;height:296px;margin:10px;">   
             <span id="addMessage">基本信息</span>
-            <hr/>
             <table id="aa" style="width: 100%;height:30%;padding-right: 10px;padding-left: 10px;">
                 <tr>
                     <td>
@@ -426,7 +425,7 @@
                         手持终端：
                     </td>
                     <td>
-                        <input id="check" type="checkbox" style="width: 150px;" />
+                        <input id="check" type="checkbox" style="width:50px;" />
                     </td>
                     <td>
                         所属车队：
@@ -436,8 +435,8 @@
                     </td>
                 </tr>
             </table>
+			<hr/>
             <span>其他信息</span>
-            <hr/>
             <table style="width: 100%;height:28%;padding-right: 10px;padding-left: 10px;">
                 <tr>
                     <td>
@@ -462,6 +461,7 @@
                     </td>
                 </tr>
             </table>
+			</div>
         </div>
         <div id="alarm" class="easyui-dialog" style="text-align: center;width:600px;height: 300px;" data-options="closed:true,modal:true">
             <span style="height: 70%;font-size: 24px;font-weight: bold;">确定删除？</span>

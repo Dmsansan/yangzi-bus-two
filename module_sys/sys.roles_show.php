@@ -298,33 +298,33 @@
 <!--修改信息弹出框 -->  
   <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:650px;height: 300px;background-color: #bdc4d4">
         <div style="background-color: #ffffff;height:240px;margin:10px;">
-		<span id="message">基本信息</span><hr/>
+		<span id="message">基本信息</span>
         <table id="cc" style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
             <tr>
                 <td>
+					<img src="../css/img/start.png">
                     角色名称：
 					 <input id="role_id"  style="display: none;width:45%；" type="text"/>
 					  <input id="module_id"  style="display: none;width:45%；" type="text"/>
-                    <input id="title" class="easyui-textbox"  style="display: inline-block;width:200px;" type="text"/>
+                    <input id="title" class="easyui-textbox"  style="width:188px;" />
                 </td>
                 <td>
+					<img src="../css/img/start.png">
                     角色权限：
-                    <input id="roles"  style="width:200px;" />
-
+                    <input id="roles"  style="width:188px;" />
                 </td>
             </tr>
             <tr>
                 <td>
+					<img src="../css/img/start.png">
                     操作权限：
-                    <select id="operate" style="width:200px;">
-
-                    </select>
+                    <input id="operate" style="width:188px;" />
                 </td>
             </tr>
             <tr>
-                <td>
+                <td colspan="2" style="padding-left: 11px;">
                     角色说明：
-                    <input id="remark" class="easyui-textbox" style="display: inline-block;width:45%" type="text"/>
+                    <input id="remark" class="easyui-textbox" style="width:470px"/>
                 </td>
 
             </tr>
@@ -336,9 +336,9 @@
 				<td>
 					<button id='updata_close'><a style="text-decoration: none" href="#"></a></button>
 				</td>
-        </tr>
+			</tr>
         </table>
-		</div>
+</div>
     </div>
    <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:650px;height: 300px;background-color: #bdc4d4">
     <div style="background-color: #ffffff;height:240px;margin:10px;">
@@ -348,27 +348,25 @@
             <td>
                 <img src="../css/img/start.png">
                 角色名称：
-                <input id="addrole" class="easyui-textbox" style="display: inline-block;width:200px;" type="text"/>
+                <input id="addrole" class="easyui-textbox" style="width:188px;" type="text"/>
             </td>
             <td>
                 <img src="../css/img/start.png">
                 角色权限：
-                <input id="rolePower" style="width: 200px;" />
+                <input id="rolePower" style="width: 188px;" />
             </td>
         </tr>
         <tr>
             <td>
                 <img src="../css/img/start.png">
                 操作权限：
-                <select id="addoper" style="width: 200px;">
-
-                </select>
+                <input id="addoper" style="width: 188px;"/>
             </td>
         </tr>
         <tr>
             <td colspan="2" style="padding-left: 11px;">
                 角色说明：
-                <input id="addremark" class="easyui-textbox" style="display: inline-block;width:490px;" type="text"/>
+                <input id="addremark" class="easyui-textbox" style="width:470px;" type="text"/>
             </td>
 
         </tr>
