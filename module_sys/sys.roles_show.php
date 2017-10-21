@@ -56,6 +56,14 @@
                 }
 
             });
+			//搜索操作：
+			$('#search').bind('click',function(){
+				var name=$('#rolesName').val();
+				console.log('niaho',name);
+				
+				
+			});
+			
 			//装载数据操作
 			$.ajax({
 				url:'../ajaction/v1/?menuid=101010&cmd=qry&t=1',
@@ -82,7 +90,9 @@
 					data:{'title':title,'role_id':role_id,'remark':remark,'module_list':module_list,'module_list_val':module_list_val,'Operlist':operlist},
 					success:function(data){
 						console.log("data",data);
+						$('#dlg').dialog('close');
 							reload();
+							
 					}
 					
 				})
@@ -101,6 +111,7 @@
 				data:{'title':addrole,'remark':addremark,'module_list':rolePower,'module_list_val':module_list_val,'operlist':addoper},
 				success:function(data){
 					reload();
+					$('#addUser').dialog('close');
 				console.log('data',data);
 				}
 			})
@@ -122,7 +133,8 @@
 		}
 
         function formatOption(value, row, index) {
-        return '<a href="#" onclick="editUser('+index+')">修改</a> <a href="#" onclick="deletData('+index+')">删除</a>';
+                return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+
         }
         var url;
 		//装填修改dialog
@@ -146,65 +158,127 @@
         function deletData(index) {
 			$('#dg').datagrid('selectRow', index);
 			var row = $('#dg').datagrid('getSelected');
-			if(row){
+			if(row){			
 				var id=row.role_id;
-				$.ajax({
+			$('#alarm').dialog('open').dialog('setTitle', '提示');	
+				$('#sure').bind('click', function() {
+                    $.ajax({
 					url:'../ajaction/v1/?menuid=101010&cmd=del',
 					type:'post',
 					data:{'role_id':id},
 					success:function(data){
 					console.log('delete',data);
 					reload();
+					$('#alarm').dialog('close');
 					}
 				})
+                })
+ 
 			}
         };
 		
 
     </script>
 	 <style type="text/css">
-        #btn_dlg{
-            text-align: center;
-            border-bottom: none;
-            border-left:none;
-            border-right: none;
-        }
-        #btn_dlg button{
+	  #sure{
+            height: 25px;
+            width: 60px;
             border: none;
-            padding: 8px 10px;
+            margin-right: 11px;
+            background: url("../css/img/yes_normal.png") no-repeat;
+        }
+        #sure:visited,#sure:link{
+            background: url("../css/img/yes_normal.png") no-repeat;
+        } 
+        #sure:hover,#sure:active{
+            background: url("../css/img/yes_highlighted.png") no-repeat;
+        }
+        #cancel{
+            height: 25px;
+            width: 60px;
+            border: none;
+            background: url("../css/img/no_normal.png") no-repeat;
+        }
+        #cancel:visited,#cancel:link{
+            background: url("../css/img/no_normal.png") no-repeat;
+        }
+        #cancel:hover,#cancel:active{
+            background: url("../css/img/no_highlighted.png") no-repeat;
+        }
+
+        #save{
+            border: none;
+            width: 60px;
+            height: 30px;
             vertical-align: middle;
             margin-right: 10px;
+            background: url("../css/img/ok_normal.png") no-repeat;
 
         }
-        #btn_dlg button:visited,#btn_dlg button:link{
-            background-color: #D3D3D3;
+        #save:visited,#save:link{
+            background: url("../css/img/ok_normal.png") no-repeat;
+
         }
-        #btn_dlg button:active,#btn_dlg button:hover{
-            background-color: #3f3f3f;
+        #save button:active,#save button:hover{
+            background: url("../css/img/ok_seleected.png") no-repeat;
+
         }
-		 #updata_dlg{
-            text-align: center;
-            border-bottom: none;
-            border-left:none;
-            border-right: none;
-        }
-        #updata_dlg button{
+        #close{
             border: none;
-            padding: 8px 10px;
+            width: 60px;
+            height: 30px;
             vertical-align: middle;
             margin-right: 10px;
+            background: url("../css/img/cancel_normal.png") no-repeat;
 
         }
-        #updata_dlg button:visited,#updata_dlg button:link{
-            background-color: #D3D3D3;
+        #close:visited,#close:link{
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
         }
-        #updata_dlg button:active,#updata_dlg button:hover{
-            background-color: #3f3f3f;
+        #close button:active,#close button:hover{
+            background: url("../css/img/cancel_selected.png") no-repeat;
+
         }
+		#updata_save{
+            border: none;
+            width: 60px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url("../css/img/ok_normal.png") no-repeat;
+
+        }
+        #updata_save:visited,#updata_save:link{
+            background: url("../css/img/ok_normal.png") no-repeat;
+
+        }
+        #updata_save button:active,#updata_save button:hover{
+            background: url("../css/img/ok_seleected.png") no-repeat;
+
+        }
+        #updata_close{
+            border: none;
+            width: 60px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
+        }
+        #updata_close:visited,#updata_close:link{
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
+        }
+        #updata_close button:active,#updata_close button:hover{
+            background: url("../css/img/cancel_selected.png") no-repeat;
+
+        }
+		
 
     </style>
 </head>
-<body class="easyui-layout" style="width:100%; height: 100%;background-color: #ffffff">
+<body class="easyui-layout" style="width:100%; height: 100%;">
 
     <table id="dg" class="easyui-datagrid" data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true',width:'100%'" >
         <thead>
@@ -217,31 +291,32 @@
         </tr>
         </thead>
     </table>
-    <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
-        <input type="text" placeholder="角色名称"/> <button>搜索</button> <button>重置</button>
-        <button style="float: right;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
-    </div>
+    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+    <input type="text" id="rolesName" placeholder="角色名称"/> <button id="search">搜索</button>
+    <button style="float: right; margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
+</div>
 <!--修改信息弹出框 -->  
-  <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#updata_dlg'" style="width:600px;height: 300px;">
-        <span id="message">基本信息</span><hr/>
-        <table id="cc" style="width: 100%;height: 80%;padding-left: 10px;padding-right: 10px">
+  <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:650px;height: 300px;background-color: #bdc4d4">
+        <div style="background-color: #ffffff;height:240px;margin:10px;">
+		<span id="message">基本信息</span><hr/>
+        <table id="cc" style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
             <tr>
                 <td>
                     角色名称：
 					 <input id="role_id"  style="display: none;width:45%；" type="text"/>
 					  <input id="module_id"  style="display: none;width:45%；" type="text"/>
-                    <input id="title" class="easyui-textbox"  style="display: inline-block;width:45%;border:1px solid #dddddd; " type="text"/>
+                    <input id="title" class="easyui-textbox"  style="display: inline-block;width:200px;" type="text"/>
                 </td>
                 <td>
                     角色权限：
-                    <input id="roles"  style="width:45%" />
+                    <input id="roles"  style="width:200px;" />
 
                 </td>
             </tr>
             <tr>
                 <td>
                     操作权限：
-                    <select id="operate" style="width: 45%;">
+                    <select id="operate" style="width:200px;">
 
                     </select>
                 </td>
@@ -253,46 +328,73 @@
                 </td>
 
             </tr>
+			<tr style="text-align: center">
+
+				<td>
+					<button id='updata_save'><a style="text-decoration: none;" href="#"></a></button>
+				</td>
+				<td>
+					<button id='updata_close'><a style="text-decoration: none" href="#"></a></button>
+				</td>
+        </tr>
         </table>
+		</div>
     </div>
-	<div id="updata_dlg">
-    <button id='updata_save'><a style="text-decoration: none;" href="#">保存</a></button><button id='updata_close'><a style="text-decoration: none" href="#">关闭</a></button>
-</div>
-    <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#btn_dlg'" style="width:600px;height: 300px;">
-        <span id="addMessage">基本信息</span><hr/>
-        <table id="aa" style="width: 100%;height: 80%;padding-right: 10px;padding-left: 10px;">
-            <tr>
-                <td>
-                    角色名称：
-                    <input id="addrole" class="easyui-textbox" style="display: inline-block;width:45%" type="text"/>
-                </td>
-                <td>
-                    角色权限：
-                    <input id="rolePower" style="width: 150px;" />
-                </td>
-            </tr>
-            <tr>
-                <td>
-                     操作权限：
-                    <select id="addoper" style="width: 45%;">
+   <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:650px;height: 300px;background-color: #bdc4d4">
+    <div style="background-color: #ffffff;height:240px;margin:10px;">
+    <span id="addMessage">基本信息</span>
+    <table id="aa" style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
+        <tr>
+            <td>
+                <img src="../css/img/start.png">
+                角色名称：
+                <input id="addrole" class="easyui-textbox" style="display: inline-block;width:200px;" type="text"/>
+            </td>
+            <td>
+                <img src="../css/img/start.png">
+                角色权限：
+                <input id="rolePower" style="width: 200px;" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <img src="../css/img/start.png">
+                操作权限：
+                <select id="addoper" style="width: 200px;">
 
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    角色说明：
-                    <input id="addremark" class="easyui-textbox" style="display: inline-block;width:45%" type="text"/>
-                </td>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding-left: 11px;">
+                角色说明：
+                <input id="addremark" class="easyui-textbox" style="display: inline-block;width:490px;" type="text"/>
+            </td>
 
-            </tr>
-        </table>
+        </tr>
+
+        <tr style="text-align: center">
+
+           <td>
+               <button id='save'><a style="text-decoration: none;" href="#"></a></button>
+           </td>
+            <td>
+                <button id='close'><a style="text-decoration: none" href="#"></a></button>
+            </td>
+        </tr>
+    </table>
     </div>
-	<div id="btn_dlg">
-    <button id='save'><a style="text-decoration: none;" href="#">保存</a></button><button id='close'><a style="text-decoration: none" href="#">关闭</a></button>
 </div>
-<div id="alarmDialog">
+	
+<div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
+        <div style="background-color: #ffffff;height:121px;margin:1px;">
 
-</div>
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">角色删除无法恢复，确定删除？</span>
+        <div  style="width:100%;">
+            <button id="sure"></button>
+            <button id="cancel"></button>
+        </div>
+        </div>
+    </div>
 </body>
 </html>

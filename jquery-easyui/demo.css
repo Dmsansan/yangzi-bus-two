@@ -80,7 +80,7 @@ height: 100%;
     filter: none;
 }
 .accordion {
-    background: #21262f;
+    background: #353c49;
     border-bottom: none;
     border-color: #353c49;
 }
@@ -126,9 +126,7 @@ height: 100%;
     margin-left: 10px;
     margin-right: 10px;
 }
-.layout-split-south {
-    border-top: 1px solid #222222;
-}
+
 #south{
     overflow: hidden;
     background-color: #bdc4d4;
@@ -276,6 +274,15 @@ ul li a:hover,  ul li a:active{
     padding: 5px 5px;
     font-size: 14px;
 
+}
+.window .window-header .panel-icon {
+    left: 11px;!important;
+}
+.window .window-header .panel-tool {
+    right: 11px;!important;
+}
+.window .window-header .panel-with-icon {
+    padding-left: 39px;!important;
 }
 
 

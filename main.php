@@ -32,7 +32,7 @@
         if ($('#center_content').tabs('exists', title)){
             $('#center_content').tabs('select', title);
         } else {
-            var content = '<iframe scrolling="auto"  frameborder="0"  src="'+url+'" style="width:99.8%;height:99%;"></iframe>';
+            var content = '<iframe scrolling="auto"  frameborder="0"  src="'+url+'" style="width:99.8%;height:99%;background-color#f1f6fd"></iframe>';
             $('#center_content').tabs('add',{
                 title:title,
                 content:content,
@@ -72,7 +72,7 @@
                     <div id="dataManger" title="基本数据管理" style="background-color: #21262f">
                         <ul>
                             <li><a onclick="addTab('修理厂管理','module_sys/repairDepotManger.php')">修理厂管理</a></li>
-                            <li><a onclick="addTab('轮胎基础参数管理','../systemmanger/TireParameter.html')">轮胎基础参数管理</a></li>
+                            <li><a onclick="addTab('轮胎基础参数管理','module_sys/tireParameter.php')">轮胎基础参数管理</a></li>
                             <li><a onclick="addTab('车载终端管理','module_sys/sys.vehicle_show.php')">车载终端管理</a></li>
                         </ul>
 
@@ -83,7 +83,7 @@
 			<div id="tireManger" title="轮胎管理" data-options="iconCls:'icon-help'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
-                        <a onclick="addTab('轮胎参数管理','../tiremanger/tireParameterManger.html')">轮胎参数管理 </a>
+                        <a onclick="addTab('轮胎参数管理','module_11/sys.tireparam_show.php')">轮胎参数管理 </a>
                     </li>
                     <li>
                         <a onclick="addTab('传感器管理','../tiremanger/sensorManger.html')"> 传感器管理</a>
@@ -231,7 +231,7 @@
 
 
     </div>
-    <div id="south" data-options="region:'south',split:'true'" style="height:50px">
+    <div id="south" data-options="region:'south',split:'true'" style="height:50px;border-top: 2px solid #ffffff;">
         <span> @2015 轮胎全生命管理周期系统 版权所有 v1.17</span>
     </div>
 

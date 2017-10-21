@@ -85,6 +85,13 @@
                     console.log('data', obj);
                 }
             });
+			//搜索操作：
+			$('#search').bind('click',function(){
+				
+				$.ajax({
+					
+				})
+			});
 			//修改操作：
 			$('#up_save').bind('click',function(){
 			var admin_id=$('#admin_id').val();
@@ -159,7 +166,8 @@
         }
 
         function formatOption(value, row, index) {
-            return '<a href="#" onclick="editUser(' + index + ')">修改</a> <a href="#" onclick="deletData(' + index + ')">删除</a>';
+            return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="deletData('+index+')">删除</a>';
+
         }
         var url;
 
@@ -209,13 +217,36 @@
                         }
                     })
                 })
-
-
-
             }
         };
     </script>
 	 <style type="text/css">
+        #sure{
+            height: 25px;
+            width: 60px;
+            border: none;
+            margin-right: 11px;
+            background: url("../../css/img/yes_normal.png") no-repeat;
+        }
+        #sure:visited,#sure:link{
+            background: url("../../css/img/yes_normal.png") no-repeat;
+        } 
+        #sure:hover,#sure:active{
+            background: url("../../css/img/yes_highlighted.png") no-repeat;
+        }
+        #cancel{
+            height: 25px;
+            width: 60px;
+            border: none;
+            background: url("../../css/img/no_normal.png") no-repeat;
+        }
+        #cancel:visited,#cancel:link{
+            background: url("../../css/img/no_normal.png") no-repeat;
+        }
+        #cancel:hover,#cancel:active{
+            background: url("../../css/img/no_highlighted.png") no-repeat;
+        }
+
         #btn_dlg{
             text-align: center;
             border-bottom: none;
@@ -272,14 +303,14 @@
                 </tr>
             </thead>
         </table>
-        <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
-            <input type="text" placeholder="用户名称" />
-            <button>搜索</button>
-            <button>重置</button>
-            <button style="float: right;" onclick="addUser()">+增加</button>
+        <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+            <input id="username" type="text" placeholder="用户名称" />
+            <button id="search">搜索</button>
+           <button style="float: right; margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
         </div>
-        <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:600px;height: 400px;">
-            <span>基本信息</span>
+        <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:600px;height: 400px;background-color: #bdc4d4">
+		<div style="background-color: #ffffff;height:240px;margin:10px;">           
+		   <span>基本信息</span>
             <hr/>
             <table style="width: 100%;height:30%;padding-right: 10px;padding-left: 10px;">
                 <tr>
@@ -355,9 +386,10 @@
                     </td>
                 </tr>
             </table>
+			</div>
         </div>
         <!--增加角色 -->
-        <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#btn_dlg'" style="width:600px;height: 400px;">
+        <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#btn_dlg'" style="width:600px;height: 400px;background-color: #bdc4d4">
             <span id="addMessage">基本信息</span>
             <hr/>
             <table id="aa" style="width: 100%;height:30%;padding-right: 10px;padding-left: 10px;">
@@ -450,6 +482,7 @@
             <button><a style="text-decoration: none" href="#">关闭</a>
             </button>
         </div>
+		
     </div>
 </body>
 

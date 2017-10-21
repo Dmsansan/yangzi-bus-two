@@ -3,6 +3,56 @@ body{
 }
 .panel-title{
     text-align: left;!important;
+    padding: 20px 5px;
+    font-size: 14px;
+
+}
+#message{
+    display: inline-block;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    font-family: 微软雅黑;
+}
+.datagrid-toolbar{
+    border: none;!important;
+    background-color: #ffffff;!important;
+}
+#tb button{
+    border: none;
+    padding: 8px 10px;
+    vertical-align: middle;
+}
+#tb button a:visited,#tb button a:link{
+
+}
+#tb button a:active,#tb button a:hover{
+    color: #ffffff;
+    background-color: #1c66dc;
+}
+
+.text-box{
+    border-color: #4c4c4c;!important;
+    background-color: #4c4c4c;
+}
+.window,
+.window-shadow {
+    position: absolute;
+    -moz-border-radius: 0px 0px 0px 0px;
+    -webkit-border-radius: 0px 0px 0px 0px;
+    border-radius: 0px 0px 0px 0px;
+}
+.window {
+    overflow: hidden;
+    border-style: solid;
+}
+.window,
+.window .window-body {
+    border:none;
+}
+
+.panel-title{
+    text-align: left;!important;
     padding: 10px 5px;
     font-size: 14px;
 
@@ -17,27 +67,35 @@ body{
 #tb input{
     display: inline-block;
     padding: 10px;
-    background-color: #D3D3D3;
-    border: none;
-
+    background-color: white;
+    border: 1px solid #bdc4d4;
+    width: 180px;
+    height: 5px;
+    border-radius: 3px;
 }
 .datagrid-toolbar{
     border: none;!important;
     background-color: #ffffff;!important;
 }
 #tb button{
-    border: none;
-    padding: 8px 10px;
+    border: 1px solid #1c66dc;
+    height: 25px;
+    line-height: 2px;
+    width: 100px;
+    background-color: white;
+    border-radius: 20px;
     vertical-align: middle;
+    color: #1c66dc;
+}
+#tb button a{
+    color: #1c66dc;
 }
 #tb button:visited,#tb button:link{
-background-color: #D3D3D3;
+    background-color: #D3D3D3;
 }
 #tb button:active,#tb button:hover{
-    background-color: #3f3f3f;
-}
-#dlg{
-    background-color: #fafafa;
+    color: #ffffff;
+    background-color: #1c66dc;
 }
 #addMessage{
     display: inline-block;
@@ -45,8 +103,4 @@ background-color: #D3D3D3;
     font-size: 14px;
     margin-top: 10px;
     font-family: 微软雅黑;
-}
-.text-box{
-    border-color: #4c4c4c;!important;
-    background-color: #4c4c4c;
 }

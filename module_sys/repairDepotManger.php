@@ -73,7 +73,8 @@
 
 
         function formatOption(value, row, index) {
-            return '<a href="#" onclick="editUser('+index+')">修改</a> <a href="#" onclick="deletData('+index+')">删除</a>';
+            return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="deletData('+index+')">删除</a>';
+
         }
         var url;
         function editUser(index) {
@@ -175,19 +176,19 @@
            data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true',width:'100%'">
         <thead>
         <tr>
-            <th data-options="field:'store_no',width:'15%'">修理厂编号</th>
-            <th data-options="field:'store_name',width:'15%'">修理厂名称</th>
-            <th data-options="field:'contact',width:'15%'">联系人</th>
-            <th data-options="field:'mobile',width:'15%'">联系电话</th>
+            <th data-options="field:'store_no',width:'10%'">修理厂编号</th>
+            <th data-options="field:'store_name',width:'10%'">修理厂名称</th>
+            <th data-options="field:'contact',width:'10%'">联系人</th>
+            <th data-options="field:'mobile',width:'10%'">联系电话</th>
             <th data-options="field:'tel',width:'10%'">手机号码</th>
             <th data-options="field:'address',width:'20%'">详细地址</th>
             <th data-options="field:'remark',width:'20%'">说明</th>
-            <th data-options="field:'_operate',width:'15%',formatter:formatOption">操作</th>
+            <th data-options="field:'_operate',width:'10%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
-        <input type="text" placeholder="角色名称"/> <button>搜索</button> <button>重置</button>
+        <input type="text" placeholder="修理厂名称："/> <button>搜索</button> <button>重置</button>
         <button style="float: right;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:600px;height: 400px;">

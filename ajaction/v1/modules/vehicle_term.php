@@ -18,7 +18,7 @@ class vehicle_term {
 			case "del":
 				$this->del();
 				return;
-			case "qry":
+			case "qry": 
 				$this->qry();
 				return;
 			case "qrybyone":

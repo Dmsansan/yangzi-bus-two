@@ -1,0 +1,81 @@
+
+------------------
+-时间:06:57:08-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'修改','修改了车载终端信息ddd')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了车载终端信息ddd')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:06:57:38-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'修改','修改了车载终端信息ddd')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了车载终端信息ddd')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:06:58:08-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'修改','修改了车载终端信息ddd')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了车载终端信息ddd')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:06:58:45-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'修改','修改了车载终端信息ddd')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了车载终端信息ddd')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:07:01:27-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'修改','修改了车载终端信息ddd')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了车载终端信息ddd')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:07:04:41-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'新增','添加了新车载终端sss')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新车载终端sss')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:07:05:01-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'删除','删除了车载终端信息ddd')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了车载终端信息ddd')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:07:05:37-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'新增','添加了新车载终端aaa')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新车载终端aaa')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:07:05:42-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'删除','删除了车载终端信息sss')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了车载终端信息sss')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
