@@ -112,7 +112,7 @@
 .panel-body {
   background-color: #f1f6fd;
   color: #000000;
-  font-size: 12px;
+  font-size: 14px;
 }
 .panel-title {
   font-size: 12px;
@@ -1342,7 +1342,7 @@
   margin-top: -8px;
 }
 .tabs-title {
-  font-size: 12px;
+  font-size: 15px;
 }
 .tabs-closable {
   padding-right: 8px;
@@ -1568,7 +1568,7 @@
 }
 .tabs-header,
 .tabs-tool {
-  background-color: #ffffff;
+  background-color: #ccc;
 }
 .tabs-header-plain {
   background: transparent;
@@ -1584,7 +1584,7 @@
 .tabs-header-bottom .tabs li.tabs-selected a.tabs-inner,
 .tabs-header-left .tabs li.tabs-selected a.tabs-inner,
 .tabs-header-right .tabs li.tabs-selected a.tabs-inner {
-  border-color: #ebeef3;
+  border-color: #efefef;
 }
 .tabs-p-tool a:hover,
 .tabs li a:hover.tabs-close,

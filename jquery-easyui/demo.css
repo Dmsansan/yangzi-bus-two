@@ -101,6 +101,9 @@ height: 100%;
 }
 #top_right span{
     line-height: 100px;
+    margin-right:6px;
+    font-weight: bold;
+    color:red;
 }
 #top_right img{
     vertical-align: middle;
@@ -126,7 +129,13 @@ height: 100%;
     margin-left: 10px;
     margin-right: 10px;
 }
+<<<<<<< HEAD
 
+=======
+.layout-split-south {
+    border-top: 3px solid #fff;
+}
+>>>>>>> b2c572020b929e57a74002f6c3c43e0e588818a5
 #south{
     overflow: hidden;
     background-color: #bdc4d4;
