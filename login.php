@@ -96,17 +96,19 @@ function LoginSystem()
            	<div >
 
                 <p>
-                    <label for="userid">用户名：</label>
+                    <label for="userid" style="font-size:13px;font-weight:bold">用户名：</label>
                     <input  id="userid" name="userid" type="text" placeholder="请输入用户名" name="userName">
                 </p><br>
                 <p>
-                    <label for="userkey">密&nbsp;码：</label>
+                    <label for="userkey" style="font-size:13px;font-weight:bold">密&nbsp;码：</label>
                     <input id="userkey" name="userkey" type="password" placeholder="请输入密码" name="userPassword">
                 </p><br>
                 <p>
+                
                     <input id="renamePassword" type="checkbox"> <span>记住密码</span>
+    
                 </p>
-                <p><br>
+                <p style="margin-top:20px"><br>
                     <input id="login" type="submit" onclick="LoginSystem()" value="登录">
                     <input id="reset" type="reset" value="重置">
                 </p>
