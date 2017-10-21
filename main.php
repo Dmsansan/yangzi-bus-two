@@ -7,7 +7,10 @@
     <link href="jquery-easyui/themes/icon.css" rel="stylesheet" type="text/css">
     <script src="jquery-easyui/jquery.min.js" type="text/javascript"></script>
     <link href="jquery-easyui/demo.css" rel="stylesheet" type="text/css">
+
     <script src="jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
+    <!--实时时间JS-->
+    <script src="js/jquery.jclock.js" type="text/javascript"></script>
     <script type="text/javascript">
     $(function () {
         $('#company').combobox({
@@ -27,6 +30,8 @@
             valueField:'id',
             textField:'text'
         })
+
+        $('#jnkc').jclock({ withDate: true, withWeek: true });
     });
     function addTab(title, url){
         if ($('#center_content').tabs('exists', title)){
@@ -36,7 +41,7 @@
             $('#center_content').tabs('add',{
                 title:title,
                 content:content,
-                closable:true
+                closable:true,
             });
         }
     };
@@ -46,19 +51,20 @@
 <body  class="easyui-layout">
     <div id="top" data-options="region:'north'">
         <div id="top_left">
-              
+        <!--logo图标-->
         </div>
          <div id="top_right">
             <div style="height: 84px;  margin-right: 41px;padding-bottom: 40px;">
-                <p style="font-size: 12px;color: #333333;line-height: 84px;vertical-align: middle;">你好，admin,欢迎回来！</p>
+                <!--<p style="float:left"><a style="width:88xpheight:88px;text-align:center"><img src="css/img/icon01.png" width="">首页</a></p>
+                <p style="float:left">31313</p>-->
+                <p style="font-size: 12px;color: #333333;line-height: 84px;vertical-align: middle;">你好，admin,欢迎回来！&nbsp;&nbsp;<span id="jnkc" style="text-align:right;color:red"></span></p>
 
-                <img id="back" src="css/img/Report_normal.png"  style="margin-left:50px;margin-right: 10px">  <span>|</span><img src="css/img/out_highlighted.png" style="margin-left: 10px;">
+                <img id="back" src="css/img/Report_normal.png"  style="margin-left:50px;margin-right: 10px">  <span style="color:#9f9f9f">|</span><img src="css/img/out_highlighted.png" style="margin-left: 10px;">
             </div>
-
         </div>
 
     </div>
-    <div id="west" data-options="region:'west',title:'功能菜单'">
+    <div id="west" data-options="region:'west',title:''">
         <div  class="easyui-accordion" style="width:100%;height:99%;">
             <div title="系统管理" data-options="iconCls:'icon-ok'" style="background-color: #353c49;overflow: hidden">
                 <div class="easyui-accordion" style="width:100%;height:99%;">

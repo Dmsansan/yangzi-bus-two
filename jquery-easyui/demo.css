@@ -101,6 +101,9 @@ height: 100%;
 }
 #top_right span{
     line-height: 100px;
+    margin-right:6px;
+    font-weight: bold;
+    color:red;
 }
 #top_right img{
     vertical-align: middle;
@@ -127,7 +130,7 @@ height: 100%;
     margin-right: 10px;
 }
 .layout-split-south {
-    border-top: 1px solid #222222;
+    border-top: 3px solid #fff;
 }
 #south{
     overflow: hidden;
