@@ -32,6 +32,7 @@
         })
 
         $('#jnkc').jclock({ withDate: true, withWeek: true });
+		$("#dd").accordion('getSelected').panel('collapse');
     });
     function addTab(title, url){
         if ($('#center_content').tabs('exists', title)){
@@ -64,8 +65,8 @@
         </div>
 
     </div>
-    <div id="west" data-options="region:'west',title:''">
-        <div  class="easyui-accordion" style="width:100%;height:99%;">
+    <div id="west" data-options="region:'west',title:'功能菜单'">
+        <div id="dd" class="easyui-accordion" style="width:100%;height:99%;">
             <div title="系统管理" data-options="iconCls:'icon-ok'" style="background-color: #353c49;overflow: hidden">
                 <div class="easyui-accordion" style="width:100%;height:99%;">
 
@@ -152,7 +153,7 @@
     </div>
      <div  id="center_content" class="easyui-tabs" style="width:90%;height: 90%;background-color: #bdc4d4;margin-left: 6px;padding-bottom: 6px;padding-right: 6px;"  data-options="region:'center',width:'80%'" >
 
-        <div id="center_page" title="首页">
+        <div id="center_page" title="首页" data-options="iconCls:'icon-add2'">
             <div id="i-center">
                 <div id="center_top" style="padding-top: 20px;padding-left: 1%">
                     <label for="company">公司：</label>
