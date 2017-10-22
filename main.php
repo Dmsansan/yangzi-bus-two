@@ -93,7 +93,7 @@
                         <a onclick="addTab('轮胎参数管理','module_11/sys.tireparam_show.php')">轮胎参数管理 </a>
                     </li>
                     <li>
-                        <a onclick="addTab('传感器管理','../tiremanger/sensorManger.html')"> 传感器管理</a>
+                        <a onclick="addTab('传感器管理','module_11/sys.sensor_show.php')"> 传感器管理</a>
                     </li>
                     <li>
                         <a onclick="addTab('轮胎管理','../tiremanger/tireManger.html')"> 轮胎管理</a>

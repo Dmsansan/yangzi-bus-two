@@ -15,6 +15,16 @@
             $('#addUser').dialog('open').dialog('setTitle','增加信息');
         };
         $(function () { 
+		$('#cancel').bind('click',function(){
+				$('#alarm').dialog('close');
+			});
+			$('#close').bind('click',function(){
+				$('#addUser').dialog('close');
+			});
+			$('#updata_close').bind('click',function(){
+				$('#dlg').dialog('close');
+			});
+			
 		//加载全部信息；
 			$.ajax({
                 url: '../ajaction/v1/?menuid=101110&cmd=qry&t=1',
@@ -49,7 +59,7 @@
 				
 			});
 			//修改操作
-			$('#up_save').bind('click',function(){
+			$('#updata_save').bind('click',function(){
 				var store_no=$('#up_repairNumber').textbox('getText');
 				var store_name=$('#up_repairName').textbox('getText');
 				var contact=$('#up_contract').textbox('getText');
@@ -73,7 +83,7 @@
 
 
         function formatOption(value, row, index) {
-            return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="deletData('+index+')">删除</a>';
+                return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
 
         }
         var url;
@@ -130,43 +140,98 @@
 		};
     </script>
 	 <style type="text/css">
-        #btn_dlg{
-            text-align: center;
-            border-bottom: none;
-            border-left:none;
-            border-right: none;
-        }
-        #btn_dlg button{
+              #sure{
+            height: 25px;
+            width: 60px;
             border: none;
-            padding: 8px 10px;
+            margin-right: 11px;
+            background: url("../css/img/yes_normal.png") no-repeat;
+        }
+        #sure:visited,#sure:link{
+            background: url("../css/img/yes_normal.png") no-repeat;
+        } 
+        #sure:hover,#sure:active{
+            background: url("../css/img/yes_highlighted.png") no-repeat;
+        }
+        #cancel{
+            height: 25px;
+            width: 60px;
+            border: none;
+            background: url("../css/img/no_normal.png") no-repeat;
+        }
+        #cancel:visited,#cancel:link{
+            background: url("../css/img/no_normal.png") no-repeat;
+        }
+        #cancel:hover,#cancel:active{
+            background: url("../css/img/no_highlighted.png") no-repeat;
+        }
+		 #save{
+            border: none;
+            width: 60px;
+            height: 30px;
             vertical-align: middle;
             margin-right: 10px;
+            background: url("../css/img/ok_normal.png") no-repeat;
 
         }
-        #btn_dlg button:visited,#btn_dlg button:link{
-            background-color: #D3D3D3;
+        #save:visited,#save:link{
+            background: url("../css/img/ok_normal.png") no-repeat;
+
         }
-        #btn_dlg button:active,#btn_dlg button:hover{
-            background-color: #3f3f3f;
+        #save button:active,#save button:hover{
+            background: url("../css/img/ok_seleected.png") no-repeat;
+
         }
-		 #upbtn_dlg{
-            text-align: center;
-            border-bottom: none;
-            border-left:none;
-            border-right: none;
-        }
-        #upbtn_dlg button{
+        #close{
             border: none;
-            padding: 8px 10px;
+            width: 60px;
+            height: 30px;
             vertical-align: middle;
             margin-right: 10px;
+            background: url("../css/img/cancel_normal.png") no-repeat;
 
         }
-        #upbtn_dlg button:visited,#upbtn_dlg button:link{
-            background-color: #D3D3D3;
+        #close:visited,#close:link{
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
         }
-        #upbtn_dlg button:active,#upbtn_dlg button:hover{
-            background-color: #3f3f3f;
+        #close button:active,#close button:hover{
+            background: url("../css/img/cancel_selected.png") no-repeat;
+
+        }
+		#updata_save{
+            border: none;
+            width: 60px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url("../css/img/ok_normal.png") no-repeat;
+
+        }
+        #updata_save:visited,#updata_save:link{
+            background: url("../css/img/ok_normal.png") no-repeat;
+
+        }
+        #updata_save button:active,#updata_save button:hover{
+            background: url("../css/img/ok_seleected.png") no-repeat;
+
+        }
+        #updata_close{
+            border: none;
+            width: 60px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
+        }
+        #updata_close:visited,#updata_close:link{
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
+        }
+        #updata_close button:active,#updata_close button:hover{
+            background: url("../css/img/cancel_selected.png") no-repeat;
+
         }
 		</style>
 </head>
@@ -188,116 +253,164 @@
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
-        <input type="text" placeholder="修理厂名称："/> <button>搜索</button> <button>重置</button>
+        <input type="text" placeholder="修理厂名称："/> <button>搜索</button>
         <button style="float: right;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
     </div>
-    <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:600px;height: 400px;">
-        <span id="message">基本信息</span><hr/>
-        <table id="cc" style="width: 100%;height: 80%;padding-left: 10px;padding-right: 10px">
+    <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 400px;">
+	<div style="background-color: #ffffff;height:340px;margin:10px;">
+        <span id="message">基本信息</span>
+        <table id="cc" style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
             <tr>
                 <td>
                     修理厂编号：
+					</td>
+					<td>
 					 <input id="up_repairId" style="display:none; width: 150px;" />
                       <input id="up_repairNumber" class="easyui-textbox" style="width: 150px;" />
                 </td>
                 <td>
                     修理厂名称：
+					</td>
+					<td>
                      <input id="up_repairName" class="easyui-textbox" style="width: 150px;" />
                 </td>
             </tr>
             <tr>
                 <td>
-                    联&nbsp;系&nbsp;人:
+                    联系人:
+					</td>
+                <td>
                      <input id="up_contract" class="easyui-textbox" style="width: 150px;" />
                 </td>
 				<td>
                     联系&nbsp;电话:
+					</td>
+                <td>
                      <input id="up_tel" class="easyui-textbox" style="width: 150px;" />
                 </td>
             </tr>
             <tr>
                 <td>
-                    手机&nbsp;号码：
+                    手机号码：
+					</td>
+                <td>
                      <input id="up_phone" class="easyui-textbox" style="width: 150px;" />
                 </td>
 				 <td>
-                    详细&nbsp;地址：
+                    详细地址：
+					</td>
+                <td>
                      <input id="up_address" class="easyui-textbox" style="width: 150px;" />
                 </td>
 
             </tr>
 			<tr>
                 <td>
-                    备&nbsp;&nbsp;&nbsp;注：
-                      <input id="up_remark" class="easyui-textbox" style="width: 150px;" />
+				   备注：
+				   </td>
+				   <td colspan="3">
+                      <input id="up_remark" class="easyui-textbox" style="width: 470px;" />
                 </td>
 
             </tr>
+			<tr style="text-align: center">
+				<td>
+				</td>
+
+				<td>
+					<button id='updata_save' style="margin-top:10px;"><a style="text-decoration: none;" href="#"></a></button>
+				</td>
+				<td>
+					<button id='updata_close' style="margin-top:10px;"><a style="text-decoration: none" href="#"></a></button>
+				</td>
+				<td>
+				</td>
+			</tr>
+		
         </table>
+	</div>
     </div>
-    <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#btn_dlg'" style="width:600px;height: 400px;">
-        <span id="addMessage">基本信息</span><hr/>
-        <table  style="width: 100%;height: 80%;padding-right: 10px;padding-left: 10px;">
+    <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#btn_dlg'" style="width:700px;height: 400px;">
+<div style="background-color: #ffffff;height:340px;margin:10px;">       
+	   <span id="addMessage">基本信息</span>
+        <table  style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
              <tr>
                 <td>
                     修理厂编号：
+					</td>
+                <td>
                       <input id="repairNumber" class="easyui-textbox" style="width: 150px;" />
                 </td>
                 <td>
                     修理厂名称：
+					</td>
+                <td>
                      <input id="repairName" class="easyui-textbox" style="width: 150px;" />
                 </td>
             </tr>
             <tr>
                 <td>
                     联系人：
+					</td>
+                <td>
                      <input id="contract" class="easyui-textbox" style="width: 150px;" />
                 </td>
 				<td>
                     联系电话：
+					</td>
+                <td>
                      <input id="tel" class="easyui-textbox" style="width: 150px;" />
                 </td>
             </tr>
             <tr>
                 <td>
                     手机号码：
+					</td>
+                <td>
                      <input id="phone" class="easyui-textbox" style="width: 150px;" />
                 </td>
 				 <td>
                     详细地址：
+					</td>
+                <td>
                      <input id="address" class="easyui-textbox" style="width: 150px;" />
                 </td>
 
             </tr>
 			<tr>
-                <td>
+                <td >
                     备注：
-                      <input id="remark" class="easyui-textbox" style="width: 150px;" />
+					</td>
+				 <td colspan="3">
+                      <input id="remark" class="easyui-textbox" style="width: 470px;" />
                 </td>
 
             </tr>
+				<tr style="text-align: center">
+						<td>
+						</td>
+						<td>
+							<button id='save' style="margin-top:10px;"><a style="text-decoration: none;" href="#"></a></button>
+						</td>
+						<td>
+							<button id='close' style="margin-top:10px;"><a style="text-decoration: none" href="#"></a></button>
+						</td>
+						<td>
+						</td>
+				</tr>
         </table>
+		</div>
     </div>
-		<div id="alarm" class="easyui-dialog" style="text-align: center;width:600px;height: 300px;" data-options="closed:true,modal:true,buttons:'#alarm_btn'">
-            <span style="height: 90%;font-size: 24px;font-weight: bold;">确定删除？</span>
-           
-        </div>	
-		 <div id="alarm_btn" style="width:100%; height:10%;margin-top: 150px;">
-                <button id="sure">确定</button>
-                <button id="cancel">取消</button>
-            </div>
-	<div id="btn_dlg">
-            <button id="save"><a style="text-decoration: none;" href="#">保存</a>
-            </button>
-            <button id="cancle"><a style="text-decoration: none" href="#">关闭</a>
-            </button>
+		<div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
+        <div style="background-color: #ffffff;height:121px;margin:1px;">
+
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">用户删除无法恢复，确定删除？</span>
+        <div  style="width:100%;">
+            <button id="sure"></button>
+            <button id="cancel"></button>
         </div>
-        <div id="upbtn_dlg">
-            <button id="up_save"><a style="text-decoration: none;" href="#">保存</a>
-            </button>
-            <button><a style="text-decoration: none" href="#">关闭</a>
-            </button>
         </div>
+    </div>
 </div>
 </body>
 </html>

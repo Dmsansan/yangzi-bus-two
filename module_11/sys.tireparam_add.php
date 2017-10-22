@@ -138,7 +138,7 @@
 					// {"admin_id":1, "admin_name":"管理员","admin_pass":"密码","real_name":"管理员","role_id":角色编号,“is_term”:false,"email",:"","tel":"","mobile","","remark":""}
                     $("#company_name").val(obj.company_name);
 					
-					com_brand.selectValue(obj.brand_id);
+					  .selectValue(obj.brand_id);
 					com_norms.selectValue(obj.norms_id);
 					com_class.selectValue(obj.class_id);
 					com_figure.selectValue(obj.figure_id);

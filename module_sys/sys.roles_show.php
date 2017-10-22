@@ -118,6 +118,15 @@
 			
 			}
 			);
+			$('#cancel').bind('click',function(){
+				$('#alarm').dialog('close');
+			});
+			$('#close').bind('click',function(){
+				$('#addUser').dialog('close');
+			});
+			$('#updata_close').bind('click',function(){
+				$('#dlg').dialog('close');
+			});
 			
         })
 		function reload(){
@@ -176,6 +185,7 @@
  
 			}
         };
+		
 		
 
     </script>

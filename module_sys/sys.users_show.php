@@ -93,7 +93,7 @@
 				})
 			});
 			//修改操作：
-			$('#up_save').bind('click',function(){
+			$('#updata_save').bind('click',function(){
 			var admin_id=$('#admin_id').val();
 			var admin_name=$('#up_userName').textbox('getText');
 			var role_id=$('#up_roleId').val();
@@ -148,7 +148,17 @@
 					console.log("loadDa",data);
 				}
                 });
-            })
+            });
+			$('#cancel').bind('click',function(){
+				$('#alarm').dialog('close');
+			});
+			$('#close').bind('click',function(){
+				$('#addUser').dialog('close');
+			});
+			$('#updata_close').bind('click',function(){
+				$('#dlg').dialog('close');
+			});
+			
 
         })
 
@@ -166,7 +176,7 @@
         }
 
         function formatOption(value, row, index) {
-            return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="deletData('+index+')">删除</a>';
+                return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
 
         }
         var url;

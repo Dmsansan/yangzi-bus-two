@@ -1,394 +1,252 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>传感器管理</title>
-<link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
-<link href="../lib/ligerUI/skins/ext/css/ligerui-fix.css" rel="stylesheet" type="text/css" />
-<link href="../css/input.css" rel="stylesheet" />
-<script src="../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
-<script src="../lib/json2.js" type="text/javascript"></script>
-<script src="../lib/ligerUI/js/core/base.js" type="text/javascript"></script>   
-<script src="../lib/ligerUI/js/core/inject.js" type="text/javascript"></script>   
-<script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>        
-<script src="../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script> 
-<script src="../lib/ligerUI/js/plugins/ligerLayout.js" type="text/javascript"> </script> 
-<script src="../js/XHD.js" type="text/javascript"> </script>
-<script src="../lib/jquery.form.js" type="text/javascript"> </script>
-<script src="../CheckOper.php" type="text/javascript"> </script>
-</head>
-
- <script type="text/javascript">
-	var manager;
-	var menu;
-	function EditRow()
-	{
-		var row = manager.getSelectedRow();
-            if (!row) { alert('请选择行'); return; }
-			alert(row.userid);
-            alert(JSON.stringify(row));  //这里只有一条记录，打开编缉的页面编辑吧
-	}
-	
-	 function trim(str){ //删除左右两端的空格
-　　     return str.replace(/(^\s*)|(\s*$)/g, "");
-　　 }
-　　 function ltrim(str){ //删除左边的空格
-　　     return str.replace(/(^\s*)/g,"");
-　　 }
-　　 function rtrim(str){ //删除右边的空格
-　　     return str.replace(/(\s*$)/g,"");
-　　 }
-
-	
-	function deleteRow()
-       { 
-            //manager.deleteSelectedRow();
-			//f_getChecked();
-			var sid=checkedCustomer.join(',');
-			var row=manager.getSelectedRow();
-			if (row) {
-                $.ligerDialog.confirm("记录删除无法恢复，确定删除？", function (yes) {
-                    if (yes) {
-                        $.ajax({
-                            url: "../ajaction/v1/?menuid=111011&cmd=del", type: "POST",
-                            data: { sensor_id: row.sensor_id, rnd: Math.random() },
-                            success: function (responseText) {
-								
-								//
-								responseText=trim(responseText);
-								//top.$.ligerDialog.error(responseText);
-								if(typeof(responseText)=="undefined" || responseText=="" || responseText==null){
-										//服务器没有数据反回
-										top.$.ligerDialog.error("未知错误");
-								}else{
-									var dataObj = eval("("+responseText+")");
-									//alert(JSON2.stringify(dataObj));
-									if (dataObj.status == "OK") {
-										f_reload();
-									}
-									else {
-										top.$.ligerDialog.error(dataObj.reason);
-									}
-								}
-                            },
-                            error: function () {
-                                top.$.ligerDialog.error('删除失败!');
-                            }
-                        });
-                    }
-                })
-            }
-            else {
-                $.ligerDialog.warn("请选择记录");
-            }
+    <meta charset="UTF-8">
+    <title>传感器管理</title>
+    <link href="../jquery-easyui/themes/default/easyui.css" rel="stylesheet" type="text/css">
+    <link href="../jquery-easyui/themes/icon.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="../jquery-easyui/jquery.min.js"></script>
+    <link href="../jquery-easyui/demo.css" rel="stylesheet" type="text/css">
+    <link href="../css/homepagecss/usermanger.css" type="text/css" rel="stylesheet">
+    <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
+    <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+    <script type="text/javascript">
+		function addSensor() {
 			
-			
-       }
-	   
-	   //编缉
-	   function edit() {
-            //var manager = $("#maingrid4").ligerGetGridManager();
-            var row = manager.getSelectedRow();
-            if (row) {
-                f_openWindow('module_11/sys.sensor_add.php?r_sensor_id=' +row.sensor_id, "修改记录", 770, 490, f_save);
-            } else {
-                $.ligerDialog.warn('请选择行！');
-            }
-        }
-	
- 		      //工具条事件
-		function itemclick(item) {
-			switch (item.id) {
-				case "add":
-                  //var selected = grid.getSelected();
-                  //if (!selected) { LG.tip('请选择行!'); return }
-                  //alert("增加");
-				   f_openWindow("module_11/sys.sensor_add.php", "新增传感器", 770, 300, f_save);
-                  break;
-				 case "addmore":
-					f_openWindow("module_11/sys.sensor_addmore.php", "批量增传感器", 770, 300, f_save);
-				 break;
-				case "clearbtn":
-					deleteRow();
-                  //var selected = grid.getSelected();
-                  //if (!selected) { LG.tip('请选择行!'); return }
-                  //top.f_addTab(null, '查看', 'watch.aspx?No=1');  // 增加新标签，并打开新页
-                  //alert("查看");
-				  break;
-				case "edit":
-					//修改
-					edit();
-					break;
-				case "searchbtn":
-					serchpanel();
-                  break;
- 
-          }
-      }
-		//处理保存
-	    function f_save(item, dialog) {
-            var issave = dialog.frame.f_save();
-            if (issave!="") {
-                				
-				$.ajax({
-                    url: "../ajaction/v1/?menuid=111011",
-                    type: "POST",
-                    data: issave,					
-                    beforesend: function () {
-                        top.$.ligerDialog.waitting('数据保存中,请稍候...');
-                    },
-                    success: function (responseText) {
-                        //return "ok";
-						top.$.ligerDialog.closeWaitting();
-						responseText=$.trim(responseText);
-			
-						if(typeof(responseText)=="undefined" || responseText=="" || responseText==null){
-						//服务器没有数据反回
-							top.$.ligerDialog.error("未知错误");
-							//f_error();
-						}else{
-							var dataObj = eval("("+responseText+")");
-									
-							if (dataObj.status == "OK") {
-									dialog.close();
-									f_reload();
-							}else {
-								top.$.ligerDialog.error(dataObj.reason);
-								//f_error();
-							}
-						}
-                    },
-                    error: function () {
-                        top.$.ligerDialog.error('操作失败！');
-                    },
-                    complete: function () {
-                        top.$.ligerDialog.closeWaitting();
-                    }
-                });
-            }
-        }
-	  
-	  function f_reload() {
-            var manager = $("#maingrid4").ligerGetGridManager();
-			//$('.pcontrol input', manager.toolbar).val(1);
-			//manager.changePage('input');
-            manager.loadData(true);
+          $('#addSensor').dialog('open').dialog('setTitle','增加传感器信息');
         };
-		
-		function doclear() {
-            $("input:hidden", "#serchform").val("");
-            $("input:text", "#serchform").val("");
-            $(".l-selected").removeClass("l-selected");
-        }
-		
-		function doserch() {
-            var sendtxt = "&rnd=" + Math.random();
-            var serchtxt = $("#serchform :input").fieldSerialize() + sendtxt;
-			$('.pcontrol input', manager.toolbar).val(1);
-			manager.changePage('input');
-			manager.set({url:'../ajaction/v1/?menuid=111011&cmd=qry&'+serchtxt});
-			manager.loadData(true);
-        }
-	
-		function toolbar() {
-				//这里需要改成根据用户权限来获取
-                var toolbarOptions = {
-          				items: [
-            		{ text:'增加',id:'add', click:itemclick,img:"../lib/ligerUI/skins/icons/add.gif",disable:CheckOper("添加") },
-            		{ text:'批量增加',id:'addmore', click:itemclick,img:"../lib/ligerUI/skins/icons/add.gif",disable:CheckOper("添加") },
-            		{ line:true},
-					{ line:true},
-					{ text:'编缉',id:'edit',click:itemclick,img:"../lib/ligerUI/skins/icons/edit.gif",disable:CheckOper("修改") },
-            		{ line:true},
-            		{ text:'删除',id:'clearbtn',click:itemclick,img:"../lib/ligerUI/skins/icons/candle.gif",disable:CheckOper("删除") },
-					{ line:true},
-					{ text:'查询',id:'searchbtn',click:itemclick,img:"../lib/ligerUI/skins/icons/search.gif" },
-					]};
-				$("#toolbar").ligerToolBar({items: toolbarOptions.items});
-				menu = $.ligerMenu({ width: 120, items:toolbarOptions.items});         
-
-           }
- 		
-        $(function () {
-				
-				  
-                //$("#grid").height(document.documentElement.clientHeight - $(".toolbar").height());
-				$('form').ligerForm();
-				toolbar();
-				//
-				serchpanel();
-				  
-				  
-			/*
-			sensor_id       int auto_increment,
-    sensor_no       varchar(20)         comment '传感器编号',
-    pressure_ul     int                 comment '胎压上限',
-    pressure_ll     int                 comment '胎压下限',
-    temp_ul         int                 comment '温度上限',
-    temp_ll         int                 comment '温度下限',
-    remark          varchar(200)        comment '备注',
-			*/	  
-            
-            manager=$("#maingrid4").ligerGrid({
-                checkbox: false,
-                columns: [
-                { display: '传感器编号', name:'sensor_id', align: 'left', width: 60 },
-                { display: '传感器代码', name:'sensor_no', width:150,isSort:false },
-				{ display: '胎压下限', name:'pressure_ll', width: 150 },
-				{ display: '胎压上限',name:'pressure_ul',width: 120},
-				{ display: '温度下限',name:'temp_ll',width: 100},
-				{ display: '温度上限',name:'temp_ul',width: 100},
-				{ display: '备注',name:'remark',width: 300}
-				], pageSize:10,
-                url:'../ajaction/v1/?menuid=111011&cmd=qry&t=1',
-				/*url:'../ajaction/sysaction/sys.roles_grid_show.php?a=3',*/
-                /*toolbar:toolbarOptions,*/
-                width: '100%',height:'97%',
-				dataAction: 'server', //服务器排序
-                usePager: true,       //服务器分页
-				onSuccess:f_onSucess,
-				onError:f_onError,
-				isChecked: f_isChecked, 
-				/*
-				onCheckRow: f_onCheckRow, 
-				onCheckAllRow: f_onCheckAllRow,*/
-				onContextmenu : function (parm,e)
-                {
-                    //actionCustomerID = parm.data.CustomerID;
-                    menu.show({ top: e.pageY, left: e.pageX });
-                    return false;
-                }
-            });
+		function addallsensor() {
 			
-            
-        });
-		$("#pageloading").hide(); 
-		function f_onSucess(data,grid)
-		{
-			$("#pageloading").hide(); 
-			//alert("加载完成");
-		}
-		function f_onError(req,status,e)
-		{
-			var s=status+" : "+req.status+","+req.statusText;
-			alert(s);
-			//alert(req);
-			//alert(e);
-		}
-		
-		function f_onCheckAllRow(checked)
-        {
-            for (var rowid in this.records)
-            {
-                if(checked)
-                    addCheckedCustomer(this.records[rowid]['userid']);
-                else
-                    removeCheckedCustomer(this.records[rowid]['userid']);
+          $('#addSensor').dialog('open').dialog('setTitle','增加传感器信息');
+        };
+        function formatOption(value, row, index) {
+            return '<a href="#" onclick="editUser(\'+index+\')">编辑</a> <a href="#" onclick="editUser(\'+index+\')">删除</a>';
+        }
+        var url;
+        function editUser(index) {
+            $('#dg').datagrid('selectRow', index);
+            var row = $('#dg').datagrid('getSelected');
+            if (row){
+                $('#dlg').dialog('open').dialog('setTitle','新增角色');
+                $('#fm').form('load',row);
+                url = '';
             }
         }
- 
-        /*
-        该例子实现 表单分页多选
-        即利用onCheckRow将选中的行记忆下来，并利用isChecked将记忆下来的行初始化选中
-        */
-        var checkedCustomer = [];
-        function findCheckedCustomer(userid)
-        {
-            for(var i =0;i<checkedCustomer.length;i++)
-            {
-                if(checkedCustomer[i] == userid) return i;
-            }
-            return -1;
-        }
-        function addCheckedCustomer(userid)
-        {
-            if(findCheckedCustomer(userid) == -1)
-                checkedCustomer.push(userid);
-        }
-        function removeCheckedCustomer(userid)
-        {
-            var i = findCheckedCustomer(userid);
-            if(i==-1) return;
-            checkedCustomer.splice(i,1);
-        }
-        function f_isChecked(rowdata)
-        {
-            if (findCheckedCustomer(rowdata.userid) == -1)
-                return false;
-            return true;
-        }
-        function f_onCheckRow(checked, data)
-        {
-            if (checked) addCheckedCustomer(data.userid);
-            else removeCheckedCustomer(data.userid);
-        }
-        function f_getChecked()
-        {
-            alert(checkedCustomer.join(','));
-        }
-		
-		
-		//表单搜索
-		 function initSerchForm() {
-            //$('#title').ligerComboBox({ width: 97, emptyText: '（空）'});         
-            
-        }
-		
-		function serchpanel() {
-            initSerchForm();
-            if ($(".az").css("display") == "none") {
-                $("#grid").css("margin-top", $(".az").height() + "px");
-                //$("#maingrid4").ligerGetGridManager().onResize();
-                //$("#maingrid5").ligerGetGridManager().onResize();
-				$(".az").css("display","inline");
-				$(".az").css("position","absolute");
-				$(".az").css("left","5px");
-				$(".az").css("top","30px");
-				
-				//alert("1");
-            } else {
-                $("#grid").css("margin-top", "0px");
-				$(".az").css("display","none");
-				
-                //$("#maingrid4").ligerGetGridManager().onResize();
-                //$("#maingrid5").ligerGetGridManager().onResize();
-				//alert("2");
-            }
-            $("#company").focus();
-        }		
-		//serchpanel();
     </script>
+	 <style type="text/css">
+          #sure{
+            height: 25px;
+            width: 60px;
+            border: none;
+            margin-right: 11px;
+            background: url("../css/img/yes_normal.png") no-repeat;
+        }
+        #sure:visited,#sure:link{
+            background: url("../css/img/yes_normal.png") no-repeat;
+        } 
+        #sure:hover,#sure:active{
+            background: url("../css/img/yes_highlighted.png") no-repeat;
+        }
+        #cancel{
+            height: 25px;
+            width: 60px;
+            border: none;
+            background: url("../css/img/no_normal.png") no-repeat;
+        }
+        #cancel:visited,#cancel:link{
+            background: url("../css/img/no_normal.png") no-repeat;
+        }
+        #cancel:hover,#cancel:active{
+            background: url("../css/img/no_highlighted.png") no-repeat;
+        }
+		 #save{
+            border: none;
+            width: 60px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url("../css/img/ok_normal.png") no-repeat;
 
-<body style="margin-top:0px">
- <div id="message" style="width:800px"></div>
-<div class="l-loading" style="display:block" id="pageloading"></div> 
-    <div id="toolbar" ></div>	
-	<div id="grid">
-		<div id="maingrid4" style="margin:-1px"></div>
-		<!--<div id="toolbar1"></div>-->		
-	</div>
-  <div class="az">
-        <form id='serchform'>
-            <table style='width: 960px' class="bodytable1">
-                <tr>
-                    <td style='width:200px'>
-                        <div style='float: left; text-align: right; width: 60px;'>传感器代码：</div>
-						<div style='float: left;'>
-						<input type='text' id='sensor_no' name='sensor_no' ltype='text' ligerui='{width:120}' />
-						</div>
-                    </td>					
-                    <td style='align:left'>
-                        <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;'
-                            onclick=" doclear() " />						
-                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;' onclick=" doserch() " />
-                    </td>
-                </tr>
-            </table>
-        </form>
+        }
+        #save:visited,#save:link{
+            background: url("../css/img/ok_normal.png") no-repeat;
+
+        }
+        #save button:active,#save button:hover{
+            background: url("../css/img/ok_seleected.png") no-repeat;
+
+        }
+        #close{
+            border: none;
+            width: 60px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
+        }
+        #close:visited,#close:link{
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
+        }
+        #close button:active,#close button:hover{
+            background: url("../css/img/cancel_selected.png") no-repeat;
+
+        }
+		#updata_save{
+            border: none;
+            width: 60px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url("../css/img/ok_normal.png") no-repeat;
+
+        }
+        #updata_save:visited,#updata_save:link{
+            background: url("../css/img/ok_normal.png") no-repeat;
+
+        }
+        #updata_save button:active,#updata_save button:hover{
+            background: url("../css/img/ok_seleected.png") no-repeat;
+
+        }
+        #updata_close{
+            border: none;
+            width: 60px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
+        }
+        #updata_close:visited,#updata_close:link{
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
+        }
+        #updata_close button:active,#updata_close button:hover{
+            background: url("../css/img/cancel_selected.png") no-repeat;
+
+        }
+		</style>
+</head>
+<body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
+<div  class="u-content">
+    <table id="dg" class="easyui-datagrid"
+           data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
+        <thead>
+        <tr>
+            <th data-options="field:'itemid',width:'10%'">传感器编号</th>
+            <th data-options="field:'productid',width:'10%'">传感器代码</th>
+            <th data-options="field:'listprice',width:'10%'">胎压上限</th>
+            <th data-options="field:'unitcost',width:'10%'">胎压下限</th>
+            <th data-options="field:'listprice',width:'10%'">胎温上限</th>
+            <th data-options="field:'unitcost',width:'10%'">温度下限</th>
+            <th data-options="field:'listprice',width:'20%'">备注</th>
+            <th data-options="field:'_operate',width:'10%',formatter:formatOption">操作</th>
+        </tr>
+        </thead>
+    </table>
+    <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
+        <input type="text" placeholder="角色名称"/> <button>搜索</button>
+        <button style="float: right;"><a style="text-decoration: none;" href="#" onclick="addallsensor()">批量增加</a></button> <button style="float: right;"><a style="text-decoration: none;" href="#" onclick="addSensor()">增加</a></button>
     </div>
+    <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:600px;height: 300px;">
+        <span>基本信息</span><hr/>
+        <table style="width: 100%;height: 80%;">
+            <tr>
+                <td>
+                   传感器编号：
+				     </td>
+                <td>
+                    <input id="updata_sensorNumber" style="width:150px;"/>
+                </td>
+                <td>
+                    压力测量范围：
+					  </td>
+                <td>
+                    <input id="updata_pressure" style="width:150px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    温度测量范围：
+					  </td>
+                <td>
+					<input id="updata_tem" style="width:150px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    备注：
+					  </td>
+                <td colspan="3">
+                    <input type="text" />
+                </td>
+            </tr>
+			<tr style="text-align: center">
+				<td>
+				</td>
 
-  <div style="display:none;">
-  
+				<td>
+					<button id='updata_save' style="margin-top:10px;"><a style="text-decoration: none;" href="#"></a></button>
+				</td>
+				<td>
+					<button id='updata_close' style="margin-top:10px;"><a style="text-decoration: none" href="#"></a></button>
+				</td>
+				<td>
+				</td>
+			</tr>
+			
+        </table>
+    </div>
+	<div id="addSensor" class="easyui-dialog" data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:700px;height: 400px;background-color: #bdc4d4">
+		<div style="background-color: #ffffff;height:340px;margin:10px;">
+			<span id="addMessage">基本信息</span><hr/>
+			<table style="width: 100%;height: 80%;">
+            <tr>
+                <td>
+                   传感器编号：
+				     </td>
+                <td>
+                    <input id="updata_sensorNumber" style="width:150px;"/>
+                </td>
+                <td>
+                    压力测量范围：
+					  </td>
+                <td>
+                    <input id="updata_pressure" style="width:150px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    温度测量范围：
+					  </td>
+                <td>
+					<input id="updata_tem" style="width:150px;"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    备注：
+					  </td>
+                <td colspan="3">
+                    <input type="text" />
+                </td>
+            </tr>
+			<tr style="text-align: center">
+						<td>
+						</td>
+						<td>
+							<button id='save' style="margin-top:10px;"><a style="text-decoration: none;" href="#"></a></button>
+						</td>
+						<td>
+							<button id='close' style="margin-top:10px;"><a style="text-decoration: none" href="#"></a></button>
+						</td>
+						<td>
+						</td>
+				</tr>
+        </table>
+	</div>
 </div>
-
 </body>
 </html>
