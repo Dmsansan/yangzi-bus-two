@@ -65,7 +65,7 @@
         </div>
 
     </div>
-    <div id="west" data-options="region:'west',title:'功能菜单'">
+    <div id="west" data-options="region:'west',title:''">
         <div id="dd" class="easyui-accordion" style="width:100%;height:99%;">
             <div title="系统管理" data-options="iconCls:'icon-ok'" style="background-color: #353c49;overflow: hidden">
                 <div class="easyui-accordion" style="width:100%;height:99%;">
