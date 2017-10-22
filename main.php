@@ -67,25 +67,15 @@
     </div>
     <div id="west" data-options="region:'west',title:''">
         <div id="dd" class="easyui-accordion" style="width:100%;height:99%;">
-            <div title="系统管理" data-options="iconCls:'icon-ok'" style="background-color: #353c49;overflow: hidden">
-                <div class="easyui-accordion" style="width:100%;height:99%;">
-
-                    <div id="userManger" title="用户权限管理" style="background-color: #21262f" >
+            <div title="系统管理" data-options="iconCls:'icon-ok'" style="padding:10px;background-color: #21262f;overflow: hidden">   
                         <ul>
-                            <li><a onclick="addTab('角色管理','module_sys/sys.roles_show.php')" >角色管理</a></li>
+                            <li><a onclick="addTab('角色管理','module_sys/sys.roles_show.php')">角色管理</a></li>
                             <li><a onclick="addTab('用户管理','module_sys/sys.users_show.php')" >用户管理</a></li>
-                        </ul>
-                    </div>
-                    <div id="dataManger" title="基本数据管理" style="background-color: #21262f">
-                        <ul>
+                      
                             <li><a onclick="addTab('修理厂管理','module_sys/repairDepotManger.php')">修理厂管理</a></li>
                             <li><a onclick="addTab('轮胎基础参数管理','module_sys/tireParameter.php')">轮胎基础参数管理</a></li>
                             <li><a onclick="addTab('车载终端管理','module_sys/sys.vehicle_show.php')">车载终端管理</a></li>
                         </ul>
-
-                    </div>
-                </div>
-
             </div>
 			<div id="tireManger" title="轮胎管理" data-options="iconCls:'icon-help'" style="padding:10px;background-color: #21262f">
                 <ul>
@@ -153,7 +143,7 @@
     </div>
      <div  id="center_content" class="easyui-tabs" style="width:90%;height: 90%;background-color: #bdc4d4;margin-left: 6px;padding-bottom: 6px;padding-right: 6px;"  data-options="region:'center',width:'80%'" >
 
-        <div id="center_page" title="首页" data-options="iconCls:'icon-add2'">
+        <div id="center_page" title="首页" data-options="" style="overflow-y: hidden;">
             <div id="i-center">
                 <div id="center_top" style="padding-top: 20px;padding-left: 1%">
                     <label for="company">公司：</label>

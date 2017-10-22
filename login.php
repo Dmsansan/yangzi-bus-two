@@ -100,7 +100,7 @@ function LoginSystem()
                     <input  id="userid" name="userid" type="text" placeholder="请输入用户名" name="userName">
                 </p><br>
                 <p>
-                    <label for="userkey" style="font-size:13px;font-weight:bold">密&nbsp;&nbsp;&nbsp;码：</label>
+                    <label for="userkey" style="font-size:13px;font-weight:bold">密&nbsp;码：</label>
                     <input id="userkey" name="userkey" type="password" placeholder="请输入密码" name="userPassword">
                 </p><br>
                 <p>
