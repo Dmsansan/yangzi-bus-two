@@ -46,6 +46,21 @@
             });
         }
     };
+  window.onload=function () {
+    var wests = document.getElementById("west");
+    var lis = wests.getElementsByTagName("li");
+    for (var i = 0; i < lis.length; i++) {
+        lis[i].onclick = function(){
+            for(var i = 0; i < lis.length; i++){
+                lis[i].className = "";
+            }
+            this.className = "current";
+        }
+    }
+    $('#userManger').click(function () {
+        $(this).parent().css('color','red');
+    });
+}
 
     </script>
 </head>
@@ -96,27 +111,27 @@
                         <a onclick="addTab('传感器管理','module_11/sys.sensor_show.php')"> 传感器管理</a>
                     </li>
                     <li>
-                        <a onclick="addTab('轮胎管理','../tiremanger/tireManger.html')"> 轮胎管理</a>
+                        <a onclick="addTab('轮胎管理','module_11/sys.tireinfo_show.php')"> 轮胎管理</a>
                     </li>
                 </ul>
             </div>
             <div title="车辆管理" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
-                        <a onclick="addTab('车辆维护','../carmanger/Vehicle.html')"> 车辆维护</a>
+                        <a onclick="addTab('车辆维护','module_12/vehicle.php')"> 车辆维护</a>
                     </li>
                 </ul>
             </div>
             <div title="监测系统" data-options="iconCls:'icon-redo'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
-                        <a onclick="addTab('车辆轮胎状态','../monitorsystem/carTire.html')"> 车辆轮胎状态</a>
+                        <a onclick="addTab('车辆轮胎状态','module_13/sys.real_show.php')"> 车辆轮胎状态</a>
                     </li>
                     <li>
-                        <a onclick="addTab('车辆轮胎历史状态','../monitorsystem/carTireHistory.html')"> 车辆轮胎历史状态</a>
+                        <a onclick="addTab('车辆轮胎历史状态','module_13/sys.his_show.php')"> 车辆轮胎历史状态</a>
                     </li>
                     <li>
-                        <a onclick="addTab('告警历史状态','../monitorsystem/report.html')"> 告警历史状态</a>
+                        <a onclick="addTab('告警历史状态','module_13/sys.alarm_his131210_show.php')"> 告警历史状态</a>
                     </li>
                 </ul>
             </div>
@@ -129,7 +144,7 @@
                         <a onclick="addTab('轮胎库存查询','../statisticalanalysis/TireStock.html')"> 轮胎库存查询</a>
                     </li>
                     <li>
-                        <a onclick="addTab('轮胎历史曲线','../statisticalanalysis/TireHistoryCurve.html')"> 轮胎历史曲线</a>
+                        <a onclick="addTab('轮胎历史曲线','module_13/sys.tirehis_charts_12.php')"> 轮胎历史曲线</a>
                     </li>
                     <li>
                         <a onclick="addTab('轮胎历史告警','../statisticalanalysis/TireHistoryAlarm.html')"> 轮胎历史告警</a>

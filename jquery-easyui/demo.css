@@ -7,6 +7,7 @@ body {
     height: 100%;
     background-color: #bdc4d4;
 }
+
 h2 {
     font-size:18px;
     font-weight:bold;
@@ -288,6 +289,13 @@ ul li a:hover,  ul li a:active{
 }
 .window .window-header .panel-with-icon {
     padding-left: 39px;!important;
+}
+ul li a{
+    padding-left: 16px;
+}
+.current{
+    background: url("../css/img/Selected.png") 0px 2px no-repeat;
+
 }
 
 

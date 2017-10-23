@@ -81,7 +81,7 @@
         </tr>
         </thead>
     </table>
-    <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
+    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
         <input type="text" placeholder="轮胎编号"/> <button>搜索</button> <button>重置</button><button style="float: right" onclick="addUser()">增加</button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true" style="width:600px;height: 300px;">

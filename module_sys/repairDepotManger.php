@@ -252,7 +252,7 @@
         </tr>
         </thead>
     </table>
-    <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
+    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
         <input type="text" placeholder="修理厂名称："/> <button>搜索</button>
         <button style="float: right;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
     </div>
