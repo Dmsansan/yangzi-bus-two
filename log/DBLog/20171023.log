@@ -1,5 +1,6 @@
 
 ------------------
+<<<<<<< HEAD
 -时间:02:18:12-
 -错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
                 on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
@@ -17,4 +18,777 @@
 -错误号:1146-
 -错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
 -错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+=======
+-时间:04:38:45-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:38:49-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:38:55-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:40:08-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:40:10-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:41-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:44-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:48-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:59-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:44:35-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:44:36-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:45:43-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:49:06-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:49:07-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:50:08-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:50:26-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:05-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:07-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:09-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:09-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:10-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:22-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:23-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:24-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:24-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:25-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:25-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:26-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:27-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:27-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:32-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:33-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:33-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:34-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:35-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:51:57-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:52:21-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:52:22-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:52:23-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:52:23-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:52:24-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:52:25-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:52:26-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:52:26-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:53:18-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:53:19-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:53:19-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:53:20-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:53:20-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:53:21-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:54:24-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:54:28-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:55:47-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:56:14-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:57:02-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:59:39-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:05:03:46-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:05:03:50-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:05:04:47-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:05:05:51-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:05:06:30-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:05:06:33-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:05:06:58-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:05:11:07-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:05:11:44-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:05:11:46-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+>>>>>>> f4ce530c600b5fb06d33f67d1357fbddfb1f290d
+------------------
+
+------------------
+-时间:07:00:36-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:39-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:39-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:39-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:39-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:39-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:40-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:40-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:40-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:40-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:40-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:47-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:47-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:47-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:47-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:07:00:47-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
 ------------------

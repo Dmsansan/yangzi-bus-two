@@ -193,14 +193,16 @@ height: 100%;
     margin-top: 10px;
 }
 #center_center{
-    height: 40%;
+    /*height: 40%;*/
+    height:210px;
     background-color: #ffffff;
     margin-top: 6px;
 
 }
 #center_bottom{
     margin-top: 6px;
-    height: 40%;
+    /*height: 40%;*/
+    height:210px;
     background-color: #ffffff;
 }
 
@@ -217,6 +219,7 @@ text-align: left;
     padding: 5px;
     margin:5px 5px 5px 25px;
     list-style-type: none;
+    color:#fff;
 }
  ul li a:visited, ul li a:link{
     color: #3f3f3f;
