@@ -54,6 +54,9 @@ class sys {
 			case "logout":
 				$this->logout();
 				return;
+			case "get_index_data":
+				$this->get_index_data();
+				return;
 			default:
                 $arr = array ('status'=>'ERROR','reason'=>'未知的命令！');
                 echo json_encode($arr);
@@ -71,11 +74,19 @@ class sys {
         global $module_name,$cmd_name;
 		$T_oldpwd=mysql_escape_string(trim($_REQUEST["T_oldpwd"].""));
 		$T_newpwd=mysql_escape_string(trim($_REQUEST["T_newpwd"].""));
-		if($T_oldpwd == "" || $T_newpwd == ""){
+		$T_renewpwd=mysql_escape_string(trim($_REQUEST["T_renewpwd"].""));
+		if($T_oldpwd == "" || $T_newpwd == "" || $T_renewpwd == ""){
 			$arr = array ('status'=>'ERROR','reason'=>'参数不完整');
 			echo json_encode($arr);
 			die();
 		}
+
+		if($T_newpwd != $T_renewpwd){
+			$arr = array('status'=>'EERROR','reason'=>'两次输入的密码不一致');
+			echo json_encode($arr);
+			die();
+		}
+
         $md5_pwd=md5($T_oldpwd);
         $sql="select count(*) as cnt from admins where 
                 admin_name='{$_SESSION[UserName]}' and password='$md5_pwd'";
@@ -659,6 +670,69 @@ class sys {
         $arr = array ('status'=>'OK');
         echo json_encode($arr);
         die();	}
+    /*
+   	首页统计数据获取：/ajaction/v1/?menuid=0/cmd=get_index_data
+   	store_id:修理厂ID
+     */
+    function get_index_data(){
+    	global $module_name,$cmd_name;
+
+    	$store_id = mysql_escape_string(trim($_REQUEST["store_id"].""));
+
+    	if($store_id == ''){//所有数据
+    		$tire_sql = "select * from tire_info";
+    		$res = $this->conn->query($tire_sql);
+    		//轮胎总数
+    		$tire_count = $this->conn->num_rows($res);
+    		//注册轮胎数量=轮胎总数/传感器数量
+    		$sensor_sql = "select * from sensor";
+    		$sensor_res = $this->conn->query($sensor_sql);
+    		$sensor_count = $this->conn->num_rows($sensor_res);
+    		//装车轮胎数量
+    		$zc_tire_sql = "select * from tire_info where status='è£…ä¸Š'";
+    		$zc_tire_res = $this->conn->query($zc_tire_sql);
+    		$zc_tire_count = $this->conn->num_rows($zc_tire_res);
+    		//库存轮胎数量
+    		$kc_tire_sql ="select * from tire_info where status='å¸ä¸‹' and mile_count=0";
+    		$kc_tire_res = $this->conn->query($kc_tire_sql);
+    		$kc_tire_count = $this->conn->num_rows($kc_tire_res);
+    		//报废轮胎数量
+    		$bf_tire_sql ="select * from tire_info where status='å¸ä¸‹' and mile_count!=0";
+    		$bf_tire_res = $this->conn->query($bf_tire_sql);
+    		$bf_tire_count = $this->conn->num_rows($bf_tire_res);
+    		//车辆总数
+    		$bus_sql = "select * from bus_info";
+    		$bus_res = $this->conn->query($bus_sql);
+    		$bus_count = $this->conn->num_rows($bus_res);
+    		//运营车辆数
+    		$yy_bus_sql = "select * from bt_real_log";
+    		$yy_bus_res = $this->conn->query($yy_bus_sql);
+    		$yy_bus_count = $this->conn->num_rows($yy_bus_res);
+    		//报废车辆数
+    		$bf_bus_count = $bus_count-$yy_bus_count;
+    		//报警记录总数
+    		$alarm_sql = "select * from bus_alarm_log";
+    		$alarm_res = $this->conn->query($alarm_sql);
+    		$alarm_count = $this->conn->num_rows($alarm_res);
+    		//高压报警记录总数
+    		$height_alarm_sql = "select * from bus_alarm_log where pressure>pressure_ul";
+    		$height_alarm_res = $this->conn->query($height_alarm_sql);
+    		$height_alarm_count = $this->conn->num_rows($height_alarm_res);
+    		//低压报警记录总数
+    		$low_alarm_sql = "select * from bus_alarm_log where pressure<pressure_ll";
+    		$low_alarm_res = $this->conn->query($low_alarm_sql);
+    		$low_alarm_count = $this->conn->num_rows($low_alarm_res);
+    		//高温报警记录总数
+    		$height_wendu_sql = "select * from bus_alarm_log where temp>temp_ul";
+    		$height_wendu_res = $this->conn->query($height_wendu_sql);
+    		$height_wendu_count = $this->conn->num_rows($height_wendu_res);
+    	}else{
+    		$tire_sql = "select * from tire_info";
+    	}
+    	$arr = array('tire_count'=>$tire_count,'sensor_count'=>$sensor_count,'zc_tire_count'=>$zc_tire_count,'kc_tire_count'=>$kc_tire_count,'bf_tire_count'=>$bf_tire_count,'bus_count'=>$bus_count,'yy_bus_count'=>$yy_bus_count,'bf_bus_count'=>$bf_bus_count,'alarm_count'=>$alarm_count,'height_alarm_count'=>$height_alarm_count,'low_alarm_count'=>$low_alarm_count,'height_wendu_count'=>$height_wendu_count);
+    	echo json_encode($arr);
+    	die();
+    }
 
 }
 
