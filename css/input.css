@@ -14,8 +14,8 @@ img { vertical-align: middle; }
 
 .bodytable0 { width: 100%; border-collapse: collapse; }
     .bodytable0 td { line-height: 21px; padding: 2px; border: 1px solid #b6d6e6; color: #135294; }
-.bodytable1 { width: 100%; border-collapse: collapse; border: 1px solid #ddd; }
-    .bodytable1 td { line-height: 21px; padding-left: 5px; color: #135294; vertical-align: middle; }
+.bodytable1 { width: 100%; border-collapse: collapse; border: none; }
+    .bodytable1 td { line-height: 21px;padding-top:10px;padding-bottom:10px; padding-left: 5px; color: #000000; vertical-align: middle; }
         .bodytable1 td.left { line-height: 21px; padding-left: 5px; color: #135294; vertical-align: middle; border-left: 1px solid #ddd; }
 .bodytable2 { width: 100%; border-collapse: collapse; }
     .bodytable2 td { line-height: 21px; padding: 2px; border: 1px dotted #b6d6e6; color: #135294; }

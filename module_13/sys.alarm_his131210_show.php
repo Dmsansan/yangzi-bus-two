@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>告警历史状态</title>
-    <link href="../jquery-easyui/themes/default/easyui.css" rel="stylesheet" type="text/css">
+	 <link href="../jquery-easyui/themes/default/easyui.css" rel="stylesheet" type="text/css">
     <link href="../jquery-easyui/themes/icon.css" rel="stylesheet" type="text/css">
-    <script type="text/javascript" src="../jquery-easyui/jquery.min.js"></script>
+    <script type="text/javascript" src=" ../jquery-easyui/jquery.min.js"></script>
     <link href="../jquery-easyui/demo.css" rel="stylesheet" type="text/css">
+    <link href="../css/homepagecss/usermanger.css" type="text/css" rel="stylesheet">
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
 	<style type="text/css">
@@ -21,10 +22,26 @@
 			color: #1c66dc;
 		}
 	</style>
+	<script type="text/javascript">
+		$(function(){
+			$('#tireCount').combobox({
+				url:'../css/homepagecss/tireweizhi.json',
+				valueField:'id',
+				textField:'text'
+			});
+			$.ajax({
+				url:'../ajaction/v1/?menuid=131210&cmd=qry',
+				success:function(data){
+					console.log('hh',data);
+				}
+			})
+		})
+	
+	</script>
 </head>
 <body class="easyui-layout" style="height: 100%; width: 100%">
 <table id="datatable" class="easyui-datagrid" pagination="true"
-       striped="true" url="../../data/datagrid_data.json"
+       striped="true"
        style="width: 100%; height: 100%;margin-top:20px;" toolbar="#toolbar" singleSelect="true"
        fitColumns="true">
     <thead>
@@ -44,9 +61,8 @@
     <div style="margin-left: 10px;">
         起始日期: <input class="easyui-datebox" style="width: 100px">
         终止日期: <input class="easyui-datebox" style="width: 100px">
-        车辆号码: <select id="carplate" style="width: 100px">
-    </select> 轮胎号位: <input class="easyui-combobox" style="width: 100px"
-                           url="../../data/combobox_data.json" valueField="id" textField="text">
+        车辆号码: <input id="carplate" style="width: 100px" />
+		轮胎号位: <input id="tireCount"  style="width: 100px"/>
 				<button style="display: inline-block; margin-right: 10px;"><a style="text-decoration: none;" href="#" onclick="addUser()">搜索</a></button>
 				<button style="float:right;"><a href="#" style="text-decoration: none;" iconCls="icon-save"
            plain="true">导出</a></button>

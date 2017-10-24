@@ -25,7 +25,23 @@
 <script src="../lib/jquery.form.js" type="text/javascript"> </script>
 
 <script src="../js/echarts.js"></script>
+<style>
 
+#shezhi input{
+	border: 1px solid #1c66dc;
+			height: 25px;
+			line-height: 2px;
+			width: 100px;
+			background-color: white;
+			border-radius: 20px;
+			vertical-align: middle;
+			color: #1c66dc;
+}
+#shezhi input:active,#shezhi input:hover{
+	background-color:#1c66dc;
+	color:#ffffff;
+}
+</style>
 
 </head>
 
@@ -325,8 +341,8 @@
 		function getGridOptions(checkbox) {
              var options = {
                  columns: [
-                 { display: '车牌号码', name: 'plate_no', align: 'left', width: 100, minWidth: 60 },
-                 { display: '车载编码', name: 'v_term_no', minWidth: 120, width: 100 },								 
+                 { display: '车牌号码', name: 'plate_no', align: 'left', width: 350, minWidth: 60 },
+                 { display: '车载编码', name: 'v_term_no', minWidth: 120, width: 350 },								 
                  ], switchPageSizeApplyComboBox: false,
                  /*data: $.extend({}, CustomersData),*/
 				 url:'../ajaction/v1/?menuid=121010&cmd=qry&t=1',
@@ -396,7 +412,7 @@
 					obj.grid.loadData(true);
 					
 				},
-				dlgWidth:400,
+				dlgWidth:800,
 				dlgHeight:300,
 				onSelect:function(x){
 					//按了选择按钮
@@ -525,7 +541,7 @@
                 </tr>
 				<tr style='height:50px;'>
 				<td colspan="10" style='align:center'>
-				 <div style='float: left; text-align: center; width: 100%;'>
+				 <div id="shezhi" style='float: left; text-align: center; width: 100%;'>
                         <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;'
                             onclick=" doclear() " />						
                         <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;' onclick=" doserch() " />

@@ -46,18 +46,24 @@ body{font-family: "微软雅黑", "宋体", Arial, sans-serif; font-size: 12px; 
    * 按钮 *
 * ------------- */ 
 .l-button { 
-	height: 23px;
+  border: 1px solid #1c66dc;
+    height: 25px;
+    width: 100px;
+    background-color: white;
+    border-radius: 20px;
+    vertical-align: middle;
+    color: #000000;
 	overflow: hidden;
-	width: 60px;
 	line-height: 23px;
 	cursor: pointer;
 	position: relative;  text-align:center;
-	border: solid 1px #A3C0E8;color:#333333;
-	background:#E0EDFF url(../images/controls/button-bg.gif) repeat-x center;
+	
 }
 
+
 .l-button-over{
-	background: #FFBE76 url(../images/controls/button-bg-over.gif) repeat-x center; border-color:#D6A886;
+	 color: #ffffff;
+    background-color: #1c66dc;
 }
 .l-button-disabled {
 	background-image:url('../images/common/button-disabled.gif'); color:#9D9D9E;border: solid 1px #D3D3D3;

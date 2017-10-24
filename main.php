@@ -315,7 +315,7 @@
                         <a onclick="addTab('轮胎里程报表','module_13/tirecourse.php')"> 轮胎里程报表</a>
                     </li>
                     <li>
-                        <a onclick="addTab('轮胎保养记录报表','../reportstatistics/TireMaintain.html')"> 轮胎保养记录报表</a>
+                        <a onclick="addTab('轮胎保养记录报表','module_13/tireProtect.php')"> 轮胎保养记录报表</a>
                     </li>
                 </ul>
             </div>
