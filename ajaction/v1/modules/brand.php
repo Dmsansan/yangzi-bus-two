@@ -36,6 +36,9 @@ class brand {
 		添加：ajaction/v1/?menuid=101112&
 			brand_no=&
 			brand_name=品牌名&
+			norms_name=规格名称&
+			class_name=层级名称&
+			figure_name=花纹名称&
 			remark=备注&cmd=add
 		成功反回 {"status":"OK"}
 		失败反回 {"status":"ERROR","reason":"失败原因"}
@@ -43,27 +46,39 @@ class brand {
 	function add(){
         global $module_name,$cmd_name;
 
-		$brand_no=mysql_escape_string(trim($_REQUEST["brand_no"].""));
+		//$brand_no=mysql_escape_string(trim($_REQUEST["brand_no"].""));
 		$brand_name=mysql_escape_string(trim($_REQUEST["brand_name"].""));
+		$norms_name=mysql_escape_string(trim($_REQUEST["norms_name"].""));
+		$class_name=mysql_escape_string(trim($_REQUEST["class_name"].""));
+		$figure_name=mysql_escape_string(trim($_REQUEST["figure_name"].""));
 		$remark=mysql_escape_string(trim($_REQUEST["remark"].""));
-
-		if($brand_no == "" || $brand_name==""){
+		//echo $remark;die();
+		if($brand_name=="" || $norms_name=="" || $class_name=="" || $figure_name==""){
 			$arr = array ('status'=>'ERROR','reason'=>'参数不完整');
 			echo json_encode($arr);
 			die();
 		}
 		
-		$sql="insert into brand (brand_no,brand_name,remark)
-		values ('$brand_no','$brand_name','$remark')";
+		$sql="insert into brand (brand_name,remark,norms_name,class_name,figure_name)
+		values ('$brand_name','$remark','$norms_name','$class_name','$figure_name')";
 		$this->conn->query($sql);
+		/*$norms_sql = "insert into norms (norms_name,remark)
+		values ('$norms_name','$remark')";
+		$this->conn->query($norms_sql);
+		$class_sql = "insert into class (class_name,remark)
+		values ('$class_name','$remark')";
+		$this->conn->query($class_sql);
+		$figure_sql = "insert into figure_type (figure_name,remark)
+		values ('$figure_name','$remark')";
+		$this->conn->query($figure_sql);*/
 		if($this->conn->affected_rows()>0){
-            $str="添加了新品牌".$brand_name;
+            $str="添加了新的轮胎参数";
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
 			$arr = array ('status'=>'OK');
 			echo json_encode($arr);
 			die();
 		}else{
-			$arr = array ('status'=>'ERROR','reason'=>'添加轮胎品牌失败！');
+			$arr = array ('status'=>'ERROR','reason'=>'添加轮胎参数失败！');
 			echo json_encode($arr);
 			die();
 			//$this->log->do_log($str);
@@ -77,8 +92,11 @@ class brand {
 	function edit(){
         global $module_name,$cmd_name;
 
-		$brand_no=mysql_escape_string(trim($_REQUEST["brand_no"].""));
+		//$brand_no=mysql_escape_string(trim($_REQUEST["brand_no"].""));
 		$brand_name=mysql_escape_string(trim($_REQUEST["brand_name"].""));
+		$norms_name=mysql_escape_string(trim($_REQUEST["norms_name"].""));
+		$class_name=mysql_escape_string(trim($_REQUEST["class_name"].""));
+		$figure_name=mysql_escape_string(trim($_REQUEST["figure_name"].""));
 		$remark=mysql_escape_string(trim($_REQUEST["remark"].""));
 		$brand_id=mysql_escape_string(trim($_REQUEST["brand_id"].""));
 
@@ -87,7 +105,7 @@ class brand {
 			echo json_encode($arr);
 			die();
 		}
-		if($brand_no == "" && $brand_name == "" && $remark==""){
+		if($brand_name == "" && $remark=="" && $norms_name=="" && $class_name=="" && $figure_name=""){
 			$arr = array ('status'=>'ERROR','reason'=>'未指定修改项');
 			echo json_encode($arr);
 			die();
@@ -97,8 +115,11 @@ class brand {
 		// if($brand_no!="")$fields[]=" brand_no='$brand_no'";
 		// if($brand_name!="")$fields[]=" brand_name='$brand_name'";
 		// if($remark!="")$fields[]=" remark='$remark'";
-		$fields[]=" brand_no='$brand_no'";
+		//$fields[]=" brand_no='$brand_no'";
 		$fields[]=" brand_name='$brand_name'";
+		$fields[]=" norms_name='$norms_name'";
+		$fields[]=" class_name='$class_name'";
+		$fields[]=" figure_name='$figure_name'";
 		$fields[]=" remark='$remark'";
 		
 		$sql.=implode(",",$fields);
@@ -106,7 +127,7 @@ class brand {
 		
 		$this->conn->query($sql);
 		if($this->conn->affected_rows()>0){
-            $str="修改了品牌信息".$brand_name;
+            $str="修改了参数信息";
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
 			$arr = array ('status'=>'OK');
 			echo json_encode($arr);

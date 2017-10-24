@@ -36,6 +36,21 @@
                     console.log('data', obj);
                 }
             });
+            //搜索操作
+            $('#search').bind('click',function(){
+                var xiuli_name = $('#xiuli_name').val();
+                $.ajax({
+                    url:'../ajaction/v1/?menuid=101110&cmd=qry',
+                    type:'POST',
+                    data:{'store_name':xiuli_name},
+                    dataType:'json',
+                    success:function(data){
+                        var obj = eval(data);
+                        $("#dg").datagrid("loadData", data.Rows);
+                        console.log('data',obj);
+                    }
+                });
+            });
 			//增加操作
 			$('#save').bind('click',function(){
 				var store_no=$('#repairNumber').textbox('getText');
@@ -253,7 +268,7 @@
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-        <input type="text" placeholder="修理厂名称："/> <button>搜索</button>
+        <input type="text" id="xiuli_name" placeholder="修理厂名称"/> <button id="search">搜索</button>
         <button style="float: right;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 400px;">

@@ -87,9 +87,15 @@
             });
 			//搜索操作：
 			$('#search').bind('click',function(){
-				
+				var username = $('#username').val();
 				$.ajax({
-					
+				    url:'../ajaction/v1/?menuid=101011&cmd=qry',
+                    type:'POST',
+                    data:{'admin_name':username},
+                    dataType:'json',
+                    success:function(data){
+                        $("#dg").datagrid("loadData", data.Rows);
+                    }	
 				})
 			});
 			//修改操作：

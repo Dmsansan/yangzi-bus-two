@@ -16,27 +16,42 @@
         };
 		$(function(){
 			$.ajax({
-                url: '../ajaction/v1/?menuid=0&cmd=get_all_norms',
+                url: '../ajaction/v1/?menuid=0&cmd=get_all_brand',
                 type: 'post',
                 dataType: 'json',
                 success: function(data) {
                    console.log('brand', data);
-          
+                    var res = data.items;
+                    $("#brand").combobox('loadData',res);
+                    $("#tire").combobox('loadData',res);
+                    $("#pr").combobox('loadData',res);
+                    $("#figure").combobox('loadData',res);
                 }
             });
 			$('#brand').combobox({
-				
-			});
+                    valueField:'id',
+                    textField:'name',
+                    type:'json'
+            });
 			$('#tire').combobox({
-				
+				valueField:'id',
+                    textField:'norms_name',
+                    type:'json'
 			});
 			$('#pr').combobox({
-				
+				valueField:'id',
+                    textField:'class_name',
+                    type:'json'
 			});
 			$('#figure').combobox({
-				
+				valueField:'id',
+                    textField:'figure_name',
+                    type:'json'
 			});
-			
+
+			$("#save").bind('click',function(){
+
+            });
 			
 			
 			
