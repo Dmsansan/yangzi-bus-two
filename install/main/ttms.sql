@@ -38,7 +38,7 @@ CREATE TABLE `brand` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `bt_history_log`;
-CREATE TABLE `bt_history_log` (  --轮胎历史状态
+CREATE TABLE `bt_history_log` (  
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `bus_id` int(11) DEFAULT NULL COMMENT '车辆ID',
   `speed` int(11) DEFAULT NULL COMMENT '速度',
@@ -99,7 +99,7 @@ CREATE TABLE `bt_history_log` (  --轮胎历史状态
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 DROP TABLE IF EXISTS `bt_real_log`;
-CREATE TABLE `bt_real_log` (    --车辆轮胎实时状态
+CREATE TABLE `bt_real_log` (    
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `bus_id` int(11) DEFAULT NULL COMMENT '车辆ID',
   `speed` int(11) DEFAULT NULL COMMENT '速度',
