@@ -10,6 +10,13 @@
     <link href="../css/homepagecss/usermanger.css" type="text/css" rel="stylesheet">
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+    <style>
+        .tree li{
+            color:#000;
+            padding:0px;
+            margin:0px;
+        }
+    </style>
     <script type="text/javascript">
         function addUser() {
                 $('#addUser').dialog('open').dialog('setTitle','新增角色');
@@ -59,8 +66,16 @@
 			//搜索操作：
 			$('#search').bind('click',function(){
 				var name=$('#rolesName').val();
-				console.log('niaho',name);
-				
+				//console.log('niaho',name);
+				$.ajax({
+                    url:'../ajaction/v1/?menuid=101010&cmd=qry',
+                    type:'POST',
+                    data:{'title':name},
+                    dataType:'json',
+                    success:function(data){
+                        $("#dg").datagrid("loadData", data.Rows);    
+                    }
+                });
 				
 			});
 			
@@ -91,8 +106,7 @@
 					success:function(data){
 						console.log("data",data);
 						$('#dlg').dialog('close');
-							reload();
-							
+							reload();	
 					}
 					
 				})
@@ -306,7 +320,7 @@
     <button style="float: right; margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
 </div>
 <!--修改信息弹出框 -->  
-  <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:650px;height: 300px;background-color: #bdc4d4">
+  <div id="dlg" class="easyui-dialog " data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:650px;height: 300px;background-color: #bdc4d4">
         <div style="background-color: #ffffff;height:240px;margin:10px;">
 		<span id="message">基本信息</span>
         <table id="cc" style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">

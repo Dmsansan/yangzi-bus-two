@@ -54,6 +54,7 @@
 ------------------
 
 ------------------
+<<<<<<< HEAD
 -时间:08:52:00-
 -错误信息:错误的SQL语句: [select * from bt_real_log]-
 -错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
@@ -7250,4 +7251,223 @@
 -错误号:-
 -错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
 -错误页面地址:http://localhost/YangziBus2/main.php-
+=======
+-时间:09:19:40-
+-错误信息:错误的SQL语句: [insert into store (store_no,store_name,contact,tel,mobile,address,remark)
+		values ('C003','雨花修理厂','王五','13569081313','131317367167','雨花','测试')]-
+-错误内容:Duplicate entry '雨花修理厂' for key 'store_name'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101110&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/repairDepotManger.php-
+------------------
+
+------------------
+-时间:02:01:21-
+-错误信息:错误的SQL语句: [insert into figure_type (figure_name,reamrk)
+		values ('普通花纹','')]-
+-错误内容:Unknown column 'reamrk' in 'field list'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101112&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/tireParameter.php-
+------------------
+
+------------------
+-时间:02:03:37-
+-错误信息:错误的SQL语句: [insert into brand (brand_name,remark)
+		values ('米其林','')]-
+-错误内容:Duplicate entry '米其林' for key 'brand_name'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101112&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/tireParameter.php-
+------------------
+
+------------------
+-时间:02:03:37-
+-错误信息:错误的SQL语句: [insert into norms (norms_name,remark)
+		values ('norms_name','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101112&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/tireParameter.php-
+------------------
+
+------------------
+-时间:02:03:37-
+-错误信息:错误的SQL语句: [insert into class (class_name,remark)
+		values ('12PR','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101112&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/tireParameter.php-
+------------------
+
+------------------
+-时间:02:03:37-
+-错误信息:错误的SQL语句: [insert into figure_type (figure_name,reamrk)
+		values ('普通花纹','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101112&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/tireParameter.php-
+------------------
+
+------------------
+-时间:02:04:32-
+-错误信息:错误的SQL语句: [insert into norms (norms_name,remark)
+		values ('norms_name','')]-
+-错误内容:Duplicate entry 'norms_name' for key 'norms_name'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101112&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/tireParameter.php-
+------------------
+
+------------------
+-时间:02:04:32-
+-错误信息:错误的SQL语句: [insert into class (class_name,remark)
+		values ('12PR','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101112&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/tireParameter.php-
+------------------
+
+------------------
+-时间:02:04:32-
+-错误信息:错误的SQL语句: [insert into figure_type (figure_name,reamrk)
+		values ('螺旋花纹','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101112&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/tireParameter.php-
+------------------
+
+------------------
+-时间:02:07:08-
+-错误信息:错误的SQL语句: [insert into class (class_name,remark)
+		values ('12PR','')]-
+-错误内容:Duplicate entry '12PR' for key 'class_name'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101112&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/tireParameter.php-
+------------------
+
+------------------
+-时间:02:07:08-
+-错误信息:错误的SQL语句: [insert into figure_type (figure_name,remark)
+		values ('一般花纹','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101112&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/tireParameter.php-
+>>>>>>> 182d76e32d3e034d177b7154eba23c6a997f0384
+------------------
+
+------------------
+-时间:06:15:37-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:06:15:37-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:06:15:37-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:06:15:37-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:06:15:37-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:06:16:13-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:06:18:42-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:06:18:42-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:06:18:42-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:06:18:42-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:06:18:42-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:06:18:46-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
 ------------------

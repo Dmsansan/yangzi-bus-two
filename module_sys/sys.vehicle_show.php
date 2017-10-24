@@ -40,6 +40,20 @@
 			textField:'store_name',
 			
 		});
+        $.ajax({
+                url: '../ajaction/v1/?menuid=101110&cmd=qry&t=1',
+                type: 'post',
+                dataType: 'json',
+                success: function(data) {
+                    var obj =data.Rows;
+                    $("#uprepairID").combobox("loadData", obj);
+                }
+            });
+        $('#uprepairID').combobox({
+            valueField:'store_id',
+            textField:'store_name',
+            
+        });
 
 		//加载全部信息；
 			$.ajax({
@@ -52,18 +66,31 @@
                     console.log('data', data);
                 }
             });
+            //搜索操作
+            $('#search').bind('click',function(){
+                var v_term_no = $("#search_v_no").val();
+                $.ajax({
+                    url:'../ajaction/v1/?menuid=101115&cmd=qry',
+                    type:"POST",
+                    data:{'v_term_no':v_term_no},
+                    dataType:'json',
+                    success:function(data){
+                        $("#dg").datagrid("loadData", data.Rows); 
+                    }
+                });
+            });
 			//增加操作
 			$('#save').bind('click',function(){
 				var v_term_no=$('#vehicleNumber').textbox('getText');
 				var v_term_name=$('#vehicleName').textbox('getText');
-				var plate_no=$('#plateNumber').textbox('getText');
-				var store_id_val=$('#repairID').combobox('getText');
+				//var plate_no=$('#plateNumber').textbox('getText');
+				var store_id_val=$('#repairID').combobox('getValue');
 				var remark=$('#remark').textbox('getText');
-				console.log('shuju',v_term_no+v_term_name+plate_no+store_id_val+remark);
+				//console.log('shuju',v_term_no+v_term_name+plate_no+store_id_val+remark);
 				$.ajax({
 					url:'../ajaction/v1/?menuid=101115&cmd=add	',
 					type:'POST',
-					data:{'v_term_no':v_term_no,'v_term_name':v_term_name,'plate_no':plate_no,'store_id_val':store_id_val,'remark':remark},
+					data:{'v_term_no':v_term_no,'v_term_name':v_term_name,'store_id_val':store_id_val,'remark':remark},
 					success:function(data){
 						reload();
 						console.log('data',data);
@@ -76,13 +103,15 @@
 			$('#updata_save').bind('click',function(){
 				var v_term_no=$('#up_vehicleNumber').textbox('getText');
 				var v_term_name=$('#up_vehicleName').textbox('getText');
-				var plate_no=$('#up_plateNumber').textbox('getText');
+				//var plate_no=$('#up_plateNumber').textbox('getText');
+                var store_id_val=$('#uprepairID').combobox('getValue');
+                console.log(store_id_val);
 				var remark=$('#up_remark').textbox('getText');
 				var v_term_id=$('#up_v_term_id').val();
 				$.ajax({
 					url:'../ajaction/v1/?menuid=101115&cmd=edit',
 					type:'POST',
-					data:{'v_term_id':v_term_id,'v_term_no':v_term_no,'v_term_name':v_term_name,'plate_no':plate_no,'remark':remark},
+					data:{'v_term_id':v_term_id,'v_term_no':v_term_no,'v_term_name':v_term_name,'store_id_val':store_id_val,'remark':remark},
 					success:function(data){
 						reload();
 						console.log('updata',data);
@@ -258,7 +287,7 @@
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-        <input type="text" placeholder="角色名称"/> <button>搜索</button>
+        <input id="search_v_no" type="text" placeholder="终端编号"/> <button id="search">搜索</button>
         <button style="float: right;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 400px;">
@@ -283,14 +312,13 @@
                 </td>
             </tr>
             <tr>
-                <td>
-                    车牌号码：
-					</td>
-
-				<td>
-                     <input id="up_plateNumber" class="easyui-textbox" style="width: 150px;" />
-                </td>
-            </tr>
+                    <td>
+                        修理厂名称：
+                        </td>
+                    <td>
+                         <input id="uprepairID"  style="width: 150px;" />
+                    </td>
+                </tr>
 			<tr>
                 <td>
                     备注：
@@ -339,16 +367,9 @@
 				</tr>
 				<tr>
 					<td>
-						车牌号码：
-						</td>
-
-				<td>
-						 <input id="plateNumber" class="easyui-textbox" style="width: 150px;" />
-					</td>
-					<td>
 						修理厂名称：
 						</td>
-					<td
+					<td>
 						 <input id="repairID"  style="width: 150px;" />
 					</td>
 				</tr>

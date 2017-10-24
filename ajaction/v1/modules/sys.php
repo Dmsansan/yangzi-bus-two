@@ -318,6 +318,9 @@ class sys {
 			while ($rec=$this->conn->fetch_array($res)){
 				$data['id']=$rec['brand_id'];
 				$data['name']=$rec['brand_name'];
+				$data['norms_name']=$rec['norms_name'];
+				$data['class_name']=$rec['class_name'];
+				$data['figure_name']=$rec['figure_name'];
 				array_push($items,$data);
 			}
 			$arr['items']=$items;
