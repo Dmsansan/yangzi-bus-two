@@ -22,9 +22,9 @@
 		}
 	</style>
 </head>
-<body class="easyui-layout" style="height: 100%; width: 100%;background-color:#ffffff">
+<body class="easyui-layout" style="height: 100%; width: 100%;">
 <table id="datatable" class="easyui-datagrid" pagination="true"
-       url="../../datagrid_data1.json" striped="true", style="width: 100%; height:560px;"
+       url="../../datagrid_data1.json" striped="true", style="width: 100%; height:100%;"
        toolbar="#toolbar" singleSelect="true" fitColumns="true">
     <thead>
     <tr>
@@ -55,6 +55,13 @@
     </tr>
     </thead>
 </table>
-
+<div id="toolbar" style="height:50px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:10px">
+        起始日期: <input class="easyui-datebox" style="width: 100px">
+        终止日期: <input class="easyui-datebox" style="width: 100px">
+        车辆号码: <select id="carplate" style="width: 100px"></select> 
+		轮胎号位: <input class="easyui-combobox" style="width: 100px"
+                           url="../../data/combobox_data.json" valueField="id" textField="text">
+   
+</div>
 </body>
 </html>

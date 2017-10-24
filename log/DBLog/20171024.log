@@ -1,0 +1,54 @@
+
+------------------
+-时间:08:36:55-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:36:55-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:36:55-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:36:55-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:36:55-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:37:19-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'修改','修改了车载终端信息vvv')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了车载终端信息vvv')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------

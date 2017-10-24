@@ -44,7 +44,7 @@
     </tr>
     </thead>
 </table>
-<div id="tb">
+<div id="tb" style="height:50px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:10px">
     <span>车队</span><input
         class="easyui-combobox" style="width: 100px"
         url="../../data/combobox_data.json" valueField="id" textField="text">

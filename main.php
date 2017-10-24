@@ -293,26 +293,26 @@
             <div title="统计分析" data-options="iconCls:'icon-undo'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
-                        <a onclick="addTab('轮胎运行总时长总里程','../statisticalanalysis/allTimeLong.html')"> 轮胎运行总时长总里程</a>
+                        <a onclick="addTab('轮胎运行总时长总里程','module_13/sys.tire_usedhis_show.php')"> 轮胎运行总时长总里程</a>
                     </li>
                     <li>
-                        <a onclick="addTab('轮胎库存查询','../statisticalanalysis/TireStock.html')"> 轮胎库存查询</a>
+                        <a onclick="addTab('轮胎库存查询','module_13/sys.tirestore_charts_show.php')"> 轮胎库存查询</a>
                     </li>
                     <li>
-                        <a onclick="addTab('轮胎历史曲线','module_13/sys.tirehis_charts_12.php')"> 轮胎历史曲线</a>
+                        <a onclick="addTab('轮胎历史曲线','module_13/sys.tirehis_charts_10.php')"> 轮胎历史曲线</a>
                     </li>
                     <li>
-                        <a onclick="addTab('轮胎历史告警','../statisticalanalysis/TireHistoryAlarm.html')"> 轮胎历史告警</a>
+                        <a onclick="addTab('轮胎历史告警','module_13/sys.tirehis_charts_12.php')"> 轮胎历史告警</a>
                     </li>
                     <li>
-                        <a onclick="addTab('车辆车速分析','../statisticalanalysis/carSpeed.html')"> 车辆车速分析</a>
+                        <a onclick="addTab('车辆车速分析','module_13/sys.carspeed_charts_show.php')"> 车辆车速分析</a>
                     </li>
                 </ul>
             </div>
             <div title="报表分析" data-options="iconCls:'icon-filter'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
-                        <a onclick="addTab('轮胎里程报表','../reportstatistics/TireCourse.html')"> 轮胎里程报表</a>
+                        <a onclick="addTab('轮胎里程报表','module_13/tirecourse.php')"> 轮胎里程报表</a>
                     </li>
                     <li>
                         <a onclick="addTab('轮胎保养记录报表','../reportstatistics/TireMaintain.html')"> 轮胎保养记录报表</a>
