@@ -333,7 +333,7 @@
                 <tr>
                     <td>
                         备注：
-						 </td>
+					</td>
                     <td colspan="3">
                         <input id="up_remark" class="easyui-textbox" style="width:450px;" />
                     </td>

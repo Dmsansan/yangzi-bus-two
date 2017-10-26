@@ -202,9 +202,10 @@ class tire_param_info {
 		
 		$sql="select a.*,b.brand_name,c.norms_name,d.class_name,e.figure_name from tire_param_info as a
                 left join brand as b on a.brand_id=b.brand_id 
-                left join norms as c on a.norms_id=c.norms_id
-                left join class as d on a.class_id=d.class_id
-                left join figure_type as e on a.figure_id=e.figure_id";
+                left join brand as c on a.norms_id=c.brand_id
+                left join brand as d on a.class_id=d.brand_id
+                left join brand as e on a.figure_id=e.brand_id
+                ";
 		$sql_cnt="select count(*) as cnt from tire_param_info as a";
 		$where="";
 		if($company_name!=""){

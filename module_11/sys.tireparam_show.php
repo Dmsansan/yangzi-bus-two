@@ -57,6 +57,7 @@
                     textField:'figure_name',
                     type:'json'
 			});
+<<<<<<< HEAD
 		/* 	//加载数据表格：
 			$.ajax({
 				url:'../ajaction/v1/?menuid=111010&cmd=qry&t=1',
@@ -112,6 +113,71 @@
 				}
 			});
 		} */
+=======
+            //加载数据
+            $.ajax({
+                url: '../ajaction/v1/?menuid=111010&cmd=qry&t=1',
+                type: 'post',
+                dataType: 'json',
+                success: function(data) {
+                    var obj = eval(data);
+                    $("#dg").datagrid("loadData", data.Rows);
+                    console.log('data', obj);
+                }
+            });
+            //增加操作：
+            $('#save').bind('click', function() {
+                var company_name = $('#productor').textbox('getText');
+                var brand_id_val=$('#brand').combobox('getValue');                
+                var norms_id_val = $('#tire').combobox('getValue');
+                var class_id_val=$('#pr').combobox('getValue');
+                var figure_id_val=$('#figure').combobox('getValue');
+                var pressure_ll = $('#pressure_ll').textbox('getText');
+                var pressure_ul = $('#pressure_ul').textbox('getText');
+                var speed_ul = $('#speed_ul').textbox('getText');
+                var temp_ul = $('#temp_ul').textbox('getText');
+                var tkph_val = $('#tpkh_val').textbox('getText');
+                var brao_val = $('#brao_val').textbox('getText');
+                var mainterance1 = $('#mainterance1').textbox('getText');
+                var mainterance2 = $('#mainterance2').textbox('getText');
+                var rated_mile = $('#rated_mile').textbox('getText');
+                $.ajax({
+                url:'../ajaction/v1/?menuid=111010&cmd=add',
+                type:'POST',
+                data:{'company_name':company_name,'brand_id_val':brand_id_val,'norms_id_val':norms_id_val,'class_id_val':class_id_val,'figure_id_val':figure_id_val,'pressure_ll':pressure_ll,'pressure_ul':pressure_ul,'speed_ul':speed_ul ,'temp_ul':temp_ul,'tkph_val':tkph_val,'baro_val':brao_val,'mainterance2':mainterance2,'mainterance1':mainterance1,'rated_mile':rated_mile},
+                dataType:'json',
+                success:function(data){
+                    reload();
+                    console.log("loadDa",data);
+                }
+                });
+            });
+
+           $('#cancel').bind('click',function(){
+                $('#alarm').dialog('close');
+            });
+            $('#close').bind('click',function(){
+                $('#addUser').dialog('close');
+            });
+            $('#updata_close').bind('click',function(){
+                $('#dlg').dialog('close');
+            });
+					
+		})
+        function reload() {
+            $.ajax({
+                url: '../ajaction/v1/?menuid=111010&cmd=qry&t=1',
+                type: 'post',
+                dataType: 'json',
+                success: function(data) {
+                    var Idata = data.Rows;
+                    $("#dg").datagrid("loadData", data.Rows);
+                    console.log('data', Idata.admin_name);
+                }
+            });
+        }
+
+>>>>>>> f25139cae1e9c2ed649a7943e9ebb8f4ae419402
         function formatOption(value, row, index) {
                 return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
         }
@@ -123,9 +189,28 @@
          
             }
         };
-		function deletData(index){
-			
-		}
+		//删除操作
+        function deletData(index) {
+            $('#dg').datagrid('selectRow', index);
+            var row = $('#dg').datagrid('getSelected');
+            if (row) {
+                var id = row.tire_param_id;
+                $('#alarm').dialog('open').dialog('setTitle', '提示');
+                $('#sure').bind('click', function() {
+                    $.ajax({
+                        url: '../ajaction/v1/?menuid=111010&cmd=del',
+                        type: 'post',
+                        data: {
+                            'tire_param_id': id
+                        },
+                        success: function(data) {
+                            console.log('delete', data);
+                            reload();
+                        }
+                    })
+                })
+            }
+        };
     </script>
 	<style type="text/css">
 	  #sure{
@@ -242,13 +327,25 @@
             <th data-options="field:'temp_ul',width:'10%'">胎温上限</th>
             <th data-options="field:'speed_ul',width:'10%'">速度上限</th>
             <th data-options="field:'tkph_val',width:'10%'">TKPH值</th>
+<<<<<<< HEAD
+=======
+            <th data-options="field:'baro_val',width:'10%'">标准冲气压力</th>
+            <th data-options="field:'mainterance1',width:'10%'">一保</th>
+            <th data-options="field:'mainterance2',width:'10%'">二保</th>
+            <th data-options="field:'rated_mile',width:'10%'">额定里程</th>
+>>>>>>> f25139cae1e9c2ed649a7943e9ebb8f4ae419402
             <th data-options="field:'_operate',width:'10%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+<<<<<<< HEAD
     <input type="text" placeholder="轮胎编号"/> <button>搜索</button>
     <button id="add" style="float: right; margin-top: 15px;">增加</button>
+=======
+    <input id="search_company_name" type="text" placeholder="制造商"/> <button id="search">搜索</button>
+    <button style="float: right; margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
+>>>>>>> f25139cae1e9c2ed649a7943e9ebb8f4ae419402
 </div>
     <!--修改信息弹出框 -->  
 	<div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#updata_dlg'" style="width:650px;height: 300px;background-color: #bdc4d4">
@@ -415,7 +512,11 @@
                 压力范围：
 				</td>
             <td>
+<<<<<<< HEAD
                 <input id="pressure_down" class="easyui-textbox" style="width: 30px;" />至<input id="pressure_up" class="easyui-textbox" style="width:30px;" />
+=======
+                <input id="pressure_ll"  class="easyui-textbox" style="width: 30px;" />至<input id="pressure_ul" class="easyui-textbox" style="width:30px;" />
+>>>>>>> f25139cae1e9c2ed649a7943e9ebb8f4ae419402
             </td>
         </tr>
         <tr>
@@ -423,19 +524,19 @@
                 温度上限：
 				</td>
             <td>
-                <input id="temp" class="easyui-textbox" style="width:130px;"/>
+                <input id="temp_ul" class="easyui-textbox" style="width:130px;"/>
             </td>
 			<td>
                 速度上限(KM/h)：
 				</td>
             <td>
-                <input id="speed" class="easyui-textbox" style="width:130px;"/>
+                <input id="speed_ul" class="easyui-textbox" style="width:130px;"/>
             </td>
 			<td>
                TPKH值：
 			   </td>
             <td>
-                <input id="tpkh" class="easyui-textbox" style="width:130px;"/>
+                <input id="tpkh_val" class="easyui-textbox" style="width:130px;"/>
             </td>
 
         </tr>
@@ -444,19 +545,27 @@
                 标准充气压力：
 				</td>
             <td>
-                <input id="standard" class="easyui-textbox" style="width:130px;"/>
+                <input id="brao_val" class="easyui-textbox" style="width:130px;"/>
             </td>
             <td>  
                 一保(KM)：
 			</td>
             <td>
+<<<<<<< HEAD
                 <input id="one" class="easyui-textbox" style="width: 130px;" />
+=======
+                <input id="mainterance1" class="easyui-textbox" style="width: 130px;" />
+>>>>>>> f25139cae1e9c2ed649a7943e9ebb8f4ae419402
             </td>
 			<td>
                 二保(KM)：
 				</td>
             <td>
+<<<<<<< HEAD
                 <input id="two" class="easyui-textbox" style="width: 130px;" />
+=======
+                <input id="mainterance2" class="easyui-textbox" style="width: 130px;" />
+>>>>>>> f25139cae1e9c2ed649a7943e9ebb8f4ae419402
             </td>
         </tr>
 		 <tr>
@@ -464,7 +573,7 @@
                 额定总里程(KM)：
 				</td>
             <td>
-                <input id="all" class="easyui-textbox" style="width:130px;" type="text"/>
+                <input id="rated_mile" class="easyui-textbox" style="width:130px;" type="text"/>
             </td>
             <td>  
              
@@ -498,10 +607,17 @@
     </div>
 </div>
 	
+<<<<<<< HEAD
  <div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
         <div style="background-color: #ffffff;height:121px;margin:1px;">
 
             <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">信息删除无法恢复，确定删除？</span>
+=======
+<div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
+        <div style="background-color: #ffffff;height:121px;margin:1px;">
+
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">参数删除无法恢复，确定删除？</span>
+>>>>>>> f25139cae1e9c2ed649a7943e9ebb8f4ae419402
         <div  style="width:100%;">
             <button id="sure"></button>
             <button id="cancel"></button>
