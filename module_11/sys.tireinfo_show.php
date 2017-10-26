@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>传感器管理</title>
+    <title>轮胎管理</title>
     <link href="../jquery-easyui/themes/default/easyui.css" rel="stylesheet" type="text/css">
     <link href="../jquery-easyui/themes/icon.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="../jquery-easyui/jquery.min.js"></script>
@@ -49,24 +49,25 @@
 			$('#all_tireBrand').combobox({
 				
 			
-			})
+			});
 			$('#all_all').combobox({
 				
 			
+			});
+			//打开批量增加弹出框
+			$('#addall').on('click',function(){
+				 $('#addalltire').dialog('open').dialog('setTitle','批量增加轮胎');
+			});
+			//打开增加弹出框
+			$('#add').on('click',function(){
+				
+            $('#addTire').dialog('open').dialog('setTitle','新增轮胎');
+			$('#pr').textbox('setValue','500');
 			})
+			
 			
 
         })
-        function addTire() {
-
-            $('#addTire').dialog('open').dialog('setTitle','新增轮胎');
-		$('#pr').textbox('setValue','500');
-
-        };
-        function addalltire() {
-
-            $('#addalltire').dialog('open').dialog('setTitle','批量增加轮胎');
-        };
         function formatOption(value, row, index) {
             return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
         }
@@ -233,7 +234,7 @@
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
         <input type="text" placeholder="角色名称"/> <button>搜索</button>
-        <button style="float: right;margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addalltire()">批量增加</a></button> <button style="float: right;margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addTire()">增加</a></button>
+        <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;">增加</button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:650px;height: 400px;background-color: #bdc4d4">
         <div style="background-color: #ffffff;height:340px;margin:10px;">

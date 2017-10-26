@@ -46,8 +46,8 @@
         }
     },
     legend: {
-        //data:['规格1','规格2','规格3','规格4']  //这里为规格名
-		data:oc.legdata
+        data:['规格1','规格2','规格3','规格4']  //这里为规格名
+		//data:oc.legdata
     },
     toolbox: {
         show : true,
@@ -66,7 +66,8 @@
     xAxis : [
         {
             type : 'category',
-            data : oc.xdata //这里为X轴数据
+           // data : oc.xdata //这里为X轴数据
+		   data:['佳通','韩泰']
         }
     ],
     yAxis : [

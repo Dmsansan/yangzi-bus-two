@@ -71,7 +71,7 @@ background: url('../images/panel/header-bg.gif') repeat-x left -1px; position:re
 }
 .l-panel-body .l-grid
 {
-     
+   background-color:#f1fbf6;  
 }
 .l-grid
 {

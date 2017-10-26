@@ -12,6 +12,19 @@
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
 		$(function(){
+		
+			//批量增加按钮
+			$('#addall').on('click',function(){
+				$('#addallsensor').dialog('open').dialog('setTitle','批量增加传感器');
+			});
+			//增加按钮
+			$('#add').on('click',function(){
+				$('#addSensor').dialog('open').dialog('setTitle','增加传感器信息');
+				$('#pressure').textbox('setValue','6.50');
+				$('#pressure_high').textbox('setValue','12.50');
+				$('#tem').textbox('setValue','-40');
+				$('#tem_high').textbox('setValue','125');
+			});
 			$('#tireNumber').combobox({
 				
 			})
@@ -54,19 +67,6 @@
 			});
 			 
 		})
-	
-		function addSensor() {
-			
-        $('#addSensor').dialog('open').dialog('setTitle','增加传感器信息');
-		$('#pressure').textbox('setValue','6.50');
-		$('#pressure_high').textbox('setValue','12.50');
-		$('#tem').textbox('setValue','-40');
-		$('#tem_high').textbox('setValue','125');
-        };
-		function addallsensor() {
-			
-          $('#addallsensor').dialog('open').dialog('setTitle','批量增加传感器');
-        };
 		
         function formatOption(value, row, index) {
                 return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
@@ -234,7 +234,7 @@
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
         <input type="text" placeholder="角色名称"/> <button>搜索</button>
-        <button style="float: right;margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addallsensor()">批量增加</a></button> <button style="float: right;margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addSensor()">增加</a></button>
+        <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;">增加</button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:600px;height: 360px;background-color: #bdc4d4">
 	<div style="background-color: #ffffff;height:300px;margin:10px;">

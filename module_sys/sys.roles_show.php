@@ -18,10 +18,11 @@
         }
     </style>
     <script type="text/javascript">
-        function addUser() {
-                $('#addUser').dialog('open').dialog('setTitle','新增角色');
-            };
+       
         $(function () {
+			$('#add').on('click',function(){
+				 $('#addUser').dialog('open').dialog('setTitle','新增角色');
+			});
 			 $('#addoper').combobox({
                 url:'../css/homepagecss/chedui.json',
                 panelHeight:200,
@@ -317,7 +318,7 @@
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
     <input type="text" id="rolesName" placeholder="角色名称"/> <button id="search">搜索</button>
-    <button style="float: right; margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
+    <button id="add" style="float: right; margin-top: 15px;">增加</button>
 </div>
 <!--修改信息弹出框 -->  
   <div id="dlg" class="easyui-dialog " data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:650px;height: 300px;background-color: #bdc4d4">

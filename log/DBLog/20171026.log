@@ -1,0 +1,3704 @@
+
+------------------
+-时间:08:33:23-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:33:23-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:33:23-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:33:23-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:33:23-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:38:19-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:38:19-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:38:19-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:38:19-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:38:19-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:49:06-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:49:06-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:49:06-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:49:06-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:49:06-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:53:16-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:53:16-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:53:16-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:53:16-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:53:16-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:59:11-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:59:11-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:59:11-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:59:11-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:08:59:11-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:04:36-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:04:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:04:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:04:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:04:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:24-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:24-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:24-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:24-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:24-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:41-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:41-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:41-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:41-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:41-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:03-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:03-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:03-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:03-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:03-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:23-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:23-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:23-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:23-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:23-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:47-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:47-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:47-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:47-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:19:47-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:21:15-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:21:15-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:21:15-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:21:15-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:21:15-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:22:58-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:22:58-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:22:58-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:22:58-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:22:58-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:23:12-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:23:12-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:23:12-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:23:12-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:23:12-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:23:18-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:09:27:15-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:27:15-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:27:15-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:27:15-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:27:15-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:27:15-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:09:28:44-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:28:44-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:28:44-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:28:44-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:28:44-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:29:02-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:09:36:17-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:36:17-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:36:17-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:36:17-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:36:17-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:37:42-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:37:42-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:37:42-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:37:42-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:37:42-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:38:13-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:38:13-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:38:13-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:38:13-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:38:13-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:40:14-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:09:49:35-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:49:35-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:49:35-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:49:35-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:49:35-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:52:35-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:52:35-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:52:35-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:52:35-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:52:35-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:55:17-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:55:17-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:55:17-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:55:17-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:55:17-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:56:38-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:56:38-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:56:38-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:56:38-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:56:38-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:57:29-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:57:29-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:57:29-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:57:29-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:57:29-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:59:02-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:59:02-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:59:02-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:59:02-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:59:02-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:59:38-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:59:38-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:59:38-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:59:38-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:59:38-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:00:26-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:10:14:34-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:14:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:14:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:14:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:14:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:15:48-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:15:48-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:15:48-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:15:48-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:15:48-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:16:48-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:16:48-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:16:48-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:16:48-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:16:48-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:17:05-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:17:05-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:17:05-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:17:05-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:17:05-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:24:36-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:24:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:24:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:24:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:24:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:25:30-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:25:30-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:25:30-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:25:30-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:25:30-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:25:56-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:25:56-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:25:56-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:25:56-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:25:56-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:26:45-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:26:45-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:26:45-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:26:45-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:26:45-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:02-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:02-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:02-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:02-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:02-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:20-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:20-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:20-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:20-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:20-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:41-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:41-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:41-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:41-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:27:41-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:03-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:03-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:03-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:03-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:03-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:17-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:17-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:17-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:17-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:17-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:34-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:43-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:43-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:43-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:43-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:43-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:52-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:52-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:52-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:52-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:28:52-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:06-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:06-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:06-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:06-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:06-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:22-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:22-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:22-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:22-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:22-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:48-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:48-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:48-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:48-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:29:48-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:30:26-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:30:26-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:30:26-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:30:26-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:30:26-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:30:59-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:30:59-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:30:59-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:30:59-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:30:59-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:34:34-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:34:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:34:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:34:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:10:34:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:01:28-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:01:28-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:01:28-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:01:28-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:01:28-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:04:10-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:04:10-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:04:10-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:04:10-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:04:10-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:05:02-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎参数管理',now(),,'新增','添加了新轮胎参数1')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新轮胎参数1')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:11:05:46-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:05:46-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:05:46-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:05:46-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:05:46-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:21:52-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:21:52-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:21:52-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:21:52-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:21:52-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:22:34-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:22:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:22:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:22:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:22:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:23:11-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:23:11-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:23:11-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:23:11-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:23:11-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:23:56-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:23:56-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:23:56-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:23:56-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:23:56-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:24:05-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:24:05-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:24:05-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:24:05-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:24:05-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:30:45-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:30:45-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:30:45-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:30:45-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:30:45-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:30:52-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:30:52-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:30:52-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:30:52-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:30:52-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:31:27-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:31:27-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:31:27-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:31:27-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:31:27-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:31:45-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:31:45-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:31:45-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:31:45-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:31:45-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:42:40-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:42:40-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:42:40-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:42:40-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:42:40-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:11:43:23-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:10:18-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:10:18-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:10:18-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:10:18-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:10:18-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:10:21-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:10:40-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:10:41-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:10:42-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:10:42-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:10:46-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=0-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:10:48-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=0-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:10:50-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:10:55-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=exp&company_name=&rnd=0.5937045611165981-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:11:06-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:11:26-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:11:26-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:11:27-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:11:35-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:11:51-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:12:11-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:12:11-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:12:12-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:12:20-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:12:36-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:12:56-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:12:56-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:12:57-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:13:05-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:13:21-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:13:41-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:13:41-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:13:42-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:13:50-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:14:06-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:14:26-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:14:26-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:14:27-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:14:35-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:14:51-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:15:11-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:15:11-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:15:12-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:15:20-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=3) order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=3-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:15:32-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:15:32-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:15:32-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:15:32-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:15:32-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:15:34-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:16:19-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:17:04-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:17:49-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:18:35-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:19:20-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:20:05-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:20:50-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:21:35-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:22:20-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:23:05-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:23:50-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:24:35-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:25:21-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:26:07-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:26:52-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:27:37-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:28:22-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:29:07-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:29:52-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:30:38-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:31:24-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:32:10-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null order by pressureco desc,tempo desc]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:01:32:27-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:27-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:27-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:27-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:27-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:34-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:35-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:35-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:35-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:35-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:35-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:50-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:Table 'ttms_yangzi.bt_real_log' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:50-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:50-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:50-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:01:32:50-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------

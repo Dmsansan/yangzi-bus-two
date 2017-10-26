@@ -11,16 +11,25 @@
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
-	 function addUser() {
-            $('#addUser').dialog('open').dialog('setTitle','新增轮胎参数');
-        };
+	
 		$(function(){
+			$('#add').on('click',function(){
+				 $('#addUser').dialog('open').dialog('setTitle','新增轮胎参数');
+			});
+			$('#cancel').bind('click',function(){
+				$('#alarm').dialog('close');
+			});
+			$('#close').bind('click',function(){
+				$('#addUser').dialog('close');
+			});
+			$('#updata_close').bind('click',function(){
+				$('#dlg').dialog('close');
+			});
 			$.ajax({
                 url: '../ajaction/v1/?menuid=0&cmd=get_all_brand',
                 type: 'post',
                 dataType: 'json',
                 success: function(data) {
-                   console.log('brand', data);
                     var res = data.items;
                     $("#brand").combobox('loadData',res);
                     $("#tire").combobox('loadData',res);
@@ -48,24 +57,69 @@
                     textField:'figure_name',
                     type:'json'
 			});
-
-			$("#save").bind('click',function(){
-
+		/* 	//加载数据表格：
+			$.ajax({
+				url:'../ajaction/v1/?menuid=111010&cmd=qry&t=1',
+				dataType:'json',
+				success:function(data){
+				
+					console.log('sssa',data);
+				}
+			}); */
+		//增加操作：
+			/* $("#save").bind('click',function(){
+				var company_name=$('#productor').textbox('getText');
+				var brand_id_val=$('#brand').combobox('getValue');
+				var	norms_id_val=$('#tire').combobox('getValue');
+				var	class_id_val=$('#pr').combobox('getValue');
+				var	figure_id_val=$('#figure').combobox('getValue');
+				var	pressure_ul=$('#pressure_down').textbox('getText');
+				var	pressure_ll=$('#pressure_up').textbox('getText');
+				var	speed_ul=$('#speed').textbox('getText');
+				var	temp_ul=$('#temp').textbox('getText');
+				var	tkph_val=$('#tpkh').textbox('getText');
+				var	brao_val=$('#standard').textbox('getText');
+				var	mainterance1=$('#one').textbox('getText');
+				var	mainterance2=$('#two').textbox('getText');
+				var	rated_mile=$('#all').textbox('getText');
+				$.ajax({
+					url:'../ajaction/v1/?menuid=111010&cmd=add',
+					type:'POST',
+					dataType:'json',
+					data:{'company_name':company_name,'brand_id_val':brand_id_val,'norms_id_val':norms_id_val,'class_id_val':class_id_val,
+					'figure_id_val':figure_id_val,'pressure_ul':pressure_ul,'pressure_ll':pressure_ll,'speed_ul':speed_ul,'temp_ul':temp_ul,
+					'tkph_val':tkph_val,'brao_val':brao_val,'mainterance1':mainterance1,'mainterance2':mainterance2,'rated_mile':rated_mile},
+					success:function(data){
+					if(data!=null&&data.status="ok"){
+						reload()
+					}else{
+						alert('数据异常');
+					}
+						
+					 
+					}
+				});
             });
-			
-			
-			
-		})
+					
+		}) */
+		/* function reload(){
+			$.ajax({
+				url:'../ajaction/v1/?menuid=111010&cmd=qry&t=1',
+				dataType:'json',
+				success:function(data){
+				
+					console.log('sssa',data);
+				}
+			});
+		} */
         function formatOption(value, row, index) {
                 return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
         }
-        var url;
         function editUser(index) {
             $('#dg').datagrid('selectRow', index);
             var row = $('#dg').datagrid('getSelected');
             if (row){
                 $('#dlg').dialog('open').dialog('setTitle','修改轮胎参数');
-                $('#fm').form('load',row);
          
             }
         };
@@ -177,24 +231,24 @@
            data-options="singleSelect:true,toolbar:'#tb',striped:'true',pagination:'true'">
         <thead>
         <tr>
-            <th data-options="field:'itemid',width:'8%'">编号</th>
-            <th data-options="field:'productid',width:'8%'">制造商</th>
-            <th data-options="field:'listprice',width:'8%'">品牌</th>
-            <th data-options="field:'unitcost',width:'8%'">轮胎规格</th>
-            <th data-options="field:'listprice',width:'8%'">层级</th>
-            <th data-options="field:'unitcost',width:'8%'">花纹</th>
-            <th data-options="field:'listprice',width:'8%'">胎压上限</th>
-            <th data-options="field:'unitcost',width:'8%'">胎压下限</th>
-            <th data-options="field:'listprice',width:'10%'">胎温上限</th>
-            <th data-options="field:'unitcost',width:'10%'">速度上限</th>
-            <th data-options="field:'listprice',width:'10%'">TKPH值</th>
+            <th data-options="field:'tire_param_id',width:'8%'">编号</th>
+            <th data-options="field:'company_name',width:'8%'">制造商</th>
+            <th data-options="field:'brand_name',width:'8%'">品牌</th>
+            <th data-options="field:'norms_name',width:'8%'">轮胎规格</th>
+            <th data-options="field:'class_name',width:'8%'">层级</th>
+            <th data-options="field:'figure_name',width:'8%'">花纹</th>
+            <th data-options="field:'pressure_ul',width:'8%'">胎压上限</th>
+            <th data-options="field:'pressure_ll',width:'8%'">胎压下限</th>
+            <th data-options="field:'temp_ul',width:'10%'">胎温上限</th>
+            <th data-options="field:'speed_ul',width:'10%'">速度上限</th>
+            <th data-options="field:'tkph_val',width:'10%'">TKPH值</th>
             <th data-options="field:'_operate',width:'10%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-    <input type="text" placeholder="角色名称"/> <button>搜索</button>
-    <button style="float: right; margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
+    <input type="text" placeholder="轮胎编号"/> <button>搜索</button>
+    <button id="add" style="float: right; margin-top: 15px;">增加</button>
 </div>
     <!--修改信息弹出框 -->  
 	<div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#updata_dlg'" style="width:650px;height: 300px;background-color: #bdc4d4">
@@ -349,7 +403,7 @@
                 层级（PR）：
 				</td>
             <td>
-                <input id="pr" class="easyui-textbox"  style="width: 130px;" />
+                <input id="pr"  style="width: 130px;" />
             </td>
 			<td>  
                 花纹类型：
@@ -361,7 +415,7 @@
                 压力范围：
 				</td>
             <td>
-                <input id="pressure" style="width: 30px;" />至<input id="rolePower" style="width:30px;" />
+                <input id="pressure_down" class="easyui-textbox" style="width: 30px;" />至<input id="pressure_up" class="easyui-textbox" style="width:30px;" />
             </td>
         </tr>
         <tr>
@@ -396,13 +450,13 @@
                 一保(KM)：
 			</td>
             <td>
-                <input id="one" style="width: 130px;" />
+                <input id="one" class="easyui-textbox" style="width: 130px;" />
             </td>
 			<td>
                 二保(KM)：
 				</td>
             <td>
-                <input id="two" style="width: 130px;" />
+                <input id="two" class="easyui-textbox" style="width: 130px;" />
             </td>
         </tr>
 		 <tr>
@@ -444,8 +498,16 @@
     </div>
 </div>
 	
-<div id="alarmDialog">
-</div>
+ <div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
+        <div style="background-color: #ffffff;height:121px;margin:1px;">
+
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">信息删除无法恢复，确定删除？</span>
+        <div  style="width:100%;">
+            <button id="sure"></button>
+            <button id="cancel"></button>
+        </div>
+        </div>
+    </div>
 
 </body>
 </html>

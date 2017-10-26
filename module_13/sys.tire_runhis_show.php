@@ -99,17 +99,17 @@
             
             manager=$("#maingrid4").ligerGrid({
                 checkbox: false,
-                columns: [{display: '安装时间', name: 'time_add',align:'left',width:160},
-				{display: '卸载时间', name: 'time_remove',align:'left',width:160},
-				{display: '车辆号码', name: 'plate_no',align:'left',width:80},
-				{display: '轮胎号位', name: 'place_no',align:'left',width:80,render:function(row,rowindex,value,column){
+                columns: [{display: '安装时间', name: 'time_add',align:'left',width:200},
+				{display: '卸载时间', name: 'time_remove',align:'left',width:200},
+				{display: '车辆号码', name: 'plate_no',align:'left',width:200},
+				{display: '轮胎号位', name: 'place_no',align:'left',width:200,render:function(row,rowindex,value,column){
 				
 						return gettirename(Number(row.place_no));
 						
 					}
 				},
-				{display: '轮胎胎号', name: 'tire_no',align:'left',width:80},				
-				{display: '累计运行时长', name: 'run_time',align:'left',width:180,type:'float',
+				{display: '轮胎胎号', name: 'tire_no',align:'left',width:200},				
+				{display: '累计运行时长', name: 'run_time',align:'left',width:200,type:'float',
 				totalSummary:
                     {
                         type: 'sum',
@@ -126,7 +126,7 @@
 						}
                     }
 				},
-				{display: '累计运行里程(Km)', name: 'run_mile',align:'left',width:180,type:'float',
+				{display: '累计运行里程(Km)', name: 'run_mile',align:'left',width:200,type:'float',
 				totalSummary:
                     {
                         type: 'sum',
@@ -224,9 +224,9 @@
 		function getGridOptions(checkbox) {
              var options = {
                  columns: [
-                 { display: '胎号', name:'factory_code', width:150,isSort:false },
-				{ display: '传感器编号', name:'sensor_no', width: 150,align:'left' },
-				{ display: '规格',name:'norms_name',width: 120,align:'left'},
+                 { display: '胎号', name:'factory_code', width:100,isSort:false },
+				{ display: '传感器编号', name:'sensor_no', width: 100,align:'left' },
+				{ display: '规格',name:'norms_name',width: 100,align:'left'},
 				{ display: '层级',name:'class_name',width: 100,align:'left'},
 				{ display: '花纹',name:'figure_name',width: 100,align:'left'},
 				{ display: '品牌',name:'brand_name',width: 100,align:'left'},								 
@@ -275,7 +275,7 @@
 					obj.grid.loadData(true);
 					
 				},
-				dlgWidth:500,
+				dlgWidth:800,
 				dlgHeight:300,
 				onSelect:function(x){
 					//按了选择按钮
@@ -332,7 +332,50 @@
         }		
 		//serchpanel();
     </script>
-
+<style type="text/css">
+	#Button2{
+		border: 1px solid #1c66dc;
+		height: 25px;
+		line-height: 2px;
+		width: 100px;
+		background-color: white;
+		border-radius: 20px;
+		vertical-align: middle;
+		color: #1c66dc;
+	}
+	#Button2 :active,#Button2:hover{
+		color:#ffffff;
+		background-color:#1c66dc;
+	}
+	#Button1{
+		border: 1px solid #1c66dc;
+		height: 25px;
+		line-height: 2px;
+		width: 100px;
+		background-color: white;
+		border-radius: 20px;
+		vertical-align: middle;
+		color: #1c66dc;
+	}
+	#Button1 :active,#Button1:hover{
+		color:#ffffff;
+		background-color:#1c66dc;
+	}
+	#button{
+		border: 1px solid #1c66dc;
+		height: 25px;
+		line-height: 2px;
+		width: 100px;
+		background-color: white;
+		border-radius: 20px;
+		vertical-align: middle;
+		color: #1c66dc;
+	}
+	#button :active,#button:hover{
+		color:#ffffff;
+		background-color:#1c66dc;
+	}
+</style>
 <body style="margin-top:0px">
  <div id="message" style="width:800px"></div>
 <div class="l-loading" style="display:none" id="pageloading"></div> 
@@ -345,7 +388,7 @@
   </form>
   <div class="az" style="display:none;">
         <form id='serchform'>
-            <table style='width: 960px' class="bodytable1">
+            <table style='width:1366px' class="bodytable1">
                 <tr>
                     <td style="width:70px">
                         <div style='float: left; text-align: right;'>轮胎胎号：</div>
@@ -360,7 +403,13 @@
                         <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;'
                             onclick=" doclear() " />						
                         <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;' onclick=" doserch() " />
+						 
                     </td>
+		
+				<td></td><td></td><td></td><td></td><td></td>
+					<td style="align:right">
+					<button id="button" style="float: right;">打印</button>
+					</td>
                 </tr>
             </table>
         </form>

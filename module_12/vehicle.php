@@ -11,11 +11,12 @@
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
-	 function addUser() {
-            $('#addUser').dialog('open').dialog('setTitle', '新增车辆');
-			
-        };
+	
 		$(function(){
+			$('#add').on('click',function(){
+				  $('#addUser').dialog('open').dialog('setTitle', '新增车辆');
+			});
+			//增加功能
 			$('#save').bind('click',function(){
 				var plate_no=$('#tireNumber').textbox('getText');
 				var wheel_count_val=$('#tire_count').combobox('getText');
@@ -170,6 +171,10 @@
     vertical-align: middle;
     color: #1c66dc;
 	}
+	#toolbar button:active,#toolbar button:hover{
+		color:#ffffff;
+		background-color:#1c66dc;
+	}
 		
         #sure{
             height: 25px;
@@ -271,8 +276,7 @@
 <body class="easyui-layout" style="height: 100%; width: 100%;padding: 20px;" >
 <div id="kk" class="easyui-tabs">
     <div style="width: 100%;height:49%;border-bottom: 5px solid #ffffff" title="车辆列表">
-        <table id="dg" class="easyui-datagrid"
-               url="../jquery-easyui/datagrid_data1.json" style="width: 100%;"
+        <table id="dg" class="easyui-datagrid" style="width: 100%;"
                toolbar="#toolbar" singleSelect="true" fitColumns="true" striped="true">
             <thead>
             <tr>
@@ -290,7 +294,7 @@
                 <span> 起始日期：</span> <input id="startDate" type="text" class="easyui-datebox" required="required">
                 <span> 终止日期：</span> <input id="stopDate" type="text" class="easyui-datebox" required="required">
                 <button style="display: inline-block;margin-right: 10px;margin-left: 10px;">搜索</button>
-				<button style="display: inline-block; float:right;margin-right: 10px;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
+				<button id="add" style="display: inline-block; float:right;margin-right: 10px;">增加</button>
             </div>
         </div>
         </div>
