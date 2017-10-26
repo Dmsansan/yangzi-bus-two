@@ -1,0 +1,63 @@
+
+------------------
+-时间:09:48:57-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎参数管理',now(),,'新增','添加了新轮胎参数1')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新轮胎参数1')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:10:03:05-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎参数管理',now(),,'新增','添加了新轮胎参数2')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新轮胎参数2')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:10:07:02-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎参数管理',now(),,'新增','添加了新轮胎参数3')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新轮胎参数3')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:01:10:58-
+-错误信息:错误的SQL语句: [delete from tire_param_info where tire_param_id=]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=del-
+-错误页面地址:http://localhost/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:01:10:58-
+-错误信息:错误的SQL语句: [delete from tire_param_info where tire_param_id=]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=del-
+-错误页面地址:http://localhost/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:01:12:01-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎参数管理',now(),,'删除','删除了轮胎参数信息1')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了轮胎参数信息1')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=del-
+-错误页面地址:http://localhost/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:01:37:26-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('传感器管理',now(),,'新增','添加了新传感器d5611')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新传感器d5611')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_11/sys.sensor_show.php-
+------------------

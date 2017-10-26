@@ -39,7 +39,8 @@
                 valueField: 'store_id',
                 textField: 'store_name',
                 editable: false
-            }); 
+            });
+             
             $("#up_userRole").combobox({
                 valueField: 'role_id',
                 textField: 'role_title',

@@ -1,0 +1,38 @@
+
+------------------
+-时间:09:12:25-
+-错误信息:错误的SQL语句: [insert into tire_param_info (company_name,brand_id,norms_id,class_id,figure_id,
+                pressure_ul,pressure_ll,speed_ul,temp_ul,tkph_val,baro_val,mainterance1,mainterance2,rated_mile)
+		values ('朗逸','6','5','6','6',
+                '10','6','200','120','10','8','2000','4000','10000')]-
+-错误内容:Duplicate entry '6-5-6-6' for key 'brand_id'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:09:12:31-
+-错误信息:错误的SQL语句: [insert into tire_param_info (company_name,brand_id,norms_id,class_id,figure_id,
+                pressure_ul,pressure_ll,speed_ul,temp_ul,tkph_val,baro_val,mainterance1,mainterance2,rated_mile)
+		values ('朗逸','6','5','6','6',
+                '10','6','200','120','10','8','2000','4000','10000')]-
+-错误内容:Duplicate entry '6-5-6-6' for key 'brand_id'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=add-
+-错误页面地址:http://localhost/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:11:06:01-
+-错误信息:错误的SQL语句: [select a.*,b.brand_name,c.norms_name,d.class_name,e.figure_name from tire_param_info as a
+                left join brand as b on a.brand_id=b.brand_id 
+                left join brand as c on a.brand_id=c.norms_id
+                left join brand as d on a.brand_id=d.class_id
+                left join brand as e on a.brand_id=e.figure_id
+                ]-
+-错误内容:Unknown column 'c.norms_id' in 'on clause'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=qry&t=1-
+-错误页面地址:http://localhost/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------

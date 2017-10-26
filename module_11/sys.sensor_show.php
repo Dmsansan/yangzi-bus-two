@@ -12,9 +12,6 @@
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
 		$(function(){
-			$('#tireNumber').combobox({
-				
-			})
 			$('#cancel').bind('click',function(){
 				$('#alarm').dialog('close');
 			});
@@ -31,27 +28,54 @@
 			$.ajax({
 				url:'../ajaction/v1/?menuid=111011&cmd=qry&t=1',
 				type:'GET',
+                dataType:'json',
 				success:function(data){
-					console.log('getdata',data);
+                    console.log('getdata',data);
+                    $("#dg").datagrid("loadData", data.Rows);
+					//console.log('getdata',data);
 				}
 			});
 			$('#save').bind('click',function(){
 				var sensor_no=$('#sensorNumber').textbox('getText');
-				var pressure_ul=$('#pressure').textbox('getText');
-				var presure_ll=$('#pressure_high').textbox('getText');
+				var pressure_ul=$('#pressure_high').textbox('getText');
+				var pressure_ll=$('#pressure').textbox('getText');
 				var remark=$('#remark').textbox('getText');
-				var temp_ul=$('#tem').textbox('getText');
-				var temp_ll=$('#tem_high').textbox('getText');
+				var temp_ul=$('#tem_high').textbox('getText');
+				var temp_ll=$('#tem').textbox('getText');
 				$.ajax({
-					url:'../ajaction/v1/menuid=111011&cmd=add',
+					url:'../ajaction/v1/?menuid=111011&cmd=add',
 					type:'POST',
 					dataType:'json',
-					data:{'sensor_no':sensor_no,'pressure_ul':pressure_ul,'presure_ll':presure_ll,'remark':remark,'temp_ul':temp_ul,'temp_ll':temp_ll},
+					data:{'sensor_no':sensor_no,'pressure_ul':pressure_ul,'pressure_ll':pressure_ll,'remark':remark,'temp_ul':temp_ul,'temp_ll':temp_ll},
 					success:function(data){
 						console.log('sensor',data);
 					}
 				})
 			});
+            //批量添加传感器
+            $('#all_save').bind('click',function(){
+                //alert('2313');
+                var sensor_no=$('#all_sensorNumber').textbox('getText');
+                var sensor_num=$('#tire_Number').combobox('getValue');
+                var pressure_ul=$('#all_pressure_high').textbox('getText');
+                var pressure_ll=$('#all_pressure').textbox('getText');
+                var remark=$('#all_remark').textbox('getText');
+                var temp_ul=$('#all_tem_high').textbox('getText');
+                var temp_ll=$('#all_tem').textbox('getText');
+                var tire_switch=$('#tire_switch').checked;
+                $.ajax({
+                    url:'../ajaction/v1/?menuid=111011&cmd=add',
+                    type:'POST',
+                    dataType:'json',
+                    data:{'sensor_no':sensor_no,'pressure_ul':pressure_ul,'pressure_ll':pressure_ll,'remark':remark,'temp_ul':temp_ul,'temp_ll':temp_ll,'sensor_num':sensor_num,'tire_switch':tire_switch},
+                    success:function(data){
+                        console.log('sensor',data);
+                    },
+                    error:function(){
+                        console.log('失败');
+                    }
+                })
+            });
 			 
 		})
 	
@@ -221,20 +245,21 @@
            data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
         <thead>
         <tr>
-            <th data-options="field:'itemid',width:'10%'">传感器编号</th>
-            <th data-options="field:'productid',width:'10%'">传感器代码</th>
-            <th data-options="field:'listprice',width:'10%'">胎压上限</th>
-            <th data-options="field:'unitcost',width:'10%'">胎压下限</th>
-            <th data-options="field:'listprice',width:'10%'">胎温上限</th>
-            <th data-options="field:'unitcost',width:'10%'">温度下限</th>
-            <th data-options="field:'listprice',width:'20%'">备注</th>
+            <th data-options="field:'sensor_id',width:'10%'">传感器编号</th>
+            <th data-options="field:'sensor_no',width:'10%'">传感器代码</th>
+            <th data-options="field:'pressure_ul',width:'10%'">胎压上限</th>
+            <th data-options="field:'pressure_ll',width:'10%'">胎压下限</th>
+            <th data-options="field:'temp_ul',width:'10%'">胎温上限</th>
+            <th data-options="field:'temp_ll',width:'10%'">温度下限</th>
+            <th data-options="field:'remark',width:'30%'">备注</th>
             <th data-options="field:'_operate',width:'10%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-        <input type="text" placeholder="角色名称"/> <button>搜索</button>
-        <button style="float: right;margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addallsensor()">批量增加</a></button> <button style="float: right;margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addSensor()">增加</a></button>
+        <input id="sennor_no" type="text" placeholder="传感器代码"/> <button id="search">搜索</button>
+        <button style="float: right;margin-top: 15px;"><a style="text-decoration: none
+        ;" href="#" onclick="addallsensor()">批量增加</a></button> <button style="float: right;margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addSensor()">增加</a></button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:600px;height: 360px;background-color: #bdc4d4">
 	<div style="background-color: #ffffff;height:300px;margin:10px;">
@@ -243,10 +268,9 @@
             <tr>
                 <td>
                    传感器编号：
-				     </td>
+				</td>
                 <td>
                     <input id="updata_sensorNumber" class="easyui-textbox" style="width:150px;"/>
-                </td>
                 <td>
                     压力测量范围：
 					  </td>
@@ -346,13 +370,22 @@
                    传感器编号：
 				     </td>
                 <td>
-                    <input id="all_sensorNumber" class="easyui-textbox" style="width:80px;"/>-<input id="tireNumber" style="width:35px;"/>
+                    <input id="all_sensorNumber" class="easyui-textbox" style="width:80px;"/>-<select id="tire_Number" class="easyui-combobox" name="dept" style="width:50px;">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                </select>
                 </td>
                 <td>
                     压力测量范围：
 					  </td>
                 <td>
-				<input id="all_pressure" class="easyui-textbox"  style="width: 60px;" />至<input id="all_pressure_high " class="easyui-textbox"  style="width:60px;" />
+				<input id="all_pressure" class="easyui-textbox"  style="width: 60px;" />至<input id="all_pressure_high" class="easyui-textbox"  style="width:60px;" />
                 </td>
             </tr>
             <tr>
@@ -367,7 +400,7 @@
 				增加轮胎：
 				</td>
 				<td>
-				<input type="checkbox"/>
+				<input id="tire_switch" type="checkbox"/>
 				</td>
             </tr>
             <tr>

@@ -12,7 +12,7 @@
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
-				$('#cancel').bind('click',function(){
+			$('#cancel').bind('click',function(){
 				$('#alarm').dialog('close');
 			});
 			$('#close').bind('click',function(){
@@ -25,18 +25,84 @@
 			$('#all_close').bind('click',function(){
 				$('#addalltire').dialog('close');
 			});
-           
-
-          
+            //加载轮胎数据
+            $.ajax({
+                url:'../ajaction/v1/?menuid=111110&cmd=qry&t=1',
+                type:'GET',
+                dataType:'json',
+                success:function(data){
+                    console.log('getdata',data);
+                    $("#dg").datagrid("loadData", data.Rows);
+                    //console.log('getdata',data);
+                }
+            });
+            //获取品牌参数
+            $.ajax({
+                url: '../ajaction/v1/?menuid=0&cmd=get_all_brand',
+                type: 'post',
+                dataType: 'json',
+                success: function(data) {
+                   console.log('brand', data);
+                    var res = data.items;
+                    $("#tireBrand").combobox('loadData',res);
+                    
+                }
+            });
 			$('#tireBrand').combobox({
-				
+				valueField:'id',
+                textField:'name',
+                type:'json',
+                onSelect:function(res){
+                    console.log(res);
+                    $.ajax({
+                        url:'../ajaction/v1/?menuid=0&cmd=get_all_tireparam&brand_id='+res.id,
+                        type:'POST',
+                        dataType:'json',
+                        success:function(data){
+                            var res = data.items;
+                            $("#all").combobox('loadData',res);
+                            console.log(res);
+                        }
+                    });
+                    $("#all").combobox({
+                        valueField:'id',
+                        textField:'name',
+                        type:'json'
+                    })
+                }
 			})
-			$('#all').combobox({
-				
-			})
+			//获取未使用的传感器
+            $.ajax({
+                url:'../ajaction/v1/?menuid=0&cmd=get_all_sensor&state=nouse',
+                type:'POST',
+                dataType:'json',
+                success:function(data){
+                    var res=data.items;
+                    $("#sensor").combobox('loadData',res);
+                    console.log(res);
+                }
+            });
 			$('#sensor').combobox({
-				
+				valueField:'id',
+                textField:'name',
+                type:'json'
 			})
+            $("#save").bind('click',function(){
+                var factory_code = $("#tireNumber").textbox('getText');
+                var brand_id_val = $("#tireBrand").combobox('getValue');
+                var norms_id_val = $("#all").combobox('getValue');
+                var sensor_id_val = $("#sensor").combobox('getValue');
+                var figure_id_val = $("#pr").textbox('getText');
+                $.ajax({
+                    url:'../ajaction/v1/?menuid=111110&cmd=add',
+                    type:'POST',
+                    data:{'factory_code':factory_code,'brand_id_val':brand_id_val,'norms_id_val':norms_id_val,'sensor_id_val':sensor_id_val,'figure_id_val':figure_id_val},
+                    dataType:'json',
+                    success:function(data){
+                        console.log(data);
+                    }
+                });
+            });
 			$('#updata_tireBrand').combobox({
 				
 			})
@@ -217,16 +283,20 @@
            data-options="singleSelect:true,url:'../../datagrid_data1.json',method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
         <thead>
         <tr>
-            <th data-options="field:'itemid',width:'8%'">编号</th>
-            <th data-options="field:'productid',width:'8%'">轮胎编号</th>
-            <th data-options="field:'listprice',width:'8%'">传感器编号</th>
-            <th data-options="field:'unitcost',width:'10%'">归属厂</th>
-            <th data-options="field:'listprice',width:'10%'">轮胎规格</th>
-            <th data-options="field:'unitcost',width:'8%'">层级</th>
-            <th data-options="field:'listprice',width:'8%'">花纹</th>
-            <th data-options="field:'listprice',width:'8%'">品牌</th>
-            <th data-options="field:'listprice',width:'10%'">状态</th>
-            <th data-options="field:'listprice',width:'10%'">速度上限</th>
+            <th data-options="field:'tire_id',width:'8%'">编号</th>
+            <th data-options="field:'factory_code',width:'8%'">轮胎编号</th>
+            <th data-options="field:'sensor_no',width:'8%'">传感器编号</th>
+            <th data-options="field:'store_name',width:'10%'">归属厂</th>
+            <th data-options="field:'norms_name',width:'10%'">轮胎规格</th>
+            <th data-options="field:'class_name',width:'8%'">层级</th>
+            <th data-options="field:'figure_name',width:'8%'">花纹</th>
+            <th data-options="field:'brand_name',width:'8%'">品牌</th>
+            <th data-options="field:'status',width:'10%'">状态</th>
+            <th data-options="field:'speed_ul',width:'10%'">速度上限</th>
+            <th data-options="field:'temp_ul',width:'10%'">温度上限</th>
+            <th data-options="field:'pressure_ul',width:'10%'">胎压上限</th>
+            <th data-options="field:'pressure_ll',width:'10%'">胎压下限</th>
+            <th data-options="field:'mile_count',width:'10%'">总里程</th>
             <th data-options="field:'_operate',width:'10%',formatter:formatOption">操作</th>
         </tr>
         </thead>
@@ -297,7 +367,7 @@
                         品牌：
 							</td>
                     <td>
-                        <input id="tireBrand" style="width: 150px;" />
+                        <input id="tireBrand" class="easyui-combobox" style="width: 150px;" />
                     </td>
                 </tr>
                 <tr>
@@ -305,7 +375,7 @@
                         规格/层级/花纹：
                     </td>
                     <td colspan="3">
-                        <input id="all" style="width: 430px;" />
+                        <input id="all" class="easyui-combobox" style="width: 430px;" />
                     </td>
                 </tr>
                 <tr>
@@ -313,7 +383,7 @@
                         传感器编号：
                     </td>
                     <td>
-                        <input id="sensor" style="width: 150px;" />
+                        <input id="sensor" class="easyui-combobox" style="width: 150px;" />
                     </td>
                     <td>
                         花纹深度：

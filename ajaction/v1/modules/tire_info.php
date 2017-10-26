@@ -348,31 +348,31 @@ class tire_info {
         }
 
         $arr_norms=array();
-        $sql="select * from norms";
+        $sql="select * from brand";
         $res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
             while ($rec=$this->conn->fetch_array($res)){
-				$arr_norms[$rec[norms_id]]=$rec[norms_name];
+				$arr_norms[$rec[brand_id]]=$rec[norms_name];
 			}
             $this->conn->free_result($res);
         }
 
         $arr_class=array();
-        $sql="select * from class";
+        $sql="select * from brand";
         $res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
             while ($rec=$this->conn->fetch_array($res)){
-				$arr_class[$rec[class_id]]=$rec[class_name];
+				$arr_class[$rec[brand_id]]=$rec[class_name];
 			}
             $this->conn->free_result($res);
         }
 
         $arr_figure_type=array();
-        $sql="select * from figure_type";
+        $sql="select * from brand";
         $res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
             while ($rec=$this->conn->fetch_array($res)){
-				$arr_figure_type[$rec[figure_id]]=$rec[figure_name];
+				$arr_figure_type[$rec[brand_id]]=$rec[figure_name];
 			}
             $this->conn->free_result($res);
         }
