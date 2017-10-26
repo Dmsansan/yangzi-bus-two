@@ -237,7 +237,7 @@
 					obj.grid.loadData(true);
 					
 				},
-				dlgWidth:500,
+				dlgWidth:800,
 				dlgHeight:300,
 				onSelect:function(x){
 					
@@ -286,7 +286,7 @@
 					//obj.grid.loadData(true);
 					
 				},
-				dlgWidth:500,
+				dlgWidth:800,
 				dlgHeight:300,
 				onSelect:function(x){
 					
@@ -322,6 +322,19 @@
         }		
 		//serchpanel();
     </script>
+	<style type="text/css">
+	#style1 input{
+	border: 1px solid #1c66dc;
+    height: 25px;
+    line-height: 2px;
+    width: 100px;
+    background-color: white;
+    border-radius: 20px;
+    vertical-align: middle;
+    color: #1c66dc;
+	}
+	
+	</style>
 
 <body style="margin-top:0px">
  <div id="message" style="width:800px"></div>
@@ -355,7 +368,8 @@
 						<input id="norms_id"  type="text" readonly="" style="width: 120px;"   />
 						</div>
                     </td>
-					<td style='align:left'>
+					<td id="style1" style='align:left'>
+					
                         <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;'
                             onclick=" doclear() " />						
                         <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;' onclick=" doserch() " />

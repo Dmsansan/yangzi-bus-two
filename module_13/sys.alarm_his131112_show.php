@@ -253,7 +253,7 @@
 					obj.grid.loadData(true);
 					
 				},
-				dlgWidth:400,
+				dlgWidth:800,
 				dlgHeight:300,
 				onSelect:function(x){
 										

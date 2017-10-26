@@ -10,6 +10,17 @@
     <link href="../css/homepagecss/carManger.css" type="text/css" rel="stylesheet">
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+	<script type="text/javascript">
+	$(function(){
+		$.ajax({
+			url:'../ajaction/v1/?menuid=131010&cmd=qry',
+			success:function(data){
+				console.log('data',data);
+			}
+		})
+	})
+	
+	</script>
 </head>
 <body class="easyui-layout" style="height: 100%; width: 100%">
 <table id="datatable" class="easyui-datagrid" pagination="true"
@@ -17,10 +28,10 @@
        toolbar="#tb" singleSelect="true" fitColumns="true">
     <thead>
     <tr>
-        <th field="name1" width="15%" rowspan="2">时间</th>
-        <th field="name2" width="5%" rowspan="2">信息</th>
-        <th field="name3" width="10%" rowspan="2">车牌号码</th>
-        <th field="name4" width="10%" rowspan="2">累计里程</th>
+        <th field="Time" width="15%" rowspan="2">时间</th>
+        <th field="info" width="5%" rowspan="2">信息</th>
+        <th field="Plate_No" width="10%" rowspan="2">车牌号码</th>
+        <th field="mile_count" width="10%" rowspan="2">累计里程</th>
         <th colspan=2 width="10%">左前轮</th>
         <th colspan=2 width="10%">右前轮</th>
         <th colspan=2 width="10%">左后外侧</th>

@@ -89,7 +89,7 @@
    *   panel  *
 * ------------ */
 .l-panel {
-    border: 1px solid #99BBE8;
+    border: none;
     position: relative;
     text-align: left;
 }

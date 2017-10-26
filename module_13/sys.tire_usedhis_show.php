@@ -101,17 +101,17 @@
             
             manager=$("#maingrid4").ligerGrid({
                 checkbox: false,
-                columns: [{display: '安装时间', name: 'time_add',align:'left',width:160},
-				{display: '卸载时间', name: 'time_remove',align:'left',width:160},
-				{display: '车辆号码', name: 'plate_no',align:'left',width:80},
-				{display: '轮胎号位', name: 'place_no',align:'left',width:80,render:function(row,rowindex,value,column){
+                columns: [{display: '安装时间', name: 'time_add',align:'left',width:300},
+				{display: '卸载时间', name: 'time_remove',align:'left',width:300},
+				{display: '车辆号码', name: 'plate_no',align:'left',width:300},
+				{display: '轮胎号位', name: 'place_no',align:'left',width:300,render:function(row,rowindex,value,column){
 				
 						return gettirename(Number(row.place_no));
 						
 					}
 				},
-				{display: '轮胎胎号', name: 'tire_no',align:'left',width:80},				
-				{display: '使用时间', name: 'used_time',align:'left',width:180,type:'float',
+				{display: '轮胎胎号', name: 'tire_no',align:'left',width:300},				
+				{display: '使用时间', name: 'used_time',align:'left',width:200,type:'float',
 				totalSummary:
                     {
                         type: 'sum',
@@ -261,7 +261,7 @@
 					obj.grid.loadData(true);
 					
 				},
-				dlgWidth:500,
+				dlgWidth:800,
 				dlgHeight:300,
 				onSelect:function(x){
 					//按了选择按钮
@@ -318,7 +318,18 @@
         }		
 		//serchpanel();
     </script>
-
+<style type="text/css">
+#Button1{
+			border: 1px solid #1c66dc;
+			height: 25px;
+			line-height: 2px;
+			width: 100px;
+			background-color: white;
+			border-radius: 20px;
+			vertical-align: middle;
+			color: #1c66dc;
+		}
+</style>
 <body style="margin-top:0px">
  <div id="message" style="width:800px"></div>
 <div class="l-loading" style="display:none" id="pageloading"></div> 
@@ -342,10 +353,9 @@
 						<input id="tire_id"  type="text" readonly="" style="width: 120px;"   />
 						</div>
                     </td>
-					<td style='align:left'>
-                        <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;'
-                            onclick=" doclear() " />						
-                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;' onclick=" doserch() " />
+					<td style='align:left;padding-top;10px;'>
+                        						
+                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;border-color:#1c66dc;background-color:#ffffff;border-radius:20px;' onclick=" doserch() " />
                     </td>
                 </tr>
             </table>

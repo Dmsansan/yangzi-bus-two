@@ -1900,6 +1900,7 @@
   color: #000000;
   border-collapse: separate;
   text-align:center;
+  width:100%;
 }
 .datagrid-row{
   background: #f1f6fd;
