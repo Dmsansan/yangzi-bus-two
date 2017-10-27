@@ -542,7 +542,7 @@
 }
 .dialog-toolbar,
 .dialog-button {
-  background: #F4F4F4;
+  background: #f1f6fd;
   border-width: 1px;
   border-style: solid;
 }
@@ -550,7 +550,7 @@
   border-color: #95B8E7 #95B8E7 #dddddd #95B8E7;
 }
 .dialog-button {
-  border-color: #dddddd #95B8E7 #95B8E7 #95B8E7;
+  border-color: #f1f6fd #f1f6fd #f1f6fd #f1f6fd;
 }
 .window-thinborder .dialog-toolbar {
   border-left: transparent;

@@ -11,9 +11,7 @@
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
-		$(function(){
-<<<<<<< HEAD
-		
+		$(function(){		
 			//批量增加按钮
 			$('#addall').on('click',function(){
 				$('#addallsensor').dialog('open').dialog('setTitle','批量增加传感器');
@@ -29,8 +27,7 @@
 			$('#tireNumber').combobox({
 				
 			})
-=======
->>>>>>> f25139cae1e9c2ed649a7943e9ebb8f4ae419402
+
 			$('#cancel').bind('click',function(){
 				$('#alarm').dialog('close');
 			});
@@ -263,14 +260,13 @@
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-<<<<<<< HEAD
+
         <input type="text" placeholder="角色名称"/> <button>搜索</button>
         <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;">增加</button>
-=======
+
         <input id="sennor_no" type="text" placeholder="传感器代码"/> <button id="search">搜索</button>
         <button style="float: right;margin-top: 15px;"><a style="text-decoration: none
         ;" href="#" onclick="addallsensor()">批量增加</a></button> <button style="float: right;margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addSensor()">增加</a></button>
->>>>>>> f25139cae1e9c2ed649a7943e9ebb8f4ae419402
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:600px;height: 360px;background-color: #bdc4d4">
 	<div style="background-color: #ffffff;height:300px;margin:10px;">

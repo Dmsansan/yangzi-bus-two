@@ -11,11 +11,33 @@
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
-	
+	    function Option(value, row, index) {
+            return '<a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px;" onclick="uninstallData('+index+')">卸载轮胎</a>';
+			}
+		
+       
+        function uninstallData(index) {
+            $('#tire_dg').datagrid('selectRow', index);
+            var row = $('#tire_dg').datagrid('getSelected');
+            if (row){
+                $('#tire_alarm').dialog('open').dialog('setTitle','新增角色');         
+            }
+        }
+			
 		$(function(){
+			
+			$('#tire_cancel').bind('click',function(){
+				$('#tire_alarm').dialog('close');
+			});
+			
+			$('#tire_close').bind('click',function(){
+				$('#tire_dlg').dialog('close');
+			});
+			
 			$('#add').on('click',function(){
 				  $('#addUser').dialog('open').dialog('setTitle', '新增车辆');
 			});
+			
 			//增加功能
 			$('#save').bind('click',function(){
 				var plate_no=$('#tireNumber').textbox('getText');
@@ -43,6 +65,9 @@
 				url:'../css/homepagecss/chelun.json',
 				valueField:'id',
 				textField:'text',
+				onSelect:function(rec){
+					
+				}
 			});
 			$('#up_tireVehicle').combobox({
 				valueField:'v_term_id',
@@ -53,6 +78,10 @@
 				valueField:'id',
 				textField:'text',
 			});
+			//加载安装位置：
+			$('#tire_pr').combobox({
+				
+			})
 			//加载全部车载终端；
 			$.ajax({
                 url: '../ajaction/v1/?menuid=101115&cmd=qry&t=1',
@@ -100,8 +129,87 @@
 					 $('#dlg').dialog('close');	
 					}
 				})
-			})
+			});
+			$('#install_tire').on('click',function(){
+				 var row = $('#dg').datagrid('getSelected');
+				 if(row==null){
+					 $.messager.alert('警告','没有选中车辆','info');
+				 }else{
+					$('#tire_dlg').dialog('open').dialog('setTitle','安装轮胎');
+					var plateNumber=row.plate_no;
+					loadgrid(plateNumber);
+					
+				 }
+				 		
+			console.log('dddd',row);
+			});
+			
 		})
+		function initcomo(s)
+		{
+				return $(s).combobox({			
+						valueField:'id',
+						textField:'name',
+						onSelect: function (rec) {
+							var newvalue=rec.id;
+							if(s=="#norms_id"){
+								if (!newvalue)
+									newvalue = -1;								
+								getlistdata(com_tires,"../ajaction/v1/?menuid=0&cmd=get_all_tire&tire_param_id="+newvalue);
+                            }							
+						}
+			});
+		}
+		function getlistdata(com_obj,url)
+		{
+			$.ajax({
+                type: "POST",	
+				dataType:'json',				
+				url:url,
+				success:function (result) {
+					//
+					if(result.status!="OK"){
+						alert(result.reason);
+						return;
+					}
+				com_obj.combobox('loadData',result.items);
+					
+				},
+				error:function(){
+					alert("获取列表失败");
+				}
+			});
+		}
+		
+		//轮胎列表加载数据
+		function loadgrid(plateNo){
+			var plate_no=plateNo;
+			com_norms=initcomo("#tire_all");     //轮胎参数
+			com_tires=initcomo("#tire_sensor");
+			com_place=initcomo("#tire_pr");  
+			getlistdata(com_norms,"../ajaction/v1/?menuid=0&cmd=get_all_tireparam)");
+			$.ajax({
+				url:'../ajaction/v1?menuid=121011&cmd=qry&plate_no='+plate_no,
+				dataType:'json',
+				type:'post',
+				success:function(data){
+					console.log('loadData',data);
+					if(data.status!="OK"){
+						alert(data.reason);
+						return;
+					}
+					for (var n in data.items) {
+                        if (data.items[n] == "null" || data.items[n] == null)
+                            data.items[n] = "";
+						else{
+							/* data.items[n].name=gettirename(Number(data.items[n].id)); */
+						}	
+                    }
+					com_place.combobox('loadData',data.items);
+					
+				}
+			})
+		}
         function formatOption(value, row, index) {
             return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
         }
@@ -110,6 +218,7 @@
             $('#dg').datagrid('selectRow', index);
             var row = $('#dg').datagrid('getSelected');
             if (row){
+				console.log('ltdata',row);
                 $('#dlg').dialog('open').dialog('setTitle','修改记录');
 				$('#up_tireNumber').textbox('setValue',row.plate_no);
 				$('#up_tireVehicle').combobox('setValue',row.v_term_no);
@@ -139,16 +248,7 @@
 				
 			}
 		}
-        $(function () {
-            $('#kk').tabs({
-                onSelect:function(index){
-                    var p = $(this).tabs('getTab', index);
-                    p.find('iframe').attr('src','vv.php');
-                }
-            });
-          tab.panel('refresh'); // get selected panel
-
-        })
+      
 		function reload(){
 			$.ajax({
 				url:'../ajaction/v1/?menuid=121010&cmd=qry&t=1',
@@ -162,14 +262,14 @@
     </script>
 	<style>
 	#toolbar button{
-		 border: 1px solid #1c66dc;
-    height: 25px;
-    line-height: 2px;
-    width: 100px;
-    background-color: white;
-    border-radius: 20px;
-    vertical-align: middle;
-    color: #1c66dc;
+		border: 1px solid #1c66dc;
+		height: 25px;
+		line-height: 2px;
+		width: 100px;
+		background-color: white;
+		border-radius: 20px;
+		vertical-align: middle;
+		color: #1c66dc;
 	}
 	#toolbar button:active,#toolbar button:hover{
 		color:#ffffff;
@@ -269,13 +369,71 @@
             background: url("../css/img/cancel_selected.png") no-repeat;
 
         }
+	#tire_save{
+            border: none;
+            width: 60px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url("../css/img/ok_normal.png") no-repeat;
 
+        }
+        #tire_save:visited,#tire_save:link{
+            background: url("../css/img/ok_normal.png") no-repeat;
+
+        }
+        #tire_save:active,#tire_save:hover{
+            background: url("../css/img/ok_seleected.png") no-repeat;
+
+        }
+        #tire_close{
+            border: none;
+            width: 60px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
+        }
+        #tire_close:visited,#tire_close:link{
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
+        }
+        #tire_close:active,#tire_close:hover{
+            background: url("../css/img/cancel_selected.png") no-repeat;
+
+        }
+		 #tire_sure{
+            height: 25px;
+            width: 60px;
+            border: none;
+            margin-right: 11px;
+            background: url("../css/img/yes_normal.png") no-repeat;
+        }
+        #tire_sure:visited,#tire_sure:link{
+            background: url("../css/img/yes_normal.png") no-repeat;
+        } 
+        #tire_sure:hover,#tire_sure:active{
+            background: url("../css/img/yes_highlighted.png") no-repeat;
+        }
+        #tire_cancel{
+            height: 25px;
+            width: 60px;
+            border: none;
+            background: url("../css/img/no_normal.png") no-repeat;
+        }
+        #tire_cancel:visited,#tire_cancel:link{
+            background: url("../css/img/no_normal.png") no-repeat;
+        }
+        #tire_cancel:hover,#tire_cancel:active{
+            background: url("../css/img/no_highlighted.png") no-repeat;
+        }
       
 	</style>
 </head>
-<body class="easyui-layout" style="height: 100%; width: 100%;padding: 20px;" >
-<div id="kk" class="easyui-tabs">
-    <div style="width: 100%;height:49%;border-bottom: 5px solid #ffffff" title="车辆列表">
+<body class="easyui-layout" style="height: 100%; width: 100%;" >
+<div data-options="region:'west',title:'车辆列表'">
+    <div style="width: 100%;height:49%;" title="车辆列表">
         <table id="dg" class="easyui-datagrid" style="width: 100%;"
                toolbar="#toolbar" singleSelect="true" fitColumns="true" striped="true">
             <thead>
@@ -298,9 +456,87 @@
             </div>
         </div>
         </div>
-    <div id="GG" style="height: 50%;width:100%;" title="轮胎列表" >
-        <iframe scrolling="auto"  frameborder="0"  style="width:100%;height:600px;"></iframe>
+   
+
+</div>
+<div data-options="region:'center',title:'轮胎列表'"> 
+<table id="tire_dg" class="easyui-datagrid" url="../jquery-easyui/datagrid_data1.json" width="100%" style="background-color: #ffb3b3" style="padding-top:20px;"
+       toolbar="#tire_tb" singleSelect="true" fitColumns="true" striped="true">
+    <thead style="width: 100%">
+    <tr>
+        <th field="name1" width="10%" >轮胎位置</th>
+        <th field="name2" width="15%" >传感器编号</th>
+        <th field="name3" width="10%" >轮胎号码</th>
+        <th field="name4" width="10%" >品牌</th>
+        <th field="name1" width="10%" >规格/层级/花纹</th>
+        <th field="name2" width="10%" >速度上限</th>
+        <th field="name3" width="10%" >温度上限</th>
+        <th field="name4" width="10%" >胎压上限</th>
+        <th field="name6" width="10%"  formatter="Option">操作</th>
+    </tr>
+    </thead>
+</table>
+    <div id="tire_tb" sstyle="margin-bottom: 10px;margin-top: 50px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+    <div style="margin-bottom: 20px;height: 30px;">
+	   	<button id="install_tire" style="display: inline-block; float:right;margin-right: 10px;margin-top:10px"><span style="color:blue;font-size:14px;">+</span>安装轮胎</button>
     </div>
+    </div>
+
+	 <div id="tire_dlg" class="easyui-dialog" data-options="closed:true" style="width:450px;height: 300px;background-color: #bdc4d4">
+        <div style="background-color: #ffffff;height:240px;margin:10px;">
+             <span style=" display: inline-block; margin-left: 10px; font-size: 14px; margin-top: 10px; font-family: 微软雅黑;">基本信息</span>
+            <table style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
+                <tr>
+                    <td>
+                        规格/层级/花纹：
+						</td>
+				<td>
+                        <input id="tire_all" class="easyui-combobox" style="width: 150px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        轮胎胎号：
+						</td>
+				<td>
+                        <input id="tire_sensor" class="easyui-combobox" style="width: 150px;" />
+                    </td>
+				</tr>
+                <tr>	
+                    <td>
+                        安装位置：
+						</td>
+				<td>
+                        <input id="tire_pr" class="easyui-combobox" style="width: 150px;" />
+                    </td>
+
+                </tr>
+				<tr style="text-align: center">
+				
+
+				<td>
+					<button id='tire_save' style="margin-top:10px;"></button>
+				</td>
+				<td>
+					<button id='tire_close' style="margin-top:10px;"></button>
+				</td>
+				
+			</tr>
+            </table>
+        </div>
+    </div>
+	 <div id="tire_alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
+        <div style="background-color: #ffffff;height:121px;margin:1px;">
+
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">数据删除无法恢复，确定删除？</span>
+        <div  style="width:100%;">
+            <button id="tire_sure"></button>
+            <button id="tire_cancel"></button>
+        </div>
+        </div>
+    </div>
+	
+	
 
 </div>
 
@@ -403,16 +639,16 @@
             </table>
 		</div>
      </div>
-        <div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
-<div style="background-color: #ffffff;height:121px;margin:1px;">		
+<div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
+	<div style="background-color: #ffffff;height:121px;margin:1px;">		
 		<span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">用户删除无法恢复，确定删除？</span>
         <div  style="width:100%;">
             <button id="sure"></button>
             <button id="cancel"></button>
         </div>
-		</div>
-		</div>
-		
+	</div>
+</div>
+	
 
 </body>
 </html>

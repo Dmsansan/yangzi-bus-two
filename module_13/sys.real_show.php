@@ -174,7 +174,7 @@
             
             manager=$("#maingrid4").ligerGrid({
                 checkbox: false,
-                columns: [{display: '时间', name: 'Time',align:'left',width:200},
+                columns: [{display: '时间', name: 'Time',width:200},
 					{display:"信息",name:'info',aligin:'center',width:50,render:
 						function (row,rowindex, value, column) {
 							
@@ -201,7 +201,7 @@
 						
 						}					
 					},
-				{display: '车牌号码', name: 'Plate_No',align:'left',width:250},
+				{display: '车牌号码', name: 'Plate_No',width:260},
 				/*
 				{display: '速度', name: 'speed',align:'left',width:80,
 					render: function (row,rowindex, value, column) {  
@@ -214,14 +214,14 @@
 						return html;
 					 
 				},*/
-				{display: '累计里程(Km)', name: 'mile_count',align:'left',width:200},
+				{display: '累计里程(Km)', name: 'mile_count',width:200},
                 <?php
 					$i=1;
 					for($i;$i<=6;$i++){
 				?>
                 { display:gettirename(<?php echo $i;?>), columns:
                 [
-                    { display: '压力(Kg)', name: 'pressure<?php echo $i;?>', align: 'left', width: 60 ,
+                    { display: '压力(Kg)', name: 'pressure<?php echo $i;?>', width: 80 ,
 						render: function (row,rowindex, value, column) {  
 						
 							if(typeof(row.overflow_pressure<?php echo $i;?>)=="undefined"){
@@ -231,7 +231,7 @@
 							return html;
 						}
 					}, 
-                    { display: '温度(℃)', name: 'temp<?php echo $i;?>', width: 60, align: 'left',
+                    { display: '温度(℃)', name: 'temp<?php echo $i;?>', width: 80,
 						render: function (row,rowindex, value, column) {  
 						
 							if(typeof(row.overflow_temp<?php echo $i;?>)=="undefined"){
@@ -381,8 +381,7 @@
 				$(".az").css("display","inline");
 				$(".az").css("position","absolute");
 				$(".az").css("left","5px");
-				$(".az").css("top","30px");
-				
+				$(".az").css("top","30px");		
 				//alert("1");
             } else {
                 $("#grid").css("margin-top", "0px");
@@ -401,7 +400,7 @@
  <div id="message" style="width:800px"></div>
 <div class="l-loading" style="display:block" id="pageloading"></div> 
     <div id="toolbar" ></div>
-	<div style="position: absolute;width:80px;top:5px;left:70px">车队:</div>
+	<div style="position: absolute;width:80px;top:15px;left:70px">车队:</div>
     <div id="xxcc" style="position: absolute;width:280px;top:2px;left:100px"><input type="text" id="store_id"  name="store_id"/></td></div>	
 	<div id="grid">
 		<div id="maingrid4" style="margin:0px"></div>

@@ -32,13 +32,15 @@ h2 {
     text-align: center;
     margin: 0;
     padding: 0;
-    background-color: #bdc4d4;
+	background:url("../css/img/react.png") no-repeat;
+	background-size:100% 100%;
+   
 }
 #top_left{
     width: 210px;
     height: 74px;
     float: left;
-   background: url("../css/img/title.png") no-repeat ;
+
 }
 #top_right{
     margin-left: 211px;
@@ -46,8 +48,7 @@ h2 {
     height: 74px;
     padding-right: 6px;
 	padding-bottom:6px;
-    background: url("../css/img/head.png") no-repeat  ;
-	background-size:100% 100%;
+  
     text-align: right;
 }
 .panel-icon {

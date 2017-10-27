@@ -6,7 +6,7 @@ input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;
 legend{color:#000;}del,ins{text-decoration:none;}
 
 body{font-family: "微软雅黑", "宋体", Arial, sans-serif; font-size: 12px; }
-.l-clear{ clear:both; width:1px; height:1px; overflow:hidden;}
+.l-clear{ clear:both; width:1px; height:5px; overflow:hidden;}
 .l-hidden {display: none;}
 .l-loading
 {

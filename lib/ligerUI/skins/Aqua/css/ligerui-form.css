@@ -46,6 +46,7 @@ margin-left: 40px;
 /* 文本框、下来框、日期框、调整器都使用到这个 */
 .l-text
 {
+	margin-top:10px;
     position:relative;
     border:1px solid #cccccc; height:20px; line-height:20px;
 	border-radius:2px;

@@ -1,0 +1,179 @@
+
+------------------
+-时间:09:25:29-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('传感器管理',now(),,'新增','添加了新传感器a66501')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新传感器a66501')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:29-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66502','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:29-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66503','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:29-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66504','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:29-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66505','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:29-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66506','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:29-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66501','12.50','6.50','125','-40','s')]-
+-错误内容:Duplicate entry 'a66501' for key 'sensor_no'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:29-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66502','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:29-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66503','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:29-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66504','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:29-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66505','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:29-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66506','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:30-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66501','12.50','6.50','125','-40','s')]-
+-错误内容:Duplicate entry 'a66501' for key 'sensor_no'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:30-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66502','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:30-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66503','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:30-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66504','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:30-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66505','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:09:25:30-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a66506','12.50','6.50','125','-40','s')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------

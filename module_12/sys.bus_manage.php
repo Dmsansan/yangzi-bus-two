@@ -152,7 +152,9 @@
 							break;
 						}
 						f_openWindow("module_12/sys.bustire_add.php?r_plate_no="+encodeURI(row.plate_no), "安装轮胎", 400, 300, f_savetire);
-					}
+					}  
+					
+					     
 					break;
 				case "removetire":
 					{

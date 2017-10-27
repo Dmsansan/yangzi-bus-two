@@ -240,8 +240,8 @@
             <div style="height: 74px;  margin-right: 41px;padding-bottom: 40px;">
                 <!--<p style="float:left"><a style="width:88xpheight:88px;text-align:center"><img src="css/img/icon01.png" width="">首页</a></p>
                 <p style="float:left">31313</p>-->
-                <p style="font-size: 12px;color: red;line-height: 74px;vertical-align:middle;" id="Username"></p>
-                <p style="font-size: 12px;color: #333333;line-height: 74px;vertical-align:middle;">你好,欢迎回来！&nbsp;&nbsp;<span id="jnkc" style="text-align:right;color:red"></span></p>
+                <p style="font-size: 12px;color: white;line-height: 74px;vertical-align:middle;" id="Username"></p>
+                <p style="font-size: 12px;color: #ffffff;line-height: 74px;vertical-align:middle;">你好,欢迎回来！&nbsp;&nbsp;<span id="jnkc" style="text-align:right;color:white"></span></p>
 
                <a onclick="changepass()"> <img id="back" src="css/img/Report_normal.png"  style="margin-left:50px;margin-right: 10px"></a>  <span style="color:#9f9f9f">|</span><a onclick="logout()"><img src="css/img/out_highlighted.png" style="margin-left: 10px;"></a>
             </div>

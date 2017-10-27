@@ -53,7 +53,7 @@
                 textField:'name',
                 type:'json',
                 onSelect:function(res){
-                    console.log(res);
+                    console.log('res',res);
                     $.ajax({
                         url:'../ajaction/v1/?menuid=0&cmd=get_all_tireparam&brand_id='+res.id,
                         type:'POST',
