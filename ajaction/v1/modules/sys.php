@@ -506,9 +506,9 @@ class sys {
 
         if($brand_id == ""){
             $sql="select a.*,b.norms_name,c.class_name,d.figure_name,e.brand_name from tire_param_info as a 
-                left join norms as b on a.norms_id=b.norms_id 
-                left join class as c on a.class_id=c.class_id
-                left join figure_type as d on a.figure_id=d.figure_id
+                left join brand as b on a.norms_id=b.norms_id 
+                left join brand as c on a.class_id=c.class_id
+                left join brand as d on a.figure_id=d.figure_id
                 left join brand as e on a.brand_id=e.brand_id";
 		}
 

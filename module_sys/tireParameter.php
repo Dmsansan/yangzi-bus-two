@@ -148,14 +148,14 @@
                 var norms_name=$('#up_norms_name').textbox('getText');
                 var class_name=$('#up_class_name').textbox('getText');
                 var figure_name=$('#up_figure_name').textbox('getText');
-                //console.log('dddddd',role_id+remark+module_list+module_list_val+operlist);
+               
                 
                 $.ajax({
                     url:'../ajaction/v1/?menuid=101112&cmd=edit',
                     type:'POST',
                     data:{'brand_name':brand_name,'brand_id':brand_id,'remark':remark,'norms_name':norms_name,'class_name':class_name,'figure_name':figure_name},
                     success:function(data){
-                        console.log("data",data);
+                  
                         $('#dlg').dialog('close');
                             reload();   
                     }
@@ -166,7 +166,6 @@
             //搜索操作：
             $('#search').bind('click',function(){
                 var brand_name=$('#search_brand_name').val();
-                //console.log('niaho',name);
                 $.ajax({
                     url:'../ajaction/v1/?menuid=101112&cmd=qry',
                     type:'POST',
@@ -263,7 +262,7 @@
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-        <input type="text" id="search_brand_name" placeholder="品牌名称"/> <button id="search">搜索</button> <button>重置</button><button style="float: right" onclick="addUser()">增加</button>
+        <input id="search_brand_name"  /> <button id="search">搜索</button><button style="float: right;margin-top: 15px;" onclick="addUser()">增加</button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 400px;">
     <div style="background-color: #ffffff;height:340px;margin:10px;">

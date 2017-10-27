@@ -11,10 +11,11 @@
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
-        function addUser() {
-            $('#addUser').dialog('open').dialog('setTitle','增加信息');
-        };
+       
         $(function () { 
+		$('#add').on('click',function(){
+			 $('#addUser').dialog('open').dialog('setTitle','增加信息');
+		});
 		$('#cancel').bind('click',function(){
 				$('#alarm').dialog('close');
 			});
@@ -269,7 +270,7 @@
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
         <input type="text" id="xiuli_name" placeholder="修理厂名称"/> <button id="search">搜索</button>
-        <button style="float: right;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
+        <button id="add" style="float: right;margin-top: 15px;">增加</button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 400px;">
 	<div style="background-color: #ffffff;height:340px;margin:10px;">

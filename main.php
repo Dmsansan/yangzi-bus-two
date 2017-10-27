@@ -55,9 +55,12 @@
             textField:'store_name', 
             onSelect:function(rec){
                 var url = './ajaction/v1/?menuid=0&cmd=get_index_data&store_id='+rec.store.id;
+				console.log();
+				/* $('#company').combobox('loadData',rec); */
 
             }
         });
+		
         
         //获取修理厂列表
         $.ajax({
@@ -234,11 +237,11 @@
         <!--logo图标-->
         </div>
          <div id="top_right">
-            <div style="height: 84px;  margin-right: 41px;padding-bottom: 40px;">
+            <div style="height: 74px;  margin-right: 41px;padding-bottom: 40px;">
                 <!--<p style="float:left"><a style="width:88xpheight:88px;text-align:center"><img src="css/img/icon01.png" width="">首页</a></p>
                 <p style="float:left">31313</p>-->
-                <p style="font-size: 12px;color: red;line-height: 84px;vertical-align: middle;" id="Username"></p>
-                <p style="font-size: 12px;color: #333333;line-height: 84px;vertical-align: middle;">你好,欢迎回来！&nbsp;&nbsp;<span id="jnkc" style="text-align:right;color:red"></span></p>
+                <p style="font-size: 12px;color: red;line-height: 74px;vertical-align:middle;" id="Username"></p>
+                <p style="font-size: 12px;color: #333333;line-height: 74px;vertical-align:middle;">你好,欢迎回来！&nbsp;&nbsp;<span id="jnkc" style="text-align:right;color:red"></span></p>
 
                <a onclick="changepass()"> <img id="back" src="css/img/Report_normal.png"  style="margin-left:50px;margin-right: 10px"></a>  <span style="color:#9f9f9f">|</span><a onclick="logout()"><img src="css/img/out_highlighted.png" style="margin-left: 10px;"></a>
             </div>
@@ -253,7 +256,7 @@
                             <li><a onclick="addTab('用户管理','module_sys/sys.users_show.php')" >用户管理</a></li>
                       
                             <li><a onclick="addTab('修理厂管理','module_sys/repairDepotManger.php')">修理厂管理</a></li>
-                            <li><a onclick="addTab('轮胎基础参数管理','module_sys/tireParameter.php')">轮胎基础参数管理</a></li>
+                            <li><a onclick="addTab('轮胎基础参数管理','module_sys/tireParameter.php')">轮胎基本参数管理</a></li>
                             <li><a onclick="addTab('车载终端管理','module_sys/sys.vehicle_show.php')">车载终端管理</a></li>
                         </ul>
             </div>
@@ -293,7 +296,7 @@
             <div title="统计分析" data-options="iconCls:'icon-undo'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
-                        <a onclick="addTab('轮胎运行总时长总里程','module_13/sys.tire_usedhis_show.php')"> 轮胎运行总时长总里程</a>
+                        <a onclick="addTab('轮胎运行总时长总里程','module_13/sys.tire_runhis_show.php')"> 轮胎运行总时长总里程</a>
                     </li>
                     <li>
                         <a onclick="addTab('轮胎库存查询','module_13/sys.tirestore_charts_show.php')"> 轮胎库存查询</a>
@@ -321,7 +324,7 @@
             </div>
         </div>
     </div>
-     <div  id="center_content" class="easyui-tabs" style="width:90%;height: 90%;background-color: #bdc4d4;margin-left: 6px;padding-bottom: 6px;padding-right: 6px;"  data-options="region:'center',width:'80%'" >
+     <div  id="center_content" class="easyui-tabs" style="width:90%;height: 100%;background-color: #bdc4d4;margin-top:6px;"  data-options="region:'center',width:'80%'" >
 
         <div id="center_page" title="首页" data-options="" style="overflow-y: hidden;">
             <div id="i-center">
@@ -458,7 +461,7 @@
             </div>
         </div>
     </div>
-    <div id="south" data-options="region:'south',split:'true'" style="height:48px;border-top: 2px solid #ffffff;text-align:center;">
+    <div id="south" data-options="region:'south'," style="height:48px;text-align:center;">
         <span> @2015 轮胎全生命管理周期系统 版权所有 v1.17</span>
     </div>
 

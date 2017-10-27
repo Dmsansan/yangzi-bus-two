@@ -28,7 +28,7 @@ h2 {
 }
 #top{
     overflow: hidden;
-    height:90px;
+    height:74px;
     text-align: center;
     margin: 0;
     padding: 0;
@@ -36,19 +36,18 @@ h2 {
 }
 #top_left{
     width: 210px;
-    height: 90px;
+    height: 74px;
     float: left;
-   background: url("../css/img/logo.png") no-repeat ;
+   background: url("../css/img/title.png") no-repeat ;
 }
 #top_right{
-    margin-left: 215px;
-    margin-top: 6px;
+    margin-left: 211px;
     margin-right: 6px;
-    height: 100px;
-    padding-left: 6px;
+    height: 74px;
     padding-right: 6px;
-    padding-top: 6px;
-    background-color: #f1f6fd;
+	padding-bottom:6px;
+    background: url("../css/img/head.png") no-repeat  ;
+	background-size:100% 100%;
     text-align: right;
 }
 .panel-icon {
@@ -220,7 +219,13 @@ text-align: left;
     margin:5px 5px 5px 25px;
     list-style-type: none;
     color:#fff;
+	
 }
+ul li a{
+    display: block;
+    height: 100%;
+}
+
  ul li a:visited, ul li a:link{
     color: #3f3f3f;
     text-decoration: none;
@@ -267,6 +272,8 @@ ul li a:hover,  ul li a:active{
 
     height: 80%;
 }
+
+
 #b_top{
     height: 20%;
 }

@@ -31,19 +31,27 @@
     <table id="dg" class="easyui-datagrid"
            data-options="singleSelect:true,url:'../../datagrid_data1.json',method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
         <thead>
-        <tr>
-            <th data-options="field:'itemid',width:200">安装时间</th>
-            <th data-options="field:'productid',width:205">车牌号</th>
-            <th data-options="field:'listprice',width:220">轮胎号位</th>
-            <th data-options="field:'unitcost',width:200">轮胎胎号</th>
-            <th data-options="field:'listprice',width:140">一保(里程、花纹深度)</th>
-            <th data-options="field:'unitcost',width:140">二保</th>
-            <th data-options="field:'listprice',width:100">三保</th>
-        </tr>
+		<tr>
+			<th field="name1" width="15%" rowspan="2">安装时间</th>
+			<th field="name3" width="10%" rowspan="2">车牌号</th>
+			<th field="name4" width="10%" rowspan="2">轮胎号位</th>
+			<th colspan=2 width="10%">一保</th>
+			<th colspan=2 width="10%">二保</th>
+			<th colspan=2 width="10%">三保</th>
+		</tr>
+		<tr>
+			<th field="name5" width="5%">里程</th>
+			<th field="name6" width="5%">花纹深度</th>
+			<th field="name7" width="5%">里程</th>
+			<th field="name8" width="5%">花纹深度</th>
+			<th field="name9" width="5%">里程</th>
+			<th field="name10" width="5%">花纹深度</th>
+		</tr>
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
         <input type="text" placeholder="轮胎胎号"/> <button>搜索</button> <button>重置</button>
+		    <button style="float: right">+打印</button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:600px;height: 300px;">
         <span>基本信息</span><hr/>

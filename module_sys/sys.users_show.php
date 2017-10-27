@@ -12,11 +12,11 @@
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
-        function addUser() {
-            $('#addUser').dialog('open').dialog('setTitle', '新增角色');
-			
-        };
+       
         $(function() {
+			$('#add').on('click',function(){
+				$('#addUser').dialog('open').dialog('setTitle', '新增角色');
+			});
 			//获得角色列表；
 			$.ajax({
 				url: '../ajaction/v1/?menuid=0&cmd=get_all_roles',
@@ -175,9 +175,8 @@
                 type: 'post',
                 dataType: 'json',
                 success: function(data) {
-                    var Idata = data.Rows;
                     $("#dg").datagrid("loadData", data.Rows);
-                    console.log('data', Idata.admin_name);
+                 
                 }
             });
         }
@@ -218,6 +217,7 @@
         function deletData(index) {
             $('#dg').datagrid('selectRow', index);
             var row = $('#dg').datagrid('getSelected');
+			
             if (row) {
                 var id = row.admin_id;
                 $('#alarm').dialog('open').dialog('setTitle', '提示');
@@ -229,7 +229,7 @@
                             'admin_id': id
                         },
                         success: function(data) {
-                            console.log('delete', data);
+                   
                             reload();
                         }
                     })
@@ -354,7 +354,7 @@
         <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
             <input id="username" type="text" placeholder="用户名称" />
             <button id="search">搜索</button>
-           <button style="float: right; margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
+           <button id="add"  style="float: right; margin-top: 15px;">增加</button>
         </div>
         <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:650px;height: 400px;background-color: #bdc4d4">
 		<div style="background-color: #ffffff;height:340px;margin:10px;">           
