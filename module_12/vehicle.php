@@ -80,7 +80,8 @@
 			});
 			//加载安装位置：
 			$('#tire_pr').combobox({
-				
+				valueField:'id',
+				textField:'name',
 			})
 			//加载全部车载终端；
 			$.ajax({
@@ -143,6 +144,17 @@
 				 		
 			console.log('dddd',row);
 			});
+			$('#tire_all').combobox({
+				valueField:'id',
+				textField:'name',
+			})
+			$.ajax({
+				url:'../ajaction/v1/?menuid=0&cmd=get_all_tireparam',
+				dataType:'json',
+				success:function(data){
+					console.log('sssa',data);
+				}
+			})
 			
 		})
 		function initcomo(s)
@@ -187,24 +199,14 @@
 			com_norms=initcomo("#tire_all");     //轮胎参数
 			com_tires=initcomo("#tire_sensor");
 			com_place=initcomo("#tire_pr");  
-			getlistdata(com_norms,"../ajaction/v1/?menuid=0&cmd=get_all_tireparam)");
+			/* getlistdata(com_norms,"../ajaction/v1/?menuid=0&cmd=get_all_tireparam"); */
 			$.ajax({
 				url:'../ajaction/v1?menuid=121011&cmd=qry&plate_no='+plate_no,
 				dataType:'json',
 				type:'post',
 				success:function(data){
 					console.log('loadData',data);
-					if(data.status!="OK"){
-						alert(data.reason);
-						return;
-					}
-					for (var n in data.items) {
-                        if (data.items[n] == "null" || data.items[n] == null)
-                            data.items[n] = "";
-						else{
-							/* data.items[n].name=gettirename(Number(data.items[n].id)); */
-						}	
-                    }
+					
 					com_place.combobox('loadData',data.items);
 					
 				}
@@ -272,6 +274,20 @@
 		color: #1c66dc;
 	}
 	#toolbar button:active,#toolbar button:hover{
+		color:#ffffff;
+		background-color:#1c66dc;
+	}
+	#tire_tb button{
+		border: 1px solid #1c66dc;
+		height: 25px;
+		line-height: 2px;
+		width: 100px;
+		background-color: white;
+		border-radius: 20px;
+		vertical-align: middle;
+		color: #1c66dc;
+	}
+	#tire_tb button:active,#tire_tb button:hover{
 		color:#ffffff;
 		background-color:#1c66dc;
 	}

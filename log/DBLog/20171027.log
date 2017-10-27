@@ -177,3 +177,81 @@
 -错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
 -错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
 ------------------
+
+------------------
+-时间:01:28:39-
+-错误信息:错误的SQL语句: [select a.*,b.norms_name,c.class_name,d.figure_name,e.brand_name from tire_param_info as a 
+                left join brand as b on a.norms_id=b.norms_id 
+                left join brand as c on a.class_id=c.class_id
+                left join brand as d on a.figure_id=d.figure_id
+                left join brand as e on a.brand_id=e.brand_id]-
+-错误内容:Unknown column 'b.norms_id' in 'on clause'-
+-错误号:1054-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_all_tireparam-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:01:29:22-
+-错误信息:错误的SQL语句: [select a.*,b.norms_name,c.class_name,d.figure_name,e.brand_name from tire_param_info as a 
+                left join brand as b on a.norms_id=b.norms_id 
+                left join brand as c on a.class_id=c.class_id
+                left join brand as d on a.figure_id=d.figure_id
+                left join brand as e on a.brand_id=e.brand_id]-
+-错误内容:Unknown column 'b.norms_id' in 'on clause'-
+-错误号:1054-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_all_tireparam-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:01:43:49-
+-错误信息:错误的SQL语句: [select a.*,b.norms_name,c.class_name,d.figure_name,e.brand_name from tire_param_info as a 
+                left join brand as b on a.norms_id=b.norms_id 
+                left join brand as c on a.class_id=c.class_id
+                left join brand as d on a.figure_id=d.figure_id
+                left join brand as e on a.brand_id=e.brand_id]-
+-错误内容:Unknown column 'b.norms_id' in 'on clause'-
+-错误号:1054-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_all_tireparam-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:01:51:53-
+-错误信息:错误的SQL语句: [select a.*,b.norms_name,c.class_name,d.figure_name,e.brand_name from tire_param_info as a 
+                left join brand as b on a.norms_id=b.norms_id 
+                left join brand as c on a.class_id=c.class_id
+                left join brand as d on a.figure_id=d.figure_id
+                left join brand as e on a.brand_id=e.brand_id]-
+-错误内容:Unknown column 'b.norms_id' in 'on clause'-
+-错误号:1054-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_all_tireparam-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:01:52:37-
+-错误信息:错误的SQL语句: [select a.*,b.norms_name,c.class_name,d.figure_name,e.brand_name from tire_param_info as a 
+                left join brand as b on a.norms_id=b.norms_id 
+                left join brand as c on a.class_id=c.class_id
+                left join brand as d on a.figure_id=d.figure_id
+                left join brand as e on a.brand_id=e.brand_id]-
+-错误内容:Unknown column 'b.norms_id' in 'on clause'-
+-错误号:1054-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_all_tireparam-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:01:52:58-
+-错误信息:错误的SQL语句: [select a.*,b.norms_name,c.class_name,d.figure_name,e.brand_name from tire_param_info as a 
+                left join brand as b on a.norms_id=b.norms_id 
+                left join brand as c on a.class_id=c.class_id
+                left join brand as d on a.figure_id=d.figure_id
+                left join brand as e on a.brand_id=e.brand_id]-
+-错误内容:Unknown column 'b.norms_id' in 'on clause'-
+-错误号:1054-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_all_tireparam-
+-错误页面地址:-
+------------------

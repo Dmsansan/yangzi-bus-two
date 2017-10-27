@@ -506,12 +506,11 @@ class sys {
 
         if($brand_id == ""){
             $sql="select a.*,b.norms_name,c.class_name,d.figure_name,e.brand_name from tire_param_info as a 
-                left join brand as b on a.norms_id=b.norms_id 
-                left join brand as c on a.class_id=c.class_id
-                left join brand as d on a.figure_id=d.figure_id
+                left join brand as b on a.norms_id=b.brand_id 
+                left join brand as c on a.class_id=c.brand_id
+                left join brand as d on a.figure_id=d.brand_id
                 left join brand as e on a.brand_id=e.brand_id";
 		}
-
 		$res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
 			$arr = array ();
