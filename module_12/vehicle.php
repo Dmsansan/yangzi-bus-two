@@ -154,11 +154,26 @@
 					var plateNumber=row.plate_no;
 					saveTire(plateNumber);
 					var wheelcount=row.wheel_count;
-	
+					$.ajax({
+						url:'../ajaction/v1/?menuid=0&cmd=get_all_place&plate_no='+plateNumber,
+						type:'POST',
+						dataType:'json',
+						success:function(data){
+							console.log('88888',data);
+							//var res =data.items;
+
+							$('#tire_pr').combobox("loadData", data.items);
+						}
+					});
+					
 				 }
 				 		
 			console.log('dddd',row);
 			});
+			$('#tire_pr').combobox({
+						valueField:'id',
+						textField:'name',
+			})
 			$('#tire_sensor').combobox({
 				valueField:'id',
 				textField:'name',
@@ -181,11 +196,7 @@
 					$('#tire_all').combobox('loadData',data.items);
 				}
 			});
-			$('#tire_pr').combobox({
-				url:'../css/homepagecss/tireweizhi.json',
-				valueField:'id',
-				textField:'text',
-			})
+			
 			//点击车辆列表
 			$('#dg').datagrid({
 				onSelect:function(index,data){
@@ -215,7 +226,7 @@
 		$('#tire_save').on('click',function(){
 				 var tire_id_val=$('#tire_sensor').combobox('getValue');
 				 var plate_no=plateNumber; 
-				var place_no_val=$('#tire_pr').combobox('getText');			
+				var place_no_val=$('#tire_pr').combobox('getValue');			
 			//绑定轮胎
 			$.ajax({
 					url:'../ajaction/v1/?menuid=121011&cmd=addtire&plate_no='+plate_no+'&tire_id_val='+tire_id_val+'&place_no_val='+place_no_val,
@@ -521,7 +532,7 @@
         <th field="sensor_no" width="10%" >传感器编号</th>
         <th field="factory_code" width="10%" >轮胎号码</th>
         <th field="brand_name" width="10%" >品牌</th>
-        <th field="norms" width="10%" >规格/层级/花纹</th>
+        <th field="norms_name" width="10%" >规格/层级/花纹</th>
         <th field="speed_ul" width="10%" >速度上限</th>
         <th field="temp_ul" width="10%" >温度上限</th>
         <th field="pressure_ul" width="10%" >胎压上限</th>

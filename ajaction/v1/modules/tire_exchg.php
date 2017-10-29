@@ -228,31 +228,31 @@ class tire_exchg {
         }
 
         $arr_norms=array();
-        $sql="select * from norms";
+        $sql="select * from brand";
         $res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
             while ($rec=$this->conn->fetch_array($res)){
-				$arr_norms[$rec[norms_id]]=$rec[norms_name];
+				$arr_norms[$rec[brand_id]]=$rec[norms_name];
 			}
             $this->conn->free_result($res);
         }
 
         $arr_class=array();
-        $sql="select * from class";
+        $sql="select * from brand";
         $res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
             while ($rec=$this->conn->fetch_array($res)){
-				$arr_class[$rec[class_id]]=$rec[class_name];
+				$arr_class[$rec[brand_id]]=$rec[class_name];
 			}
             $this->conn->free_result($res);
         }
 
         $arr_figure_type=array();
-        $sql="select * from figure_type";
+        $sql="select * from brand";
         $res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
             while ($rec=$this->conn->fetch_array($res)){
-				$arr_figure_type[$rec[figure_id]]=$rec[figure_name];
+				$arr_figure_type[$rec[brand_id]]=$rec[figure_name];
 			}
             $this->conn->free_result($res);
         }
@@ -292,18 +292,18 @@ class tire_exchg {
                 else
                     $rec[brand_name]="";
                 
-                if(array_key_exists($rec[norms_id],$arr_norms))
-                    $rec[norms_name]=$arr_norms[$rec[norms_id]];
+                if(array_key_exists($rec[brand_id],$arr_norms))
+                    $rec[norms_name]=$arr_norms[$rec[brand_id]];
                 else
                     $rec[norms_name]="";
                 
-                if(array_key_exists($rec[class_id],$arr_class))
-                    $rec[class_name]=$arr_class[$rec[class_id]];
+                if(array_key_exists($rec[brand_id],$arr_class))
+                    $rec[class_name]=$arr_class[$rec[brand_id]];
                 else
                     $rec[class_name]="";
                 
-                if(array_key_exists($rec[figure_id],$arr_figure_type))
-                    $rec[figure_name]=$arr_figure_type[$rec[figure_id]];
+                if(array_key_exists($rec[brand_id],$arr_figure_type))
+                    $rec[figure_name]=$arr_figure_type[$rec[brand_id]];
                 else
                     $rec[figure_name]="";
                 $rec[place]=$tire_position[intval($rec[place])];
