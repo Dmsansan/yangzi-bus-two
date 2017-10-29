@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <html>
 <head>
     <meta charset="UTF-8" content="text/html">
@@ -6,7 +6,6 @@
     <title>登录页面</title>
     <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/lib/jquery.js"></script>
     <script src="http://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
-    <link href="./css/logincss/loginCss.css" rel="stylesheet" type="text/css">
 	
 	<script src="lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script>
 	<script src="lib/jquery.md5.js" type="text/javascript"></script>
@@ -16,7 +15,7 @@
 	<script src="lib/ligerUI/js/core/base.js" type="text/javascript"></script>   
 	<script src="lib/ligerUI/js/core/inject.js" type="text/javascript"></script>   
 	<script src="lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script> 
-
+<link href="css\logincss\loginCss.css" type="text/css" rel="stylesheet"/>
 	<script type="text/javascript">
 function f_redirect()
 {
@@ -76,56 +75,87 @@ function LoginSystem()
 	
 }
 </script>
+<style type="text/css">
 
+*{overflow:hidden; font-size:9pt;}
+        body {
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-right: 0px;
+            margin-bottom: 0px;
+            background-image: url(images/bg.png);
+            /*background-repeat: repeat-x;*/
+        }
+        #frmLogin table tr td table tr td table tr td h1 strong font {
+            font-size: 30pt;
+            color: #06F;
+        }
+</style>
 </head>
 <body>
-<div class="top">
+<table width="100%"  height="100%" border="0" cellspacing="0" cellpadding="0">
+    <tr>
+        <td>
 
-</div><!--top结束 -->
-<div class="main">
-    <div class="left">
+            <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                <tr>
+                    <td height="172" style="backgroundurl:url(images/login02.png)"><table width="650" border="0" align="center" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <td height="172" align="center" style="background:url(images/login01.png)"><div style="width: 650px; float: center; font-size:18px; font-family: Microsoft YaHei; color:white; padding-top: 119px;">
+                                轮胎全生命周期管理系统
+                            </div></td>
+                        </tr>
+                        <tr>
+                            <td height="210">
 
-    </div>
-    <div class="center">
-        <div class="c_top"></div>
-        <div class="c_center">
+                                <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                                    <tr>
+                                        <!--<td width="208" height="190" style="background:url(../../images/login02.png)">&nbsp;</td>-->
+                                        <td height="210" style="background:url(images/login03.png)"><table width="320" border="0" align="center" cellpadding="0" cellspacing="0">
+                                            <tr>
+                                                <td width="40" height="80"><img src="images/user.png" width="40" height="41"></td>
+                                                <!--<td width="38" height="50">用户</td>-->
+                                                <td width="280" height="80"><input type="text" name="userid" id="userid" placeholder="请输入管理员名称" style="width:261px; padding-left: 16px; outline:none; font-size: 16px; height:41px; line-height:42px; background:url(images/inputbg.png) repeat-x; border:0; font-size:9pt; font-family:Verdana, Geneva, sans-serif;"></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="50"><img src="images/password.png" width="40" height="41"></td>
+                                                <!--<td height="50">密码</td>-->
+                                                <td height="50"><input type="password" name="userkey" id="userkey" placeholder="请输入管理员密码" style="width:261px; padding-left: 16px; outline:none; font-size: 16px; height:41px; line-height:42px; background:url(images/inputbg.png) repeat-x; border:0; font-size:9pt; "></td>
+                                            </tr>
+                                            <tr>
+                                                <td height="40">&nbsp;</td>
+                                                <td height="40" style="padding-left:160px;width: 30px; height: 30px; font-size: 16px;  color: grey;">
+                                                   
+                                                    记住密码：<input type="checkbox" value="" checked="checked" style="width: 18px; height: 18px;"></td>
 
-                      <div class="loginForm">
-		   
-
-           	<div >
-
-                <p>
-                    <label for="userid" style="font-size:13px;font-weight:bold">用户名：</label>
-                    <input  id="userid" name="userid" type="text" placeholder="请输入用户名" name="userName">
-                </p><br>
-                <p>
-                    <label for="userkey" style="font-size:13px;font-weight:bold">密&nbsp;码：</label>
-                    <input id="userkey" name="userkey" type="password" placeholder="请输入密码" name="userPassword">
-                </p><br>
-                <p>
-                
-                    <input id="renamePassword" type="checkbox"> <span>记住密码</span>
-    
-                </p>
-                <p style="margin-top:20px"><br>
-                    <input id="login" type="submit" onclick="LoginSystem()" value="登录">
-                    <input id="reset" type="reset" value="重置">
-                </p>
-
-			</div>
-			</div>
+                                            </tr>
 
 
-			</div>
+                                        </table></td>
+                                        <!--<td width="214" style="background:url(../../images/login04.png)" >&nbsp;</td>-->
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
+                        <tr height="133">
+                            <td height="94" style="background:url(images/login05.png) no-repeat; padding-left: 168px; padding-bottom: 45px;">
 
-        <div class="c_bottom">
-            <p>版权所有：南京泰晟科技实业有限公司</p>
-        </div>
-    </div>
-    <div class="right">
 
-    </div>
-</div>
+
+                                <input name="imgbtn" type="image" style="cursor:hand; outline:none; padding-right: 39px;" src="images/login.png" width="131" height="40" border="0"  onclick="LoginSystem();">
+                                <!--<img src="images/login.gif"  style="cursor:hand" width="95" height="34" onclick="document.frmLogin.submit;"/>-->
+                                <input name="imgbtn" type="image" style="cursor:hand; outline:none;"  src="images/login1.png" width="131" height="40" border="0" onclick="LoginSystem();">
+                                <!--<img src="images/login.gif"  style="cursor:hand" width="95" height="34" onclick="document.frmLogin.submit;"/>-->
+
+
+
+                            </td>
+
+                        </tr>
+                    </table></td>
+                </tr>
+            </table></td>
+    </tr>
+</table>
 </body>
 </html>

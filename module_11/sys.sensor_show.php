@@ -52,7 +52,10 @@
 				}
 			});
 			$('#save').bind('click',function(){
-				var sensor_no=$('#sensorNumber').textbox('getText');
+				var sensor_no=$('#sensorNumber').textbox('get
+				 bText
+				 
+				 Text');
 				var pressure_ul=$('#pressure_high').textbox('getText');
 				var pressure_ll=$('#pressure').textbox('getText');
 				var remark=$('#remark').textbox('getText');
@@ -70,6 +73,9 @@
 			});
             //批量添加传感器
             $('#all_save').bind('click',function(){
+				
+				
+				
                 //alert('2313');
                 var sensor_no=$('#all_sensorNumber').textbox('getText');
                 var sensor_num=$('#tire_Number').combobox('getValue');
@@ -264,9 +270,7 @@
         <input type="text" placeholder="角色名称"/> <button>搜索</button>
         <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;">增加</button>
 
-        <input id="sennor_no" type="text" placeholder="传感器代码"/> <button id="search">搜索</button>
-        <button style="float: right;margin-top: 15px;"><a style="text-decoration: none
-        ;" href="#" onclick="addallsensor()">批量增加</a></button> <button style="float: right;margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addSensor()">增加</a></button>
+     
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:600px;height: 360px;background-color: #bdc4d4">
 	<div style="background-color: #ffffff;height:300px;margin:10px;">

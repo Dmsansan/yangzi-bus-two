@@ -255,3 +255,81 @@
 -错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_all_tireparam-
 -错误页面地址:-
 ------------------
+
+------------------
+-时间:04:25:33-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎替换管理',now(),,'安装','苏A8901在右后外侧号位安装了轮胎')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''安装','苏A8901在右后外侧号位安装了轮胎')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8FA8901&tire_id_val=2&place_no_val=%E5%8F%B3%E5%90%8E%E5%A4%96%E4%BE%A7-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:04:25:33-
+-错误信息:错误的SQL语句: [insert into tire_exchg_log (tire_id,bus_id,v_term_id,place,
+                    install_stamp,uninstall_stamp,mile_count,stamp_count,action,log_stamp) value
+                    ('2','2','1','右后外侧',
+                    NOW(),'0000-00-00 00:00:00','0',0,'装上',NOW())]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8FA8901&tire_id_val=2&place_no_val=%E5%8F%B3%E5%90%8E%E5%A4%96%E4%BE%A7-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:04:25:33-
+-错误信息:错误的SQL语句: [update tire_info set exchg_id='' where tire_id='2']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8FA8901&tire_id_val=2&place_no_val=%E5%8F%B3%E5%90%8E%E5%A4%96%E4%BE%A7-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:05:01:46-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车辆管理',now(),,'新增','添加了新车辆苏b4455')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新车辆苏b4455')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:05:02:27-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎管理',now(),,'新增','添加了新轮胎d56114544')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新轮胎d56114544')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111110&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.tireinfo_show.php-
+------------------
+
+------------------
+-时间:05:02:52-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎替换管理',now(),,'安装','苏b4455在右后外侧号位安装了轮胎')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''安装','苏b4455在右后外侧号位安装了轮胎')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8Fb4455&tire_id_val=3&place_no_val=%E5%8F%B3%E5%90%8E%E5%A4%96%E4%BE%A7-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:05:02:52-
+-错误信息:错误的SQL语句: [insert into tire_exchg_log (tire_id,bus_id,v_term_id,place,
+                    install_stamp,uninstall_stamp,mile_count,stamp_count,action,log_stamp) value
+                    ('3','3','2','右后外侧',
+                    NOW(),'0000-00-00 00:00:00','0',0,'装上',NOW())]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8Fb4455&tire_id_val=3&place_no_val=%E5%8F%B3%E5%90%8E%E5%A4%96%E4%BE%A7-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:05:02:52-
+-错误信息:错误的SQL语句: [update tire_info set exchg_id='' where tire_id='3']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8Fb4455&tire_id_val=3&place_no_val=%E5%8F%B3%E5%90%8E%E5%A4%96%E4%BE%A7-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------

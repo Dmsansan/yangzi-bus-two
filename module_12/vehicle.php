@@ -20,7 +20,19 @@
             $('#tire_dg').datagrid('selectRow', index);
             var row = $('#tire_dg').datagrid('getSelected');
             if (row){
-                $('#tire_alarm').dialog('open').dialog('setTitle','新增角色');         
+				var tire_id = row.tire_id;
+                $('#tire_alarm').dialog('open').dialog('setTitle','卸载轮胎');
+				$('#tire_sure').on('click',function(){	
+					$.ajax({
+						url:'../ajaction/v1/?menuid=121011&cmd=removeTire',
+						dataType:'json',
+						type:'post',
+						data:{'tire_id':tire_id},
+						success:function(data){
+							console.log('jieshu',data);
+						}
+					});
+				})
             }
         }
 			
@@ -131,6 +143,8 @@
 					}
 				})
 			});
+			
+			//安装轮胎
 			$('#install_tire').on('click',function(){
 				 var row = $('#dg').datagrid('getSelected');
 				 if(row==null){
@@ -138,84 +152,106 @@
 				 }else{
 					$('#tire_dlg').dialog('open').dialog('setTitle','安装轮胎');
 					var plateNumber=row.plate_no;
-					loadgrid(plateNumber);
-					
+					saveTire(plateNumber);
+					var wheelcount=row.wheel_count;
+	
 				 }
 				 		
 			console.log('dddd',row);
 			});
-			$('#tire_all').combobox({
+			$('#tire_sensor').combobox({
 				valueField:'id',
 				textField:'name',
 			})
+			//加载轮胎胎号
+			$('#tire_all').combobox({
+				valueField:'id',
+				textField:'name',
+				onSelect:function(rec){
+					var id=rec.id;
+					getTireCount("../ajaction/v1/?menuid=0&cmd=get_all_tire&tire_param_id="+id);
+				}
+			});
+			
 			$.ajax({
 				url:'../ajaction/v1/?menuid=0&cmd=get_all_tireparam',
 				dataType:'json',
 				success:function(data){
 					console.log('sssa',data);
+					$('#tire_all').combobox('loadData',data.items);
+				}
+			});
+			$('#tire_pr').combobox({
+				url:'../css/homepagecss/tireweizhi.json',
+				valueField:'id',
+				textField:'text',
+			})
+			//点击车辆列表
+			$('#dg').datagrid({
+				onSelect:function(index,data){
+					var number=data.plate_no;
+					loadgrid(number);					
 				}
 			})
 			
+			
 		})
-		function initcomo(s)
-		{
-				return $(s).combobox({			
-						valueField:'id',
-						textField:'name',
-						onSelect: function (rec) {
-							var newvalue=rec.id;
-							if(s=="#norms_id"){
-								if (!newvalue)
-									newvalue = -1;								
-								getlistdata(com_tires,"../ajaction/v1/?menuid=0&cmd=get_all_tire&tire_param_id="+newvalue);
-                            }							
-						}
-			});
-		}
-		function getlistdata(com_obj,url)
-		{
-			$.ajax({
-                type: "POST",	
-				dataType:'json',				
-				url:url,
-				success:function (result) {
-					//
-					if(result.status!="OK"){
-						alert(result.reason);
-						return;
-					}
-				com_obj.combobox('loadData',result.items);
-					
-				},
-				error:function(){
-					alert("获取列表失败");
+		//获取轮胎胎号
+		function getTireCount(curl){
+		$.ajax({
+			url:curl,
+			dataType:'json',
+			type:'post',
+			success:function(data){
+				if(data.status!='OK'){
+					$.messager.alert('警告','没有轮胎','info');
+				}else{
+					$('#tire_sensor').combobox('loadData',data.items);
 				}
-			});
+			}
+		})
 		}
-		
-		//轮胎列表加载数据
-		function loadgrid(plateNo){
-			var plate_no=plateNo;
-			com_norms=initcomo("#tire_all");     //轮胎参数
-			com_tires=initcomo("#tire_sensor");
-			com_place=initcomo("#tire_pr");  
-			/* getlistdata(com_norms,"../ajaction/v1/?menuid=0&cmd=get_all_tireparam"); */
+		function saveTire(plateNumber){
+		$('#tire_save').on('click',function(){
+				 var tire_id_val=$('#tire_sensor').combobox('getValue');
+				 var plate_no=plateNumber; 
+				var place_no_val=$('#tire_pr').combobox('getText');			
+			//绑定轮胎
+			$.ajax({
+					url:'../ajaction/v1/?menuid=121011&cmd=addtire&plate_no='+plate_no+'&tire_id_val='+tire_id_val+'&place_no_val='+place_no_val,
+					dataType:'json',
+					type:'post',
+					success:function(data){
+						console.log('lll',data);
+						if(data.status!='OK'){
+							$.messager.alert('警告','错误','info');
+						}else{
+							alert('成功');
+						}
+					}
+				});
+			})
+		}
+		//加载数据
+		function loadgrid(plateNumber){
+			var plate_no =plateNumber;
 			$.ajax({
 				url:'../ajaction/v1?menuid=121011&cmd=qry&plate_no='+plate_no,
 				dataType:'json',
-				type:'post',
+				type:'GET',
 				success:function(data){
-					console.log('loadData',data);
+					console.log('success',data);
 					
-					com_place.combobox('loadData',data.items);
+					$('#tire_dg').datagrid('loadData',data.Rows);
 					
 				}
 			})
-		}
+		} 
+
         function formatOption(value, row, index) {
             return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
         }
-      //修改记录
+      //修改车辆记录
         function editUser(index) {
             $('#dg').datagrid('selectRow', index);
             var row = $('#dg').datagrid('getSelected');
@@ -229,6 +265,7 @@
 				
             }
         }
+		//删除车辆记录
 		function deletData(index){
 			 $('#dg').datagrid('selectRow', index);
             var row = $('#dg').datagrid('getSelected');
@@ -448,7 +485,7 @@
 	</style>
 </head>
 <body class="easyui-layout" style="height: 100%; width: 100%;" >
-<div data-options="region:'west',title:'车辆列表'">
+<div data-options="region:'west',title:'车辆列表'" style="width:40%">
     <div style="width: 100%;height:49%;" title="车辆列表">
         <table id="dg" class="easyui-datagrid" style="width: 100%;"
                toolbar="#toolbar" singleSelect="true" fitColumns="true" striped="true">
@@ -476,18 +513,19 @@
 
 </div>
 <div data-options="region:'center',title:'轮胎列表'"> 
-<table id="tire_dg" class="easyui-datagrid" url="../jquery-easyui/datagrid_data1.json" width="100%" style="background-color: #ffb3b3" style="padding-top:20px;"
+<table id="tire_dg" class="easyui-datagrid" width="100%" style="background-color: #ffb3b3" style="padding-top:20px;"
        toolbar="#tire_tb" singleSelect="true" fitColumns="true" striped="true">
     <thead style="width: 100%">
     <tr>
-        <th field="name1" width="10%" >轮胎位置</th>
-        <th field="name2" width="15%" >传感器编号</th>
-        <th field="name3" width="10%" >轮胎号码</th>
-        <th field="name4" width="10%" >品牌</th>
-        <th field="name1" width="10%" >规格/层级/花纹</th>
-        <th field="name2" width="10%" >速度上限</th>
-        <th field="name3" width="10%" >温度上限</th>
-        <th field="name4" width="10%" >胎压上限</th>
+        <th field="place" width="10%" >轮胎位置</th>
+        <th field="sensor_no" width="10%" >传感器编号</th>
+        <th field="factory_code" width="10%" >轮胎号码</th>
+        <th field="brand_name" width="10%" >品牌</th>
+        <th field="norms" width="10%" >规格/层级/花纹</th>
+        <th field="speed_ul" width="10%" >速度上限</th>
+        <th field="temp_ul" width="10%" >温度上限</th>
+        <th field="pressure_ul" width="10%" >胎压上限</th>
+		<th field="pressure_ll" width="10%" >胎压下限</th>
         <th field="name6" width="10%"  formatter="Option">操作</th>
     </tr>
     </thead>
@@ -515,7 +553,7 @@
                         轮胎胎号：
 						</td>
 				<td>
-                        <input id="tire_sensor" class="easyui-combobox" style="width: 150px;" />
+                        <input id="tire_sensor"  style="width: 150px;" />
                     </td>
 				</tr>
                 <tr>	
