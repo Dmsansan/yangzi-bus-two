@@ -1,32 +1,25 @@
--- phpMyAdmin SQL Dump
--- version phpStudy 2014
--- http://www.phpmyadmin.net
---
--- 主机: localhost
--- 生成日期: 2017 年 09 月 27 日 10:15
--- 服务器版本: 5.5.53
--- PHP 版本: 5.3.29
+/*
+Navicat MySQL Data Transfer
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+Source Server         : phpstudyMysql
+Source Server Version : 50553
+Source Host           : localhost:3306
+Source Database       : ttms_yangzi
 
+Target Server Type    : MYSQL
+Target Server Version : 50553
+File Encoding         : 65001
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8 */;
+Date: 2017-10-29 15:55:53
+*/
 
---
--- 数据库: `ttms_yangzi`
---
+SET FOREIGN_KEY_CHECKS=0;
 
--- --------------------------------------------------------
-
---
--- 表的结构 `admins`
---
-
-CREATE TABLE IF NOT EXISTS `admins` (
+-- ----------------------------
+-- Table structure for `admins`
+-- ----------------------------
+DROP TABLE IF EXISTS `admins`;
+CREATE TABLE `admins` (
   `admin_id` int(11) NOT NULL AUTO_INCREMENT,
   `admin_name` varchar(32) DEFAULT NULL COMMENT '管理员用户名',
   `password` varchar(32) DEFAULT NULL COMMENT '登录密码',
@@ -49,39 +42,189 @@ CREATE TABLE IF NOT EXISTS `admins` (
   `reg_stamp` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '注册时间',
   PRIMARY KEY (`admin_id`),
   UNIQUE KEY `admin_name` (`admin_name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=3 ;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `admins`
---
+-- ----------------------------
+-- Records of admins
+-- ----------------------------
+INSERT INTO `admins` VALUES ('1', 'admin', '25d55ad283aa400af464c76d713c07ad', null, '系统管理员', 'admin@ttms.com', null, null, null, null, null, '1', '0', 'N', null, '', '0000-00-00 00:00:00', '0', null, '0000-00-00 00:00:00');
+INSERT INTO `admins` VALUES ('2', '轮胎注册', '25d55ad283aa400af464c76d713c07ad', null, '轮胎注册', '', '', '', null, null, '', '1', '0', 'Y', null, '', '0000-00-00 00:00:00', '0', null, '0000-00-00 00:00:00');
 
-INSERT INTO `admins` (`admin_id`, `admin_name`, `password`, `pass_key`, `real_name`, `email`, `tel`, `mobile`, `qq`, `weixin`, `remark`, `role_id`, `store_id`, `is_term`, `status`, `last_ip`, `last_stamp`, `login_times`, `reg_ip`, `reg_stamp`) VALUES
-(1, 'admin', 'e10adc3949ba59abbe56e057f20f883e', NULL, '系统管理员', '15601590617@163.com', NULL, NULL, NULL, NULL, NULL, 1, 0, 'N', NULL, '', '0000-00-00 00:00:00', 0, NULL, '0000-00-00 00:00:00'),
-(2, '轮胎注册', '25d55ad283aa400af464c76d713c07ad', NULL, '轮胎注册', '', '', '', NULL, NULL, '', 1, 0, 'Y', NULL, '', '0000-00-00 00:00:00', 0, NULL, '0000-00-00 00:00:00');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `brand`
---
-
-CREATE TABLE IF NOT EXISTS `brand` (
+-- ----------------------------
+-- Table structure for `brand`
+-- ----------------------------
+DROP TABLE IF EXISTS `brand`;
+CREATE TABLE `brand` (
   `brand_id` int(11) NOT NULL AUTO_INCREMENT,
   `brand_no` varchar(20) DEFAULT NULL COMMENT '品牌代码',
   `brand_name` varchar(100) DEFAULT NULL COMMENT '品牌名称',
   `remark` varchar(200) DEFAULT NULL COMMENT '备注',
+  `norms_name` varchar(200) DEFAULT NULL,
+  `class_name` varchar(200) DEFAULT NULL,
+  `figure_name` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`brand_id`),
   UNIQUE KEY `brand_no` (`brand_no`),
   UNIQUE KEY `brand_name` (`brand_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of brand
+-- ----------------------------
+INSERT INTO `brand` VALUES ('5', null, '米其林', '备注', '56PR/CR/DP', '8PR', '花纹');
+INSERT INTO `brand` VALUES ('6', null, '鲁朗', '', '67I/U/R', '12pr', '普通花纹');
+INSERT INTO `brand` VALUES ('7', null, '特绑', '备注', '67T/E/R', '77PR', '螺旋花纹');
 
---
--- 表的结构 `bus_alarm_log`
---
+-- ----------------------------
+-- Table structure for `bt_history_log`
+-- ----------------------------
+DROP TABLE IF EXISTS `bt_history_log`;
+CREATE TABLE `bt_history_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `bus_id` int(11) DEFAULT NULL COMMENT '车辆ID',
+  `speed` int(11) DEFAULT NULL COMMENT '速度',
+  `max_speed` int(11) DEFAULT NULL COMMENT '最高速度',
+  `tire_id1` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure1` float(6,2) DEFAULT NULL,
+  `overflow_pressure1` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp1` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp1` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id2` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure2` float(6,2) DEFAULT NULL,
+  `overflow_pressure2` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp2` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp2` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id3` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure3` float(6,2) DEFAULT NULL,
+  `overflow_pressure3` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp3` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp3` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id4` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure4` float(6,2) DEFAULT NULL,
+  `overflow_pressure4` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp4` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp4` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id5` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure5` float(6,2) DEFAULT NULL,
+  `overflow_pressure5` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp5` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp5` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id6` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure6` float(6,2) DEFAULT NULL,
+  `overflow_pressure6` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp6` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp6` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id7` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure7` float(6,2) DEFAULT NULL,
+  `overflow_pressure7` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp7` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp7` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id8` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure8` float(6,2) DEFAULT NULL,
+  `overflow_pressure8` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp8` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp8` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id9` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure9` float(6,2) DEFAULT NULL,
+  `overflow_pressure9` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp9` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp9` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id10` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure10` float(6,2) DEFAULT NULL,
+  `overflow_pressure10` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp10` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp10` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `log_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '记录时间',
+  PRIMARY KEY (`id`),
+  KEY `log_stamp_idx` (`log_stamp`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
-CREATE TABLE IF NOT EXISTS `bus_alarm_log` (
+-- ----------------------------
+-- Records of bt_history_log
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `bt_real_log`
+-- ----------------------------
+DROP TABLE IF EXISTS `bt_real_log`;
+CREATE TABLE `bt_real_log` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `bus_id` int(11) DEFAULT NULL COMMENT '车辆ID',
+  `speed` int(11) DEFAULT NULL COMMENT '速度',
+  `max_speed` int(11) DEFAULT NULL COMMENT '最高速度',
+  `tire_id1` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure1` float(6,2) DEFAULT NULL,
+  `overflow_pressure1` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp1` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp1` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id2` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure2` float(6,2) DEFAULT NULL,
+  `overflow_pressure2` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp2` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp2` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id3` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure3` float(6,2) DEFAULT NULL,
+  `overflow_pressure3` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp3` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp3` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id4` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure4` float(6,2) DEFAULT NULL,
+  `overflow_pressure4` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp4` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp4` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id5` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure5` float(6,2) DEFAULT NULL,
+  `overflow_pressure5` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp5` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp5` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id6` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure6` float(6,2) DEFAULT NULL,
+  `overflow_pressure6` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp6` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp6` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id7` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure7` float(6,2) DEFAULT NULL,
+  `overflow_pressure7` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp7` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp7` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id8` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure8` float(6,2) DEFAULT NULL,
+  `overflow_pressure8` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp8` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp8` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id9` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure9` float(6,2) DEFAULT NULL,
+  `overflow_pressure9` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp9` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp9` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `tire_id10` int(11) DEFAULT NULL COMMENT '轮胎ID',
+  `pressure10` float(6,2) DEFAULT NULL,
+  `overflow_pressure10` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `temp10` int(11) NOT NULL DEFAULT '255',
+  `overflow_temp10` char(1) NOT NULL DEFAULT '0' COMMENT '是否在范围内，不是为1，正常为0',
+  `log_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '记录时间',
+  `mile_state1` varchar(20) NOT NULL DEFAULT '正常' COMMENT '是否过保',
+  `mile_state2` varchar(20) NOT NULL DEFAULT '正常' COMMENT '是否过保',
+  `mile_state3` varchar(20) NOT NULL DEFAULT '正常' COMMENT '是否过保',
+  `mile_state4` varchar(20) NOT NULL DEFAULT '正常' COMMENT '是否过保',
+  `mile_state5` varchar(20) NOT NULL DEFAULT '正常' COMMENT '是否过保',
+  `mile_state6` varchar(20) NOT NULL DEFAULT '正常' COMMENT '是否过保',
+  `mile_state7` varchar(20) NOT NULL DEFAULT '正常' COMMENT '是否过保',
+  `mile_state8` varchar(20) NOT NULL DEFAULT '正常' COMMENT '是否过保',
+  `mile_state9` varchar(20) NOT NULL DEFAULT '正常' COMMENT '是否过保',
+  `mile_state10` varchar(20) NOT NULL DEFAULT '正常' COMMENT '是否过保',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `bus_id` (`bus_id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of bt_real_log
+-- ----------------------------
+
+-- ----------------------------
+-- Table structure for `bus_alarm_log`
+-- ----------------------------
+DROP TABLE IF EXISTS `bus_alarm_log`;
+CREATE TABLE `bus_alarm_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `bus_id` int(11) DEFAULT NULL COMMENT '车辆ID',
   `tire_id` int(11) DEFAULT NULL COMMENT '轮胎ID',
@@ -99,15 +242,17 @@ CREATE TABLE IF NOT EXISTS `bus_alarm_log` (
   `alarm_type` varchar(20) DEFAULT NULL COMMENT '告警类型',
   `log_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '记录时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of bus_alarm_log
+-- ----------------------------
 
---
--- 表的结构 `bus_info`
---
-
-CREATE TABLE IF NOT EXISTS `bus_info` (
+-- ----------------------------
+-- Table structure for `bus_info`
+-- ----------------------------
+DROP TABLE IF EXISTS `bus_info`;
+CREATE TABLE `bus_info` (
   `bus_id` int(11) NOT NULL AUTO_INCREMENT,
   `plate_no` varchar(20) DEFAULT NULL COMMENT '车牌号码',
   `bus_no` varchar(32) DEFAULT NULL COMMENT '车辆编号',
@@ -122,15 +267,17 @@ CREATE TABLE IF NOT EXISTS `bus_info` (
   `add_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`bus_id`),
   UNIQUE KEY `plate_no` (`plate_no`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of bus_info
+-- ----------------------------
 
---
--- 表的结构 `class`
---
-
-CREATE TABLE IF NOT EXISTS `class` (
+-- ----------------------------
+-- Table structure for `class`
+-- ----------------------------
+DROP TABLE IF EXISTS `class`;
+CREATE TABLE `class` (
   `class_id` int(11) NOT NULL AUTO_INCREMENT,
   `class_no` varchar(20) DEFAULT NULL COMMENT '层级代码',
   `class_name` varchar(40) DEFAULT NULL COMMENT '层级名称',
@@ -138,15 +285,21 @@ CREATE TABLE IF NOT EXISTS `class` (
   PRIMARY KEY (`class_id`),
   UNIQUE KEY `class_no` (`class_no`),
   UNIQUE KEY `class_name` (`class_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of class
+-- ----------------------------
+INSERT INTO `class` VALUES ('1', null, '12PR', '');
+INSERT INTO `class` VALUES ('2', null, '14pr', '');
+INSERT INTO `class` VALUES ('3', null, '77PR', null);
+INSERT INTO `class` VALUES ('4', null, '22PR', null);
 
---
--- 表的结构 `figure_type`
---
-
-CREATE TABLE IF NOT EXISTS `figure_type` (
+-- ----------------------------
+-- Table structure for `figure_type`
+-- ----------------------------
+DROP TABLE IF EXISTS `figure_type`;
+CREATE TABLE `figure_type` (
   `figure_id` int(11) NOT NULL AUTO_INCREMENT,
   `figure_no` varchar(20) DEFAULT NULL COMMENT '花纹代码',
   `figure_name` varchar(40) DEFAULT NULL COMMENT '花纹名称',
@@ -154,15 +307,18 @@ CREATE TABLE IF NOT EXISTS `figure_type` (
   PRIMARY KEY (`figure_id`),
   UNIQUE KEY `figure_no` (`figure_no`),
   UNIQUE KEY `figure_name` (`figure_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of figure_type
+-- ----------------------------
+INSERT INTO `figure_type` VALUES ('1', null, '一般花纹', '');
 
---
--- 表的结构 `modules`
---
-
-CREATE TABLE IF NOT EXISTS `modules` (
+-- ----------------------------
+-- Table structure for `modules`
+-- ----------------------------
+DROP TABLE IF EXISTS `modules`;
+CREATE TABLE `modules` (
   `module_id` int(11) NOT NULL AUTO_INCREMENT,
   `module_code` varchar(16) DEFAULT NULL COMMENT '模块代码',
   `parent_id` int(11) DEFAULT NULL COMMENT '上级模块ID',
@@ -176,61 +332,57 @@ CREATE TABLE IF NOT EXISTS `modules` (
   `remark` varchar(300) DEFAULT NULL COMMENT '模块说明',
   PRIMARY KEY (`module_id`),
   UNIQUE KEY `module_name` (`module_name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=141011 ;
+) ENGINE=MyISAM AUTO_INCREMENT=141011 DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `modules`
---
+-- ----------------------------
+-- Records of modules
+-- ----------------------------
+INSERT INTO `modules` VALUES ('10', '10', '-1', 'images/icon/62.png', '1', '10', '系统管理', '系统管理', '', '0', null);
+INSERT INTO `modules` VALUES ('11', '11', '-1', 'images/icon/85.png', '1', '11', '轮胎管理', '轮胎管理', '', '0', null);
+INSERT INTO `modules` VALUES ('12', '12', '-1', 'images/icon/cl.png', '1', '12', '车辆管理', '车辆管理', '', '0', null);
+INSERT INTO `modules` VALUES ('13', '13', '-1', 'images/icon/jc.png', '1', '13', '监测系统', '监测系统', '', '0', null);
+INSERT INTO `modules` VALUES ('14', '14', '-1', 'images/icon/29.png', '1', '14', '系统日志', '系统日志', '', '0', null);
+INSERT INTO `modules` VALUES ('1010', '1010', '10', 'images/icon/37.png', '2', '1010', '用户权限管理', '用户权限管理', '', '0', null);
+INSERT INTO `modules` VALUES ('101010', '101010', '1010', 'images/icon/33.png', '3', '101010', '角色管理', '角色管理', 'module_sys/sys.roles_show.php', '0', null);
+INSERT INTO `modules` VALUES ('101011', '101011', '1010', 'images/icon/37.png', '3', '101011', '用户管理', '用户管理', 'module_sys/sys.users_show.php', '0', null);
+INSERT INTO `modules` VALUES ('1011', '1011', '10', 'images/icon/1.png', '2', '1011', '基本数据管理', '基本数据管理', '', '0', null);
+INSERT INTO `modules` VALUES ('101110', '101110', '1011', 'images/icon/37.png', '3', '101110', '车队(仓库)管理', '车队(仓库)管理', 'module_sys/sys.store_show.php', '0', null);
+INSERT INTO `modules` VALUES ('101111', '101111', '1011', 'images/icon/sc.png', '3', '101111', '手持终端管理', '手持终端管理', 'module_sys/sys.terminal_show.php', '0', null);
+INSERT INTO `modules` VALUES ('101112', '101112', '1011', 'images/icon/27.png', '3', '101112', '轮胎品牌管理', '轮胎品牌管理', 'module_sys/sys.brand_show.php', '0', null);
+INSERT INTO `modules` VALUES ('101113', '101113', '1011', 'images/icon/27.png', '3', '101113', '轮胎规格管理', '轮胎规格管理', 'module_sys/sys.norms_show.php', '0', null);
+INSERT INTO `modules` VALUES ('101114', '101114', '1011', 'images/icon/27.png', '3', '101114', '轮胎层级管理', '轮胎层级管理', 'module_sys/sys.class_show.php', '0', null);
+INSERT INTO `modules` VALUES ('101115', '101115', '1011', 'images/icon/27.png', '3', '101115', '轮胎花纹管理', '轮胎花纹管理', 'module_sys/sys.figure_show.php', '0', null);
+INSERT INTO `modules` VALUES ('101116', '101116', '1011', 'images/icon/27.png', '3', '101116', '车载终端管理', '车载终端管理', 'module_sys/sys.vehicle_show.php', '0', null);
+INSERT INTO `modules` VALUES ('1110', '1110', '11', 'images/icon/37.png', '2', '1110', '轮胎相关管理', '轮胎相关管理', '', '0', null);
+INSERT INTO `modules` VALUES ('111010', '111010', '1110', 'images/icon/33.png', '3', '111010', '轮胎参数管理', '轮胎参数管理', 'module_11/sys.tireparam_show.php', '0', null);
+INSERT INTO `modules` VALUES ('111011', '111011', '1110', 'images/icon/33.png', '3', '111011', '传感器管理', '传感器管理', 'module_11/sys.sensor_show.php', '0', null);
+INSERT INTO `modules` VALUES ('1111', '1111', '11', 'images/icon/1.png', '2', '1111', '轮胎维护', '轮胎维护', '', '0', null);
+INSERT INTO `modules` VALUES ('111110', '111110', '1111', 'images/icon/37.png', '3', '111110', '轮胎管理', '轮胎管理', 'module_11/sys.tireinfo_show.php', '0', null);
+INSERT INTO `modules` VALUES ('1210', '1210', '12', 'images/icon/37.png', '2', '1210', '车辆管理', '车辆管理', '', '0', null);
+INSERT INTO `modules` VALUES ('121010', '121010', '1210', 'images/icon/33.png', '3', '121010', '车辆维护', '车辆维护', 'module_12/sys.bus_manage.php', '0', null);
+INSERT INTO `modules` VALUES ('1310', '1310', '13', 'images/icon/37.png', '2', '1310', '实时状态', '实时状态', '', '0', null);
+INSERT INTO `modules` VALUES ('131010', '131010', '1310', 'images/icon/33.png', '3', '131010', '车辆轮胎状态', '车辆轮胎状态', 'module_13/sys.real_show.php', '0', null);
+INSERT INTO `modules` VALUES ('1311', '1311', '13', 'images/icon/1.png', '2', '1311', '历史状态', '历史状态', '', '0', null);
+INSERT INTO `modules` VALUES ('131110', '131110', '1311', 'images/icon/37.png', '3', '131110', '车辆轮胎历史状态', '车辆轮胎历史状态', 'module_13/sys.his_show.php', '0', null);
+INSERT INTO `modules` VALUES ('131210', '131210', '1311', 'images/icon/37.png', '3', '131210', '告警历史状态', '告警历史状态', 'module_13/sys.alarm_his131210_show.php', '0', null);
+INSERT INTO `modules` VALUES ('1313', '1313', '13', 'images/icon/37.png', '2', '1313', '轮胎使用查询', '轮胎使用查询', '', '0', null);
+INSERT INTO `modules` VALUES ('131112', '131112', '1311', 'images/icon/37.png', '3', '131112', '胎压告警历史', '胎压告警历史', 'module_13/sys.alarm_his131112_show.php', '0', null);
+INSERT INTO `modules` VALUES ('131311', '131311', '1313', 'images/icon/33.png', '3', '131311', '轮胎运行总时长总里程查询', '轮胎运行总时长总里程查询', 'module_13/sys.tire_runhis_show.php', '0', null);
+INSERT INTO `modules` VALUES ('1315', '1315', '13', 'images/icon/37.png', '2', '1315', '库存状态查询', '库存状态查询', '', '0', null);
+INSERT INTO `modules` VALUES ('131510', '131510', '1315', 'images/icon/33.png', '3', '131510', '轮胎库存查询', '轮胎库存查询', 'module_13/sys.tirestore_charts_show.php', '0', null);
+INSERT INTO `modules` VALUES ('1316', '1316', '13', 'images/icon/37.png', '2', '1316', '统计分析', '统计分析', '', '0', null);
+INSERT INTO `modules` VALUES ('131610', '131610', '1316', 'images/icon/33.png', '3', '131610', '轮胎历史曲线', '轮胎历史曲线', 'module_13/sys.tirehis_charts_10.php', '0', null);
+INSERT INTO `modules` VALUES ('131612', '131612', '1316', 'images/icon/33.png', '3', '131612', '轮胎历史告警', '轮胎历史告警', 'module_13/sys.tirehis_charts_12.php', '0', null);
+INSERT INTO `modules` VALUES ('1410', '1410', '14', 'images/icon/37.png', '2', '1410', '历史记录', '历史记录', '', '0', null);
+INSERT INTO `modules` VALUES ('141010', '141010', '1410', 'images/icon/33.png', '3', '141010', '历史记录查询', '历史记录查询', 'module_14/sys.sys_his141010_show.php', '0', null);
+INSERT INTO `modules` VALUES ('111111', '111111', '1111', 'images/icon/37.png', '3', '111111', '轮胎配送', '轮胎配送', 'module_11/sys.tire_manage.php', '0', null);
+INSERT INTO `modules` VALUES ('131614', '131614', '1316', 'images/icon/33.png', '3', '131614', '车辆车速分析', '车辆车速分析', 'module_13/sys.carspeed_charts_show.php', '0', null);
 
-INSERT INTO `modules` (`module_id`, `module_code`, `parent_id`, `ico`, `module_level`, `module_name`, `title`, `menu_name`, `menu_url`, `seq`, `remark`) VALUES
-(10, '10', -1, 'images/icon/62.png', 1, '10', '系统管理', '系统管理', '', 0, NULL),
-(11, '11', -1, 'images/icon/85.png', 1, '11', '轮胎管理', '轮胎管理', '', 0, NULL),
-(12, '12', -1, 'images/icon/cl.png', 1, '12', '车辆管理', '车辆管理', '', 0, NULL),
-(13, '13', -1, 'images/icon/jc.png', 1, '13', '监测系统', '监测系统', '', 0, NULL),
-(14, '14', -1, 'images/icon/29.png', 1, '14', '系统日志', '系统日志', '', 0, NULL),
-(1010, '1010', 10, 'images/icon/37.png', 2, '1010', '用户权限管理', '用户权限管理', '', 0, NULL),
-(101010, '101010', 1010, 'images/icon/33.png', 3, '101010', '角色管理', '角色管理', 'module_sys/sys.roles_show.php', 0, NULL),
-(101011, '101011', 1010, 'images/icon/37.png', 3, '101011', '用户管理', '用户管理', 'module_sys/sys.users_show.php', 0, NULL),
-(1011, '1011', 10, 'images/icon/1.png', 2, '1011', '基本数据管理', '基本数据管理', '', 0, NULL),
-(101110, '101110', 1011, 'images/icon/37.png', 3, '101110', '车队(仓库)管理', '车队(仓库)管理', 'module_sys/sys.store_show.php', 0, NULL),
-(101111, '101111', 1011, 'images/icon/sc.png', 3, '101111', '手持终端管理', '手持终端管理', 'module_sys/sys.terminal_show.php', 0, NULL),
-(101112, '101112', 1011, 'images/icon/27.png', 3, '101112', '轮胎品牌管理', '轮胎品牌管理', 'module_sys/sys.brand_show.php', 0, NULL),
-(101113, '101113', 1011, 'images/icon/27.png', 3, '101113', '轮胎规格管理', '轮胎规格管理', 'module_sys/sys.norms_show.php', 0, NULL),
-(101114, '101114', 1011, 'images/icon/27.png', 3, '101114', '轮胎层级管理', '轮胎层级管理', 'module_sys/sys.class_show.php', 0, NULL),
-(101115, '101115', 1011, 'images/icon/27.png', 3, '101115', '轮胎花纹管理', '轮胎花纹管理', 'module_sys/sys.figure_show.php', 0, NULL),
-(101116, '101116', 1011, 'images/icon/27.png', 3, '101116', '车载终端管理', '车载终端管理', 'module_sys/sys.vehicle_show.php', 0, NULL),
-(1110, '1110', 11, 'images/icon/37.png', 2, '1110', '轮胎相关管理', '轮胎相关管理', '', 0, NULL),
-(111010, '111010', 1110, 'images/icon/33.png', 3, '111010', '轮胎参数管理', '轮胎参数管理', 'module_11/sys.tireparam_show.php', 0, NULL),
-(111011, '111011', 1110, 'images/icon/33.png', 3, '111011', '传感器管理', '传感器管理', 'module_11/sys.sensor_show.php', 0, NULL),
-(1111, '1111', 11, 'images/icon/1.png', 2, '1111', '轮胎维护', '轮胎维护', '', 0, NULL),
-(111110, '111110', 1111, 'images/icon/37.png', 3, '111110', '轮胎管理', '轮胎管理', 'module_11/sys.tireinfo_show.php', 0, NULL),
-(1210, '1210', 12, 'images/icon/37.png', 2, '1210', '车辆管理', '车辆管理', '', 0, NULL),
-(121010, '121010', 1210, 'images/icon/33.png', 3, '121010', '车辆维护', '车辆维护', 'module_12/sys.bus_manage.php', 0, NULL),
-(1310, '1310', 13, 'images/icon/37.png', 2, '1310', '实时状态', '实时状态', '', 0, NULL),
-(131010, '131010', 1310, 'images/icon/33.png', 3, '131010', '车辆轮胎状态', '车辆轮胎状态', 'module_13/sys.real_show.php', 0, NULL),
-(1311, '1311', 13, 'images/icon/1.png', 2, '1311', '历史状态', '历史状态', '', 0, NULL),
-(131110, '131110', 1311, 'images/icon/37.png', 3, '131110', '车辆轮胎历史状态', '车辆轮胎历史状态', 'module_13/sys.his_show.php', 0, NULL),
-(131210, '131210', 1311, 'images/icon/37.png', 3, '131210', '告警历史状态', '告警历史状态', 'module_13/sys.alarm_his131210_show.php', 0, NULL),
-(1313, '1313', 13, 'images/icon/37.png', 2, '1313', '轮胎使用查询', '轮胎使用查询', '', 0, NULL),
-(131112, '131112', 1311, 'images/icon/37.png', 3, '131112', '胎压告警历史', '胎压告警历史', 'module_13/sys.alarm_his131112_show.php', 0, NULL),
-(131311, '131311', 1313, 'images/icon/33.png', 3, '131311', '轮胎运行总时长总里程查询', '轮胎运行总时长总里程查询', 'module_13/sys.tire_runhis_show.php', 0, NULL),
-(1315, '1315', 13, 'images/icon/37.png', 2, '1315', '库存状态查询', '库存状态查询', '', 0, NULL),
-(131510, '131510', 1315, 'images/icon/33.png', 3, '131510', '轮胎库存查询', '轮胎库存查询', 'module_13/sys.tirestore_charts_show.php', 0, NULL),
-(1316, '1316', 13, 'images/icon/37.png', 2, '1316', '统计分析', '统计分析', '', 0, NULL),
-(131610, '131610', 1316, 'images/icon/33.png', 3, '131610', '轮胎历史曲线', '轮胎历史曲线', 'module_13/sys.tirehis_charts_10.php', 0, NULL),
-(131612, '131612', 1316, 'images/icon/33.png', 3, '131612', '轮胎历史告警', '轮胎历史告警', 'module_13/sys.tirehis_charts_12.php', 0, NULL),
-(1410, '1410', 14, 'images/icon/37.png', 2, '1410', '历史记录', '历史记录', '', 0, NULL),
-(141010, '141010', 1410, 'images/icon/33.png', 3, '141010', '历史记录查询', '历史记录查询', 'module_14/sys.sys_his141010_show.php', 0, NULL),
-(111111, '111111', 1111, 'images/icon/37.png', 3, '111111', '轮胎配送', '轮胎配送', 'module_11/sys.tire_manage.php', 0, NULL),
-(131614, '131614', 1316, 'images/icon/33.png', 3, '131614', '车辆车速分析', '车辆车速分析', 'module_13/sys.carspeed_charts_show.php', 0, NULL);
-
--- --------------------------------------------------------
-
---
--- 表的结构 `norms`
---
-
-CREATE TABLE IF NOT EXISTS `norms` (
+-- ----------------------------
+-- Table structure for `norms`
+-- ----------------------------
+DROP TABLE IF EXISTS `norms`;
+CREATE TABLE `norms` (
   `norms_id` int(11) NOT NULL AUTO_INCREMENT,
   `norms_no` varchar(20) DEFAULT NULL COMMENT '规格代码',
   `norms_name` varchar(40) DEFAULT NULL COMMENT '规格名称',
@@ -238,15 +390,20 @@ CREATE TABLE IF NOT EXISTS `norms` (
   PRIMARY KEY (`norms_id`),
   UNIQUE KEY `norms_no` (`norms_no`),
   UNIQUE KEY `norms_name` (`norms_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of norms
+-- ----------------------------
+INSERT INTO `norms` VALUES ('1', null, 'norms_name', '');
+INSERT INTO `norms` VALUES ('2', null, '275/80R22.5', '');
+INSERT INTO `norms` VALUES ('3', null, '77pr/889', '');
 
---
--- 表的结构 `roles`
---
-
-CREATE TABLE IF NOT EXISTS `roles` (
+-- ----------------------------
+-- Table structure for `roles`
+-- ----------------------------
+DROP TABLE IF EXISTS `roles`;
+CREATE TABLE `roles` (
   `role_id` int(11) NOT NULL AUTO_INCREMENT,
   `role_name` varchar(32) DEFAULT NULL COMMENT '角色英文名',
   `title` varchar(64) DEFAULT NULL COMMENT '角色中文名',
@@ -256,25 +413,21 @@ CREATE TABLE IF NOT EXISTS `roles` (
   `remark` varchar(300) DEFAULT NULL COMMENT '角色说明',
   PRIMARY KEY (`role_id`),
   UNIQUE KEY `role_name` (`role_name`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `roles`
---
+-- ----------------------------
+-- Records of roles
+-- ----------------------------
+INSERT INTO `roles` VALUES ('1', '超级管理员', '超级管理员', '10;1010;101010;101011;1011;101110;101111;101112;101113;101114;101115;101116;11;1110;111010;111011;1111;111110;111111;12;1210;121010;13;1310;131010;1311;131110;131210;131112;1313;131311;1315;131510;1316;131610;131612;131614;14;1410;141010', '系统管理;用户权限管理;角色管理;用户管理;基本数据管理;车队(仓库)管理;手持终端管理;轮胎品牌管理;轮胎规格管理;轮胎层级管理;轮胎花纹管理;车载终端管理;轮胎管理;轮胎相关管理;轮胎参数管理;传感器管理;轮胎维护;轮胎管理;轮胎配送;车辆管理;车辆管理;车辆维护;监测系统;实时状态;车辆轮胎状态;历史状态;车辆轮胎历史状态;告警历史状态;胎压告警历史;轮胎使用查询;轮胎运行总时长总里程查询;库存状态查询;轮胎库存查询;统计分析;轮胎历史曲线;轮胎历史告警;车辆车速分析;系统日志;历史记录;历史记录查询', '添加;修改;删除', '');
+INSERT INTO `roles` VALUES ('2', '手持终端人员', '手持终端人员', '10;1010;101010;101011;1011;101110;101111;101112;101113;101114;101115;101116;11;1110;111010;111011;1111;111110;111111;12;1210;121010', '系统管理;用户权限管理;角色管理;用户管理;基本数据管理;车队(仓库)管理;手持终端管理;轮胎品牌管理;轮胎规格管理;轮胎层级管理;轮胎花纹管理;车载终端管理;轮胎管理;轮胎相关管理;轮胎参数管理;传感器管理;轮胎维护;轮胎管理;轮胎配送;车辆管理;车辆管理;车辆维护', '添加;修改;删除', '');
+INSERT INTO `roles` VALUES ('3', '胎管员', '胎管员', '1011;101110;101111;101112;101113;101114;101115;101116;11;1110;111010;111011;1111;111110;111111;12;1210;121010;13;1310;131010;1311;131110;131210;1313;131310;131311;1315;131510;1316;131610;131612;131614', '基本数据管理;车队(仓库)管理;手持终端管理;轮胎品牌管理;轮胎规格管理;轮胎层级管理;轮胎花纹管理;车载终端管理;轮胎管理;轮胎相关管理;轮胎参数管理;传感器管理;轮胎维护;轮胎管理;轮胎配送;车辆管理;车辆管理;车辆维护;监测系统;实时状态;车辆轮胎状态;历史状态;车辆轮胎历史状态;告警历史状态;轮胎使用查询;轮胎使用总时间查询;轮胎运行总时长总里程查询;库存状态查询;轮胎库存查询;统计分析;轮胎历史曲线;轮胎历史告警;车辆车速分析', '', '测试');
+INSERT INTO `roles` VALUES ('4', '司机', '司机', '1310;131010;1313;131310;131311', '实时状态;车辆轮胎状态;轮胎使用查询;轮胎使用总时间查询;轮胎运行总时长总里程查询', '查看', '车队一司机');
 
-INSERT INTO `roles` (`role_id`, `role_name`, `title`, `modules_list_val`, `modules_list`, `operlist`, `remark`) VALUES
-(1, '超级管理员', '超级管理员', '10;1010;101010;101011;1011;101110;101111;101112;101113;101114;101115;101116;11;1110;111010;111011;1111;111110;111111;12;1210;121010;13;1310;131010;1311;131110;131210;131112;1313;131311;1315;131510;1316;131610;131612;131614;14;1410;141010', '系统管理;用户权限管理;角色管理;用户管理;基本数据管理;车队(仓库)管理;手持终端管理;轮胎品牌管理;轮胎规格管理;轮胎层级管理;轮胎花纹管理;车载终端管理;轮胎管理;轮胎相关管理;轮胎参数管理;传感器管理;轮胎维护;轮胎管理;轮胎配送;车辆管理;车辆管理;车辆维护;监测系统;实时状态;车辆轮胎状态;历史状态;车辆轮胎历史状态;告警历史状态;胎压告警历史;轮胎使用查询;轮胎运行总时长总里程查询;库存状态查询;轮胎库存查询;统计分析;轮胎历史曲线;轮胎历史告警;车辆车速分析;系统日志;历史记录;历史记录查询', '添加;修改;删除', ''),
-(2, '手持终端人员', '手持终端人员', '10;1010;101010;101011;1011;101110;101111;101112;101113;101114;101115;101116;11;1110;111010;111011;1111;111110;111111;12;1210;121010', '系统管理;用户权限管理;角色管理;用户管理;基本数据管理;车队(仓库)管理;手持终端管理;轮胎品牌管理;轮胎规格管理;轮胎层级管理;轮胎花纹管理;车载终端管理;轮胎管理;轮胎相关管理;轮胎参数管理;传感器管理;轮胎维护;轮胎管理;轮胎配送;车辆管理;车辆管理;车辆维护', '添加;修改;删除', ''),
-(3, '胎管员', '胎管员', '1011;101110;101111;101112;101113;101114;101115;101116;11;1110;111010;111011;1111;111110;111111;12;1210;121010;13;1310;131010;1311;131110;131210;1313;131310;131311;1315;131510;1316;131610;131612;131614', '基本数据管理;车队(仓库)管理;手持终端管理;轮胎品牌管理;轮胎规格管理;轮胎层级管理;轮胎花纹管理;车载终端管理;轮胎管理;轮胎相关管理;轮胎参数管理;传感器管理;轮胎维护;轮胎管理;轮胎配送;车辆管理;车辆管理;车辆维护;监测系统;实时状态;车辆轮胎状态;历史状态;车辆轮胎历史状态;告警历史状态;轮胎使用查询;轮胎使用总时间查询;轮胎运行总时长总里程查询;库存状态查询;轮胎库存查询;统计分析;轮胎历史曲线;轮胎历史告警;车辆车速分析', '添加;修改;删除;查看', ''),
-(4, '司机', '司机', '1310;131010;1313;131310;131311', '实时状态;车辆轮胎状态;轮胎使用查询;轮胎使用总时间查询;轮胎运行总时长总里程查询', '查看', '车队一司机');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `sensor`
---
-
-CREATE TABLE IF NOT EXISTS `sensor` (
+-- ----------------------------
+-- Table structure for `sensor`
+-- ----------------------------
+DROP TABLE IF EXISTS `sensor`;
+CREATE TABLE `sensor` (
   `sensor_id` int(11) NOT NULL AUTO_INCREMENT,
   `sensor_no` varchar(20) DEFAULT NULL COMMENT '传感器编号',
   `pressure_ul` float(6,2) DEFAULT NULL COMMENT '压力上限',
@@ -284,15 +437,32 @@ CREATE TABLE IF NOT EXISTS `sensor` (
   `remark` varchar(200) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`sensor_id`),
   UNIQUE KEY `sensor_no` (`sensor_no`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of sensor
+-- ----------------------------
+INSERT INTO `sensor` VALUES ('1', 'd5611', '6.50', '12.50', '-40', '125', '传感器添加');
+INSERT INTO `sensor` VALUES ('2', '52111', '6.50', '12.50', '-40', '125', 'BEIZHU');
+INSERT INTO `sensor` VALUES ('3', 'd4511', '6.50', '12.50', '-40', '125', '单个传感器添加');
+INSERT INTO `sensor` VALUES ('4', 'a1b11', '10.00', '0.00', '125', '-40', '批量添加传感器');
+INSERT INTO `sensor` VALUES ('5', 'a1b12', '10.00', '0.00', '125', '-40', '批量添加传感器');
+INSERT INTO `sensor` VALUES ('6', 'a1b13', '10.00', '0.00', '125', '-40', '批量添加传感器');
+INSERT INTO `sensor` VALUES ('7', 'a1b14', '10.00', '0.00', '125', '-40', '批量添加传感器');
+INSERT INTO `sensor` VALUES ('8', 'a1b15', '10.00', '0.00', '125', '-40', '批量添加传感器');
+INSERT INTO `sensor` VALUES ('9', 'a1b16', '10.00', '0.00', '125', '-40', '批量添加传感器');
+INSERT INTO `sensor` VALUES ('10', 'a4b01', '10.00', '0.00', '125', '-40', '备注');
+INSERT INTO `sensor` VALUES ('11', 'a4b02', '10.00', '0.00', '125', '-40', '备注');
+INSERT INTO `sensor` VALUES ('12', 'a4b03', '10.00', '0.00', '125', '-40', '备注');
+INSERT INTO `sensor` VALUES ('13', 'a4b04', '10.00', '0.00', '125', '-40', '备注');
+INSERT INTO `sensor` VALUES ('14', 'a4b05', '10.00', '0.00', '125', '-40', '备注');
+INSERT INTO `sensor` VALUES ('15', 'a4b06', '10.00', '0.00', '125', '-40', '备注');
 
---
--- 表的结构 `store`
---
-
-CREATE TABLE IF NOT EXISTS `store` (
+-- ----------------------------
+-- Table structure for `store`
+-- ----------------------------
+DROP TABLE IF EXISTS `store`;
+CREATE TABLE `store` (
   `store_id` int(11) NOT NULL AUTO_INCREMENT,
   `admin_id` int(11) DEFAULT NULL COMMENT '用户ID',
   `store_no` varchar(20) DEFAULT NULL COMMENT '仓库内部编号',
@@ -310,22 +480,22 @@ CREATE TABLE IF NOT EXISTS `store` (
   PRIMARY KEY (`store_id`),
   UNIQUE KEY `store_name` (`store_name`),
   UNIQUE KEY `store_no` (`store_no`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `store`
---
+-- ----------------------------
+-- Records of store
+-- ----------------------------
+INSERT INTO `store` VALUES ('0', null, 'C001', '大厂修理厂', '李四', '13567891762', '13567891762', null, null, null, null, null, '大厂', '测试');
+INSERT INTO `store` VALUES ('2', null, 'C002', '禄口修理厂', '张三', '13456712673', '13564521731', null, null, null, null, null, '禄口', '测试');
+INSERT INTO `store` VALUES ('3', null, 'C003', '雨花修理厂', '王五', '13569081313', '131317367167', null, null, null, null, null, '雨花', '测试');
+INSERT INTO `store` VALUES ('4', null, 'C004', '马鞍山修理厂', '稔田', '15436738178', '1231637167', null, null, null, null, null, '马鞍山', '测试');
+INSERT INTO `store` VALUES ('5', null, 'C005', '淳化修理厂', '范圣贤', '1345678776', '1313978789', null, null, null, null, null, '淳化', '主要修理厂');
 
-INSERT INTO `store` (`store_id`, `admin_id`, `store_no`, `store_name`, `contact`, `tel`, `mobile`, `fax`, `country`, `province`, `city`, `county`, `address`, `remark`) VALUES
-(0, NULL, 'C001', '仓库', '', '', '', NULL, NULL, NULL, NULL, NULL, '', '');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `sys_log`
---
-
-CREATE TABLE IF NOT EXISTS `sys_log` (
+-- ----------------------------
+-- Table structure for `sys_log`
+-- ----------------------------
+DROP TABLE IF EXISTS `sys_log`;
+CREATE TABLE `sys_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `log_type` varchar(20) DEFAULT NULL COMMENT '类型',
   `title` varchar(40) DEFAULT NULL COMMENT '标题',
@@ -333,33 +503,62 @@ CREATE TABLE IF NOT EXISTS `sys_log` (
   `admin_id` int(11) DEFAULT NULL COMMENT '操作员',
   `log_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '记录时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=13 ;
+) ENGINE=MyISAM AUTO_INCREMENT=46 DEFAULT CHARSET=utf8;
 
---
--- 转存表中的数据 `sys_log`
---
+-- ----------------------------
+-- Records of sys_log
+-- ----------------------------
+INSERT INTO `sys_log` VALUES ('1', '通用功能', '登录', 'admin登录了系统', '1', '2017-10-24 09:15:20');
+INSERT INTO `sys_log` VALUES ('2', '车队(仓库)管理', '修改', '修改了车队(仓库)信息大厂修理厂', '1', '2017-10-24 09:17:14');
+INSERT INTO `sys_log` VALUES ('3', '车队(仓库)管理', '新增', '添加了新车队(仓库)禄口修理厂', '1', '2017-10-24 09:18:37');
+INSERT INTO `sys_log` VALUES ('4', '车队(仓库)管理', '新增', '添加了新车队(仓库)雨花修理厂', '1', '2017-10-24 09:19:38');
+INSERT INTO `sys_log` VALUES ('5', '车队(仓库)管理', '新增', '添加了新车队(仓库)马鞍山修理厂', '1', '2017-10-24 09:21:35');
+INSERT INTO `sys_log` VALUES ('6', '车队(仓库)管理', '新增', '添加了新车队(仓库)淳化修理厂', '1', '2017-10-24 09:24:26');
+INSERT INTO `sys_log` VALUES ('7', '角色管理', '修改', '修改了角色信息胎管员', '1', '2017-10-24 09:24:45');
+INSERT INTO `sys_log` VALUES ('8', '车载终端管理', '新增', '添加了新车载终端车载终端', '1', '2017-10-24 10:18:00');
+INSERT INTO `sys_log` VALUES ('9', '车载终端管理', '修改', '修改了车载终端信息车载终端', '1', '2017-10-24 10:25:26');
+INSERT INTO `sys_log` VALUES ('10', '车载终端管理', '修改', '修改了车载终端信息车载终端', '1', '2017-10-24 10:26:46');
+INSERT INTO `sys_log` VALUES ('11', '车载终端管理', '修改', '修改了车载终端信息车载终端3', '1', '2017-10-24 10:32:38');
+INSERT INTO `sys_log` VALUES ('12', '车载终端管理', '新增', '添加了新车载终端002', '1', '2017-10-24 10:33:44');
+INSERT INTO `sys_log` VALUES ('13', '车载终端管理', '新增', '添加了新车载终端003', '1', '2017-10-24 10:33:56');
+INSERT INTO `sys_log` VALUES ('14', '车载终端管理', '新增', '添加了新车载终端004', '1', '2017-10-24 10:34:27');
+INSERT INTO `sys_log` VALUES ('15', '车载终端管理', '修改', '修改了车载终端信息002', '1', '2017-10-24 10:38:32');
+INSERT INTO `sys_log` VALUES ('16', '车载终端管理', '修改', '修改了车载终端信息003', '1', '2017-10-24 10:38:42');
+INSERT INTO `sys_log` VALUES ('17', '车载终端管理', '修改', '修改了车载终端信息003', '1', '2017-10-24 10:42:39');
+INSERT INTO `sys_log` VALUES ('18', '车载终端管理', '修改', '修改了车载终端信息001', '1', '2017-10-24 10:43:19');
+INSERT INTO `sys_log` VALUES ('19', '轮胎品牌管理', '新增', '添加了新的轮胎参数', '1', '2017-10-24 14:11:39');
+INSERT INTO `sys_log` VALUES ('20', '轮胎品牌管理', '新增', '添加了新的轮胎参数', '1', '2017-10-24 14:27:09');
+INSERT INTO `sys_log` VALUES ('21', '轮胎品牌管理', '新增', '添加了新的轮胎参数', '1', '2017-10-24 14:31:52');
+INSERT INTO `sys_log` VALUES ('22', '轮胎品牌管理', '新增', '添加了新的轮胎参数', '1', '2017-10-24 14:39:25');
+INSERT INTO `sys_log` VALUES ('23', '轮胎品牌管理', '修改', '修改了参数信息', '1', '2017-10-24 15:47:57');
+INSERT INTO `sys_log` VALUES ('24', '通用功能', '登录', 'admin登录了系统', '1', '2017-10-25 08:31:38');
+INSERT INTO `sys_log` VALUES ('25', '通用功能', '登录', 'admin登录了系统', '1', '2017-10-26 09:10:10');
+INSERT INTO `sys_log` VALUES ('26', '通用功能', '登录', 'admin登录了系统', '1', '2017-10-26 09:10:11');
+INSERT INTO `sys_log` VALUES ('27', '轮胎参数管理', '新增', '添加了新轮胎参数4', '1', '2017-10-26 09:13:39');
+INSERT INTO `sys_log` VALUES ('28', '传感器管理', '新增', '添加了新传感器52111', '1', '2017-10-26 09:15:32');
+INSERT INTO `sys_log` VALUES ('29', '传感器管理', '新增', '添加了新传感器d4511', '1', '2017-10-26 09:43:54');
+INSERT INTO `sys_log` VALUES ('30', '传感器管理', '新增', '添加了新传感器a1b11', '1', '2017-10-26 10:29:00');
+INSERT INTO `sys_log` VALUES ('31', '传感器管理', '新增', '添加了新传感器a1b12', '1', '2017-10-26 10:29:00');
+INSERT INTO `sys_log` VALUES ('32', '传感器管理', '新增', '添加了新传感器a1b13', '1', '2017-10-26 10:29:00');
+INSERT INTO `sys_log` VALUES ('33', '传感器管理', '新增', '添加了新传感器a1b14', '1', '2017-10-26 10:29:00');
+INSERT INTO `sys_log` VALUES ('34', '传感器管理', '新增', '添加了新传感器a1b15', '1', '2017-10-26 10:29:00');
+INSERT INTO `sys_log` VALUES ('35', '传感器管理', '新增', '添加了新传感器a1b16', '1', '2017-10-26 10:29:00');
+INSERT INTO `sys_log` VALUES ('36', '传感器管理', '新增', '添加了新传感器a4b01', '1', '2017-10-26 10:35:15');
+INSERT INTO `sys_log` VALUES ('37', '传感器管理', '新增', '添加了新传感器a4b02', '1', '2017-10-26 10:35:15');
+INSERT INTO `sys_log` VALUES ('38', '传感器管理', '新增', '添加了新传感器a4b03', '1', '2017-10-26 10:35:15');
+INSERT INTO `sys_log` VALUES ('39', '传感器管理', '新增', '添加了新传感器a4b04', '1', '2017-10-26 10:35:15');
+INSERT INTO `sys_log` VALUES ('40', '传感器管理', '新增', '添加了新传感器a4b05', '1', '2017-10-26 10:35:15');
+INSERT INTO `sys_log` VALUES ('41', '传感器管理', '新增', '添加了新传感器a4b06', '1', '2017-10-26 10:35:15');
+INSERT INTO `sys_log` VALUES ('42', '轮胎管理', '新增', '添加了新轮胎d5611000', '1', '2017-10-26 13:04:59');
+INSERT INTO `sys_log` VALUES ('43', '轮胎管理', '新增', '添加了新轮胎d4511000', '1', '2017-10-26 13:17:07');
+INSERT INTO `sys_log` VALUES ('44', '通用功能', '登录', 'admin登录了系统', '1', '2017-10-26 13:40:44');
+INSERT INTO `sys_log` VALUES ('45', '通用功能', '登录', 'admin登录了系统', '1', '2017-10-27 11:53:43');
 
-INSERT INTO `sys_log` (`id`, `log_type`, `title`, `content`, `admin_id`, `log_stamp`) VALUES
-(1, '通用功能', '登录', 'admin登录了系统', 1, '2017-09-24 06:23:26'),
-(2, '通用功能', '登录', 'admin登录了系统', 1, '2017-09-24 06:24:33'),
-(3, '通用功能', '登录', 'admin登录了系统', 1, '2017-09-25 07:21:30'),
-(4, '通用功能', '登录', 'admin登录了系统', 1, '2017-09-26 01:04:43'),
-(5, '通用功能', '登出', 'admin登出了系统', 1, '2017-09-26 01:05:53'),
-(6, '通用功能', '登录', 'admin登录了系统', 1, '2017-09-26 02:09:22'),
-(7, '通用功能', '登录', 'admin登录了系统', 1, '2017-09-26 02:18:36'),
-(8, '通用功能', '登录', 'admin登录了系统', 1, '2017-09-27 00:48:11'),
-(9, '通用功能', '登录', 'admin登录了系统', 1, '2017-09-27 01:04:49'),
-(10, '通用功能', '登录', 'admin登录了系统', 1, '2017-09-27 01:18:46'),
-(11, '通用功能', '登录', 'admin登录了系统', 1, '2017-09-27 01:47:42'),
-(12, '通用功能', '登录', 'admin登录了系统', 1, '2017-09-27 02:14:31');
-
--- --------------------------------------------------------
-
---
--- 表的结构 `terminal`
---
-
-CREATE TABLE IF NOT EXISTS `terminal` (
+-- ----------------------------
+-- Table structure for `terminal`
+-- ----------------------------
+DROP TABLE IF EXISTS `terminal`;
+CREATE TABLE `terminal` (
   `terminal_id` int(11) NOT NULL AUTO_INCREMENT,
   `admin_id` int(11) DEFAULT NULL COMMENT '用户ID',
   `terminal_ip` varchar(64) DEFAULT NULL COMMENT '终端IP',
@@ -369,15 +568,17 @@ CREATE TABLE IF NOT EXISTS `terminal` (
   `last_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '最后一次登录时间',
   `remark` varchar(300) DEFAULT NULL COMMENT '终端备注',
   PRIMARY KEY (`terminal_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of terminal
+-- ----------------------------
 
---
--- 表的结构 `tire_addmore`
---
-
-CREATE TABLE IF NOT EXISTS `tire_addmore` (
+-- ----------------------------
+-- Table structure for `tire_addmore`
+-- ----------------------------
+DROP TABLE IF EXISTS `tire_addmore`;
+CREATE TABLE `tire_addmore` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `brand_id` int(11) DEFAULT NULL COMMENT '轮胎品牌',
   `tire_param_id` int(11) DEFAULT NULL COMMENT '轮胎参数ID',
@@ -387,15 +588,17 @@ CREATE TABLE IF NOT EXISTS `tire_addmore` (
   `admin_name` varchar(20) DEFAULT NULL COMMENT '手续终端用户名',
   PRIMARY KEY (`id`),
   UNIQUE KEY `admin_name` (`admin_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of tire_addmore
+-- ----------------------------
 
---
--- 表的结构 `tire_exchg_log`
---
-
-CREATE TABLE IF NOT EXISTS `tire_exchg_log` (
+-- ----------------------------
+-- Table structure for `tire_exchg_log`
+-- ----------------------------
+DROP TABLE IF EXISTS `tire_exchg_log`;
+CREATE TABLE `tire_exchg_log` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `tire_id` int(11) DEFAULT NULL COMMENT '轮胎ID',
   `bus_id` int(11) DEFAULT NULL COMMENT '车辆ID',
@@ -408,15 +611,17 @@ CREATE TABLE IF NOT EXISTS `tire_exchg_log` (
   `action` varchar(20) DEFAULT NULL COMMENT '动作：装上、卸下、入库、报废等',
   `log_stamp` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '记录时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of tire_exchg_log
+-- ----------------------------
 
---
--- 表的结构 `tire_info`
---
-
-CREATE TABLE IF NOT EXISTS `tire_info` (
+-- ----------------------------
+-- Table structure for `tire_info`
+-- ----------------------------
+DROP TABLE IF EXISTS `tire_info`;
+CREATE TABLE `tire_info` (
   `tire_id` int(11) NOT NULL AUTO_INCREMENT,
   `sensor_id` int(11) DEFAULT NULL COMMENT '传感器编号',
   `tire_rfid` varchar(20) NOT NULL COMMENT '轮胎身份ID 就是传感器编号',
@@ -450,15 +655,19 @@ CREATE TABLE IF NOT EXISTS `tire_info` (
   PRIMARY KEY (`tire_id`),
   UNIQUE KEY `tire_id` (`tire_id`),
   UNIQUE KEY `factory_code` (`factory_code`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of tire_info
+-- ----------------------------
+INSERT INTO `tire_info` VALUES ('1', '1', 'd5611', 'd5611000', null, '5', '4', '0', '0', '0', '', '0.00', '', '', '2017-10-26 13:04:59', '0000-00-00 00:00:00', '00000000000', '00000000000', null, '00000000000', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('2', '3', 'd4511', 'd4511000', null, '6', '2', '0', '0', '0', '', '0.00', '', '', '2017-10-26 13:17:07', '0000-00-00 00:00:00', '00000000000', '00000000000', null, '00000000000', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
 
---
--- 表的结构 `tire_param_info`
---
-
-CREATE TABLE IF NOT EXISTS `tire_param_info` (
+-- ----------------------------
+-- Table structure for `tire_param_info`
+-- ----------------------------
+DROP TABLE IF EXISTS `tire_param_info`;
+CREATE TABLE `tire_param_info` (
   `tire_param_id` int(11) NOT NULL AUTO_INCREMENT,
   `company_name` varchar(40) DEFAULT NULL COMMENT '制造商',
   `brand_id` int(11) DEFAULT NULL COMMENT '品牌ID',
@@ -476,27 +685,46 @@ CREATE TABLE IF NOT EXISTS `tire_param_info` (
   `rated_mile` int(11) DEFAULT '180000' COMMENT '额定里程',
   PRIMARY KEY (`tire_param_id`),
   UNIQUE KEY `brand_id` (`brand_id`,`norms_id`,`class_id`,`figure_id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
--- --------------------------------------------------------
+-- ----------------------------
+-- Records of tire_param_info
+-- ----------------------------
+INSERT INTO `tire_param_info` VALUES ('4', '杭州', '5', '5', '5', '6', '20.00', '0.00', '200', '20', '10', '8', '2000', '4000', '10000');
+INSERT INTO `tire_param_info` VALUES ('2', '南京', '6', '5', '6', '6', '10.00', '0.00', '200', '120', '20', '0', '4000', '8000', '10000');
+INSERT INTO `tire_param_info` VALUES ('3', '米其林', '5', '6', '5', '5', '10.00', '4.00', '200', '90', '20', '4', '2000', '4000', '10000');
 
---
--- 表的结构 `vehicle_term`
---
-
-CREATE TABLE IF NOT EXISTS `vehicle_term` (
+-- ----------------------------
+-- Table structure for `vehicle_term`
+-- ----------------------------
+DROP TABLE IF EXISTS `vehicle_term`;
+CREATE TABLE `vehicle_term` (
   `v_term_id` int(11) NOT NULL AUTO_INCREMENT,
   `plate_no` varchar(20) DEFAULT NULL COMMENT '车牌号码',
   `v_term_no` varchar(20) DEFAULT NULL COMMENT '车载终端编号',
   `v_term_name` varchar(40) DEFAULT NULL COMMENT '车载终端名称',
   `renew_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '里程更新时间',
   `store_id` int(11) DEFAULT NULL COMMENT '所属仓库车队',
-  `mile_count` int(11) DEFAULT NULL COMMENT '累计里程',
+  `mile_count` int(10) unsigned NOT NULL DEFAULT '0' COMMENT '累计里程',
   `remark` varchar(200) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`v_term_id`),
   UNIQUE KEY `v_term_no` (`v_term_no`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+-- ----------------------------
+-- Records of vehicle_term
+-- ----------------------------
+INSERT INTO `vehicle_term` VALUES ('1', '', '001', '001', '2017-10-24 10:43:19', '3', '0', '313131313');
+INSERT INTO `vehicle_term` VALUES ('2', '', '002', '002', '2017-10-24 10:41:09', '2', '0', '');
+INSERT INTO `vehicle_term` VALUES ('3', '', '003', '003', '2017-10-24 10:42:39', '3', '0', '31231');
+INSERT INTO `vehicle_term` VALUES ('4', '', '004', '004', '2017-10-24 10:41:12', '0', '0', '');
+
+-- ----------------------------
+-- Event structure for `real_to_his`
+-- ----------------------------
+DROP EVENT IF EXISTS `real_to_his`;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` EVENT `real_to_his` ON SCHEDULE EVERY 10 MINUTE STARTS '2017-08-31 22:14:48' ON COMPLETION NOT PRESERVE ENABLE DO insert into bt_history_log (bus_id,speed,max_speed,tire_id1,pressure1,overflow_pressure1,temp1,overflow_temp1,tire_id2,pressure2,overflow_pressure2,temp2,overflow_temp2,tire_id3,pressure3,overflow_pressure3,temp3,overflow_temp3,tire_id4,pressure4,overflow_pressure4,temp4,overflow_temp4,tire_id5,pressure5,overflow_pressure5,temp5,overflow_temp5,tire_id6,pressure6,overflow_pressure6,temp6,overflow_temp6,tire_id7,pressure7,overflow_pressure7,temp7,overflow_temp7,tire_id8,pressure8,overflow_pressure8,temp8,overflow_temp8,tire_id9,pressure9,overflow_pressure9,temp9,overflow_temp9,tire_id10,pressure10,overflow_pressure10,temp10,overflow_temp10,log_stamp) select bus_id,speed,max_speed,tire_id1,pressure1,overflow_pressure1,temp1,overflow_temp1,tire_id2,pressure2,overflow_pressure2,temp2,overflow_temp2,tire_id3,pressure3,overflow_pressure3,temp3,overflow_temp3,tire_id4,pressure4,overflow_pressure4,temp4,overflow_temp4,tire_id5,pressure5,overflow_pressure5,temp5,overflow_temp5,tire_id6,pressure6,overflow_pressure6,temp6,overflow_temp6,tire_id7,pressure7,overflow_pressure7,temp7,overflow_temp7,tire_id8,pressure8,overflow_pressure8,temp8,overflow_temp8,tire_id9,pressure9,overflow_pressure9,temp9,overflow_temp9,tire_id10,pressure10,overflow_pressure10,temp10,overflow_temp10,log_stamp from bt_real_log
+;
+;;
+DELIMITER ;

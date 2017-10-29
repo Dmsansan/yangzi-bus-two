@@ -121,6 +121,7 @@ class sys {
         失败反回:{"status":"ERROR","reason":"失败原因"}
 	*/
 	function get_all_place(){
+		global $tire_position;
 		$plate_no=mysql_escape_string(trim($_REQUEST["plate_no"].""));
 		if($plate_no == ""){
 			$arr = array ('status'=>'ERROR','reason'=>'参数不完整');
@@ -151,7 +152,8 @@ class sys {
             if(array_key_exists($i,$arr_tmp))continue;
             $cnt++;
             $data['id']=$i;
-            $data['name']=$i;
+            //$data['name']=$i;
+            $data['name']=$tire_position[intval($i)];
             array_push($items,$data);
         }
         if($cnt>0){
