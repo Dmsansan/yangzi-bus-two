@@ -52,10 +52,7 @@
 				}
 			});
 			$('#save').bind('click',function(){
-				var sensor_no=$('#sensorNumber').textbox('get
-				 bText
-				 
-				 Text');
+				var sensor_no=$('#sensorNumber').textbox('getText');
 				var pressure_ul=$('#pressure_high').textbox('getText');
 				var pressure_ll=$('#pressure').textbox('getText');
 				var remark=$('#remark').textbox('getText');

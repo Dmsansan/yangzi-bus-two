@@ -21,7 +21,10 @@ function f_redirect()
 {
 	window.location.href="main.php";
 }
-
+function reset(){
+	$('#userid').val("");
+	$('#userkey').val("");
+}
 function f_error()
 {
 	return;
@@ -144,7 +147,7 @@ function LoginSystem()
 
                                 <input name="imgbtn" type="image" style="cursor:hand; outline:none; padding-right: 39px;" src="images/login.png" width="131" height="40" border="0"  onclick="LoginSystem();">
                                 <!--<img src="images/login.gif"  style="cursor:hand" width="95" height="34" onclick="document.frmLogin.submit;"/>-->
-                                <input name="imgbtn" type="image" style="cursor:hand; outline:none;"  src="images/login1.png" width="131" height="40" border="0" onclick="LoginSystem();">
+                                <input name="imgbtn" type="image" style="cursor:hand; outline:none;"  src="images/login1.png" width="131" height="40" border="0" onclick="reset();">
                                 <!--<img src="images/login.gif"  style="cursor:hand" width="95" height="34" onclick="document.frmLogin.submit;"/>-->
 
 

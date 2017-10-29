@@ -10,6 +10,7 @@
     <link href="../css/homepagecss/usermanger.css" type="text/css" rel="stylesheet">
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
+	<script src="../lib/json2.js" type="text/javascript"></script>
     <style>
         .tree li{
             color:#000;
@@ -20,6 +21,20 @@
     <script type="text/javascript">
        
         $(function () {
+			$('#search').on('click',function(){
+				var role_id=$('#rolesName').val();
+					 
+					$.ajax({
+						url:'../ajaction/v1/?menuid=101010&cmd=qrybyone&role_id='+role_id,
+						dataType:'json',
+						type:'post',
+						success:function(data){
+							console.log('search',data);
+							 $("#dg").datagrid("loadData",data); 
+						}
+						
+					})
+			});
 			$('#add').on('click',function(){
 				 $('#addUser').dialog('open').dialog('setTitle','新增角色');
 			});
@@ -87,7 +102,6 @@
 				dataType:'json',
 				success:function(data){
 				$("#dg").datagrid("loadData", data.Rows);  
-					console.log('data',data);
 				}							
 			});
 			//更新操作
@@ -317,7 +331,7 @@
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-    <input type="text" id="rolesName" placeholder="角色名称"/> <button id="search">搜索</button>
+    <input type="text" id="rolesName" placeholder="角色编号"/> <button id="search">搜索</button>
     <button id="add" style="float: right; margin-top: 15px;">增加</button>
 </div>
 <!--修改信息弹出框 -->  
