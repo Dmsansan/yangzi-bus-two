@@ -250,8 +250,8 @@ padding-right: 10px;
 .l-grid-hd-cell
 {   
      padding:0; margin:0;overflow:hidden; 
-     /*border:none;*/
-     border:2px solid; 
+    border:none;
+    
     text-align:center;
 }
 .l-grid-hd-cell-last

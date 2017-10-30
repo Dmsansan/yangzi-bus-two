@@ -1238,6 +1238,7 @@
   padding: 0 1px;
 }
 .tabs-wrap {
+	    height: 34px;
   position: relative;
   left: 0;
   overflow: hidden;
@@ -1264,6 +1265,7 @@
   border-width: 0 0 1px 0;
 }
 .tabs li {
+	    line-height: 40px;
   float: left;
   display: inline-block;
   margin: 0 4px -1px 0;
@@ -1584,7 +1586,7 @@
 .tabs-header-bottom .tabs li.tabs-selected a.tabs-inner,
 .tabs-header-left .tabs li.tabs-selected a.tabs-inner,
 .tabs-header-right .tabs li.tabs-selected a.tabs-inner {
-  border-color: #efefef;
+  border-color: #ccc;
 }
 .tabs-p-tool a:hover,
 .tabs li a:hover.tabs-close,
@@ -1593,6 +1595,7 @@
 }
 .tabs li.tabs-selected a.tabs-inner {
   border-bottom: 1px solid #ffffff;
+      border-top: 3px solid #1c6bda;
 }
 .tabs-header-bottom .tabs li.tabs-selected a.tabs-inner {
   border-top: 1px solid #ffffff;

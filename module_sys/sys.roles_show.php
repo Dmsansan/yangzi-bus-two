@@ -10,7 +10,6 @@
     <link href="../css/homepagecss/usermanger.css" type="text/css" rel="stylesheet">
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
-	<script src="../lib/json2.js" type="text/javascript"></script>
     <style>
         .tree li{
             color:#000;
@@ -23,17 +22,22 @@
         $(function () {
 			$('#search').on('click',function(){
 				var role_id=$('#rolesName').val();
-					 
+				if(role_id==''||role_id.length==0){
+					alert('搜索框不能为空');
+				}else{
 					$.ajax({
 						url:'../ajaction/v1/?menuid=101010&cmd=qrybyone&role_id='+role_id,
 						dataType:'json',
 						type:'post',
 						success:function(data){
 							console.log('search',data);
-							 $("#dg").datagrid("loadData",data); 
+						
+							$('#dg').datagrid('loadData', { total: 0, rows: [] });  
+							 $("#dg").datagrid("loadData",data.Row); 
 						}
 						
 					})
+				}
 			});
 			$('#add').on('click',function(){
 				 $('#addUser').dialog('open').dialog('setTitle','新增角色');
@@ -102,6 +106,7 @@
 				dataType:'json',
 				success:function(data){
 				$("#dg").datagrid("loadData", data.Rows);  
+					console.log('data',data);
 				}							
 			});
 			//更新操作

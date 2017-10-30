@@ -30,14 +30,11 @@
 				}
 			});	 
 			});
-			
 		$('#datatable').datagrid({
 			width:'100%',
 			toolbar:'#toolbar',
 			pagination:'true',
 			striped:'true',
-			singleSelect:'true',
-			fitColumns:'true',
 			columns: [[{title: '时间', field: 'Time',width:'10%',rowspan:'2'},
 				{title: '车牌号码', field: 'Plate_No',width:'10%',rowspan:'2'},
 				{title: '速度', field: 'speed',width:'10%',rowspan:'2'},
@@ -67,10 +64,8 @@
 		$('#updata_save').bind('click',function(){
 				var row = $('#sss').datagrid('getSelected');
 				if(row){
-				$('#tireNumber').textbox('setValue',row.plate_no);
-				var nn=row.bus_id;
+				$('#carplate').textbox('setValue',row.plate_no);
 				$('#tireDlg').dialog('close');
-				searchHistory(nn);
 				var plateNumber=row.plate_no;
 				$.ajax({
 					url:'../ajaction/v1/?menuid=0&cmd=get_all_place&plate_no='+plateNumber,
@@ -95,31 +90,8 @@
 				$('#tireDlg').dialog('close');
 		});
 		
-		
-				//	ajaction/v1/?menuid=131110&cmd=qry
+					
 	})
-	function searchHistory(busId){
-		var bus_id=busId;
-		console.log('busId',bus_id);
-		$('#search').on('click',function(){
-			var starDate=$('#begibdate').datebox('getText');
-			var stopDate=$('#stopdate').datebox('getText');	
-			var carplate=bus_id;
-			var tireCount=$('#tirePosition').combobox('getValue');	
-			console.log('ssssssss',starDate+stopDate+carplate+tireCount);
-			$.ajax({
-				url:'../ajaction/v1/?menuid=131110&cmd=qry',
-				dataType:'json',
-				type:'post',
-				data:{'begin_date':starDate,'end_date':stopDate,'plate_no_val':carplate,'place_no':tireCount},
-				success:function(data){
-					console.log('haole',data);
-					$('#datatable').datagrid('loadData',data.Rows);
-				}
-			})
-		})
-		
-	}
 	
 	
 	</script>
@@ -133,10 +105,6 @@
 			border-radius: 20px;
 			vertical-align: middle;
 			color: #1c66dc;
-		}
-		#toolbar button:active,#toolbar button:hover{
-			color:#ffffff;
-			background-color:#1c66dc;
 		}
 		#dlg_tb button{
 			border: 1px solid #1c66dc;
@@ -196,12 +164,12 @@
            plain="true">导出</a>
     </div>
     <div style="margin-left: 10px;">
-        起始日期: <input id="begibdate" class="easyui-datebox" style="width: 100px">
-        终止日期: <input id="stopdate" class="easyui-datebox" style="width: 100px">
-        车辆号码:  <input id="tireNumber" class="easyui-textbox" style="width: 100px" />
+        起始日期: <input class="easyui-datebox" style="width: 100px">
+        终止日期: <input class="easyui-datebox" style="width: 100px">
+        车辆号码:  <input id="carplate" class="easyui-textbox" style="width: 100px" />
 		<a id="tt" class="easyui-linkbutton"  style="text-decoration: none" href="#"  >搜索车牌号码</a> 
 		轮胎号位: <input id="tirePosition" style="width: 100px">
-       <button id="search" style="display: inline-block; margin-right: 10px;">搜索</button>
+       <button  style="display: inline-block; margin-right: 10px;"><a style="text-decoration: none;" onclick="seach()" href="#">搜索</a></button>
     </div>
 </div>
 <div id="tireDlg" class="easyui-dialog" data-options="closed:true" style="width:800px;height:480px;">

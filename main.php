@@ -7,7 +7,6 @@
     <link href="jquery-easyui/themes/icon.css" rel="stylesheet" type="text/css">
     <script src="jquery-easyui/jquery.min.js" type="text/javascript"></script>
     <link href="jquery-easyui/demo.css" rel="stylesheet" type="text/css">
-
     <script src="jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <!--实时时间JS-->
     <script src="js/jquery.jclock.js" type="text/javascript"></script>
@@ -162,7 +161,7 @@
         if ($('#center_content').tabs('exists', title)){
             $('#center_content').tabs('select', title);
         } else {
-            var content = '<iframe scrolling="auto"  frameborder="0"  src="'+url+'" style="width:99.8%;height:99%;background-color#f1f6fd"></iframe>';
+            var content = '<iframe scrolling="auto" frameborder="0"  src="'+url+'" style="width:99.8%;height:99%;background-color#f1f6fd"></iframe>';
             $('#center_content').tabs('add',{
                 title:title,
                 content:content,
@@ -237,7 +236,7 @@
         <!--logo图标-->
         </div>
          <div id="top_right">
-            <div style="height: 74px;  margin-right: 41px;padding-bottom: 40px;">
+            <div style="height: 77px;  margin-right: 41px;padding-bottom: 40px;">
                 <!--<p style="float:left"><a style="width:88xpheight:88px;text-align:center"><img src="css/img/icon01.png" width="">首页</a></p>
                 <p style="float:left">31313</p>-->
                 <p style="font-size: 12px;color: white;line-height: 74px;vertical-align:middle;" id="Username"></p>
@@ -324,9 +323,9 @@
             </div>
         </div>
     </div>
-     <div  id="center_content" class="easyui-tabs" style="width:90%;height: 100%;background-color: #bdc4d4;margin-top:6px;"  data-options="region:'center',width:'80%'" >
+     <div  id="center_content" class="easyui-tabs"  style="width:90%;height: 100%;background-color: #bdc4d4;margin-top:6px;"  data-options="region:'center',width:'80%'" >
 
-        <div id="center_page" title="首页" data-options="" style="overflow-y: hidden;">
+        <div id="center_page" title="首页">
             <div id="i-center">
                 <div id="center_top" style="padding-top: 20px;padding-left: 1%">
                     <label for="company">修理厂：</label>

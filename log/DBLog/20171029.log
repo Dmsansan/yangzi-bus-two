@@ -641,3 +641,84 @@
 -错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data-
 -错误页面地址:http://localhost:8080/YangziBUS2/main.php-
 ------------------
+
+------------------
+-时间:05:53:08-
+-错误信息:错误的SQL语句: [select * from roles where role_id=司机]-
+-错误内容:Unknown column '司机' in 'where clause'-
+-错误号:1054-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=qrybyone&role_id=%E5%8F%B8%E6%9C%BA-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:07:46:12-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎参数管理',now(),,'修改','修改了轮胎参数信息4')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了轮胎参数信息4')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:07:50:17-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎参数管理',now(),,'修改','修改了轮胎参数信息4')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了轮胎参数信息4')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:07:56:20-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎参数管理',now(),,'修改','修改了轮胎参数信息4')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了轮胎参数信息4')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:07:56:48-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎参数管理',now(),,'修改','修改了轮胎参数信息4')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了轮胎参数信息4')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:08:00:49-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息管理员')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息管理员')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:08:01:44-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息超级管理员')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息超级管理员')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:08:24:38-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎参数管理',now(),,'删除','删除了轮胎参数信息4')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了轮胎参数信息4')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:08:56:47-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎参数管理',now(),,'修改','修改了轮胎参数信息2')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了轮胎参数信息2')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.tireparam_show.php-
+------------------

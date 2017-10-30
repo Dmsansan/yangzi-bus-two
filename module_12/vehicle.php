@@ -6,8 +6,8 @@
     <link href="../jquery-easyui/themes/default/easyui.css" rel="stylesheet" type="text/css">
     <link href="../jquery-easyui/themes/icon.css" rel="stylesheet" type="text/css">
     <script type="text/javascript" src="../jquery-easyui/jquery.min.js"></script>
-    <link href="../jquery-easyui/demo.css" rel="stylesheet" type="text/css">
-  <link href="../css/homepagecss/usermanger.css" type="text/css" rel="stylesheet">
+	<link href="../css/homepagecss/usermanger.css" type="text/css" rel="stylesheet">
+	<link href="../css/homepagecss/vehicle.css" type="text/css" rel="stylesheet">
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
@@ -496,7 +496,7 @@
 	</style>
 </head>
 <body class="easyui-layout" style="height: 100%; width: 100%;" >
-<div data-options="region:'west',title:'车辆列表'" style="width:40%">
+<div data-options="region:'west',title:'车辆列表'" style="width:40%;border-right:1px soild #ff0f0f">
     <div style="width: 100%;height:49%;" title="车辆列表">
         <table id="dg" class="easyui-datagrid" style="width: 100%;"
                toolbar="#toolbar" singleSelect="true" fitColumns="true" striped="true">
@@ -509,12 +509,10 @@
             </tr>
             </thead>
         </table>
-       <div id="toolbar" style="margin-bottom: 10px;margin-top: 10px;height:54px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:15px">
+       <div id="toolbar" style="margin-bottom: 10px;margin-top: 10px;height:34px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:15px">
            
             <div id="t-bottom">
                 <input data-options="prompt:'车牌号码'" class="easyui-textbox" />
-                <span> 起始日期：</span> <input id="startDate" type="text" class="easyui-datebox" required="required">
-                <span> 终止日期：</span> <input id="stopDate" type="text" class="easyui-datebox" required="required">
                 <button style="display: inline-block;margin-right: 10px;margin-left: 10px;">搜索</button>
 				<button id="add" style="display: inline-block; float:right;margin-right: 10px;">增加</button>
             </div>

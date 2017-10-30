@@ -1,0 +1,172 @@
+
+------------------
+-时间:03:02:48-
+-错误信息:错误的SQL语句: [select count(*) as cnt from bt_history_log where 
+                    bus_id='1' and 
+                    log_stamp>='2017-10-29 00:00:00' and 
+                    log_stamp<='2017-10-30 23:59:59' and temp1<=]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 4-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131612&cmdx=qry&begin_date=2017-10-29&end_date=2017-10-30&plate_no=%E8%8B%8FA8888&plate_no_val=1&place_no=1&charts_no=1&rnd=0.21112847898760823&place_no_v=1-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.tirehis_charts_12.php-
+------------------
+
+------------------
+-时间:03:02:48-
+-错误信息:错误的SQL语句: [select count(*) as cnt from bt_history_log where 
+                    bus_id='1' and 
+                    log_stamp>='2017-10-29 00:00:00' and 
+                    log_stamp<='2017-10-30 23:59:59' and temp1>]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=131612&cmdx=qry&begin_date=2017-10-29&end_date=2017-10-30&plate_no=%E8%8B%8FA8888&plate_no_val=1&place_no=1&charts_no=1&rnd=0.21112847898760823&place_no_v=1-
+-错误页面地址:http://localhost/YangziBus2/module_13/sys.tirehis_charts_12.php-
+------------------
+
+------------------
+-时间:03:25:49-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车辆管理',now(),,'新增','添加了新车辆苏B99999')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新车辆苏B99999')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:03:26:11-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎替换管理',now(),,'安装','苏B99999在3号位安装了轮胎')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''安装','苏B99999在3号位安装了轮胎')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8FB99999&tire_id_val=2&place_no_val=3-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:03:26:11-
+-错误信息:错误的SQL语句: [insert into tire_exchg_log (tire_id,bus_id,v_term_id,place,
+                    install_stamp,uninstall_stamp,mile_count,stamp_count,action,log_stamp) value
+                    ('2','2','3','3',
+                    NOW(),'0000-00-00 00:00:00','0',0,'装上',NOW())]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8FB99999&tire_id_val=2&place_no_val=3-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:03:26:11-
+-错误信息:错误的SQL语句: [update tire_info set exchg_id='' where tire_id='2']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8FB99999&tire_id_val=2&place_no_val=3-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:04:59:37-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('传感器管理',now(),,'修改','修改了传感器信息d5611')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了传感器信息d5611')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:05:01:39-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('传感器管理',now(),,'修改','修改了传感器信息52111')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了传感器信息52111')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:05:02:03-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('传感器管理',now(),,'修改','修改了传感器信息52111')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了传感器信息52111')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:05:02:17-
+-错误信息:错误的SQL语句: [update sensor set sensor_no='d4511', pressure_ul='12.50', pressure_ll='6.50', temp_ul='-40', temp_ll='125', remark='单个传感器添加' where sensor_id=2]-
+-错误内容:Duplicate entry 'd4511' for key 'sensor_no'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:05:02:17-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('传感器管理',now(),,'修改','修改了传感器信息d4511')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了传感器信息d4511')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:05:02:17-
+-错误信息:错误的SQL语句: [update sensor set sensor_no='d4511', pressure_ul='12.50', pressure_ll='6.50', temp_ul='-40', temp_ll='125', remark='单个传感器添加' where sensor_id=2]-
+-错误内容:Duplicate entry 'd4511' for key 'sensor_no'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:06:19:27-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('传感器管理',now(),,'新增','添加了新传感器ddhh')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新传感器ddhh')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:06:19:31-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+            values ('ddhh','12.50','6.50','125','-40','ss')]-
+-错误内容:Duplicate entry 'ddhh' for key 'sensor_no'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:06:19:41-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('传感器管理',now(),,'删除','删除了传感器信息ddhh')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了传感器信息ddhh')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:06:23:30-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('传感器管理',now(),,'修改','修改了传感器信息d5611')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了传感器信息d5611')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:06:23:43-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('传感器管理',now(),,'修改','修改了传感器信息d5611')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了传感器信息d5611')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=111011&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:07:13:41-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('通用功能',now(),,'登出','登出了系统')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''登出','登出了系统')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------

@@ -1,0 +1,39 @@
+body{
+	margin:0;
+	padding:0;
+}
+.panel-body{
+    background-color: #f1f6fd;!important;
+}
+#t-top span{
+    font-weight: bold;
+    display:inline-block;
+    font-size: 14px;
+}
+#dd span{
+    font-weight: bold;
+    display: inline-block;
+    font-size: 14px;
+}
+.datagrid-toolbar{
+    background-color: #ffffff;
+}
+button{
+    border: none;
+    padding: 5px 5px;
+    vertical-align: middle;
+    background-color: #4c4c4c;
+}
+button:visited,button:link{
+    background-color: #4c4c4c;
+}
+button:active,button:hover{
+    background-color: #2A2E33;
+}
+.panel-header,
+.panel-body {
+  border-width: 0px;!important;
+  border-style: solid;
+
+}
+

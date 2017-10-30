@@ -11,7 +11,6 @@
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
-	
 		$(function(){
 			$('#add').on('click',function(){
 				 $('#addUser').dialog('open').dialog('setTitle','新增轮胎参数');
@@ -35,6 +34,10 @@
                     $("#tire").combobox('loadData',res);
                     $("#pr").combobox('loadData',res);
                     $("#figure").combobox('loadData',res);
+					 $("#updata_brand").combobox('loadData',res);
+                    $("#updata_tire").combobox('loadData',res);
+                    $("#updata_pr").combobox('loadData',res);
+                    $("#updata_figure").combobox('loadData',res);
                 }
             });
 			$('#brand').combobox({
@@ -57,61 +60,27 @@
                     textField:'figure_name',
                     type:'json'
 			});
-		/* 	//加载数据表格：
-			$.ajax({
-				url:'../ajaction/v1/?menuid=111010&cmd=qry&t=1',
-				dataType:'json',
-				success:function(data){
-				
-					console.log('sssa',data);
-				}
-			}); */
-		//增加操作：
-			/* $("#save").bind('click',function(){
-				var company_name=$('#productor').textbox('getText');
-				var brand_id_val=$('#brand').combobox('getValue');
-				var	norms_id_val=$('#tire').combobox('getValue');
-				var	class_id_val=$('#pr').combobox('getValue');
-				var	figure_id_val=$('#figure').combobox('getValue');
-				var	pressure_ul=$('#pressure_down').textbox('getText');
-				var	pressure_ll=$('#pressure_up').textbox('getText');
-				var	speed_ul=$('#speed').textbox('getText');
-				var	temp_ul=$('#temp').textbox('getText');
-				var	tkph_val=$('#tpkh').textbox('getText');
-				var	brao_val=$('#standard').textbox('getText');
-				var	mainterance1=$('#one').textbox('getText');
-				var	mainterance2=$('#two').textbox('getText');
-				var	rated_mile=$('#all').textbox('getText');
-				$.ajax({
-					url:'../ajaction/v1/?menuid=111010&cmd=add',
-					type:'POST',
-					dataType:'json',
-					data:{'company_name':company_name,'brand_id_val':brand_id_val,'norms_id_val':norms_id_val,'class_id_val':class_id_val,
-					'figure_id_val':figure_id_val,'pressure_ul':pressure_ul,'pressure_ll':pressure_ll,'speed_ul':speed_ul,'temp_ul':temp_ul,
-					'tkph_val':tkph_val,'brao_val':brao_val,'mainterance1':mainterance1,'mainterance2':mainterance2,'rated_mile':rated_mile},
-					success:function(data){
-					if(data!=null&&data.status="ok"){
-						reload()
-					}else{
-						alert('数据异常');
-					}
-						
-					 
-					}
-				});
+			$('#updata_brand').combobox({
+                    valueField:'id',
+                    textField:'name',
+                    type:'json'
             });
-					
-		}) */
-		/* function reload(){
-			$.ajax({
-				url:'../ajaction/v1/?menuid=111010&cmd=qry&t=1',
-				dataType:'json',
-				success:function(data){
-				
-					console.log('sssa',data);
-				}
+			$('#updata_tire').combobox({
+				valueField:'id',
+                    textField:'norms_name',
+                    type:'json'
 			});
-		} */
+			$('#updata_pr').combobox({
+				valueField:'id',
+                    textField:'class_name',
+                    type:'json'
+			});
+			$('#updata_figure').combobox({
+				valueField:'id',
+                    textField:'figure_name',
+                    type:'json'
+			});
+	
             //加载数据
             $.ajax({
                 url: '../ajaction/v1/?menuid=111010&cmd=qry&t=1',
@@ -160,6 +129,21 @@
             $('#updata_close').bind('click',function(){
                 $('#dlg').dialog('close');
             });
+			//搜索：
+			$('#search').bind('click',function(){
+				var name=$('#search_company_name').val();
+				//console.log('niaho',name);
+				$.ajax({
+                    url:'../ajaction/v1/?menuid=111010&cmd=qry',
+                    type:'POST',
+                    data:{'company_name':name},
+                    dataType:'json',
+                    success:function(data){
+                        $("#dg").datagrid("loadData", data.Rows);    
+                    }
+                });
+				
+			});
 					
 		})
         function reload() {
@@ -170,7 +154,7 @@
                 success: function(data) {
                     var Idata = data.Rows;
                     $("#dg").datagrid("loadData", data.Rows);
-                    console.log('data', Idata.admin_name);
+                    console.log('data', data);
                 }
             });
         }
@@ -182,10 +166,72 @@
             $('#dg').datagrid('selectRow', index);
             var row = $('#dg').datagrid('getSelected');
             if (row){
+				console.log('luntai',row);
                 $('#dlg').dialog('open').dialog('setTitle','修改轮胎参数');
-         
+				$('#updata_pm').textbox('setValue',row.company_name);
+				$('#updata_brand').combobox('setValue',row.brand_name);
+				$('#updata_tire').combobox('setValue',row.norms_name);
+				$('#updata_pr').combobox('setValue',row.class_name);
+				$('#updata_figure').combobox('setValue',row.figure_name);	 		
+				$('#updata_pressure_ll').textbox('setValue',row.pressure_ll);
+				$('#update_pressure_ul').textbox('setValue',row.pressure_ul);
+				$('#updata_tem').textbox('setValue',row.temp_ul);
+				$('#updata_speed').textbox('setValue',row.speed_ul);
+				$('#updata_tpkh').textbox('setValue',row.tkph_val);
+				$('#updata_standard').textbox('setValue',row.baro_val);
+				$('#updata_one').textbox('setValue',row.mainterance1);
+				$('#updata_two').textbox('setValue',row.mainterance2);
+				$('#updata_all').textbox('setValue',row.rated_mile);
+				var company=row.company_name;
+				var tireparam=row.tire_param_id;
+				updateTireParam(tireparam);
+				
             }
         };
+	
+		//修改按钮事件
+			function updateTireParam(tire){
+				var tire_param_id=tire;
+				$('#updata_save').on('click',function(){
+					
+					//ajaction/v1/?menuid=11101&cmd=edit
+				var company_name = $('#updata_pm').textbox('getText');
+                var brand_id_val=$('#updata_brand').combobox('getValue');                
+                var norms_id_val = $('#updata_tire').combobox('getValue');
+                var class_id_val=$('#updata_pr').combobox('getValue');
+                var figure_id_val=$('#updata_figure').combobox('getValue');
+                var pressure_ll = $('#updata_pressure_ll').textbox('getText');
+                var pressure_ul = $('#update_pressure_ul').textbox('getText');
+                var speed_ul = $('#updata_speed').textbox('getText');
+                var temp_ul = $('#updata_tem').textbox('getText');
+                var tkph_val = $('#updata_tpkh').textbox('getText');
+                var brao_val = $('#updata_standard').textbox('getText');
+                var mainterance1 = $('#updata_one').textbox('getText');
+                var mainterance2 = $('#updata_two').textbox('getText');
+                var rated_mile = $('#updata_all').textbox('getText');
+				console.log('class_id_val',class_id_val);
+				$.ajax({
+						url:'../ajaction/v1/?menuid=111010&cmd=edit',
+						type:'POST',
+						dataType:'json',
+						data:{'tire_param_id':tire_param_id,'company_name':company_name,'brand_id_val':brand_id_val,'norms_id_val':norms_id_val,'class_id_val':class_id_val,'figure_id_val':figure_id_val,'pressure_ll':pressure_ll,'pressure_ul':pressure_ul,'speed_ul':speed_ul ,'temp_ul':temp_ul,'tkph_val':tkph_val,'baro_val':brao_val,'mainterance2':mainterance2,'mainterance1':mainterance1,'rated_mile':rated_mile},
+						success:function(data){
+							
+							if(data.status="OK"){
+								$.messager.show({
+								title:'提示',
+								msg:'修改成功',
+								timeout:5000,
+								showType:'slide'
+							});
+							reload();
+							 $('#dlg').dialog('close');
+							}
+							
+						}
+				});
+				})
+			}
 		//删除操作
         function deletData(index) {
             $('#dg').datagrid('selectRow', index);
@@ -203,6 +249,7 @@
                         success: function(data) {
                             console.log('delete', data);
                             reload();
+							 $('#alarm').dialog('close');
                         }
                     })
                 })
@@ -313,35 +360,31 @@
            data-options="singleSelect:true,toolbar:'#tb',striped:'true',pagination:'true'">
         <thead>
         <tr>
-            <th data-options="field:'tire_param_id',width:'8%'">编号</th>
-            <th data-options="field:'company_name',width:'8%'">制造商</th>
-            <th data-options="field:'brand_name',width:'8%'">品牌</th>
-            <th data-options="field:'norms_name',width:'8%'">轮胎规格</th>
-            <th data-options="field:'class_name',width:'8%'">层级</th>
-            <th data-options="field:'figure_name',width:'8%'">花纹</th>
+            <th data-options="field:'tire_param_id',width:'5%'">编号</th>
+            <th data-options="field:'company_name',width:'5%'">制造商</th>
+            <th data-options="field:'brand_name',width:'5%'">品牌</th>
+            <th data-options="field:'norms_name',width:'10%'">轮胎规格</th>
+            <th data-options="field:'class_name',width:'5%'">层级</th>
+            <th data-options="field:'figure_name',width:'5%'">花纹</th>
             <th data-options="field:'pressure_ul',width:'8%'">胎压上限</th>
             <th data-options="field:'pressure_ll',width:'8%'">胎压下限</th>
-            <th data-options="field:'temp_ul',width:'10%'">胎温上限</th>
-            <th data-options="field:'speed_ul',width:'10%'">速度上限</th>
-            <th data-options="field:'tkph_val',width:'10%'">TKPH值</th>
+            <th data-options="field:'temp_ul',width:'8%'">胎温上限</th>
+            <th data-options="field:'speed_ul',width:'8%'">速度上限</th>
+            <th data-options="field:'tkph_val',width:'8%'">TKPH值</th>
             <th data-options="field:'baro_val',width:'10%'">标准冲气压力</th>
-            <th data-options="field:'mainterance1',width:'10%'">一保</th>
-            <th data-options="field:'mainterance2',width:'10%'">二保</th>
-            <th data-options="field:'rated_mile',width:'10%'">额定里程</th>
+            <th data-options="field:'mainterance1',width:'5%'">一保</th>
+            <th data-options="field:'mainterance2',width:'5%'">二保</th>
+            <th data-options="field:'rated_mile',width:'8%'">额定里程</th>
             <th data-options="field:'_operate',width:'10%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-
-    <input type="text" placeholder="轮胎编号"/> <button>搜索</button>
-    <button id="add" style="float: right; margin-top: 15px;">增加</button>
-
     <input id="search_company_name" type="text" placeholder="制造商"/> <button id="search">搜索</button>
-    <button style="float: right; margin-top: 15px;"><a style="text-decoration: none;" href="#" onclick="addUser()">增加</a></button>
+    <button id="add" style="float: right; margin-top: 15px;">增加</button>
 </div>
     <!--修改信息弹出框 -->  
-	<div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#updata_dlg'" style="width:650px;height: 300px;background-color: #bdc4d4">
+	<div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#updata_dlg'" style="width:875px;height: 400px;background-color: #bdc4d4">
     <div style="background-color: #ffffff;height:340px;margin:10px;">
     <span id="addMessage">基本信息</span>
     <table id="aa" style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
@@ -370,7 +413,7 @@
                 层级（PR）：
 				</td>
             <td>
-                <input id="updata_pr" class="easyui-textbox"  style="width: 130px;" />
+                <input id="updata_pr"  style="width: 130px;" />
             </td>
 			<td>  
                 花纹类型：
@@ -382,7 +425,7 @@
                 压力范围：
 				</td>
             <td>
-                <input id="updata_pressure" style="width: 30px;" />至<input id="rolePower" style="width:30px;" />
+                <input id="updata_pressure_ll" class="easyui-textbox"  style="width: 40px;" />至<input id="update_pressure_ul" class="easyui-textbox"  style="width:40px;" />
             </td>
         </tr>
         <tr>
@@ -417,13 +460,13 @@
                 一保(KM)：
 			</td>
             <td>
-                <input id="updata_one" style="width: 130px;" />
+                <input id="updata_one" class="easyui-textbox"  style="width: 130px;" />
             </td>
 			<td>
                 二保(KM)：
 				</td>
             <td>
-                <input id="updata_two" style="width: 130px;" />
+                <input id="updata_two" class="easyui-textbox"  style="width: 130px;" />
             </td>
         </tr>
 		 <tr>
@@ -505,14 +548,13 @@
                 压力范围：
 				</td>
             <td>
-                <input id="pressure_down" class="easyui-textbox" style="width: 30px;" />至<input id="pressure_up" class="easyui-textbox" style="width:30px;" />
 
-                <input id="pressure_ll"  class="easyui-textbox" style="width: 30px;" />至<input id="pressure_ul" class="easyui-textbox" style="width:30px;" />
+                <input id="pressure_ll"  class="easyui-textbox" style="width: 40px;" />至<input id="pressure_ul" class="easyui-textbox" style="width:40px;" />
 
             </td>
         </tr>
         <tr>
-            <td style="width:110px">
+            <td style="width:100px">
                 温度上限：
 				</td>
             <td>
@@ -544,7 +586,6 @@
 			</td>
             <td>
 
-                <input id="one" class="easyui-textbox" style="width: 130px;" />
 
                 <input id="mainterance1" class="easyui-textbox" style="width: 130px;" />
 
@@ -553,8 +594,6 @@
                 二保(KM)：
 				</td>
             <td>
-
-                <input id="two" class="easyui-textbox" style="width: 130px;" />
 
                 <input id="mainterance2" class="easyui-textbox" style="width: 130px;" />
 
@@ -598,18 +637,11 @@
     </table>
     </div>
 </div>
-	
-
- <div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
-        <div style="background-color: #ffffff;height:121px;margin:1px;">
-
-            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">信息删除无法恢复，确定删除？</span>
 
 <div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
         <div style="background-color: #ffffff;height:121px;margin:1px;">
 
-            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">参数删除无法恢复，确定删除？</span>
-
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">信息删除无法恢复，确定删除？</span>
         <div  style="width:100%;">
             <button id="sure"></button>
             <button id="cancel"></button>

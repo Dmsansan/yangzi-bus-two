@@ -21,6 +21,10 @@
 			vertical-align: middle;
 			color: #1c66dc;
 		}
+		#toolbar button:active,#toolbar button:hover{
+			color:#ffffff;
+			background-color:#1c66dc;
+		}
 		#dlg_tb button{
 			border: 1px solid #1c66dc;
 			height: 25px;
@@ -86,11 +90,8 @@
 				dataType:'json',
 				success:function(data){
 					console.log('dd',data.Rows);
-				$('#sss').datagrid('loadData',data.Rows);
-				
-				$('#sss').datagrid('reload');
-				 
-				  
+				$('#sss').datagrid('loadData',data.Rows);				
+				$('#sss').datagrid('reload');				  
 				}
 			});
 			 
@@ -99,56 +100,58 @@
 				var row = $('#sss').datagrid('getSelected');
 				if(row){
 				$('#carplate').textbox('setValue',row.plate_no);
-				var count = row.wheel_count;
-				selectCount(count);
+				var plateNumber=row.plate_no;
+				var busid=row.bus_id;
+				search(busid);
 				$('#tireDlg').dialog('close');
+				$.ajax({
+					url:'../ajaction/v1/?menuid=0&cmd=get_all_place&plate_no='+plateNumber,
+						type:'POST',
+						dataType:'json',
+						success:function(data){
+							console.log('88888',data);
+							//var res =data.items;
+							$('#tireCount').combobox("loadData", data.items);
+						}
+					});
 				}else{
-					alert('未选中数据');
+					$.messager.show({
+						title:'提示',
+						msg:'没有选中数据',
+						timeout:3000,
+						showType:'slide'
+					});
 				}
 			});
+			$('#tireCount').combobox({
+					valueField:'id',
+					textField:'name'
+				})
 				
 			$('#updata_close').bind('click',function(){
 				$('#tireDlg').dialog('close');
 			});
 			
-
+			
 		})
-		function selectCount(data){
-			var count =data;
-			console.log('count',count);
-			if(count>5){
-				$('#tireCount').combobox({
-					url:'../css/homepagecss/tireweizhi.json',
-					valueField:'id',
-					textField:'text'
-				})
-			}else{
-				$('#tireCount').combobox({
-					url:'../css/homepagecss/fourtire.json',
-					valueField:'id',
-					textField:'text'
-				})
-			}
-		}
-		
-		function seach(){
+		function search(busid){
+			$('#search').on('click',function(){
 			var starDate=$('#start').datebox('getText');
 			var stopDate=$('#stop').datebox('getText');	
-			var carplate=$('#carplate').textbox('getText');
+			var carplate=busid;
 			var tireCount=$('#tireCount').combobox('getValue');
 			$.ajax({
-				url:'../ajaction/v1/?menuid=131210&cmd=qry&',
+				url:'../ajaction/v1/?menuid=131210&cmd=qry',
 				type:'post',
 				dataType:'json',
 				data:{'begin_date':starDate,'end_date':stopDate,'plate_no_val':carplate,'place_no':tireCount},
 				success:function(data){
-					$('#datatable').datagrid('loadData',data.Rows);
+				console.log('hhh',data);
 				}
-			})
+			});
+			});
 		}
 		
-		
-	
 	</script>
 </head>
 <body class="easyui-layout" style="height: 100%; width: 100%">
@@ -174,9 +177,9 @@
         起始日期: <input id="start" class="easyui-datebox" style="width: 100px">
         终止日期: <input id="stop" class="easyui-datebox" style="width: 100px">
         车辆号码: <input id="carplate" class="easyui-textbox" style="width: 100px" />
-		 <a id="tt" class="easyui-linkbutton"  style="text-decoration: none" href="#"  >搜索车牌号码	</a> 
+		 <a id="tt" class="easyui-linkbutton"  style="text-decoration: none" href="#"  >搜索车牌号码</a> 
 		轮胎号位: <input id="tireCount" class="easyui-combobox" style="width: 100px"/>
-				<button  style="display: inline-block; margin-right: 10px;"><a style="text-decoration: none;" onclick="seach()" href="#">搜索</a></button>
+				<button id="search"  style="display: inline-block; margin-right: 10px;">搜索</button>
 				<button style="float:right;"><a href="#" style="text-decoration: none;" iconCls="icon-save"
            plain="true">导出</a></button>
     </div>

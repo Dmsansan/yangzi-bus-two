@@ -41,6 +41,7 @@
 			$('#all_close').bind('click',function(){
 				$('#addallsensor').dialog('close');
 			});
+			//加载全部数据
 			$.ajax({
 				url:'../ajaction/v1/?menuid=111011&cmd=qry&t=1',
 				type:'GET',
@@ -51,6 +52,7 @@
 					//console.log('getdata',data);
 				}
 			});
+			//增加传感器
 			$('#save').bind('click',function(){
 				var sensor_no=$('#sensorNumber').textbox('getText');
 				var pressure_ul=$('#pressure_high').textbox('getText');
@@ -64,15 +66,19 @@
 					dataType:'json',
 					data:{'sensor_no':sensor_no,'pressure_ul':pressure_ul,'pressure_ll':pressure_ll,'remark':remark,'temp_ul':temp_ul,'temp_ll':temp_ll},
 					success:function(data){
-						console.log('sensor',data);
+						
+						$.messager.show({
+								title:'提示',
+								msg:'增加成功',
+								timeout:3000,
+								showType:'slide'
+							});
+						reload();
 					}
 				})
 			});
             //批量添加传感器
-            $('#all_save').bind('click',function(){
-				
-				
-				
+            $('#all_save').bind('click',function(){						
                 //alert('2313');
                 var sensor_no=$('#all_sensorNumber').textbox('getText');
                 var sensor_num=$('#tire_Number').combobox('getValue');
@@ -89,15 +95,77 @@
                     data:{'sensor_no':sensor_no,'pressure_ul':pressure_ul,'pressure_ll':pressure_ll,'remark':remark,'temp_ul':temp_ul,'temp_ll':temp_ll,'sensor_num':sensor_num,'tire_switch':tire_switch},
                     success:function(data){
                         console.log('sensor',data);
+						$.messager.show({
+								title:'提示',
+								msg:'批量增加成功',
+								timeout:3000,
+								showType:'slide'
+							});
+						reload();
                     },
                     error:function(){
                         console.log('失败');
                     }
                 })
             });
+			//搜索操作
+			$('#search').on('click',function(){
+				var searchcontent=$('searhName').val();
+				$.ajax({
+				url:'../ajaction/v1/?menuid=111011&cmd=qry',
+				type:'POST',
+                dataType:'json',
+				data:{'sensor_no':searchcontent},
+				success:function(data){
+                    console.log('gdata',data);
+                    $("#dg").datagrid("loadData", data.Rows);
+				}
+			});
+			})
+			
 			 
 		})
-		
+		function update(sensorId){
+			$('#updata_save').on('click',function(){
+				var sensor_no=$('#updata_sensorNumber').textbox('getText');
+				var pressure_ul=$('#updata_pressure_high').textbox('getText');
+				var pressure_ll=$('#updata_pressure').textbox('getText');
+				var remark=$('#updata_remark').textbox('getText');
+				var temp_ul=$('#updata_tem_high').textbox('getText');
+				var temp_ll=$('#updata_tem').textbox('getText');
+				$.ajax({
+					url:'../ajaction/v1/?menuid=111011&cmd=edit',
+					type:'POST',
+					dataType:'json',
+					data:{'sensor_id':sensorId,'sensor_no':sensor_no,'pressure_ul':pressure_ul,'pressure_ll':pressure_ll,'remark':remark,'temp_ul':temp_ul,'temp_ll':temp_ll},
+					success:function(data){
+						console.log('llh',data);
+						if(data.status="OK"){
+							$.messager.show({
+								title:'提示',
+								msg:'修改成功',
+								timeout:3000,
+								showType:'slide'
+							});
+							reload();
+						 $('#dlg').dialog('close');
+						}
+					}
+				});
+			})
+		}
+		function reload(){
+			$.ajax({
+				url:'../ajaction/v1/?menuid=111011&cmd=qry&t=1',
+				type:'GET',
+                dataType:'json',
+				success:function(data){
+                    console.log('getdata',data);
+                    $("#dg").datagrid("loadData", data.Rows);
+					//console.log('getdata',data);
+				}
+			});
+		}
         function formatOption(value, row, index) {
                 return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
         }
@@ -106,10 +174,47 @@
             $('#dg').datagrid('selectRow', index);
             var row = $('#dg').datagrid('getSelected');
             if (row){
-                $('#dlg').dialog('open').dialog('setTitle','新增角色');
-              
+				console.log('senorrow',row);
+                $('#dlg').dialog('open').dialog('setTitle','修改信息');
+				$('#updata_sensorNumber').textbox('setValue',row.sensor_no);
+				$('#updata_pressure').textbox('setValue',row.pressure_ll);
+				$('#updata_pressure_high').textbox('setValue',row.pressure_ul);
+				$('#updata_remark').textbox('setValue',row.remark);
+				$('#updata_tem').textbox('setValue',row.temp_ll);
+				$('#updata_tem_high').textbox('setValue',row.temp_ul);
+				var sensor_id=row.sensor_id;
+				update(sensor_id);
+			
             }
         }
+		function deletData(index){
+			 $('#dg').datagrid('selectRow', index);
+            var row = $('#dg').datagrid('getSelected');
+			if(row){
+				$('#alarm').dialog('open').dialog('setTitle','提示');
+				//ajaction/v1/?menuid=111011&cmd=del
+				var sensor_id=row.sensor_id;
+				$('#sure').on('click',function(){
+					$.ajax({
+						url:'../ajaction/v1/?menuid=111011&cmd=del',
+						dataType:'json',
+						type:'POST',
+						data:{'sensor_id':sensor_id},
+						success:function(data){
+							console.log('ssd',data);
+							$('#alarm').dialog('close');
+							$.messager.show({
+								title:'提示',
+								msg:'删除成功',
+								timeout:3000,
+								showType:'slide'
+							});
+							reload();
+						}
+					})
+				})
+			}
+		}
     </script>
 	 <style type="text/css">
 	 input{
@@ -264,7 +369,7 @@
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
 
-        <input type="text" placeholder="角色名称"/> <button>搜索</button>
+        <input id="searhName" type="text" placeholder="传感器代码"/> <button id="search">搜索</button>
         <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;">增加</button>
 
      
@@ -283,7 +388,7 @@
                     压力测量范围：
 					  </td>
                 <td>
-				 <input id="updata_pressure" class="easyui-textbox"  style="width: 60px;" />至<input id="updata_pressure_high " class="easyui-textbox"  style="width:60px;" />
+				 <input id="updata_pressure" class="easyui-textbox"  style="width: 60px;" />至<input id="updata_pressure_high" class="easyui-textbox"  style="width:60px;" />
                    
                 </td>
             </tr>
@@ -434,5 +539,15 @@
         </table>
 	</div>
 </div>
+<div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
+        <div style="background-color: #ffffff;height:121px;margin:1px;">
+
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">角色删除无法恢复，确定删除？</span>
+        <div  style="width:100%;">
+            <button id="sure"></button>
+            <button id="cancel"></button>
+        </div>
+        </div>
+    </div>
 </body>
 </html>
