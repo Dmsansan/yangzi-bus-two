@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
+Source Server         : phpstudyMysql
 Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : ttms_yangzi
@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-10-29 17:07:31
+Date: 2017-10-30 15:37:18
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for admins
+-- Table structure for `admins`
 -- ----------------------------
 DROP TABLE IF EXISTS `admins`;
 CREATE TABLE `admins` (
@@ -51,7 +51,7 @@ INSERT INTO `admins` VALUES ('1', 'admin', '25d55ad283aa400af464c76d713c07ad', n
 INSERT INTO `admins` VALUES ('2', '轮胎注册', '25d55ad283aa400af464c76d713c07ad', null, '轮胎注册', '', '', '', null, null, '', '1', '0', 'Y', null, '', '0000-00-00 00:00:00', '0', null, '0000-00-00 00:00:00');
 
 -- ----------------------------
--- Table structure for brand
+-- Table structure for `brand`
 -- ----------------------------
 DROP TABLE IF EXISTS `brand`;
 CREATE TABLE `brand` (
@@ -75,7 +75,7 @@ INSERT INTO `brand` VALUES ('6', null, '鲁朗', '', '67I/U/R', '12pr', '普通�
 INSERT INTO `brand` VALUES ('7', null, '特绑', '备注', '67T/E/R', '77PR', '螺旋花纹');
 
 -- ----------------------------
--- Table structure for bt_history_log
+-- Table structure for `bt_history_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `bt_history_log`;
 CREATE TABLE `bt_history_log` (
@@ -143,7 +143,7 @@ CREATE TABLE `bt_history_log` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for bt_real_log
+-- Table structure for `bt_real_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `bt_real_log`;
 CREATE TABLE `bt_real_log` (
@@ -214,15 +214,16 @@ CREATE TABLE `bt_real_log` (
   `mile_state10` varchar(20) NOT NULL DEFAULT '正常' COMMENT '是否过保',
   PRIMARY KEY (`id`),
   UNIQUE KEY `bus_id` (`bus_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bt_real_log
 -- ----------------------------
 INSERT INTO `bt_real_log` VALUES ('1', '1', null, null, '3', '6.80', '0', '30', '0', '4', '7.80', '0', '34', '0', '4', '7.00', '0', '35', '0', '5', '7.60', '0', '35', '0', '6', '7.00', '0', '36', '0', '7', '7.70', '0', '34', '0', '8', '8.00', '0', '35', '0', null, null, '0', '255', '0', null, null, '0', '255', '0', null, null, '0', '255', '0', '2017-10-29 17:03:37', '正常', '正常', '正常', '正常', '正常', '正常', '正常', '正常', '正常', '正常');
+INSERT INTO `bt_real_log` VALUES ('2', '2', null, null, '9', '7.70', '0', '36', '0', '10', '7.60', '0', '35', '', '11', '8.20', '0', '33', '0', '12', '7.70', '0', '36', '0', '13', '7.80', '0', '38', '0', '14', '8.70', '0', '35', '0', null, null, '0', '255', '0', null, null, '0', '255', '0', null, null, '0', '255', '0', null, null, '0', '255', '0', '2017-10-30 13:22:20', '正常', '正常', '正常', '正常', '正常', '正常', '正常', '正常', '正常', '正常');
 
 -- ----------------------------
--- Table structure for bus_alarm_log
+-- Table structure for `bus_alarm_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `bus_alarm_log`;
 CREATE TABLE `bus_alarm_log` (
@@ -243,14 +244,15 @@ CREATE TABLE `bus_alarm_log` (
   `alarm_type` varchar(20) DEFAULT NULL COMMENT '告警类型',
   `log_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '记录时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bus_alarm_log
 -- ----------------------------
+INSERT INTO `bus_alarm_log` VALUES ('1', '1', '3', null, '1', '10.00', '9.00', '4.00', '40', '35', '20', '60', '40', '0', '1', '2017-10-30 09:03:49');
 
 -- ----------------------------
--- Table structure for bus_info
+-- Table structure for `bus_info`
 -- ----------------------------
 DROP TABLE IF EXISTS `bus_info`;
 CREATE TABLE `bus_info` (
@@ -268,15 +270,16 @@ CREATE TABLE `bus_info` (
   `add_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   PRIMARY KEY (`bus_id`),
   UNIQUE KEY `plate_no` (`plate_no`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bus_info
 -- ----------------------------
 INSERT INTO `bus_info` VALUES ('1', '苏A8888', '', '', '0', '0', '', '6', null, '1', '测试', '2017-10-29 16:00:54');
+INSERT INTO `bus_info` VALUES ('2', '苏A6666', '', '', '0', '0', '', '6', null, '2', 'a4b0', '2017-10-30 13:15:14');
 
 -- ----------------------------
--- Table structure for class
+-- Table structure for `class`
 -- ----------------------------
 DROP TABLE IF EXISTS `class`;
 CREATE TABLE `class` (
@@ -298,7 +301,7 @@ INSERT INTO `class` VALUES ('3', null, '77PR', null);
 INSERT INTO `class` VALUES ('4', null, '22PR', null);
 
 -- ----------------------------
--- Table structure for figure_type
+-- Table structure for `figure_type`
 -- ----------------------------
 DROP TABLE IF EXISTS `figure_type`;
 CREATE TABLE `figure_type` (
@@ -317,7 +320,7 @@ CREATE TABLE `figure_type` (
 INSERT INTO `figure_type` VALUES ('1', null, '一般花纹', '');
 
 -- ----------------------------
--- Table structure for modules
+-- Table structure for `modules`
 -- ----------------------------
 DROP TABLE IF EXISTS `modules`;
 CREATE TABLE `modules` (
@@ -381,7 +384,7 @@ INSERT INTO `modules` VALUES ('111111', '111111', '1111', 'images/icon/37.png', 
 INSERT INTO `modules` VALUES ('131614', '131614', '1316', 'images/icon/33.png', '3', '131614', '车辆车速分析', '车辆车速分析', 'module_13/sys.carspeed_charts_show.php', '0', null);
 
 -- ----------------------------
--- Table structure for norms
+-- Table structure for `norms`
 -- ----------------------------
 DROP TABLE IF EXISTS `norms`;
 CREATE TABLE `norms` (
@@ -402,7 +405,7 @@ INSERT INTO `norms` VALUES ('2', null, '275/80R22.5', '');
 INSERT INTO `norms` VALUES ('3', null, '77pr/889', '');
 
 -- ----------------------------
--- Table structure for roles
+-- Table structure for `roles`
 -- ----------------------------
 DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
@@ -426,7 +429,7 @@ INSERT INTO `roles` VALUES ('3', '胎管员', '胎管员', '1011;101110;101111;1
 INSERT INTO `roles` VALUES ('4', '司机', '司机', '1310;131010;1313;131310;131311', '实时状态;车辆轮胎状态;轮胎使用查询;轮胎使用总时间查询;轮胎运行总时长总里程查询', '查看', '车队一司机');
 
 -- ----------------------------
--- Table structure for sensor
+-- Table structure for `sensor`
 -- ----------------------------
 DROP TABLE IF EXISTS `sensor`;
 CREATE TABLE `sensor` (
@@ -461,7 +464,7 @@ INSERT INTO `sensor` VALUES ('14', 'a4b05', '10.00', '0.00', '125', '-40', '备�
 INSERT INTO `sensor` VALUES ('15', 'a4b06', '10.00', '0.00', '125', '-40', '备注');
 
 -- ----------------------------
--- Table structure for store
+-- Table structure for `store`
 -- ----------------------------
 DROP TABLE IF EXISTS `store`;
 CREATE TABLE `store` (
@@ -494,7 +497,7 @@ INSERT INTO `store` VALUES ('4', null, 'C004', '马鞍山修理厂', '稔田', '
 INSERT INTO `store` VALUES ('5', null, 'C005', '淳化修理厂', '范圣贤', '1345678776', '1313978789', null, null, null, null, null, '淳化', '主要修理厂');
 
 -- ----------------------------
--- Table structure for sys_log
+-- Table structure for `sys_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_log`;
 CREATE TABLE `sys_log` (
@@ -505,7 +508,7 @@ CREATE TABLE `sys_log` (
   `admin_id` int(11) DEFAULT NULL COMMENT '操作员',
   `log_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '记录时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=66 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=82 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_log
@@ -575,9 +578,25 @@ INSERT INTO `sys_log` VALUES ('62', '轮胎替换管理', '安装', '苏A8888在
 INSERT INTO `sys_log` VALUES ('63', '轮胎替换管理', '安装', '苏A8888在4号位安装了轮胎', '1', '2017-10-29 17:00:05');
 INSERT INTO `sys_log` VALUES ('64', '轮胎替换管理', '安装', '苏A8888在5号位安装了轮胎', '1', '2017-10-29 17:00:10');
 INSERT INTO `sys_log` VALUES ('65', '轮胎替换管理', '安装', '苏A8888在6号位安装了轮胎', '1', '2017-10-29 17:00:15');
+INSERT INTO `sys_log` VALUES ('66', '车辆管理', '新增', '添加了新车辆苏A6666', '1', '2017-10-30 13:15:14');
+INSERT INTO `sys_log` VALUES ('67', '车载终端管理', '修改', '修改了车载终端信息a4b0', '1', '2017-10-30 13:15:33');
+INSERT INTO `sys_log` VALUES ('68', '车载终端管理', '修改', '修改了车载终端信息a4b0', '1', '2017-10-30 13:16:05');
+INSERT INTO `sys_log` VALUES ('69', '轮胎管理', '新增', '添加了新轮胎a4b01000', '1', '2017-10-30 13:17:31');
+INSERT INTO `sys_log` VALUES ('70', '轮胎管理', '新增', '添加了新轮胎a4b02000', '1', '2017-10-30 13:17:38');
+INSERT INTO `sys_log` VALUES ('71', '轮胎管理', '新增', '添加了新轮胎a4b03000', '1', '2017-10-30 13:17:44');
+INSERT INTO `sys_log` VALUES ('72', '轮胎管理', '新增', '添加了新轮胎a4b04000', '1', '2017-10-30 13:17:49');
+INSERT INTO `sys_log` VALUES ('73', '轮胎管理', '新增', '添加了新轮胎a4b05000', '1', '2017-10-30 13:17:55');
+INSERT INTO `sys_log` VALUES ('74', '轮胎管理', '新增', '添加了新轮胎a4b06000', '1', '2017-10-30 13:18:00');
+INSERT INTO `sys_log` VALUES ('75', '轮胎替换管理', '安装', '苏A6666在1号位安装了轮胎', '1', '2017-10-30 13:18:48');
+INSERT INTO `sys_log` VALUES ('76', '轮胎替换管理', '安装', '苏A6666在2号位安装了轮胎', '1', '2017-10-30 13:18:56');
+INSERT INTO `sys_log` VALUES ('77', '轮胎替换管理', '安装', '苏A6666在3号位安装了轮胎', '1', '2017-10-30 13:19:01');
+INSERT INTO `sys_log` VALUES ('78', '轮胎替换管理', '安装', '苏A6666在4号位安装了轮胎', '1', '2017-10-30 13:19:07');
+INSERT INTO `sys_log` VALUES ('79', '轮胎替换管理', '安装', '苏A6666在5号位安装了轮胎', '1', '2017-10-30 13:19:14');
+INSERT INTO `sys_log` VALUES ('80', '轮胎替换管理', '安装', '苏A6666在6号位安装了轮胎', '1', '2017-10-30 13:19:21');
+INSERT INTO `sys_log` VALUES ('81', '通用功能', '登录', 'admin登录了系统', '1', '2017-10-30 15:02:55');
 
 -- ----------------------------
--- Table structure for terminal
+-- Table structure for `terminal`
 -- ----------------------------
 DROP TABLE IF EXISTS `terminal`;
 CREATE TABLE `terminal` (
@@ -597,7 +616,7 @@ CREATE TABLE `terminal` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for tire_addmore
+-- Table structure for `tire_addmore`
 -- ----------------------------
 DROP TABLE IF EXISTS `tire_addmore`;
 CREATE TABLE `tire_addmore` (
@@ -617,7 +636,7 @@ CREATE TABLE `tire_addmore` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for tire_exchg_log
+-- Table structure for `tire_exchg_log`
 -- ----------------------------
 DROP TABLE IF EXISTS `tire_exchg_log`;
 CREATE TABLE `tire_exchg_log` (
@@ -633,7 +652,7 @@ CREATE TABLE `tire_exchg_log` (
   `action` varchar(20) DEFAULT NULL COMMENT '动作：装上、卸下、入库、报废等',
   `log_stamp` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '记录时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tire_exchg_log
@@ -649,9 +668,15 @@ INSERT INTO `tire_exchg_log` VALUES ('8', '5', '1', '1', '3', '2017-10-29 16:59:
 INSERT INTO `tire_exchg_log` VALUES ('9', '6', '1', '1', '4', '2017-10-29 17:00:05', '0000-00-00 00:00:00', '0', '0', '装上', '2017-10-29 17:00:05');
 INSERT INTO `tire_exchg_log` VALUES ('10', '7', '1', '1', '5', '2017-10-29 17:00:10', '0000-00-00 00:00:00', '0', '0', '装上', '2017-10-29 17:00:10');
 INSERT INTO `tire_exchg_log` VALUES ('11', '8', '1', '1', '6', '2017-10-29 17:00:15', '0000-00-00 00:00:00', '0', '0', '装上', '2017-10-29 17:00:15');
+INSERT INTO `tire_exchg_log` VALUES ('12', '9', '2', '2', '1', '2017-10-30 13:18:48', '0000-00-00 00:00:00', '0', '0', '装上', '2017-10-30 13:18:48');
+INSERT INTO `tire_exchg_log` VALUES ('13', '10', '2', '2', '2', '2017-10-30 13:18:56', '0000-00-00 00:00:00', '0', '0', '装上', '2017-10-30 13:18:56');
+INSERT INTO `tire_exchg_log` VALUES ('14', '11', '2', '2', '3', '2017-10-30 13:19:01', '0000-00-00 00:00:00', '0', '0', '装上', '2017-10-30 13:19:01');
+INSERT INTO `tire_exchg_log` VALUES ('15', '12', '2', '2', '4', '2017-10-30 13:19:07', '0000-00-00 00:00:00', '0', '0', '装上', '2017-10-30 13:19:07');
+INSERT INTO `tire_exchg_log` VALUES ('16', '13', '2', '2', '5', '2017-10-30 13:19:14', '0000-00-00 00:00:00', '0', '0', '装上', '2017-10-30 13:19:14');
+INSERT INTO `tire_exchg_log` VALUES ('17', '14', '2', '2', '6', '2017-10-30 13:19:21', '0000-00-00 00:00:00', '0', '0', '装上', '2017-10-30 13:19:21');
 
 -- ----------------------------
--- Table structure for tire_info
+-- Table structure for `tire_info`
 -- ----------------------------
 DROP TABLE IF EXISTS `tire_info`;
 CREATE TABLE `tire_info` (
@@ -688,7 +713,7 @@ CREATE TABLE `tire_info` (
   PRIMARY KEY (`tire_id`),
   UNIQUE KEY `tire_id` (`tire_id`),
   UNIQUE KEY `factory_code` (`factory_code`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tire_info
@@ -701,9 +726,15 @@ INSERT INTO `tire_info` VALUES ('5', '6', 'a1b13', 'a1b13000', null, '5', '4', '
 INSERT INTO `tire_info` VALUES ('6', '7', 'a1b14', 'a1b14000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-29 16:59:00', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A8888', '00000000004', '2017-10-29 17:00:05', '2017-10-29 17:00:05', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000009', '');
 INSERT INTO `tire_info` VALUES ('7', '8', 'a1b15', 'a1b15000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-29 16:59:06', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A8888', '00000000005', '2017-10-29 17:00:10', '2017-10-29 17:00:10', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000010', '');
 INSERT INTO `tire_info` VALUES ('8', '9', 'a1b16', 'a1b16000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-29 16:59:12', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A8888', '00000000006', '2017-10-29 17:00:15', '2017-10-29 17:00:15', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000011', '');
+INSERT INTO `tire_info` VALUES ('9', '10', 'a4b01', 'a4b01000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:31', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A6666', '00000000001', '2017-10-30 13:18:48', '2017-10-30 13:18:48', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000012', '');
+INSERT INTO `tire_info` VALUES ('10', '11', 'a4b02', 'a4b02000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:38', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A6666', '00000000002', '2017-10-30 13:18:56', '2017-10-30 13:18:56', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000013', '');
+INSERT INTO `tire_info` VALUES ('11', '12', 'a4b03', 'a4b03000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:44', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A6666', '00000000003', '2017-10-30 13:19:01', '2017-10-30 13:19:01', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000014', '');
+INSERT INTO `tire_info` VALUES ('12', '13', 'a4b04', 'a4b04000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:49', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A6666', '00000000004', '2017-10-30 13:19:07', '2017-10-30 13:19:07', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000015', '');
+INSERT INTO `tire_info` VALUES ('13', '14', 'a4b05', 'a4b05000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:55', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A6666', '00000000005', '2017-10-30 13:19:14', '2017-10-30 13:19:14', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000016', '');
+INSERT INTO `tire_info` VALUES ('14', '15', 'a4b06', 'a4b06000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:18:00', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A6666', '00000000006', '2017-10-30 13:19:21', '2017-10-30 13:19:21', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000017', '');
 
 -- ----------------------------
--- Table structure for tire_param_info
+-- Table structure for `tire_param_info`
 -- ----------------------------
 DROP TABLE IF EXISTS `tire_param_info`;
 CREATE TABLE `tire_param_info` (
@@ -734,7 +765,7 @@ INSERT INTO `tire_param_info` VALUES ('2', '南京', '6', '5', '6', '6', '10.00'
 INSERT INTO `tire_param_info` VALUES ('3', '米其林', '5', '6', '5', '5', '10.00', '4.00', '200', '90', '20', '4', '2000', '4000', '10000');
 
 -- ----------------------------
--- Table structure for vehicle_term
+-- Table structure for `vehicle_term`
 -- ----------------------------
 DROP TABLE IF EXISTS `vehicle_term`;
 CREATE TABLE `vehicle_term` (
@@ -754,12 +785,12 @@ CREATE TABLE `vehicle_term` (
 -- Records of vehicle_term
 -- ----------------------------
 INSERT INTO `vehicle_term` VALUES ('1', '', '001', '001', '2017-10-24 10:43:19', '3', '0', '313131313');
-INSERT INTO `vehicle_term` VALUES ('2', '', '002', '002', '2017-10-24 10:41:09', '2', '0', '');
+INSERT INTO `vehicle_term` VALUES ('2', '', 'a4b0', 'a4b0', '2017-10-30 13:16:05', '6', '0', '');
 INSERT INTO `vehicle_term` VALUES ('3', '', '003', '003', '2017-10-24 10:42:39', '3', '0', '31231');
 INSERT INTO `vehicle_term` VALUES ('4', '', '004', '004', '2017-10-24 10:41:12', '0', '0', '');
 
 -- ----------------------------
--- Event structure for real_to_his
+-- Event structure for `real_to_his`
 -- ----------------------------
 DROP EVENT IF EXISTS `real_to_his`;
 DELIMITER ;;

@@ -400,7 +400,7 @@
  <div id="message" style="width:800px"></div>
 <div class="l-loading" style="display:block" id="pageloading"></div> 
     <div id="toolbar" ></div>
-	<div style="position: absolute;width:80px;top:15px;left:70px">车队:</div>
+	<div style="position: absolute;width:80px;top:15px;left:70px">修理厂:</div>
     <div id="xxcc" style="position: absolute;width:280px;top:2px;left:100px"><input type="text" id="store_id"  name="store_id"/></td></div>	
 	<div id="grid">
 		<div id="maingrid4" style="margin:0px"></div>
