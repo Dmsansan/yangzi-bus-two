@@ -11,6 +11,17 @@
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
+    $(function(){
+        $.ajax({
+            url:'../ajaction/v1/?menuid=131311&cmd=qry',
+            type:'POST',
+            dataType:'json',
+            success:function(data){
+                console.log('success',data);
+                $('#dg').datagrid('loadData',data.Rows);
+            }
+        })
+    })
         function formatOption(value, row, index) {
             return '<a href="#" onclick="editUser(\'+index+\')">编辑</a> <a href="#" onclick="editUser(\'+index+\')">删除</a>';
         }
@@ -29,16 +40,16 @@
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
 <div  class="u-content">
     <table id="dg" class="easyui-datagrid" style="width: 100%"
-           data-options="singleSelect:true,url:'../../datagrid_data1.json',method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
+           data-options="singleSelect:true,url:'../ajaction/v1/?menuid=131311&cmd=qry',method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
         <thead>
         <tr>
-            <th data-options="field:'itemid',width:300">安装时间</th>
-            <th data-options="field:'productid',width:300">卸载时间</th>
-            <th data-options="field:'listprice',width:230">车辆号码</th>
-            <th data-options="field:'unitcost',width:200">轮胎号位</th>
-            <th data-options="field:'listprice',width:200">轮胎胎号</th>
-            <th data-options="field:'unitcost',width:200">累计运行时长</th>
-            <th data-options="field:'listprice',width:200">累计运行里程</th>
+            <th data-options="field:'time_add',width:300">安装时间</th>
+            <th data-options="field:'time_remove',width:300">卸载时间</th>
+            <th data-options="field:'plate_no',width:230">车辆号码</th>
+            <th data-options="field:'place_no',width:200">轮胎号位</th>
+            <th data-options="field:'tire_no',width:200">轮胎胎号</th>
+            <th data-options="field:'run_time',width:200">累计运行时长</th>
+            <th data-options="field:'run_mile',width:200">累计运行里程</th>
         </tr>
         </thead>
     </table>
