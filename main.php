@@ -287,13 +287,8 @@
             <div style="height: 77px;">
                 <!--<p style="float:left"><a style="width:88xpheight:88px;text-align:center"><img src="css/img/icon01.png" width="">首页</a></p>
                 <p style="float:left">31313</p>-->
-<<<<<<< HEAD
                 <p style="font-size: 12px;color: white;line-height: 74px;vertical-align:middle;" id="Username"></p>
                 <p style="font-size: 12px;color: #ffffff;line-height: 74px;vertical-align:middle;">您好,欢迎回来！&nbsp;&nbsp;<span id="jnkc" style="text-align:right;color:white"></span></p>
-=======
-                <p style="font-size: 12px;color: white;line-height: 77px;vertical-align:middle;" id="Username"></p>
-                <p style="font-size: 12px;color: #ffffff;line-height: 77px;vertical-align:middle;">您好,欢迎回来！&nbsp;&nbsp;<span id="jnkc" style="text-align:right;color:white"></span></p>
->>>>>>> 8487aa7cffcfcbeb528f168a793c5315a0a29d09
 
                <a onclick="changepass()"> <img id="back" src="css/img/password_normal.png"  style="margin-left:50px;margin-right: 10px"></a>  <span style="color:#9f9f9f">|</span><a onclick="logout()"><img src="css/img/quit_normal.png" style="margin-left: 10px;"></a>
             </div>
