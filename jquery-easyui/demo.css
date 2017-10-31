@@ -47,8 +47,6 @@ h2 {
     margin-right: 6px;
     height: 74px;
     padding-right: 6px;
-	padding-bottom:6px;
-  
     text-align: right;
 }
 .panel-icon {
@@ -267,10 +265,9 @@ ul li a:hover,  ul li a:active{
     font-weight: bold;
     margin-top: 22px;
     margin-left: 19px;
-    margin-bottom: 39px;
 }
 #c_center{
-
+	padding:10px;
     height: 80%;
 }
 

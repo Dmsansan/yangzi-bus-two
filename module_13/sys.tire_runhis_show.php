@@ -99,17 +99,17 @@
             
             manager=$("#maingrid4").ligerGrid({
                 checkbox: false,
-                columns: [{display: '安装时间', name: 'time_add',align:'left',width:200},
-				{display: '卸载时间', name: 'time_remove',align:'left',width:200},
-				{display: '车辆号码', name: 'plate_no',align:'left',width:200},
-				{display: '轮胎号位', name: 'place_no',align:'left',width:200,render:function(row,rowindex,value,column){
+                columns: [{display: '安装时间', name: 'time_add',width:200},
+				{display: '卸载时间', name: 'time_remove',width:200},
+				{display: '车辆号码', name: 'plate_no',width:200},
+				{display: '轮胎号位', name: 'place_no',width:200,render:function(row,rowindex,value,column){
 				
 						return gettirename(Number(row.place_no));
 						
 					}
 				},
-				{display: '轮胎胎号', name: 'tire_no',align:'left',width:200},				
-				{display: '累计运行时长', name: 'run_time',align:'left',width:200,type:'float',
+				{display: '轮胎胎号', name: 'tire_no',width:200},				
+				{display: '累计运行时长', name: 'run_time',width:200,type:'float',
 				totalSummary:
                     {
                         type: 'sum',
@@ -126,7 +126,7 @@
 						}
                     }
 				},
-				{display: '累计运行里程(Km)', name: 'run_mile',align:'left',width:200,type:'float',
+				{display: '累计运行里程(Km)', name: 'run_mile',width:200,type:'float',
 				totalSummary:
                     {
                         type: 'sum',
@@ -225,11 +225,11 @@
              var options = {
                  columns: [
                  { display: '胎号', name:'factory_code', width:100,isSort:false },
-				{ display: '传感器编号', name:'sensor_no', width: 100,align:'left' },
-				{ display: '规格',name:'norms_name',width: 100,align:'left'},
-				{ display: '层级',name:'class_name',width: 100,align:'left'},
-				{ display: '花纹',name:'figure_name',width: 100,align:'left'},
-				{ display: '品牌',name:'brand_name',width: 100,align:'left'},								 
+				{ display: '传感器编号', name:'sensor_no', width: 100, },
+				{ display: '规格',name:'norms_name',width: 100,},
+				{ display: '层级',name:'class_name',width: 100,},
+				{ display: '花纹',name:'figure_name',width: 100,},
+				{ display: '品牌',name:'brand_name',width: 100,},								 
                  ], switchPageSizeApplyComboBox: false,
                  /*data: $.extend({}, CustomersData),*/
 				 url:'../ajaction/v1/?menuid=111110&cmd=qry&t=1',
