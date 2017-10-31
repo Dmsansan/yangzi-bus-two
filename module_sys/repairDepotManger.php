@@ -67,8 +67,15 @@
 					dataType:'json',
 					data:{'store_no':store_no,'store_name':store_name,'contact':contact,'tel':tel,'mobile':mobile,'address':address,'remark':remark},
 					success:function(data){
+						 $('#addUser').dialog('close');
+						 $.messager.show({
+                            title : '操作成功',
+                            msg:'添加成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
 						reload();
-						console.log('data',data);
+				
 					}
 				})
 	
@@ -89,8 +96,14 @@
 					type:'POST',
 					data:{'store_id':store_id,'store_no':store_no,'store_name':store_name,'contact':contact,'tel':tel,'mobile':mobile,'address':address,'remark':remark},
 					success:function(data){
+						 $('#dlg').dialog('close');
+						 $.messager.show({
+                            title : '操作成功',
+                            msg:'修改成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
 						reload();
-						console.log('updata',data);
 					}
 				});
 				
@@ -147,8 +160,14 @@
                             'store_id': id
                         },
                         success: function(data) {
-                            console.log('delete', data);
-                         
+                      $.messager.show({
+                            title : '操作成功',
+                            msg:'删除成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
+							$('#alarm').dialog('close');
+							reload();                    
                         }
                     })
                 })

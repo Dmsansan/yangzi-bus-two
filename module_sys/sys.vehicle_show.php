@@ -87,12 +87,18 @@
 				//var plate_no=$('#plateNumber').textbox('getText');
 				var store_id_val=$('#repairID').combobox('getValue');
 				var remark=$('#remark').textbox('getText');
-				//console.log('shuju',v_term_no+v_term_name+plate_no+store_id_val+remark);
 				$.ajax({
 					url:'../ajaction/v1/?menuid=101115&cmd=add	',
 					type:'POST',
 					data:{'v_term_no':v_term_no,'v_term_name':v_term_name,'store_id_val':store_id_val,'remark':remark},
 					success:function(data){
+						$('#addUser').dialog('close');
+						$.messager.show({
+                            title : '操作成功',
+                            msg:'车载终端增加成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
 						reload();
 						console.log('data',data);
 					}
@@ -114,8 +120,14 @@
 					type:'POST',
 					data:{'v_term_id':v_term_id,'v_term_no':v_term_no,'v_term_name':v_term_name,'store_id_val':store_id_val,'remark':remark},
 					success:function(data){
+						$('#dlg').dialog('close');
+						$.messager.show({
+                            title : '操作成功',
+                            msg:'车载终端修改成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
 						reload();
-						console.log('updata',data);
 					}
 				});
 				
@@ -153,6 +165,7 @@
                 }
             });
 		}
+		//删除操作
 		function deletData(index){
 			 $('#dg').datagrid('selectRow', index);
             var row = $('#dg').datagrid('getSelected');
@@ -167,9 +180,14 @@
                             'v_term_id': id
                         },
                         success: function(data) {
-							reload();
-                            console.log('delete', data);
-                         
+						$('#alarm').dialog('close');
+							$.messager.show({
+                            title : '操作成功',
+                            msg:'车载终端删除成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
+							reload();                 
                         }
                     })
                 })

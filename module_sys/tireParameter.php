@@ -134,6 +134,13 @@
                     dataType:'json',
                     success:function(data){
                         $('#addUser').dialog('close');
+						$.messager.show({
+                            title : '操作成功',
+                            msg:'轮胎参数增加成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
+							reload();
                         console.log('data',data);
                     }
                 })
@@ -157,6 +164,12 @@
                     success:function(data){
                   
                         $('#dlg').dialog('close');
+						$.messager.show({
+                            title : '操作成功',
+                            msg:'轮胎参数修改成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
                             reload();   
                     }
                     
@@ -229,13 +242,18 @@
             $('#alarm').dialog('open').dialog('setTitle', '提示');    
                 $('#sure').bind('click', function() {
                     $.ajax({
-                    url:'../ajaction/v1/?menuid=1011112&cmd=del',
+                    url:'../ajaction/v1/?menuid=101112&cmd=del',
                     type:'post',
                     data:{'brand_id':id},
                     success:function(data){
-                    console.log('delete',data);
+					$('#alarm').dialog('close');
+                    $.messager.show({
+                            title : '操作成功',
+                            msg:'轮胎参数删除成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
                     reload();
-                    $('#alarm').dialog('close');
                     }
                 })
                 })
@@ -381,6 +399,17 @@
         
         </table>
     </div>
+    </div>
+	
+	  <div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
+        <div style="background-color: #ffffff;height:121px;margin:1px;">
+
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">用户删除无法恢复，确定删除？</span>
+        <div  style="width:100%;">
+            <button id="sure"></button>
+            <button id="cancel"></button>
+        </div>
+        </div>
     </div>
 </div>
 </body>

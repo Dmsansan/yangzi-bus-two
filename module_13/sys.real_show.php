@@ -418,9 +418,9 @@
 						</div>
                     </td>					
                     <td style='align:left'>
-                        <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;'
+                        <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;outline:none;'
                             onclick=" doclear() " />						
-                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;' onclick=" doserch() " />
+                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;outline:none;' onclick=" doserch() " />
                     </td>
                 </tr>
             </table>

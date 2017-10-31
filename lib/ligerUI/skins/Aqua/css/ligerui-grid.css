@@ -90,14 +90,17 @@ background: url('../images/panel/header-bg.gif') repeat-x left -1px; position:re
 {
     font-size:12px;
 }
- .l-grid table{border-spacing:0 0;}
+ .l-grid table{border-spacing:0 0;
+ line-height:28px;
+ }
 .l-grid-header {
-	border: 5px solid #e2ebf8;
+	border-bottom: 5px solid #e2ebf8;
 	height: 22px;
 	line-height: 22px;
 	background: #ffffff;
 	overflow: hidden;
-	padding:10px;
+	padding:10px 0
+	px 10px 15px;
 } 
 .l-grid-scroller {
 position: relative;
@@ -382,13 +385,13 @@ background-color:#fffdfa;
 }
 .l-panel-bar
 {
+
 	margin-left:10px;
     height:32px;background:#C9DFFF overflow:hidden;border:0;
 	background-color:#ffffff;
 }
 .l-panel-bbar-inner
 {
-    margin-top: 3px;
     padding-left: -2px;
     width:100%;  position:relative; min-width:530px;_width:530px;
 }
@@ -400,7 +403,7 @@ background-color:#fffdfa;
 float: left;
 background: none;
 height: 24px;
-margin: 0px 5px;
+margin: 4px 5px;
 }
 .l-bar-right
 {
@@ -411,7 +414,7 @@ float: left;
 height: 18px;
 border-left: 1px solid #9AC6FF;
 border-right: 1px solid white;
-margin: 2px;
+margin: 5px;
 }
 .l-bar-button {
 float: left;

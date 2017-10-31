@@ -66,7 +66,7 @@
 					dataType:'json',
 					data:{'sensor_no':sensor_no,'pressure_ul':pressure_ul,'pressure_ll':pressure_ll,'remark':remark,'temp_ul':temp_ul,'temp_ll':temp_ll},
 					success:function(data){
-						
+						$('#addSensor').dialog('close');
 						$.messager.show({
 								title:'提示',
 								msg:'增加成功',
@@ -94,7 +94,7 @@
                     dataType:'json',
                     data:{'sensor_no':sensor_no,'pressure_ul':pressure_ul,'pressure_ll':pressure_ll,'remark':remark,'temp_ul':temp_ul,'temp_ll':temp_ll,'sensor_num':sensor_num,'tire_switch':tire_switch},
                     success:function(data){
-                        console.log('sensor',data);
+                       	$('#addallsensor').dialog('close');
 						$.messager.show({
 								title:'提示',
 								msg:'批量增加成功',
@@ -192,7 +192,6 @@
             var row = $('#dg').datagrid('getSelected');
 			if(row){
 				$('#alarm').dialog('open').dialog('setTitle','提示');
-				//ajaction/v1/?menuid=111011&cmd=del
 				var sensor_id=row.sensor_id;
 				$('#sure').on('click',function(){
 					$.ajax({
@@ -201,7 +200,6 @@
 						type:'POST',
 						data:{'sensor_id':sensor_id},
 						success:function(data){
-							console.log('ssd',data);
 							$('#alarm').dialog('close');
 							$.messager.show({
 								title:'提示',

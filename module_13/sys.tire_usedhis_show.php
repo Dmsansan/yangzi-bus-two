@@ -328,6 +328,7 @@
 			border-radius: 20px;
 			vertical-align: middle;
 			color: #1c66dc;
+				outline:none;	
 		}
 </style>
 <body style="margin-top:0px">

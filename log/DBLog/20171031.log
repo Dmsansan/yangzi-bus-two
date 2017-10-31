@@ -1,0 +1,208 @@
+
+------------------
+-时间:08:05:08-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息管理员')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息管理员')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:08:25:46-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色ceshi')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色ceshi')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:08:25:55-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息ceshi')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息ceshi')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:08:26:21-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息ceshi')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息ceshi')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:08:26:52-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息ceshi')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息ceshi')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:08:27:00-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色ceshi')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色ceshi')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:08:27:03-
+-错误信息:错误的SQL语句: [insert into roles (title,role_name,remark,modules_list,modules_list_val,operlist) 
+                values ('ceshi','ceshi','','用户权限管理,角色管理,用户管理','1010','添加')]-
+-错误内容:Duplicate entry 'ceshi' for key 'role_name'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:08:33:00-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息ceshi')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息ceshi')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:08:33:20-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('用户管理',now(),,'新增','添加了新用户ss')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新用户ss')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101011&cmd=add&admin_name=ss&real_name=sss&role_id_val=3&tel=ddd&admin_pass=aa&mobile=aa&email=aa&remark=aa&is_term=N&store_id=2-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.users_show.php-
+------------------
+
+------------------
+-时间:08:35:26-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('用户管理',now(),,'修改','修改了用户信息ssa')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了用户信息ssa')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101011&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.users_show.php-
+------------------
+
+------------------
+-时间:08:35:34-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('用户管理',now(),,'删除','删除了用户信息ssa')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了用户信息ssa')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101011&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.users_show.php-
+------------------
+
+------------------
+-时间:08:35:49-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车队(仓库)管理',now(),,'新增','添加了新车队(仓库)ss')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新车队(仓库)ss')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101110&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/repairDepotManger.php-
+------------------
+
+------------------
+-时间:08:35:56-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车队(仓库)管理',now(),,'修改','修改了车队(仓库)信息ss')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了车队(仓库)信息ss')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101110&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/repairDepotManger.php-
+------------------
+
+------------------
+-时间:08:36:01-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车队(仓库)管理',now(),,'删除','删除了车队(仓库)信息ss')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了车队(仓库)信息ss')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101110&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/repairDepotManger.php-
+------------------
+
+------------------
+-时间:08:36:10-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎品牌管理',now(),,'新增','添加了新的轮胎参数')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新的轮胎参数')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101112&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/tireParameter.php-
+------------------
+
+------------------
+-时间:08:36:53-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎品牌管理',now(),,'修改','修改了参数信息')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了参数信息')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101112&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/tireParameter.php-
+------------------
+
+------------------
+-时间:08:39:43-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎品牌管理',now(),,'删除','删除了品牌信息ssdd')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了品牌信息ssdd')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101112&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/tireParameter.php-
+------------------
+
+------------------
+-时间:08:45:40-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'新增','添加了新车载终端233')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新车载终端233')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:08:45:48-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'修改','修改了车载终端信息233')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了车载终端信息233')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:08:45:54-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'删除','删除了车载终端信息233')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了车载终端信息233')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:08:46:11-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'修改','修改了车载终端信息004')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了车载终端信息004')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:08:46:20-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'修改','修改了车载终端信息003')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了车载终端信息003')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:08:46:28-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('车载终端管理',now(),,'修改','修改了车载终端信息004')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了车载终端信息004')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101115&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.vehicle_show.php-
+------------------

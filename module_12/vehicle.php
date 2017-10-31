@@ -61,7 +61,7 @@
 					type:'POST',
 					data:{'plate_no':plate_no,'wheel_count_val':wheel_count_val,'terminal_id_val':terminal_id_val,'remark':remark},
 					success:function(data){
-						console.log('haha',data);
+						
 						reload();
 						$('#addUser').dialog('close');
 						
@@ -312,6 +312,7 @@
     </script>
 	<style>
 	#toolbar button{
+		outline: none;
 		border: 1px solid #1c66dc;
 		height: 25px;
 		line-height: 2px;
@@ -326,6 +327,7 @@
 		background-color:#1c66dc;
 	}
 	#tire_tb button{
+		outline: none;
 		border: 1px solid #1c66dc;
 		height: 25px;
 		line-height: 2px;
@@ -495,10 +497,11 @@
       
 	</style>
 </head>
-<body class="easyui-layout" style="height: 100%; width: 100%;" >
-<div data-options="region:'west',title:'车辆列表'" style="width:40%;border-right:1px soild #ff0f0f">
+<body class="easyui-layout" style="height: 100%; width: 100%;background-color:#fafafa;padding:8px;" >
+<div style=""></div>
+<div data-options="region:'west',title:'车辆列表'" style="width:39%;border-right:1px soild #ff0f0f">
     <div style="width: 100%;height:49%;" title="车辆列表">
-        <table id="dg" class="easyui-datagrid" style="width: 100%;"
+        <table id="dg" class="easyui-datagrid" style="width: 100%;" pagination="true"
                toolbar="#toolbar" singleSelect="true" fitColumns="true" striped="true">
             <thead>
             <tr>
@@ -509,7 +512,7 @@
             </tr>
             </thead>
         </table>
-       <div id="toolbar" style="margin-bottom: 10px;margin-top: 10px;height:34px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:15px">
+       <div id="toolbar" style="height:34px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:10px">
            
             <div id="t-bottom">
                 <input data-options="prompt:'车牌号码'" class="easyui-textbox" />
@@ -521,7 +524,7 @@
    
 
 </div>
-<div data-options="region:'center',title:'轮胎列表'"> 
+<div data-options="region:'center',title:'轮胎列表'" > 
 <table id="tire_dg" class="easyui-datagrid" width="100%" style="background-color: #ffb3b3" style="padding-top:20px;"
        toolbar="#tire_tb" singleSelect="true" fitColumns="true" striped="true">
     <thead style="width: 100%">
@@ -539,9 +542,9 @@
     </tr>
     </thead>
 </table>
-    <div id="tire_tb" sstyle="margin-bottom: 10px;margin-top: 50px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-    <div style="margin-bottom: 20px;height: 30px;">
-	   	<button id="install_tire" style="display: inline-block; float:right;margin-right: 10px;margin-top:10px"><span style="color:blue;font-size:14px;">+</span>安装轮胎</button>
+    <div id="tire_tb" sstyle="margin-top: 50px;background-color: white;padding-right:39px;line-height: 54px;">
+    <div style="height: 34px;padding-top:10px">
+	   	<button id="install_tire" style="display: inline-block; float:right;margin-right: 10px;margin-bottom:10px"><span style="color:blue;font-size:14px;display:inline-block;margin-right:5px">+</span>安装轮胎</button>
     </div>
     </div>
 
@@ -603,7 +606,7 @@
 
 </div>
 
- <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:650px;height:220px;background-color: #bdc4d4">
+ <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:650px;height:224px;background-color: #bdc4d4">
 		<div style="background-color: #ffffff;height:160px;margin:10px;">           
                <span style=" display: inline-block; margin-left: 10px; font-size: 14px; margin-top: 10px; font-family: 微软雅黑;">其他信息</span>
             <table style="width: 100%;height:28%;padding-right: 28px;padding-left: 24px;">

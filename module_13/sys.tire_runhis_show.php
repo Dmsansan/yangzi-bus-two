@@ -400,15 +400,15 @@
 						</div>
                     </td>
 					<td style='align:left'>
-                        <input  id='Button2' type='button' value='重置' style='height: 24px;margin-top: 10px; width: 80px;'
+                        <input  id='Button2' type='button' value='重置' style='height: 24px;margin-top: 10px; width: 80px;	outline:none;'
                             onclick=" doclear() " />						
-                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;margin-top: 10px;' onclick=" doserch() " />
+                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;margin-top: 10px;	outline:none;' onclick=" doserch() " />
 						 
                     </td>
 		
 				<td></td><td></td><td></td><td></td><td></td>
 					<td style="align:right">
-					<button id="button" style="float: right;margin-top: 10px;">打印</button>
+					<button id="button" style="float: right;margin-top: 10px;outline:none;">打印</button>
 					</td>
                 </tr>
             </table>

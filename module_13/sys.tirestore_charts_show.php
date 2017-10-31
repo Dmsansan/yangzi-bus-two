@@ -271,11 +271,6 @@
 				textField: 'norms_name',
 				width: 150,
 				searchClick:function(obj){
-					/*
-						obj 
-						grid: grid,
-                        rules: rules   {"op":"like","field":"plate_no","value":"苏1","type":"text"}
-					*/
 					var s="";
 					for(var i=0;i<obj.rules.length;i++){
 						s=s+obj.rules[i].field+"="+encodeURI(obj.rules[i].value);
@@ -325,6 +320,7 @@
     </script>
 	<style type="text/css">
 	#style1 input{
+	outline:none;	
 	border: 1px solid #1c66dc;
     height: 25px;
     line-height: 2px;

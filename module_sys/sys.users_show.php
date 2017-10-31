@@ -15,7 +15,7 @@
        
         $(function() {
 			$('#add').on('click',function(){
-				$('#addUser').dialog('open').dialog('setTitle', '新增角色');
+				$('#addUser').dialog('open').dialog('setTitle', '新增用户');
 			});
 			//获得角色列表；
 			$.ajax({
@@ -123,8 +123,14 @@
 				data:{'admin_id':admin_id,'admin_name':admin_name,'role_id_val':role_id,'admin_pass':admin_pass,'real_name':real_name,'tel':tel,'mobile':mobile,'email':email,'remark':remark,'is_term':is_term,
 				'store_id_val':store_id_val},
 				success:function(data){
+					$('#dlg').dialog('close');
+					 $.messager.show({
+                            title : '操作成功',
+                            msg:'用户修改成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
 					reload();
-					console.log('updata',data);
 				}
 			})
 			});
@@ -151,8 +157,15 @@
                 url:'../ajaction/v1/?menuid=101011&cmd=add',
 				data:{'admin_name':admin_name,'real_name':real_name,'role_id_val':role_id_val,'tel':tel,'admin_pass':admin_pass,'mobile':mobile,'email':email,'remark':remark,'is_term':is_term,'store_id':store_id},
 				success:function(data){
+					$('#addUser').dialog('open')
+					 $.messager.show({
+                            title : '操作成功',
+                            msg:'用户添加成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
 					reload();
-					console.log("loadDa",data);
+			
 				}
                 });
             });
@@ -193,7 +206,7 @@
 
             if (row) {
                 console.log("row", row);
-					$('#dlg').dialog('open').dialog('setTitle', '修改角色');
+					$('#dlg').dialog('open').dialog('setTitle', '修改用户');
 					$('#admin_id').val(row.admin_id);
 					$('#up_roleId').val(row.role_id);
 					$('#up_userName').textbox('setValue',row.admin_name);
@@ -229,8 +242,15 @@
                             'admin_id': id
                         },
                         success: function(data) {
-                   
+							 $('#alarm').dialog('close');
+							$.messager.show({
+                            title : '操作成功',
+                            msg:'用户删除成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
                             reload();
+							
                         }
                     })
                 })

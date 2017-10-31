@@ -28,6 +28,7 @@
 <style>
 
 #shezhi input{
+		outline:none;	
 	border: 1px solid #1c66dc;
 			height: 25px;
 			line-height: 2px;

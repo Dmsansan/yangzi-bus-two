@@ -114,6 +114,13 @@
                 data:{'company_name':company_name,'brand_id_val':brand_id_val,'norms_id_val':norms_id_val,'class_id_val':class_id_val,'figure_id_val':figure_id_val,'pressure_ll':pressure_ll,'pressure_ul':pressure_ul,'speed_ul':speed_ul ,'temp_ul':temp_ul,'tkph_val':tkph_val,'baro_val':brao_val,'mainterance2':mainterance2,'mainterance1':mainterance1,'rated_mile':rated_mile},
                 dataType:'json',
                 success:function(data){
+					 $('#addUser').dialog('close');
+						$.messager.show({
+                            title : '操作成功',
+                            msg:'增加成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
                     reload();
                     console.log("loadDa",data);
                 }
@@ -248,6 +255,12 @@
                         },
                         success: function(data) {
                             console.log('delete', data);
+							$.messager.show({
+                            title : '操作成功',
+                            msg:'删除成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
                             reload();
 							 $('#alarm').dialog('close');
                         }

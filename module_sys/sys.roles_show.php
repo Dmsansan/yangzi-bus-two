@@ -106,7 +106,7 @@
 				dataType:'json',
 				success:function(data){
 				$("#dg").datagrid("loadData", data.Rows);  
-					console.log('data',data);
+				
 				}							
 			});
 			//更新操作
@@ -124,7 +124,12 @@
 					type:'POST',
 					data:{'title':title,'role_id':role_id,'remark':remark,'module_list':module_list,'module_list_val':module_list_val,'Operlist':operlist},
 					success:function(data){
-						console.log("data",data);
+						 $.messager.show({
+                            title : '操作成功',
+                            msg:'角色修改成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
 						$('#dlg').dialog('close');
 							reload();	
 					}
@@ -144,6 +149,13 @@
 				type:'POST',
 				data:{'title':addrole,'remark':addremark,'module_list':rolePower,'module_list_val':module_list_val,'operlist':addoper},
 				success:function(data){
+					 $.messager.show({
+                            title : '操作成功',
+                            msg:'角色添加成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
+
 					reload();
 					$('#addUser').dialog('close');
 				console.log('data',data);
@@ -210,7 +222,12 @@
 					type:'post',
 					data:{'role_id':id},
 					success:function(data){
-					console.log('delete',data);
+					 $.messager.show({
+                            title : '操作成功',
+                            msg:'角色删除成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
 					reload();
 					$('#alarm').dialog('close');
 					}
