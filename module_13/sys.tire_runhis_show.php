@@ -379,7 +379,7 @@
 <body style="margin-top:0px">
  <div id="message" style="width:800px"></div>
 <div class="l-loading" style="display:none" id="pageloading"></div> 
-  <form id="form1" onsubmit=" return false ">
+  <form id="form1" onsubmit=" return false ">·
     <div id="toolbar" ></div>	
 	<div id="grid">
 		<div id="maingrid4" style="margin:0px"></div>
@@ -391,7 +391,7 @@
             <table style='width:1366px' class="bodytable1">
                 <tr>
                     <td style="width:70px">
-                        <div style='float: left; text-align: right;'>轮胎胎号：</div>
+                        <div style='float: left; text-align: right;margin-top: 10px;'>轮胎胎号：</div>
 					</td>
 					<td style="width:200px">
 						<div style='float: left;'>
@@ -400,15 +400,15 @@
 						</div>
                     </td>
 					<td style='align:left'>
-                        <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;'
+                        <input  id='Button2' type='button' value='重置' style='height: 24px;margin-top: 10px; width: 80px;'
                             onclick=" doclear() " />						
-                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;' onclick=" doserch() " />
+                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;margin-top: 10px;' onclick=" doserch() " />
 						 
                     </td>
 		
 				<td></td><td></td><td></td><td></td><td></td>
 					<td style="align:right">
-					<button id="button" style="float: right;">打印</button>
+					<button id="button" style="float: right;margin-top: 10px;">打印</button>
 					</td>
                 </tr>
             </table>

@@ -1,7 +1,7 @@
 ﻿<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>轮胎历史曲线</title>
+<title>轮胎历史告警</title>
 <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
 <!--<link href="../lib/ligerUI/skins/ext/css/ligerui-fix.css" rel="stylesheet" type="text/css" />-->
 <link href="../css/inputcharts.css" rel="stylesheet" />
@@ -74,7 +74,7 @@
     legend: {
         orient : 'vertical',
         x : 'left',
-        data:[]
+        data:oc.xdata
     },
     toolbox: {
         show : true,
@@ -481,7 +481,7 @@
 			<div id="chart6" style="width:450px;height:300px;float:left;"></div>
 			<div id="chart7" style="width:450px;height:300px;float:left;"></div>
 			<div id="chart8" style="width:450px;height:300px;float:left;"></div>
-			<div id="chart9" style="width:450px;height:400px;float:left;"></div>
+			<div id="chart9" style="width:450px;height:400px;float:left;"></div> 	 	
 			<div id="chart10" style="width:450px;height:400px;float:left;"></div>
 			<div id="chart11" style="width:450px;height:400px;float:left;"></div>
 			<div id="chart12" style="width:450px;height:400px;float:left;"></div>
@@ -502,7 +502,7 @@
             <table style='width: 960px' class="bodytable1">
                 <tr>
                     <td>
-                        <div style='float: left; text-align: left; width: 60px;'>起始日期：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>起始日期：</div>
 					</td>
 					<td>
 						<div style='float: left;'>
@@ -510,7 +510,7 @@
 						</div>
                     </td>
 					<td>
-                        <div style='float: left; text-align: left; width: 60px;'>终止日期：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>终止日期：</div>
 					</td>
 					<td>
 						<div style='float: left;'>
@@ -518,7 +518,7 @@
 						</div>
                     </td>
 					<td>
-                        <div style='float: left; text-align: left; width: 60px;'>车辆号码：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>车辆号码：</div>
 					</td>
 					<td>
 						<div style='float: left;'>
@@ -527,13 +527,13 @@
 						</div>
                     </td>
 					<td>
-                        <div style='float: left; text-align: left; width: 60px;'>轮胎号位：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>轮胎号位：</div>
 					</td>
 					<td>					
 						<input type='text' id='place_no' name='place_no'  ligerui='{width:120}' style="display:none" validate="{required:true}" />						
                     </td>
 					<td>
-                        <div style='float: left; text-align: left; width: 60px;'>曲线参数：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>曲线参数：</div>
 					</td>
 					<td>					
 						<input type='text' id='charts_no' name='charts_no'  ligerui='{width:120}' style="display:none" validate="{required:true}" />						

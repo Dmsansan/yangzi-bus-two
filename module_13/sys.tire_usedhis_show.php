@@ -101,17 +101,17 @@
             
             manager=$("#maingrid4").ligerGrid({
                 checkbox: false,
-                columns: [{display: '安装时间', name: 'time_add',width:300},
-				{display: '卸载时间', name: 'time_remove',width:300},
-				{display: '车辆号码', name: 'plate_no',width:300},
-				{display: '轮胎号位', name: 'place_no',width:300,render:function(row,rowindex,value,column){
+                columns: [{display: '安装时间', name: 'time_add',width:'20%'},
+				{display: '卸载时间', name: 'time_remove',width:'20%'},
+				{display: '车辆号码', name: 'plate_no',width:'10%'},
+				{display: '轮胎号位', name: 'place_no',width:'10%',render:function(row,rowindex,value,column){
 				
 						return gettirename(Number(row.place_no));
 						
 					}
 				},
-				{display: '轮胎胎号', name: 'tire_no',width:300},				
-				{display: '使用时间', name: 'used_time',width:200,type:'float',
+				{display: '轮胎胎号', name: 'tire_no',width:'20%'},				
+				{display: '使用时间', name: 'used_time',width:'20%',
 				totalSummary:
                     {
                         type: 'sum',
@@ -341,11 +341,11 @@
 	</div>
   </form>
   <div class="az" style="display:none;">
-        <form id='serchform'>
-            <table style='width: 960px' class="bodytable1">
+        <form id='serchform' style="width:100%">
+            <table style='width:100%' class="bodytable1">
                 <tr>
                     <td style="width:70px">
-                        <div style='float: left; text-align: right;'>轮胎胎号：</div>
+                        <div style='float: left; text-align: right;margin-top: 10px;'>轮胎胎号：</div>
 					</td>
 					<td style="width:200px">
 						<div style='float: left;'>
@@ -353,7 +353,7 @@
 						<input id="tire_id"  type="text" readonly="" style="width: 120px;"   />
 						</div>
                     </td>
-					<td style='align:left;padding-top;10px;'>
+					<td style='padding-top;10px;'>
                         						
                         <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;border-color:#1c66dc;background-color:#ffffff;border-radius:20px;' onclick=" doserch() " />
                     </td>

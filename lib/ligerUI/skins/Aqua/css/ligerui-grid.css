@@ -97,7 +97,6 @@ background: url('../images/panel/header-bg.gif') repeat-x left -1px; position:re
 	line-height: 22px;
 	background: #ffffff;
 	overflow: hidden;
-	width:100%;
 	padding:10px;
 } 
 .l-grid-scroller {

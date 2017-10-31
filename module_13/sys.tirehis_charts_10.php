@@ -1647,7 +1647,7 @@
             <table style='width: 960px' class="bodytable1">
                 <tr>
                     <td>
-                        <div style='float: left; text-align: left; width: 60px;'>起始日期：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>起始日期：</div>
 					</td>
 					<td>
 						<div style='float: left;'>
@@ -1655,7 +1655,7 @@
 						</div>
                     </td>
 					<td>
-                        <div style='float: left; text-align: left; width: 60px;'>终止日期：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>终止日期：</div>
 					</td>
 					<td>
 						<div style='float: left;'>
@@ -1663,7 +1663,7 @@
 						</div>
                     </td>
 					<td>
-                        <div style='float: left; text-align: left; width: 60px;'>车辆号码：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>车辆号码：</div>
 					</td>
 					<td>
 						<div style='float: left;'>
@@ -1672,13 +1672,13 @@
 						</div>
                     </td>
 					<td>
-                        <div style='float: left; text-align: left; width: 60px;'>轮胎号位：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>轮胎号位：</div>
 					</td>
 					<td>					
 						<input type='text' id='place_no' name='place_no'  ligerui='{width:120}' style="display:none" validate="{required:true}" />						
                     </td>
 					<td>
-                        <div style='float: left; text-align: left; width: 60px;'>曲线参数：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>曲线参数：</div>
 					</td>
 					<td>					
 						<input type='text' id='charts_no' name='charts_no'  ligerui='{width:120}' style="display:none" validate="{required:true}" />						
@@ -1687,10 +1687,10 @@
 				<tr style='height:50px;'>
 				<td colspan="10" style='align:center'>
 				 <div id="shezhi" style='float: left; text-align: center; width: 100%;'>
-                        <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;'
+                        <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;margin-top: 10px;'
                             onclick=" doclear() " />						
-                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;' onclick=" doserch() " />
-						<input  id='Button2' type='button' value='比对' style='height: 24px; width: 80px;' onclick=" doserch1() " />
+                        <input  id='Button1' type='button' value='搜索' style='height: 24px;margin-top: 10px; width: 80px;' onclick=" doserch() " />
+						<input  id='Button2' type='button' value='比对' style='height: 24px;margin-top: 10px; width: 80px;' onclick=" doserch1() " />
 						
 				</div>
 				</td>

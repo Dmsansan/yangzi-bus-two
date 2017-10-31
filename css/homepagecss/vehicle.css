@@ -36,4 +36,8 @@ button:active,button:hover{
   border-style: solid;
 
 }
+.window .window-header {
+  background-color:#353c49;!important;
+  padding: 0px 0px 0px 0px;
+}
 

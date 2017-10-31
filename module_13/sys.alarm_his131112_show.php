@@ -306,7 +306,7 @@
             <table style='width: 960px' class="bodytable1">
                 <tr>
                     <td>
-                        <div style='float: left; text-align: left; width: 60px;'>起始日期：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>起始日期：</div>
 					</td>
 					<td>
 						<div style='float: left;'>
@@ -314,7 +314,7 @@
 						</div>
                     </td>
 					<td>
-                        <div style='float: left; text-align: left; width: 60px;'>终止日期：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>终止日期：</div>
 					</td>
 					<td>
 						<div style='float: left;'>
@@ -322,7 +322,7 @@
 						</div>
                     </td>
 					<td>
-                        <div style='float: left; text-align: left; width: 60px;'>车队：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>车队：</div>
 					</td>
 					<td>
 						<div style='float: left;'>

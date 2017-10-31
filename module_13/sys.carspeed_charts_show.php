@@ -311,7 +311,7 @@
             <table style='width: 960px' class="bodytable1">
                 <tr>
                     <td>
-                        <div style='float: left; text-align: left; width: 60px;'>起始日期：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>起始日期：</div>
 					</td>
 					<td>
 						<div style='float: left;'>
@@ -319,7 +319,7 @@
 						</div>
                     </td>
 					<td>
-                        <div style='float: left; text-align: left; width: 60px;'>终止日期：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>终止日期：</div>
 					</td>
 					<td>
 						<div style='float: left;'>
@@ -327,7 +327,7 @@
 						</div>
                     </td>
 					<td>
-                        <div style='float: left; text-align: left; width: 60px;'>车辆号码：</div>
+                        <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>车辆号码：</div>
 					</td>
 					<td>
 						<div style='float: left;'>
@@ -336,9 +336,9 @@
 						</div>
                     </td>
 					<td id="shezhi" style='align:left'>
-                        <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;'
+                        <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;margin-top: 10px;'
                             onclick=" doclear() " />						
-                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;' onclick=" doserch() " />
+                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;margin-top: 10px;' onclick=" doserch() " />
                     </td>
                 </tr>
             </table>

@@ -46,8 +46,8 @@
         }
     },
     legend: {
-        data:['规格1','规格2','规格3','规格4']  //这里为规格名
-		//data:oc.legdata
+        //data:['规格1','规格2','规格3','规格4']  //这里为规格名
+		data:oc.legdata
     },
     toolbox: {
         show : true,
@@ -66,8 +66,8 @@
     xAxis : [
         {
             type : 'category',
-           // data : oc.xdata //这里为X轴数据
-		   data:['佳通','韩泰']
+            data : oc.xdata //这里为X轴数据
+		   //data:['佳通','韩泰']
         }
     ],
     yAxis : [
@@ -352,7 +352,7 @@
             <table style='width: 960px' class="bodytable1">
                 <tr>
                     <td style="width:70px">
-                        <div style='float: left; text-align: right;'>品牌：</div>
+                        <div style='float: left; text-align: right;margin-top: 10px;'>品牌：</div>
 					</td>
 					<td style="width:200px">
 						<div style='float: left;'>
@@ -361,7 +361,7 @@
 						</div>
                     </td>
 					<td style="width:70px">
-                        <div style='float: left; text-align: right;'>规格：</div>
+                        <div style='float: left; text-align: right;margin-top: 10px;'>规格：</div>
 					</td>
 					<td style="width:200px">
 						<div style='float: left;'>
@@ -371,9 +371,9 @@
                     </td>
 					<td id="style1" style='align:left'>
 					
-                        <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;'
+                        <input  id='Button2' type='button' value='重置' style='height: 24px; width: 80px;margin-top: 10px;'
                             onclick=" doclear() " />						
-                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;' onclick=" doserch() " />
+                        <input  id='Button1' type='button' value='搜索' style='height: 24px; width: 80px;margin-top: 10px;' onclick=" doserch() " />
                     </td>
                 </tr>
             </table>
