@@ -66,6 +66,7 @@
     font-family: 微软雅黑;
 }
 #tb input{
+	padding-left:8px;
     display: inline-block;
     background-color: white;
     border: 1px solid #bdc4d4;

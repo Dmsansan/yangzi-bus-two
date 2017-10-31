@@ -322,6 +322,7 @@ background-color:#fffdfa;
       overflow:hidden; 
    border-bottom:1px solid #e2ebf8;  
       text-align:center;overflow:hidden;
+	      border-left: 5px solid #ffffff;
 }
 .l-grid-row-last .l-grid-row-cell
 {border-bottom:none;

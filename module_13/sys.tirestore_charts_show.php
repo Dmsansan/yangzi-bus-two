@@ -189,10 +189,10 @@
 		function getGridOptions(checkbox) {
              var options = {
                  columns: [
-                 { display: '品牌编号', name:'brand_id', align: 'left', width: 60 },
+                 { display: '品牌编号', name:'brand_id',  width: 60 },
                 { display: '品牌代码', name:'brand_no', width:150,isSort:false },
-				{ display: '品牌名称', name:'brand_name', width: 150,align:'left' },
-				{ display: '备注',name:'remark',width: 300,align:'left'}								 
+				{ display: '品牌名称', name:'brand_name', width: 150 },
+				{ display: '备注',name:'remark',width: 300,}								 
                  ], switchPageSizeApplyComboBox: false,
 				 checkbox:true,
                  /*data: $.extend({}, CustomersData),*/
@@ -255,10 +255,10 @@
              },
              grid:{
                  columns: [
-                 { display: '规格编号', name:'norms_id', align: 'left', width: 60 },
+                 { display: '规格编号', name:'norms_id', width: 60 },
                 { display: '规格代码', name:'norms_no', width:150,isSort:false },
-				{ display: '规格名称', name:'norms_name', width: 150,align:'left' },
-				{ display: '备注',name:'remark',width: 300,align:'left'}								 
+				{ display: '规格名称', name:'norms_name', width: 150},
+				{ display: '备注',name:'remark',width: 300}								 
                  ], switchPageSizeApplyComboBox: false,
 				 checkbox:true,
                  /*data: $.extend({}, CustomersData),*/

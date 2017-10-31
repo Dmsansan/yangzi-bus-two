@@ -341,7 +341,7 @@
 		function getGridOptions(checkbox) {
              var options = {
                  columns: [
-                 { display: '车牌号码', name: 'plate_no', align: 'left', width: 350, minWidth: 60 },
+                 { display: '车牌号码', name: 'plate_no',  width: 350, minWidth: 60 },
                  { display: '车载编码', name: 'v_term_no', minWidth: 120, width: 350 },								 
                  ], switchPageSizeApplyComboBox: false,
                  /*data: $.extend({}, CustomersData),*/
