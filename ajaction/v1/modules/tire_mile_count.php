@@ -33,6 +33,9 @@ class tire_mile_count {
         其中 count 表示当前反回条数，Total 反回满足条件总记录数
     */
 	function qry(){
+		$page = isset($_POST['page'])?intval($_POST['page']):1;
+		$rows = isset($_POST['rows'])?intval($_POST['rows']):10;
+		
 		$tire_id_val=mysql_escape_string(trim($_REQUEST["tire_id_val"].""));
 		// if($tire_id_val == ""){
 			// $arr = array ('status'=>'ERROR','reason'=>'缺少必要的参数');

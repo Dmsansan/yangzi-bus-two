@@ -40,7 +40,7 @@
 			fitColumns:'true',
 			columns: [[{title: '时间', field: 'Time',width:'10%',rowspan:'2'},
 				{title: '车牌号码', field: 'Plate_No',width:'10%',rowspan:'2'},
-				{title: '速度', field: 'speed',width:'10%',rowspan:'2'},
+				/*{title: '速度', field: 'speed',width:'10%',rowspan:'2'},*/
 				{title: '累计里程(Km)', field: 'mile_count',width:'10%',rowspan:'2'},
 				{title: '左前轮',width:'20%', colspan:2},
 				{title: '右前轮',width:'20%',colspan:2},
