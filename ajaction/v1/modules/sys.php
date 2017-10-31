@@ -693,15 +693,15 @@ class sys {
     		$sensor_res = $this->conn->query($sensor_sql);
     		$sensor_count = $this->conn->num_rows($sensor_res);
     		//装车轮胎数量
-    		$zc_tire_sql = "select * from tire_info where status='è£…ä¸Š'";
+    		$zc_tire_sql = "select * from tire_info where plate_no!=''";
     		$zc_tire_res = $this->conn->query($zc_tire_sql);
     		$zc_tire_count = $this->conn->num_rows($zc_tire_res);
     		//库存轮胎数量
-    		$kc_tire_sql ="select * from tire_info where status='å¸ä¸‹' and mile_count=0";
+    		$kc_tire_sql ="select * from tire_info where plate_no='' and mile_count=0";
     		$kc_tire_res = $this->conn->query($kc_tire_sql);
     		$kc_tire_count = $this->conn->num_rows($kc_tire_res);
     		//报废轮胎数量
-    		$bf_tire_sql ="select * from tire_info where status='å¸ä¸‹' and mile_count!=0";
+    		$bf_tire_sql ="select * from tire_info where plate_no='' and mile_count!=0";
     		$bf_tire_res = $this->conn->query($bf_tire_sql);
     		$bf_tire_count = $this->conn->num_rows($bf_tire_res);
     		//车辆总数
@@ -731,7 +731,16 @@ class sys {
     		$height_wendu_res = $this->conn->query($height_wendu_sql);
     		$height_wendu_count = $this->conn->num_rows($height_wendu_res);
     	}else{
-    		$tire_sql = "select * from tire_info";
+    		$tire_sql = "select * from tire_info where plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		$res = $this->conn->query($tire_sql);
+    		//轮胎总数
+    		$tire_count = $this->conn->num_rows($res);
+    		//注册轮胎数量=轮胎总数/传感器数量
+    		$sensor_sql = "select * from sensor";
+    		$sensor_res = $this->conn->query($sensor_sql);
+    		$sensor_count = $this->conn->num_rows($sensor_res);
+
     	}
     	$arr = array('tire_count'=>$tire_count,'sensor_count'=>$sensor_count,'zc_tire_count'=>$zc_tire_count,'kc_tire_count'=>$kc_tire_count,'bf_tire_count'=>$bf_tire_count,'bus_count'=>$bus_count,'yy_bus_count'=>$yy_bus_count,'bf_bus_count'=>$bf_bus_count,'alarm_count'=>$alarm_count,'height_alarm_count'=>$height_alarm_count,'low_alarm_count'=>$low_alarm_count,'height_wendu_count'=>$height_wendu_count);
     	echo json_encode($arr);

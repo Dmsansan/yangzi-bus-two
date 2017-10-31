@@ -53,7 +53,57 @@
             valueField:'store_id',
             textField:'store_name', 
             onSelect:function(rec){
-                var url = './ajaction/v1/?menuid=0&cmd=get_index_data&store_id='+rec.store.id;
+                $.ajax({
+                    url:'./ajaction/v1/?menuid=0&cmd=get_index_data&store_id='+rec.store_id,
+                    dataType:'json',
+                    type:'POST',
+                    success:function(data){
+                        console.log('sansan',data);
+                         $("#tire_count").html(data.tire_count);
+                       $("#sennor_count").html(data.sensor_count);
+                       $("#sennor_tire_count").progressbar({
+                            value:parseInt(data.tire_count/data.sensor_count*100)
+                       });
+
+                       $("#kc_count").html(data.kc_tire_count);
+                       $("#kc_tire_count").progressbar({
+                            value:parseInt(data.kc_tire_count/data.tire_count*100)
+                       });
+                       $("#zc_count").html(data.zc_tire_count);
+                       $("#zc_tire_count").progressbar({
+                            value:parseInt(data.zc_tire_count/data.tire_count*100)
+                       });
+
+                        $("#bf_count").html(data.bf_tire_count);
+                        $("#bf_tire_count").progressbar({
+                            value:parseInt(data.bf_tire_count/data.tire_count*100)
+                       });
+                        $("#bus_count").html(data.bus_count);
+                        $("#yy_count").html(data.yy_bus_count);
+                        $("#yy_bus_count").progressbar({
+                            value:parseInt(data.yy_bus_count/data.bus_count*100)
+                       });
+                         $("#bff_count").html(data.bf_bus_count);
+                        $("#bf_bus_count").progressbar({
+                            value:parseInt(data.bf_bus_count/data.bus_count*100)
+                       });
+                        $("#alarm_count").html(data.alarm_count);
+                        $("#height_count").html(data.height_alarm_count);
+                        $("#height_alarm_count").progressbar({
+                            value:parseInt(data.height_alarm_count/data.alarm_count*100)
+                       });
+                        $("#low_count").html(data.low_alarm_count);
+                        $("#low_alarm_count").progressbar({
+                            value:parseInt(data.low_alarm_count/data.alarm_count*100)
+                       });
+                        $("#wendu_count").html(data.height_wendu_count);
+                        $("#height_wendu_count").progressbar({
+                            value:parseInt(data.height_wendu_count/data.alarm_count*100)
+                       });
+
+                    }
+                });
+                //var url = './ajaction/v1/?menuid=0&cmd=get_index_data&store_id='+rec.store.id;
 				console.log();
 				/* $('#company').combobox('loadData',rec); */
 
@@ -78,19 +128,17 @@
             success:function(data){
                 console.log(data);
                $("#tire_count").html(data.tire_count);
-
-                $("#sennor_count").html(data.sensor_count);
+               $("#sennor_count").html(data.sensor_count);
                $("#sennor_tire_count").progressbar({
                     value:parseInt(data.tire_count/data.sensor_count*100)
                });
 
                $("#kc_count").html(data.kc_tire_count);
-                $("#kc_tire_count").progressbar({
+               $("#kc_tire_count").progressbar({
                     value:parseInt(data.kc_tire_count/data.tire_count*100)
                });
-
-                $("#zc_count").html(data.zc_tire_count);
-                $("#zc_tire_count").progressbar({
+               $("#zc_count").html(data.zc_tire_count);
+               $("#zc_tire_count").progressbar({
                     value:parseInt(data.zc_tire_count/data.tire_count*100)
                });
 
@@ -240,7 +288,7 @@
                 <!--<p style="float:left"><a style="width:88xpheight:88px;text-align:center"><img src="css/img/icon01.png" width="">首页</a></p>
                 <p style="float:left">31313</p>-->
                 <p style="font-size: 12px;color: white;line-height: 74px;vertical-align:middle;" id="Username"></p>
-                <p style="font-size: 12px;color: #ffffff;line-height: 74px;vertical-align:middle;">你好,欢迎回来！&nbsp;&nbsp;<span id="jnkc" style="text-align:right;color:white"></span></p>
+                <p style="font-size: 12px;color: #ffffff;line-height: 74px;vertical-align:middle;">您好,欢迎回来！&nbsp;&nbsp;<span id="jnkc" style="text-align:right;color:white"></span></p>
 
                <a onclick="changepass()"> <img id="back" src="css/img/Report_normal.png"  style="margin-left:50px;margin-right: 10px"></a>  <span style="color:#9f9f9f">|</span><a onclick="logout()"><img src="css/img/out_highlighted.png" style="margin-left: 10px;"></a>
             </div>
@@ -295,7 +343,7 @@
             <div title="统计分析" data-options="iconCls:'icon-undo'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
-                        <a onclick="addTab('轮胎运行总时长总里程','module_13/sys.tire_runhis_show.php')"> 轮胎运行总时长总里程</a>
+                        <a style="font-size:13px" onclick="addTab('轮胎运行总时长总里程','module_13/sys.tire_runhis_show.php')"> 轮胎运行总时长总里程</a>
                     </li>
                     <li>
                         <a onclick="addTab('轮胎库存查询','module_13/sys.tirestore_charts_show.php')"> 轮胎库存查询</a>
@@ -306,9 +354,9 @@
                     <li>
                         <a onclick="addTab('轮胎历史告警','module_13/sys.tirehis_charts_12.php')"> 轮胎历史告警</a>
                     </li>
-                    <li>
+                    <!--<li>
                         <a onclick="addTab('车辆车速分析','module_13/sys.carspeed_charts_show.php')"> 车辆车速分析</a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
             <div title="报表分析" data-options="iconCls:'icon-filter'" style="padding:10px;background-color: #21262f">

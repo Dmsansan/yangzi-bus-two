@@ -147,6 +147,7 @@
 				data:{'begin_date':starDate,'end_date':stopDate,'plate_no_val':carplate,'place_no':tireCount},
 				success:function(data){
 				console.log('hhh',data);
+				$('#datatable').datagrid('loadData',data.Rows);
 				}
 			});
 			});
@@ -161,13 +162,15 @@
        fitColumns="true">
     <thead>
     <tr>
-        <th field="Time" width="15%">时间</th>
-        <th field="Plate_No" width="10%">车牌号码</th>
-        <th field="place_no" width="10%">轮胎号位</th>
-        <th field="sensor_no" width="10%">车载控制器编号</th>
-        <th field="tire_no" width="10%">轮胎胎号</th>
-        <th field="pressure_val" width="10%">轮胎压力（Kg）</th>
-        <th field="pressure" width="10%">压力阀值（Kg）</th>
+        <th data-options="field:'Time',width:'15%'" >时间</th>
+        <th data-options="field:'Plate_No',width:'10%'" >车牌号码</th>
+        <th data-options="field:'place_no',width:'10%'" >轮胎号位</th>
+        <th data-options="field:'sensor_no',width:'10%'">车载控制器编号</th>
+        <th data-options="field:'tire_no',width:'10%'">轮胎胎号</th>
+        <th data-options="field:'pressure_val',width:'10%'">轮胎压力（Kg）</th>
+        <th data-options="field:'pressure',width:'10%'">压力阀值（Kg）</th>
+        <th data-options="field:'temp_val',width:'10%'">温度值（℃）</th>
+        <th data-options="field:'temp_ul',width:'10%'">温度上限（℃）</th>
     </tr>
 
     </thead>

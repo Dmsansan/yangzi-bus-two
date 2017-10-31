@@ -46,6 +46,7 @@ class alarm_history_mon {
         其中 count 表示当前反回条数，Total 反回满足条件总记录数
     */
 	function qry(){
+        global $tire_position;
 		$begin_date=mysql_escape_string(trim($_REQUEST["begin_date"].""));
 		$end_date=mysql_escape_string(trim($_REQUEST["end_date"].""));
 		$plate_no_val=mysql_escape_string(trim($_REQUEST["plate_no_val"].""));
@@ -97,7 +98,7 @@ class alarm_history_mon {
 */
                 $row['Plate_No']=$rec[plate_no];
                 $row['Time']=$rec[log_stamp];
-                $row['place_no']=$rec[place];
+                $row['place_no']=$tire_position[$rec[place]];
                 $row['tire_no']=$rec[factory_code];
                 $row['sensor_no']=$rec[v_term_no];
                 $row['pressure_val']=$rec[pressure];

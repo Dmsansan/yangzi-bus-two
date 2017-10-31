@@ -1,0 +1,20 @@
+
+------------------
+-时间:08:55:06-
+-错误信息:错误的SQL语句: [select * from tire_info where
+    		in(SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'in(SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehic' at line 2-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:08:57:02-
+-错误信息:错误的SQL语句: [select * from tire_info where
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehi' at line 2-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost/YangziBUS2/main.php-
+------------------
