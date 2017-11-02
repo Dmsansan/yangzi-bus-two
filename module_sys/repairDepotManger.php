@@ -291,7 +291,7 @@
         <input type="text" id="xiuli_name" placeholder="修理厂名称"/> <button id="search">搜索</button>
         <button id="add" style="float: right;margin-top: 15px;">增加</button>
     </div>
-    <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 400px;">
+    <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 400px;background-color: #bdc4d4">
 	<div style="background-color: #ffffff;height:340px;margin:10px;">
         <span id="message">基本信息</span>
         <table id="cc" style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
@@ -365,7 +365,7 @@
         </table>
 	</div>
     </div>
-    <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#btn_dlg'" style="width:700px;height: 400px;">
+    <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#btn_dlg'" style="width:700px;height: 400px;background-color: #bdc4d4;">
 <div style="background-color: #ffffff;height:340px;margin:10px;">       
 	   <span id="addMessage">基本信息</span>
         <table  style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">

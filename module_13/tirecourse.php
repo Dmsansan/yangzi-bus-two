@@ -55,7 +55,7 @@
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
         <input type="text" placeholder="车牌号码"/> <button>搜索</button>
-        <button style="float: right">+打印</button>
+        <button style="float: right"><span style="display:inline-block;margin-right:12px;">+</span>打印</button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:600px;height: 300px;">
         <span>基本信息</span><hr/>

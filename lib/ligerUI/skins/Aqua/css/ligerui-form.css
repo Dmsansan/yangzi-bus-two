@@ -19,7 +19,7 @@ margin-left: 40px;
 .l-form .l-fieldcontainer-first {
 	clear: left;
 }
-.l-form li{ float:left; overflow:hidden; text-align:left;  line-height:23px;padding:0; padding-top:2px; padding-bottom:2px; position:relative;} 
+.l-form li{ float:left; overflow:hidden; text-align:left;  line-height:36px;padding:0; padding-top:4px; padding-bottom:2px; position:relative;} 
 .l-form li textarea{ height:80px;}
 .l-form .l-form-buttons{ clear:both; margin-top:10px;}
 .l-form .l-form-buttons li {

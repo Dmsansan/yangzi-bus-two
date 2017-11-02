@@ -548,7 +548,7 @@
     </div>
     </div>
 
-	 <div id="tire_dlg" class="easyui-dialog" data-options="closed:true" style="width:450px;height: 300px;background-color: #bdc4d4">
+	 <div id="tire_dlg" class="easyui-dialog" data-options="closed:true" style="width:450px;height:302px;background-color: #bdc4d4">
         <div style="background-color: #ffffff;height:240px;margin:10px;">
              <span style=" display: inline-block; margin-left: 10px; font-size: 14px; margin-top: 10px; font-family: 微软雅黑;">基本信息</span>
             <table style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
@@ -657,8 +657,8 @@
        </table>
 	</div>
         </div>
- <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#btn_dlg'" style="width:600px;height: 200px;background-color: #bdc4d4">
-		<div style="background-color: #ffffff;height:140px;margin:10px;">   
+ <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#btn_dlg'" style="width:600px;height:224px;background-color: #bdc4d4">
+		<div style="background-color: #ffffff;height:160px;margin:10px;">   
                <span style=" display: inline-block; margin-left: 10px; font-size: 14px; margin-top: 10px; font-family: 微软雅黑;">基本信息</span>
             <table id="aa" style="width: 100%;height:30%;padding-right: 28px;padding-left: 24px;">
                 <tr>

@@ -1,4 +1,4 @@
-﻿<html xmlns="http://www.w3.org/1999/xhtml">
+﻿<html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>车辆及轮胎实时状态</title>
@@ -401,7 +401,7 @@
 <div class="l-loading" style="display:block" id="pageloading"></div> 
     <div id="toolbar" ></div>
 	<div style="position: absolute;width:80px;top:15px;left:70px">修理厂:</div>
-    <div id="xxcc" style="position: absolute;width:280px;top:2px;left:100px"><input type="text" id="store_id"  name="store_id"/></td></div>	
+    <div id="xxcc" style="position: absolute;width:280px;top:2px;left:120px"><input type="text" id="store_id"  name="store_id"/></td></div>	
 	<div id="grid">
 		<div id="maingrid4" style="margin:0px"></div>
 		<!--<div id="toolbar1"></div>-->		

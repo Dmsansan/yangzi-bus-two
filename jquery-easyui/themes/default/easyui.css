@@ -44,7 +44,6 @@
   top: 50%;
   margin-top: -8px;
   height: 16px;
-  overflow: hidden;
 }
 .panel-icon {
   left:50px;
@@ -60,7 +59,7 @@
   height: 16px;
   opacity: 0.6;
   filter: alpha(opacity=60);
-  margin: 0 0 0 2px;
+  margin: 3px 0 0 2px;
   vertical-align: top;
 }
 .panel-tool a:hover {
@@ -367,13 +366,13 @@
   margin-top: -11px;
 }
 .window .window-header .panel-icon {
-  left: 1px;
+  left: 10px;
 }
 .window .window-header .panel-tool {
   right: 1px;
 }
 .window .window-header .panel-with-icon {
-  padding-left: 18px;
+  padding-left: 31px;
 }
 .window-proxy {
   position: absolute;
@@ -2056,6 +2055,7 @@
   zoom: 1;
 }
 .pagination table {
+	margin-top:3px;
   float: right;
   height: 30px;
 }
@@ -2064,22 +2064,23 @@
 }
 .pagination-btn-separator {
   float: left;
-  height: 24px;
+  height: 20px;
   border-left: 1px solid #ccc;
   border-right: 1px solid #fff;
   margin: 3px 1px;
 }
 .pagination .pagination-num {
+	text-align:center;
   border-width: 1px;
   border-style: solid;
   margin: 0 2px;
-  padding: 2px;
+
   width: 2em;
   height: auto;
 }
 .pagination-page-list {
   margin: 0px 6px;
-  padding: 1px 2px;
+  /* padding: 1px 2px; */
   width: auto;
   height: auto;
   border-width: 1px;

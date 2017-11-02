@@ -51,7 +51,7 @@
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
         <input type="text" placeholder="轮胎胎号"/> <button>搜索</button> <button>重置</button>
-		    <button style="float: right">+打印</button>
+		    <button style="float: right"><span style="margin-right:8px;">+</span>打印</button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:600px;height: 300px;">
         <span>基本信息</span><hr/>

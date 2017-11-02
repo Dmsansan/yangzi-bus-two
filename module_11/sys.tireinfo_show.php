@@ -303,7 +303,7 @@
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
         <input type="text" placeholder="轮胎编号"/> <button>搜索</button>
-        <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;">增加</button>
+        <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;margin-right:10px;">增加</button>
     </div>
     <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:750px;height: 400px;background-color: #bdc4d4">
         <div style="background-color: #ffffff;height:340px;margin:10px;">

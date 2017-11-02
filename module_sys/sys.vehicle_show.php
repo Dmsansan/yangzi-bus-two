@@ -47,6 +47,7 @@
                 dataType: 'json',
                 success: function(data) {
                     var obj =data.Rows;
+					console.log('papap',data);
                     $("#uprepairID").combobox("loadData", obj);
                 }
             });
@@ -146,6 +147,7 @@
             if (row){
                 $('#dlg').dialog('open').dialog('setTitle','修改信息');
                console.log('row',row);
+				
 			   $('#up_vehicleNumber').textbox('setValue',row.v_term_no);
 			   $('#up_vehicleName').textbox('setValue',row.v_term_name);
 			   $('#up_plateNumber').textbox('setValue',row.plate_no);
