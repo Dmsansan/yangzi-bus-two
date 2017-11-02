@@ -61,45 +61,97 @@
                         console.log('sansan',data);
                          $("#tire_count").html(data.tire_count);
                        $("#sennor_count").html(data.sensor_count);
+                       if(data.sensor_count != 0){
                        $("#sennor_tire_count").progressbar({
                             value:parseInt(data.tire_count/data.sensor_count*100)
                        });
-
+                        }else{
+                            $("#sennor_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                        }
                        $("#kc_count").html(data.kc_tire_count);
+                       if(data.tire_count != 0){
                        $("#kc_tire_count").progressbar({
                             value:parseInt(data.kc_tire_count/data.tire_count*100)
                        });
+                   }else{
+                         $("#kc_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                   }
                        $("#zc_count").html(data.zc_tire_count);
+                       if(data.tire_count != 0){
                        $("#zc_tire_count").progressbar({
                             value:parseInt(data.zc_tire_count/data.tire_count*100)
                        });
-
+                    }else{
+                         $("#zc_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
                         $("#bf_count").html(data.bf_tire_count);
+                        if(data.tire_count != 0){
                         $("#bf_tire_count").progressbar({
                             value:parseInt(data.bf_tire_count/data.tire_count*100)
                        });
+                    }else{
+                        $("#bf_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
                         $("#bus_count").html(data.bus_count);
                         $("#yy_count").html(data.yy_bus_count);
+                        if(data.bus_count != 0){
                         $("#yy_bus_count").progressbar({
                             value:parseInt(data.yy_bus_count/data.bus_count*100)
                        });
+                        }else{
+                            $("#yy_bus_count").progressbar({
+                                value:parseInt(0)
+                           });
+                        }
                          $("#bff_count").html(data.bf_bus_count);
+                         if(data.bus_count != 0){
                         $("#bf_bus_count").progressbar({
                             value:parseInt(data.bf_bus_count/data.bus_count*100)
                        });
+                    }else{
+                         $("#bf_bus_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
                         $("#alarm_count").html(data.alarm_count);
                         $("#height_count").html(data.height_alarm_count);
+                        if(data.alarm_count != 0){
                         $("#height_alarm_count").progressbar({
                             value:parseInt(data.height_alarm_count/data.alarm_count*100)
                        });
+                    }else{
+                        $("#height_alarm_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
                         $("#low_count").html(data.low_alarm_count);
+                        if(data.alarm_count != 0){
                         $("#low_alarm_count").progressbar({
                             value:parseInt(data.low_alarm_count/data.alarm_count*100)
                        });
+                    }else{
+                        $("#low_alarm_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
                         $("#wendu_count").html(data.height_wendu_count);
+                        if(data.alarm_count != 0){
                         $("#height_wendu_count").progressbar({
                             value:parseInt(data.height_wendu_count/data.alarm_count*100)
                        });
+                    }else{
+                         $("#height_wendu_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
 
                     }
                 });
@@ -128,46 +180,98 @@
             success:function(data){
                 console.log(data);
                $("#tire_count").html(data.tire_count);
-               $("#sennor_count").html(data.sensor_count);
-               $("#sennor_tire_count").progressbar({
-                    value:parseInt(data.tire_count/data.sensor_count*100)
-               });
-
-               $("#kc_count").html(data.kc_tire_count);
-               $("#kc_tire_count").progressbar({
-                    value:parseInt(data.kc_tire_count/data.tire_count*100)
-               });
-               $("#zc_count").html(data.zc_tire_count);
-               $("#zc_tire_count").progressbar({
-                    value:parseInt(data.zc_tire_count/data.tire_count*100)
-               });
-
-                $("#bf_count").html(data.bf_tire_count);
-                $("#bf_tire_count").progressbar({
-                    value:parseInt(data.bf_tire_count/data.tire_count*100)
-               });
-                $("#bus_count").html(data.bus_count);
-                $("#yy_count").html(data.yy_bus_count);
-                $("#yy_bus_count").progressbar({
-                    value:parseInt(data.yy_bus_count/data.bus_count*100)
-               });
-                 $("#bff_count").html(data.bf_bus_count);
-                $("#bf_bus_count").progressbar({
-                    value:parseInt(data.bf_bus_count/data.bus_count*100)
-               });
-                $("#alarm_count").html(data.alarm_count);
-                $("#height_count").html(data.height_alarm_count);
-                $("#height_alarm_count").progressbar({
-                    value:parseInt(data.height_alarm_count/data.alarm_count*100)
-               });
-                $("#low_count").html(data.low_alarm_count);
-                $("#low_alarm_count").progressbar({
-                    value:parseInt(data.low_alarm_count/data.alarm_count*100)
-               });
-                $("#wendu_count").html(data.height_wendu_count);
-                $("#height_wendu_count").progressbar({
-                    value:parseInt(data.height_wendu_count/data.alarm_count*100)
-               });
+                       $("#sennor_count").html(data.sensor_count);
+                       if(data.sensor_count != 0){
+                       $("#sennor_tire_count").progressbar({
+                            value:parseInt(data.tire_count/data.sensor_count*100)
+                       });
+                        }else{
+                            $("#sennor_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                        }
+                       $("#kc_count").html(data.kc_tire_count);
+                       if(data.tire_count != 0){
+                       $("#kc_tire_count").progressbar({
+                            value:parseInt(data.kc_tire_count/data.tire_count*100)
+                       });
+                   }else{
+                         $("#kc_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                   }
+                       $("#zc_count").html(data.zc_tire_count);
+                       if(data.tire_count != 0){
+                       $("#zc_tire_count").progressbar({
+                            value:parseInt(data.zc_tire_count/data.tire_count*100)
+                       });
+                    }else{
+                         $("#zc_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#bf_count").html(data.bf_tire_count);
+                        if(data.tire_count != 0){
+                        $("#bf_tire_count").progressbar({
+                            value:parseInt(data.bf_tire_count/data.tire_count*100)
+                       });
+                    }else{
+                        $("#bf_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#bus_count").html(data.bus_count);
+                        $("#yy_count").html(data.yy_bus_count);
+                        if(data.bus_count != 0){
+                        $("#yy_bus_count").progressbar({
+                            value:parseInt(data.yy_bus_count/data.bus_count*100)
+                       });
+                        }else{
+                            $("#yy_bus_count").progressbar({
+                                value:parseInt(0)
+                           });
+                        }
+                         $("#bff_count").html(data.bf_bus_count);
+                         if(data.bus_count != 0){
+                        $("#bf_bus_count").progressbar({
+                            value:parseInt(data.bf_bus_count/data.bus_count*100)
+                       });
+                    }else{
+                         $("#bf_bus_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#alarm_count").html(data.alarm_count);
+                        $("#height_count").html(data.height_alarm_count);
+                        if(data.alarm_count != 0){
+                        $("#height_alarm_count").progressbar({
+                            value:parseInt(data.height_alarm_count/data.alarm_count*100)
+                       });
+                    }else{
+                        $("#height_alarm_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#low_count").html(data.low_alarm_count);
+                        if(data.alarm_count != 0){
+                        $("#low_alarm_count").progressbar({
+                            value:parseInt(data.low_alarm_count/data.alarm_count*100)
+                       });
+                    }else{
+                        $("#low_alarm_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#wendu_count").html(data.height_wendu_count);
+                        if(data.alarm_count != 0){
+                        $("#height_wendu_count").progressbar({
+                            value:parseInt(data.height_wendu_count/data.alarm_count*100)
+                       });
+                    }else{
+                         $("#height_wendu_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
             }
         });
         $('#jnkc').jclock({ withDate: true, withWeek: true });
