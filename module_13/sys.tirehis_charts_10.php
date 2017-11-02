@@ -1618,13 +1618,13 @@
   <form id="form1" onsubmit=" return false ">
     <div id="toolbar" ></div>	
 	<div id="grid" style="align:center">
-		<div id="main" style="margin:0px;width:960px">
+		<div id="main" style="margin:0px;width:1400px">
 			<div id="chart1" style="width:450px;height:300px;float:left;display:inline"></div>
-			<div id="chart2" style="width:450px;height:300px;float:left;display:inline"></div>
+			<div id="chart2" style="width:450px;height:300px;float:left;display:inline;    margin-left: 90px;"></div>
 			<div id="chart3" style="width:450px;height:300px;float:left;"></div>
-			<div id="chart4" style="width:450px;height:300px;float:left;"></div>
+			<div id="chart4" style="width:450px;height:300px;float:left;    margin-left: 90px;"></div>
 			<div id="chart5" style="width:450px;height:300px;float:left;"></div>
-			<div id="chart6" style="width:450px;height:300px;float:left;"></div>
+			<div id="chart6" style="width:450px;height:300px;float:left;    margin-left: 90px;"></div>
 			<div id="chart7" style="width:450px;height:300px;float:left;"></div>
 			<div id="chart8" style="width:450px;height:300px;float:left;"></div>
 			<div id="chart9" style="width:450px;height:400px;float:left;"></div>

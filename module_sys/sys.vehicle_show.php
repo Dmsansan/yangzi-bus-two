@@ -147,7 +147,8 @@
             if (row){
                 $('#dlg').dialog('open').dialog('setTitle','修改信息');
                console.log('row',row);
-				
+				/* store_name
+				$('uprepairID').combobox('set') */
 			   $('#up_vehicleNumber').textbox('setValue',row.v_term_no);
 			   $('#up_vehicleName').textbox('setValue',row.v_term_name);
 			   $('#up_plateNumber').textbox('setValue',row.plate_no);

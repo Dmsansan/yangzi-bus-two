@@ -458,6 +458,9 @@
                     <li>
                         <a onclick="addTab('轮胎历史告警','module_13/sys.tirehis_charts_12.php')"> 轮胎历史告警</a>
                     </li>
+					 <li>
+                        <a onclick="addTab('轮胎历史告警','module_13/test.php')"> 测试</a>
+                    </li>
                     <!--<li>
                         <a onclick="addTab('车辆车速分析','module_13/sys.carspeed_charts_show.php')"> 车辆车速分析</a>
                     </li>-->

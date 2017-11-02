@@ -1,4 +1,4 @@
-﻿<html>
+﻿<html >
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>车辆及轮胎实时状态</title>
@@ -21,6 +21,9 @@
 	var menu;
 	var com_store;
 	var tout;
+	var plate_no;
+	var selectRow;
+	
 	
 	 function trim(str){ //删除左右两端的空格
 　　     return str.replace(/(^\s*)|(\s*$)/g, "");
@@ -81,31 +84,32 @@
            }
 		   
 		function showMessage(id){
-			//var sid="#"+id;
-			/*var info="车队:一车队<br>车辆:LC06S24K1G1001521<br>花纹深度:500"
-			$(sid).ligerTip({ content:info,
-					width:200,
-					callback:function()
-					{
-						setTimeout(function()
-						{
-						     $(sid).ligerHideTip();		
-						},5000);
-						
-					}
+			if(id){
+				$('#dialog').show();
+			 $('#tablemessage').ligerGrid({ 
+			  pageSize:200, 
+				url:'../ajaction/v1/?menuid=131010&cmd=qrytire&plate_no='+id,
+				dataAction: 'server', //服务器排序
+                usePager: true,       //服务器分页
+				onSuccess:function(data,grid){
+					console.log('data',data);
+				},
+				onError:f_Error
 			
-			
-			
-			});*/
-			
-			f_openWindow('../ttms/module_13/sys.real_tire_show.php?r_plate_no=' +encodeURI(id), "车辆信息",850, 450, f_save);
+			})
+			}		
 		}
 		function f_save(item, dialog) {
 			
 		}
  		
         $(function () {
-				
+				$('#sure').on('click',function(){
+					$('#dialog').show();
+				});
+				$('#test').on('click',function(){
+					$('#dialog').hide();
+				})
 				  
                 //$("#grid").height(document.documentElement.clientHeight - $(".toolbar").height());
 				$('form').ligerForm();
@@ -288,7 +292,67 @@
                 }*/
             });			
             //setInterval("f_reload()", 45000);
+			
+		selectRow=$('#tablemessage').ligerGrid({
+						checkbox: false,
+						columns: [{display: '轮胎编号', name: 'tire_rfid',width:100},
+							{display:"轮胎号位",name:'place',aligin:'center',width:50},
+							{display: '品牌', name: 'company_name',width:80},
+							{display: '花纹深度', name: 'figure_value',width:90},
+							{display: '累计里程(Km)', name: 'mile_count',width:80},
+							{display: '装胎时间', name: 'fst_place_stamp',width:130},
+							{display: '报警次数', name: 'info_7',width:70},
+							{display: '是否翻新', name: 'info_8',width:70}           
+						],
+					
+			});
+			 $('#left_one').mouseover(function(){
+				$('#left_one').attr('src','../css/img/two.png');
+				selectgridRow(0);
+			});
+			$('#left_one').mouseout(function(){
+				$('#left_one').attr('src','../css/img/chelun_selectedonetwo.png');
+			}) 
+			 $('#right_one').mouseover(function(){
+				 selectgridRow(1);
+				$('#right_one').attr('src','../css/img/two.png');
+			});
+			$('#right_one').mouseout(function(){
+				$('#right_one').attr('src','../css/img/chelun_selectedonetwo.png');
+			}) 
+			 $('#leftbehint_one').mouseover(function(){
+				  selectgridRow(2);
+				$('#leftbehint_one').attr('src','../css/img/two.png');
+			});
+			$('#leftbehint_two').mouseout(function(){
+				$('#leftbehint_two').attr('src','../css/img/chelun_selectedonetwo.png');
+			}) 
+			 $('#leftbehint_two').mouseover(function(){
+				  selectgridRow(3);
+				$('#leftbehint_two').attr('src','../css/img/two.png');
+			});
+			$('#leftbehint_one').mouseout(function(){
+				$('#leftbehint_one').attr('src','../css/img/chelun_selectedonetwo.png');
+			}) 
+			 $('#rightbehint_one').mouseover(function(){
+				  selectgridRow(4);
+				$('#rightbehint_one').attr('src','../css/img/two.png');
+			});
+			$('#rightbehint_one').mouseout(function(){
+				$('#rightbehint_one').attr('src','../css/img/chelun_selectedonetwo.png');
+			}) 
+			 $('#rightbehint_two').mouseover(function(){
+				  selectgridRow(5);
+				$('#rightbehint_two').attr('src','../css/img/two.png');
+			});
+			$('#rightbehint_two').mouseout(function(){
+				$('#rightbehint_two').attr('src','../css/img/chelun_selectedonetwo.png');
+			}) 
         });
+		
+		function f_Error(){
+			alert(plate_no);
+		}
 		
 		 function f_totalRender(data, currentPageData)
          {
@@ -324,7 +388,10 @@
                     removeCheckedCustomer(this.records[rowid]['userid']);
             }
         }
- 
+function selectgridRow(index){
+	selectRow.select(index);
+}
+	
         /*
         该例子实现 表单分页多选
         即利用onCheckRow将选中的行记忆下来，并利用isChecked将记忆下来的行初始化选中
@@ -397,6 +464,7 @@
     </script>
 
 <body style="margin-top:0px">
+
  <div id="message" style="width:800px"></div>
 <div class="l-loading" style="display:block" id="pageloading"></div> 
     <div id="toolbar" ></div>
@@ -430,6 +498,62 @@
   <div style="display:none;">
   
 </div>
+<div id='dialog' style="width:1078px;height:440px;position:absolute;left:300px;top:100px;display:none;">
+<div style="height:40px;background:#353c49">
+<span style="margin-left:10px;color:#ffffff;line-height:40px;font-size:14px;">车辆信息</span>
+<button id="test" style="height:20px;width:20px; background: url('../images/shutdown.png') no-repeat center center;border:none;float:right;margin-right:10px;margin-top:10px;"></button>
+</div>
+<div style="height:400px;background-color:#bdc4d4;padding:10px">
+<div style="height:400px;background-color:#ffffff">
+
+<div style="height: 400px;width: 230px;border-right:8px solid #bdc4d4; float:left">
+<div style="height:40px;background-color:#ffffff">
+<span style="line-height:40px;margin-left:10px;font-size:14px;">车辆骨架</span>
+</div>
+<table  style="width:230px;height:340px;background:url('../css/img/chesheng.png') no-repeat center center; ">
+        <tr style="height: 68px">
+
+        </tr>
+    
+    <tr>
+        <td style="width:42px"></td>
+        <td><img id="left_one" onfocus=this.blur() onclick="selectgridRow(0)" src="../css/img/chelun_selectedonetwo.png"></td>
+        <td style="width: 22px;"></td>
+        <td style="width: 58px"></td>
+        <td style="width: 22px;"></td>
+        <td><img id="right_one" onfocus=this.blur() onclick="selectgridRow(1)" src="../css/img/chelun_selectedonetwo.png"></td>
+        <td style="width:42px"></td>
+
+    </tr>
+    <tr style="height: 167px;"></tr>
+    <tr>
+        <td style="width:42px"></td>
+        <td><img id="leftbehint_one" onfocus=this.blur()  onclick="selectgridRow(2)" src="../css/img/chelun_selectedonetwo.png"></td>
+        <td><img id="leftbehint_two" onfocus=this.blur() onclick="selectgridRow(3)" src="../css/img/chelun_selectedonetwo.png"></td>
+        <td style="width: 58px"></td>
+        <td><img id="rightbehint_one" onfocus=this.blur() onclick="selectgridRow(4)" src="../css/img/chelun_selectedonetwo.png"></td>
+        <td><img id="rightbehint_two" onfocus=this.blur() onclick="selectgridRow(5)" src="../css/img/chelun_selectedonetwo.png"></td>
+        <td style="width:42px"></td>
+    </tr>
+    <tr style="height:38px">
+
+    </tr>
+
+</table>
+
+
+</div>
+<div  style="float:left;background-color:#f1f6fd">
+<div style="height:40px;background-color:#ffffff">
+<span  style="line-height:40px;margin-left:10px;font-size:14px;">轮胎信息</span>
+</div>
+<div id="tablemessage"></div>
+
+
+</div>
+</div>
+</div>
+<div>
 
 </body>
 </html>
