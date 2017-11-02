@@ -137,8 +137,8 @@ class norms {
 		$norms_no=mysql_escape_string(trim($_REQUEST["norms_no"].""));
 		$norms_name=mysql_escape_string(trim($_REQUEST["norms_name"].""));
 
-		$sql="select * from norms";
-		$sql_cnt="select count(*) as cnt from norms";
+		$sql="select * from brand";
+		$sql_cnt="select count(*) as cnt from brand";
 		$where="";
 		if($norms_no!=""){
 			if($where=="")

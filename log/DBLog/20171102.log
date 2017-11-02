@@ -1,0 +1,198 @@
+
+------------------
+-时间:12:08:38-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idwhere b.plate_no ='苏A8888']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'b.plate_no ='苏A8888'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:12:09:24-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idwhere b.plate_no ='苏A8888']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'b.plate_no ='苏A8888'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:12:09:28-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idwhere b.plate_no ='苏A8888']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'b.plate_no ='苏A8888'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:12:09:29-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idwhere b.plate_no ='苏A8888']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'b.plate_no ='苏A8888'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:12:09:29-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idwhere b.plate_no ='苏A6666']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'b.plate_no ='苏A6666'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:12:09:30-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idwhere b.plate_no ='苏A8888']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'b.plate_no ='苏A8888'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:12:09:32-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idwhere b.plate_no ='苏A8888']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'b.plate_no ='苏A8888'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:12:09:33-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idwhere b.plate_no ='苏A6666']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'b.plate_no ='苏A6666'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:12:12:27-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idwhere b.plate_no ='313']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'b.plate_no ='313'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:12:13:05-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idwhere b.plate_no ='苏A8888']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'b.plate_no ='苏A8888'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:01:24:36-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idwhere b.plate_no ='8888']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'b.plate_no ='8888'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:01:25:13-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idwhere b.plate_no ='8888']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'b.plate_no ='8888'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:01:31:43-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idlimit 0,10]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0,10' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:01:32:20-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idlimit 0,10]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0,10' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:01:32:46-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idlimit 0,10]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0,10' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:02:24:03-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idlimit 0,10]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0,10' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:02:24:47-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idlimit 0,10]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0,10' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:02:27:20-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_idlimit 0,10]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '0,10' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------

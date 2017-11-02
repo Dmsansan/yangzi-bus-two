@@ -103,17 +103,17 @@ class tire_count {
 			echo json_encode($arr);
 			die();
         }
-//var_dump($arr_brand);
+       //var_dump($arr_brand);
         
         //规格
         $arr_norms=array();
         $arr_norms_id=array();
-        $sql="select norms_id,norms_name from norms where norms_id in ($norms_id_val)";
+        $sql="select brand_id,norms_name from brand where brand_id in ($norms_id_val)";
         $res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
             while ($rec=$this->conn->fetch_array($res)){
 				$arr_norms[]=$rec[norms_name];
-				$arr_norms_id[]=$rec[norms_id];
+				$arr_norms_id[]=$rec[brand_id];
 			}
             $this->conn->free_result($res);
         }else{
@@ -121,7 +121,7 @@ class tire_count {
 			echo json_encode($arr);
 			die();
         }
-//var_dump($arr_norms);
+        //var_dump($arr_norms);
         //规格+品牌+数量
         $arr_norms_brand=array();
         $arr_norms_brand_item=array();
@@ -146,7 +146,7 @@ class tire_count {
             $arr_norms_brand[]=$arr_norms_brand_item;
             reset($arr_brand_id);
         }
-//var_dump($arr_norms_brand);
+        //var_dump($arr_norms_brand);
         // {"status":"OK",
             // "legdata":["规格1","规格2","规格3"],
             // "xdata":["品牌1","品牌2"],

@@ -286,7 +286,7 @@
             <th data-options="field:'tire_id',width:'8%'">编号</th>
             <th data-options="field:'factory_code',width:'8%'">轮胎编号</th>
             <th data-options="field:'sensor_no',width:'8%'">传感器编号</th>
-            <th data-options="field:'store_name',width:'10%'">归属厂</th>
+            <!--<th data-options="field:'store_name',width:'10%'">归属厂</th>-->
             <th data-options="field:'norms_name',width:'10%'">轮胎规格</th>
             <th data-options="field:'class_name',width:'8%'">层级</th>
             <th data-options="field:'figure_name',width:'8%'">花纹</th>
