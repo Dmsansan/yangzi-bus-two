@@ -33,10 +33,15 @@ class tire_mile_count {
         其中 count 表示当前反回条数，Total 反回满足条件总记录数
     */
 	function qry(){
-		$page = isset($_POST['page'])?intval($_POST['page']):1;
-		$rows = isset($_POST['rows'])?intval($_POST['rows']):10;
+		$page = isset($_POST['page'])?intval($_POST['page']) : 1;
+		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
 		
+		$offset = ($page-1)*$rows;
+
 		$tire_id_val=mysql_escape_string(trim($_REQUEST["tire_id_val"].""));
+
+		$plate_no = mysql_escape_string(trim($_REQUEST["plate_no"].""));
+		//echo $palte_no;die;
 		// if($tire_id_val == ""){
 			// $arr = array ('status'=>'ERROR','reason'=>'缺少必要的参数');
 			// echo json_encode($arr);
@@ -46,11 +51,20 @@ class tire_mile_count {
 		$sql="select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
                 left join bus_info as b on a.bus_id=b.bus_id
                 left join tire_info as c on a.tire_id=c.tire_id";
+
         if($tire_id_val != ""){
             $tire_id_val=str_replace(";","','",$tire_id_val);
             $sql.=" where a.tire_id in ('".$tire_id_val."')";
         }
+        if($plate_no != ""){
+        	$sql .= " where b.plate_no ='$plate_no'";
+        }
+        $res_count = $this->conn->query($sql);
+        $arr['total']=$this->conn->num_rows($res_count);
+
         // $sql.=" order by a.bus_id asc,tire_id asc,log_stamp asc";
+        $sql .=" limit $offset,$rows";
+        //echo $sql;die;
 		$res=$this->conn->query($sql);
 
 		if($this->conn->num_rows($res)>0){
@@ -69,9 +83,9 @@ class tire_mile_count {
 //如果不是装在车上的轮胎，应该是最后一条缷下时的统计时间。
                 $sql_qry="select max(stamp_count) as cnt from tire_exchg_log where tire_id=$rec[tire_id]";
                 $ret_qry=$this->conn->query_first($sql_qry);
-                $row['run_time']=intval($ret_qry[cnt]);
+                $row['run_time']=ceil(intval($ret_qry[cnt])/3600);
                 if($rec[status]=="装上"){
-                    $row['run_time']=time()-ymdhis2ts($rec[install_stamp]);
+                    $row['run_time']=ceil((time()-ymdhis2ts($rec[install_stamp]))/3600);
                 }
 //                $row['run_time']=$rec[stamp_count];
                 $row['run_mile']=$rec[b_mc];
@@ -79,9 +93,9 @@ class tire_mile_count {
 				array_push($rows,$row);
 			}
 			$arr['count']=$this->conn->num_rows($res);
-			$arr['Total']=$this->conn->num_rows($res);
+			
 
-			$arr['Rows']=$rows;
+			$arr['rows']=$rows;
 			//$result = trim(json_encode($arr),"\xEF\xBB\xBF");
 			//$result=@iconv("GBK", "UTF-8//IGNORE", $result);
 			$result = json_encode($arr);
@@ -89,7 +103,7 @@ class tire_mile_count {
 			die();
 			//$this->log->do_log($str);
 		}else{
-			$arr = array ('Total'=>0,'count'=>0);
+			$arr = array ('total'=>0,'count'=>0);
 			$result = json_encode($arr);
 			//@iconv("GBK", "UTF-8//IGNORE", $result);
 			echo $result;

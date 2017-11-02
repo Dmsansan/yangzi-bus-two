@@ -190,9 +190,9 @@
              var options = {
                  columns: [
                  { display: '品牌编号', name:'brand_id',  width: 60 },
-                { display: '品牌代码', name:'brand_no', width:150,isSort:false },
-				{ display: '品牌名称', name:'brand_name', width: 150 },
-				{ display: '备注',name:'remark',width: 300,}								 
+                 /*{ display: '品牌代码', name:'brand_no', width:150,isSort:false },*/
+				 { display: '品牌名称', name:'brand_name', width: 150 },
+				 { display: '备注',name:'remark',width: 300,}								 
                  ], switchPageSizeApplyComboBox: false,
 				 checkbox:true,
                  /*data: $.extend({}, CustomersData),*/
@@ -203,9 +203,8 @@
 				
              };
              return options;
-         }
+        }
 
-		
 		//表单搜索
 		 function initSerchForm() {
             //$('#title').ligerComboBox({ width: 97, emptyText: '（空）'});         
@@ -255,10 +254,10 @@
              },
              grid:{
                  columns: [
-                 { display: '规格编号', name:'norms_id', width: 60 },
-                { display: '规格代码', name:'norms_no', width:150,isSort:false },
-				{ display: '规格名称', name:'norms_name', width: 150},
-				{ display: '备注',name:'remark',width: 300}								 
+                 { display: '规格编号', name:'brand_id', width: 60 },
+                 /*{ display: '规格代码', name:'norms_no', width:150,isSort:false },*/
+				 { display: '规格名称', name:'norms_name', width: 150},
+				 { display: '备注',name:'remark',width: 300}								 
                  ], switchPageSizeApplyComboBox: false,
 				 checkbox:true,
                  /*data: $.extend({}, CustomersData),*/
@@ -267,7 +266,7 @@
 				 dataAction:'server'
 				
              },
-				valueField: 'norms_id',
+				valueField: 'brand_id',
 				textField: 'norms_name',
 				width: 150,
 				searchClick:function(obj){
