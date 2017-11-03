@@ -178,7 +178,7 @@ class roles {
 			die();
 		}
 		$arr=array();
-		$arr['Total']=intval($ret['cnt']);
+		$arr['total']=intval($ret['cnt']);
 		$res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
 			$arr['count']=$this->conn->num_rows($res);
@@ -186,7 +186,7 @@ class roles {
 			while ($rec=$this->conn->fetch_array($res)){
 				array_push($rows,$rec);
 			}
-			$arr['Rows']=$rows;
+			$arr['rows']=$rows;
 			//$result = trim(json_encode($arr),"\xEF\xBB\xBF");
 			//$result=@iconv("GBK", "UTF-8//IGNORE", $result);
 			$result = json_encode($arr);
@@ -194,7 +194,7 @@ class roles {
 			die();
 			//$this->log->do_log($str);
 		}else{
-			$arr = array ('Total'=>$ret['cnt']);
+			$arr = array ('total'=>$ret['cnt']);
 			$result = json_encode($arr);
 			//@iconv("GBK", "UTF-8//IGNORE", $result);
 			echo $result;

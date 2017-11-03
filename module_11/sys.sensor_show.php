@@ -41,17 +41,7 @@
 			$('#all_close').bind('click',function(){
 				$('#addallsensor').dialog('close');
 			});
-			//加载全部数据
-			$.ajax({
-				url:'../ajaction/v1/?menuid=111011&cmd=qry&t=1',
-				type:'GET',
-                dataType:'json',
-				success:function(data){
-                    console.log('getdata',data);
-                    $("#dg").datagrid("loadData", data.Rows);
-					//console.log('getdata',data);
-				}
-			});
+
 			//增加传感器
 			$('#save').bind('click',function(){
 				var sensor_no=$('#sensorNumber').textbox('getText');
@@ -350,8 +340,15 @@
 </head>
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
 <div  class="u-content">
+    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+
+        <input id="searhName" type="text" placeholder="传感器代码"/> <button id="search">搜索</button>
+        <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;margin-right:10px;">增加</button>
+
+     
+    </div>
     <table id="dg" class="easyui-datagrid"
-           data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
+           url="../ajaction/v1/?menuid=111011&cmd=qry&t=1" rownumbers="false" pagination="true">
         <thead>
         <tr>
             <th data-options="field:'sensor_id',width:'10%'">传感器编号</th>
@@ -365,13 +362,7 @@
         </tr>
         </thead>
     </table>
-    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-
-        <input id="searhName" type="text" placeholder="传感器代码"/> <button id="search">搜索</button>
-        <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;margin-right:10px;">增加</button>
-
-     
-    </div>
+    
     <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:600px;height: 360px;background-color: #bdc4d4">
 	<div style="background-color: #ffffff;height:300px;margin:10px;">
          <span style=" display: inline-block; margin-left: 10px; font-size: 14px; margin-top: 10px; font-family: 微软雅黑;">基本信息</span>

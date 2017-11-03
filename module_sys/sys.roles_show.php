@@ -93,21 +93,10 @@
                     data:{'title':name},
                     dataType:'json',
                     success:function(data){
-                        $("#dg").datagrid("loadData", data.Rows);    
+                        $("#dg").datagrid("loadData", data.rows);    
                     }
                 });
 				
-			});
-			
-			//装载数据操作
-			$.ajax({
-				url:'../ajaction/v1/?menuid=101010&cmd=qry&t=1',
-				type:'post',
-				dataType:'json',
-				success:function(data){
-				$("#dg").datagrid("loadData", data.Rows);  
-				
-				}							
 			});
 			//更新操作
 			$('#updata_save').bind('click',function(){
@@ -181,7 +170,7 @@
 				type:'post',
 				dataType:'json',
 				success:function(data){
-				$("#dg").datagrid("loadData", data.Rows);  
+				$("#dg").datagrid("loadData", data.rows);  
 					console.log('data',data);
 				}							
 			});
@@ -340,8 +329,11 @@
     </style>
 </head>
 <body class="easyui-layout" style="width:100%; height: 100%;">
-
-    <table id="dg" class="easyui-datagrid" data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true',width:'100%'" >
+<div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+    <input type="text" id="rolesName" placeholder="角色编号"/> <button id="search">搜索</button>
+    <button id="add" style="float: right; margin-top: 15px;">增加</button>
+    </div>
+    <table id="dg" class="easyui-datagrid" url="../ajaction/v1/?menuid=101010&cmd=qry&t=1" rownumbers="false" pagination="true" >
         <thead>
         <tr>
             <th field="role_id" width="15%" sortable="true">角色编号</th>
@@ -352,10 +344,7 @@
         </tr>
         </thead>
     </table>
-    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-    <input type="text" id="rolesName" placeholder="角色编号"/> <button id="search">搜索</button>
-    <button id="add" style="float: right; margin-top: 15px;">增加</button>
-</div>
+    
 <!--修改信息弹出框 -->  
   <div id="dlg" class="easyui-dialog " data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:650px;height: 300px;background-color: #bdc4d4">
         <div style="background-color: #ffffff;height:240px;margin:10px;">
@@ -366,7 +355,7 @@
 					<img src="../css/img/start.png">
                     角色名称：
 					 <input id="role_id"  style="display: none;width:45%；" type="text"/>
-					  <input id="module_id"  style="display: none;width:45%；" type="text"/>
+					 <input id="module_id"  style="display: none;width:45%；" type="text"/>
                     <input id="title" class="easyui-textbox"  style="width:188px;" />
                 </td>
                 <td>

@@ -328,8 +328,12 @@ class tire_info {
         global $tire_position;
 		$sortname=mysql_escape_string(trim($_REQUEST["sortname"].""));
 		$sortorder=mysql_escape_string(trim($_REQUEST["sortorder"].""));
-		$pagesize=mysql_escape_string(trim($_REQUEST["pagesize"].""));
-		$page=mysql_escape_string(trim($_REQUEST["page"].""));
+		
+		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+		
+		$offset = ($page-1)*$rows;
+
 		$factory_code=mysql_escape_string(trim($_REQUEST["factory_code"].""));
 		$sensor_no=mysql_escape_string(trim($_REQUEST["sensor_no"].""));
         $store_id=mysql_escape_string(trim($_REQUEST["store_id"].""));
@@ -435,10 +439,7 @@ class tire_info {
 		$sql_cnt.=$where;
         if($sortname!="")$sql.=" order by $sortname";
 		if($sortorder!="")$sql.=" $sortorder";
-		if($pagesize!=""&&$page!=""){
-			$rec_from=intval($pagesize)*(intval($page)-1);
-			$sql.=" limit $rec_from, $pagesize";
-		}
+		$sql .=" limit $offset,$rows";
 
 		$ret=$this->conn->query_first($sql_cnt);
 		if($ret['cnt']==0){
@@ -447,7 +448,7 @@ class tire_info {
 			die();
 		}
 		$arr=array();
-		$arr['Total']=intval($ret['cnt']);
+		$arr['total']=intval($ret['cnt']);
 		$res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
 			$arr['count']=$this->conn->num_rows($res);
@@ -475,7 +476,7 @@ class tire_info {
                 $rec[place]=$tire_position[intval($rec[place])];
 				array_push($rows,$rec);
 			}
-			$arr['Rows']=$rows;
+			$arr['rows']=$rows;
 			//$result = trim(json_encode($arr),"\xEF\xBB\xBF");
 			//$result=@iconv("GBK", "UTF-8//IGNORE", $result);
 			$result = json_encode($arr);
@@ -483,7 +484,7 @@ class tire_info {
 			die();
 			//$this->log->do_log($str);
 		}else{
-			$arr = array ('Total'=>$ret['cnt']);
+			$arr = array ('total'=>$ret['cnt']);
 			$result = json_encode($arr);
 			//@iconv("GBK", "UTF-8//IGNORE", $result);
 			echo $result;

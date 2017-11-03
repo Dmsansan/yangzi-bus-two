@@ -25,17 +25,7 @@
 			$('#all_close').bind('click',function(){
 				$('#addalltire').dialog('close');
 			});
-            //加载轮胎数据
-            $.ajax({
-                url:'../ajaction/v1/?menuid=111110&cmd=qry&t=1',
-                type:'GET',
-                dataType:'json',
-                success:function(data){
-                    console.log('getdata',data);
-                    $("#dg").datagrid("loadData", data.Rows);
-                    //console.log('getdata',data);
-                }
-            });
+            
             //获取品牌参数
             $.ajax({
                 url: '../ajaction/v1/?menuid=0&cmd=get_all_brand',
@@ -130,9 +120,6 @@
             $('#addTire').dialog('open').dialog('setTitle','新增轮胎');
 			$('#pr').textbox('setValue','500');
 			})
-			
-			
-
         })
         function formatOption(value, row, index) {
             return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
@@ -279,8 +266,12 @@
 </head>
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
 <div  class="u-content">
+    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+        <input type="text" placeholder="轮胎编号"/> <button>搜索</button>
+        <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;margin-right:10px;">增加</button>
+    </div>
     <table id="dg" class="easyui-datagrid"
-           data-options="singleSelect:true,url:'../../datagrid_data1.json',method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
+          url="../ajaction/v1/?menuid=111110&cmd=qry&t=1" rownumbers="false" pagination="true">
         <thead>
         <tr>
             <th data-options="field:'tire_id',width:'8%'">编号</th>
@@ -301,10 +292,7 @@
         </tr>
         </thead>
     </table>
-    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-        <input type="text" placeholder="轮胎编号"/> <button>搜索</button>
-        <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;margin-right:10px;">增加</button>
-    </div>
+    
     <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:750px;height: 400px;background-color: #bdc4d4">
         <div style="background-color: #ffffff;height:340px;margin:10px;">
              <span style=" display: inline-block; margin-left: 10px; font-size: 14px; margin-top: 10px; font-family: 微软雅黑;">基本信息</span>

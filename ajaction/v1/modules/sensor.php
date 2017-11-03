@@ -243,8 +243,13 @@ class sensor {
 	function qry(){
 		$sortname=mysql_escape_string(trim($_REQUEST["sortname"].""));
 		$sortorder=mysql_escape_string(trim($_REQUEST["sortorder"].""));
-		$pagesize=mysql_escape_string(trim($_REQUEST["pagesize"].""));
-		$page=mysql_escape_string(trim($_REQUEST["page"].""));
+		
+		//$pagesize=mysql_escape_string(trim($_REQUEST["pagesize"].""));
+		//$page=mysql_escape_string(trim($_REQUEST["page"].""));
+		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+		$offset = ($page-1)*$rows;	
+
 		$sensor_no=mysql_escape_string(trim($_REQUEST["sensor_no"].""));
 		
 		$sql="select * from sensor";
@@ -261,10 +266,8 @@ class sensor {
 		$sql_cnt.=$where;
         if($sortname!="")$sql.=" order by $sortname";
 		if($sortorder!="")$sql.=" $sortorder";
-		if($pagesize!=""&&$page!=""){
-			$rec_from=intval($pagesize)*(intval($page)-1);
-			$sql.=" limit $rec_from, $pagesize";
-		}
+		
+		$sql .=" limit $offset,$rows";
 
 		$ret=$this->conn->query_first($sql_cnt);
 		if($ret['cnt']==0){
@@ -273,7 +276,7 @@ class sensor {
 			die();
 		}
 		$arr=array();
-		$arr['Total']=intval($ret['cnt']);
+		$arr['total']=intval($ret['cnt']);
 		$res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
 			$arr['count']=$this->conn->num_rows($res);
@@ -281,7 +284,7 @@ class sensor {
 			while ($rec=$this->conn->fetch_array($res)){
 				array_push($rows,$rec);
 			}
-			$arr['Rows']=$rows;
+			$arr['rows']=$rows;
 			//$result = trim(json_encode($arr),"\xEF\xBB\xBF");
 			//$result=@iconv("GBK", "UTF-8//IGNORE", $result);
 			$result = json_encode($arr);
@@ -289,7 +292,7 @@ class sensor {
 			die();
 			//$this->log->do_log($str);
 		}else{
-			$arr = array ('Total'=>$ret['cnt']);
+			$arr = array ('total'=>$ret['cnt']);
 			$result = json_encode($arr);
 			//@iconv("GBK", "UTF-8//IGNORE", $result);
 			echo $result;
