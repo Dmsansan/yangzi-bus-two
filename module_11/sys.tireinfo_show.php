@@ -271,7 +271,7 @@
         <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;margin-right:10px;">增加</button>
     </div>
     <table id="dg" class="easyui-datagrid"
-          url="../ajaction/v1/?menuid=111110&cmd=qry&t=1" rownumbers="false" pagination="true">
+          url="../ajaction/v1/?menuid=111110&cmd=qry&t=1" rownumbers="false" pagination="true" striped="true">
         <thead>
         <tr>
             <th data-options="field:'tire_id',width:'8%'">编号</th>

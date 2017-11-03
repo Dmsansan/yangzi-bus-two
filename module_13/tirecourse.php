@@ -38,8 +38,13 @@
         <input id="plate_no" type="text" placeholder="车牌号码"/> <button id="search">搜索</button>
         <button id="exp" style="float: right"><span style="display:inline-block;margin-right:12px;">+</span>打印</button>
     </div>
+<<<<<<< HEAD
     <table id="dg" class="easyui-datagrid" style="width: 100%" url="../ajaction/v1/?menuid=131311&cmd=qry" 
           rownumbers="false" pagination="true">
+=======
+    <table id="dg" class="easyui-datagrid" style="width: 100%" url="../ajaction/v1/?menuid=131311&cmd=qry"
+          rownumbers="false" pagination="true" striped="true">
+>>>>>>> 6899dcdc01aa0d16222a68d6e5b09ad54d1dd3f9
         <thead>
         <tr>
             <th data-options="field:'time_add',width:300">安装时间</th>
