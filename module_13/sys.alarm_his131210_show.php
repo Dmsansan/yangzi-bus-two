@@ -175,7 +175,7 @@
 
     </thead>
 </table>
-<div id="toolbar" style="height:50px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:10px">
+<div id="toolbar" style="height:50px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:24px">
     <div style="margin-left: 10px;">
         起始日期: <input id="start" class="easyui-datebox" style="width: 100px">
         终止日期: <input id="stop" class="easyui-datebox" style="width: 100px">

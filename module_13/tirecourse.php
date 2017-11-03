@@ -38,7 +38,7 @@
         <input id="plate_no" type="text" placeholder="车牌号码"/> <button id="search">搜索</button>
         <button id="exp" style="float: right"><span style="display:inline-block;margin-right:12px;">+</span>打印</button>
     </div>
-    <table id="dg" class="easyui-datagrid" style="width: 100%" url="../ajaction/v1/?menuid=131311&cmd=qry"
+    <table id="dg" class="easyui-datagrid" style="width: 100%" url="../ajaction/v1/?menuid=131311&cmd=qry" 
           rownumbers="false" pagination="true">
         <thead>
         <tr>

@@ -49,7 +49,7 @@ margin-left: 40px;
 	margin-top:10px;
     position:relative;
     border:1px solid #cccccc; height:20px; line-height:20px;
-	border-radius:2px;
+	border-radius:5px;
     width:130px; background:white;
 }
 /* 文本框 验证不通过 */
@@ -113,25 +113,25 @@ margin-left: 40px;
 }
 .l-trigger
 {
-    border:1px solid #AECAF0; 
-    background:#DBEBFF url('../images/controls/bg-trigger.gif') repeat-x left;
+    /* border:1px solid #AECAF0;  */
+   /*  background:#DBEBFF url('../images/controls/bg-trigger.gif') repeat-x left; */
 }
 .l-trigger-hover
 {
-    border:1px solid #EABE4E; 
-    background:#fedc75 url('../images/controls/bg-trigger-over.gif') repeat-x left;
+    border:1px solid #E0ECFF; 
+    background:#E0ECFF ;
 }
 .l-trigger-pressed
 {
-    border:1px solid #EABE4E; 
-    background:#fedc75 url('../images/controls/bg-trigger-pressed.gif') repeat-x left;
+    border:1px solid #E0ECFF; 
+    background:#E0ECFF ;
 }
 
 /* l-text-popup */
 .l-text-popup .l-trigger,.l-text-popup .l-trigger-hover,.l-text-popup .l-trigger-pressed
 {
 	top:0px;right:0px;
-    width:16px;height:100%;border:none; border-left:1px solid #AECAF0;
+    width:16px;height:100%;border:none; border-left:1px solid #CCCCCC;
 }
 .l-text-popup .l-trigger-cancel
 {
@@ -144,7 +144,7 @@ margin-left: 40px;
 }
 .l-text-popup .l-trigger-cancel .l-trigger-icon 
 {
-	background: url('../images/icon/icon-unselect.gif')  no-repeat 50% 53% transparent;
+	/* background: url('../images/icon/icon-unselect.gif')  no-repeat 50% 53% transparent; */
 }
 
 
@@ -159,13 +159,13 @@ margin-left: 40px;
 	background:none;border:none;
 }
 .l-text-date .l-trigger-icon { 
-	background-image: url('../images/dateeditor/date.gif');
+	background-image: url('../images/dateeditor/datebox_arrow.png');
 } 
 /* 下拉框/日期 右侧那个可点击的区域里面的图标 */
 .l-trigger-icon
 {	width:100%;
 	height:100%;
-    background:url('../images/icon/icon-down.gif') no-repeat 50% 50%;
+    background:url('../images/icon/combo_arrow.png') no-repeat 100% 100%;
 }
 /* -------------
   * 调整器 *

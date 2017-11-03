@@ -450,8 +450,8 @@
                 //$("#maingrid5").ligerGetGridManager().onResize();
 				$(".az").css("display","inline");
 				$(".az").css("position","absolute");
-				$(".az").css("left","5px");
-				$(".az").css("top","0px");
+				$(".az").css("left","15px");
+				$(".az").css("top","10px");
 				
 				//alert("1");
             } else {
@@ -467,7 +467,7 @@
 		//serchpanel();
     </script>
 
-<body style="margin-top:0px">
+<body style="margin-top:0px;background-color:#f1f6fd">
  <div id="message" style="width:800px"></div>
 <div class="l-loading" style="display:none" id="pageloading"></div> 
   <form id="form1" onsubmit=" return false ">
