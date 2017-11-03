@@ -39,7 +39,7 @@
         <button id="exp" style="float: right"><span style="display:inline-block;margin-right:12px;">+</span>打印</button>
     </div>
     <table id="dg" class="easyui-datagrid" style="width: 100%" url="../ajaction/v1/?menuid=131311&cmd=qry"
-          rownumbers="false" pagination="true">
+          rownumbers="false" pagination="true" striped="true">
         <thead>
         <tr>
             <th data-options="field:'time_add',width:300">安装时间</th>

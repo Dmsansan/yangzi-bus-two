@@ -348,7 +348,7 @@
      
     </div>
     <table id="dg" class="easyui-datagrid"
-           url="../ajaction/v1/?menuid=111011&cmd=qry&t=1" rownumbers="false" pagination="true">
+           url="../ajaction/v1/?menuid=111011&cmd=qry&t=1" rownumbers="false" pagination="true" striped="true">
         <thead>
         <tr>
             <th data-options="field:'sensor_id',width:'10%'">传感器编号</th>
