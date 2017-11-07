@@ -318,6 +318,7 @@
 				$(".az").css("position","absolute");
 				$(".az").css("left","5px");
 				$(".az").css("top","0px");
+				$(".az").css("width",'100%');
 				
 				//alert("1");
             } else {
@@ -387,8 +388,8 @@
 	</div>
   </form>
   <div class="az" style="display:none;">
-        <form id='serchform'>
-            <table style='width:1366px' class="bodytable1">
+        <form id='serchform' style="width:100%">
+            <table style='width:100%;background-color:#ffffff' class="bodytable1">
                 <tr>
                     <td style="width:70px">
                         <div style='float: left; text-align: right;margin-top: 10px;'>轮胎胎号：</div>
@@ -408,7 +409,7 @@
 		
 				<td></td><td></td><td></td><td></td><td></td>
 					<td style="align:right">
-					<button id="button" style="float: right;margin-top: 10px;outline:none;">打印</button>
+					<button id="button" style="float: right;margin-top: 10px;margin-right:40px; outline:none;">打印</button>
 					</td>
                 </tr>
             </table>

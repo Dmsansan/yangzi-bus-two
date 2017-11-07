@@ -176,10 +176,15 @@
 				console.log('luntai',row);
                 $('#dlg').dialog('open').dialog('setTitle','修改轮胎参数');
 				$('#updata_pm').textbox('setValue',row.company_name);
-				$('#updata_brand').combobox('setValue',row.brand_name);
-				$('#updata_tire').combobox('setValue',row.norms_name);
-				$('#updata_pr').combobox('setValue',row.class_name);
-				$('#updata_figure').combobox('setValue',row.figure_name);	 		
+				
+				$('#updata_brand').combobox('setValue',row.brand_id);
+				$('#updata_brand').combobox('setText',row.brand_name);
+				$('#updata_tire').combobox('setValue',row.norms_id);
+				$('#updata_tire').combobox('setText',row.norms_name);
+				$('#updata_pr').combobox('setValue',row.class_id);
+				$('#updata_pr').combobox('setText',row.class_name);				
+				$('#updata_figure').combobox('setValue',row.figure_id);	 	
+				$('#updata_figure').combobox('setText',row.figure_name);	 		
 				$('#updata_pressure_ll').textbox('setValue',row.pressure_ll);
 				$('#update_pressure_ul').textbox('setValue',row.pressure_ul);
 				$('#updata_tem').textbox('setValue',row.temp_ul);
@@ -216,7 +221,7 @@
                 var mainterance1 = $('#updata_one').textbox('getText');
                 var mainterance2 = $('#updata_two').textbox('getText');
                 var rated_mile = $('#updata_all').textbox('getText');
-				console.log('class_id_val',class_id_val);
+				console.log('class_id_val',norms_id_val);
 				$.ajax({
 						url:'../ajaction/v1/?menuid=111010&cmd=edit',
 						type:'POST',

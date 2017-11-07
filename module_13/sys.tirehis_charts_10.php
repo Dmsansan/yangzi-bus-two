@@ -67,7 +67,314 @@
         {
             type : 'category',
             boundaryGap : false,
+			 axisLabel : {
+				interval:0,//横轴信息全部显示  
+                rotate:30,//-30度角倾斜显示  
+            },
 			data:[]
+            
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            axisLabel : {
+                formatter: '{value}'
+            }
+        }
+    ],
+	grid: { // 控制图的大小，调整下面这些值就可以，
+              x: 100,
+              x2: 80,
+              y2: 80// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
+    },
+    series : [
+        {
+            name:'压力值',
+            type:'line',            
+			itemStyle:{normal:{color:'#3D7878'}},
+			data:[],
+            markLine : {
+					itemStyle:{normal:{color:'#ff0000'}},
+					data:[
+						/*[{name:'压力阀值小',value:10, xAxis: -1, yAxis:10},{xAxis:"2015-01-02",yAxis:10}]*/
+						
+					]
+					
+				}
+					
+		},
+		{
+            name:'上限',
+            type:'line',		
+			data:[],
+			markLine : {
+					itemStyle:{normal:{color:'#ff0000'}},
+					data:[				
+						
+					]
+					
+				}
+		},
+		{
+            name:'压力值1',
+            type:'line',            
+			itemStyle:{normal:{color:'#0066CC'}},
+			data:[],
+            markLine : {
+					itemStyle:{normal:{color:'#ff0000'}},
+					data:[
+						/*[{name:'压力阀值小',value:10, xAxis: -1, yAxis:10},{xAxis:"2015-01-02",yAxis:10}]*/
+						
+					]
+					
+				}
+					
+		},
+		{
+            name:'上限1',
+            type:'line',		
+			data:[],
+			markLine : {
+					itemStyle:{normal:{color:'#fff000'}},
+					data:[						
+					]
+					
+				}
+		}
+		]     
+	},{
+    title : {
+        text: '',
+		  x:'center'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },    
+    toolbox: {
+        show : true,
+        feature : {
+            //mark : {show: true},
+            dataView : {show: true, readOnly: true},
+            //magicType : {show: true, type: ['line', 'bar']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+			 axisLabel : {
+				interval:0,//横轴信息全部显示  
+                rotate:30,//-30度角倾斜显示  
+            },
+			data:[]
+            
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            axisLabel : {
+                formatter: '{value}'
+            }
+        }
+    ],
+	grid: { // 控制图的大小，调整下面这些值就可以，
+              x: 100,
+              x2: 80,
+              y2: 80// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
+		},
+    series : [
+        {
+            name:'压力值',
+            type:'line',            
+			itemStyle:{normal:{color:'#3D7878'}},
+			data:[],
+            markLine : {
+					itemStyle:{normal:{color:'#ff0000'}},
+					data:[
+						/*[{name:'压力阀值小',value:10, xAxis: -1, yAxis:10},{xAxis:"2015-01-02",yAxis:10}]*/
+						
+					]
+					
+				}
+					
+		},
+		{
+            name:'上限',
+            type:'line',		
+			data:[],
+			markLine : {
+					itemStyle:{normal:{color:'#ff0000'}},
+					data:[				
+						
+					]
+					
+				}
+		},
+		
+		{
+            name:'压力值1',
+            type:'line',            
+			itemStyle:{normal:{color:'#0066CC'}},
+			data:[],
+            markLine : {
+					itemStyle:{normal:{color:'#ff0000'}},
+					data:[
+						/*[{name:'压力阀值小',value:10, xAxis: -1, yAxis:10},{xAxis:"2015-01-02",yAxis:10}]*/
+						
+					]
+					
+				}
+					
+		},
+		{
+            name:'上限1',
+            type:'line',		
+			data:[],
+			markLine : {
+					itemStyle:{normal:{color:'#fff000'}},
+					data:[						
+					]
+					
+				}
+		}
+		]     
+	},{
+    title : {
+        text: '',
+		  x:'center'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },    
+    toolbox: {
+        show : true,
+        feature : {
+            //mark : {show: true},
+            dataView : {show: true, readOnly: true},
+            //magicType : {show: true, type: ['line', 'bar']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+			 axisLabel : {
+				interval:0,//横轴信息全部显示  
+                rotate:30,//-30度角倾斜显示  
+            },
+			data:[]
+            
+        }
+    ],
+    yAxis : [
+        {
+            type : 'value',
+            axisLabel : {
+                formatter: '{value}'
+            }
+        }
+    ],
+	grid: { // 控制图的大小，调整下面这些值就可以，
+              x: 100,
+              x2: 80,
+              y2: 80// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
+    },
+    series : [
+        {
+            name:'压力值',
+            type:'line',            
+			itemStyle:{normal:{color:'#3D7878'}},
+			data:[],
+            markLine : {
+					itemStyle:{normal:{color:'#ff0000'}},
+					data:[
+						/*[{name:'压力阀值小',value:10, xAxis: -1, yAxis:10},{xAxis:"2015-01-02",yAxis:10}]*/
+						
+					]
+					
+				}
+					
+		},
+		{
+            name:'上限',
+            type:'line',		
+			data:[],
+			markLine : {
+					itemStyle:{normal:{color:'#ff0000'}},
+					data:[				
+						
+					]
+					
+				}
+		},
+		{
+            name:'压力值1',
+            type:'line',            
+			itemStyle:{normal:{color:'#0066CC'}},
+			data:[],
+            markLine : {
+					itemStyle:{normal:{color:'#ff0000'}},
+					data:[
+						/*[{name:'压力阀值小',value:10, xAxis: -1, yAxis:10},{xAxis:"2015-01-02",yAxis:10}]*/
+						
+					]
+					
+				}
+					
+		},
+		{
+            name:'上限1',
+            type:'line',		
+			data:[],
+			markLine : {
+					itemStyle:{normal:{color:'#fff000'}},
+					data:[						
+					]
+					
+				}
+		}
+		]     
+	},{
+    title : {
+        text: '',
+		  x:'center'
+    },
+    tooltip : {
+        trigger: 'axis'
+    },    
+    toolbox: {
+        show : true,
+        feature : {
+            //mark : {show: true},
+            dataView : {show: true, readOnly: true},
+            //magicType : {show: true, type: ['line', 'bar']},
+            restore : {show: true},
+            saveAsImage : {show: true}
+        }
+    },
+    calculable : true,
+	grid: { // 控制图的大小，调整下面这些值就可以，
+              x: 100,
+              x2: 80,
+              y2: 80// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
+    },
+    xAxis : [
+        {
+            type : 'category',
+            boundaryGap : false,
+			data:[],
+		 axisLabel : {
+				interval:0,//横轴信息全部显示  
+                rotate:30,//-30度角倾斜显示  
+            }
             
         }
     ],
@@ -157,8 +464,11 @@
         {
             type : 'category',
             boundaryGap : false,
-			data:[]
-            
+			data:[],
+             axisLabel : {
+				interval:0,//横轴信息全部显示  
+                rotate:30,//-30度角倾斜显示  
+            }
         }
     ],
     yAxis : [
@@ -169,6 +479,11 @@
             }
         }
     ],
+	grid: { // 控制图的大小，调整下面这些值就可以，
+              x: 100,
+              x2: 80,
+              y2: 80// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
+    },
     series : [
         {
             name:'压力值',
@@ -247,8 +562,11 @@
         {
             type : 'category',
             boundaryGap : false,
-			data:[]
-            
+			data:[],
+             axisLabel : {
+				interval:0,//横轴信息全部显示  
+                rotate:30,//-30度角倾斜显示  
+            }
         }
     ],
     yAxis : [
@@ -259,6 +577,11 @@
             }
         }
     ],
+	grid: { // 控制图的大小，调整下面这些值就可以，
+              x: 100,
+              x2: 80,
+              y2: 80// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
+    },
     series : [
         {
             name:'压力值',
@@ -337,6 +660,10 @@
         {
             type : 'category',
             boundaryGap : false,
+			 axisLabel : {
+				interval:0,//横轴信息全部显示  
+                rotate:30,//-30度角倾斜显示  
+            },
 			data:[]
             
         }
@@ -349,6 +676,11 @@
             }
         }
     ],
+	grid: { // 控制图的大小，调整下面这些值就可以，
+              x: 100,
+              x2: 80,
+              y2: 80// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
+    },
     series : [
         {
             name:'压力值',
@@ -427,6 +759,10 @@
         {
             type : 'category',
             boundaryGap : false,
+			 axisLabel : {
+				interval:0,//横轴信息全部显示  
+                rotate:30,//-30度角倾斜显示  
+            },
 			data:[]
             
         }
@@ -439,6 +775,11 @@
             }
         }
     ],
+	grid: { // 控制图的大小，调整下面这些值就可以，
+              x: 100,
+              x2: 80,
+              y2: 80// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
+    },
     series : [
         {
             name:'压力值',
@@ -517,6 +858,10 @@
         {
             type : 'category',
             boundaryGap : false,
+			 axisLabel : {
+				interval:0,//横轴信息全部显示  
+                rotate:30,//-30度角倾斜显示  
+            },
 			data:[]
             
         }
@@ -529,6 +874,11 @@
             }
         }
     ],
+	grid: { // 控制图的大小，调整下面这些值就可以，
+              x: 100,
+              x2: 80,
+              y2: 80// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
+    },
     series : [
         {
             name:'压力值',
@@ -607,6 +957,10 @@
         {
             type : 'category',
             boundaryGap : false,
+			 axisLabel : {
+				interval:0,//横轴信息全部显示  
+                rotate:30,//-30度角倾斜显示  
+            },
 			data:[]
             
         }
@@ -619,6 +973,11 @@
             }
         }
     ],
+	grid: { // 控制图的大小，调整下面这些值就可以，
+              x: 100,
+              x2: 80,
+              y2: 80// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
+    },
     series : [
         {
             name:'压力值',
@@ -697,7 +1056,11 @@
         {
             type : 'category',
             boundaryGap : false,
-			data:[]
+			data:[],
+			axisLabel : {
+				interval:0,//横轴信息全部显示  
+                rotate:30,//-30度角倾斜显示  
+            }
             
         }
     ],
@@ -709,6 +1072,11 @@
             }
         }
     ],
+	grid: { // 控制图的大小，调整下面这些值就可以，
+              x: 100,
+              x2: 80,
+              y2: 80// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
+    },
     series : [
         {
             name:'压力值',
@@ -787,7 +1155,11 @@
         {
             type : 'category',
             boundaryGap : false,
-			data:[]
+			data:[],
+			axisLabel : {
+				interval:0,//横轴信息全部显示  
+                rotate:30,//-30度角倾斜显示  
+            }
             
         }
     ],
@@ -799,276 +1171,11 @@
             }
         }
     ],
-    series : [
-        {
-            name:'压力值',
-            type:'line',            
-			itemStyle:{normal:{color:'#3D7878'}},
-			data:[],
-            markLine : {
-					itemStyle:{normal:{color:'#ff0000'}},
-					data:[
-						/*[{name:'压力阀值小',value:10, xAxis: -1, yAxis:10},{xAxis:"2015-01-02",yAxis:10}]*/
-						
-					]
-					
-				}
-					
-		},
-		{
-            name:'上限',
-            type:'line',		
-			data:[],
-			markLine : {
-					itemStyle:{normal:{color:'#ff0000'}},
-					data:[				
-						
-					]
-					
-				}
-		},
-		{
-            name:'压力值1',
-            type:'line',            
-			itemStyle:{normal:{color:'#0066CC'}},
-			data:[],
-            markLine : {
-					itemStyle:{normal:{color:'#ff0000'}},
-					data:[
-						/*[{name:'压力阀值小',value:10, xAxis: -1, yAxis:10},{xAxis:"2015-01-02",yAxis:10}]*/
-						
-					]
-					
-				}
-					
-		},
-		{
-            name:'上限1',
-            type:'line',		
-			data:[],
-			markLine : {
-					itemStyle:{normal:{color:'#fff000'}},
-					data:[						
-					]
-					
-				}
-		}
-		]     
-	},{
-    title : {
-        text: '',
-		  x:'center'
+	grid: { // 控制图的大小，调整下面这些值就可以，
+              x: 100,
+              x2: 80,
+              y2: 80// y2可以控制 X轴跟Zoom控件之间的间隔，避免以为倾斜后造成 label重叠到zoom上
     },
-    tooltip : {
-        trigger: 'axis'
-    },    
-    toolbox: {
-        show : true,
-        feature : {
-            //mark : {show: true},
-            dataView : {show: true, readOnly: true},
-            //magicType : {show: true, type: ['line', 'bar']},
-            restore : {show: true},
-            saveAsImage : {show: true}
-        }
-    },
-    calculable : true,
-    xAxis : [
-        {
-            type : 'category',
-            boundaryGap : false,
-			data:[]
-            
-        }
-    ],
-    yAxis : [
-        {
-            type : 'value',
-            axisLabel : {
-                formatter: '{value}'
-            }
-        }
-    ],
-    series : [
-        {
-            name:'压力值',
-            type:'line',            
-			itemStyle:{normal:{color:'#3D7878'}},
-			data:[],
-            markLine : {
-					itemStyle:{normal:{color:'#ff0000'}},
-					data:[
-						/*[{name:'压力阀值小',value:10, xAxis: -1, yAxis:10},{xAxis:"2015-01-02",yAxis:10}]*/
-						
-					]
-					
-				}
-					
-		},
-		{
-            name:'上限',
-            type:'line',		
-			data:[],
-			markLine : {
-					itemStyle:{normal:{color:'#ff0000'}},
-					data:[				
-						
-					]
-					
-				}
-		},
-		{
-            name:'压力值1',
-            type:'line',            
-			itemStyle:{normal:{color:'#0066CC'}},
-			data:[],
-            markLine : {
-					itemStyle:{normal:{color:'#ff0000'}},
-					data:[
-						/*[{name:'压力阀值小',value:10, xAxis: -1, yAxis:10},{xAxis:"2015-01-02",yAxis:10}]*/
-						
-					]
-					
-				}
-					
-		},
-		{
-            name:'上限1',
-            type:'line',		
-			data:[],
-			markLine : {
-					itemStyle:{normal:{color:'#fff000'}},
-					data:[						
-					]
-					
-				}
-		}
-		]     
-	},{
-    title : {
-        text: '',
-		  x:'center'
-    },
-    tooltip : {
-        trigger: 'axis'
-    },    
-    toolbox: {
-        show : true,
-        feature : {
-            //mark : {show: true},
-            dataView : {show: true, readOnly: true},
-            //magicType : {show: true, type: ['line', 'bar']},
-            restore : {show: true},
-            saveAsImage : {show: true}
-        }
-    },
-    calculable : true,
-    xAxis : [
-        {
-            type : 'category',
-            boundaryGap : false,
-			data:[]
-            
-        }
-    ],
-    yAxis : [
-        {
-            type : 'value',
-            axisLabel : {
-                formatter: '{value}'
-            }
-        }
-    ],
-    series : [
-        {
-            name:'压力值',
-            type:'line',            
-			itemStyle:{normal:{color:'#3D7878'}},
-			data:[],
-            markLine : {
-					itemStyle:{normal:{color:'#ff0000'}},
-					data:[
-						/*[{name:'压力阀值小',value:10, xAxis: -1, yAxis:10},{xAxis:"2015-01-02",yAxis:10}]*/
-						
-					]
-					
-				}
-					
-		},
-		{
-            name:'上限',
-            type:'line',		
-			data:[],
-			markLine : {
-					itemStyle:{normal:{color:'#ff0000'}},
-					data:[				
-						
-					]
-					
-				}
-		},
-		{
-            name:'压力值1',
-            type:'line',            
-			itemStyle:{normal:{color:'#0066CC'}},
-			data:[],
-            markLine : {
-					itemStyle:{normal:{color:'#ff0000'}},
-					data:[
-						/*[{name:'压力阀值小',value:10, xAxis: -1, yAxis:10},{xAxis:"2015-01-02",yAxis:10}]*/
-						
-					]
-					
-				}
-					
-		},
-		{
-            name:'上限1',
-            type:'line',		
-			data:[],
-			markLine : {
-					itemStyle:{normal:{color:'#fff000'}},
-					data:[						
-					]
-					
-				}
-		}
-		]     
-	},{
-    title : {
-        text: '',
-		  x:'center'
-    },
-    tooltip : {
-        trigger: 'axis'
-    },    
-    toolbox: {
-        show : true,
-        feature : {
-            //mark : {show: true},
-            dataView : {show: true, readOnly: true},
-            //magicType : {show: true, type: ['line', 'bar']},
-            restore : {show: true},
-            saveAsImage : {show: true}
-        }
-    },
-    calculable : true,
-    xAxis : [
-        {
-            type : 'category',
-            boundaryGap : false,
-			data:[]
-            
-        }
-    ],
-    yAxis : [
-        {
-            type : 'value',
-            axisLabel : {
-                formatter: '{value}'
-            }
-        }
-    ],
     series : [
         {
             name:'压力值',
@@ -1576,7 +1683,7 @@
                 //$("#maingrid5").ligerGetGridManager().onResize();
 				$(".az").css("display","inline");
 				$(".az").css("position","absolute");
-				$(".az").css("left","5px");
+				$(".az").css("left","10px");
 				$(".az").css("top","0px");
 				
 				//alert("1");
@@ -1612,40 +1719,40 @@
 
 </style>
 
-<body style="margin-top:0px">
- <div id="message" style="width:800px"></div>
+<body style="margin-top:0px; background-color:#f1f6fd;">
+ <div id="message" style="width:1400px"></div>
 <div class="l-loading" style="display:none" id="pageloading"></div> 
-  <form id="form1" onsubmit=" return false ">
-    <div id="toolbar" ></div>	
-	<div id="grid" style="align:center">
+  <form id="form1" onsubmit=" return false " style="width:1400px">
+    <div id="toolbar" style="width:1400px"></div>	
+	<div id="grid" style="text-align:center" style="width:1400px">
 		<div id="main" style="margin:0px;width:1400px">
-			<div id="chart1" style="width:450px;height:300px;float:left;display:inline"></div>
-			<div id="chart2" style="width:450px;height:300px;float:left;display:inline;    margin-left: 90px;"></div>
-			<div id="chart3" style="width:450px;height:300px;float:left;"></div>
-			<div id="chart4" style="width:450px;height:300px;float:left;    margin-left: 90px;"></div>
-			<div id="chart5" style="width:450px;height:300px;float:left;"></div>
-			<div id="chart6" style="width:450px;height:300px;float:left;    margin-left: 90px;"></div>
-			<div id="chart7" style="width:450px;height:300px;float:left;"></div>
-			<div id="chart8" style="width:450px;height:300px;float:left;"></div>
-			<div id="chart9" style="width:450px;height:400px;float:left;"></div>
-			<div id="chart10" style="width:450px;height:400px;float:left;"></div>
-			<div id="chart11" style="width:450px;height:400px;float:left;"></div>
-			<div id="chart12" style="width:450px;height:400px;float:left;"></div>
-			<div id="chart13" style="width:450px;height:400px;float:left;"></div>
-			<div id="chart14" style="width:450px;height:400px;float:left;"></div>
-			<div id="chart15" style="width:450px;height:400px;float:left;"></div>
-			<div id="chart16" style="width:450px;height:400px;float:left;"></div>
-			<div id="chart17" style="width:450px;height:400px;float:left;"></div>
-			<div id="chart18" style="width:450px;height:400px;float:left;"></div>
-			<div id="chart19" style="width:450px;height:400px;float:left;"></div>
-			<div id="chart20" style="width:450px;height:400px;float:left;"></div>
+			<div id="chart1" style="width:550px;height:400px;float:left; margin-left: 24px;display:inline" ></div>
+			<div id="chart2" style="width:550px;height:400px;float:left;display:inline;    margin-left: 90px;"></div>
+			<div id="chart3" style="width:550px;height:400px;float:left; margin-left: 24px;"></div>
+			<div id="chart4" style="width:550px;height:400px;float:left;    margin-left: 90px;"></div>
+			<div id="chart5" style="width:550px;height:400px;float:left;margin-left: 24px;"></div>
+			<div id="chart6" style="width:550px;height:400px;float:left;    margin-left: 90px;"></div>
+			<div id="chart7" style="width:550px;height:400px;float:left;margin-left: 24px;"></div>
+			<div id="chart8" style="width:550px;height:400px;float:left;"></div>
+			<div id="chart9" style="width:550px;height:400px;float:left;margin-left: 24px;"></div>
+			<div id="chart10" style="width:550px;height:400px;float:left;"></div>
+			<div id="chart11" style="width:550px;height:400px;float:left;margin-left: 24px;"></div>
+			<div id="chart12" style="width:550px;height:400px;float:left;"></div>
+			<div id="chart13" style="width:550px;height:400px;float:left;margin-left: 24px;"></div>
+			<div id="chart14" style="width:550px;height:400px;float:left;"></div>
+			<div id="chart15" style="width:550px;height:400px;float:left;margin-left: 24px;"></div>
+			<div id="chart16" style="width:550px;height:400px;float:left;"></div>
+			<div id="chart17" style="width:550px;height:400px;float:left;margin-left: 24px;"></div>
+			<div id="chart18" style="width:550px;height:400px;float:left;"></div>
+			<div id="chart19" style="width:550px;height:400px;float:left;margin-left: 24px;"></div>
+			<div id="chart20" style="width:550px;height:400px;float:left;"></div>
 		</div>
 		<!--<div id="toolbar1"></div>-->		
 	</div>
   </form>
   <div class="az" style="display:none;">
-        <form id='serchform'>
-            <table style='width: 960px' class="bodytable1">
+        <form id='serchform' style="padding: 10px;">
+            <table style='width:100%' class="bodytable1">
                 <tr>
                     <td>
                         <div style='float: left; text-align: left; width: 60px;margin-top: 10px;'>起始日期：</div>

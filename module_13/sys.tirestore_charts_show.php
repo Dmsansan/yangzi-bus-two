@@ -303,7 +303,9 @@
 				$(".az").css("position","absolute");
 				$(".az").css("left","5px");
 				$(".az").css("top","0px");
-				
+				$(".az").css("background-color","#ffffff");
+				$(".az").css("width",'100%');
+				$(".az").css("")
 				//alert("1");
             } else {
                 $("#grid").css("margin-top", "0px");
@@ -332,18 +334,18 @@
 	
 	</style>
 
-<body style="margin-top:0px">
+<body style="margin:0;padding:0; background-color:#f1f6fd;    overflow: hidden">
  <div id="message" style="width:800px"></div>
 <div class="l-loading" style="display:none" id="pageloading"></div> 
   <form id="form1" onsubmit=" return false ">
     <div id="toolbar" ></div>	
 	<div id="grid">
-		<div id="main" style="height:400px;margin:0px;width:90%"></div>
+		<div id="main" style="height:400px;margin:0px;padding-top:24px; width:90%"></div>
 		<!--<div id="toolbar1"></div>-->		
 	</div>
   </form>
   <div class="az" style="display:none;">
-        <form id='serchform'>
+        <form id='serchform' style="width:100%;margin-top: 24px;padding-bottom: 20px;">
             <table style='width: 960px' class="bodytable1">
                 <tr>
                     <td style="width:70px">

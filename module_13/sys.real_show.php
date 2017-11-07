@@ -179,7 +179,7 @@
             manager=$("#maingrid4").ligerGrid({
                 checkbox: false,
                 columns: [{display: '时间', name: 'Time',width:200},
-					{display:"信息",name:'info',aligin:'center',width:50,render:
+					{display:"信息",name:'info',aligin:'center',width:60,render:
 						function (row,rowindex, value, column) {
 							
 							var html="";
@@ -197,9 +197,10 @@
 								html="<div id=\"message"+rowindex+"\" class=\"message\"><img src='../images/icon/info_0.png' onclick=\"showMessage('message"+rowindex+"')\"/></div>";
 							}*/
 							if(nalarm>0){
-								html="<img src='../images/icon/info_1.png' onclick=\"showMessage('"+row.Plate_No+"')\"/>";
+								html="<img src='../images/icon/tips-selected.png' onclick=\"showMessage('"+row.Plate_No+"')\"/>";
+								
 							}else{
-								html="<img src='../images/icon/info_0.png' onclick=\"showMessage('"+row.Plate_No+"')\"/>";
+								html="<img src='../images/icon/news_selected.png' onclick=\"showMessage('"+row.Plate_No+"')\"/>";
 							}						
 							return html;
 						

@@ -14,7 +14,7 @@
 	    function Option(value, row, index) {
             return '<a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px;" onclick="uninstallData('+index+')">卸载轮胎</a>';
 			}
-		
+		//卸载轮胎弹出框
        
         function uninstallData(index) {
             $('#tire_dg').datagrid('selectRow', index);
@@ -237,7 +237,13 @@
 						if(data.status!='OK'){
 							$.messager.alert('警告','错误','info');
 						}else{
-							alert('成功');
+							
+							$.messager.show({
+                            title : '操作成功',
+                            msg:'安装成功！',
+                            timeout:3000,
+                            showType:'show',  
+                            });
 						}
 					}
 				});
