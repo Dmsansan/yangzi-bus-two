@@ -340,15 +340,15 @@
 		</style>
 </head>
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
-<div  class="u-content">
-    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+<div  class="u-content" style="width:100%;height:554px;">
+    <div id="tb" style="padding-bottom: 10px;padding-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 34px;">
 
         <input id="searhName" type="text" placeholder="传感器代码"/> <button id="search">搜索</button>
-        <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;margin-right:10px;">增加</button>
+        <button id="addall" style="float: right;margin-top: 10px;">批量增加</button> <button id="add" style="float: right;margin-top: 10px;margin-right:10px;">增加</button>
 
      
     </div>
-    <table id="dg" class="easyui-datagrid" style="width:100%,height:70%"
+    <table id="dg" class="easyui-datagrid" style="width:100%,height:400px;" fit="false" 
            url="../ajaction/v1/?menuid=111011&cmd=qry&t=1" rownumbers="false" pagination="true" striped="true">
         <thead>
         <tr>
@@ -358,12 +358,12 @@
             <th data-options="field:'pressure_ll',width:'10%'">胎压下限</th>
             <th data-options="field:'temp_ul',width:'10%'">胎温上限</th>
             <th data-options="field:'temp_ll',width:'10%'">温度下限</th>
-            <th data-options="field:'remark',width:'30%'">备注</th>
+            <th data-options="field:'remark',width:'20%'">备注</th>
             <th data-options="field:'_operate',width:'10%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
-    
+ </div>   
     <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:600px;height: 360px;background-color: #bdc4d4">
 	<div style="background-color: #ffffff;height:300px;margin:10px;">
          <span style=" display: inline-block; margin-left: 10px; font-size: 14px; margin-top: 10px; font-family: 微软雅黑;">基本信息</span>
@@ -412,7 +412,7 @@
 				</td>
 			</tr>
 			
-        </table>
+		</table>
 		</div>
     </div>
 	<div id="addSensor" class="easyui-dialog" data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:600px;height: 360px;background-color: #bdc4d4">

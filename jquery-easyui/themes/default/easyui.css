@@ -1620,14 +1620,14 @@
 }
 .datagrid-view {
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   height: 300px;
   padding-left: 9px;
 }
 .datagrid-view1,
 .datagrid-view2 {
   position: absolute;
-  overflow: scroll;
+  overflow: hidden;
   top: 0;
 }
 .datagrid-view1 {
