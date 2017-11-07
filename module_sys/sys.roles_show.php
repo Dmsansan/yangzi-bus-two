@@ -340,7 +340,7 @@
             <th data-options="field:'title',width:'15%'">角色名称</th>
             <th data-options="field:'modules_list',width:'15%'">模块列表</th>
             <th data-options="field:'remark',width:'30%'">说明</th>
-             <th data-options="field:'_operate',width:'25%',formatter:formatOption">操作</th>
+            <th data-options="field:'_operate',width:'25%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
