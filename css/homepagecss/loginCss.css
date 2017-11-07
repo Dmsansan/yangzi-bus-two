@@ -1,0 +1,9 @@
+﻿.l-dialog-body{
+	position:relative;
+	overflow:hidden;
+	background-color:white;!important;
+	}
+.l-dialog table {
+    table-layout: auto;
+    width: auto;!important;
+}

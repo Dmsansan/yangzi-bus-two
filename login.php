@@ -15,7 +15,7 @@
 	<script src="lib/ligerUI/js/core/base.js" type="text/javascript"></script>   
 	<script src="lib/ligerUI/js/core/inject.js" type="text/javascript"></script>   
 	<script src="lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script> 
-<link href="css\logincss\loginCss.css" type="text/css" rel="stylesheet"/>
+	<link href="css/homepagecss/loginCss.css" type="text/css" rel="stylesheet"/>
 	<script type="text/javascript">
 function f_redirect()
 {

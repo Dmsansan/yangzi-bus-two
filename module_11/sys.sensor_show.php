@@ -339,12 +339,12 @@
         }
 		</style>
 </head>
-<body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
+<body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff;overflow: auto;">
 <div  class="u-content" style="width:100%;height:554px;">
     <div id="tb" style="padding-bottom: 10px;padding-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 34px;">
 
         <input id="searhName" type="text" placeholder="传感器代码"/> <button id="search">搜索</button>
-        <button id="addall" style="float: right;margin-top: 10px;">批量增加</button> <button id="add" style="float: right;margin-top: 10px;margin-right:10px;">增加</button>
+      <span style="float: right;">  <button id="addall" >批量增加</button> <button id="add">增加</button><div style="clear:both;"></div></span>
 
      
     </div>
