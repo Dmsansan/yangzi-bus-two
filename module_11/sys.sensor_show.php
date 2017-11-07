@@ -157,11 +157,12 @@
 			});
 		}
         function formatOption(value, row, index) {
-                return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+                return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:5px;" onclick="deletData('+index+')">删除</a>';
         }
 
         function editUser(index) {
             $('#dg').datagrid('selectRow', index);
+			
             var row = $('#dg').datagrid('getSelected');
             if (row){
 				console.log('senorrow',row);
@@ -347,7 +348,7 @@
 
      
     </div>
-    <table id="dg" class="easyui-datagrid"
+    <table id="dg" class="easyui-datagrid" style="width:100%,height:70%"
            url="../ajaction/v1/?menuid=111011&cmd=qry&t=1" rownumbers="false" pagination="true" striped="true">
         <thead>
         <tr>

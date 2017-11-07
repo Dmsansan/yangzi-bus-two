@@ -11,6 +11,7 @@
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
+	var carNumber;
 	    function Option(value, row, index) {
             return '<a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px;" onclick="uninstallData('+index+')">卸载轮胎</a>';
 			}
@@ -29,12 +30,21 @@
 						type:'post',
 						data:{'tire_id':tire_id},
 						success:function(data){
-							console.log('jieshu',data);
+							if(data.status="OK"){
+								console.log('jieshu',data);
+								$('#tire_alarm').dialog('close');
+								loadgrid(carNumber);
+							console.log('sdfghjk',carNumber);
+							}
+							
 						}
 					});
 				})
             }
         }
+		function tirereload(){
+			
+		}
 			
 		$(function(){
 			
@@ -201,6 +211,7 @@
 			$('#dg').datagrid({
 				onSelect:function(index,data){
 					var number=data.plate_no;
+					carNumber=number;
 					loadgrid(number);					
 				}
 			})
@@ -233,7 +244,6 @@
 					dataType:'json',
 					type:'post',
 					success:function(data){
-						console.log('lll',data);
 						if(data.status!='OK'){
 							$.messager.alert('警告','错误','info');
 						}else{
@@ -244,11 +254,16 @@
                             timeout:3000,
                             showType:'show',  
                             });
+							loadgrid(carNumber);
+							$('#tire_dlg').dialog('close');
 						}
 					}
 				});
 			})
-		}
+		}   
+		
+		
+		
 		//加载数据
 		function loadgrid(plateNumber){
 			var plate_no =plateNumber;
@@ -258,8 +273,13 @@
 				type:'GET',
 				success:function(data){
 					console.log('success',data);
-					
+					if(data.Rows){
 					$('#tire_dg').datagrid('loadData',data.Rows);
+					}else{
+					/* $('#tire_dg').datagrid('loadData',data.Rows); */
+					$('#tire_dg').datagrid('loadData', []);
+					}
+					
 					
 				}
 			})
@@ -597,7 +617,7 @@
             </table>
         </div>
     </div>
-	 <div id="tire_alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
+	 <div id="tire_alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 166px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
         <div style="background-color: #ffffff;height:121px;margin:1px;">
 
             <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">数据删除无法恢复，确定删除？</span>

@@ -390,8 +390,6 @@
             <th data-options="field:'speed_ul',width:'8%'">速度上限</th>
             <th data-options="field:'tkph_val',width:'8%'">TKPH值</th>
             <th data-options="field:'baro_val',width:'10%'">标准冲气压力</th>
-            <th data-options="field:'mainterance1',width:'5%'">一保</th>
-            <th data-options="field:'mainterance2',width:'5%'">二保</th>
             <th data-options="field:'rated_mile',width:'8%'">额定里程</th>
             <th data-options="field:'_operate',width:'10%',formatter:formatOption">操作</th>
         </tr>

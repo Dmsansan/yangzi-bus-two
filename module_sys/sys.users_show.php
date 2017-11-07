@@ -116,7 +116,8 @@
 				}else{
 					is_term='Y';
 				}
-			var store_id_val=$('#up_storeid').val();
+			var store_id_val=$('#up_carTeam').combobox('getValue');
+			console.log('store_id_val',store_id_val);
 			$.ajax({
 				url:'../ajaction/v1/?menuid=101011&cmd=edit',
 				type:'post',
@@ -151,13 +152,14 @@
 					is_term='Y';
 				}
 				
-				console.log('role_id',is_term);
+			
                 var store_id=$('#carTeam').combobox('getValue');
+					console.log('store_id',store_id);
                 $.ajax({
                 url:'../ajaction/v1/?menuid=101011&cmd=add',
-				data:{'admin_name':admin_name,'real_name':real_name,'role_id_val':role_id_val,'tel':tel,'admin_pass':admin_pass,'mobile':mobile,'email':email,'remark':remark,'is_term':is_term,'store_id':store_id},
+				data:{'admin_name':admin_name,'real_name':real_name,'role_id_val':role_id_val,'tel':tel,'admin_pass':admin_pass,'mobile':mobile,'email':email,'remark':remark,'is_term':is_term,'store_id_val':store_id},
 				success:function(data){
-					$('#addUser').dialog('open')
+					$('#addUser').dialog('close');
 					 $.messager.show({
                             title : '操作成功',
                             msg:'用户添加成功！',
@@ -218,12 +220,13 @@
 				 }else{
 					$('#up_check').attr('checked',false); 
 				 }
-					$('#up_carTeam').combobox('setValue',row.store_name);
+					$('#up_carTeam').combobox('setValue',row.store_id);
+					$('#up_carTeam').combobox('setText',row.store_name);
 					$('#up_tel').textbox('setValue',row.tel);
 					$('#up_phone').textbox('setValue',row.mobile);
 					$('#up_email').textbox('setValue',row.email);
 					$('#up_remark').textbox('setValue',row.remark);
-					$('#up_storeid').val(row.store_id);
+				
             }
         };
         //删除操作
@@ -421,7 +424,6 @@
                         所属车队：
                     </td>
                     <td>
-					<input id="up_storeid" style="display:none; width: 150px;" />
                         <input id="up_carTeam" class="easyui-textbox" style="width: 150px;" />
                     </td>
                 </tr>

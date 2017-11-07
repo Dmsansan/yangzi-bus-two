@@ -178,8 +178,8 @@
             
             manager=$("#maingrid4").ligerGrid({
                 checkbox: false,
-                columns: [{display: '时间', name: 'Time',width:200},
-					{display:"信息",name:'info',aligin:'center',width:60,render:
+                columns: [{display: '时间', name: 'Time',width:'10%'},
+					{display:"信息",name:'info',aligin:'center',width:'5%',render:
 						function (row,rowindex, value, column) {
 							
 							var html="";
@@ -191,11 +191,6 @@
 							if(row.overflow_temp1>0 || row.overflow_temp2>0 || row.overflow_temp3>0 || row.overflow_temp4>0 || row.overflow_temp5>0 || row.overflow_temp6>0){
 								nalarm=1;
 							}	
-							/*if(nalarm>0){
-								html="<div id=\"message"+rowindex+"\" class=\"message\"><img src='../images/icon/info_1.png' onclick=\"showMessage('message"+rowindex+"')\"/></div>";
-							}else{
-								html="<div id=\"message"+rowindex+"\" class=\"message\"><img src='../images/icon/info_0.png' onclick=\"showMessage('message"+rowindex+"')\"/></div>";
-							}*/
 							if(nalarm>0){
 								html="<img src='../images/icon/tips-selected.png' onclick=\"showMessage('"+row.Plate_No+"')\"/>";
 								
@@ -206,27 +201,15 @@
 						
 						}					
 					},
-				{display: '车牌号码', name: 'Plate_No',width:260},
-				/*
-				{display: '速度', name: 'speed',align:'left',width:80,
-					render: function (row,rowindex, value, column) {  
-						//alert(column);
-						
-						if(typeof(row.overflow_speed)=="undefined"){
-							return "<div style='text-align: center'>-</div>";
-						}
-						var html = row.overflow_speed <=0 ? row.speed: "<span style='color:red'>"+row.speed+"</span>";  
-						return html;
-					 
-				},*/
-				{display: '累计里程(Km)', name: 'mile_count',width:200},
+				{display: '车牌号码', name: 'Plate_No',width:'10%'},
+				{display: '累计里程(Km)', name: 'mile_count',width:'10%'},
                 <?php
 					$i=1;
 					for($i;$i<=6;$i++){
 				?>
                 { display:gettirename(<?php echo $i;?>), columns:
                 [
-                    { display: '压力(Kg)', name: 'pressure<?php echo $i;?>', width: 80 ,
+                    { display: '压力(Kg)', name: 'pressure<?php echo $i;?>', width:'5%' ,
 						render: function (row,rowindex, value, column) {  
 						
 							if(typeof(row.overflow_pressure<?php echo $i;?>)=="undefined"){
@@ -236,7 +219,7 @@
 							return html;
 						}
 					}, 
-                    { display: '温度(℃)', name: 'temp<?php echo $i;?>', width: 80,
+                    { display: '温度(℃)', name: 'temp<?php echo $i;?>', width:'5%',
 						render: function (row,rowindex, value, column) {  
 						
 							if(typeof(row.overflow_temp<?php echo $i;?>)=="undefined"){
@@ -296,14 +279,14 @@
 			
 		selectRow=$('#tablemessage').ligerGrid({
 						checkbox: false,
-						columns: [{display: '轮胎编号', name: 'tire_rfid',width:100},
+						columns: [{display: '轮胎编号', name: 'tire_rfid',width:90},
 							{display:"轮胎号位",name:'place',aligin:'center',width:50},
 							{display: '品牌', name: 'company_name',width:80},
 							{display: '花纹深度', name: 'figure_value',width:90},
 							{display: '累计里程(Km)', name: 'mile_count',width:80},
 							{display: '装胎时间', name: 'fst_place_stamp',width:130},
-							{display: '报警次数', name: 'info_7',width:70},
-							{display: '是否翻新', name: 'info_8',width:70}           
+							{display: '报警次数', name: 'info_7',width:60},
+							{display: '是否翻新', name: 'info_8',width:60}           
 						],
 					
 			});
@@ -499,7 +482,7 @@ function selectgridRow(index){
   <div style="display:none;">
   
 </div>
-<div id='dialog' style="width:1078px;height:440px;position:absolute;left:300px;top:100px;display:none;">
+<div id='dialog' style="width:980px;height:440px;position:absolute;left:5%;top:5%;display:none;">
 <div style="height:40px;background:#353c49">
 <span style="margin-left:10px;color:#ffffff;line-height:40px;font-size:14px;">车辆信息</span>
 <button id="test" style="height:20px;width:20px; background: url('../images/shutdown.png') no-repeat center center;border:none;float:right;margin-right:10px;margin-top:10px;"></button>

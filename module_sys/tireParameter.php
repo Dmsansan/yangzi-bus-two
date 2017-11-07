@@ -282,7 +282,7 @@
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
         <input id="search_brand_name" placeholder="品牌名称" /> <button id="search">搜索</button><button style="float: right;margin-top: 15px;" onclick="addUser()">增加</button>
     </div>
-    <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 400px;">
+    <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 400px;background-color: #bdc4d4;">
     <div style="background-color: #ffffff;height:340px;margin:10px;">
         <span id="message">参数信息</span>
         <table id="aa" style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
@@ -342,7 +342,7 @@
         </table>
     </div>
     </div>
-    <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true" style="width:700px;height: 400px;">
+    <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true" style="width:700px;height: 400px;background-color: #bdc4d4">
     <div style="background-color: #ffffff;height:340px;margin:10px;">
         <span id="addmessage">参数信息</span>
         <table id="cc" style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">

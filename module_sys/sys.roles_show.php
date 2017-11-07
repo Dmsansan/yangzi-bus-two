@@ -111,7 +111,7 @@
 				$.ajax({
 					url:'../ajaction/v1/?menuid=101010&cmd=edit',
 					type:'POST',
-					data:{'title':title,'role_id':role_id,'remark':remark,'module_list':module_list,'module_list_val':module_list_val,'Operlist':operlist},
+					data:{'title':title,'role_id':role_id,'remark':remark,'module_list':module_list,'module_list_val':module_list_val,'operlist':operlist},
 					success:function(data){
 						 $.messager.show({
                             title : '操作成功',
@@ -147,7 +147,6 @@
 
 					reload();
 					$('#addUser').dialog('close');
-				console.log('data',data);
 				}
 			})
 			
@@ -193,7 +192,7 @@
 				$('#module_id').val(row.modules_list_val);
 				  $('#title').textbox('setValue',row.title);
 				 $('#roles').combotree('setValue',row.modules_list)
-				 $('#operate').combobox('setValue',row.operlist);
+				 $('#operate').combobox('setValue',row.operlist);//setValue;
 				 $('#remark').textbox('setValue',row.remark);
 				 console.log('module_id',row.modules_list_val);
             }
@@ -333,11 +332,7 @@
     <input type="text" id="rolesName" placeholder="角色编号"/> <button id="search">搜索</button>
     <button id="add" style="float: right; margin-top: 15px;">增加</button>
     </div>
-<<<<<<< HEAD
-    <table id="dg" class="easyui-datagrid" url="../ajaction/v1/?menuid=101010&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true" >
-=======
     <table id="dg" class="easyui-datagrid" url="../ajaction/v1/?menuid=101010&cmd=qry&t=1" rownumbers="false" pagination="true" striped="true">
->>>>>>> 6899dcdc01aa0d16222a68d6e5b09ad54d1dd3f9
         <thead>
         <tr>
             <th field="role_id" width="15%" sortable="true">角色编号</th>
