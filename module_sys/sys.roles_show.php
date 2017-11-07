@@ -333,11 +333,7 @@
     <input type="text" id="rolesName" placeholder="角色编号"/> <button id="search">搜索</button>
     <button id="add" style="float: right; margin-top: 15px;">增加</button>
     </div>
-<<<<<<< HEAD
     <table id="dg" class="easyui-datagrid" url="../ajaction/v1/?menuid=101010&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true" >
-=======
-    <table id="dg" class="easyui-datagrid" url="../ajaction/v1/?menuid=101010&cmd=qry&t=1" rownumbers="false" pagination="true" striped="true">
->>>>>>> 6899dcdc01aa0d16222a68d6e5b09ad54d1dd3f9
         <thead>
         <tr>
             <th field="role_id" width="15%" sortable="true">角色编号</th>
