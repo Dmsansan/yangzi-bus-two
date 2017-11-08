@@ -153,6 +153,22 @@
 					}
 				})
 			});
+			//搜索操作
+			$('#searchButton').on('click',function(){
+				var plate_no =$('#searchnumber').val();
+				$.ajax({
+					url:"../ajaction/v1/?menuid=121010&cmd=qry",
+					dataType:'json',
+					data:{'plate_no':plate_no},
+					success:function(data){
+				if(data.Rows){
+					$('#dg').datagrid('loadData',data.Rows);
+				}else{
+					$.messager.alert('提示','没有该车辆!','info');
+				}
+				}
+				})
+			})
 			
 			//安装轮胎
 			$('#install_tire').on('click',function(){
@@ -541,8 +557,8 @@
        <div id="toolbar" style="height:34px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:10px">
            
             <div id="t-bottom">
-                <input data-options="prompt:'车牌号码'" class="easyui-textbox" />
-                <button style="display: inline-block;margin-right: 10px;margin-left: 10px;">搜索</button>
+                <input id="searchnumber" data-options="prompt:'车牌号码'" class="easyui-textbox" />
+                <button id="searchButton"  style="display: inline-block;margin-right: 10px;margin-left: 10px;">搜索</button>
 				<button id="add" style="display: inline-block; float:right;margin-right: 10px;">增加</button>
             </div>
         </div>

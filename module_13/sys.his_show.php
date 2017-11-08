@@ -30,7 +30,25 @@
 				}
 			});	 
 			});
-			
+		//搜索操作	
+		$('#dlg_search').on('click',function(){
+			var plate_no=$('#dlg_input').textbox('getText');
+				$.ajax({
+					url:"../ajaction/v1/?menuid=121010&cmd=qry",
+					dataType:'json',
+					data:{'plate_no':plate_no},
+					success:function(data){
+						console.log('data',data);
+				if(data.Rows){
+					
+					$('#sss').datagrid('loadData',data.Rows);
+				}else{
+					$.messager.alert('提示','没有该车辆!','info');
+				}
+				}
+				})
+		})
+		//创建表格
 		$('#datatable').datagrid({
 			width:'100%',
 			toolbar:'#toolbar',
@@ -224,7 +242,7 @@
 					<button id='updata_close' style="margin-top:10px;"><a style="text-decoration: none" href="#"></a></button>
 	</div>
         <div id="dlg_tb" style="">
-            <input type="text" class="easyui-textbox" placeholder="角色名称"/> <button>搜索</button>
+            <input id="dlg_input" type="text" class="easyui-textbox" placeholder="角色名称"/> <button id="dlg_search">搜索</button>
         </div>
         <div>
 
