@@ -407,7 +407,7 @@
                             <li><a onclick="addTab('用户管理','module_sys/sys.users_show.php')" >用户管理</a></li>
                       
                             <li><a onclick="addTab('修理厂管理','module_sys/repairDepotManger.php')">修理厂管理</a></li>
-                            <li><a onclick="addTab('轮胎基础参数管理','module_sys/tireParameter.php')">轮胎基本参数管理</a></li>
+                            <li><a onclick="addTab('轮胎基本参数管理','module_sys/tireParameter.php')">轮胎基本参数管理</a></li>
                             <li><a onclick="addTab('车载终端管理','module_sys/sys.vehicle_show.php')">车载终端管理</a></li>
                         </ul>
             </div>

@@ -68,7 +68,7 @@
 				})
 			});
             //批量添加传感器
-            $('#all_save').bind('click',function(){						
+            $('#all_save').bind('click',function(){					
                 //alert('2313');
                 var sensor_no=$('#all_sensorNumber').textbox('getText');
                 var sensor_num=$('#tire_Number').combobox('getValue');

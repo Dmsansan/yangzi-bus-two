@@ -1,0 +1,64 @@
+
+------------------
+-时间:02:12:04-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎替换管理',now(),,'卸载','苏A966在00000000004号位卸载了轮胎')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''卸载','苏A966在00000000004号位卸载了轮胎')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=removeTire-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:02:12:04-
+-错误信息:错误的SQL语句: [select id,install_stamp from tire_exchg_log where tire_id='2' 
+                    and bus_id='3' 
+                    and place='00000000004'
+                    and uninstall_stamp='0000-00-00 00:00:00'
+                    and action='装上' order by log_stamp desc limit 1]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=removeTire-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:02:12:04-
+-错误信息:错误的SQL语句: [insert into tire_exchg_log (tire_id,bus_id,v_term_id,place,
+                        install_stamp,uninstall_stamp,mile_count,stamp_count,action,log_stamp) value
+                        ('2','3','3','00000000004',
+                        NOW(),NOW(),'0',0,'装上',NOW())]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=removeTire-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:02:12:26-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('轮胎替换管理',now(),,'安装','苏A669在3号位安装了轮胎')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''安装','苏A669在3号位安装了轮胎')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8FA669&tire_id_val=2&place_no_val=3-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:02:12:26-
+-错误信息:错误的SQL语句: [insert into tire_exchg_log (tire_id,bus_id,v_term_id,place,
+                    install_stamp,uninstall_stamp,mile_count,stamp_count,action,log_stamp) value
+                    ('2','4','2','3',
+                    NOW(),'0000-00-00 00:00:00','0',0,'装上',NOW())]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8FA669&tire_id_val=2&place_no_val=3-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:02:12:26-
+-错误信息:错误的SQL语句: [update tire_info set exchg_id='' where tire_id='2']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8FA669&tire_id_val=2&place_no_val=3-
+-错误页面地址:http://localhost/YangziBus2/module_12/vehicle.php-
+------------------

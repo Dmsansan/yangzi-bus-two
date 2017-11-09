@@ -122,7 +122,7 @@
 			})
         })
         function formatOption(value, row, index) {
-            return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; " onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+            return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; " onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:4px;" onclick="deletData('+index+')">删除</a>';
         }
 
         function editUser(index) {
@@ -281,6 +281,7 @@
             <th data-options="field:'norms_name',width:'10%'">轮胎规格</th>
             <th data-options="field:'class_name',width:'8%'">层级</th>
             <th data-options="field:'figure_name',width:'8%'">花纹</th>
+			<th data-options="field:'figure_height',width:'8%'">花纹深度</th>
             <th data-options="field:'brand_name',width:'8%'">品牌</th>
             <th data-options="field:'status',width:'10%'">状态</th>
             <th data-options="field:'speed_ul',width:'10%'">速度上限</th>

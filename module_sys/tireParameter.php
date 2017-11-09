@@ -213,7 +213,7 @@
             }
 
             function formatOption(value, row, index) {
-               return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+               return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
             }
             var url;
             //装填修改dialog
@@ -265,7 +265,7 @@
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #f1f6fd">
 <div  class="u-content">
     <table id="dg" class="easyui-datagrid"
-           data-options="singleSelect:true,url:'../../datagrid_data1.json',method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
+           data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
         <thead>
         <tr>
             <!--<th data-options="field:'itemid',width:200">参数编号</th>-->
@@ -273,9 +273,11 @@
 
             <th data-options="field:'norms_name',width:255">规格名称</th>
             <th data-options="field:'class_name',width:250">层级名称</th>
-            <th data-options="field:'figure_name',width:450">花纹名称</th>
-            <th data-options="field:'remark',width:305">备注</th>
-            <th data-options="field:'_operate',width:220,formatter:formatOption">操作</th>
+            <th data-options="field:'figure_name',width:280">花纹名称</th>
+            <th data-options="field:'figure',width:280">轮胎数量</th>
+			
+            <th data-options="field:'remark',width:200">备注</th>
+            <th data-options="field:'_operate',width:200,formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>

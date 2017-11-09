@@ -167,7 +167,7 @@
         }
 
         function formatOption(value, row, index) {
-                return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+                return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
         }
         function editUser(index) {
             $('#dg').datagrid('selectRow', index);
@@ -391,7 +391,7 @@
             <th data-options="field:'tkph_val',width:'8%'">TKPH值</th>
             <th data-options="field:'baro_val',width:'10%'">标准冲气压力</th>
             <th data-options="field:'rated_mile',width:'8%'">额定里程</th>
-            <th data-options="field:'_operate',width:'10%',formatter:formatOption">操作</th>
+            <th data-options="field:'_operate',width:'8%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>

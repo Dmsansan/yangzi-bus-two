@@ -47,7 +47,7 @@
 				{title: '右后外侧',width:'20%',colspan:2},
 				],
 				[
-				{title:'压力',width:'5%',field:'pressure1'},
+				{title:'压力',width:'5%',field:'pressure1' formatter:},
 				{title:'温度',width:'5%',field:'temp1'},
 				{title:'压力',width:'5%',field:'pressure2'},
 				{title:'温度',width:'5%',field:'temp2'},

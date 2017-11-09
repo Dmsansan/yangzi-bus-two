@@ -246,36 +246,14 @@
 				onError:f_onError,
 				isChecked: f_isChecked, 
 				pageStatMessage: '显示从{from}到{to}，总车辆数 {total} 辆 。每页显示：{pagesize}',
-				/*
-				onCheckRow: f_onCheckRow, 
-				onCheckAllRow: f_onCheckAllRow,*/
 				onContextmenu : function (parm,e)
                 {
                     //actionCustomerID = parm.data.CustomerID;
                     menu.show({ top: e.pageY, left: e.pageX });
                     return false;
                 },
-				//totalRender:f_totalRender
-				/*pagerRender: function ()
-                {
-                    
-                    var html = [];
-                    html.push('<div style="line-height:32px;padding-right:10px;float:right;">');
-                    if (this.get('newPage') == this.get('pageCount'))
-                    {
-                        //html.push('<span>总共：' + this.get('total') + '页</span> ');
-						html.push('<span>总车辆数：' + this.get('total') + ' 辆</span> ');
-                    } else
-                    {
-                        //html.push('<span>已加载：' + this.get('newPage') + '页</span> ');
-                        //html.push('<span>,</span> ');
-                        html.push('<span>总车辆数：' + this.get('total') + ' 辆</span> ');
-                    
-                    } html.push('</div>');
-                    return html.join('');
-                }*/
+				
             });			
-            //setInterval("f_reload()", 45000);
 			
 		selectRow=$('#tablemessage').ligerGrid({
 						checkbox: false,
@@ -527,14 +505,13 @@ function selectgridRow(index){
 
 
 </div>
-<div  style="float:left;background-color:#f1f6fd">
-<div style="height:40px;background-color:#ffffff">
-<span  style="line-height:40px;margin-left:10px;font-size:14px;">轮胎信息</span>
-</div>
-<div id="tablemessage"></div>
-
-
-</div>
+	<div  style="float:left;background-color:#f1f6fd">
+			<div style="height:40px;background-color:#ffffff">
+			<span  style="line-height:40px;margin-left:10px;font-size:14px;">轮胎信息</span>
+			</div>
+	<div id="tablemessage">
+	</div>
+	</div>
 </div>
 </div>
 <div>

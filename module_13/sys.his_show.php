@@ -68,20 +68,92 @@
 				{title: '右后外侧',width:'20%',colspan:2},
 				],
 				[
-				{title:'压力',width:'5%',field:'pressure1'},
-				{title:'温度',width:'5%',field:'temp1'},
-				{title:'压力',width:'5%',field:'pressure2'},
-				{title:'温度',width:'5%',field:'temp2'},
-				{title:'压力',width:'5%',field:'pressure3'},
-				{title:'温度',width:'5%',field:'temp3'},
-				{title:'压力',width:'5%',field:'pressure4'},
-				{title:'温度',width:'5%',field:'temp4'},
-				{title:'压力',width:'5%',field:'pressure5'},
-				{title:'温度',width:'5%',field:'temp5'},
-				{title:'压力',width:'5%',field:'pressure6'},
-				{title:'温度',width:'5%',field:'temp6'},
+				{title:'压力',width:'5%',field:'pressure1', formatter:function(value,row,index){
+					if(typeof(row.overflow_pressure1)=="undefined"){
+								return "<div style='text-align: left'>-</div>";
+							}
+							var html = row.overflow_pressure1 <=0 ? row.pressure1: "<span style='color:red'>"+row.pressure1+"</span>";  
+							return html;
+				}},
+				{title:'温度',width:'5%',field:'temp1', formatter:function(value,row,index){
+					if(typeof(row.overflow_temp1)=="undefined"){
+								return "<div style='text-align: left'>-</div>";
+							}
+							var html = row.overflow_temp1 <=0 ? row.temp1: "<span style='color:red'>"+row.temp1+"</span>";  
+							return html;
+				}},
+				{title:'压力',width:'5%',field:'pressure2',formatter:function(value,row,index){
+					if(typeof(row.overflow_pressure2)=="undefined"){
+								return "<div style='text-align: left'>-</div>";
+							}
+							var html = row.overflow_pressure2 <=0 ? row.pressure2: "<span style='color:red'>"+row.pressure2+"</span>";  
+							return html;
+				}},
+				{title:'温度',width:'5%',field:'temp2',formatter:function(value,row,index){
+					if(typeof(row.overflow_temp2)=="undefined"){
+								return "<div style='text-align: left'>-</div>";
+							}
+							var html = row.overflow_temp2 <=0 ? row.temp2: "<span style='color:red'>"+row.temp2+"</span>";  
+							return html;
+				}},
+				{title:'压力',width:'5%',field:'pressure3',formatter:function(value,row,index){
+					if(typeof(row.overflow_pressure3)=="undefined"){
+								return "<div style='text-align: left'>-</div>";
+							}
+							var html = row.overflow_pressure3<=0 ? row.pressure3: "<span style='color:red'>"+row.pressure3+"</span>";  
+							return html;
+				}},
+				{title:'温度',width:'5%',field:'temp3',formatter:function(value,row,index){
+					if(typeof(row.overflow_temp3)=="undefined"){
+								return "<div style='text-align: left'>-</div>";
+							}
+							var html = row.overflow_temp3<=0 ? row.temp3: "<span style='color:red'>"+row.temp3+"</span>";  
+							return html;
+				}},
+				{title:'压力',width:'5%',field:'pressure4',formatter:function(value,row,index){
+					if(typeof(row.overflow_pressure4)=="undefined"){
+								return "<div style='text-align: left'>-</div>";
+							}
+							var html = row.overflow_pressure4<=0 ? row.pressure4: "<span style='color:red'>"+row.pressure4+"</span>";  
+							return html;
+				}},
+				{title:'温度',width:'5%',field:'temp4',formatter:function(value,row,index){
+					if(typeof(row.overflow_temp4)=="undefined"){
+								return "<div style='text-align: left'>-</div>";
+							}
+							var html = row.overflow_temp4<=0 ? row.temp4: "<span style='color:red'>"+row.temp4+"</span>";  
+							return html;
+				}},
+				{title:'压力',width:'5%',field:'pressure5',formatter:function(value,row,index){
+					if(typeof(row.overflow_pressure5)=="undefined"){
+								return "<div style='text-align: left'>-</div>";
+							}
+							var html = row.overflow_pressure5<=0 ? row.pressure5: "<span style='color:red'>"+row.pressure5+"</span>";  
+							return html;
+				}},
+				{title:'温度',width:'5%',field:'temp5',formatter:function(value,row,index){
+					if(typeof(row.overflow_temp5)=="undefined"){
+								return "<div style='text-align: left'>-</div>";
+							}
+							var html = row.overflow_temp5<=0 ? row.temp5: "<span style='color:red'>"+row.temp5+"</span>";  
+							return html;
+				}},
+				{title:'压力',width:'5%',field:'pressure6',formatter:function(value,row,index){
+					if(typeof(row.overflow_pressure6)=="undefined"){
+								return "<div style='text-align: left'>-</div>";
+							}
+							var html = row.overflow_pressure6<=0 ? row.pressure6: "<span style='color:red'>"+row.pressure6+"</span>";  
+							return html;
+				}},
+				{title:'温度',width:'5%',field:'temp6',formatter:function(value,row,index){
+					if(typeof(row.overflow_temp6)=="undefined"){
+								return "<div style='text-align: left'>-</div>";
+							}
+							var html = row.overflow_temp6<=0 ? row.temp6: "<span style='color:red'>"+row.temp6+"</span>";  
+							return html;
+				}},
                ]],
-		})
+		})	
 		$('#updata_save').bind('click',function(){
 				var row = $('#sss').datagrid('getSelected');
 				if(row){
@@ -132,10 +204,11 @@
 				data:{'begin_date':starDate,'end_date':stopDate,'plate_no_val':carplate,'place_no':tireCount},
 				success:function(data){
 					console.log('haole',data);
+					
 					$('#datatable').datagrid('loadData',data.Rows);
 				}
 			})
-		})
+		})    
 		
 	}
 	

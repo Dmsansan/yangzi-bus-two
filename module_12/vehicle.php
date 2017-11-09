@@ -358,7 +358,7 @@
 		border: 1px solid #1c66dc;
 		height: 25px;
 		line-height: 2px;
-		width: 100px;
+		width: 60px;
 		background-color: white;
 		border-radius: 20px;
 		vertical-align: middle;
@@ -558,8 +558,8 @@
            
             <div id="t-bottom">
                 <input id="searchnumber" data-options="prompt:'车牌号码'" class="easyui-textbox" />
-                <button id="searchButton"  style="display: inline-block;margin-right: 10px;margin-left: 10px;">搜索</button>
-				<button id="add" style="display: inline-block; float:right;margin-right: 10px;">增加</button>
+                <button id="searchButton"  style="margin-left: 10px;">搜索</button>
+				<button id="add" style="margin-right: 10px;">增加</button>
             </div>
         </div>
         </div>
