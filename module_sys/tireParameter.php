@@ -110,16 +110,6 @@
                 $('#addUser').window('open').window('setTitle','新增参数');
             };
             $(function () {
-                //装载数据操作
-                $.ajax({
-                    url:'../ajaction/v1/?menuid=101112&cmd=qry&t=1',
-                    type:'post',
-                    dataType:'json',
-                    success:function(data){
-                    $("#dg").datagrid("loadData", data.Rows);  
-                        console.log('data',data);
-                    }                           
-                });
                 //增加操作
                 $('#save').bind('click',function(){
                 var brand_name=$('#brand_name').textbox('getText');
@@ -185,7 +175,7 @@
                     data:{'brand_name':brand_name},
                     dataType:'json',
                     success:function(data){
-                        $("#dg").datagrid("loadData", data.Rows);    
+                        $("#dg").datagrid("loadData", data.rows);    
                     }
                 });
                 
@@ -206,7 +196,7 @@
                     type:'post',
                     dataType:'json',
                     success:function(data){
-                    $("#dg").datagrid("loadData", data.Rows);  
+                    $("#dg").datagrid("loadData", data.rows);  
                         console.log('data',data);
                     }                           
                 });
@@ -264,8 +254,11 @@
 </head>
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #f1f6fd">
 <div  class="u-content">
+    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+        <input id="search_brand_name" placeholder="品牌名称" /> <button id="search">搜索</button><button style="float: right;margin-top: 15px;" onclick="addUser()">增加</button>
+    </div>
     <table id="dg" class="easyui-datagrid"
-           data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
+           url="../ajaction/v1/?menuid=101112&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true">
         <thead>
         <tr>
             <!--<th data-options="field:'itemid',width:200">参数编号</th>-->
@@ -281,9 +274,7 @@
         </tr>
         </thead>
     </table>
-    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-        <input id="search_brand_name" placeholder="品牌名称" /> <button id="search">搜索</button><button style="float: right;margin-top: 15px;" onclick="addUser()">增加</button>
-    </div>
+   
     <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 400px;background-color: #bdc4d4;">
     <div style="background-color: #ffffff;height:340px;margin:10px;">
         <span id="message">参数信息</span>

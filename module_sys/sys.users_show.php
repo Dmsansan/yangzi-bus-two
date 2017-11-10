@@ -75,17 +75,6 @@
                 }
 
             });
-			//获取user
-            $.ajax({
-                url: '../ajaction/v1/?menuid=101011&cmd=qry&t=1',
-                type: 'post',
-                dataType: 'json',
-                success: function(data) {
-                    var obj = eval(data);
-                    $("#dg").datagrid("loadData", data.Rows);
-                    console.log('data', obj);
-                }
-            });
 			//搜索操作：
 			$('#search').bind('click',function(){
 				var username = $('#username').val();
@@ -95,7 +84,7 @@
                     data:{'admin_name':username},
                     dataType:'json',
                     success:function(data){
-                        $("#dg").datagrid("loadData", data.Rows);
+                        $("#dg").datagrid("loadData", data.rows);
                     }	
 				})
 			});
@@ -190,8 +179,7 @@
                 type: 'post',
                 dataType: 'json',
                 success: function(data) {
-                    $("#dg").datagrid("loadData", data.Rows);
-                 
+                    $("#dg").datagrid("loadData", data.rows);
                 }
             });
         }
@@ -354,14 +342,19 @@
             background: url("../css/img/cancel_selected.png") no-repeat;
 
         }
-
-      
 		</style>
 </head>
 
 <body class="easyui-layout">
     <div class="u-content">
-        <table id="dg" class="easyui-datagrid" data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
+        <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+            <input id="username" type="text" placeholder="用户名称" />
+            <button id="search">搜索</button>
+           <button id="add"  style="float: right; margin-top: 15px;">增加</button>
+        </div>
+        <table id="dg" class="easyui-datagrid" url="../ajaction/v1/?menuid=101011&cmd=qry&t=1"
+            striped="true" rownumbers="false" pagination="true"
+        >
             <thead>
                 <tr>
                     <th data-options="field:'admin_id',width:'10%'">用户编号</th>
@@ -370,15 +363,11 @@
                     <th data-options="field:'role_title',width:'10%'">角色</th>
                     <th data-options="field:'store_name',width:'10%'">归属车队</th>
                     <th data-options="field:'remark',width:'25%'">说明</th>
-                    <th data-options="field:'_operate',width:'26%',formatter:formatOption">操作</th>
+                    <th data-options="field:'_operate',width:'25%',formatter:formatOption">操作</th>
                 </tr>
             </thead>
         </table>
-        <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-            <input id="username" type="text" placeholder="用户名称" />
-            <button id="search">搜索</button>
-           <button id="add"  style="float: right; margin-top: 15px;">增加</button>
-        </div>
+        
         <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:650px;height: 400px;background-color: #bdc4d4">
 		<div style="background-color: #ffffff;height:340px;margin:10px;">           
 		   <span style=" display: inline-block; margin-left: 10px; font-size: 14px; margin-top: 10px; font-family: 微软雅黑;">基本信息</span>
@@ -421,7 +410,7 @@
                         <input id="up_check"  type="checkbox" style="width:16px;height:16px;" />
                     </td>
                     <td>
-                        所属车队：
+                        所属修理厂：
                     </td>
                     <td>
                         <input id="up_carTeam" class="easyui-textbox" style="width: 150px;" />
@@ -520,7 +509,7 @@
                         <input id="check" type="checkbox" style="width:50px;" />
                     </td>
                     <td>
-                        所属车队：
+                        所属修理厂：
                     </td>
                     <td>
                         <input id="carTeam"  style="width: 150px;" />

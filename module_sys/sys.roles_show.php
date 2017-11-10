@@ -33,7 +33,7 @@
 							console.log('search',data);
 						
 							$('#dg').datagrid('loadData', { total: 0, rows: [] });  
-							 $("#dg").datagrid("loadData",data.Row); 
+							 $("#dg").datagrid("loadData",data.row); 
 						}
 						
 					})
@@ -329,7 +329,7 @@
 </head>
 <body class="easyui-layout" style="width:100%; height: 100%;">
 <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-    <input type="text" id="rolesName" placeholder="角色编号"/> <button id="search">搜索</button>
+    <input type="text" id="rolesName" placeholder="角色名称"/> <button id="search">搜索</button>
     <button id="add" style="float: right; margin-top: 15px;">增加</button>
     </div>
     <table id="dg" class="easyui-datagrid" url="../ajaction/v1/?menuid=101010&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true" >
@@ -337,8 +337,8 @@
         <tr>
             <th field="role_id" width="15%" sortable="true">角色编号</th>
             <th data-options="field:'title',width:'15%'">角色名称</th>
-            <th data-options="field:'modules_list',width:'15%'">模块列表</th>
-            <th data-options="field:'remark',width:'30%'">说明</th>
+            <th data-options="field:'modules_list',width:'30%'">模块列表</th>
+            <th data-options="field:'remark',width:'15%'">说明</th>
             <th data-options="field:'_operate',width:'25%',formatter:formatOption">操作</th>
         </tr>
         </thead>
