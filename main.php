@@ -466,7 +466,7 @@
             <div title="报表分析" data-options="iconCls:'icon-filter'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
-                        <a onclick="addTab('轮胎里程报表','module_13/tirecourse.php')"> 轮胎里程报表</a>
+                        <a style="font-size:13px;" onclick="addTab('车辆轮胎时长里程报表','module_13/tirecourse.php')"> 车辆轮胎时长里程报表</a>
                     </li>
                     <li>
                         <a onclick="addTab('轮胎保养记录报表','module_13/tireProtect.php')"> 轮胎保养记录报表</a>

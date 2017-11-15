@@ -112,9 +112,10 @@ class tire_param_info {
 		$temp_ul=mysql_escape_string(trim($_REQUEST["temp_ul"].""));
 		$tkph_val=mysql_escape_string(trim($_REQUEST["tkph_val"].""));
 		$baro_val=mysql_escape_string(trim($_REQUEST["baro_val"].""));
-		$mainterance1=mysql_escape_string(trim($_REQUEST["mainterance1"].""));
-		$mainterance2=mysql_escape_string(trim($_REQUEST["mainterance2"].""));
-        $rated_mile=mysql_escape_string(trim($_REQUEST["rated_mile"].""));
+		//$mainterance1=mysql_escape_string(trim($_REQUEST["mainterance1"].""));
+		//$mainterance2=mysql_escape_string(trim($_REQUEST["mainterance2"].""));
+		$figure_mile1=mysql_escape_string(trim($_REQUEST["figure_mile1"].""));
+        $figure_mile2=mysql_escape_string(trim($_REQUEST["figure_mile2"].""));
 
 		$tire_param_id=mysql_escape_string(trim($_REQUEST["tire_param_id"].""));
 
@@ -157,8 +158,10 @@ class tire_param_info {
 		$fields[]=" temp_ul='$temp_ul'";
 		$fields[]=" tkph_val='$tkph_val'";
 		$fields[]=" baro_val='$baro_val'";
-		$fields[]=" mainterance1='$mainterance1'";
-		$fields[]=" mainterance2='$mainterance2'";
+		//$fields[]=" mainterance1='$mainterance1'";
+		//$fields[]=" mainterance2='$mainterance2'";
+		$fields[]= " figure_mile1='$figure_mile1'";
+		$fields[]= " figure_mile2='$figure_mile2'";
 		$fields[]=" rated_mile='$rated_mile'";
 		
 		$sql.=implode(",",$fields);
@@ -253,10 +256,8 @@ class tire_param_info {
 			//$this->log->do_log($str);
 			//die("404, $str\r\n");
 		}
-
 		return;
 	}
-	
 	/**
 		命令 ajaction/v1/?menuid=111010&cmd=qrybyone&tire_param_id=参数id号
 		反回 {"tire_param_id":1, "company_name":"","brand_id":"","norms_id":"","class_id":"","figure_id":"",

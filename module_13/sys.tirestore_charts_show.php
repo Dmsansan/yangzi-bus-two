@@ -22,13 +22,10 @@
 			{field:'code',title:'轮胎品牌',width:100},
 			{field:'name',title:'轮胎规格',width:100},
 			{field:'price',title:'进库数量',width:100,align:'right'},
-			{field:'price',title:'库存数量',width:100,align:'right'},
-			{field:'price',title:'出库数量',width:100,align:'right'}
+			{field:'price',title:'出库数量',width:100,align:'right'},
+			{field:'price',title:'库存数量',width:100,align:'right'}
 			]]
-		})
-		
-		
-		
+		})	
 	})
 </script>
 <style type="text/css">
@@ -48,14 +45,24 @@
 </style>
 </head>
 <body class="easyui-layout" style="margin:0;padding:0; background-color:#f1f6fd;overflow: hidden">
-<table id="datatable">
-
-
-
-</table>
-<div id="toolbar" style="padding:20px;">
+ 	<div id="toolbar" style="padding:20px;">
 	<input class="easyui-textbox" prompt="轮胎品牌"/> <button class="searchbutton" style="vertical-align:middle">搜索 </button>
 
-</div>
+	</div>
+ 	<table id="dg" class="easyui-datagrid" style="width: 100%" url="../ajaction/v1/?menuid=131311&cmd=qry"
+          rownumbers="false" pagination="true" striped="true">
+        <thead>
+        <tr>
+            <th data-options="field:'time_add',width:300">安装时间</th>
+            <th data-options="field:'time_remove',width:300">卸载时间</th>
+            <th data-options="field:'plate_no',width:230">车辆号码</th>
+            <th data-options="field:'place_no',width:200">轮胎号位</th>
+            <th data-options="field:'tire_no',width:200">轮胎胎号</th>
+            <th data-options="field:'run_time',width:200">累计运行时长(小时/h)</th>
+            <th data-options="field:'run_mile',width:200">累计运行里程(千米/Km)</th>
+        </tr>
+        </thead>
+    </table>
+
 </body>
 </html>

@@ -136,11 +136,12 @@
             if (row){
                 $('#dlg').dialog('open').dialog('setTitle','修改信息');
                console.log('row',row);
-				/* store_name
-				$('uprepairID').combobox('set') */
+				/* store_name*/
+			   
 			   $('#up_vehicleNumber').textbox('setValue',row.v_term_no);
 			   $('#up_vehicleName').textbox('setValue',row.v_term_name);
-			   $('#up_plateNumber').textbox('setValue',row.plate_no);
+			   //$('#up_plateNumber').textbox('setValue',row.plate_no);
+                $('#uprepairID').combobox('setValue',row.store_name);       //
 				$('#up_remark').textbox('setValue',row.remark);
 				$('#up_v_term_id').val(row.v_term_id);
             }
@@ -413,7 +414,7 @@
 			<div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
         <div style="background-color: #ffffff;height:121px;margin:1px;">
 
-            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">用户删除无法恢复，确定删除？</span>
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">车载终端删除无法恢复，确定删除？</span>
         <div  style="width:100%;">
             <button id="sure"></button>
             <button id="cancel"></button>

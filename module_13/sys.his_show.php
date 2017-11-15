@@ -19,13 +19,14 @@
 		})
 		$('#tt').bind('click',function () {
 			$('#tireDlg').dialog('open').dialog('setTitle','选择数据');
+			//数据
 			$.ajax({
 				url:'../ajaction/v1/?menuid=121010&cmd=qry&t=1',
 				type:'get',
 				dataType:'json',
 				success:function(data){
-					console.log('dd',data.Rows);
-				$('#sss').datagrid('loadData',data.Rows);
+					console.log('dd',data.rows);
+				$('#sss').datagrid('loadData',data.rows);
 				$('#sss').datagrid('reload');	  
 				}
 			});	 
@@ -39,12 +40,11 @@
 					data:{'plate_no':plate_no},
 					success:function(data){
 						console.log('data',data);
-				if(data.Rows){
-					
-					$('#sss').datagrid('loadData',data.Rows);
-				}else{
-					$.messager.alert('提示','没有该车辆!','info');
-				}
+					if(data.rows){
+						$('#sss').datagrid('loadData',data.rows);
+					}else{
+						$.messager.alert('提示','没有该车辆!','info');
+					}
 				}
 				})
 		})
@@ -56,8 +56,8 @@
 			striped:'true',
 			singleSelect:'true',
 			fitColumns:'true',
-			columns: [[{title: '时间', field: 'Time',width:'10%',rowspan:'2'},
-				{title: '车牌号码', field: 'Plate_No',width:'10%',rowspan:'2'},
+			columns: [[{title: '时间', field: 'Time',width:'15%',rowspan:'2'},
+				{title: '车牌号码', field: 'Plate_No',width:'15%',rowspan:'2'},
 				/*{title: '速度', field: 'speed',width:'10%',rowspan:'2'},*/
 				{title: '累计里程(Km)', field: 'mile_count',width:'10%',rowspan:'2'},
 				{title: '左前轮',width:'20%', colspan:2},
@@ -304,8 +304,9 @@
                     fitColumns="true">
             <thead>
             <tr>
-                <th field="plate_no" width="350"  >车牌号码</th>
-                <th field="v_term_no" width="350" >车载编号</th>          
+                <th field="plate_no" width="200"  >车牌号码</th>
+                <th field="v_term_no" width="200" >车载编号</th>         
+                <th field="remark" width="250" >备注</th> 
             </tr>
             </thead>
             </table>

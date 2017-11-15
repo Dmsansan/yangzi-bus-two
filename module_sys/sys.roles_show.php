@@ -22,9 +22,7 @@
         $(function () {
 			$('#search').on('click',function(){
 				var role_id=$('#rolesName').val();
-				if(role_id==''||role_id.length==0){
-					alert('搜索框不能为空');
-				}else{
+				
 					$.ajax({
 						url:'../ajaction/v1/?menuid=101010&cmd=qrybyone&role_id='+role_id,
 						dataType:'json',
@@ -32,12 +30,11 @@
 						success:function(data){
 							console.log('search',data);
 						
-							$('#dg').datagrid('loadData', { total: 0, rows: [] });  
-							 $("#dg").datagrid("loadData",data.row); 
+							//$('#dg').datagrid('loadData', { total: 0, rows: [] });  
+							$("#dg").datagrid("loadData",data.row); 
 						}
 						
 					})
-				}
 			});
 			$('#add').on('click',function(){
 				 $('#addUser').dialog('open').dialog('setTitle','新增角色');

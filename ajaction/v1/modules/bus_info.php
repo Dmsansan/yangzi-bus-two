@@ -21,6 +21,9 @@ class bus_info {
 			case "qry":
 				$this->qry();
 				return;
+			case "qry_search":
+				$this->qry_search();
+				return;
 			case "qrybyone":
 				$this->qrybyone();
 				return;
@@ -170,6 +173,102 @@ class bus_info {
 	function qry(){
 		$sortname=mysql_escape_string(trim($_REQUEST["sortname"].""));
 		$sortorder=mysql_escape_string(trim($_REQUEST["sortorder"].""));
+		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+		
+		$offset = ($page-1)*$rows;
+		$plate_no=mysql_escape_string(trim($_REQUEST["plate_no"].""));
+		$begin_date=mysql_escape_string(trim($_REQUEST["bdate"].""));
+		$end_date=mysql_escape_string(trim($_REQUEST["edate"].""));
+        if($begin_date!="")$begin_date.=" 00:00:00";
+        if($end_date!="")$end_date.=" 23:59:59";
+
+		$sql="select a.*,b.v_term_no from bus_info as a left join vehicle_term as b on a.v_term_id=b.v_term_id";
+		$sql_cnt="select count(*) as cnt from bus_info";
+		$where="";
+        $where1="";
+		if($plate_no!=""){
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" a.plate_no like '%$plate_no%'";
+			if($where1=="")
+				$where1=" where";
+			else
+				$where1.=" and";
+			$where1.=" plate_no like '%$plate_no%'";
+		}
+		if($begin_date!=""){
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" a.add_stamp >= '$begin_date'";
+			if($where1=="")
+				$where1=" where";
+			else
+				$where1.=" and";
+			$where1.=" add_stamp >= '$begin_date'";
+		}
+		if($end_date!=""){
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" a.add_stamp <= '$end_date'";
+			if($where1=="")
+				$where1=" where";
+			else
+				$where1.=" and";
+			$where1.=" add_stamp <= '$end_date'";
+		}
+
+		$sql.=$where;
+		$sql_cnt.=$where1;
+        if($sortname!="")$sql.=" order by $sortname";
+		if($sortorder!="")$sql.=" $sortorder";
+		
+		$sql.=" limit $offset, $rows";
+
+		$ret=$this->conn->query_first($sql_cnt);
+		if($ret['cnt']==0){
+			$arr = array ('Total'=>$ret['cnt']);
+			echo json_encode($arr);
+			die();
+		}
+		$arr=array();
+		$arr['total']=intval($ret['cnt']);
+		$res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+			$arr['count']=$this->conn->num_rows($res);
+			$rows = array ();
+			while ($rec=$this->conn->fetch_array($res)){
+				array_push($rows,$rec);
+			}
+			$arr['rows']=$rows;
+			//$result = trim(json_encode($arr),"\xEF\xBB\xBF");
+			//$result=@iconv("GBK", "UTF-8//IGNORE", $result);
+			$result = json_encode($arr);
+			echo $result;
+			die();
+			//$this->log->do_log($str);
+		}else{
+			$arr = array ('total'=>$ret['cnt']);
+			$result = json_encode($arr);
+			//@iconv("GBK", "UTF-8//IGNORE", $result);
+			echo $result;
+			die();
+			//$this->log->do_log($str);
+			//die("404, $str\r\n");
+		}
+
+		return;
+	}
+	
+	function qry_search(){
+		$sortname=mysql_escape_string(trim($_REQUEST["sortname"].""));
+		$sortorder=mysql_escape_string(trim($_REQUEST["sortorder"].""));
 		$pagesize=mysql_escape_string(trim($_REQUEST["pagesize"].""));
 		$page=mysql_escape_string(trim($_REQUEST["page"].""));
 		$plate_no=mysql_escape_string(trim($_REQUEST["plate_no"].""));
@@ -223,6 +322,7 @@ class bus_info {
 		$sql_cnt.=$where1;
         if($sortname!="")$sql.=" order by $sortname";
 		if($sortorder!="")$sql.=" $sortorder";
+		
 		if($pagesize!=""&&$page!=""){
 			$rec_from=intval($pagesize)*(intval($page)-1);
 			$sql.=" limit $rec_from, $pagesize";
@@ -262,7 +362,6 @@ class bus_info {
 
 		return;
 	}
-	
 	/**
 		命令 ajaction/v1/?menuid=121010&cmd=qrybyone&plate_no=车牌号
 		反回 {"plate_no":"车牌号", "v_term_id":"","remark":"备注"}

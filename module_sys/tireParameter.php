@@ -267,7 +267,6 @@
             <th data-options="field:'norms_name',width:255">规格名称</th>
             <th data-options="field:'class_name',width:250">层级名称</th>
             <th data-options="field:'figure_name',width:280">花纹名称</th>
-            <th data-options="field:'figure',width:280">轮胎数量</th>
 			
             <th data-options="field:'remark',width:200">备注</th>
             <th data-options="field:'_operate',width:200,formatter:formatOption">操作</th>

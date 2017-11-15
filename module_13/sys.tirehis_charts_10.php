@@ -1575,11 +1575,12 @@
 		function getGridOptions(checkbox) {
              var options = {
                  columns: [
-                 { display: '车牌号码', name: 'plate_no',  width: 350, minWidth: 60 },
-                 { display: '车载编码', name: 'v_term_no', minWidth: 350, width: 100 },								 
+                 { display: '车牌号码', name: 'plate_no',  width: 250, minWidth: 60 },
+                 { display: '车载编码', name: 'v_term_no', minWidth: 250, width: 100 },			
+                 { display: '备注', name: 'remark', minWidth: 250, width: 100 },
                  ], switchPageSizeApplyComboBox: false,
                  /*data: $.extend({}, CustomersData),*/
-				 url:'../ajaction/v1/?menuid=121010&cmd=qry&t=1',
+				 url:'../ajaction/v1/?menuid=121010&cmd=qry_search&t=1',
                  pageSize: 10,
 				 dataAction:'server',
 				 allowUnSelectRow:true
@@ -1642,7 +1643,7 @@
 					if(s!="") s="&"+s;
 					$('.pcontrol input', obj.grid.toolbar).val(1);
 					obj.grid.changePage('input');
-					obj.grid.set({url:'../ajaction/v1/?menuid=121010&cmd=qry&t=1'+s});
+					obj.grid.set({url:'../ajaction/v1/?menuid=121010&cmd=qry_search&t=1'+s});
 					obj.grid.loadData(true);
 					
 				},
@@ -1719,7 +1720,7 @@
 
 </style>
 
-<body style="margin-top:0px; background-color:#f1f6fd;">
+<body style="margin-top:0px;">
  <div id="message" style="width:1400px"></div>
 <div class="l-loading" style="display:none" id="pageloading"></div> 
   <form id="form1" onsubmit=" return false " style="width:1400px">

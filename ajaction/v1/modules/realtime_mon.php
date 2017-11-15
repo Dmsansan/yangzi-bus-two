@@ -5,7 +5,6 @@ require_once(INCLUDE_PATH."PHPExcel.php");
 class realtime_mon {
 	var $conn=0;
 	//var $log;
-
 	function do_cmd($cmd){
 		$this->conn=new db(DB_TYPE,DB_HOST,DB_NAME,DB_USER,DB_PASS,true,SYSTEM_PATH.'log');
 		//$this->log=new log($this->conn);
@@ -146,36 +145,36 @@ class realtime_mon {
             其中 count 表示当前反回条数，Total 反回满足条件总记录数
     */
 	function exp(){
-$objPHPExcel = new PHPExcel();
+        $objPHPExcel = new PHPExcel();
 
-// Set document properties
-$objPHPExcel->getProperties()->setCreator($_SESSION['RealName'])
-							 ->setTitle("Export history");
-//时间、车牌号码、速度、累计里程(Km)、
-//左前轮压力(Kg)、左前轮温度(℃)、
-//右前轮压力(Kg)、右前轮温度(℃)、
-//左后外侧压力(Kg)、左后外侧温度(℃)、
-//左后内侧压力(Kg)、左后内侧温度(℃)、
-//右后外侧压力(Kg)、右后外侧温度(℃)、
-//右后内侧压力(Kg)、右后内侧温度(℃)、
-// Add some data
-$objPHPExcel->setActiveSheetIndex(0)
-            ->setCellValue('A1', '时间')
-            ->setCellValue('B1', '车牌号码')
-            ->setCellValue('C1', '速度')
-            ->setCellValue('D1', '累计里程(Km)')
-            ->setCellValue('E1', '左前轮压力(Kg)')
-            ->setCellValue('F1', '左前轮温度(℃)')
-            ->setCellValue('G1', '右前轮压力(Kg)')
-            ->setCellValue('H1', '右前轮温度(℃)')
-            ->setCellValue('I1', '左后外侧压力(Kg)')
-            ->setCellValue('J1', '左后外侧温度(℃)')
-            ->setCellValue('K1', '左后内侧压力(Kg)')
-            ->setCellValue('L1', '左后内侧温度(℃)')
-            ->setCellValue('M1', '右后外侧压力(Kg)')
-            ->setCellValue('N1', '右后外侧温度(℃)')
-            ->setCellValue('O1', '右后内侧压力(Kg)')
-            ->setCellValue('P1', '右后内侧温度(℃)');
+        // Set document properties
+        $objPHPExcel->getProperties()->setCreator($_SESSION['RealName'])
+        							 ->setTitle("Export history");
+        //时间、车牌号码、速度、累计里程(Km)、
+        //左前轮压力(Kg)、左前轮温度(℃)、
+        //右前轮压力(Kg)、右前轮温度(℃)、
+        //左后外侧压力(Kg)、左后外侧温度(℃)、
+        //左后内侧压力(Kg)、左后内侧温度(℃)、
+        //右后外侧压力(Kg)、右后外侧温度(℃)、
+        //右后内侧压力(Kg)、右后内侧温度(℃)、
+        // Add some data
+        $objPHPExcel->setActiveSheetIndex(0)
+                    ->setCellValue('A1', '时间')
+                    ->setCellValue('B1', '车牌号码')
+                    ->setCellValue('C1', '速度')
+                    ->setCellValue('D1', '累计里程(Km)')
+                    ->setCellValue('E1', '左前轮压力(Kg)')
+                    ->setCellValue('F1', '左前轮温度(℃)')
+                    ->setCellValue('G1', '右前轮压力(Kg)')
+                    ->setCellValue('H1', '右前轮温度(℃)')
+                    ->setCellValue('I1', '左后外侧压力(Kg)')
+                    ->setCellValue('J1', '左后外侧温度(℃)')
+                    ->setCellValue('K1', '左后内侧压力(Kg)')
+                    ->setCellValue('L1', '左后内侧温度(℃)')
+                    ->setCellValue('M1', '右后外侧压力(Kg)')
+                    ->setCellValue('N1', '右后外侧温度(℃)')
+                    ->setCellValue('O1', '右后内侧压力(Kg)')
+                    ->setCellValue('P1', '右后内侧温度(℃)');
 
 
 		$plate_no=mysql_escape_string(trim($_REQUEST["plate_no"].""));
@@ -256,30 +255,27 @@ $objPHPExcel->setActiveSheetIndex(0)
                     ->setCellValue('N'.$line, $row[temp5])
                     ->setCellValue('O'.$line, $row[pressure6])
                     ->setCellValue('P'.$line, $row[temp6]);
-
-
-
 			}
 
-$objPHPExcel->getActiveSheet()->setTitle("导出数据");
+            $objPHPExcel->getActiveSheet()->setTitle("导出数据");
 
-// Set active sheet index to the first sheet, so Excel opens this as the first sheet
-$objPHPExcel->setActiveSheetIndex(0);
+            // Set active sheet index to the first sheet, so Excel opens this as the first sheet
+            $objPHPExcel->setActiveSheetIndex(0);
 
-// Redirect output to a client’s web browser (Excel5)
-header('Content-Type: application/vnd.ms-excel');
-header('Content-Disposition: attachment;filename="导出数据.xls"');
-header('Cache-Control: max-age=0');
-// If you're serving to IE 9, then the following may be needed
-header('Cache-Control: max-age=1');
+            // Redirect output to a client’s web browser (Excel5)
+            header('Content-Type: application/vnd.ms-excel');
+            header('Content-Disposition: attachment;filename="导出数据.xls"');
+            header('Cache-Control: max-age=0');
+            // If you're serving to IE 9, then the following may be needed
+            header('Cache-Control: max-age=1');
 
-// If you're serving to IE over SSL, then the following may be needed
-header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
-header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
-header ('Pragma: public'); // HTTP/1.0
+            // If you're serving to IE over SSL, then the following may be needed
+            header ('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT'); // always modified
+            header ('Cache-Control: cache, must-revalidate'); // HTTP/1.1
+            header ('Pragma: public'); // HTTP/1.0
 
-$objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
-$objWriter->save('php://output');
+            $objWriter = PHPExcel_IOFactory::createWriter($objPHPExcel, 'Excel5');
+            $objWriter->save('php://output');
 
 //			$arr['Rows']=$rows;
 //			//$result = trim(json_encode($arr),"\xEF\xBB\xBF");

@@ -107,8 +107,8 @@
 				type:'get',
 				dataType:'json',
 				success:function(data){
-					console.log('dd',data.Rows);
-				$('#sss').datagrid('loadData',data.Rows);				
+					console.log('dd',data.rows);
+				$('#sss').datagrid('loadData',data.rows);				
 				$('#sss').datagrid('reload');				  
 				}
 			});
@@ -214,9 +214,9 @@
                     fitColumns="true">
             <thead>
             <tr>
-                <th field="plate_no" width="350"  >车牌号码</th>
-                <th field="v_term_no" width="350" >车载编号</th>
-                
+                <th field="plate_no" width="200"  >车牌号码</th>
+                <th field="v_term_no" width="200" >车载编号</th>
+                <th field="remark" width="250" >备注</th>
             </tr>
             </thead>
             </table>

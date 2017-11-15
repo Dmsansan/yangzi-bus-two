@@ -148,12 +148,11 @@
             var serchtxt = $("#serchform :input").fieldSerialize()+sendtxt;
 			var surl="../ajaction/v1/?menuid=131510&cmdx=qry&"+serchtxt;
 			//surl="../test_zxt.php";
-			
 			$.ajax({                             
 				url:surl,
 				type: "POST",				
 				success:function (result) {		
-console.log('result',result);				
+				console.log('result',result);				
 					var obj = eval("("+result+")");
 					if(obj.status!="OK"){
 						top.$.ligerDialog.error(obj.reason);						

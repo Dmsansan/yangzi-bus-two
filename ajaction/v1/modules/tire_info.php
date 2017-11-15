@@ -27,6 +27,9 @@ class tire_info {
 			case "qry":
 				$this->qry();
 				return;
+			case "qry_search":
+				$this->qry_search();
+				return;
 			case "qrybyone":
 				$this->qrybyone();
 				return;
@@ -495,7 +498,178 @@ class tire_info {
 
 		return;
 	}
-	
+	function qry_search(){
+        global $tire_position;
+		$sortname=mysql_escape_string(trim($_REQUEST["sortname"].""));
+		$sortorder=mysql_escape_string(trim($_REQUEST["sortorder"].""));
+		
+		$pagesize=mysql_escape_string(trim($_REQUEST["pagesize"].""));
+		$page=mysql_escape_string(trim($_REQUEST["page"].""));
+
+		$factory_code=mysql_escape_string(trim($_REQUEST["factory_code"].""));
+		$sensor_no=mysql_escape_string(trim($_REQUEST["sensor_no"].""));
+        $store_id=mysql_escape_string(trim($_REQUEST["store_id"].""));
+        $store_list_val=mysql_escape_string(trim($_REQUEST["store_list_val"].""));
+        $mile_count=mysql_escape_string(trim($_REQUEST["mile_count"].""));
+        
+        /*先查询出品牌、规格、层级、花纹存入数组*/
+        $arr_brand=array();
+        $sql="select * from brand";
+        $res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+            while ($rec=$this->conn->fetch_array($res)){
+				$arr_brand[$rec[brand_id]]=$rec[brand_name];
+			}
+            $this->conn->free_result($res);
+        }
+
+        $arr_norms=array();
+        $sql="select * from brand";
+        $res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+            while ($rec=$this->conn->fetch_array($res)){
+				$arr_norms[$rec[brand_id]]=$rec[norms_name];
+			}
+            $this->conn->free_result($res);
+        }
+
+        $arr_class=array();
+        $sql="select * from brand";
+        $res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+            while ($rec=$this->conn->fetch_array($res)){
+				$arr_class[$rec[brand_id]]=$rec[class_name];
+			}
+            $this->conn->free_result($res);
+        }
+
+        $arr_figure_type=array();
+        $sql="select * from brand";
+        $res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+            while ($rec=$this->conn->fetch_array($res)){
+				$arr_figure_type[$rec[brand_id]]=$rec[figure_name];
+			}
+            $this->conn->free_result($res);
+        }
+
+		$sql="select a.*,b.*,c.* from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id";
+		$sql_cnt="select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id";
+        if($store_id==""){
+            $sql="select a.*,b.*,c.*,d.store_name from tire_info as a
+                    left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                    left join sensor as c on a.sensor_id=c.sensor_id
+                    left join store as d on a.store_id=d.store_id";
+            $sql_cnt="select count(*) as cnt from tire_info as a
+                    left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                    left join sensor as c on a.sensor_id=c.sensor_id
+                    left join store as d on a.store_id=d.store_id";
+        }
+		$where="";
+		if($factory_code!=""){
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" a.factory_code like '%$factory_code%'";
+		}
+		if($sensor_no!=""){
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" c.sensor_no like '%$sensor_no%'";
+		}
+		if($store_id!=""){
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" a.store_id=0 and a.to_store_id=0";
+		}
+		if($store_list_val!=""){
+            $store_list_val=str_replace(";",",",$store_list_val);
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" a.store_id in ($store_list_val)";
+		}
+		if($mile_count!=""){
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" a.mile_count >= $mile_count";
+		}
+		
+		$sql.=$where;
+		$sql_cnt.=$where;
+        if($sortname!="")$sql.=" order by $sortname";
+		if($sortorder!="")$sql.=" $sortorder";
+		if($pagesize!=""&&$page!=""){
+			$rec_from=intval($pagesize)*(intval($page)-1);
+			$sql.=" limit $rec_from, $pagesize";
+		}
+
+		$ret=$this->conn->query_first($sql_cnt);
+		if($ret['cnt']==0){
+			$arr = array ('Total'=>$ret['cnt']);
+			echo json_encode($arr);
+			die();
+		}
+		$arr=array();
+		$arr['Total']=intval($ret['cnt']);
+		$res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+			$arr['count']=$this->conn->num_rows($res);
+			$rows = array ();
+			while ($rec=$this->conn->fetch_array($res)){
+                if(array_key_exists($rec[brand_id],$arr_brand))
+                    $rec[brand_name]=$arr_brand[$rec[brand_id]];
+                else
+                    $rec[brand_name]="";
+                
+                if(array_key_exists($rec[norms_id],$arr_norms))
+                    $rec[norms_name]=$arr_norms[$rec[norms_id]];
+                else
+                    $rec[norms_name]="";
+                
+                if(array_key_exists($rec[class_id],$arr_class))
+                    $rec[class_name]=$arr_class[$rec[class_id]];
+                else
+                    $rec[class_name]="";
+                
+                if(array_key_exists($rec[figure_id],$arr_figure_type))
+                    $rec[figure_name]=$arr_figure_type[$rec[figure_id]];
+                else
+                    $rec[figure_name]="";
+                $rec[place]=$tire_position[intval($rec[place])];
+				array_push($rows,$rec);
+			}
+			$arr['Rows']=$rows;
+			//$result = trim(json_encode($arr),"\xEF\xBB\xBF");
+			//$result=@iconv("GBK", "UTF-8//IGNORE", $result);
+			$result = json_encode($arr);
+			echo $result;
+			die();
+			//$this->log->do_log($str);
+		}else{
+			$arr = array ('Total'=>$ret['cnt']);
+			$result = json_encode($arr);
+			//@iconv("GBK", "UTF-8//IGNORE", $result);
+			echo $result;
+			die();
+			//$this->log->do_log($str);
+			//die("404, $str\r\n");
+		}
+
+		return;
+	}
 	/**
 		命令 ajaction/v1/?menuid=111110&cmd=qrybyone&tire_id=轮胎编号
 		反回 {"tire_id":1, "company_name":"","brand_id":"品牌ID","tire_param_id":"参数ID","sensor_id":"传感器","figure_value":花纹深度}

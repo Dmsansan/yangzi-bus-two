@@ -42,10 +42,6 @@
 				})
             }
         }
-		function tirereload(){
-			
-		}
-			
 		$(function(){
 			
 			$('#tire_cancel').bind('click',function(){
@@ -128,7 +124,8 @@
 			$('#updata_close').bind('click',function(){
 				$('#dlg').dialog('close');
 			});
-			$.ajax({
+			//加载所有车辆
+			/*$.ajax({
 				url:'../ajaction/v1/?menuid=121010&cmd=qry&t=1',
 				type:'GET',
 				dataType:'json',
@@ -136,7 +133,7 @@
 					 $("#dg").datagrid("loadData", data.Rows);
 					console.log('ddd',data);
 				}
-			});
+			});*/
 			//修改记录
 			$('#updata_save').bind('click',function(){
 				var plate_no=$('#up_tireNumber').textbox('getText');
@@ -161,8 +158,8 @@
 					dataType:'json',
 					data:{'plate_no':plate_no},
 					success:function(data){
-				if(data.Rows){
-					$('#dg').datagrid('loadData',data.Rows);
+				if(data.rows){
+					$('#dg').datagrid('loadData',data.rows);
 				}else{
 					$.messager.alert('提示','没有该车辆!','info');
 				}
@@ -278,9 +275,7 @@
 			})
 		}   
 		
-		
-		
-		//加载数据
+		//右侧对应车辆轮胎数据加载
 		function loadgrid(plateNumber){
 			var plate_no =plateNumber;
 			$.ajax({
@@ -347,7 +342,7 @@
 				type:'GET',
 				dataType:'json',
 				success:function(data){
-					 $("#dg").datagrid("loadData", data.Rows);
+					 $("#dg").datagrid("loadData", data.rows);
 				}
 			});
 		}
@@ -543,8 +538,16 @@
 <div style=""></div>
 <div data-options="region:'west',title:'车辆列表'" style="width:39%;border-right:1px soild #ff0f0f">
     <div style="width: 100%;height:49%;" title="车辆列表">
-        <table id="dg" class="easyui-datagrid" style="width: 100%;" pagination="true"
-               toolbar="#toolbar" singleSelect="true" fitColumns="true" striped="true">
+    	<div id="toolbar" style="height:34px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:10px">
+           
+            <div id="t-bottom">
+                <input id="searchnumber" data-options="prompt:'车牌号码'" class="easyui-textbox" />
+                <button id="searchButton"  style="margin-left: 10px;">搜索</button>
+				<button id="add" style="margin-right: 10px;">增加</button>
+            </div>
+        </div>
+
+        <table id="dg" class="easyui-datagrid" style="width: 100%;" url="../ajaction/v1/?menuid=121010&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true">
             <thead>
             <tr>
                 <th field="plate_no" width="20%" >车牌号码</th>
@@ -554,17 +557,8 @@
             </tr>
             </thead>
         </table>
-       <div id="toolbar" style="height:34px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:10px">
-           
-            <div id="t-bottom">
-                <input id="searchnumber" data-options="prompt:'车牌号码'" class="easyui-textbox" />
-                <button id="searchButton"  style="margin-left: 10px;">搜索</button>
-				<button id="add" style="margin-right: 10px;">增加</button>
-            </div>
-        </div>
-        </div>
-   
-
+       
+    </div>
 </div>
 <div data-options="region:'center',title:'轮胎列表'" > 
 <table id="tire_dg" class="easyui-datagrid" width="100%" style="background-color: #ffb3b3" style="padding-top:20px;"
