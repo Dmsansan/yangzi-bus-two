@@ -205,7 +205,7 @@
 						
 						}					
 					},
-				{display: '车牌号码', name: 'Plate_No',width:'10%'},
+				{display: '车牌号码', name: 'Plate_No',width:'10%',type:'string'},
 				{display: '累计里程(Km)', name: 'mile_count',width:'10%'},
                 <?php
 					$i=1;

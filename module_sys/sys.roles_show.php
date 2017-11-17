@@ -47,13 +47,18 @@
 				type:'get',
 				multiple: true,
 				checkbox: true,
-				required: true
+				required: true,
+				cascadeCheck:true,
+				onCheck:function(node,text){
+					console.log('node',node);
+				}
             });
 			$('#roles').combotree({
 				url:'../ajaction/v1/?menuid=0&cmd=get_all_modules',
 				type:'get',
 				width:'200',
 				multiple: true,
+				cascadeCheck:true,
 				checkbox: true,
 				required: true
 			})
@@ -89,15 +94,26 @@
 			$('#updata_save').bind('click',function(){
 				var title=$('#title').textbox('getText');
 				var role_id=$('#role_id').val();
+<<<<<<< HEAD
 				var remark=$('#remark').textbox('getText');
 
+=======
+				var remark=$('#remark').textbox('getText');		
+				var module_list_val5=$('#roles').combotree('getValues');
+				//if(module_list_val5.length>1){
+					//for(var i=0;i<module_list_val5.length;i++){
+						
+					//}
+				//}else{
+					//module_list_val5[0];
+				//}
+>>>>>>> 40098a3b51098051dfb25182a6ec56bbef4874d8
 				var module_list=$('#roles').combotree('getText');
 
 				var module_list_val=$('#roles').combotree('getValue');
 
 				var operlist=$('#operate').combobox('getText');
-				console.log('dddddd',role_id+remark+module_list+module_list_val+operlist);
-				
+				console.log('dddddd',module_list_val5);
 				$.ajax({
 					url:'../ajaction/v1/?menuid=101010&cmd=edit',
 					type:'POST',
@@ -120,13 +136,23 @@
 			$('#save').bind('click',function(){
 			var addrole=$('#addrole').textbox('getText');
 			var rolePower=$('#rolePower').combotree('getText');
-			var module_list_val=$('#rolePower').combotree('getValue');
+			var module_list_val=$('#rolePower').combotree('getValues');
+			var ad=module_list_val.length;
+			console.log('ad',ad);
+			var moduleval=module_list_val[0]+';';
+			for(var i=1;i<module_list_val.length;i++){
+			
+			moduleval+= module_list_val[i]+';';
+			
+			}
+			console.log('moduleval',moduleval);
 			var addoper=$('#addoper').combobox('getText');
 			var addremark=$('#addremark').textbox('getText');
+			console.log('dattttt',module_list_val);
 			$.ajax({
 				url:'../ajaction/v1/?menuid=101010&cmd=add',
 				type:'POST',
-				data:{'title':addrole,'remark':addremark,'module_list':rolePower,'module_list_val':module_list_val,'operlist':addoper},
+				data:{'title':addrole,'remark':addremark,'module_list':rolePower,'module_list_val':moduleval,'operlist':addoper},
 				success:function(data){
 					 $.messager.show({
                             title : '操作成功',
@@ -179,6 +205,7 @@
             if (row){
                 $('#dlg').dialog('open').dialog('setTitle','修改角色信息');
 				$('#role_id').val(row.role_id);
+<<<<<<< HEAD
 				//$('#module_id').val(row.modules_list_val);
 				$('#title').textbox('setValue',row.title);
                 $('#roles').combotree('setValue',row.modules_list_val);
@@ -186,6 +213,14 @@
 				$('#operate').combobox('setValue',row.operlist);//setValue;
 				$('#remark').textbox('setValue',row.remark);
 				console.log('module_id',row.modules_list_val);
+=======
+				  $('#title').textbox('setValue',row.title);
+				 $('#roles').combotree('setValue',row.modules_list_val);
+				  $('#roles').combotree('setText',row.modules_list);  
+				 $('#operate').combobox('setValue',row.operlist);//setValue;
+				 $('#remark').textbox('setValue',row.remark);
+				 console.log('module_id',row.modules_list_val);
+>>>>>>> 40098a3b51098051dfb25182a6ec56bbef4874d8
             }
         };
 		//删除操作

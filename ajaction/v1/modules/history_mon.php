@@ -68,7 +68,7 @@ class history_mon {
             $sql="select a.*,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_history_log as a left join bus_info as b
                 on a.bus_id=b.bus_id where log_stamp>='$begin_date' and log_stamp<='$end_date'";
 		}
-
+		//$sql=""
 		$res=$this->conn->query($sql);
         $arr=array();
         $cnt=0;
