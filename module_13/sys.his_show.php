@@ -204,8 +204,17 @@
 				data:{'begin_date':starDate,'end_date':stopDate,'plate_no_val':carplate,'place_no':tireCount},
 				success:function(data){
 					console.log('haole',data);
-					
-					$('#datatable').datagrid('loadData',data.Rows);
+					if(data.Rows){
+						$('#datatable').datagrid('loadData',data.Rows);
+					}else{
+						$.messager.show({
+						title:'提示',
+						msg:'该时间段没有数据',
+						timeout:3000,
+						showType:'slide'
+					});
+					return;
+					}		
 				}
 			})
 		})    
