@@ -94,20 +94,7 @@
 			$('#updata_save').bind('click',function(){
 				var title=$('#title').textbox('getText');
 				var role_id=$('#role_id').val();
-<<<<<<< HEAD
 				var remark=$('#remark').textbox('getText');
-
-=======
-				var remark=$('#remark').textbox('getText');		
-				var module_list_val5=$('#roles').combotree('getValues');
-				//if(module_list_val5.length>1){
-					//for(var i=0;i<module_list_val5.length;i++){
-						
-					//}
-				//}else{
-					//module_list_val5[0];
-				//}
->>>>>>> 40098a3b51098051dfb25182a6ec56bbef4874d8
 				var module_list=$('#roles').combotree('getText');
 
 				var module_list_val=$('#roles').combotree('getValue');
@@ -205,7 +192,6 @@
             if (row){
                 $('#dlg').dialog('open').dialog('setTitle','修改角色信息');
 				$('#role_id').val(row.role_id);
-<<<<<<< HEAD
 				//$('#module_id').val(row.modules_list_val);
 				$('#title').textbox('setValue',row.title);
                 $('#roles').combotree('setValue',row.modules_list_val);
@@ -213,14 +199,6 @@
 				$('#operate').combobox('setValue',row.operlist);//setValue;
 				$('#remark').textbox('setValue',row.remark);
 				console.log('module_id',row.modules_list_val);
-=======
-				  $('#title').textbox('setValue',row.title);
-				 $('#roles').combotree('setValue',row.modules_list_val);
-				  $('#roles').combotree('setText',row.modules_list);  
-				 $('#operate').combobox('setValue',row.operlist);//setValue;
-				 $('#remark').textbox('setValue',row.remark);
-				 console.log('module_id',row.modules_list_val);
->>>>>>> 40098a3b51098051dfb25182a6ec56bbef4874d8
             }
         };
 		//删除操作
