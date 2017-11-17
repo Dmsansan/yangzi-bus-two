@@ -154,8 +154,12 @@ class roles {
 	function qry(){
 		$sortname=mysql_escape_string(trim($_REQUEST["sortname"].""));
 		$sortorder=mysql_escape_string(trim($_REQUEST["sortorder"].""));
-		$pagesize=mysql_escape_string(trim($_REQUEST["pagesize"].""));
-		$page=mysql_escape_string(trim($_REQUEST["page"].""));
+		
+		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+		
+		$offset = ($page-1)*$rows;
+		
 		$title=mysql_escape_string(trim($_REQUEST["title"].""));
 
 		$sql="select * from roles";
@@ -166,10 +170,8 @@ class roles {
 		}
         if($sortname!="")$sql.=" order by $sortname";
 		if($sortorder!="")$sql.=" $sortorder";
-		if($pagesize!=""&&$page!=""){
-			$rec_from=intval($pagesize)*(intval($page)-1);
-			$sql.=" limit $rec_from, $pagesize";
-		}
+		
+		$sql.=" limit $offset, $rows";
 
 		$ret=$this->conn->query_first($sql_cnt);
 		if($ret['cnt']==0){
@@ -202,7 +204,6 @@ class roles {
 			//$this->log->do_log($str);
 			//die("404, $str\r\n");
 		}
-
 		return;
 	}
 	

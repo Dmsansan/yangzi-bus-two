@@ -26,22 +26,21 @@
 
 <script src="../js/echarts.js"></script>
 <style>
-
-#shezhi input{
+    #shezhi input{
 		outline:none;	
-	border: 1px solid #1c66dc;
-			height: 25px;
-			line-height: 2px;
-			width: 100px;
-			background-color: white;
-			border-radius: 20px;
-			vertical-align: middle;
-			color: #1c66dc;
-}
-#shezhi input:active,#shezhi input:hover{
-	background-color:#1c66dc;
-	color:#ffffff;
-}
+		border: 1px solid #1c66dc;
+		height: 25px;
+		line-height: 2px;
+		width: 100px;
+		background-color: white;
+		border-radius: 20px;
+		vertical-align: middle;
+		color: #1c66dc;
+		}
+	#shezhi input:active,#shezhi input:hover{
+		background-color:#1c66dc;
+		color:#ffffff;
+	}
 </style>
 
 </head>
@@ -125,7 +124,7 @@
 			
 			option.title.subtext="压力";
 			
-			var name=['压力正常(%)','高压出例(%)','低压出例(%)'];
+			var name=['压力正常','高压出例','低压出例'];
 			option.legend.data=name;
 			for(var i=0;i<3 && i<oc.data.length;i++){
 				option.series[0].data.push({value:oc.data[i],name:name[i]});
@@ -135,7 +134,7 @@
 			option.title.text=gettirename(place);
 			option.title.subtext="温度";
 			
-			var name=['温度正常(%)','高温出例(%)'];
+			var name=['温度正常','高温出例'];
 			option.legend.data=name;
 			for(var i=0;i<2 && i<oc.data.length;i++){
 				option.series[0].data.push({value:oc.data[i],name:name[i]});
@@ -346,7 +345,7 @@
                  { display: '车载编码', name: 'v_term_no', minWidth: 120, width: 350 },								 
                  ], switchPageSizeApplyComboBox: false,
                  /*data: $.extend({}, CustomersData),*/
-				 url:'../ajaction/v1/?menuid=121010&cmd=qry&t=1',
+				 url:'../ajaction/v1/?menuid=121010&cmd=qry_search&t=1',
                  pageSize: 10,
 				 dataAction:'server',
 				 allowUnSelectRow:true
@@ -409,7 +408,7 @@
 					if(s!="") s="&"+s;
 					$('.pcontrol input', obj.grid.toolbar).val(1);
 					obj.grid.changePage('input');
-					obj.grid.set({url:'../ajaction/v1/?menuid=121010&cmd=qry&t=1'+s});
+					obj.grid.set({url:'../ajaction/v1/?menuid=121010&cmd=qry_search&t=1'+s});
 					obj.grid.loadData(true);
 					
 				},
@@ -467,13 +466,13 @@
 		//serchpanel();
     </script>
 
-<body style="margin-top:0px;background-color:#f1f6fd">
+<body style="margin-top:0px;">
  <div id="message" style="width:800px"></div>
 <div class="l-loading" style="display:none" id="pageloading"></div> 
   <form id="form1" onsubmit=" return false ">
     <div id="toolbar" ></div>	
 	<div id="grid" style="align:center">
-		<div id="main" style="margin:0px;width:960px">
+		<div id="main" style="margin-left:80px;width:960px">
 			<div id="chart1" style="width:450px;height:300px;float:left;display:inline"></div>
 			<div id="chart2" style="width:450px;height:300px;float:left;display:inline"></div>
 			<div id="chart3" style="width:450px;height:300px;float:left;"></div>

@@ -3,7 +3,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>轮胎库存查询</title>
 <link href="../lib/ligerUI/skins/Aqua/css/ligerui-all.css" rel="stylesheet" type="text/css" />
-<!--<link href="../lib/ligerUI/skins/ext/css/ligerui-fix.css" rel="stylesheet" type="text/css" />-->
 <link href="../css/inputcharts.css" rel="stylesheet" />
 <script src="../lib/jquery/jquery-1.9.0.min.js" type="text/javascript"></script> 
 <script src="../lib/json2.js" type="text/javascript"></script>
@@ -15,17 +14,11 @@
 <script src="../lib/ligerUI/js/plugins/ligerDateEditor.js" type="text/javascript"></script>
 <script src="../lib/ligerUI/js/plugins/ligerPopupEdit.js" type="text/javascript"></script>
 <script src="../lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
-
 <script src="../js/XHD.js" type="text/javascript"> </script>
 <script src="../lib/jquery.form.js" type="text/javascript"> </script>
-
 <script src="../js/echarts.js"></script>
-
-
 </head>
-
  <script type="text/javascript">
- 
 	require.config({
         paths: {
             echarts: '../js'
@@ -33,11 +26,7 @@
     });
 	var manager;
 	var menu;
-	
-	
 	function LoadCharts(oc){
-	
-	
 	option = {
     tooltip : {
         trigger: 'axis',
@@ -148,12 +137,11 @@
             var serchtxt = $("#serchform :input").fieldSerialize()+sendtxt;
 			var surl="../ajaction/v1/?menuid=131510&cmdx=qry&"+serchtxt;
 			//surl="../test_zxt.php";
-			
 			$.ajax({                             
 				url:surl,
 				type: "POST",				
 				success:function (result) {		
-console.log('result',result);				
+				console.log('result',result);				
 					var obj = eval("("+result+")");
 					if(obj.status!="OK"){
 						top.$.ligerDialog.error(obj.reason);						

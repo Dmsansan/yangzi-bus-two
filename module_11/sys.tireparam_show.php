@@ -81,17 +81,6 @@
                     type:'json'
 			});
 	
-            //加载数据
-            $.ajax({
-                url: '../ajaction/v1/?menuid=111010&cmd=qry&t=1',
-                type: 'post',
-                dataType: 'json',
-                success: function(data) {
-                    var obj = eval(data);
-                    $("#dg").datagrid("loadData", data.Rows);
-                    console.log('data', obj);
-                }
-            });
             //增加操作：
             $('#save').bind('click', function() {
                 var company_name = $('#productor').textbox('getText');
@@ -138,18 +127,10 @@
             });
 			//搜索：
 			$('#search').bind('click',function(){
-				var name=$('#search_company_name').val();
-				//console.log('niaho',name);
-				$.ajax({
-                    url:'../ajaction/v1/?menuid=111010&cmd=qry',
-                    type:'POST',
-                    data:{'company_name':name},
-                    dataType:'json',
-                    success:function(data){
-                        $("#dg").datagrid("loadData", data.Rows);    
-                    }
-                });
-				
+				$("#dg").datagrid('load',{
+                    company_name: $('#search_company_name').val(),
+                }); 
+    				
 			});
 					
 		})
@@ -160,7 +141,7 @@
                 dataType: 'json',
                 success: function(data) {
                     var Idata = data.Rows;
-                    $("#dg").datagrid("loadData", data.Rows);
+                    $("#dg").datagrid("loadData", data.rows);
                     console.log('data', data);
                 }
             });
@@ -191,8 +172,10 @@
 				$('#updata_speed').textbox('setValue',row.speed_ul);
 				$('#updata_tpkh').textbox('setValue',row.tkph_val);
 				$('#updata_standard').textbox('setValue',row.baro_val);
-				$('#updata_one').textbox('setValue',row.mainterance1);
-				$('#updata_two').textbox('setValue',row.mainterance2);
+				//$('#updata_one').textbox('setValue',row.mainterance1);
+				//$('#updata_two').textbox('setValue',row.mainterance2);
+                $('#upfigure_mile1').textbox('setValue',row.figure_mile1); 
+                $('#upfigure_mile2').textbox('setValue',row.figure_mile2);         //
 				$('#updata_all').textbox('setValue',row.rated_mile);
 				var company=row.company_name;
 				var tireparam=row.tire_param_id;
@@ -204,9 +187,8 @@
 		//修改按钮事件
 			function updateTireParam(tire){
 				var tire_param_id=tire;
-				$('#updata_save').on('click',function(){
-					
-					//ajaction/v1/?menuid=11101&cmd=edit
+				$('#updata_save').on('click',function(){	
+                //ajaction/v1/?menuid=11101&cmd=edit
 				var company_name = $('#updata_pm').textbox('getText');
                 var brand_id_val=$('#updata_brand').combobox('getValue');                
                 var norms_id_val = $('#updata_tire').combobox('getValue');
@@ -218,17 +200,19 @@
                 var temp_ul = $('#updata_tem').textbox('getText');
                 var tkph_val = $('#updata_tpkh').textbox('getText');
                 var brao_val = $('#updata_standard').textbox('getText');
-                var mainterance1 = $('#updata_one').textbox('getText');
-                var mainterance2 = $('#updata_two').textbox('getText');
+                //var mainterance1 = $('#updata_one').textbox('getText');
+                //var mainterance2 = $('#updata_two').textbox('getText');
+                var figure_mile1 = $('#upfigure_mile1').textbox('getText');
+                var figure_mile2 = $('#upfigure_mile2').textbox('getText');
+
                 var rated_mile = $('#updata_all').textbox('getText');
 				console.log('class_id_val',norms_id_val);
 				$.ajax({
 						url:'../ajaction/v1/?menuid=111010&cmd=edit',
 						type:'POST',
 						dataType:'json',
-						data:{'tire_param_id':tire_param_id,'company_name':company_name,'brand_id_val':brand_id_val,'norms_id_val':norms_id_val,'class_id_val':class_id_val,'figure_id_val':figure_id_val,'pressure_ll':pressure_ll,'pressure_ul':pressure_ul,'speed_ul':speed_ul ,'temp_ul':temp_ul,'tkph_val':tkph_val,'baro_val':brao_val,'mainterance2':mainterance2,'mainterance1':mainterance1,'rated_mile':rated_mile},
+						data:{'tire_param_id':tire_param_id,'company_name':company_name,'brand_id_val':brand_id_val,'norms_id_val':norms_id_val,'class_id_val':class_id_val,'figure_id_val':figure_id_val,'pressure_ll':pressure_ll,'pressure_ul':pressure_ul,'speed_ul':speed_ul ,'temp_ul':temp_ul,'tkph_val':tkph_val,'baro_val':brao_val,'figure_mile1':figure_mile1,'figure_mile2':figure_mile2,'rated_mile':rated_mile},
 						success:function(data){
-							
 							if(data.status="OK"){
 								$.messager.show({
 								title:'提示',
@@ -373,32 +357,34 @@
 	</style>
 </head>
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
-
+     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+    <input id="search_company_name" type="text" placeholder="制造商"/> <button id="search">搜索</button>
+    <button id="add" style="float: right; margin-top: 15px;">增加</button>
+    </div>
     <table id="dg" class="easyui-datagrid"
-           data-options="singleSelect:true,toolbar:'#tb',striped:'true',pagination:'true'">
+           url="../ajaction/v1/?menuid=111010&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true">
         <thead>
         <tr>
             <th data-options="field:'tire_param_id',width:'5%'">编号</th>
             <th data-options="field:'company_name',width:'5%'">制造商</th>
             <th data-options="field:'brand_name',width:'5%'">品牌</th>
-            <th data-options="field:'norms_name',width:'10%'">轮胎规格</th>
+            <th data-options="field:'norms_name',width:'5%'">轮胎规格</th>
             <th data-options="field:'class_name',width:'5%'">层级</th>
             <th data-options="field:'figure_name',width:'5%'">花纹</th>
-            <th data-options="field:'pressure_ul',width:'8%'">胎压上限</th>
-            <th data-options="field:'pressure_ll',width:'8%'">胎压下限</th>
-            <th data-options="field:'temp_ul',width:'8%'">胎温上限</th>
-            <th data-options="field:'speed_ul',width:'8%'">速度上限</th>
-            <th data-options="field:'tkph_val',width:'8%'">TKPH值</th>
-            <th data-options="field:'baro_val',width:'10%'">标准冲气压力</th>
+            <th data-options="field:'pressure_ul',width:'5%'">胎压上限</th>
+            <th data-options="field:'pressure_ll',width:'5%'">胎压下限</th>
+            <th data-options="field:'temp_ul',width:'5%'">胎温上限</th>
+            <th data-options="field:'speed_ul',width:'5%'">速度上限</th>
+            <th data-options="field:'tkph_val',width:'5%'">TKPH值</th>
+            <th data-options="field:'baro_val',width:'8%'">标准冲气压力</th>
+            <th data-options="field:'figure_mile1',width:'8%'">初始花纹深度</th>
+            <th data-options="field:'figure_mile2',width:'8%'">极限花纹深度</th>
             <th data-options="field:'rated_mile',width:'8%'">额定里程</th>
             <th data-options="field:'_operate',width:'8%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
-    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-    <input id="search_company_name" type="text" placeholder="制造商"/> <button id="search">搜索</button>
-    <button id="add" style="float: right; margin-top: 15px;">增加</button>
-</div>
+   
     <!--修改信息弹出框 -->  
 	<div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#updata_dlg'" style="width:875px;height: 400px;background-color: #bdc4d4">
     <div style="background-color: #ffffff;height:340px;margin:10px;">
@@ -472,7 +458,7 @@
             <td>
                 <input id="updata_standard" class="easyui-textbox" style="width:130px;"/>
             </td>
-            <td>  
+            <!--<td>  
                 一保(KM)：
 			</td>
             <td>
@@ -483,6 +469,18 @@
 				</td>
             <td>
                 <input id="updata_two" class="easyui-textbox"  style="width: 130px;" />
+            </td>-->
+            <td>  
+                初始花纹深度(CM)：
+            </td>
+            <td>
+                <input id="upfigure_mile1" class="easyui-textbox"  style="width: 130px;" />
+            </td>
+            <td>
+                极限花纹深度(CM)：
+                </td>
+            <td>
+                <input id="upfigure_mile2" class="easyui-textbox"  style="width: 130px;" />
             </td>
         </tr>
 		 <tr>

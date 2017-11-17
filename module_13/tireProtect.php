@@ -11,79 +11,48 @@
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
     <script type="text/javascript">
-        function formatOption(value, row, index) {
-            return '<a href="#" onclick="editUser(\'+index+\')">编辑</a> <a href="#" onclick="editUser(\'+index+\')">删除</a>';
-        }
-        var url;
-        function editUser(index) {
-            $('#dg').datagrid('selectRow', index);
-            var row = $('#dg').datagrid('getSelected');
-            if (row){
-                $('#dlg').dialog('open').dialog('setTitle','新增角色');
-                $('#fm').form('load',row);
-                url = '';
-            }
-        }
+       $(function(){
+        //按车牌号搜索
+        $('#search').bind('click',function(){
+            //alert($('#plate_no').val());
+            $("#dg").datagrid('load',{
+                plate_no: $('#plate_no').val(),
+                start_time: $('#start_time').val(),
+                end_time: $('#end_time').val()
+            }); 
+        })
+        //打印数据表格
+        $('#exp').bind('click',function(){
+            var start_time = $('#start_time').val();
+            var end_time = $('#end_time').val();
+            var plate_no = $('#plate_no').val();
+
+            window.open("../ajaction/v1/?menuid=131311&cmd=exp_figure&plate_no="+plate_no+"&start_time="+start_time+"&end_time="+end_time);
+        })
+    })
     </script>
 </head>
-<body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
-<div  class="u-content">
+<body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff;overflow-y:auto">
+<div  class="u-content"  data-options="fit:true" >
     <table id="dg" class="easyui-datagrid"
-           data-options="singleSelect:true,url:'../../datagrid_data1.json',method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
+          url="../ajaction/v1/?menuid=131311&cmd=qry_figure" toolbar="#tb"
+          striped="true" rownumbers="false" pagination="true">
         <thead>
-		<tr>
-			<th field="name1" width="15%" rowspan="2">安装时间</th>
-			<th field="name3" width="10%" rowspan="2">车牌号</th>
-			<th field="name4" width="10%" rowspan="2">轮胎号位</th>
-			<th colspan=2 width="10%">一保</th>
-			<th colspan=2 width="10%">二保</th>
-			<th colspan=2 width="10%">三保</th>
-		</tr>
-		<tr>
-			<th field="name5" width="5%">里程</th>
-			<th field="name6" width="5%">花纹深度</th>
-			<th field="name7" width="5%">里程</th>
-			<th field="name8" width="5%">花纹深度</th>
-			<th field="name9" width="5%">里程</th>
-			<th field="name10" width="5%">花纹深度</th>
-		</tr>
+		 <tr>
+            <th data-options="field:'tire_no',width:120">轮胎胎号</th>
+            <th data-options="field:'plate_no',width:120">车辆号码</th>
+            <th data-options="field:'place_no',width:200">轮胎号位</th>
+            <th data-options="field:'time_add',width:200">装车时间</th>
+            <th data-options="field:'figure_mile',width:200">装车花纹深度</th>
+        </tr>
         </thead>
     </table>
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
-        <input type="text" placeholder="轮胎胎号"/> <button>搜索</button> <button>重置</button>
-		    <button style="float: right"><span style="margin-right:8px;">+</span>打印</button>
-    </div>
-    <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:600px;height: 300px;">
-        <span>基本信息</span><hr/>
-        <table style="width: 100%;height: 80%;">
-            <tr>
-                <td>
-                    角色名称：
-                    <input type="text"/>
-                </td>
-                <td>
-                    角色权限：
-                    <select>
-
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    操作权限：
-                    <select>
-
-                    </select>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    角色说明：
-                    <input type="text" />
-                </td>
-
-            </tr>
-        </table>
+        起始日期: <input id="start_time" class="easyui-datebox" style="width: 100px;height:26px;">
+        终止日期: <input id="end_time" class="easyui-datebox" style="width: 100px;height:26px;">
+        车牌号码：<input id="plate_no" type="text" placeholder="车牌号码"/> 
+        <button id="search">搜索</button>
+		<button id="exp" style="float: right"><span style="margin-right:8px;">+</span>打印</button>
     </div>
 </div>
 </body>

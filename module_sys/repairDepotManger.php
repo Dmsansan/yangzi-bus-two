@@ -26,31 +26,11 @@
 				$('#dlg').dialog('close');
 			});
 			
-		//加载全部信息；
-			$.ajax({
-                url: '../ajaction/v1/?menuid=101110&cmd=qry&t=1',
-                type: 'post',
-                dataType: 'json',
-                success: function(data) {
-                    var obj = eval(data);
-                    $("#dg").datagrid("loadData", data.Rows);
-                    console.log('data', obj);
-                }
-            });
             //搜索操作
             $('#search').bind('click',function(){
-                var xiuli_name = $('#xiuli_name').val();
-                $.ajax({
-                    url:'../ajaction/v1/?menuid=101110&cmd=qry',
-                    type:'POST',
-                    data:{'store_name':xiuli_name},
-                    dataType:'json',
-                    success:function(data){
-                        var obj = eval(data);
-                        $("#dg").datagrid("loadData", data.Rows);
-                        console.log('data',obj);
-                    }
-                });
+               $("#dg").datagrid('load',{
+                store_name: $('#xiuli_name').val(),
+            }); 
             });
 			//增加操作
 			$('#save').bind('click',function(){
@@ -141,7 +121,7 @@
                 dataType: 'json',
                 success: function(data) {
                     var obj = eval(data);
-                    $("#dg").datagrid("loadData", data.Rows);
+                    $("#dg").datagrid("loadData", data.rows);
                     console.log('data', obj);
                 }
             });
@@ -272,8 +252,12 @@
 </head>
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
 <div  class="u-content">
+    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+        <input type="text" id="xiuli_name" placeholder="修理厂名称"/> <button id="search">搜索</button>
+        <button id="add" style="float: right;margin-top: 15px;">增加</button>
+    </div>
     <table id="dg" class="easyui-datagrid"
-           data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true',width:'100%'">
+           url="../ajaction/v1/?menuid=101110&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true">
         <thead>
         <tr>
             <th data-options="field:'store_no',width:'10%'">修理厂编号</th>
@@ -287,10 +271,7 @@
         </tr>
         </thead>
     </table>
-    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-        <input type="text" id="xiuli_name" placeholder="修理厂名称"/> <button id="search">搜索</button>
-        <button id="add" style="float: right;margin-top: 15px;">增加</button>
-    </div>
+    
     <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 400px;background-color: #bdc4d4">
 	<div style="background-color: #ffffff;height:340px;margin:10px;">
         <span id="message">基本信息</span>

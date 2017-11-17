@@ -14,32 +14,27 @@
     $(function(){
         //按车牌号搜索
         $('#search').bind('click',function(){
-            var plate_no = $('#plate_no').val();
-            $.ajax({
-                url:'../ajaction/v1/?menuid=131311&cmd=qry',
-                type:'POST',
-                data:{'plate_no':plate_no},
-                dataType:'json',
-                success:function(data){
-                    console.log('serach_success',data);
-                    $('#dg').datagrid('loadData',data.rows);
-                },
-                error:function(data){
-                    console.log('search_error',data);
-                }
+            //alert($('#plate_no').val());
+            $("#dg").datagrid('load',{
+                plate_no: $('#plate_no').val(),
             });
+        })
+        //导出数据表格Excel
+        $('#exp').bind('click',function(){
+            var plate_no = $('#plate_no').val();
+            window.open("../ajaction/v1/?menuid=131311&cmd=exp&plate_no="+plate_no);
         })
     })
     </script>
 </head>
-<body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
+<body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff;overflow-y: auto">
 <div  class="u-content">
 <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
         <input id="plate_no" type="text" placeholder="车牌号码"/> <button id="search">搜索</button>
         <button id="exp" style="float: right"><span style="display:inline-block;margin-right:12px;">+</span>打印</button>
     </div>
-    <table id="dg" class="easyui-datagrid" style="width: 100%" url="../ajaction/v1/?menuid=131311&cmd=qry"
-          rownumbers="false" pagination="true" striped="true">
+    <table id="dg" class="easyui-datagrid" style="width: 100%" url="../ajaction/v1/?menuid=131311&cmd=qry" toolbar="#tb"
+          striped="true" rownumbers="false" pagination="true" >
         <thead>
         <tr>
             <th data-options="field:'time_add',width:300">安装时间</th>
@@ -52,6 +47,7 @@
         </tr>
         </thead>
     </table>
+
 </div>
 </body>
 </html>

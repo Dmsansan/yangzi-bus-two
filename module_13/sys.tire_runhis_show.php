@@ -59,7 +59,7 @@
             var serchtxt = $("#serchform :input").fieldSerialize() + sendtxt;
 			$('.pcontrol input', manager.toolbar).val(1);
 			manager.changePage('input');
-			manager.set({url:'../ajaction/v1/?menuid=131311&cmd=qry&'+serchtxt});
+			manager.set({url:'../ajaction/v1/?menuid=131311&cmd=qry_search&'+serchtxt});
 			//131110
 			//manager.loadData(true);
         }
@@ -99,24 +99,19 @@
             
             manager=$("#maingrid4").ligerGrid({
                 checkbox: false,
-                columns: [{display: '安装时间', name: 'time_add',width:200},
-				{display: '卸载时间', name: 'time_remove',width:200},
-				{display: '车辆号码', name: 'plate_no',width:200},
-				{display: '轮胎号位', name: 'place_no',width:200,render:function(row,rowindex,value,column){
-				
-						return gettirename(Number(row.place_no));
-						
-					}
-				},
-				{display: '轮胎胎号', name: 'tire_no',width:200},				
-				{display: '累计运行时长', name: 'run_time',width:200,type:'float',
+                columns: [{display: '安装时间', name: 'time_add',width:150},
+				{display: '卸载时间', name: 'time_remove',width:150},
+				{display: '车辆号码', name: 'plate_no',width:250},
+				{display: '轮胎号位', name: 'place_no',width:250},
+				{display: '轮胎胎号', name: 'tire_no',width:250},				
+				{display: '累计运行时长(小时)', name: 'run_time',width:250,type:'float',
 				totalSummary:
                     {
                         type: 'sum',
 						render: function (e) { 
 							//汇总渲染器，返回html加载到单元格 
 							//e 汇总Object(包括sum,max,min,avg,count) 
-							var t=e.sum/60/60;
+							var t=e.sum;
 							if(t<24){
 								return "<div>总数：" + t.toFixed(2) + "小时</div>"; 
 							}else{
@@ -224,15 +219,15 @@
 		function getGridOptions(checkbox) {
              var options = {
                  columns: [
-                 { display: '胎号', name:'factory_code', width:100,isSort:false },
-				{ display: '传感器编号', name:'sensor_no', width: 100, },
-				{ display: '规格',name:'norms_name',width: 100,},
-				{ display: '层级',name:'class_name',width: 100,},
-				{ display: '花纹',name:'figure_name',width: 100,},
-				{ display: '品牌',name:'brand_name',width: 100,},								 
+                 { display: '胎号', name:'factory_code', width:120,isSort:false },
+				 { display: '传感器编号', name:'sensor_no', width: 120, },
+				 { display: '规格',name:'norms_name',width: 120,},
+				 { display: '层级',name:'class_name',width: 120,},
+				 { display: '花纹',name:'figure_name',width: 120,},
+				 { display: '品牌',name:'brand_name',width: 140,},								 
                  ], switchPageSizeApplyComboBox: false,
                  /*data: $.extend({}, CustomersData),*/
-				 url:'../ajaction/v1/?menuid=111110&cmd=qry&t=1',
+				 url:'../ajaction/v1/?menuid=111110&cmd=qry_search&t=1',
                  pageSize: 10,
 				 dataAction:'server',
 				 allowUnSelectRow:true
@@ -271,7 +266,7 @@
 					if(s!="") s="&"+s;
 					$('.pcontrol input', obj.grid.toolbar).val(1);
 					obj.grid.changePage('input');
-					obj.grid.set({url:'../ajaction/v1/?menuid=111110&cmd=qry&t=1'+s});
+					obj.grid.set({url:'../ajaction/v1/?menuid=111110&cmd=qry_search&t=1'+s});
 					obj.grid.loadData(true);
 					
 				},
@@ -377,7 +372,7 @@
 		background-color:#1c66dc;
 	}
 </style>
-<body style="margin-top:0px">
+<body style="margin-top:0px;background-color: #fff">
  <div id="message" style="width:800px"></div>
 <div class="l-loading" style="display:none" id="pageloading"></div> 
   <form id="form1" onsubmit=" return false ">·
@@ -408,9 +403,9 @@
                     </td>
 		
 				<td></td><td></td><td></td><td></td><td></td>
-					<td style="align:right">
-					<button id="button" style="float: right;margin-top: 10px;margin-right:40px; outline:none;">打印</button>
-					</td>
+					<!--<td style="align:right">
+					<button id="exp" style="float: right;margin-top: 10px;margin-right:40px; outline:none;">打印</button>
+					</td>-->
                 </tr>
             </table>
         </form>

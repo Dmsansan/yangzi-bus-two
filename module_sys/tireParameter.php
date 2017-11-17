@@ -110,16 +110,6 @@
                 $('#addUser').window('open').window('setTitle','新增参数');
             };
             $(function () {
-                //装载数据操作
-                $.ajax({
-                    url:'../ajaction/v1/?menuid=101112&cmd=qry&t=1',
-                    type:'post',
-                    dataType:'json',
-                    success:function(data){
-                    $("#dg").datagrid("loadData", data.Rows);  
-                        console.log('data',data);
-                    }                           
-                });
                 //增加操作
                 $('#save').bind('click',function(){
                 var brand_name=$('#brand_name').textbox('getText');
@@ -178,16 +168,9 @@
             });
             //搜索操作：
             $('#search').bind('click',function(){
-                var brand_name=$('#search_brand_name').val();
-                $.ajax({
-                    url:'../ajaction/v1/?menuid=101112&cmd=qry',
-                    type:'POST',
-                    data:{'brand_name':brand_name},
-                    dataType:'json',
-                    success:function(data){
-                        $("#dg").datagrid("loadData", data.Rows);    
-                    }
-                });
+               $("#dg").datagrid('load',{
+                brand_name: $('#search_brand_name').val(),
+            }); 
                 
             });
 
@@ -206,7 +189,7 @@
                     type:'post',
                     dataType:'json',
                     success:function(data){
-                    $("#dg").datagrid("loadData", data.Rows);  
+                    $("#dg").datagrid("loadData", data.rows);  
                         console.log('data',data);
                     }                           
                 });
@@ -264,8 +247,11 @@
 </head>
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #f1f6fd">
 <div  class="u-content">
+    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
+        <input id="search_brand_name" placeholder="品牌名称" /> <button id="search">搜索</button><button style="float: right;margin-top: 15px;" onclick="addUser()">增加</button>
+    </div>
     <table id="dg" class="easyui-datagrid"
-           data-options="singleSelect:true,method:'get',toolbar:'#tb',striped:'true',pagination:'true'">
+           url="../ajaction/v1/?menuid=101112&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true">
         <thead>
         <tr>
             <!--<th data-options="field:'itemid',width:200">参数编号</th>-->
@@ -274,16 +260,13 @@
             <th data-options="field:'norms_name',width:255">规格名称</th>
             <th data-options="field:'class_name',width:250">层级名称</th>
             <th data-options="field:'figure_name',width:280">花纹名称</th>
-            <th data-options="field:'figure',width:280">轮胎数量</th>
 			
             <th data-options="field:'remark',width:200">备注</th>
             <th data-options="field:'_operate',width:200,formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
-    <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-        <input id="search_brand_name" placeholder="品牌名称" /> <button id="search">搜索</button><button style="float: right;margin-top: 15px;" onclick="addUser()">增加</button>
-    </div>
+   
     <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 400px;background-color: #bdc4d4;">
     <div style="background-color: #ffffff;height:340px;margin:10px;">
         <span id="message">参数信息</span>

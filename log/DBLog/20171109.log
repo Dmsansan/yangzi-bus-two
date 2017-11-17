@@ -1,9 +1,18 @@
 
 ------------------
+<<<<<<< HEAD
 -时间:01:20:02-
 -错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色测试')]-
 -错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色测试')' at line 1-
 -错误号:1064-
 -错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
 -错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+=======
+-时间:02:40:13-
+-错误信息:错误的SQL语句: [select * from roles where role_id=超级管理员]-
+-错误内容:Unknown column '超级管理员' in 'where clause'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101010&cmd=qrybyone&role_id=%E8%B6%85%E7%BA%A7%E7%AE%A1%E7%90%86%E5%91%98-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/sys.roles_show.php-
+>>>>>>> 59f61fdc4e5fd7fe60f439be201802b6ff6bbbe1
 ------------------

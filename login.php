@@ -118,12 +118,12 @@ function LoginSystem()
                                             <tr>
                                                 <td width="40" height="80"><img src="images/user.png" width="40" height="41"></td>
                                                 <!--<td width="38" height="50">用户</td>-->
-                                                <td width="280" height="80"><input type="text" name="userid" id="userid" placeholder="请输入管理员名称" style="width:261px; padding-left: 16px; outline:none; font-size: 16px; height:41px; line-height:42px; background:url(images/inputbg.png) repeat-x; border:0; font-size:9pt; font-family:Verdana, Geneva, sans-serif;"></td>
+                                                <td width="280" height="80"><input type="text" name="userid" id="userid" placeholder="请输入管理员名称" style="width:261px; outline:none; font-size: 16px; height:41px; line-height:42px; background:url(images/inputbg.png) repeat-x; border:0; font-size:9pt; font-family:Verdana, Geneva, sans-serif;"></td>
                                             </tr>
                                             <tr>
                                                 <td height="50"><img src="images/password.png" width="40" height="41"></td>
                                                 <!--<td height="50">密码</td>-->
-                                                <td height="50"><input type="password" name="userkey" id="userkey" placeholder="请输入管理员密码" style="width:261px; padding-left: 16px; outline:none; font-size: 16px; height:41px; line-height:42px; background:url(images/inputbg.png) repeat-x; border:0; font-size:9pt; "></td>
+                                                <td height="50"><input type="password" name="userkey" id="userkey" placeholder="请输入管理员密码" style="width:261px;  outline:none; font-size: 16px; height:41px; line-height:42px; background:url(images/inputbg.png) repeat-x; border:0; font-size:9pt; "></td>
                                             </tr>
                                             <tr>
                                                 <td height="40">&nbsp;</td>

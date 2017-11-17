@@ -12,6 +12,9 @@ class tire_count {
 			case "qry":
 				$this->qry();
 				return;
+            case "kc_qry":
+                $this->kc_qry();
+                return;
 			default:
                 $arr = array ('status'=>'ERROR','reason'=>'未知的命令！');
                 echo json_encode($arr);
@@ -166,6 +169,9 @@ class tire_count {
 		return;
 	}
 
+    function kc_qry(){
+       $sql ="select * from tire_info";  
+    }
 }
 
 ?>

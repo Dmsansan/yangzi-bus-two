@@ -27,8 +27,14 @@ class tire_info {
 			case "qry":
 				$this->qry();
 				return;
+			case "qry_search":
+				$this->qry_search();
+				return;
 			case "qrybyone":
 				$this->qrybyone();
+				return;
+			case "qry_kc":
+				$this->qry_kc();
 				return;
 			default:
                 $arr = array ('status'=>'ERROR','reason'=>'未知的命令！');
@@ -95,6 +101,8 @@ class tire_info {
 		$p_staff=mysql_escape_string(trim($_REQUEST["p_staff"].""));
 		$remark=mysql_escape_string(trim($_REQUEST["remark"].""));
 		
+		$add_stamp = date('Y-m-d H:i:s',time());
+
 		if($factory_code == "" || $brand_id_val==""){
 			$arr = array ('status'=>'ERROR','reason'=>'参数不完整');
 			echo json_encode($arr);
@@ -112,10 +120,10 @@ class tire_info {
         }
 
 		$sql="insert into tire_info (tire_rfid,sensor_id,factory_code,brand_id,tire_param_id,
-                figure_value,rated_mile,rated_hour,order_num,price,p_staff,
+                figure_value,rated_mile,rated_hour,add_stamp,order_num,price,p_staff,
                 remark)
 		values ('$ret[sensor_no]','$sensor_id_val','$factory_code','$brand_id_val','$tire_param_id',
-                '$figure_value','$rated_mile','$rated_hour','$order_num','$price','$p_staff','$remark')";
+                '$figure_value','$rated_mile','$rated_hour','$add_stamp','$order_num','$price','$p_staff','$remark')";
 		$this->conn->query($sql);
 		if($this->conn->affected_rows()>0){
             $str="添加了新轮胎".$factory_code;
@@ -291,7 +299,7 @@ class tire_info {
 		
 		$sql.=implode(",",$fields);
 		$sql.=" where tire_id=$tire_id";
-		
+		//echo $sql;die;
 		$this->conn->query($sql);
 		if($this->conn->affected_rows()>0){
             $str="修改了轮胎信息".$factory_code;
@@ -495,7 +503,178 @@ class tire_info {
 
 		return;
 	}
-	
+	function qry_search(){
+        global $tire_position;
+		$sortname=mysql_escape_string(trim($_REQUEST["sortname"].""));
+		$sortorder=mysql_escape_string(trim($_REQUEST["sortorder"].""));
+		
+		$pagesize=mysql_escape_string(trim($_REQUEST["pagesize"].""));
+		$page=mysql_escape_string(trim($_REQUEST["page"].""));
+
+		$factory_code=mysql_escape_string(trim($_REQUEST["factory_code"].""));
+		$sensor_no=mysql_escape_string(trim($_REQUEST["sensor_no"].""));
+        $store_id=mysql_escape_string(trim($_REQUEST["store_id"].""));
+        $store_list_val=mysql_escape_string(trim($_REQUEST["store_list_val"].""));
+        $mile_count=mysql_escape_string(trim($_REQUEST["mile_count"].""));
+        
+        /*先查询出品牌、规格、层级、花纹存入数组*/
+        $arr_brand=array();
+        $sql="select * from brand";
+        $res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+            while ($rec=$this->conn->fetch_array($res)){
+				$arr_brand[$rec[brand_id]]=$rec[brand_name];
+			}
+            $this->conn->free_result($res);
+        }
+
+        $arr_norms=array();
+        $sql="select * from brand";
+        $res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+            while ($rec=$this->conn->fetch_array($res)){
+				$arr_norms[$rec[brand_id]]=$rec[norms_name];
+			}
+            $this->conn->free_result($res);
+        }
+
+        $arr_class=array();
+        $sql="select * from brand";
+        $res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+            while ($rec=$this->conn->fetch_array($res)){
+				$arr_class[$rec[brand_id]]=$rec[class_name];
+			}
+            $this->conn->free_result($res);
+        }
+
+        $arr_figure_type=array();
+        $sql="select * from brand";
+        $res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+            while ($rec=$this->conn->fetch_array($res)){
+				$arr_figure_type[$rec[brand_id]]=$rec[figure_name];
+			}
+            $this->conn->free_result($res);
+        }
+
+		$sql="select a.*,b.*,c.* from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id";
+		$sql_cnt="select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id";
+        if($store_id==""){
+            $sql="select a.*,b.*,c.*,d.store_name from tire_info as a
+                    left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                    left join sensor as c on a.sensor_id=c.sensor_id
+                    left join store as d on a.store_id=d.store_id";
+            $sql_cnt="select count(*) as cnt from tire_info as a
+                    left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                    left join sensor as c on a.sensor_id=c.sensor_id
+                    left join store as d on a.store_id=d.store_id";
+        }
+		$where="";
+		if($factory_code!=""){
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" a.factory_code like '%$factory_code%'";
+		}
+		if($sensor_no!=""){
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" c.sensor_no like '%$sensor_no%'";
+		}
+		if($store_id!=""){
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" a.store_id=0 and a.to_store_id=0";
+		}
+		if($store_list_val!=""){
+            $store_list_val=str_replace(";",",",$store_list_val);
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" a.store_id in ($store_list_val)";
+		}
+		if($mile_count!=""){
+			if($where=="")
+				$where=" where";
+			else
+				$where.=" and";
+			$where.=" a.mile_count >= $mile_count";
+		}
+		
+		$sql.=$where;
+		$sql_cnt.=$where;
+        if($sortname!="")$sql.=" order by $sortname";
+		if($sortorder!="")$sql.=" $sortorder";
+		if($pagesize!=""&&$page!=""){
+			$rec_from=intval($pagesize)*(intval($page)-1);
+			$sql.=" limit $rec_from, $pagesize";
+		}
+
+		$ret=$this->conn->query_first($sql_cnt);
+		if($ret['cnt']==0){
+			$arr = array ('Total'=>$ret['cnt']);
+			echo json_encode($arr);
+			die();
+		}
+		$arr=array();
+		$arr['Total']=intval($ret['cnt']);
+		$res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+			$arr['count']=$this->conn->num_rows($res);
+			$rows = array ();
+			while ($rec=$this->conn->fetch_array($res)){
+                if(array_key_exists($rec[brand_id],$arr_brand))
+                    $rec[brand_name]=$arr_brand[$rec[brand_id]];
+                else
+                    $rec[brand_name]="";
+                
+                if(array_key_exists($rec[norms_id],$arr_norms))
+                    $rec[norms_name]=$arr_norms[$rec[norms_id]];
+                else
+                    $rec[norms_name]="";
+                
+                if(array_key_exists($rec[class_id],$arr_class))
+                    $rec[class_name]=$arr_class[$rec[class_id]];
+                else
+                    $rec[class_name]="";
+                
+                if(array_key_exists($rec[figure_id],$arr_figure_type))
+                    $rec[figure_name]=$arr_figure_type[$rec[figure_id]];
+                else
+                    $rec[figure_name]="";
+                $rec[place]=$tire_position[intval($rec[place])];
+				array_push($rows,$rec);
+			}
+			$arr['Rows']=$rows;
+			//$result = trim(json_encode($arr),"\xEF\xBB\xBF");
+			//$result=@iconv("GBK", "UTF-8//IGNORE", $result);
+			$result = json_encode($arr);
+			echo $result;
+			die();
+			//$this->log->do_log($str);
+		}else{
+			$arr = array ('Total'=>$ret['cnt']);
+			$result = json_encode($arr);
+			//@iconv("GBK", "UTF-8//IGNORE", $result);
+			echo $result;
+			die();
+			//$this->log->do_log($str);
+			//die("404, $str\r\n");
+		}
+
+		return;
+	}
 	/**
 		命令 ajaction/v1/?menuid=111110&cmd=qrybyone&tire_id=轮胎编号
 		反回 {"tire_id":1, "company_name":"","brand_id":"品牌ID","tire_param_id":"参数ID","sensor_id":"传感器","figure_value":花纹深度}
@@ -543,6 +722,73 @@ class tire_info {
 		}else{
 			$arr = array ('status'=>'ERROR','reason'=>'删除失败！');
 			echo json_encode($arr);
+			die();
+		}
+		return;
+	}
+	/*轮胎库存查询
+		brand_id 品牌ID
+		norms_id 规格ID
+		date 日期
+	*/
+	function qry_kc(){
+		$brand_id = mysql_escape_string(trim($_REQUEST["brand_id"].""));
+		$norms_id = mysql_escape_string(trim($_REQUEST["norms_id"].""));
+		$date = mysql_escape_string(trim($_REQUEST["date"].""));
+		//入库
+		$sql = "select COUNT(tire_id),b.tire_param_id,b.brand_id,b.norms_id,c.brand_name,d.norms_name from tire_info as a 
+				left join tire_param_info as b on b.tire_param_id=a.tire_param_id 
+				left join brand as c on c.brand_id=b.brand_id
+				left join brand as d on d.brand_id=b.norms_id
+				where a.brand_id!=''";
+		if($brand_id!=""){
+			$sql .= " and a.brand_id='$brand_id'";
+		}
+		if($norms_id!=""){
+			$sql .= " and b.norms_id='$norms_id'";
+		}
+		if($date!=""){
+			$start_date = $date." 00:00:00";
+			$end_date = $date." 23:59:59";
+			$sql .= " and add_stamp>='$start_date' and add_stamp<='$end_date'";
+		}
+		$sql .=" group by brand_id,norms_id";
+		$res = $this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+			$rows = array();
+			while($rec=$this->conn->fetch_array($res)){
+				$row = array();
+				$row['rk_num']=$rec[0];//入库数量
+				$row['brand']=$rec[brand_name];//品牌
+				$row['norms_name']=$rec[norms_name];//规格
+                $sql_one = "select * from tire_info where tire_param_id='$rec[tire_param_id]' and status='装上'";
+                if($date!=""){
+					$start_date = $date." 00:00:00";
+					$end_date = $date." 23:59:59";
+					$sql_one .= " and add_stamp>='$start_date' and add_stamp<='$end_date'";
+				}
+                $res_one = $this->conn->query($sql_one);
+
+				$row['ck_num'] = $this->conn->num_rows($res_one);
+
+				$row['kc_num'] = $row['rk_num']-$row['ck_num'];
+				array_push($rows,$row);
+			}
+			
+			$arr['count']=$this->conn->num_rows($res);
+			$arr['total']=$this->conn->num_rows($res);
+
+			$arr['rows']=$rows;
+			//$result = trim(json_encode($arr),"\xEF\xBB\xBF");
+			//$result=@iconv("GBK", "UTF-8//IGNORE", $result);
+			$result = json_encode($arr);
+			echo $result;
+			die();
+		}else{
+			$arr = array ('total'=>0,'count'=>0);
+			$result = json_encode($arr);
+			//@iconv("GBK", "UTF-8//IGNORE", $result);
+			echo $result;
 			die();
 		}
 		return;

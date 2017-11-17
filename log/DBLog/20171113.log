@@ -1,0 +1,45 @@
+
+------------------
+-时间:10:39:31-
+-错误信息:错误的SQL语句: [select a.*,b.v_term_no from bus_info as a left join vehicle_term as b on a.v_term_id=b.v_term_id limit 0, ]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=121010&cmd=qry&t=1-
+-错误页面地址:http://localhost/YangziBUS2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:10:39:32-
+-错误信息:错误的SQL语句: [select a.*,b.v_term_no from bus_info as a left join vehicle_term as b on a.v_term_id=b.v_term_id limit 0, ]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=121010&cmd=qry&t=1-
+-错误页面地址:http://localhost/YangziBUS2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:10:39:35-
+-错误信息:错误的SQL语句: [select a.*,b.v_term_no from bus_info as a left join vehicle_term as b on a.v_term_id=b.v_term_id limit 0, ]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=121010&cmd=qry&t=1-
+-错误页面地址:http://localhost/YangziBUS2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:10:39:41-
+-错误信息:错误的SQL语句: [select a.*,b.v_term_no from bus_info as a left join vehicle_term as b on a.v_term_id=b.v_term_id limit 0, ]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=121010&cmd=qry&t=1-
+-错误页面地址:http://localhost/YangziBUS2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:10:39:45-
+-错误信息:错误的SQL语句: [select a.*,b.v_term_no from bus_info as a left join vehicle_term as b on a.v_term_id=b.v_term_id limit 0, ]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=121010&cmd=qry&t=1-
+-错误页面地址:http://localhost/YangziBUS2/module_12/vehicle.php-
+------------------

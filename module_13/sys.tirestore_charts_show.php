@@ -11,24 +11,32 @@
 	<script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
 <script type="text/javascript">
     $(function(){
-		$('#datatable').datagrid({
-			fitColumns:true,
-			striped:true,
-			pagination:true,
-			singleSelect:true,
-			loading:'正在加载.....',
-			toolbar:'#toolbar',
-			columns:[[
-			{field:'code',title:'轮胎品牌',width:100},
-			{field:'name',title:'轮胎规格',width:100},
-			{field:'price',title:'进库数量',width:100,align:'right'},
-			{field:'price',title:'库存数量',width:100,align:'right'},
-			{field:'price',title:'出库数量',width:100,align:'right'}
-			]]
-		})
-		
-		
-		
+    	$.ajax({
+				 url:'../ajaction/v1/?menuid=101112&cmd=qry',
+				dataType:'json',
+				success:function(data){
+					var msg=data.rows;
+					$("#brand_no").combobox('loadData',msg);
+					$("#norms_no").combobox('loadData',msg);
+				}
+			});
+		$('#brand_no').combobox({
+	        valueField:'brand_id',
+	        textField:'brand_name'
+    	});
+    	$('#norms_no').combobox({
+	        valueField:'brand_id',
+	        textField:'norms_name'
+    	});
+    	 //搜索
+        $('#search').bind('click',function(){
+            //alert($('#plate_no').val());
+            $("#dg").datagrid('load',{
+                brand_id: $('#brand_no').combobox('getValue'),
+                norms_id: $('#norms_no').combobox('getValue'),
+                date: $('#time').val()
+            }); 
+        })
 	})
 </script>
 <style type="text/css">
@@ -44,18 +52,28 @@
 	 background-color:#1c66dc;
 	 color:#ffffff;
  }
-
 </style>
 </head>
-<body class="easyui-layout" style="margin:0;padding:0; background-color:#f1f6fd;overflow: hidden">
-<table id="datatable">
+<body class="easyui-layout" style="margin:0;padding:0; background-color:#f1f6fd;overflow-y: auto">
+ 	<div id="toolbar" style="padding:20px;font-size:12px;">
+	品牌：<input id="brand_no" class="easyui-combobox" prompt="轮胎品牌"/> 
+    规格：<input id="norms_no" class="easyui-combobox" prompt="轮胎规格"/>
+    日期：<input id="time" class="easyui-datebox" style="width: 100px;height:26px;">
+	<button id="search" class="searchbutton" style="vertical-align:middle">搜索 </button>
 
+	</div>
+ 	<table id="dg" class="easyui-datagrid" style="width: 100%" url="../ajaction/v1/?menuid=111110&cmd=qry_kc"
+          rownumbers="false" pagination="true" striped="true">
+        <thead>
+        <tr>
+            <th data-options="field:'brand',width:300">轮胎品牌</th>
+            <th data-options="field:'norms_name',width:300">轮胎规格</th>
+            <th data-options="field:'rk_num',width:230">入库数量</th>
+            <th data-options="field:'ck_num',width:200">出库数量</th>
+            <th data-options="field:'kc_num',width:200">库存数量</th>
+        </tr>
+        </thead>
+    </table>
 
-
-</table>
-<div id="toolbar" style="padding:20px;">
-	<input class="easyui-textbox" prompt="轮胎品牌"/> <button class="searchbutton" style="vertical-align:middle">搜索 </button>
-
-</div>
 </body>
 </html>

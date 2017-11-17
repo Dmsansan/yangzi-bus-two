@@ -21,23 +21,10 @@
        
         $(function () {
 			$('#search').on('click',function(){
-				var role_id=$('#rolesName').val();
-				if(role_id==''||role_id.length==0){
-					alert('搜索框不能为空');
-				}else{
-					$.ajax({
-						url:'../ajaction/v1/?menuid=101010&cmd=qrybyone&role_id='+role_id,
-						dataType:'json',
-						type:'post',
-						success:function(data){
-							console.log('search',data);
-						
-							$('#dg').datagrid('loadData', { total: 0, rows: [] });  
-							 $("#dg").datagrid("loadData",data.Row); 
-						}
-						
-					})
-				}
+				//var role_id=$('#rolesName').val();
+					$("#dg").datagrid('load',{
+                       role_id: $('#rolesName').val(),
+                    }); 
 			});
 			$('#add').on('click',function(){
 				 $('#addUser').dialog('open').dialog('setTitle','新增角色');
@@ -60,13 +47,18 @@
 				type:'get',
 				multiple: true,
 				checkbox: true,
-				required: true
+				required: true,
+				cascadeCheck:true,
+				onCheck:function(node,text){
+					console.log('node',node);
+				}
             });
 			$('#roles').combotree({
 				url:'../ajaction/v1/?menuid=0&cmd=get_all_modules',
 				type:'get',
 				width:'200',
 				multiple: true,
+				cascadeCheck:true,
 				checkbox: true,
 				required: true
 			})
@@ -102,12 +94,19 @@
 			$('#updata_save').bind('click',function(){
 				var title=$('#title').textbox('getText');
 				var role_id=$('#role_id').val();
-				var remark=$('#remark').textbox('getText');							
+				var remark=$('#remark').textbox('getText');		
+				var module_list_val5=$('#roles').combotree('getValues');
+				//if(module_list_val5.length>1){
+					//for(var i=0;i<module_list_val5.length;i++){
+						
+					//}
+				//}else{
+					//module_list_val5[0];
+				//}
 				var module_list=$('#roles').combotree('getText');
 				var module_list_val=$('#module_id').val();
 				var operlist=$('#operate').combobox('getText');
-				console.log('dddddd',role_id+remark+module_list+module_list_val+operlist);
-				
+				console.log('dddddd',module_list_val5);
 				$.ajax({
 					url:'../ajaction/v1/?menuid=101010&cmd=edit',
 					type:'POST',
@@ -130,13 +129,23 @@
 			$('#save').bind('click',function(){
 			var addrole=$('#addrole').textbox('getText');
 			var rolePower=$('#rolePower').combotree('getText');
-			var module_list_val=$('#rolePower').combotree('getValue');
+			var module_list_val=$('#rolePower').combotree('getValues');
+			var ad=module_list_val.length;
+			console.log('ad',ad);
+			var moduleval=module_list_val[0]+';';
+			for(var i=1;i<module_list_val.length;i++){
+			
+			moduleval+= module_list_val[i]+';';
+			
+			}
+			console.log('moduleval',moduleval);
 			var addoper=$('#addoper').combobox('getText');
 			var addremark=$('#addremark').textbox('getText');
+			console.log('dattttt',module_list_val);
 			$.ajax({
 				url:'../ajaction/v1/?menuid=101010&cmd=add',
 				type:'POST',
-				data:{'title':addrole,'remark':addremark,'module_list':rolePower,'module_list_val':module_list_val,'operlist':addoper},
+				data:{'title':addrole,'remark':addremark,'module_list':rolePower,'module_list_val':moduleval,'operlist':addoper},
 				success:function(data){
 					 $.messager.show({
                             title : '操作成功',
@@ -189,9 +198,9 @@
             if (row){
                 $('#dlg').dialog('open').dialog('setTitle','修改角色信息');
 				$('#role_id').val(row.role_id);
-				$('#module_id').val(row.modules_list_val);
 				  $('#title').textbox('setValue',row.title);
-				 $('#roles').combotree('setValue',row.modules_list)
+				 $('#roles').combotree('setValue',row.modules_list_val);
+				  $('#roles').combotree('setText',row.modules_list);  
 				 $('#operate').combobox('setValue',row.operlist);//setValue;
 				 $('#remark').textbox('setValue',row.remark);
 				 console.log('module_id',row.modules_list_val);
@@ -329,7 +338,7 @@
 </head>
 <body class="easyui-layout" style="width:100%; height: 100%;">
 <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-    <input type="text" id="rolesName" placeholder="角色编号"/> <button id="search">搜索</button>
+    <input type="text" id="rolesName" placeholder="角色名称"/> <button id="search">搜索</button>
     <button id="add" style="float: right; margin-top: 15px;">增加</button>
     </div>
     <table id="dg" class="easyui-datagrid" url="../ajaction/v1/?menuid=101010&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true" >
@@ -337,8 +346,8 @@
         <tr>
             <th field="role_id" width="15%" sortable="true">角色编号</th>
             <th data-options="field:'title',width:'15%'">角色名称</th>
-            <th data-options="field:'modules_list',width:'15%'">模块列表</th>
-            <th data-options="field:'remark',width:'30%'">说明</th>
+            <th data-options="field:'modules_list',width:'30%'">模块列表</th>
+            <th data-options="field:'remark',width:'15%'">说明</th>
             <th data-options="field:'_operate',width:'25%',formatter:formatOption">操作</th>
         </tr>
         </thead>

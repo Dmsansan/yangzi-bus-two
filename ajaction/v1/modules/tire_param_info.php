@@ -112,9 +112,10 @@ class tire_param_info {
 		$temp_ul=mysql_escape_string(trim($_REQUEST["temp_ul"].""));
 		$tkph_val=mysql_escape_string(trim($_REQUEST["tkph_val"].""));
 		$baro_val=mysql_escape_string(trim($_REQUEST["baro_val"].""));
-		$mainterance1=mysql_escape_string(trim($_REQUEST["mainterance1"].""));
-		$mainterance2=mysql_escape_string(trim($_REQUEST["mainterance2"].""));
-        $rated_mile=mysql_escape_string(trim($_REQUEST["rated_mile"].""));
+		//$mainterance1=mysql_escape_string(trim($_REQUEST["mainterance1"].""));
+		//$mainterance2=mysql_escape_string(trim($_REQUEST["mainterance2"].""));
+		$figure_mile1=mysql_escape_string(trim($_REQUEST["figure_mile1"].""));
+        $figure_mile2=mysql_escape_string(trim($_REQUEST["figure_mile2"].""));
 
 		$tire_param_id=mysql_escape_string(trim($_REQUEST["tire_param_id"].""));
 
@@ -157,8 +158,10 @@ class tire_param_info {
 		$fields[]=" temp_ul='$temp_ul'";
 		$fields[]=" tkph_val='$tkph_val'";
 		$fields[]=" baro_val='$baro_val'";
-		$fields[]=" mainterance1='$mainterance1'";
-		$fields[]=" mainterance2='$mainterance2'";
+		//$fields[]=" mainterance1='$mainterance1'";
+		//$fields[]=" mainterance2='$mainterance2'";
+		$fields[]= " figure_mile1='$figure_mile1'";
+		$fields[]= " figure_mile2='$figure_mile2'";
 		$fields[]=" rated_mile='$rated_mile'";
 		
 		$sql.=implode(",",$fields);
@@ -196,8 +199,10 @@ class tire_param_info {
 	function qry(){
 		$sortname=mysql_escape_string(trim($_REQUEST["sortname"].""));
 		$sortorder=mysql_escape_string(trim($_REQUEST["sortorder"].""));
-		$pagesize=mysql_escape_string(trim($_REQUEST["pagesize"].""));
-		$page=mysql_escape_string(trim($_REQUEST["page"].""));
+		$page = isset($_POST['page']) ? intval($_POST['page']) : 1;
+		$rows = isset($_POST['rows']) ? intval($_POST['rows']) : 10;
+		
+		$offset = ($page-1)*$rows;
 		$company_name=mysql_escape_string(trim($_REQUEST["company_name"].""));
 		
 		$sql="select a.*,b.brand_name,c.norms_name,d.class_name,e.figure_name from tire_param_info as a
@@ -219,11 +224,7 @@ class tire_param_info {
 		$sql_cnt.=$where;
         if($sortname!="")$sql.=" order by $sortname";
 		if($sortorder!="")$sql.=" $sortorder";
-		if($pagesize!=""&&$page!=""){
-			$rec_from=intval($pagesize)*(intval($page)-1);
-			$sql.=" limit $rec_from, $pagesize";
-		}
-
+		$sql.=" limit $offset, $rows";
 		$ret=$this->conn->query_first($sql_cnt);
 		if($ret['cnt']==0){
 			$arr = array ('Total'=>$ret['cnt']);
@@ -231,7 +232,7 @@ class tire_param_info {
 			die();
 		}
 		$arr=array();
-		$arr['Total']=intval($ret['cnt']);
+		$arr['total']=intval($ret['cnt']);
 		$res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
 			$arr['count']=$this->conn->num_rows($res);
@@ -239,7 +240,7 @@ class tire_param_info {
 			while ($rec=$this->conn->fetch_array($res)){
 				array_push($rows,$rec);
 			}
-			$arr['Rows']=$rows;
+			$arr['rows']=$rows;
 			//$result = trim(json_encode($arr),"\xEF\xBB\xBF");
 			//$result=@iconv("GBK", "UTF-8//IGNORE", $result);
 			$result = json_encode($arr);
@@ -247,7 +248,7 @@ class tire_param_info {
 			die();
 			//$this->log->do_log($str);
 		}else{
-			$arr = array ('Total'=>$ret['cnt']);
+			$arr = array ('total'=>$ret['cnt']);
 			$result = json_encode($arr);
 			//@iconv("GBK", "UTF-8//IGNORE", $result);
 			echo $result;
@@ -255,10 +256,8 @@ class tire_param_info {
 			//$this->log->do_log($str);
 			//die("404, $str\r\n");
 		}
-
 		return;
 	}
-	
 	/**
 		命令 ajaction/v1/?menuid=111010&cmd=qrybyone&tire_param_id=参数id号
 		反回 {"tire_param_id":1, "company_name":"","brand_id":"","norms_id":"","class_id":"","figure_id":"",

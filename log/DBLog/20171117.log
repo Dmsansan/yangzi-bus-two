@@ -1,0 +1,433 @@
+
+------------------
+-时间:11:51:26-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息胎管员')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息胎管员')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:11:59:07-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息测试')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息测试')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:12:46:29-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息超级管理员1')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息超级管理员1')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:12:52:47-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息超级管理员1')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息超级管理员1')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:01:08:49-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息超级管理员1')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息超级管理员1')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:01:13:08-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息超级管理员1')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息超级管理员1')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:01:13:46-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息超级管理员1')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息超级管理员1')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:01:16:12-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息超级管理员1')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息超级管理员1')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:01:24:48-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色ggg')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色ggg')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:01:25:45-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息ggg')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息ggg')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:01:27:01-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色aaa')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色aaa')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:01:41:23-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息胎管员')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息胎管员')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:01:43:46-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息aaa')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息aaa')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:01:58:08-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息胎管员')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息胎管员')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:02:12-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色hahha')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色hahha')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:03:12-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色qqq')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色qqq')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:03:39-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色aaaaaaaa')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色aaaaaaaa')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:04:07-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色5656')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色5656')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:04:19-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息ggg')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息ggg')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:04:22-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息qqq')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息qqq')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:04:25-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息hahha')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息hahha')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:04:28-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息测试')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息测试')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:24:39-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色aaaa')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色aaaa')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:28:08-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色1234')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色1234')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:33:57-
+-错误信息:错误的SQL语句: [insert into roles (title,role_name,remark,modules_list,modules_list_val,operlist) 
+                values ('1234','1234','','用户权限管理,角色管理,用户管理','Array','添加')]-
+-错误内容:Duplicate entry '1234' for key 'role_name'-
+-错误号:1062-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:34:56-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色12312')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色12312')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:36:45-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色12314')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色12314')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:39:57-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色2225')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色2225')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:41:44-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息1234')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息1234')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:41:46-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息12312')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息12312')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:41:49-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息aaaaaaaa')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息aaaaaaaa')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:42:07-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色4566')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色4566')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:43:58-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色43234')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色43234')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:44:50-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色54616')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色54616')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:45:44-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色2543')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色2543')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:46:00-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息2543')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息2543')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:46:02-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息43234')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息43234')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:46:05-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息54616')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息54616')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:02:47:24-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色54456416')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色54456416')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:03:29:56-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息54456416')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息54456416')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:03:30:09-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息54456416')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息54456416')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:03:35:26-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息54456416')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息54456416')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:03:35:50-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息aaaa')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息aaaa')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:03:35:57-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息4566')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息4566')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:03:36:00-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'删除','删除了角色信息12314')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''删除','删除了角色信息12314')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=del-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:03:36:17-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'新增','添加了新角色13231')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''新增','添加了新角色13231')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:03:37:05-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息13231')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息13231')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:03:37:54-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('角色管理',now(),,'修改','修改了角色信息5656')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ''修改','修改了角色信息5656')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=101010&cmd=edit-
+-错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
+------------------
