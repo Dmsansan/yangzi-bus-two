@@ -89,9 +89,12 @@
 			$('#updata_save').bind('click',function(){
 				var title=$('#title').textbox('getText');
 				var role_id=$('#role_id').val();
-				var remark=$('#remark').textbox('getText');							
+				var remark=$('#remark').textbox('getText');
+
 				var module_list=$('#roles').combotree('getText');
-				var module_list_val=$('#module_id').val();
+
+				var module_list_val=$('#roles').combotree('getValue');
+
 				var operlist=$('#operate').combobox('getText');
 				console.log('dddddd',role_id+remark+module_list+module_list_val+operlist);
 				
@@ -176,12 +179,13 @@
             if (row){
                 $('#dlg').dialog('open').dialog('setTitle','修改角色信息');
 				$('#role_id').val(row.role_id);
-				$('#module_id').val(row.modules_list_val);
-				  $('#title').textbox('setValue',row.title);
-				 $('#roles').combotree('setValue',row.modules_list)
-				 $('#operate').combobox('setValue',row.operlist);//setValue;
-				 $('#remark').textbox('setValue',row.remark);
-				 console.log('module_id',row.modules_list_val);
+				//$('#module_id').val(row.modules_list_val);
+				$('#title').textbox('setValue',row.title);
+                $('#roles').combotree('setValue',row.modules_list_val);
+				$('#roles').combotree('setText',row.modules_list);
+				$('#operate').combobox('setValue',row.operlist);//setValue;
+				$('#remark').textbox('setValue',row.remark);
+				console.log('module_id',row.modules_list_val);
             }
         };
 		//删除操作

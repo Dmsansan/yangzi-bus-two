@@ -24,6 +24,12 @@ class sys {
 			case "get_all_stores":
 				$this->get_all_stores();
 				return;
+			case "get_all_company":
+				$this->get_all_company();
+				return;
+			case "get_all_roules":
+				$this->get_all_roules();
+				return;
 			case "get_all_roles":
 				$this->get_all_roles();
 				return;
@@ -272,7 +278,60 @@ class sys {
 		}
 		return;
 	}
-
+	function get_all_company(){
+		$sql="select * from company";
+		$res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+			$arr = array ();
+			$arr['status']="OK";
+			$items = array ();
+			while ($rec=$this->conn->fetch_array($res)){
+				$data['id']=$rec['id'];
+				$data['company_name']=$rec['company_name'];
+				array_push($items,$data);
+			}
+			$arr['items']=$items;
+			$result = json_encode($arr);
+			echo $result;
+			die();
+			//$this->log->do_log($str);
+		}else{
+            $arr = array ('status'=>'ERROR','reason'=>'没有任何分公司');
+			$result = json_encode($arr);
+			echo $result;
+			die();
+			//$this->log->do_log($str);
+			//die("404, $str\r\n");
+		}
+		return;
+	}
+	function get_all_roules(){
+		$sql="select * from roules";
+		$res=$this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+			$arr = array ();
+			$arr['status']="OK";
+			$items = array ();
+			while ($rec=$this->conn->fetch_array($res)){
+				$data['id']=$rec['id'];
+				$data['roules_name']=$rec['roules_name'];
+				array_push($items,$data);
+			}
+			$arr['items']=$items;
+			$result = json_encode($arr);
+			echo $result;
+			die();
+			//$this->log->do_log($str);
+		}else{
+            $arr = array ('status'=>'ERROR','reason'=>'没有任何线路');
+			$result = json_encode($arr);
+			echo $result;
+			die();
+			//$this->log->do_log($str);
+			//die("404, $str\r\n");
+		}
+		return;
+	}
 	/*
 		命令: /ajaction/v1/?menuid=0&cmd=get_all_roles
 		反回:{"status":"OK","items":[{"role_title":"角色1","role_id":10 },{"role_title":"角色2","role_id":11}]}
@@ -612,7 +671,7 @@ class sys {
         global $module_name,$cmd_name;
 
 		$admin_name=mysql_escape_string(trim($_REQUEST["userid"].""));
-		$password=mysql_escape_string(trim($_REQUEST["password"].""));
+		$password=md5(mysql_escape_string(trim($_REQUEST["password"]."")));
 
 		$sql="select * from admins where admin_name='$admin_name' and password='$password'";
 		$ret=$this->conn->query_first($sql);
@@ -683,112 +742,101 @@ class sys {
 
     	$store_id = mysql_escape_string(trim($_REQUEST["store_id"].""));
 
-    	if($store_id == ''){//所有数据
+
     		$tire_sql = "select * from tire_info";
+    		if($store_id != ""){
+    			$tire_sql .= " where plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
     		$res = $this->conn->query($tire_sql);
     		//轮胎总数
     		$tire_count = $this->conn->num_rows($res);
     		//注册轮胎数量=轮胎总数/传感器数量
     		$sensor_sql = "select * from sensor";
+    		if($store_id != ""){
+    			$sensor_sql .= " ";
+    		}
     		$sensor_res = $this->conn->query($sensor_sql);
     		$sensor_count = $this->conn->num_rows($sensor_res);
     		//装车轮胎数量
     		$zc_tire_sql = "select * from tire_info where plate_no!=''";
+
+    		if($store_id != ""){
+    			$zc_tire_sql .= "  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
     		$zc_tire_res = $this->conn->query($zc_tire_sql);
     		$zc_tire_count = $this->conn->num_rows($zc_tire_res);
     		//库存轮胎数量
     		$kc_tire_sql ="select * from tire_info where plate_no='' and mile_count=0";
+
+    		if($store_id != ""){
+    			$kc_tire_sql .= "  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
     		$kc_tire_res = $this->conn->query($kc_tire_sql);
     		$kc_tire_count = $this->conn->num_rows($kc_tire_res);
     		//报废轮胎数量
     		$bf_tire_sql ="select * from tire_info where plate_no='' and mile_count!=0";
+
+    		if($store_id != ""){
+    			$bf_tire_sql .= "  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
     		$bf_tire_res = $this->conn->query($bf_tire_sql);
     		$bf_tire_count = $this->conn->num_rows($bf_tire_res);
     		//车辆总数
     		$bus_sql = "select * from bus_info";
+    		if($store_id != ""){
+    			$bus_sql .= " where plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
     		$bus_res = $this->conn->query($bus_sql);
     		$bus_count = $this->conn->num_rows($bus_res);
     		//运营车辆数
     		$yy_bus_sql = "select * from bt_real_log";
+
+    		if($store_id !=""){
+    			$yy_bus_sql .=" where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
+
     		$yy_bus_res = $this->conn->query($yy_bus_sql);
     		$yy_bus_count = $this->conn->num_rows($yy_bus_res);
     		//报废车辆数
     		$bf_bus_count = $bus_count-$yy_bus_count;
     		//报警记录总数
     		$alarm_sql = "select * from bus_alarm_log";
+    		if($store_id !=""){
+    			$alarm_sql .=" where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
     		$alarm_res = $this->conn->query($alarm_sql);
     		$alarm_count = $this->conn->num_rows($alarm_res);
     		//高压报警记录总数
     		$height_alarm_sql = "select * from bus_alarm_log where pressure>pressure_ul";
+    		if($store_id != ""){
+    			$height_alarm_sql .= "   and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
     		$height_alarm_res = $this->conn->query($height_alarm_sql);
     		$height_alarm_count = $this->conn->num_rows($height_alarm_res);
     		//低压报警记录总数
     		$low_alarm_sql = "select * from bus_alarm_log where pressure<pressure_ll";
+    		if($store_id != ""){
+    			$low_alarm_sql .= " and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
     		$low_alarm_res = $this->conn->query($low_alarm_sql);
     		$low_alarm_count = $this->conn->num_rows($low_alarm_res);
     		//高温报警记录总数
     		$height_wendu_sql = "select * from bus_alarm_log where temp>temp_ul";
+    		if($store_id != ""){
+    			$height_wendu_sql .= "  and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
     		$height_wendu_res = $this->conn->query($height_wendu_sql);
-    		$height_wendu_count = $this->conn->num_rows($height_wendu_res);
-    	}else{
-    		$tire_sql = "select * from tire_info where plate_no
-    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
-    		$res = $this->conn->query($tire_sql);
-    		//轮胎总数
-    		$tire_count = $this->conn->num_rows($res);
-    		//注册轮胎数量=轮胎总数/传感器数量
-    		$sensor_sql = "select * from sensor";
-    		$sensor_res = $this->conn->query($sensor_sql);
-    		$sensor_count = $this->conn->num_rows($sensor_res);
-    		//装车轮胎数量
-    		$zc_tire_sql = "select * from tire_info where plate_no!='' and plate_no
-    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
-    		$zc_tire_res = $this->conn->query($zc_tire_sql);
-    		$zc_tire_count = $this->conn->num_rows($zc_tire_res);
-    		//库存轮胎数量
-    		$kc_tire_sql ="select * from tire_info where plate_no='' and mile_count=0 and plate_no
-    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
-    		$kc_tire_res = $this->conn->query($kc_tire_sql);
-    		$kc_tire_count = $this->conn->num_rows($kc_tire_res);
-    		//报废轮胎数量
-    		$bf_tire_sql ="select * from tire_info where plate_no='' and mile_count!=0 and plate_no
-    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
-    		$bf_tire_res = $this->conn->query($bf_tire_sql);
-    		$bf_tire_count = $this->conn->num_rows($bf_tire_res);
-    		//车辆总数
-    		$bus_sql = "select * from bus_info where plate_no
-    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
-    		$bus_res = $this->conn->query($bus_sql);
-    		$bus_count = $this->conn->num_rows($bus_res);
-    		//运营车辆数
-    		$yy_bus_sql = "select * from bt_real_log where bus_id
-    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
-    		$yy_bus_res = $this->conn->query($yy_bus_sql);
-    		$yy_bus_count = $this->conn->num_rows($yy_bus_res);
-    		//报废车辆数
-    		$bf_bus_count = $bus_count-$yy_bus_count;
-    		//报警记录总数
-    		$alarm_sql = "select * from bus_alarm_log where bus_id
-    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
-    		$alarm_res = $this->conn->query($alarm_sql);
-    		$alarm_count = $this->conn->num_rows($alarm_res);
-    		//高压报警记录总数
-    		$height_alarm_sql = "select * from bus_alarm_log where pressure>pressure_ul and bus_id
-    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
-    		$height_alarm_res = $this->conn->query($height_alarm_sql);
-    		$height_alarm_count = $this->conn->num_rows($height_alarm_res);
-    		//低压报警记录总数
-    		$low_alarm_sql = "select * from bus_alarm_log where pressure<pressure_ll and bus_id
-    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
-    		$low_alarm_res = $this->conn->query($low_alarm_sql);
-    		$low_alarm_count = $this->conn->num_rows($low_alarm_res);
-    		//高温报警记录总数
-    		$height_wendu_sql = "select * from bus_alarm_log where temp>temp_ul and bus_id
-    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
-    		$height_wendu_res = $this->conn->query($height_wendu_sql);
-    		$height_wendu_count = $this->conn->num_rows($height_wendu_res);
-
-    	}
+    	
     	$arr = array('tire_count'=>$tire_count,'sensor_count'=>$sensor_count,'zc_tire_count'=>$zc_tire_count,'kc_tire_count'=>$kc_tire_count,'bf_tire_count'=>$bf_tire_count,'bus_count'=>$bus_count,'yy_bus_count'=>$yy_bus_count,'bf_bus_count'=>$bf_bus_count,'alarm_count'=>$alarm_count,'height_alarm_count'=>$height_alarm_count,'low_alarm_count'=>$low_alarm_count,'height_wendu_count'=>$height_wendu_count);
     	echo json_encode($arr);
     	die();

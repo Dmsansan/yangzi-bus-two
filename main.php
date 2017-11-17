@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -48,6 +51,16 @@
     </style>
     <script type="text/javascript">
     $(function () {
+
+        //获取module 复制$_SESSION[modules_list_val]
+         $.ajax({
+                url:'./ajaction/sysaction/sys.new_getmodules.php',
+                dataType:'json',
+                success:function(data){
+                    console.log('modules',data);
+                }
+            });
+
         $('#company').combobox({
             //url:'./ajaction/v1/?menuid=0&cmd=get_all_stores',
             valueField:'store_id',
@@ -59,7 +72,7 @@
                     type:'POST',
                     success:function(data){
                         console.log('sansan',data);
-                         $("#tire_count").html(data.tire_count);
+                       $("#tire_count").html(data.tire_count);
                        $("#sennor_count").html(data.sensor_count);
                        if(data.sensor_count != 0){
                        $("#sennor_tire_count").progressbar({
@@ -162,7 +175,234 @@
             }
         });
 		
-        
+         $('#fcompany').combobox({
+            //url:'./ajaction/v1/?menuid=0&cmd=get_all_stores',
+            valueField:'id',
+            textField:'company_name', 
+            onSelect:function(rec){
+                $.ajax({
+                    url:'./ajaction/v1/?menuid=0&cmd=get_index_data&company_id='+rec.id,
+                    dataType:'json',
+                    type:'POST',
+                    success:function(data){
+                        console.log('sansan',data);
+                         $("#tire_count").html(data.tire_count);
+                       $("#sennor_count").html(data.sensor_count);
+                       if(data.sensor_count != 0){
+                       $("#sennor_tire_count").progressbar({
+                            value:parseInt(data.tire_count/data.sensor_count*100)
+                       });
+                        }else{
+                            $("#sennor_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                        }
+                       $("#kc_count").html(data.kc_tire_count);
+                       if(data.tire_count != 0){
+                       $("#kc_tire_count").progressbar({
+                            value:parseInt(data.kc_tire_count/data.tire_count*100)
+                       });
+                   }else{
+                         $("#kc_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                   }
+                       $("#zc_count").html(data.zc_tire_count);
+                       if(data.tire_count != 0){
+                       $("#zc_tire_count").progressbar({
+                            value:parseInt(data.zc_tire_count/data.tire_count*100)
+                       });
+                    }else{
+                         $("#zc_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#bf_count").html(data.bf_tire_count);
+                        if(data.tire_count != 0){
+                        $("#bf_tire_count").progressbar({
+                            value:parseInt(data.bf_tire_count/data.tire_count*100)
+                       });
+                    }else{
+                        $("#bf_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#bus_count").html(data.bus_count);
+                        $("#yy_count").html(data.yy_bus_count);
+                        if(data.bus_count != 0){
+                        $("#yy_bus_count").progressbar({
+                            value:parseInt(data.yy_bus_count/data.bus_count*100)
+                       });
+                        }else{
+                            $("#yy_bus_count").progressbar({
+                                value:parseInt(0)
+                           });
+                        }
+                         $("#bff_count").html(data.bf_bus_count);
+                         if(data.bus_count != 0){
+                        $("#bf_bus_count").progressbar({
+                            value:parseInt(data.bf_bus_count/data.bus_count*100)
+                       });
+                    }else{
+                         $("#bf_bus_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#alarm_count").html(data.alarm_count);
+                        $("#height_count").html(data.height_alarm_count);
+                        if(data.alarm_count != 0){
+                        $("#height_alarm_count").progressbar({
+                            value:parseInt(data.height_alarm_count/data.alarm_count*100)
+                       });
+                    }else{
+                        $("#height_alarm_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#low_count").html(data.low_alarm_count);
+                        if(data.alarm_count != 0){
+                        $("#low_alarm_count").progressbar({
+                            value:parseInt(data.low_alarm_count/data.alarm_count*100)
+                       });
+                    }else{
+                        $("#low_alarm_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#wendu_count").html(data.height_wendu_count);
+                        if(data.alarm_count != 0){
+                        $("#height_wendu_count").progressbar({
+                            value:parseInt(data.height_wendu_count/data.alarm_count*100)
+                       });
+                    }else{
+                         $("#height_wendu_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+
+                    }
+                });
+                //var url = './ajaction/v1/?menuid=0&cmd=get_index_data&store_id='+rec.store.id;
+                console.log();
+                /* $('#company').combobox('loadData',rec); */
+
+            }
+        });
+
+        $('#roules').combobox({
+            //url:'./ajaction/v1/?menuid=0&cmd=get_all_stores',
+            valueField:'id',
+            textField:'roules_name', 
+            onSelect:function(rec){
+                $.ajax({
+                    url:'./ajaction/v1/?menuid=0&cmd=get_index_data&roules_id='+rec.id,
+                    dataType:'json',
+                    type:'POST',
+                    success:function(data){
+                        console.log('sansan',data);
+                         $("#tire_count").html(data.tire_count);
+                       $("#sennor_count").html(data.sensor_count);
+                       if(data.sensor_count != 0){
+                       $("#sennor_tire_count").progressbar({
+                            value:parseInt(data.tire_count/data.sensor_count*100)
+                       });
+                        }else{
+                            $("#sennor_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                        }
+                       $("#kc_count").html(data.kc_tire_count);
+                       if(data.tire_count != 0){
+                       $("#kc_tire_count").progressbar({
+                            value:parseInt(data.kc_tire_count/data.tire_count*100)
+                       });
+                   }else{
+                         $("#kc_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                   }
+                       $("#zc_count").html(data.zc_tire_count);
+                       if(data.tire_count != 0){
+                       $("#zc_tire_count").progressbar({
+                            value:parseInt(data.zc_tire_count/data.tire_count*100)
+                       });
+                    }else{
+                         $("#zc_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#bf_count").html(data.bf_tire_count);
+                        if(data.tire_count != 0){
+                        $("#bf_tire_count").progressbar({
+                            value:parseInt(data.bf_tire_count/data.tire_count*100)
+                       });
+                    }else{
+                        $("#bf_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#bus_count").html(data.bus_count);
+                        $("#yy_count").html(data.yy_bus_count);
+                        if(data.bus_count != 0){
+                        $("#yy_bus_count").progressbar({
+                            value:parseInt(data.yy_bus_count/data.bus_count*100)
+                       });
+                        }else{
+                            $("#yy_bus_count").progressbar({
+                                value:parseInt(0)
+                           });
+                        }
+                         $("#bff_count").html(data.bf_bus_count);
+                         if(data.bus_count != 0){
+                        $("#bf_bus_count").progressbar({
+                            value:parseInt(data.bf_bus_count/data.bus_count*100)
+                       });
+                    }else{
+                         $("#bf_bus_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#alarm_count").html(data.alarm_count);
+                        $("#height_count").html(data.height_alarm_count);
+                        if(data.alarm_count != 0){
+                        $("#height_alarm_count").progressbar({
+                            value:parseInt(data.height_alarm_count/data.alarm_count*100)
+                       });
+                    }else{
+                        $("#height_alarm_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#low_count").html(data.low_alarm_count);
+                        if(data.alarm_count != 0){
+                        $("#low_alarm_count").progressbar({
+                            value:parseInt(data.low_alarm_count/data.alarm_count*100)
+                       });
+                    }else{
+                        $("#low_alarm_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#wendu_count").html(data.height_wendu_count);
+                        if(data.alarm_count != 0){
+                        $("#height_wendu_count").progressbar({
+                            value:parseInt(data.height_wendu_count/data.alarm_count*100)
+                       });
+                    }else{
+                         $("#height_wendu_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+
+                    }
+                });
+                //var url = './ajaction/v1/?menuid=0&cmd=get_index_data&store_id='+rec.store.id;
+                console.log();
+                /* $('#company').combobox('loadData',rec); */
+
+            }
+        });
+
         //获取修理厂列表
         $.ajax({
                 url:'./ajaction/v1/?menuid=0&cmd=get_all_stores',
@@ -170,6 +410,26 @@
                 success:function(data){
                     var team=data.items;
                     $('#company').combobox('loadData',team);
+                    console.log('msg',data);
+                }
+            });
+         //获取分公司列表
+        $.ajax({
+                url:'./ajaction/v1/?menuid=0&cmd=get_all_company',
+                dataType:'json',
+                success:function(data){
+                    var team=data.items;
+                    $('#fcompany').combobox('loadData',team);
+                    console.log('msg',data);
+                }
+            });
+         //获取线路列表
+        $.ajax({
+                url:'./ajaction/v1/?menuid=0&cmd=get_all_roules',
+                dataType:'json',
+                success:function(data){
+                    var team=data.items;
+                    $('#roules').combobox('loadData',team);
                     console.log('msg',data);
                 }
             });
@@ -401,16 +661,20 @@
     </div>
     <div id="west" data-options="region:'west',title:''">
         <div id="dd" class="easyui-accordion" style="width:100%;height:99%;">
-            <div title="系统管理" data-options="iconCls:'icon-ok'" style="padding:10px;background-color: #21262f;overflow: hidden">   
+          <?php if(in_array('1010',$_SESSION['modules_list_val'])){?> <div title="系统管理" data-options="iconCls:'icon-ok'" style="padding:10px;background-color: #21262f;overflow: hidden;">   
                         <ul>
                             <li><a onclick="addTab('角色管理','module_sys/sys.roles_show.php')">角色管理</a></li>
                             <li><a onclick="addTab('用户管理','module_sys/sys.users_show.php')" >用户管理</a></li>
                       
                             <li><a onclick="addTab('修理厂管理','module_sys/repairDepotManger.php')">修理厂管理</a></li>
+                            <li><a onclick="addTab('分公司管理','module_sys/sys.company_show.php')">分公司管理</a></li>
+                            <li><a onclick="addTab('线路管理','module_sys/sys.roules_show.php')">线路管理</a></li>
                             <li><a onclick="addTab('轮胎基本参数管理','module_sys/tireParameter.php')">轮胎基本参数管理</a></li>
                             <li><a onclick="addTab('车载终端管理','module_sys/sys.vehicle_show.php')">车载终端管理</a></li>
                         </ul>
             </div>
+            <?php }?>
+            <?php if(in_array('1111',$_SESSION['modules_list_val'])){?>
 			<div id="tireManger" title="轮胎管理" data-options="iconCls:'icon-help'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
@@ -424,6 +688,8 @@
                     </li>
                 </ul>
             </div>
+            <?php }?>
+            <?php if(in_array('1210',$_SESSION['modules_list_val'])){?>
             <div title="车辆管理" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
@@ -431,6 +697,8 @@
                     </li>
                 </ul>
             </div>
+            <?php }?>
+            <?php if(in_array('1310',$_SESSION['modules_list_val'])){?>
             <div title="监测系统" data-options="iconCls:'icon-redo'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
@@ -444,6 +712,8 @@
                     </li>
                 </ul>
             </div>
+            <?php }?>
+            <?php if(in_array('1313',$_SESSION['modules_list_val'])){?>
             <div title="统计分析" data-options="iconCls:'icon-undo'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
@@ -463,6 +733,7 @@
                     </li>-->
                 </ul>
             </div>
+            <?php }?>
             <div title="报表分析" data-options="iconCls:'icon-filter'" style="padding:10px;background-color: #21262f">
                 <ul>
                     <li>
@@ -480,8 +751,12 @@
         <div id="center_page" title="首页">
             <div id="i-center">
                 <div id="center_top" style="padding-top: 20px;padding-left: 1%">
-                    <label for="company">修理厂：</label>
+                    修理厂：
                     <input id="company" class="easyui-combobox" name="company" />
+                    分公司：
+                    <input id="fcompany" class="easyui-combobox" name="fcompany" />
+                    线路：
+                    <input id="roules" class="easyui-combobox" name="roules" />
                     <!--<label for="carteam">车队：</label>
                     <input id="carteam" name="carteam" />-->
                 </div>

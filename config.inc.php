@@ -103,6 +103,10 @@ $module_map = array(
 	'101115' => 'vehicle_term',//车载终端管理
 	'111011' => 'sensor',//传感器管理
     '101117' => 'figure_type',//花纹类型管理
+	
+	'101116' => 'company',//分公司管理
+	'101118' => 'roules',//线路管理
+	
     '111010' => 'tire_param_info',//轮胎参数管理
     '111110' => 'tire_info',//轮胎管理
     '111111' => 'tire_delivers',//轮胎配送
@@ -134,6 +138,10 @@ $module_name = array(
 	'c_class' => '轮胎层级管理',
 	'vehicle_term' => '车载终端管理',
 	'sensor' => '传感器管理',
+	
+	'company' => '分公司管理',
+	'roules' => '线路管理',
+	
     'figure_type' => '花纹类型管理',
     'tire_param_info' => '轮胎参数管理',
     'tire_info' => '轮胎管理',
