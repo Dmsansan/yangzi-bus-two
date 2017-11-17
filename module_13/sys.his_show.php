@@ -11,6 +11,8 @@
     <script src="../jquery-easyui/jquery.easyui.min.js" type="text/javascript"></script>
     <script src="../jquery-easyui/locale/easyui-lang-zh_CN.js" type="text/javascript"></script>
 	<script src="../js/XHD.js" type="text/javascript"> </script>
+
+	
 	<script type="text/javascript">
 	$(function(){
 		$('#tirePosition').combobox({
@@ -185,6 +187,16 @@
 				$('#tireDlg').dialog('close');
 		});
 		
+		//导出数据
+		$('#do_export').bind('click',function(){
+			//alert(12);
+			var row = $('#sss').datagrid('getSelected');
+			var plate_no_val = row.bus_id;
+			var begin_date = $('#begibdate').val();
+			var end_date = $('#stopdate').val();
+			var place_no = $('#tirePosition').combobox('getValue');
+			window.open('../ajaction/v1/?menuid=131110&cmd=exp&begin_date='+begin_date+"&end_date="+end_date+"&place_no="+place_no+"&plate_no_val="+plate_no_val);
+		});
 		
 				//	ajaction/v1/?menuid=131110&cmd=qry
 	})
@@ -283,10 +295,11 @@
 <table id="datatable"></table>
 <div id="toolbar">
     <div style="margin-bottom: 5px">
-        <a href="#" class="easyui-linkbutton" iconCls="icon-save"
-           plain="true">导出</a>
+       
     </div>
     <div style="margin-left: 10px;">
+    	 <a href="#" id="do_export" class="easyui-linkbutton" iconCls="icon-save"
+           plain="true">导出</a>
         起始日期: <input id="begibdate" class="easyui-datebox" style="width: 100px">
         终止日期: <input id="stopdate" class="easyui-datebox" style="width: 100px">
         车辆号码:  <input id="tireNumber" class="easyui-textbox" style="width: 100px" />

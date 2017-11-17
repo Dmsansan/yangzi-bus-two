@@ -150,7 +150,15 @@
 				$('#tireDlg').dialog('close');
 			});
 			
-			
+			//导出数据表格
+			$('#exp').bind('click',function(){
+				var row = $('#sss').datagrid('getSelected');
+				var begin_date = $('#start').val();
+				var end_date = $('#stop').val();
+				var plate_no_val = row.bus_id;
+				var place_no =  tireCount=$('#tireCount').combobox('getValue');
+				window.open("../ajaction/v1/?menuid=131210&cmd=exp&begin_date="+begin_date+"&end_date="+end_date+"&plate_no_val="+plate_no_val+"&place_no="+place_no);
+			});
 		})
 		function search(busid){
 			$('#search').on('click',function(){
@@ -201,7 +209,7 @@
 		 <a id="tt" class="easyui-linkbutton"  style="text-decoration: none" href="#"  >搜索车牌号码</a> 
 		轮胎号位: <input id="tireCount" class="easyui-combobox" style="width: 100px"/>
 				<button id="search"  style="display: inline-block; margin-right: 10px;">搜索</button>
-				<button style="float:right;"><a href="#" style="text-decoration: none;" iconCls="icon-save"
+				<button id="exp" style="float:right;"><a href="#" style="text-decoration: none;" iconCls="icon-save"
            plain="true">导出</a></button>
     </div>
 </div>

@@ -1,0 +1,98 @@
+
+------------------
+-时间:03:20:24-
+-错误信息:错误的SQL语句: [select COUNT(tire_id),b.tire_param_id,b.brand_id,b.norms_id,c.brand_name,d.norms_name from tire_info as a 
+				left join tire_param_info as b on b.tire_param_id=a.tire_param_id 
+				left join brand as c on c.brand_id=b.brand_id
+				left join brand as d on d.brand_id=b.norms_id
+				group by brand_id,norms_id where]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where' at line 5-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111110&cmd=qry_kc-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.tirestore_charts_show.php-
+------------------
+
+------------------
+-时间:03:21:04-
+-错误信息:错误的SQL语句: [select COUNT(tire_id),b.tire_param_id,b.brand_id,b.norms_id,c.brand_name,d.norms_name from tire_info as a 
+				left join tire_param_info as b on b.tire_param_id=a.tire_param_id 
+				left join brand as c on c.brand_id=b.brand_id
+				left join brand as d on d.brand_id=b.norms_id
+				group by brand_id,norms_id where a.brand_id!='']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where a.brand_id!=''' at line 5-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111110&cmd=qry_kc-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.tirestore_charts_show.php-
+------------------
+
+------------------
+-时间:03:33:04-
+-错误信息:错误的SQL语句: [insert into tire_info (tire_rfid,sensor_id,factory_code,brand_id,tire_param_id,
+                figure_value,rated_mile,rated_hour,add_stamp,order_num,price,p_staff,
+                remark)
+		values ('52111','2','52111000','5','3',
+                '','','','1510817584','','','','')]-
+-错误内容:Duplicate entry '52111000' for key 'factory_code'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111110&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.tireinfo_show.php-
+------------------
+
+------------------
+-时间:03:33:07-
+-错误信息:错误的SQL语句: [insert into tire_info (tire_rfid,sensor_id,factory_code,brand_id,tire_param_id,
+                figure_value,rated_mile,rated_hour,add_stamp,order_num,price,p_staff,
+                remark)
+		values ('52111','2','52111000','5','3',
+                '','','','1510817587','','','','')]-
+-错误内容:Duplicate entry '52111000' for key 'factory_code'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111110&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.tireinfo_show.php-
+------------------
+
+------------------
+-时间:03:33:13-
+-错误信息:错误的SQL语句: [insert into tire_info (tire_rfid,sensor_id,factory_code,brand_id,tire_param_id,
+                figure_value,rated_mile,rated_hour,add_stamp,order_num,price,p_staff,
+                remark)
+		values ('52111','2','52111000','5','3',
+                '','','','1510817593','','','','')]-
+-错误内容:Duplicate entry '52111000' for key 'factory_code'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111110&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.tireinfo_show.php-
+------------------
+
+------------------
+-时间:03:38:01-
+-错误信息:错误的SQL语句: [insert into tire_info (tire_rfid,sensor_id,factory_code,brand_id,tire_param_id,
+                figure_value,rated_mile,rated_hour,add_stamp,order_num,price,p_staff,
+                remark)
+		values ('34611','16','34611000','5','4',
+                '','','','2017-11-16 15:38:01','','','','')]-
+-错误内容:Duplicate entry '34611000' for key 'factory_code'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111110&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.tireinfo_show.php-
+------------------
+
+------------------
+-时间:04:16:44-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a1b11','10','4','125','-90','')]-
+-错误内容:Duplicate entry 'a1b11' for key 'sensor_no'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:04:17:04-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('a1b11','10','4','125','-90','')]-
+-错误内容:Duplicate entry 'a1b11' for key 'sensor_no'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.sensor_show.php-
+------------------

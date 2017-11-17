@@ -168,16 +168,9 @@
             });
             //搜索操作：
             $('#search').bind('click',function(){
-                var brand_name=$('#search_brand_name').val();
-                $.ajax({
-                    url:'../ajaction/v1/?menuid=101112&cmd=qry',
-                    type:'POST',
-                    data:{'brand_name':brand_name},
-                    dataType:'json',
-                    success:function(data){
-                        $("#dg").datagrid("loadData", data.rows);    
-                    }
-                });
+               $("#dg").datagrid('load',{
+                brand_name: $('#search_brand_name').val(),
+            }); 
                 
             });
 

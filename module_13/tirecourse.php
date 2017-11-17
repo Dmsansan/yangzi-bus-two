@@ -27,7 +27,7 @@
     })
     </script>
 </head>
-<body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
+<body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff;overflow-y: auto">
 <div  class="u-content">
 <div id="tb" style="margin-bottom: 10px;margin-top: 10px">
         <input id="plate_no" type="text" placeholder="车牌号码"/> <button id="search">搜索</button>

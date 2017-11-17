@@ -21,20 +21,10 @@
        
         $(function () {
 			$('#search').on('click',function(){
-				var role_id=$('#rolesName').val();
-				
-					$.ajax({
-						url:'../ajaction/v1/?menuid=101010&cmd=qrybyone&role_id='+role_id,
-						dataType:'json',
-						type:'post',
-						success:function(data){
-							console.log('search',data);
-						
-							//$('#dg').datagrid('loadData', { total: 0, rows: [] });  
-							$("#dg").datagrid("loadData",data.row); 
-						}
-						
-					})
+				//var role_id=$('#rolesName').val();
+					$("#dg").datagrid('load',{
+                       role_id: $('#rolesName').val(),
+                    }); 
 			});
 			$('#add').on('click',function(){
 				 $('#addUser').dialog('open').dialog('setTitle','新增角色');

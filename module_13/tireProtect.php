@@ -19,13 +19,21 @@
                 plate_no: $('#plate_no').val(),
                 start_time: $('#start_time').val(),
                 end_time: $('#end_time').val()
-            });
+            }); 
+        })
+        //打印数据表格
+        $('#exp').bind('click',function(){
+            var start_time = $('#start_time').val();
+            var end_time = $('#end_time').val();
+            var plate_no = $('#plate_no').val();
+
+            window.open("../ajaction/v1/?menuid=131311&cmd=exp_figure&plate_no="+plate_no+"&start_time="+start_time+"&end_time="+end_time);
         })
     })
     </script>
 </head>
-<body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
-<div  class="u-content">
+<body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff;overflow-y:auto">
+<div  class="u-content"  data-options="fit:true" >
     <table id="dg" class="easyui-datagrid"
           url="../ajaction/v1/?menuid=131311&cmd=qry_figure" toolbar="#tb"
           striped="true" rownumbers="false" pagination="true">
@@ -44,7 +52,7 @@
         终止日期: <input id="end_time" class="easyui-datebox" style="width: 100px;height:26px;">
         车牌号码：<input id="plate_no" type="text" placeholder="车牌号码"/> 
         <button id="search">搜索</button>
-		<button style="float: right"><span style="margin-right:8px;">+</span>打印</button>
+		<button id="exp" style="float: right"><span style="margin-right:8px;">+</span>打印</button>
     </div>
 </div>
 </body>

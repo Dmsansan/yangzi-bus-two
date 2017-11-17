@@ -1275,7 +1275,7 @@
 			}
 		}else{
 			//option.title.text=place+"号位温度曲线";
-			option.title.text=gettirename(place)+"-湿度曲线";
+			option.title.text=gettirename(place)+"-温度曲线";
 			plate=com_plate.getText();
 			if(isn==0){
 				option.series[0].name=plate+" 温度值";
@@ -1726,7 +1726,7 @@
   <form id="form1" onsubmit=" return false " style="width:1400px">
     <div id="toolbar" style="width:1400px"></div>	
 	<div id="grid" style="text-align:center" style="width:1400px">
-		<div id="main" style="margin:0px;width:1400px">
+		<div id="main" style="margin:20px;width:1400px">
 			<div id="chart1" style="width:550px;height:400px;float:left; margin-left: 24px;display:inline" ></div>
 			<div id="chart2" style="width:550px;height:400px;float:left;display:inline;    margin-left: 90px;"></div>
 			<div id="chart3" style="width:550px;height:400px;float:left; margin-left: 24px;"></div>

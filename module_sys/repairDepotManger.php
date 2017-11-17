@@ -28,18 +28,9 @@
 			
             //搜索操作
             $('#search').bind('click',function(){
-                var xiuli_name = $('#xiuli_name').val();
-                $.ajax({
-                    url:'../ajaction/v1/?menuid=101110&cmd=qry',
-                    type:'POST',
-                    data:{'store_name':xiuli_name},
-                    dataType:'json',
-                    success:function(data){
-                        var obj = eval(data);
-                        $("#dg").datagrid("loadData", data.rows);
-                        console.log('data',obj);
-                    }
-                });
+               $("#dg").datagrid('load',{
+                store_name: $('#xiuli_name').val(),
+            }); 
             });
 			//增加操作
 			$('#save').bind('click',function(){

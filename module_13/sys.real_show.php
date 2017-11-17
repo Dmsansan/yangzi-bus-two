@@ -12,6 +12,10 @@
 <script src="../lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script>        
 <script src="../lib/ligerUI/js/plugins/ligerGrid.js" type="text/javascript"></script> 
 <script src="../lib/ligerUI/js/plugins/ligerLayout.js" type="text/javascript"> </script> 
+<script src="../lib/ligerUI/js/plugins/ligerDateEditor.js" type="text/javascript"></script>
+<script src="../lib/ligerUI/js/plugins/ligerPopupEdit.js" type="text/javascript"></script>
+<script src="../lib/ligerUI/js/plugins/ligerComboBox.js" type="text/javascript"></script>
+
 <script src="../js/XHD.js" type="text/javascript"> </script>
 <script src="../lib/jquery.form.js" type="text/javascript"> </script>
 </head>

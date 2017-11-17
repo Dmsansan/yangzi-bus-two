@@ -127,18 +127,10 @@
             });
 			//搜索：
 			$('#search').bind('click',function(){
-				var name=$('#search_company_name').val();
-				//console.log('niaho',name);
-				$.ajax({
-                    url:'../ajaction/v1/?menuid=111010&cmd=qry',
-                    type:'POST',
-                    data:{'company_name':name},
-                    dataType:'json',
-                    success:function(data){
-                        $("#dg").datagrid("loadData", data.rows);    
-                    }
-                });
-				
+				$("#dg").datagrid('load',{
+                    company_name: $('#search_company_name').val(),
+                }); 
+    				
 			});
 					
 		})

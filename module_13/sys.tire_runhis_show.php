@@ -99,15 +99,10 @@
             
             manager=$("#maingrid4").ligerGrid({
                 checkbox: false,
-                columns: [{display: '安装时间', name: 'time_add',width:250},
-				{display: '卸载时间', name: 'time_remove',width:250},
+                columns: [{display: '安装时间', name: 'time_add',width:150},
+				{display: '卸载时间', name: 'time_remove',width:150},
 				{display: '车辆号码', name: 'plate_no',width:250},
-				{display: '轮胎号位', name: 'place_no',width:250,render:function(row,rowindex,value,column){
-				
-						return gettirename(Number(row.place_no));
-						
-					}
-				},
+				{display: '轮胎号位', name: 'place_no',width:250},
 				{display: '轮胎胎号', name: 'tire_no',width:250},				
 				{display: '累计运行时长(小时)', name: 'run_time',width:250,type:'float',
 				totalSummary:
@@ -377,7 +372,7 @@
 		background-color:#1c66dc;
 	}
 </style>
-<body style="margin-top:0px">
+<body style="margin-top:0px;background-color: #fff">
  <div id="message" style="width:800px"></div>
 <div class="l-loading" style="display:none" id="pageloading"></div> 
   <form id="form1" onsubmit=" return false ">·
@@ -408,9 +403,9 @@
                     </td>
 		
 				<td></td><td></td><td></td><td></td><td></td>
-					<td style="align:right">
-					<button id="button" style="float: right;margin-top: 10px;margin-right:40px; outline:none;">打印</button>
-					</td>
+					<!--<td style="align:right">
+					<button id="exp" style="float: right;margin-top: 10px;margin-right:40px; outline:none;">打印</button>
+					</td>-->
                 </tr>
             </table>
         </form>

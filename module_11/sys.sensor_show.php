@@ -100,17 +100,9 @@
             });
 			//搜索操作
 			$('#search').on('click',function(){
-				var searchcontent=$('searhName').val();
-				$.ajax({
-				url:'../ajaction/v1/?menuid=111011&cmd=qry',
-				type:'POST',
-                dataType:'json',
-				data:{'sensor_no':searchcontent},
-				success:function(data){
-                    console.log('gdata',data);
-                    $("#dg").datagrid("loadData", data.Rows);
-				}
-			});
+				$("#dg").datagrid('load',{
+                    sensor_no: $('#searhName').val(),
+                }); 
 			})
 			
 			 

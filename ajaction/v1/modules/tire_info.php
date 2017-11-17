@@ -33,6 +33,9 @@ class tire_info {
 			case "qrybyone":
 				$this->qrybyone();
 				return;
+			case "qry_kc":
+				$this->qry_kc();
+				return;
 			default:
                 $arr = array ('status'=>'ERROR','reason'=>'未知的命令！');
                 echo json_encode($arr);
@@ -98,6 +101,8 @@ class tire_info {
 		$p_staff=mysql_escape_string(trim($_REQUEST["p_staff"].""));
 		$remark=mysql_escape_string(trim($_REQUEST["remark"].""));
 		
+		$add_stamp = date('Y-m-d H:i:s',time());
+
 		if($factory_code == "" || $brand_id_val==""){
 			$arr = array ('status'=>'ERROR','reason'=>'参数不完整');
 			echo json_encode($arr);
@@ -115,10 +120,10 @@ class tire_info {
         }
 
 		$sql="insert into tire_info (tire_rfid,sensor_id,factory_code,brand_id,tire_param_id,
-                figure_value,rated_mile,rated_hour,order_num,price,p_staff,
+                figure_value,rated_mile,rated_hour,add_stamp,order_num,price,p_staff,
                 remark)
 		values ('$ret[sensor_no]','$sensor_id_val','$factory_code','$brand_id_val','$tire_param_id',
-                '$figure_value','$rated_mile','$rated_hour','$order_num','$price','$p_staff','$remark')";
+                '$figure_value','$rated_mile','$rated_hour','$add_stamp','$order_num','$price','$p_staff','$remark')";
 		$this->conn->query($sql);
 		if($this->conn->affected_rows()>0){
             $str="添加了新轮胎".$factory_code;
@@ -294,7 +299,7 @@ class tire_info {
 		
 		$sql.=implode(",",$fields);
 		$sql.=" where tire_id=$tire_id";
-		
+		//echo $sql;die;
 		$this->conn->query($sql);
 		if($this->conn->affected_rows()>0){
             $str="修改了轮胎信息".$factory_code;
@@ -717,6 +722,73 @@ class tire_info {
 		}else{
 			$arr = array ('status'=>'ERROR','reason'=>'删除失败！');
 			echo json_encode($arr);
+			die();
+		}
+		return;
+	}
+	/*轮胎库存查询
+		brand_id 品牌ID
+		norms_id 规格ID
+		date 日期
+	*/
+	function qry_kc(){
+		$brand_id = mysql_escape_string(trim($_REQUEST["brand_id"].""));
+		$norms_id = mysql_escape_string(trim($_REQUEST["norms_id"].""));
+		$date = mysql_escape_string(trim($_REQUEST["date"].""));
+		//入库
+		$sql = "select COUNT(tire_id),b.tire_param_id,b.brand_id,b.norms_id,c.brand_name,d.norms_name from tire_info as a 
+				left join tire_param_info as b on b.tire_param_id=a.tire_param_id 
+				left join brand as c on c.brand_id=b.brand_id
+				left join brand as d on d.brand_id=b.norms_id
+				where a.brand_id!=''";
+		if($brand_id!=""){
+			$sql .= " and a.brand_id='$brand_id'";
+		}
+		if($norms_id!=""){
+			$sql .= " and b.norms_id='$norms_id'";
+		}
+		if($date!=""){
+			$start_date = $date." 00:00:00";
+			$end_date = $date." 23:59:59";
+			$sql .= " and add_stamp>='$start_date' and add_stamp<='$end_date'";
+		}
+		$sql .=" group by brand_id,norms_id";
+		$res = $this->conn->query($sql);
+		if($this->conn->num_rows($res)>0){
+			$rows = array();
+			while($rec=$this->conn->fetch_array($res)){
+				$row = array();
+				$row['rk_num']=$rec[0];//入库数量
+				$row['brand']=$rec[brand_name];//品牌
+				$row['norms_name']=$rec[norms_name];//规格
+                $sql_one = "select * from tire_info where tire_param_id='$rec[tire_param_id]' and status='装上'";
+                if($date!=""){
+					$start_date = $date." 00:00:00";
+					$end_date = $date." 23:59:59";
+					$sql_one .= " and add_stamp>='$start_date' and add_stamp<='$end_date'";
+				}
+                $res_one = $this->conn->query($sql_one);
+
+				$row['ck_num'] = $this->conn->num_rows($res_one);
+
+				$row['kc_num'] = $row['rk_num']-$row['ck_num'];
+				array_push($rows,$row);
+			}
+			
+			$arr['count']=$this->conn->num_rows($res);
+			$arr['total']=$this->conn->num_rows($res);
+
+			$arr['rows']=$rows;
+			//$result = trim(json_encode($arr),"\xEF\xBB\xBF");
+			//$result=@iconv("GBK", "UTF-8//IGNORE", $result);
+			$result = json_encode($arr);
+			echo $result;
+			die();
+		}else{
+			$arr = array ('total'=>0,'count'=>0);
+			$result = json_encode($arr);
+			//@iconv("GBK", "UTF-8//IGNORE", $result);
+			echo $result;
 			die();
 		}
 		return;

@@ -25,7 +25,14 @@
 			});
 			$('#updata_close').bind('click',function(){
 				$('#dlg').dialog('close');
-			});			
+			});
+            $('#insert').on('click',function(){
+                $('#insert_dlg').dialog('open').dialog('setTitle','轮胎批量导入');
+            })
+            $('#insert_concel').bind('click',function(){
+                //alert(123);
+                $('#insert_dlg').dialog('close');
+            })		
 		//加载修理厂全部信息；
 			$.ajax({
                 url: '../ajaction/v1/?menuid=101110&cmd=qry&t=1',
@@ -59,16 +66,9 @@
 
             //搜索操作
             $('#search').bind('click',function(){
-                var v_term_no = $("#search_v_no").val();
-                $.ajax({
-                    url:'../ajaction/v1/?menuid=101115&cmd=qry',
-                    type:"POST",
-                    data:{'v_term_no':v_term_no},
-                    dataType:'json',
-                    success:function(data){
-                        $("#dg").datagrid("loadData", data.rows); 
-                    }
-                });
+               $("#dg").datagrid('load',{
+                v_term_no: $('#search_v_no').val(),
+            }); 
             });
 			//增加操作
 			$('#save').bind('click',function(){
@@ -281,12 +281,30 @@
             background: url("../css/img/cancel_selected.png") no-repeat;
 
         }
+         #insert_concel{
+            border: none;
+            width: 60px;
+            height: 30px;
+            vertical-align: middle;
+            margin-right: 10px;
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
+        }
+        #insert_concel:visited,#insert_concel:link{
+            background: url("../css/img/cancel_normal.png") no-repeat;
+
+        }
+        #insert_concel button:active,#insert_concel button:hover{
+            background: url("../css/img/cancel_selected.png") no-repeat;
+
+        }
 		</style>
 </head>
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
 <div  class="u-content">
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
         <input id="search_v_no" type="text" placeholder="终端编号"/> <button id="search">搜索</button>
+        <button id="insert" style="float: right;margin-top:15px;">批量导入</button>
         <button id="add" style="float: right;margin-top:15px;">增加</button>
     </div>
     <table id="dg" class="easyui-datagrid"
@@ -357,6 +375,22 @@
 			</tr>
         </table>
 		</div>
+    </div>
+    <div id="insert_dlg" class="easyui-dialog" data-options="closed:true,modal:true,buttons:'#upbtn_dlg'" style="width:700px;height: 300px;background-color: #bdc4d4">
+        <div style="background-color: #ffffff;height:240px;margin:10px;">
+        <span id="message">Excel表格批量导入</span><hr/>
+         <form method="post" action="../ajaction/v1/?menuid=121010&cmd=bus_insert" enctype="multipart/form-data">
+            <h3>导入Excel表：</h3><input type="file" name="file_stu" />
+            <input type="submit" value="导入" />
+        </form>
+        <div style="text-align:center;">
+        <tr>
+          <td>
+            <button id='insert_concel' style="margin-top:20px;"><a style="text-decoration: none" href="#"></a></button>
+          </td>  
+        <tr>
+        <div>
+        </div>
     </div>
     <div id="addUser" class="easyui-dialog" data-options="closed:true,modal:true,iconCls:'icon-add2'" style="width:700px;height: 400px;background-color: #bdc4d4">
 		<div style="background-color: #ffffff;height:340px;margin:10px;">
