@@ -777,7 +777,7 @@ class sys {
     		$kc_tire_res = $this->conn->query($kc_tire_sql);
     		$kc_tire_count = $this->conn->num_rows($kc_tire_res);
     		//报废轮胎数量
-    		$bf_tire_sql ="select * from tire_info where plate_no='' and mile_count!=0";
+    		$bf_tire_sql ="select * from tire_info where plate_no='' and bus_mile_count!=0";
 
     		if($store_id != ""){
     			$bf_tire_sql .= "  and plate_no

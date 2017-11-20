@@ -115,6 +115,23 @@
                     console.log('data', data);
                 }
             });
+            //加载全部分公司；
+			$.ajax({
+                url: '../ajaction/v1/?menuid=0&cmd=get_all_company',
+                type: 'post',
+                dataType: 'json',
+                success: function(data) {
+                   var msg=data.rows;
+				   $('#company').combobox('loadData',msg);
+				   $('#up_company').combobox('loadData',msg);
+                    
+                    
+                    console.log('data', data);
+                }
+            });
+
+
+
 			$('#cancel').bind('click',function(){
 				$('#alarm').dialog('close');
 			});
@@ -264,8 +281,7 @@
 					success:function(data){
 						if(data.status!='OK'){
 							$.messager.alert('警告','错误','info');
-						}else{
-							
+						}else{	
 							$.messager.show({
                             title : '操作成功',
                             msg:'安装成功！',

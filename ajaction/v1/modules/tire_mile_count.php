@@ -98,9 +98,10 @@ class tire_mile_count {
 //如果不是装在车上的轮胎，应该是最后一条缷下时的统计时间。
                 $sql_qry="select max(stamp_count) as cnt from tire_exchg_log where tire_id=$rec[tire_id]";
                 $ret_qry=$this->conn->query_first($sql_qry);
-                $row['run_time']=ceil(intval($ret_qry[cnt])/3600);
+                
+                $row['run_time']=sprintf('%.2f',intval($ret_qry[cnt])/3600);
                 if($rec[status]=="装上"){
-                    $row['run_time']=ceil((time()-ymdhis2ts($rec[install_stamp]))/3600);
+                    $row['run_time']=sprintf('%.2f',(time()-ymdhis2ts($rec[install_stamp]))/3600);
                 }
 //                $row['run_time']=$rec[stamp_count];
                 //$row['run_mile']=$rec[b_mc];
@@ -209,9 +210,9 @@ class tire_mile_count {
 //如果不是装在车上的轮胎，应该是最后一条缷下时的统计时间。
                 $sql_qry="select max(stamp_count) as cnt from tire_exchg_log where tire_id=$rec[tire_id]";
                 $ret_qry=$this->conn->query_first($sql_qry);
-                $row['run_time']=ceil(intval($ret_qry[cnt])/3600);
+                $row['run_time']=sprintf('%.2f',intval($ret_qry[cnt])/3600);
                 if($rec[status]=="装上"){
-                    $row['run_time']=ceil((time()-ymdhis2ts($rec[install_stamp]))/3600);
+                    $row['run_time']=sprintf('%.2f',(time()-ymdhis2ts($rec[install_stamp]))/3600);
                 }
 //                $row['run_time']=$rec[stamp_count];
                 //$row['run_mile']=$rec[b_mc];
@@ -342,7 +343,7 @@ class tire_mile_count {
 //如果不是装在车上的轮胎，应该是最后一条缷下时的统计时间。
                 $sql_qry="select max(stamp_count) as cnt from tire_exchg_log where tire_id=$rec[tire_id]";
                 $ret_qry=$this->conn->query_first($sql_qry);
-                $row['run_time']=ceil(intval($ret_qry[cnt])/3600);
+                $row['run_time']=sprintf('%.2f',intval($ret_qry[cnt])/3600);
                 if($rec[status]=="装上"){
                     $row['run_time']=ceil((time()-ymdhis2ts($rec[install_stamp]))/3600);
                 }
@@ -457,9 +458,9 @@ class tire_mile_count {
 //如果不是装在车上的轮胎，应该是最后一条缷下时的统计时间。
                 $sql_qry="select max(stamp_count) as cnt from tire_exchg_log where tire_id=$rec[tire_id]";
                 $ret_qry=$this->conn->query_first($sql_qry);
-                $row['run_time']=ceil(intval($ret_qry[cnt])/3600);
+                $row['run_time']=sprintf('%.2f',intval($ret_qry[cnt])/3600);
                 if($rec[status]=="装上"){
-                    $row['run_time']=ceil((time()-ymdhis2ts($rec[install_stamp]))/3600);
+                    $row['run_time']=sprintf('%.2f',(time()-ymdhis2ts($rec[install_stamp]))/3600);
                 }
 //                $row['run_time']=$rec[stamp_count];
                 //$row['run_mile']=$rec[b_mc];
@@ -581,9 +582,9 @@ class tire_mile_count {
 //如果不是装在车上的轮胎，应该是最后一条缷下时的统计时间。
                 $sql_qry="select max(stamp_count) as cnt from tire_exchg_log where tire_id=$rec[tire_id]";
                 $ret_qry=$this->conn->query_first($sql_qry);
-                $row['run_time']=ceil(intval($ret_qry[cnt])/3600);
+                $row['run_time']=sprintf('%.2f',intval($ret_qry[cnt])/3600);
                 if($rec[status]=="装上"){
-                    $row['run_time']=ceil((time()-ymdhis2ts($rec[install_stamp]))/3600);
+                     $row['run_time']=sprintf('%.2f',(time()-ymdhis2ts($rec[install_stamp]))/3600);
                 }
 //                $row['run_time']=$rec[stamp_count];
                 //$row['run_mile']=$rec[b_mc];

@@ -804,3 +804,15 @@
 -错误页面地址:http://localhost/YangziBus2/module_sys/sys.roles_show.php-
 >>>>>>> 40098a3b51098051dfb25182a6ec56bbef4874d8
 ------------------
+
+------------------
+-时间:04:41:00-
+-错误信息:错误的SQL语句: [select a.*,b.title as role_title,c.store_name,d.company_name from admins as a 
+            left join roles as b on a.role_id=b.role_id
+            left join store as c on a.store_id=c.store_id
+            left join company as d on a.company_id=d.company_id limit 0, 10]-
+-错误内容:Unknown column 'd.company_id' in 'on clause'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101011&cmd=qry&t=1-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_sys/sys.users_show.php-
+------------------

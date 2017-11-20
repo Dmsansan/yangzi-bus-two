@@ -64,6 +64,8 @@ class admins {
 		$is_term=mysql_escape_string(trim($_REQUEST["is_term"].""));
 		$store_id=mysql_escape_string(trim($_REQUEST["store_id_val"].""));
 
+		$company_id=mysql_escape_string(trim($_REQUEST['company_id'].""));
+
 		if($admin_name == "" || $admin_pass==""){
 			$arr = array ('status'=>'ERROR','reason'=>'参数不完整');
 			echo json_encode($arr);
@@ -75,8 +77,8 @@ class admins {
 		else
 			$is_term='N';
 
-		$sql="insert into admins (admin_name,role_id,password,real_name,tel,mobile,email,remark,is_term,store_id)
-		values ('$admin_name',$role_id_val,'$password','$real_name','$tel','$mobile','$email','$remark','$is_term','$store_id')";
+		$sql="insert into admins (admin_name,role_id,password,real_name,tel,mobile,email,remark,is_term,store_id,company_id)
+		values ('$admin_name',$role_id_val,'$password','$real_name','$tel','$mobile','$email','$remark','$is_term','$store_id','$company_id')";
 		$this->conn->query($sql);
 		if($this->conn->affected_rows()>0){
             $str="添加了新用户".$admin_name;
@@ -111,6 +113,8 @@ class admins {
 		$is_term=mysql_escape_string(trim($_REQUEST["is_term"].""));
 		$store_id=mysql_escape_string(trim($_REQUEST["store_id_val"].""));
 		$admin_id=mysql_escape_string(trim($_REQUEST["admin_id"].""));
+
+		$company_id=mysql_escape_string(trim($_REQUEST['up_company_id'].""));
 
 		if($admin_id == ""){
 			$arr = array ('status'=>'ERROR','reason'=>'缺少必要的参数');
@@ -151,6 +155,8 @@ class admins {
 		$fields[]=" email='$email'";
 		$fields[]=" is_term='$is_term'";
 		$fields[]=" store_id='$store_id'";
+
+		$fields[]=" company_id='$company_id'";
 		
 		$sql.=implode(",",$fields);
 		$sql.=" where admin_id=$admin_id";
@@ -196,9 +202,10 @@ class admins {
 		$admin_name=mysql_escape_string(trim($_REQUEST["admin_name"].""));
 		$real_name=mysql_escape_string(trim($_REQUEST["real_name"].""));
 
-		$sql="select a.*,b.title as role_title,c.store_name from admins as a 
+		$sql="select a.*,b.title as role_title,c.store_name,d.company_name from admins as a 
             left join roles as b on a.role_id=b.role_id
-            left join store as c on a.store_id=c.store_id";
+            left join store as c on a.store_id=c.store_id
+            left join company as d on a.company_id=d.id";
 		$sql_cnt="select count(*) as cnt from admins";
 		$where="";
 		if($admin_name!=""){

@@ -62,6 +62,29 @@
                 textField: 'store_name',
                 editable: false
             });
+            //获取分公司列表
+            $.ajax({
+                url:'../ajaction/v1/?menuid=0&cmd=get_all_company',
+                dataType:'json',
+                success:function(data){
+                    var team=data.items;
+                    $('#company').combobox('loadData',team);
+                    $('#up_company').combobox('loadData',team);
+                    console.log('msg',data);
+                }
+            });
+            $('#company').combobox({
+                valueField: 'id',
+                textField: 'company_name',
+                editable: false
+            });
+
+            $('#up_company').combobox({
+                valueField: 'id',
+                textField: 'company_name',
+                editable: false
+            });
+
             $('#operate').combobox({
                 url: '',
                 panelHeight: 200,
@@ -99,12 +122,13 @@
 					is_term='Y';
 				}
 			var store_id_val=$('#up_carTeam').combobox('getValue');
+            var up_company_id=$('#up_company').combobox('getValue');
 			console.log('store_id_val',store_id_val);
 			$.ajax({
 				url:'../ajaction/v1/?menuid=101011&cmd=edit',
 				type:'post',
 				data:{'admin_id':admin_id,'admin_name':admin_name,'role_id_val':role_id,'admin_pass':admin_pass,'real_name':real_name,'tel':tel,'mobile':mobile,'email':email,'remark':remark,'is_term':is_term,
-				'store_id_val':store_id_val},
+				'store_id_val':store_id_val,'up_company_id':up_company_id},
 				success:function(data){
 					$('#dlg').dialog('close');
 					 $.messager.show({
@@ -136,10 +160,11 @@
 				
 			
                 var store_id=$('#carTeam').combobox('getValue');
+                var company_id=$('#company').combobox('getValue');
 					console.log('store_id',store_id);
                 $.ajax({
                 url:'../ajaction/v1/?menuid=101011&cmd=add',
-				data:{'admin_name':admin_name,'real_name':real_name,'role_id_val':role_id_val,'tel':tel,'admin_pass':admin_pass,'mobile':mobile,'email':email,'remark':remark,'is_term':is_term,'store_id_val':store_id},
+				data:{'admin_name':admin_name,'real_name':real_name,'role_id_val':role_id_val,'tel':tel,'admin_pass':admin_pass,'mobile':mobile,'email':email,'remark':remark,'is_term':is_term,'store_id_val':store_id,'company_id':company_id},
 				success:function(data){
 					$('#addUser').dialog('close');
 					 $.messager.show({
@@ -203,6 +228,8 @@
 				 }
 					$('#up_carTeam').combobox('setValue',row.store_id);
 					$('#up_carTeam').combobox('setText',row.store_name);
+                    $('#up_company').combobox('setValue',row.company_id);
+                    $('#up_company').combobox('setText',row.company_name);
 					$('#up_tel').textbox('setValue',row.tel);
 					$('#up_phone').textbox('setValue',row.mobile);
 					$('#up_email').textbox('setValue',row.email);
@@ -355,7 +382,8 @@
                     <th data-options="field:'real_name',width:'10%'">姓名</th>
                     <th data-options="field:'role_title',width:'10%'">角色</th>
                     <th data-options="field:'store_name',width:'10%'">归属车队</th>
-                    <th data-options="field:'remark',width:'25%'">说明</th>
+                     <th data-options="field:'company_name',width:'10%'">分公司</th>
+                    <th data-options="field:'remark',width:'15%'">说明</th>
                     <th data-options="field:'_operate',width:'25%',formatter:formatOption">操作</th>
                 </tr>
             </thead>
@@ -407,6 +435,14 @@
                     </td>
                     <td>
                         <input id="up_carTeam" class="easyui-textbox" style="width: 150px;" />
+                    </td>
+                </tr>
+                <tr>
+                 <td>
+                        所属分公司：
+                    </td>
+                    <td>
+                        <input id="up_company" class="easyui-textbox" style="width: 150px;" />
                     </td>
                 </tr>
             </table>
@@ -506,6 +542,14 @@
                     </td>
                     <td>
                         <input id="carTeam"  style="width: 150px;" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        所属分公司：
+                    </td>
+                    <td>
+                        <input id="company"  style="width: 150px;" />
                     </td>
                 </tr>
             </table>

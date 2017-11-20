@@ -535,7 +535,7 @@ session_start();
             }
         });
         $('#jnkc').jclock({ withDate: true, withWeek: true });
-		$("#dd").accordion('getSelected').panel('collapse');
+		    $("#dd").accordion('getSelected').panel('collapse');
 
         getuserinfo();
 
