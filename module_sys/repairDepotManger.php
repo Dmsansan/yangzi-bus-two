@@ -1,3 +1,7 @@
+<?php
+session_start();
+$operlist = $_SESSION['OperList'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,14 +51,24 @@
 					dataType:'json',
 					data:{'store_no':store_no,'store_name':store_name,'contact':contact,'tel':tel,'mobile':mobile,'address':address,'remark':remark},
 					success:function(data){
-						 $('#addUser').dialog('close');
-						 $.messager.show({
-                            title : '操作成功',
-                            msg:'添加成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-						reload();
+						//var res = eval('(' + data + ')')
+                        if(data.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#addUser').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        }   
 				
 					}
 				})
@@ -76,14 +90,24 @@
 					type:'POST',
 					data:{'store_id':store_id,'store_no':store_no,'store_name':store_name,'contact':contact,'tel':tel,'mobile':mobile,'address':address,'remark':remark},
 					success:function(data){
-						 $('#dlg').dialog('close');
-						 $.messager.show({
-                            title : '操作成功',
-                            msg:'修改成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-						reload();
+						var res = eval('(' + data + ')')
+                        if(res.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#dlg').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        }   
 					}
 				});
 				
@@ -91,9 +115,19 @@
         })
 
 
+        var operlist='<?php echo $operlist;?>';
         function formatOption(value, row, index) {
-                return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
-
+            var str='';
+           
+            if(operlist.indexOf('修改') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; " onclick="editUser('+index+')">编辑</a>';
+            }
+            
+            if(operlist.indexOf('删除') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+            }
+            
+            return str;
         }
         var url;
         function editUser(index) {
@@ -140,14 +174,24 @@
                             'store_id': id
                         },
                         success: function(data) {
-                      $.messager.show({
-                            title : '操作成功',
-                            msg:'删除成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-							$('#alarm').dialog('close');
-							reload();                    
+                        var res = eval('(' + data + ')')
+                        if(res.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#alarm').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        }                      
                         }
                     })
                 })
@@ -253,11 +297,12 @@
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
 <div  class="u-content">
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-        <input type="text" id="xiuli_name" placeholder="修理厂名称"/> <button id="search">搜索</button>
-        <button id="add" style="float: right;margin-top: 15px;">增加</button>
+        <input type="text" id="xiuli_name" placeholder="修理厂名称"/> 
+         <?php $operlist=explode(',',$_SESSION['OperList']); if(in_array('查看',$operlist)){?><button id="search">搜索</button><?php }?>
+         <?php if(in_array('添加',$operlist)){?><button id="add" style="float: right;margin-top: 15px;">增加</button><?php }?>
     </div>
     <table id="dg" class="easyui-datagrid"
-           url="../ajaction/v1/?menuid=101110&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true">
+           url="../ajaction/v1/?menuid=101110&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true" singleSelect="true">
         <thead>
         <tr>
             <th data-options="field:'store_no',width:'10%'">修理厂编号</th>
@@ -281,14 +326,14 @@
                     修理厂编号：
 					</td>
 					<td>
-					 <input id="up_repairId" style="display:none; width: 150px;" />
-                      <input id="up_repairNumber" class="easyui-textbox" style="width: 150px;" />
+					   <input id="up_repairId" style="display:none; width: 150px;" />
+                       <input id="up_repairNumber" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
                 <td>
                     修理厂名称：
 					</td>
 					<td>
-                     <input id="up_repairName" class="easyui-textbox" style="width: 150px;" />
+                     <input id="up_repairName" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
             </tr>
             <tr>
@@ -296,13 +341,13 @@
                     联系人:
 					</td>
                 <td>
-                     <input id="up_contract" class="easyui-textbox" style="width: 150px;" />
+                     <input id="up_contract" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
 				<td>
                     联系&nbsp;电话:
 					</td>
                 <td>
-                     <input id="up_tel" class="easyui-textbox" style="width: 150px;" />
+                     <input id="up_tel" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
             </tr>
             <tr>
@@ -310,13 +355,13 @@
                     手机号码：
 					</td>
                 <td>
-                     <input id="up_phone" class="easyui-textbox" style="width: 150px;" />
+                     <input id="up_phone" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
 				 <td>
                     详细地址：
 					</td>
                 <td>
-                     <input id="up_address" class="easyui-textbox" style="width: 150px;" />
+                     <input id="up_address" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
 
             </tr>
@@ -355,13 +400,13 @@
                     修理厂编号：
 					</td>
                 <td>
-                      <input id="repairNumber" class="easyui-textbox" style="width: 150px;" />
+                      <input id="repairNumber" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
                 <td>
                     修理厂名称：
 					</td>
                 <td>
-                     <input id="repairName" class="easyui-textbox" style="width: 150px;" />
+                     <input id="repairName" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
             </tr>
             <tr>
@@ -369,13 +414,13 @@
                     联系人：
 					</td>
                 <td>
-                     <input id="contract" class="easyui-textbox" style="width: 150px;" />
+                     <input id="contract" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
 				<td>
                     联系电话：
 					</td>
                 <td>
-                     <input id="tel" class="easyui-textbox" style="width: 150px;" />
+                     <input id="tel" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
             </tr>
             <tr>
@@ -383,13 +428,13 @@
                     手机号码：
 					</td>
                 <td>
-                     <input id="phone" class="easyui-textbox" style="width: 150px;" />
+                     <input id="phone" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
 				 <td>
                     详细地址：
 					</td>
                 <td>
-                     <input id="address" class="easyui-textbox" style="width: 150px;" />
+                     <input id="address" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
 
             </tr>
@@ -420,7 +465,7 @@
 		<div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
         <div style="background-color: #ffffff;height:121px;margin:1px;">
 
-            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">用户删除无法恢复，确定删除？</span>
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">修理厂删除无法恢复，确定删除？</span>
         <div  style="width:100%;">
             <button id="sure"></button>
             <button id="cancel"></button>

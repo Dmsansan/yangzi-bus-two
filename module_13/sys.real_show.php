@@ -202,10 +202,9 @@
 								html="<img src='../images/icon/news_selected.png' onclick=\"showMessage('"+row.Plate_No+"')\"/>";
 							}						
 							return html;
-						
 						}					
 					},
-				{display: '车牌号码', name: 'Plate_No',width:'10%',type:'string'},
+				{display: '车牌号码', name: 'Plate_No',width:'14%',type:'string'},
 				{display: '累计里程(Km)', name: 'mile_count',width:'10%'},
                 <?php
 					$i=1;
@@ -263,8 +262,8 @@
 						checkbox: false,
 						columns: [{display: '轮胎编号', name: 'tire_rfid',width:90},
 							{display:"轮胎号位",name:'place',aligin:'center',width:50},
-							{display: '品牌', name: 'company_name',width:80},
-							{display: '花纹深度', name: 'figure_value',width:90},
+							{display: '品牌', name: 'brand_name',width:80},
+							{display: '花纹深度(Cm)', name: 'figure_value',width:90},
 							{display: '累计里程(Km)', name: 'mile_count',width:80},
 							{display: '装胎时间', name: 'fst_place_stamp',width:130},
 							{display: '报警次数', name: 'info_7',width:60},
@@ -464,7 +463,7 @@ function selectgridRow(index){
   <div style="display:none;">
   
 </div>
-<div id='dialog' style="width:980px;height:440px;position:absolute;left:5%;top:5%;display:none;">
+<div id='dialog' style="width:980px;height:440px;position:absolute;left:5%;top:3%;display:none;">
 <div style="height:40px;background:#353c49">
 <span style="margin-left:10px;color:#ffffff;line-height:40px;font-size:14px;">车辆信息</span>
 <button id="test" style="height:20px;width:20px; background: url('../images/shutdown.png') no-repeat center center;border:none;float:right;margin-right:10px;margin-top:10px;"></button>

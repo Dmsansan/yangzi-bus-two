@@ -1,0 +1,768 @@
+
+------------------
+-时间:09:16:40-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by module_id asc' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:16:40-
+-错误信息:错误的SQL语句: [update admins set last_ip='', last_stamp=now(), login_times=login_times+1 WHERE admin_name='']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:16:40-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('通用功能',now(),1,'登录','admin登录了系统')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by module_id asc' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=11]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=11]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=12]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=12]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=13]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=13]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [update admins set last_ip='127.0.0.1', last_stamp=now(), login_times=login_times+1 WHERE admin_name='']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:43:24-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('通用功能',now(),1,'登录','admin登录了系统')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by module_id asc' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=11]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=11]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=12]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=12]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=13]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=13]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [update admins set last_ip='127.0.0.1', last_stamp=now(), login_times=login_times+1 WHERE admin_name='']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:09:44:12-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('通用功能',now(),1,'登录','admin登录了系统')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:16:25-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by module_id asc' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:16:25-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:16:25-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:16:25-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:16:25-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:16:25-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:16:25-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:16:25-
+-错误信息:错误的SQL语句: [update admins set last_ip='127.0.0.1', last_stamp=now(), login_times=login_times+1 WHERE admin_name='']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:16:25-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('通用功能',now(),1,'登录','admin登录了系统')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:19:41-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by module_id asc' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:19:41-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:19:41-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:19:41-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:19:41-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:19:41-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:19:41-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:19:41-
+-错误信息:错误的SQL语句: [update admins set last_ip='127.0.0.1', last_stamp=now(), login_times=login_times+1 WHERE admin_name='']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:19:41-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('通用功能',now(),1,'登录','admin登录了系统')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:21:52-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by module_id asc' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:21:52-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:21:52-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:21:52-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:21:52-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:21:52-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:21:52-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:21:52-
+-错误信息:错误的SQL语句: [update admins set last_ip='127.0.0.1', last_stamp=now(), login_times=login_times+1 WHERE admin_name='']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:21:52-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('通用功能',now(),1,'登录','admin登录了系统')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:23:45-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by module_id asc' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:23:45-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:23:45-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:23:45-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:23:45-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:23:45-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:23:45-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:23:45-
+-错误信息:错误的SQL语句: [update admins set last_ip='', last_stamp=now(), login_times=login_times+1 WHERE admin_name='']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:23:45-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('通用功能',now(),1,'登录','admin登录了系统')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:24:14-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by module_id asc' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:24:14-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:24:14-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=14]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:24:14-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:24:14-
+-错误信息:错误的SQL语句: [select ico,title from modules where module_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:24:14-
+-错误信息:错误的SQL语句: [select module_id from modules where parent_id=15]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:24:14-
+-错误信息:错误的SQL语句: [select title,menu_url from modules where parent_id in () order by module_id asc]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:24:14-
+-错误信息:错误的SQL语句: [update admins set last_ip='', last_stamp=now(), login_times=login_times+1 WHERE admin_name='']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:10:24:14-
+-错误信息:错误的SQL语句: [insert into sys_log (log_type,log_stamp,admin_id,title,content) values ('通用功能',now(),1,'登录','admin登录了系统')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/login.php-
+------------------
+
+------------------
+-时间:05:05:27-
+-错误信息:错误的SQL语句: [insert into tire_param_info (company_name,brand_id,norms_id,class_id,figure_id,
+                pressure_ul,pressure_ll,speed_ul,temp_ul,tkph_val,baro_val,figure_mile1,figure_mile2,rated_mile)
+		values ('固特异','5','5','5','6',
+                '20','10','200','150','1','8','1','0','10000')]-
+-错误内容:Duplicate entry '5-5-5-6' for key 'brand_id'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------

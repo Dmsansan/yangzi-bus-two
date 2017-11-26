@@ -36,14 +36,14 @@
 <div  class="u-content"  data-options="fit:true" >
     <table id="dg" class="easyui-datagrid"
           url="../ajaction/v1/?menuid=131311&cmd=qry_figure" toolbar="#tb"
-          striped="true" rownumbers="false" pagination="true">
+          striped="true" rownumbers="false" pagination="true" singleSelect="true">
         <thead>
 		 <tr>
             <th data-options="field:'tire_no',width:120">轮胎胎号</th>
             <th data-options="field:'plate_no',width:120">车辆号码</th>
             <th data-options="field:'place_no',width:200">轮胎号位</th>
             <th data-options="field:'time_add',width:200">装车时间</th>
-            <th data-options="field:'figure_mile',width:200">装车花纹深度</th>
+            <th data-options="field:'figure_mile',width:200">装车花纹深度(Cm)</th>
         </tr>
         </thead>
     </table>

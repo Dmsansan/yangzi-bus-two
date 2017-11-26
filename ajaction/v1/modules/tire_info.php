@@ -128,7 +128,7 @@ class tire_info {
 		if($this->conn->affected_rows()>0){
             $str="添加了新轮胎".$factory_code;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'轮胎添加成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -154,7 +154,9 @@ class tire_info {
 		$tire_param_id=mysql_escape_string(trim($_REQUEST["norms_id_val"].""));
 		$tire_switch=mysql_escape_string(trim($_REQUEST["tire_switch"].""));
 
-		if($tire_param_id == "" || $brand_id_val==""){
+		$figure_mile=mysql_escape_string(trim($_REQUEST["figure_mile"].""));
+
+		if($tire_param_id == "" || $brand_id_val=="" || $figure_mile == ""){
 			$arr = array ('status'=>'ERROR','reason'=>'参数不完整');
 			echo json_encode($arr);
 			die();
@@ -162,11 +164,11 @@ class tire_info {
         $sql="delete from tire_addmore where store_id='{$_SESSION[StoreID]}' and admin_name='{$_SESSION[UserName]}'";
         $this->conn->query($sql);
         if($tire_switch==""){       //关闭
-            $sql="insert into tire_addmore (brand_id,tire_param_id,tire_switch,add_stamp,store_id,admin_name) 
-                    values ('$brand_id_val','$tire_param_id','off',now(),'{$_SESSION[StoreID]}','{$_SESSION[UserName]}')";
+            $sql="insert into tire_addmore (brand_id,tire_param_id,figure_mile,tire_switch,add_stamp,store_id,admin_name) 
+                    values ('$brand_id_val','$tire_param_id','$figure_mile','off',now(),'{$_SESSION[StoreID]}','{$_SESSION[UserName]}')";
             $this->conn->query($sql);
             if($this->conn->affected_rows()>0){
-                $arr = array ('status'=>'OK');
+                $arr = array ('status'=>'OK','reason'=>'批量添加轮胎开启成功！');
                 echo json_encode($arr);
                 die();
             }else{
@@ -176,8 +178,8 @@ class tire_info {
             }
         }
         if($tire_switch=="on"){
-            $sql="insert into tire_addmore (brand_id,tire_param_id,tire_switch,add_stamp,store_id,admin_name) 
-                    values ('$brand_id_val','$tire_param_id','$tire_switch',now(),'{$_SESSION[StoreID]}','{$_SESSION[UserName]}')";
+            $sql="insert into tire_addmore (brand_id,tire_param_id,figure_mile,tire_switch,add_stamp,store_id,admin_name) 
+                    values ('$brand_id_val','$tire_param_id','$figure_mile','$tire_switch',now(),'{$_SESSION[StoreID]}','{$_SESSION[UserName]}')";
             $this->conn->query($sql);
             if($this->conn->affected_rows()>0){
                 $arr = array ('status'=>'OK');
@@ -213,7 +215,7 @@ class tire_info {
 			echo json_encode($arr);
 			die();
         }else{
-			$arr = array ('brand_id'=>$ret[brand_id],'tire_param_id'=>$ret[tire_param_id],'tire_switch'=>$ret[tire_switch]);
+			$arr = array ('brand_id'=>$ret[brand_id],'tire_param_id'=>$ret[tire_param_id],'tire_switch'=>$ret[tire_switch],'figure_mile'=>$ret[figure_mile]);
 			echo json_encode($arr);
 			die();
         }
@@ -304,7 +306,7 @@ class tire_info {
 		if($this->conn->affected_rows()>0){
             $str="修改了轮胎信息".$factory_code;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'轮胎修改成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -716,7 +718,7 @@ class tire_info {
 		if($this->conn->affected_rows()>0){
             $str="删除了轮胎信息".$ret['factory_code'];
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'轮胎删除成功！');
 			echo json_encode($arr);
 			die();
 		}else{

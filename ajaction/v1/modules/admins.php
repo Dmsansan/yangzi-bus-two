@@ -83,7 +83,7 @@ class admins {
 		if($this->conn->affected_rows()>0){
             $str="添加了新用户".$admin_name;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'添加用户成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -128,7 +128,14 @@ class admins {
 			die();
 		}
 		$password="";
-		if($admin_pass!="")$password=md5($admin_pass);
+		//if($admin_pass!="")$password=md5($admin_pass);
+		$sql = "select * from admins where admin_id=$admin_id";
+		$ret = $this->conn->query_first($sql);
+		if($admin_pass != $ret[password]){
+			$password=md5($admin_pass);
+	    }else{
+	    	$password=$admin_pass;
+	    }
 		if($is_term=="on")
 			$is_term='Y';
 		else
@@ -165,7 +172,7 @@ class admins {
 		if($this->conn->affected_rows()>0){
             $str="修改了用户信息".$admin_name;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'用户修改成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -306,7 +313,7 @@ class admins {
 		if($this->conn->affected_rows()>0){
             $str="删除了用户信息".$ret['admin_name'];
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'用户删除成功！');
 			echo json_encode($arr);
 			die();
 		}else{

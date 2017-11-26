@@ -66,8 +66,8 @@
           rownumbers="false" pagination="true" striped="true">
         <thead>
         <tr>
-            <th data-options="field:'brand',width:300">轮胎品牌</th>
-            <th data-options="field:'norms_name',width:300">轮胎规格</th>
+            <th data-options="field:'brand',width:200">轮胎品牌</th>
+            <th data-options="field:'norms_name',width:200">轮胎规格</th>
             <th data-options="field:'rk_num',width:230">入库数量</th>
             <th data-options="field:'ck_num',width:200">出库数量</th>
             <th data-options="field:'kc_num',width:200">库存数量</th>

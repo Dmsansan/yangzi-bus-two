@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+$operlist = $_SESSION['OperList'];
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -56,14 +60,23 @@
 					dataType:'json',
 					data:{'sensor_no':sensor_no,'pressure_ul':pressure_ul,'pressure_ll':pressure_ll,'remark':remark,'temp_ul':temp_ul,'temp_ll':temp_ll},
 					success:function(data){
-						$('#addSensor').dialog('close');
-						$.messager.show({
-								title:'提示',
-								msg:'增加成功',
-								timeout:3000,
-								showType:'slide'
-							});
-						reload();
+                        if(data.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#addSensor').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        } 
 					}
 				})
 			});
@@ -77,21 +90,39 @@
                 var remark=$('#all_remark').textbox('getText');
                 var temp_ul=$('#all_tem_high').textbox('getText');
                 var temp_ll=$('#all_tem').textbox('getText');
-                var tire_switch=$('#tire_switch').checked;
+                var ttire_switch=$("input[id='tire_switch']").is(':checked');
+                //alert(tire_switch);
+                var tire_switch;
+                if(ttire_switch == false){
+                    tire_switch='off';
+                }else{
+                    tire_switch='on';
+                }
                 $.ajax({
                     url:'../ajaction/v1/?menuid=111011&cmd=add',
                     type:'POST',
                     dataType:'json',
                     data:{'sensor_no':sensor_no,'pressure_ul':pressure_ul,'pressure_ll':pressure_ll,'remark':remark,'temp_ul':temp_ul,'temp_ll':temp_ll,'sensor_num':sensor_num,'tire_switch':tire_switch},
                     success:function(data){
-                       	$('#addallsensor').dialog('close');
-						$.messager.show({
-								title:'提示',
-								msg:'批量增加成功',
-								timeout:3000,
-								showType:'slide'
-							});
-						reload();
+                       	
+                        if(data.status=='OK'){
+    						$.messager.show({
+    								title:'提示',
+    								msg:data.reason,
+    								timeout:3000,
+    								showType:'slide'
+    							});
+                            $('#addallsensor').dialog('close');
+                            reload();
+                        }else{
+                            $.messager.show({
+                                    title:'提示',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'slide'
+                                });
+                        }
+						
                     },
                     error:function(){
                         console.log('失败');
@@ -121,17 +152,23 @@
 					dataType:'json',
 					data:{'sensor_id':sensorId,'sensor_no':sensor_no,'pressure_ul':pressure_ul,'pressure_ll':pressure_ll,'remark':remark,'temp_ul':temp_ul,'temp_ll':temp_ll},
 					success:function(data){
-						console.log('llh',data);
-						if(data.status="OK"){
-							$.messager.show({
-								title:'提示',
-								msg:'修改成功',
-								timeout:3000,
-								showType:'slide'
-							});
-							reload();
-						 $('#dlg').dialog('close');
-						}
+                        if(data.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#dlg').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        } 
 					}
 				});
 			})
@@ -142,14 +179,24 @@
 				type:'GET',
                 dataType:'json',
 				success:function(data){
-                    console.log('getdata',data);
-                    $("#dg").datagrid("loadData", data.Rows);
-					//console.log('getdata',data);
+                    $("#dg").datagrid("loadData", data.rows);
 				}
 			});
 		}
+        var operlist='<?php echo $operlist;?>';
         function formatOption(value, row, index) {
-                return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:5px;" onclick="deletData('+index+')">删除</a>';
+            var str='';
+           
+            if(operlist.indexOf('修改') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a>';
+            }
+            
+            if(operlist.indexOf('删除') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+            }
+            
+            return str;
+
         }
 
         function editUser(index) {
@@ -183,14 +230,23 @@
 						type:'POST',
 						data:{'sensor_id':sensor_id},
 						success:function(data){
-							$('#alarm').dialog('close');
-							$.messager.show({
-								title:'提示',
-								msg:'删除成功',
-								timeout:3000,
-								showType:'slide'
-							});
-							reload();
+                        if(data.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#alarm').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        } 
 						}
 					})
 				})
@@ -335,13 +391,14 @@
 <div  class="u-content" style="width:100%;height:554px;">
     <div id="tb" style="padding-bottom: 10px;padding-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 34px;">
 
-        <input id="searhName" type="text" placeholder="传感器代码"/> <button id="search">搜索</button>
-      <span style="float: right;">  <button id="addall" >批量增加</button> <button id="add">增加</button><div style="clear:both;"></div></span>
+        <input id="searhName" type="text" placeholder="传感器代码"/> 
+         <?php $operlist=explode(',',$_SESSION['OperList']); if(in_array('查看',$operlist)){?><button id="search">搜索</button><?php }?>
+      <span style="float: right;">  <?php if(in_array('添加',$operlist)){?> <button id="addall" >批量增加</button> <button id="add">增加</button><div style="clear:both;"></div><?php }?></span>
 
      
     </div>
     <table id="dg" class="easyui-datagrid" style="width:100%,height:400px;" fit="false" 
-           url="../ajaction/v1/?menuid=111011&cmd=qry&t=1" rownumbers="false" pagination="true" striped="true">
+           url="../ajaction/v1/?menuid=111011&cmd=qry&t=1" rownumbers="false" pagination="true" striped="true" singleSelect="true">
         <thead>
         <tr>
             <th data-options="field:'sensor_id',width:'10%'">传感器编号</th>
@@ -350,8 +407,8 @@
             <th data-options="field:'pressure_ll',width:'10%'">胎压下限</th>
             <th data-options="field:'temp_ul',width:'10%'">胎温上限</th>
             <th data-options="field:'temp_ll',width:'10%'">温度下限</th>
-            <th data-options="field:'remark',width:'20%'">备注</th>
-            <th data-options="field:'_operate',width:'10%',formatter:formatOption">操作</th>
+            <th data-options="field:'remark',width:'15%'">备注</th>
+            <th data-options="field:'_operate',width:'15%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
@@ -365,12 +422,12 @@
                    传感器编号：
 				</td>
                 <td>
-                    <input id="updata_sensorNumber" class="easyui-textbox" style="width:150px;"/>
+                    <input id="updata_sensorNumber" class="easyui-textbox" style="width:150px;" required="true" />
                 <td>
                     压力测量范围：
 					  </td>
                 <td>
-				 <input id="updata_pressure" class="easyui-textbox"  style="width: 60px;" />至<input id="updata_pressure_high" class="easyui-textbox"  style="width:60px;" />
+				 <input id="updata_pressure" class="easyui-textbox"  style="width: 60px;" required="true" />至<input id="updata_pressure_high" class="easyui-textbox"  style="width:60px;" required="true" />
                    
                 </td>
             </tr>
@@ -379,7 +436,7 @@
                     温度测量范围：
 					  </td>
                 <td>
-				 <input id="updata_tem" class="easyui-textbox" style="width: 60px;" />至<input id="updata_tem_high" class="easyui-textbox" style="width:60px;" />
+				 <input id="updata_tem" class="easyui-textbox" style="width: 60px;" required="true" />至<input id="updata_tem_high" class="easyui-textbox" style="width:60px;" required="true" />
                 </td>
             </tr>
             <tr>
@@ -416,13 +473,13 @@
                    传感器编号：
 				     </td>
                 <td>
-                    <input id="sensorNumber" class="easyui-textbox"   style="width:150px;"/>
+                    <input id="sensorNumber" class="easyui-textbox"   style="width:150px;" required="true" />
                 </td>
                 <td>
                     压力测量范围：
 					  </td>
                 <td>
-				  <input id="pressure" class="easyui-textbox"  style="width: 60px;" />至<input id="pressure_high" class="easyui-textbox"  style="width:60px;" />
+				  <input id="pressure" class="easyui-textbox"  style="width: 60px;" required="true" />至<input id="pressure_high" class="easyui-textbox"  style="width:60px;" required="true" />
                  
                 </td>
             </tr>
@@ -431,7 +488,7 @@
                     温度测量范围：
 					  </td>
                 <td>
-				  <input id="tem" class="easyui-textbox" style="width: 60px;" />至<input id="tem_high" class="easyui-textbox" style="width:60px;" />
+				  <input id="tem" class="easyui-textbox" style="width: 60px;" required="true" />至<input id="tem_high" class="easyui-textbox" style="width:60px;" required="true" />
                 </td>
             </tr>
             <tr>
@@ -465,7 +522,7 @@
                    传感器编号：
 				     </td>
                 <td>
-                    <input id="all_sensorNumber" class="easyui-textbox" style="width:80px;"/>-<select id="tire_Number" class="easyui-combobox" name="dept" style="width:50px;">
+                    <input id="all_sensorNumber" class="easyui-textbox" style="width:80px;" required="true" />-<select id="tire_Number" class="easyui-combobox" name="dept" style="width:50px;">
                     <option value="1">1</option>
                     <option value="2">2</option>
                     <option value="3">3</option>
@@ -480,7 +537,7 @@
                     压力测量范围：
 					  </td>
                 <td>
-				<input id="all_pressure" class="easyui-textbox"  style="width: 60px;" />至<input id="all_pressure_high" class="easyui-textbox"  style="width:60px;" />
+				<input id="all_pressure" class="easyui-textbox"  style="width: 60px;" required="true" />至<input id="all_pressure_high" class="easyui-textbox"  style="width:60px;" required="true" />
                 </td>
             </tr>
             <tr>
@@ -488,14 +545,14 @@
                     温度测量范围：
 					  </td>
                 <td>
-				  <input id="all_tem" class="easyui-textbox" style=" width:60px;" />至<input id="all_tem_high" class="easyui-textbox" style="width:60px;" />
+				  <input id="all_tem" class="easyui-textbox" style=" width:60px;" required="true" />至<input id="all_tem_high" class="easyui-textbox" style="width:60px;" required="true" />
 					
                 </td>
 				<td>
 				增加轮胎：
 				</td>
 				<td>
-				<input id="tire_switch" type="checkbox"/>
+				<input id="tire_switch"  style="width: 50px;"  type="checkbox" value="checkbox"/>
 				</td>
             </tr>
             <tr>
@@ -524,7 +581,7 @@
 <div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
         <div style="background-color: #ffffff;height:121px;margin:1px;">
 
-            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">角色删除无法恢复，确定删除？</span>
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">传感器删除无法恢复，确定删除？</span>
         <div  style="width:100%;">
             <button id="sure"></button>
             <button id="cancel"></button>

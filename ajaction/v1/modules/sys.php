@@ -332,6 +332,7 @@ class sys {
 		}
 		return;
 	}
+
 	/*
 		命令: /ajaction/v1/?menuid=0&cmd=get_all_roles
 		反回:{"status":"OK","items":[{"role_title":"角色1","role_id":10 },{"role_title":"角色2","role_id":11}]}
@@ -671,7 +672,7 @@ class sys {
         global $module_name,$cmd_name;
 
 		$admin_name=mysql_escape_string(trim($_REQUEST["userid"].""));
-		$password=md5(mysql_escape_string(trim($_REQUEST["password"]."")));
+		$password=mysql_escape_string(trim($_REQUEST["password"].""));
 
 		$sql="select * from admins where admin_name='$admin_name' and password='$password'";
 		$ret=$this->conn->query_first($sql);
@@ -693,6 +694,71 @@ class sys {
             $sql="select operlist from roles where role_id=".$_SESSION["RoleID"];
             $ret=$this->conn->query_first($sql);
 			$_SESSION["OperList"]=$ret['operlist'];
+
+			$module_sql="select modules_list_val from roles where role_id=".$_SESSION[RoleID];
+			$ret=$this->conn->query_first($module_sql);
+
+	        $modules_list_val = explode(';',$ret[modules_list_val]);
+
+			$modules_list=array(
+				'0'=>10,
+				'1'=>11,
+				'2'=>12,
+				'3'=>13,
+				'4'=>14,
+				'5'=>15,
+			);//一级栏目
+
+			/*for($i=0;$i<count($modules_list_val);$i++){
+				if($modules_list_val[$i]<1000){
+					static $j=0;	
+					$modules_list[$j]=$modules_list_val[$i];//一级栏目
+					$j++;
+				}
+
+			}*/
+           $m_arr=array();
+           for($m=0;$m<count($modules_list);$m++){
+           		$m_sql="select ico,title from modules where module_id=".$modules_list[$m];
+           		$m_ret=$this->conn->query_first($m_sql);
+           		$m_arr[$m]=array('ico'=>$m_ret['ico'],'title'=>$m_ret['title']);
+
+           		$mm_sql="select module_id from modules where parent_id=".$modules_list[$m];
+           		$mm_ret = $this->conn->query($mm_sql);
+           		$mm_res=array();
+           		while($mm_rets=$this->conn->fetch_array($mm_ret)){
+           			array_push($mm_res,$mm_rets);
+           		}
+           		for($n=0;$n<count($mm_res);$n++){
+           			$mod_arr[$n]=$mm_res[$n]['module_id'];
+           		}
+           		for($k=0;$k<count($mod_arr);$k++){
+           			if(in_array($mod_arr[$k],$modules_list_val)){
+           				$mmod_arr[$k]=$mod_arr[$k];
+           			}
+           		}
+           		$mod_str=implode(',',$mmod_arr);
+                
+                $mod_arr=array();//循环后将$mod_arr赋值为空
+                $mmod_arr=array();
+                if($mod_str != ""){
+           			$mmm_sql="select title,menu_url from modules where parent_id in ($mod_str) order by module_id asc";
+					$mmm_ret=$this->conn->query($mmm_sql);
+					$mmm_res=array();
+	           		while($mmm_rets=$this->conn->fetch_array($mmm_ret)){
+	           			array_push($mmm_res,$mmm_rets);
+	           		}
+				}else{
+					$mmm_res=array();
+				}
+							
+           		$m_arr[$m]['modules_list']=$mmm_res;
+           }
+
+            
+			$_SESSION['module_list']=$m_arr;
+			//$_SESSION['modules_list'] = array('0'=>array('title'=>'系统管理','modules_list'=>array('0'=>array('title1'=>'角色管理','url'=>'module_sys/sys.roles_show.php'))));
+
 			$sql="update admins set last_ip='".ip()."', last_stamp=now(), login_times=login_times+1 WHERE admin_name='".$ret['admin_name']."'";
 			$this->conn->query($sql);
 
@@ -728,6 +794,7 @@ class sys {
         unset($_SESSION['Remark']);
         unset($_SESSION['LoginOK']);
         unset($_SESSION['OperList']);
+        unset($_SESSION['modules_list']);
         $str=$admin_name."登出了系统";
         $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str,$admin_id);
         $arr = array ('status'=>'OK');
@@ -745,8 +812,8 @@ class sys {
 
     		$tire_sql = "select * from tire_info";
     		if($store_id != ""){
-    			$tire_sql .= " where plate_no
-    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    			$tire_sql .= " where sensor_id
+    		in (SELECT sensor_id FROM sensor where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
     		}
     		$res = $this->conn->query($tire_sql);
     		//轮胎总数

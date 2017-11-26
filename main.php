@@ -1,5 +1,7 @@
 <?php
 session_start();
+$modules_arr = $_SESSION['module_list'];
+//print_r($_SESSION['OperList']);die;
 ?>
 <!DOCTYPE html>
 <html>
@@ -51,20 +53,13 @@ session_start();
     </style>
     <script type="text/javascript">
     $(function () {
-
-        //获取module 复制$_SESSION[modules_list_val]
-         $.ajax({
-                url:'./ajaction/sysaction/sys.new_getmodules.php',
-                dataType:'json',
-                success:function(data){
-                    console.log('modules',data);
-                }
-            });
-
         $('#company').combobox({
-            //url:'./ajaction/v1/?menuid=0&cmd=get_all_stores',
             valueField:'store_id',
-            textField:'store_name', 
+            textField:'store_name',
+            loadFilter:function(data){
+                data.unshift({store_id:'',store_name:'所有'});
+                return data;
+            },
             onSelect:function(rec){
                 $.ajax({
                     url:'./ajaction/v1/?menuid=0&cmd=get_index_data&store_id='+rec.store_id,
@@ -168,15 +163,10 @@ session_start();
 
                     }
                 });
-                //var url = './ajaction/v1/?menuid=0&cmd=get_index_data&store_id='+rec.store.id;
-				console.log();
-				/* $('#company').combobox('loadData',rec); */
-
             }
         });
-		
+		     //分公司选项数据筛选
          $('#fcompany').combobox({
-            //url:'./ajaction/v1/?menuid=0&cmd=get_all_stores',
             valueField:'id',
             textField:'company_name', 
             onSelect:function(rec){
@@ -288,9 +278,8 @@ session_start();
 
             }
         });
-
+        //线路选择数据筛选选择
         $('#roules').combobox({
-            //url:'./ajaction/v1/?menuid=0&cmd=get_all_stores',
             valueField:'id',
             textField:'roules_name', 
             onSelect:function(rec){
@@ -410,7 +399,6 @@ session_start();
                 success:function(data){
                     var team=data.items;
                     $('#company').combobox('loadData',team);
-                    console.log('msg',data);
                 }
             });
          //获取分公司列表
@@ -642,7 +630,7 @@ session_start();
     }
     </script>
 </head>
-<body  class="easyui-layout">
+<body  class="easyui-layout" >
     <div id="top" data-options="region:'north'">
         <div id="top_left">
         <!--logo图标-->
@@ -653,102 +641,34 @@ session_start();
                 <p style="float:left">31313</p>-->
                 <p style="font-size: 12px;color: white;line-height: 74px;vertical-align:middle;" id="Username"></p>
                 <p style="font-size: 12px;color: #ffffff;line-height: 74px;vertical-align:middle;">您好,欢迎回来！&nbsp;&nbsp;<span id="jnkc" style="text-align:right;color:white"></span></p>
-
-               <a onclick="changepass()"> <img id="back" src="css/img/password_normal.png"  style="margin-left:50px;margin-right: 10px"></a>  <span style="color:#9f9f9f">|</span><a onclick="logout()"><img src="css/img/quit_normal.png" style="margin-left: 10px;"></a>
             </div>
+
+            <div style="position:absolute;top:-20px;right:20px;">
+                 <a onclick="changepass()"> <img id="back" src="css/img/password_normal.png"  style="margin-left:50px;margin-right: 10px"></a>  <span style="color:#9f9f9f">|</span><a onclick="logout()"><img src="css/img/quit_normal.png" style="margin-left: 10px;"></a>
+            </div>
+
         </div>
 
     </div>
     <div id="west" data-options="region:'west',title:''">
         <div id="dd" class="easyui-accordion" style="width:100%;height:99%;">
-          <?php if(in_array('1010',$_SESSION['modules_list_val'])){?> <div title="系统管理" data-options="iconCls:'icon-ok'" style="padding:10px;background-color: #21262f;overflow: hidden;">   
+
+          <?php for($i=0;$i<count($modules_arr);$i++){?>
+          <div title="<?php echo $modules_arr[$i]['title'];?>" data-options="<?php echo $modules_arr[$i]['ico'];?>" style="padding:10px;background-color: #21262f;overflow: hidden;">   
                         <ul>
-                            <li><a onclick="addTab('角色管理','module_sys/sys.roles_show.php')">角色管理</a></li>
-                            <li><a onclick="addTab('用户管理','module_sys/sys.users_show.php')" >用户管理</a></li>
-                      
-                            <li><a onclick="addTab('修理厂管理','module_sys/repairDepotManger.php')">修理厂管理</a></li>
-                            <li><a onclick="addTab('分公司管理','module_sys/sys.company_show.php')">分公司管理</a></li>
-                            <li><a onclick="addTab('线路管理','module_sys/sys.roules_show.php')">线路管理</a></li>
-                            <li><a onclick="addTab('轮胎基本参数管理','module_sys/tireParameter.php')">轮胎基本参数管理</a></li>
-                            <li><a onclick="addTab('车载终端管理','module_sys/sys.vehicle_show.php')">车载终端管理</a></li>
+                          <?php for($j=0;$j<count($modules_arr[$i]['modules_list']);$j++){?>
+                            <li><a style="font-size:12px;" onclick="addTab('<?php echo $modules_arr[$i]['modules_list'][$j]['title'];?>','<?php echo $modules_arr[$i]['modules_list'][$j]['menu_url'];?>')"><?php echo $modules_arr[$i]['modules_list'][$j]['title'];?></a></li>
+                          <?php }?>
+                            
                         </ul>
-            </div>
-            <?php }?>
-            <?php if(in_array('1111',$_SESSION['modules_list_val'])){?>
-			<div id="tireManger" title="轮胎管理" data-options="iconCls:'icon-help'" style="padding:10px;background-color: #21262f">
-                <ul>
-                    <li>
-                        <a onclick="addTab('轮胎参数管理','module_11/sys.tireparam_show.php')">轮胎参数管理 </a>
-                    </li>
-                    <li>
-                        <a onclick="addTab('传感器管理','module_11/sys.sensor_show.php')"> 传感器管理</a>
-                    </li>
-                    <li>
-                        <a onclick="addTab('轮胎管理','module_11/sys.tireinfo_show.php')"> 轮胎管理</a>
-                    </li>
-                </ul>
-            </div>
-            <?php }?>
-            <?php if(in_array('1210',$_SESSION['modules_list_val'])){?>
-            <div title="车辆管理" data-options="iconCls:'icon-search'" style="padding:10px;background-color: #21262f">
-                <ul>
-                    <li>
-                        <a onclick="addTab('车辆维护','module_12/vehicle.php')"> 车辆维护</a>
-                    </li>
-                </ul>
-            </div>
-            <?php }?>
-            <?php if(in_array('1310',$_SESSION['modules_list_val'])){?>
-            <div title="监测系统" data-options="iconCls:'icon-redo'" style="padding:10px;background-color: #21262f">
-                <ul>
-                    <li>
-                        <a onclick="addTab('车辆轮胎状态','module_13/sys.real_show.php')"> 车辆轮胎状态</a>
-                    </li>
-                    <li>
-                        <a onclick="addTab('车辆轮胎历史状态','module_13/sys.his_show.php')"> 车辆轮胎历史状态</a>
-                    </li>
-                    <li>
-                        <a onclick="addTab('告警历史状态','module_13/sys.alarm_his131210_show.php')"> 告警历史状态</a>
-                    </li>
-                </ul>
-            </div>
-            <?php }?>
-            <?php if(in_array('1313',$_SESSION['modules_list_val'])){?>
-            <div title="统计分析" data-options="iconCls:'icon-undo'" style="padding:10px;background-color: #21262f">
-                <ul>
-                    <li>
-                        <a style="font-size:13px" onclick="addTab('轮胎运行总时长总里程','module_13/sys.tire_runhis_show.php')"> 轮胎运行总时长总里程</a>
-                    </li>
-                    <li>
-                        <a onclick="addTab('轮胎库存查询','module_13/sys.tirestore_charts_show.php')"> 轮胎库存查询</a>
-                    </li>
-                    <li>
-                        <a onclick="addTab('轮胎历史曲线','module_13/sys.tirehis_charts_10.php')"> 轮胎历史曲线</a>
-                    </li>
-                    <li>
-                        <a onclick="addTab('轮胎历史告警','module_13/sys.tirehis_charts_12.php')"> 轮胎历史告警</a>
-                    </li>
-                    <!--<li>
-                        <a onclick="addTab('车辆车速分析','module_13/sys.carspeed_charts_show.php')"> 车辆车速分析</a>
-                    </li>-->
-                </ul>
-            </div>
-            <?php }?>
-            <div title="报表分析" data-options="iconCls:'icon-filter'" style="padding:10px;background-color: #21262f">
-                <ul>
-                    <li>
-                        <a style="font-size:13px;" onclick="addTab('车辆轮胎时长里程报表','module_13/tirecourse.php')"> 车辆轮胎时长里程报表</a>
-                    </li>
-                    <li>
-                        <a onclick="addTab('轮胎保养记录报表','module_13/tireProtect.php')"> 轮胎保养记录报表</a>
-                    </li>
-                </ul>
-            </div>
+          </div>
+          <?php }?>
+         
         </div>
     </div>
-     <div  id="center_content" class="easyui-tabs"  style="width:90%;height: 100%;background-color: #bdc4d4;"  data-options="region:'center',width:'80%'" >
+     <div  id="center_content" class="easyui-tabs"  style="width:90%;height: 100%;background-color: #bdc4d4; "  data-options="region:'center',width:'80%'" >
 
-        <div id="center_page" title="首页">
+        <div id="center_page" title="首页" style="overflow-y: hidden;">
             <div id="i-center">
                 <div id="center_top" style="padding-top: 20px;padding-left: 1%">
                     修理厂：

@@ -67,11 +67,11 @@ class store {
 		if($this->conn->affected_rows()>0){
             $str="添加了新车队(仓库)".$store_name;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'添加修理厂成功！');
 			echo json_encode($arr);
 			die();
 		}else{
-			$arr = array ('status'=>'ERROR','reason'=>'添加仓库失败！');
+			$arr = array ('status'=>'ERROR','reason'=>'添加修理厂失败！');
 			echo json_encode($arr);
 			die();
 		}
@@ -137,7 +137,7 @@ class store {
 		if($this->conn->affected_rows()>0){
             $str="修改了车队(仓库)信息".$store_name;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'修理厂修改成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -271,7 +271,7 @@ class store {
 		if($this->conn->affected_rows()>0){
             $str="删除了车队(仓库)信息".$ret['store_name'];
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'修理厂删除成功！');
 			echo json_encode($arr);
 			die();
 		}else{

@@ -59,7 +59,7 @@ class company {
 		if($this->conn->affected_rows()>0){
             $str="添加了新分公司".$brand_name;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'分公司添加成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -108,7 +108,7 @@ class company {
 		if($this->conn->affected_rows()>0){
             $str="修改了分公司信息".$brand_name;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'分公司修改成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -241,7 +241,7 @@ class company {
 		if($this->conn->affected_rows()>0){
             $str="删除了分公司信息".$ret[company_name];
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'分公司删除成功！');
 			echo json_encode($arr);
 			die();
 		}else{

@@ -58,7 +58,7 @@ class roules {
 		if($this->conn->affected_rows()>0){
             $str="添加了新线路".$brand_name;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'线路添加成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -107,7 +107,7 @@ class roules {
 		if($this->conn->affected_rows()>0){
             $str="修改了分公司信息".$brand_name;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'线路修改成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -241,7 +241,7 @@ class roules {
 		if($this->conn->affected_rows()>0){
             $str="删除了分公司信息".$ret[roules_name];
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'线路删除成功！');
 			echo json_encode($arr);
 			die();
 		}else{

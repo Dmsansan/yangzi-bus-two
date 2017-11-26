@@ -63,7 +63,7 @@ class vehicle_term {
 		if($this->conn->affected_rows()>0){
             $str="添加了新车载终端".$v_term_name;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'车载终端添加成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -119,7 +119,7 @@ class vehicle_term {
 		if($this->conn->affected_rows()>0){
             $str="修改了车载终端信息".$v_term_name;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'车载终端修改成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -258,7 +258,7 @@ class vehicle_term {
 		if($this->conn->affected_rows()>0){
             $str="删除了车载终端信息".$ret['v_term_name'];
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'车载终端删除成功！');
 			echo json_encode($arr);
 			die();
 		}else{

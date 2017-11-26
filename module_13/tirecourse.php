@@ -34,14 +34,14 @@
         <button id="exp" style="float: right"><span style="display:inline-block;margin-right:12px;">+</span>打印</button>
     </div>
     <table id="dg" class="easyui-datagrid" style="width: 100%" url="../ajaction/v1/?menuid=131311&cmd=qry" toolbar="#tb"
-          striped="true" rownumbers="false" pagination="true" >
+          striped="true" rownumbers="false" pagination="true" singleSelect="true">
         <thead>
         <tr>
-            <th data-options="field:'time_add',width:300">安装时间</th>
-            <th data-options="field:'time_remove',width:300">卸载时间</th>
-            <th data-options="field:'plate_no',width:230">车辆号码</th>
-            <th data-options="field:'place_no',width:200">轮胎号位</th>
-            <th data-options="field:'tire_no',width:200">轮胎胎号</th>
+            <th data-options="field:'time_add',width:150">安装时间</th>
+            <th data-options="field:'time_remove',width:150">卸载时间</th>
+            <th data-options="field:'plate_no',width:100">车辆号码</th>
+            <th data-options="field:'place_no',width:100">轮胎号位</th>
+            <th data-options="field:'tire_no',width:100">轮胎胎号</th>
             <th data-options="field:'run_time',width:200">累计运行时长(小时/h)</th>
             <th data-options="field:'run_mile',width:200">累计运行里程(千米/Km)</th>
         </tr>

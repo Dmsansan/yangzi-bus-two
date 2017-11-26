@@ -66,8 +66,10 @@ class tire_param_info {
 		$temp_ul=mysql_escape_string(trim($_REQUEST["temp_ul"].""));
 		$tkph_val=mysql_escape_string(trim($_REQUEST["tkph_val"].""));
 		$baro_val=mysql_escape_string(trim($_REQUEST["baro_val"].""));
-		$mainterance1=mysql_escape_string(trim($_REQUEST["mainterance1"].""));
-		$mainterance2=mysql_escape_string(trim($_REQUEST["mainterance2"].""));
+		//$mainterance1=mysql_escape_string(trim($_REQUEST["mainterance1"].""));
+		//$mainterance2=mysql_escape_string(trim($_REQUEST["mainterance2"].""));
+		$figure_mile1=mysql_escape_string(trim($_REQUEST["figure_mile1"].""));
+		$figure_mile2=mysql_escape_string(trim($_REQUEST["figure_mile2"].""));
         $rated_mile=mysql_escape_string(trim($_REQUEST["rated_mile"].""));
 
 		if($company_name == "" || $brand_id_val=="" || $norms_id_val=="" ||
@@ -78,14 +80,14 @@ class tire_param_info {
 		}
 		
 		$sql="insert into tire_param_info (company_name,brand_id,norms_id,class_id,figure_id,
-                pressure_ul,pressure_ll,speed_ul,temp_ul,tkph_val,baro_val,mainterance1,mainterance2,rated_mile)
+                pressure_ul,pressure_ll,speed_ul,temp_ul,tkph_val,baro_val,figure_mile1,figure_mile2,rated_mile)
 		values ('$company_name','$brand_id_val','$norms_id_val','$class_id_val','$figure_id_val',
-                '$pressure_ul','$pressure_ll','$speed_ul','$temp_ul','$tkph_val','$baro_val','$mainterance1','$mainterance2','$rated_mile')";
+                '$pressure_ul','$pressure_ll','$speed_ul','$temp_ul','$tkph_val','$baro_val','$figure_mile1','$figure_mile2','$rated_mile')";
 		$this->conn->query($sql);
 		if($this->conn->affected_rows()>0){
             $str="添加了新轮胎参数".$this->conn->insert_id();
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'轮胎参数添加成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -171,7 +173,7 @@ class tire_param_info {
 		if($this->conn->affected_rows()>0){
             $str="修改了轮胎参数信息".$tire_param_id;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'轮胎参数修改成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -293,7 +295,7 @@ class tire_param_info {
 		if($this->conn->affected_rows()>0){
             $str="删除了轮胎参数信息".$tire_param_id;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'轮胎参数删除成功！');
 			echo json_encode($arr);
 			die();
 		}else{

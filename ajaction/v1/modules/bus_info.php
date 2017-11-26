@@ -88,7 +88,7 @@ class bus_info {
 		if($this->conn->affected_rows()>0){
             $str="添加了新车辆".$plate_no;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'添加车辆成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -152,7 +152,7 @@ class bus_info {
 		if($this->conn->affected_rows()>0){
             $str="修改了车辆信息".$plate_no;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'编辑车辆成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -406,7 +406,7 @@ class bus_info {
 		if($this->conn->affected_rows()>0){
             $str="删除了车辆信息".$plate_no;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'删除车辆成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -471,7 +471,8 @@ class bus_info {
 			$v_term_no = $rowData[0][1];//车载终端编号
 			$remark = $rowData[0][2];//备注
 			$wheel_count = $rowData[0][3];//汽车总的轮胎数量
-			$brand = $rowData[0][4];//轮胎品牌
+			//$brand = $rowData[0][4];//轮胎品牌
+			$tire_param_id = $rowData[0][4];//轮胎参数编号
 			$store_id_val = $rowData[0][5];//所属车队编号
 			$company_name = $rowData[0][6];//分公司
 			$roules_name = $rowData[0][7];//线路
@@ -553,18 +554,18 @@ class bus_info {
 							//添加对应的轮胎
 							$sensor_id_val=$this->conn->insert_id();
 							$factory_code=$sensor_no_X."000";
-							$brand_sql = "select * from brand where brand_name = '$brand'";
+							/*$brand_sql = "select * from brand where brand_name = '$brand'";
 							$ret=$this->conn->query_first($brand_sql);
 							$brand_id = $ret['brand_id'];
 							
 							$tire_param_sql = "select * from tire_param_info where brand_id='$brand_id'";
-							$tire_ret = $this->conn->query_first($tire_param_sql);
-							$tire_param_id = $tire_ret['tire_param_id'];
+							$tire_ret = $this->conn->query_first($tire_param_sql);*/
+							$tire_param_idd = $tire_param_id;
 							
 							$tire_sql = "insert into tire_info (tire_rfid,sensor_id,factory_code,brand_id,tire_param_id,
 										figure_value,rated_mile,rated_hour,order_num,price,p_staff,
 										remark)
-								values ('$sensor_no_X','$sensor_id_val','$factory_code','$brand_id','$tire_param_id',
+								values ('$sensor_no_X','$sensor_id_val','$factory_code','$brand_id','$tire_param_idd',
 										'0','0','0','0','0','0','')";
 							//echo $tire_sql;
 							$this->conn->query($tire_sql);

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+$operlist = $_SESSION['OperList'];
+?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -32,19 +36,19 @@
                 valueField: 'role_id',
                 textField: 'role_title',
 				type:'json',
-                editable: false,
+                editable: true,
             });
 
             $("#up_carTeam").combobox({
                 valueField: 'store_id',
                 textField: 'store_name',
-                editable: false
+                editable: true
             });
              
             $("#up_userRole").combobox({
                 valueField: 'role_id',
                 textField: 'role_title',
-                editable: false
+                editable: true
             });
 			//获取车队列表
 			$.ajax({
@@ -54,13 +58,12 @@
 					var team=data.items;
 					$('#carTeam').combobox('loadData',team);
 					$('#up_carTeam').combobox('loadData',team);
-					console.log('msg',data);
 				}
 			});
             $('#carTeam').combobox({
                 valueField: 'store_id',
                 textField: 'store_name',
-                editable: false
+                editable: true
             });
             //获取分公司列表
             $.ajax({
@@ -70,19 +73,19 @@
                     var team=data.items;
                     $('#company').combobox('loadData',team);
                     $('#up_company').combobox('loadData',team);
-                    console.log('msg',data);
                 }
             });
             $('#company').combobox({
                 valueField: 'id',
                 textField: 'company_name',
-                editable: false
+                editable: true,
             });
 
             $('#up_company').combobox({
                 valueField: 'id',
                 textField: 'company_name',
-                editable: false
+                editable: true,
+               
             });
 
             $('#operate').combobox({
@@ -108,7 +111,7 @@
 			$('#updata_save').bind('click',function(){
 			var admin_id=$('#admin_id').val();
 			var admin_name=$('#up_userName').textbox('getText');
-			var role_id=$('#up_roleId').val();
+			var role_id=$('#up_userRole').val();
 			var admin_pass=$('#up_password').textbox('getText');
 			var real_name= $('#up_truthName').textbox('getText');
 			var tel=$('#up_tel').textbox('getText');
@@ -123,21 +126,31 @@
 				}
 			var store_id_val=$('#up_carTeam').combobox('getValue');
             var up_company_id=$('#up_company').combobox('getValue');
-			console.log('store_id_val',store_id_val);
+			
 			$.ajax({
 				url:'../ajaction/v1/?menuid=101011&cmd=edit',
 				type:'post',
 				data:{'admin_id':admin_id,'admin_name':admin_name,'role_id_val':role_id,'admin_pass':admin_pass,'real_name':real_name,'tel':tel,'mobile':mobile,'email':email,'remark':remark,'is_term':is_term,
 				'store_id_val':store_id_val,'up_company_id':up_company_id},
 				success:function(data){
-					$('#dlg').dialog('close');
-					 $.messager.show({
-                            title : '操作成功',
-                            msg:'用户修改成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-					reload();
+					var res = eval('(' + data + ')')
+                        if(res.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#dlg').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        }   
 				}
 			})
 			});
@@ -166,14 +179,24 @@
                 url:'../ajaction/v1/?menuid=101011&cmd=add',
 				data:{'admin_name':admin_name,'real_name':real_name,'role_id_val':role_id_val,'tel':tel,'admin_pass':admin_pass,'mobile':mobile,'email':email,'remark':remark,'is_term':is_term,'store_id_val':store_id,'company_id':company_id},
 				success:function(data){
-					$('#addUser').dialog('close');
-					 $.messager.show({
-                            title : '操作成功',
-                            msg:'用户添加成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-					reload();
+					var res = eval('(' + data + ')')
+                        if(res.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#addUser').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        }   
 			
 				}
                 });
@@ -201,9 +224,19 @@
                 }
             });
         }
-
+         var operlist='<?php echo $operlist;?>';
         function formatOption(value, row, index) {
-                return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+            var str='';
+           
+            if(operlist.indexOf('修改') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a>';
+            }
+            
+            if(operlist.indexOf('删除') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+            }
+            
+            return str;
 
         }
         var url;
@@ -253,14 +286,24 @@
                             'admin_id': id
                         },
                         success: function(data) {
-							 $('#alarm').dialog('close');
-							$.messager.show({
-                            title : '操作成功',
-                            msg:'用户删除成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-                            reload();
+							var res = eval('(' + data + ')')
+                            if(res.status=="OK"){
+                                $.messager.show({
+                                        title : '操作成功',
+                                        msg:res.reason,
+                                        timeout:3000,
+                                        showType:'show',  
+                                        });
+                                reload();
+                                $('#alarm').dialog('close');
+                            }else{
+                                $.messager.show({
+                                        title : '操作失败',
+                                        msg:res.reason,
+                                        timeout:3000,
+                                        showType:'show',  
+                                        }); 
+                            }   
 							
                         }
                     })
@@ -369,11 +412,11 @@
     <div class="u-content">
         <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
             <input id="username" type="text" placeholder="用户名称" />
-            <button id="search">搜索</button>
-           <button id="add"  style="float: right; margin-top: 15px;">增加</button>
+             <?php $operlist=explode(',',$_SESSION['OperList']); if(in_array('查看',$operlist)){?><button id="search">搜索</button><?php }?>
+            <?php if(in_array('添加',$operlist)){?><button id="add"  style="float: right; margin-top: 15px;">增加</button><?php }?>
         </div>
         <table id="dg" class="easyui-datagrid" url="../ajaction/v1/?menuid=101011&cmd=qry&t=1"
-            striped="true" rownumbers="false" pagination="true"
+            striped="true" rownumbers="false" pagination="true" singleSelect="true"
         >
             <thead>
                 <tr>
@@ -381,8 +424,8 @@
                     <th data-options="field:'admin_name',width:'10%'">用户名称</th>
                     <th data-options="field:'real_name',width:'10%'">姓名</th>
                     <th data-options="field:'role_title',width:'10%'">角色</th>
-                    <th data-options="field:'store_name',width:'10%'">归属车队</th>
-                     <th data-options="field:'company_name',width:'10%'">分公司</th>
+                    <th data-options="field:'store_name',width:'10%'">归属修理厂</th>
+                     <th data-options="field:'company_name',width:'10%'">所属公司</th>
                     <th data-options="field:'remark',width:'15%'">说明</th>
                     <th data-options="field:'_operate',width:'25%',formatter:formatOption">操作</th>
                 </tr>
@@ -398,15 +441,14 @@
                         用户名称：
                     </td>
                     <td>
-					
-                        <input id="up_userName" class="easyui-textbox" style="width: 150px;" />
+                        <input id="up_userName" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
                     <td>
                         用户角色：
                     </td>
                     <td>
-					 <input id="up_roleId" style="display:none; width: 150px;" />
-                        <input id="up_userRole" style="width: 150px;" />
+					    <input id="up_roleId" style="display:none; width: 150px;" />
+                        <input id="up_userRole" style="width: 150px;" required="true" />
                     </td>
                 </tr>
                 <tr>
@@ -414,13 +456,13 @@
                         密码：
                     </td>
                     <td>
-                        <input id="up_password" type="password" class="easyui-textbox" style="width: 150px;" />
+                        <input id="up_password" type="password" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
                     <td>
                         真实姓名：
                     </td>
                     <td>
-                        <input id="up_truthName" class="easyui-textbox" style="width: 150px;" />
+                        <input id="up_truthName" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
                 </tr>
                 <tr>
@@ -434,7 +476,7 @@
                         所属修理厂：
                     </td>
                     <td>
-                        <input id="up_carTeam" class="easyui-textbox" style="width: 150px;" />
+                        <input id="up_carTeam" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
                 </tr>
                 <tr>
@@ -442,7 +484,7 @@
                         所属分公司：
                     </td>
                     <td>
-                        <input id="up_company" class="easyui-textbox" style="width: 150px;" />
+                        <input id="up_company" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
                 </tr>
             </table>
@@ -507,13 +549,13 @@
                         用户名称：
                     </td>
                     <td>
-                        <input id="userName" class="easyui-textbox" style="width: 150px;" />
+                        <input id="userName" class="easyui-textbox" style="width: 150px;" required="true"/>
                     </td>
                     <td>
                         用户角色：
                     </td>
                     <td>
-                        <input id="userRole" style="width: 150px;" />
+                        <input id="userRole" style="width: 150px;" required="true" />
                     </td>
                 </tr>
                 <tr>
@@ -521,13 +563,13 @@
                         密码：
                     </td>
                     <td>
-                        <input id="password" class="easyui-textbox" style="width: 150px;" />
+                        <input id="password" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
                     <td>
                         真实姓名：
                     </td>
                     <td>
-                        <input id="truthName" class="easyui-textbox" style="width: 150px;" />
+                        <input id="truthName" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
                 </tr>
                 <tr>
@@ -541,7 +583,7 @@
                         所属修理厂：
                     </td>
                     <td>
-                        <input id="carTeam"  style="width: 150px;" />
+                        <input id="carTeam"  style="width: 150px;" required="true" />
                     </td>
                 </tr>
                 <tr>
@@ -549,7 +591,7 @@
                         所属分公司：
                     </td>
                     <td>
-                        <input id="company"  style="width: 150px;" />
+                        <input id="company"  style="width: 150px;" required="true" />
                     </td>
                 </tr>
             </table>

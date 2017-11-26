@@ -74,7 +74,7 @@ class brand {
 		if($this->conn->affected_rows()>0){
             $str="添加了新的轮胎参数";
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'轮胎基本参数添加成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -129,7 +129,7 @@ class brand {
 		if($this->conn->affected_rows()>0){
             $str="修改了参数信息";
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'轮胎基本参数修改成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -260,7 +260,7 @@ class brand {
 		if($this->conn->affected_rows()>0){
             $str="删除了品牌信息".$ret[brand_name];
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'轮胎基本参数删除成功！');
 			echo json_encode($arr);
 			die();
 		}else{

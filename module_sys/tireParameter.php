@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+$operlist = $_SESSION['OperList'];
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -123,15 +127,23 @@
                     data:{'brand_name':brand_name,'norms_name':norms_name,'class_name':class_name,'figure_name':figure_name,'remark':remark},
                     dataType:'json',
                     success:function(data){
-                        $('#addUser').dialog('close');
-						$.messager.show({
-                            title : '操作成功',
-                            msg:'轮胎参数增加成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-							reload();
-                        console.log('data',data);
+                        if(data.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#addUser').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        }   
                     }
                 })
                 
@@ -153,14 +165,24 @@
                     data:{'brand_name':brand_name,'brand_id':brand_id,'remark':remark,'norms_name':norms_name,'class_name':class_name,'figure_name':figure_name},
                     success:function(data){
                   
-                        $('#dlg').dialog('close');
-						$.messager.show({
-                            title : '操作成功',
-                            msg:'轮胎参数修改成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-                            reload();   
+                        var res = eval('(' + data + ')')
+                        if(res.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#dlg').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        }   
                     }
                     
                 })
@@ -180,7 +202,9 @@
                 $('#updata_close').bind('click',function(){
                 $('#dlg').dialog('close');
             }); 
-            
+             $('#cancel').bind('click',function(){
+                $('#alarm').dialog('close');
+            }); 
             })
 
            function reload(){
@@ -195,17 +219,27 @@
                 });
             }
 
-            function formatOption(value, row, index) {
-               return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+           var operlist='<?php echo $operlist;?>';
+        function formatOption(value, row, index) {
+            var str='';
+           
+            if(operlist.indexOf('修改') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a>';
             }
+            
+            if(operlist.indexOf('删除') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+            }
+            
+            return str;
+
+        }
             var url;
             //装填修改dialog
             function editUser(index) {
-            $('#up_brand_name').val(313123);
             $('#dg').datagrid('selectRow', index);
             console.log("index",index);
             var row = $('#dg').datagrid('getSelected');
-                console.log("row",row);
             if (row){
                 $('#dlg').dialog('open').dialog('setTitle','修改参数信息');
                 $('#brand_id').val(row.brand_id);
@@ -229,14 +263,24 @@
                     type:'post',
                     data:{'brand_id':id},
                     success:function(data){
-					$('#alarm').dialog('close');
-                    $.messager.show({
-                            title : '操作成功',
-                            msg:'轮胎参数删除成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-                    reload();
+					var res = eval('(' + data + ')')
+                        if(res.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#alarm').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        }   
                     }
                 })
                 })
@@ -248,17 +292,19 @@
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #f1f6fd">
 <div  class="u-content">
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-        <input id="search_brand_name" placeholder="品牌名称" /> <button id="search">搜索</button><button style="float: right;margin-top: 15px;" onclick="addUser()">增加</button>
+        <input id="search_brand_name" placeholder="品牌名称" /> 
+         <?php $operlist=explode(',',$_SESSION['OperList']); if(in_array('查看',$operlist)){?><button id="search">搜索</button><?php }?>
+          <?php  if(in_array('添加',$operlist)){?><button style="float: right;margin-top: 15px;" onclick="addUser()">增加</button><?php }?>
     </div>
     <table id="dg" class="easyui-datagrid"
-           url="../ajaction/v1/?menuid=101112&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true">
+           url="../ajaction/v1/?menuid=101112&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true" singleSelect="true">
         <thead>
         <tr>
             <!--<th data-options="field:'itemid',width:200">参数编号</th>-->
-            <th data-options="field:'brand_name',width:205">品牌名称</th>
+            <th data-options="field:'brand_name',width:155">品牌名称</th>
 
-            <th data-options="field:'norms_name',width:255">规格名称</th>
-            <th data-options="field:'class_name',width:250">层级名称</th>
+            <th data-options="field:'norms_name',width:155">规格名称</th>
+            <th data-options="field:'class_name',width:150">层级名称</th>
             <th data-options="field:'figure_name',width:280">花纹名称</th>
 			
             <th data-options="field:'remark',width:200">备注</th>
@@ -276,14 +322,14 @@
                     品牌名称：
                     </td>
                     <td>
-                    <input id="brand_id" style="display:none" type="text">
-                      <input id="up_brand_name" class="easyui-textbox"  style="width: 150px;" />
+                      <input id="brand_id" style="display:none" type="text">
+                      <input id="up_brand_name" class="easyui-textbox"  style="width: 150px;" required="true" />
                 </td>
                 <td>
                     规格名称：
                     </td>
                     <td>
-                     <input id="up_norms_name" class="easyui-textbox" style="width: 150px;" />
+                     <input id="up_norms_name" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
             </tr>
             <tr>
@@ -291,13 +337,13 @@
                     层级名称:
                     </td>
                 <td>
-                     <input id="up_class_name" class="easyui-textbox" style="width: 150px;" />
+                     <input id="up_class_name" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
                 <td>
                    花纹名称:
                     </td>
                 <td>
-                     <input id="up_figure_name" class="easyui-textbox" style="width: 150px;" />
+                     <input id="up_figure_name" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
             </tr>
             <tr>
@@ -336,13 +382,13 @@
                     品牌名称：
                     </td>
                     <td>
-                     <input id="brand_name" class="easyui-textbox" style=" width: 150px;" />
+                     <input id="brand_name" class="easyui-textbox" style=" width: 150px;" required="true" />
                 </td>
                 <td>
                     规格名称：
                     </td>
                     <td>
-                     <input id="norms_name" class="easyui-textbox" style="width: 150px;" />
+                     <input id="norms_name" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
             </tr>
             <tr>
@@ -350,13 +396,13 @@
                     层级名称:
                     </td>
                 <td>
-                     <input id="class_name" class="easyui-textbox" style="width: 150px;" />
+                     <input id="class_name" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
                 <td>
                     花纹名称:
                     </td>
                 <td>
-                     <input id="figure_name" class="easyui-textbox" style="width: 150px;" />
+                     <input id="figure_name" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
             </tr>
             <tr>
@@ -389,7 +435,7 @@
 	  <div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
         <div style="background-color: #ffffff;height:121px;margin:1px;">
 
-            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">用户删除无法恢复，确定删除？</span>
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">轮胎基本参数删除无法恢复，确定删除？</span>
         <div  style="width:100%;">
             <button id="sure"></button>
             <button id="cancel"></button>

@@ -94,7 +94,7 @@ class sensor {
                                     figure_value,rated_mile,rated_hour,order_num,price,p_staff,
                                     remark)
                             values ('$sensor_no_X','$sensor_id_val','$factory_code','$ret[brand_id]','$ret[tire_param_id]',
-                                    '0','0','0','0','0','0','')";
+                                    '$ret[figure_mile]','0','0','0','0','0','')";
 
                             $this->conn->query($sql);
                             if($this->conn->affected_rows()>0){
@@ -118,7 +118,7 @@ class sensor {
                 echo json_encode($arr);
                 die();
             }else{
-                $arr = array ('status'=>'OK');
+                $arr = array ('status'=>'OK','reason'=>'传感器以及关联轮胎添加成功！');
                 echo json_encode($arr);
                 die();
             }
@@ -159,7 +159,7 @@ class sensor {
                         }
                     }
                 }
-                $arr = array ('status'=>'OK');
+                $arr = array ('status'=>'OK','reason'=>'传感器添加成功！');
                 echo json_encode($arr);
                 die();
             }else{
@@ -218,7 +218,7 @@ class sensor {
 		if($this->conn->affected_rows()>0){
             $str="修改了传感器信息".$sensor_no;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'传感器修改成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -345,7 +345,7 @@ class sensor {
 		if($this->conn->affected_rows()>0){
             $str="删除了传感器信息".$ret['sensor_no'];
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'传感器删除成功！');
 			echo json_encode($arr);
 			die();
 		}else{

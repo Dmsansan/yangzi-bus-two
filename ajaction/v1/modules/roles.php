@@ -73,7 +73,7 @@ class roles {
 		if($this->conn->affected_rows()>0){
             $str="添加了新角色".$title;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'添加角色成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -135,7 +135,7 @@ class roles {
 		if($this->conn->affected_rows()>0){
             $str="修改了角色信息".$title;
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'角色修改成功！');
 			echo json_encode($arr);
 			die();
 		}else{
@@ -249,7 +249,7 @@ class roles {
 		if($this->conn->affected_rows()>0){
             $str="删除了角色信息".$ret['title'];
             $this->log->do_log($module_name[__CLASS__],$cmd_name[__FUNCTION__],$str);
-			$arr = array ('status'=>'OK');
+			$arr = array ('status'=>'OK','reason'=>'删除成功！');
 			echo json_encode($arr);
 			die();
 		}else{

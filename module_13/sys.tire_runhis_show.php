@@ -99,12 +99,12 @@
             
             manager=$("#maingrid4").ligerGrid({
                 checkbox: false,
-                columns: [{display: '安装时间', name: 'time_add',width:150},
-				{display: '卸载时间', name: 'time_remove',width:150},
-				{display: '车辆号码', name: 'plate_no',width:250},
-				{display: '轮胎号位', name: 'place_no',width:250},
-				{display: '轮胎胎号', name: 'tire_no',width:250},				
-				{display: '累计运行时长(小时)', name: 'run_time',width:250,type:'float',
+                columns: [{display: '安装时间', name: 'time_add',width:100},
+				{display: '卸载时间', name: 'time_remove',width:100},
+				{display: '车辆号码', name: 'plate_no',width:150},
+				{display: '轮胎号位', name: 'place_no',width:200},
+				{display: '轮胎胎号', name: 'tire_no',width:200},				
+				{display: '累计运行时长(小时)', name: 'run_time',width:200,type:'float',
 				totalSummary:
                     {
                         type: 'sum',

@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+$operlist = $_SESSION['OperList'];
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -18,13 +22,12 @@
         }
     </style>
     <script type="text/javascript">
-       
-        $(function () {
+      
+        $(function () {   
 			$('#search').on('click',function(){
-				//var role_id=$('#rolesName').val();
 					$("#dg").datagrid('load',{
-                       role_id: $('#rolesName').val(),
-                    }); 
+                       title: $('#rolesName').val(),
+                    });
 			});
 			$('#add').on('click',function(){
 				 $('#addUser').dialog('open').dialog('setTitle','新增角色');
@@ -42,6 +45,7 @@
                 }
 
             });
+
             $("#rolePower").combotree({
                 url:'../ajaction/v1/?menuid=0&cmd=get_all_modules',
 				type:'get',
@@ -53,6 +57,7 @@
 					console.log('node',node);
 				}
             });
+
 			$('#roles').combotree({
 				url:'../ajaction/v1/?menuid=0&cmd=get_all_modules',
 				type:'get',
@@ -62,6 +67,7 @@
 				checkbox: true,
 				required: true
 			})
+
             $('#operate').combobox({
                 url:'../css/homepagecss/chedui.json',
                 panelHeight:200,
@@ -75,21 +81,6 @@
                 }
 
             });
-			//搜索操作：
-			$('#search').bind('click',function(){
-				var name=$('#rolesName').val();
-				//console.log('niaho',name);
-				$.ajax({
-                    url:'../ajaction/v1/?menuid=101010&cmd=qry',
-                    type:'POST',
-                    data:{'title':name},
-                    dataType:'json',
-                    success:function(data){
-                        $("#dg").datagrid("loadData", data.rows);    
-                    }
-                });
-				
-			});
 			//更新操作
 			$('#updata_save').bind('click',function(){
 				var title=$('#title').textbox('getText');
@@ -97,64 +88,76 @@
 				var remark=$('#remark').textbox('getText');
 				var module_list=$('#roles').combotree('getText');
 
-				var module_list_val=$('#roles').combotree('getValue');
+				var module_list_values=$('#roles').combotree('getValues');
+                var module_list_val=module_list_values.join(";");
 
 				var operlist=$('#operate').combobox('getText');
-				console.log('dddddd',module_list_val5);
+                //console.log('module_list_val',module_list_val);
 				$.ajax({
 					url:'../ajaction/v1/?menuid=101010&cmd=edit',
 					type:'POST',
 					data:{'title':title,'role_id':role_id,'remark':remark,'module_list':module_list,'module_list_val':module_list_val,'operlist':operlist},
 					success:function(data){
-						 $.messager.show({
-                            title : '操作成功',
-                            msg:'角色修改成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-						$('#dlg').dialog('close');
-							reload();	
-					}
-					
-				})
-				
+						var res = eval('(' + data + ')')
+                        if(res.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#dlg').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        }	
+					}		
+				})	
 			});
+
 			//增加操作
 			$('#save').bind('click',function(){
 			var addrole=$('#addrole').textbox('getText');
 			var rolePower=$('#rolePower').combotree('getText');
-			var module_list_val=$('#rolePower').combotree('getValues');
-			var ad=module_list_val.length;
-			console.log('ad',ad);
-			var moduleval=module_list_val[0]+';';
-			for(var i=1;i<module_list_val.length;i++){
+
+			var module_list=$('#rolePower').combotree('getValues');
 			
-			moduleval+= module_list_val[i]+';';
+            var module_list_val=module_list.join(";");
 			
-			}
-			console.log('moduleval',moduleval);
 			var addoper=$('#addoper').combobox('getText');
 			var addremark=$('#addremark').textbox('getText');
-			console.log('dattttt',module_list_val);
 			$.ajax({
 				url:'../ajaction/v1/?menuid=101010&cmd=add',
 				type:'POST',
-				data:{'title':addrole,'remark':addremark,'module_list':rolePower,'module_list_val':moduleval,'operlist':addoper},
+				data:{'title':addrole,'remark':addremark,'module_list':rolePower,'module_list_val':module_list_val,'operlist':addoper},
 				success:function(data){
-					 $.messager.show({
-                            title : '操作成功',
-                            msg:'角色添加成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-
-					reload();
-					$('#addUser').dialog('close');
+                    var res = eval('(' + data + ')')
+                    if(res.status=="OK"){
+    					$.messager.show({
+                                title : '操作成功',
+                                msg:res.reason,
+                                timeout:3000,
+                                showType:'show',  
+                                });
+                        reload();
+                        $('#addUser').dialog('close');
+                    }else{
+                        $.messager.show({
+                                title : '操作失败',
+                                msg:res.reason,
+                                timeout:3000,
+                                showType:'show',  
+                                }); 
+                    }
 				}
 			})
-			
-			}
-			);
+			});
+
 			$('#cancel').bind('click',function(){
 				$('#alarm').dialog('close');
 			});
@@ -166,6 +169,7 @@
 			});
 			
         })
+        //重新加载页面
 		function reload(){
 		$.ajax({
 				url:'../ajaction/v1/?menuid=101010&cmd=qry&t=1',
@@ -177,10 +181,19 @@
 				}							
 			});
 		}
-
+        var operlist='<?php echo $operlist;?>';
         function formatOption(value, row, index) {
-                return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
-
+            var str='';
+           
+            if(operlist.indexOf('修改') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a>';
+            }
+            
+            if(operlist.indexOf('删除') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+            }
+            
+            return str;
         }
         var url;
 		//装填修改dialog
@@ -194,13 +207,18 @@
 				$('#role_id').val(row.role_id);
 				//$('#module_id').val(row.modules_list_val);
 				$('#title').textbox('setValue',row.title);
-                $('#roles').combotree('setValue',row.modules_list_val);
+
+                var module_list = row.modules_list_val.split(";");
+                //console.log('module_id',module_list);
+
+                $('#roles').combotree('setValues',module_list);
 				$('#roles').combotree('setText',row.modules_list);
-				$('#operate').combobox('setValue',row.operlist);//setValue;
+				
+                $('#operate').combobox('setValue',row.operlist);//setValue;
 				$('#remark').textbox('setValue',row.remark);
-				console.log('module_id',row.modules_list_val);
+				
             }
-        };
+        }
 		//删除操作
         function deletData(index) {
 			$('#dg').datagrid('selectRow', index);
@@ -214,23 +232,30 @@
 					type:'post',
 					data:{'role_id':id},
 					success:function(data){
-					 $.messager.show({
-                            title : '操作成功',
-                            msg:'角色删除成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-					reload();
-					$('#alarm').dialog('close');
+                        var res = eval('(' + data + ')')
+                    if(res.status=="OK"){
+                        $.messager.show({
+                                title : '操作成功',
+                                msg:res.reason,
+                                timeout:3000,
+                                showType:'show',  
+                                });
+                        reload();
+                        $('#alarm').dialog('close');
+                    }else{
+                        $.messager.show({
+                                title : '操作失败',
+                                msg:res.reason,
+                                timeout:3000,
+                                showType:'show',  
+                                }); 
+                    }
 					}
 				})
                 })
  
 			}
-        };
-		
-		
-
+        }
     </script>
 	 <style type="text/css">
 	  #sure{
@@ -333,13 +358,13 @@
 </head>
 <body class="easyui-layout" style="width:100%; height: 100%;">
 <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-    <input type="text" id="rolesName" placeholder="角色名称"/> <button id="search">搜索</button>
-    <button id="add" style="float: right; margin-top: 15px;">增加</button>
+   <input type="text" id="rolesName" placeholder="角色名称"/>  <?php $operlist=explode(',',$_SESSION['OperList']); if(in_array('查看',$operlist)){?><button id="search">搜索</button><?php }?>
+    <?php if(in_array('添加',$operlist)){?><button id="add" style="float: right; margin-top: 15px;">增加</button><?php }?>
     </div>
-    <table id="dg" class="easyui-datagrid" url="../ajaction/v1/?menuid=101010&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true" >
+    <table id="dg" class="easyui-datagrid" url="../ajaction/v1/?menuid=101010&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true" singleSelect="true">
         <thead>
         <tr>
-            <th field="role_id" width="15%" sortable="true">角色编号</th>
+            <th field="role_id" width="15%">角色编号</th>
             <th data-options="field:'title',width:'15%'">角色名称</th>
             <th data-options="field:'modules_list',width:'30%'">模块列表</th>
             <th data-options="field:'remark',width:'15%'">说明</th>
@@ -357,21 +382,21 @@
                 <td>
 					<img src="../css/img/start.png">
                     角色名称：
-					 <input id="role_id"  style="display: none;width:45%；" type="text"/>
-					 <input id="module_id"  style="display: none;width:45%；" type="text"/>
-                    <input id="title" class="easyui-textbox"  style="width:188px;" />
+					<input id="role_id"  style="display: none;width:45%；" type="text"/>
+					<input id="module_id"  style="display: none;width:45%；" type="text"/>
+                    <input id="title" required="true" class="easyui-textbox"  style="width:188px;"  />
                 </td>
                 <td>
 					<img src="../css/img/start.png">
                     角色权限：
-                    <input id="roles"  style="width:188px;" />
+                    <input id="roles" required="true"  style="width:188px;" />
                 </td>
             </tr>
             <tr>
                 <td>
 					<img src="../css/img/start.png">
                     操作权限：
-                    <input id="operate" style="width:188px;" />
+                    <input id="operate" required="true" style="width:188px;" />
                 </td>
             </tr>
             <tr>
@@ -401,19 +426,19 @@
             <td>
                 <img src="../css/img/start.png">
                 角色名称：
-                <input id="addrole" class="easyui-textbox" style="width:188px;" type="text"/>
+                <input id="addrole" class="easyui-textbox" style="width:188px;" type="text" required="true"/>
             </td>
             <td>
                 <img src="../css/img/start.png">
                 角色权限：
-                <input id="rolePower" style="width: 188px;" />
+                <input id="rolePower" style="width: 188px;" required="true" />
             </td>
         </tr>
         <tr>
             <td>
                 <img src="../css/img/start.png">
                 操作权限：
-                <input id="addoper" style="width: 188px;"/>
+                <input id="addoper" style="width: 188px;" required="true"/>
             </td>
         </tr>
         <tr>

@@ -1,0 +1,370 @@
+
+------------------
+-时间:10:01:56-
+-错误信息:错误的SQL语句: [insert into roles (title,role_name,remark,modules_list,modules_list_val,operlist) 
+                values ('超级管理员','超级管理员','','系统管理,用户权限管理,角色管理,用户管理,基本数据管理,修理厂管理,轮胎基本参数管理,车载终端管理,分公司管理,线路管理','10;1010;101010;101011;1011;101110;101112;101116;101117;101118','添加')]-
+-错误内容:Duplicate entry '超级管理员' for key 'role_name'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101010&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_sys/sys.roles_show.php-
+------------------
+
+------------------
+-时间:10:47:20-
+-错误信息:错误的SQL语句: [insert into admins (admin_name,role_id,password,real_name,tel,mobile,email,remark,is_term,store_id,company_id)
+		values ('11',1,'6512bd43d9caa6e02c990b0a82652dca','11','','','','','N','6','14')]-
+-错误内容:Duplicate entry '11' for key 'admin_name'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101011&cmd=add&admin_name=11&real_name=11&role_id_val=1&tel=&admin_pass=11&mobile=&email=&remark=&is_term=Y&store_id_val=6&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_sys/sys.users_show.php-
+------------------
+
+------------------
+-时间:11:41:44-
+-错误信息:错误的SQL语句: [update admins set admin_name='admin', role_id=超级管理员, password='25d55ad283aa400af464c76d713c07ad', real_name='系统管理员', tel='', mobile='', remark='默认登录账号', email='admin@ttms.com', is_term='N', store_id='0', company_id='0' where admin_id=1]-
+-错误内容:Unknown column '超级管理员' in 'field list'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101011&cmd=edit-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_sys/sys.users_show.php-
+------------------
+
+------------------
+-时间:11:57:11-
+-错误信息:错误的SQL语句: [insert into store (store_no,store_name,contact,tel,mobile,address,remark)
+		values ('C005','淳化修理厂','司三三','12','12','1212','')]-
+-错误内容:Duplicate entry '淳化修理厂' for key 'store_name'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101110&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_sys/repairDepotManger.php-
+------------------
+
+------------------
+-时间:11:57:16-
+-错误信息:错误的SQL语句: [insert into store (store_no,store_name,contact,tel,mobile,address,remark)
+		values ('C001','淳化修理厂','司三三','12','12','1212','')]-
+-错误内容:Duplicate entry '淳化修理厂' for key 'store_name'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101110&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_sys/repairDepotManger.php-
+------------------
+
+------------------
+-时间:11:57:19-
+-错误信息:错误的SQL语句: [insert into store (store_no,store_name,contact,tel,mobile,address,remark)
+		values ('C001','淳化修理厂1','司三三','12','12','1212','')]-
+-错误内容:Duplicate entry 'C001' for key 'store_no'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101110&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_sys/repairDepotManger.php-
+------------------
+
+------------------
+-时间:11:57:21-
+-错误信息:错误的SQL语句: [insert into store (store_no,store_name,contact,tel,mobile,address,remark)
+		values ('C001','淳化修理厂1','司三三','12','12','1212','')]-
+-错误内容:Duplicate entry 'C001' for key 'store_no'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101110&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_sys/repairDepotManger.php-
+------------------
+
+------------------
+-时间:01:23:06-
+-错误信息:错误的SQL语句: [insert into vehicle_term (v_term_no,v_term_name,plate_no,store_id,remark)
+		values ('1','1','','6','')]-
+-错误内容:Duplicate entry '1' for key 'v_term_no'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101115&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_sys/sys.vehicle_show.php-
+------------------
+
+------------------
+-时间:02:01:58-
+-错误信息:错误的SQL语句: [update tire_param_info set company_name='杭州', brand_id='5', norms_id='5', class_id='5', figure_id='6', pressure_ul='20.00', pressure_ll='0.00', speed_ul='200', temp_ul='20', tkph_val='10', baro_val='8', figure_mile1='4', figure_mile2='2', rated_mile='' where tire_param_id=3]-
+-错误内容:Duplicate entry '5-5-5-6' for key 'brand_id'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=edit-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:02:02:02-
+-错误信息:错误的SQL语句: [update tire_param_info set company_name='米其林', brand_id='5', norms_id='6', class_id='5', figure_id='5', pressure_ul='10.00', pressure_ll='4.00', speed_ul='200', temp_ul='90', tkph_val='20', baro_val='4', figure_mile1='7', figure_mile2='5', rated_mile='' where tire_param_id=4]-
+-错误内容:Duplicate entry '5-6-5-5' for key 'brand_id'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=edit-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:02:02:08-
+-错误信息:错误的SQL语句: [update tire_param_info set company_name='固特异', brand_id='5', norms_id='6', class_id='6', figure_id='5', pressure_ul='10.00', pressure_ll='0.00', speed_ul='200', temp_ul='150', tkph_val='1', baro_val='10', figure_mile1='10', figure_mile2='1', rated_mile='' where tire_param_id=3]-
+-错误内容:Duplicate entry '5-6-6-5' for key 'brand_id'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=edit-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:02:02:08-
+-错误信息:错误的SQL语句: [update tire_param_info set company_name='固特异', brand_id='5', norms_id='6', class_id='6', figure_id='5', pressure_ul='10.00', pressure_ll='0.00', speed_ul='200', temp_ul='150', tkph_val='1', baro_val='10', figure_mile1='10', figure_mile2='1', rated_mile='' where tire_param_id=4]-
+-错误内容:Duplicate entry '5-6-6-5' for key 'brand_id'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=edit-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:02:02:09-
+-错误信息:错误的SQL语句: [update tire_param_info set company_name='固特异', brand_id='5', norms_id='6', class_id='6', figure_id='5', pressure_ul='10.00', pressure_ll='0.00', speed_ul='200', temp_ul='150', tkph_val='1', baro_val='10', figure_mile1='10', figure_mile2='1', rated_mile='' where tire_param_id=3]-
+-错误内容:Duplicate entry '5-6-6-5' for key 'brand_id'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=edit-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:02:02:17-
+-错误信息:错误的SQL语句: [update tire_param_info set company_name='米其林', brand_id='5', norms_id='6', class_id='5', figure_id='5', pressure_ul='10.00', pressure_ll='4.00', speed_ul='200', temp_ul='90', tkph_val='20', baro_val='4', figure_mile1='7', figure_mile2='5', rated_mile='' where tire_param_id=4]-
+-错误内容:Duplicate entry '5-6-5-5' for key 'brand_id'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=edit-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:02:02:18-
+-错误信息:错误的SQL语句: [update tire_param_info set company_name='米其林', brand_id='5', norms_id='6', class_id='5', figure_id='5', pressure_ul='10.00', pressure_ll='4.00', speed_ul='200', temp_ul='90', tkph_val='20', baro_val='4', figure_mile1='7', figure_mile2='5', rated_mile='' where tire_param_id=5]-
+-错误内容:Duplicate entry '5-6-5-5' for key 'brand_id'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111010&cmd=edit-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.tireparam_show.php-
+------------------
+
+------------------
+-时间:02:05:07-
+-错误信息:错误的SQL语句: [select * from tire_info where sensor_id
+    		in (SELECT sensor_id FROM sensor where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:Unknown column 'v_term_id' in 'IN/ALL/ANY subquery'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:07-
+-错误信息:错误的SQL语句: [select * from sensor ]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:07-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no!=''  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:07-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and mile_count=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:07-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and bus_mile_count!=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:07-
+-错误信息:错误的SQL语句: [select * from bus_info where plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:07-
+-错误信息:错误的SQL语句: [select * from bt_real_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:07-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:07-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul   and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:07-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:07-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul  and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:10-
+-错误信息:错误的SQL语句: [select * from tire_info where sensor_id
+    		in (SELECT sensor_id FROM sensor where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:Unknown column 'v_term_id' in 'IN/ALL/ANY subquery'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:10-
+-错误信息:错误的SQL语句: [select * from sensor ]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:10-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no!=''  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:10-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and mile_count=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:10-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and bus_mile_count!=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:10-
+-错误信息:错误的SQL语句: [select * from bus_info where plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:10-
+-错误信息:错误的SQL语句: [select * from bt_real_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:10-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:10-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul   and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:10-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:05:10-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul  and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:13:55-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('11','2','2','2','1','1')]-
+-错误内容:Duplicate entry '11' for key 'sensor_no'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_11/sys.sensor_show.php-
+------------------

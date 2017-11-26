@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+$operlist = $_SESSION['OperList'];
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -82,15 +86,24 @@
 					type:'POST',
 					data:{'v_term_no':v_term_no,'v_term_name':v_term_name,'store_id_val':store_id_val,'remark':remark},
 					success:function(data){
-						$('#addUser').dialog('close');
-						$.messager.show({
-                            title : '操作成功',
-                            msg:'车载终端增加成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-						reload();
-						console.log('data',data);
+						var res = eval('(' + data + ')')
+                        if(res.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#addUser').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        }   
 					}
 				})
 	
@@ -110,14 +123,24 @@
 					type:'POST',
 					data:{'v_term_id':v_term_id,'v_term_no':v_term_no,'v_term_name':v_term_name,'store_id_val':store_id_val,'remark':remark},
 					success:function(data){
-						$('#dlg').dialog('close');
-						$.messager.show({
-                            title : '操作成功',
-                            msg:'车载终端修改成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-						reload();
+						var res = eval('(' + data + ')')
+                        if(res.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#dlg').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        }   
 					}
 				});
 				
@@ -125,8 +148,20 @@
         })
 
 
+        var operlist='<?php echo $operlist;?>';
         function formatOption(value, row, index) {
-                return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+            var str='';
+           
+            if(operlist.indexOf('修改') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a>';
+            }
+            
+            if(operlist.indexOf('删除') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+            }
+            
+            return str;
+
         }
         var url;
         function editUser(index) {
@@ -141,7 +176,9 @@
 			   $('#up_vehicleNumber').textbox('setValue',row.v_term_no);
 			   $('#up_vehicleName').textbox('setValue',row.v_term_name);
 			   //$('#up_plateNumber').textbox('setValue',row.plate_no);
-                $('#uprepairID').combobox('setValue',row.store_name);       //
+                $('#uprepairID').combobox('setValue',row.store_id); 
+                $('#uprepairID').combobox('setText',row.store_name); 
+                      //
 				$('#up_remark').textbox('setValue',row.remark);
 				$('#up_v_term_id').val(row.v_term_id);
             }
@@ -173,15 +210,25 @@
                             'v_term_id': id
                         },
                         success: function(data) {
-						$('#alarm').dialog('close');
-							$.messager.show({
-                            title : '操作成功',
-                            msg:'车载终端删除成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-							reload();                 
-                        }
+						var res = eval('(' + data + ')')
+                        if(res.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#alarm').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:res.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        } 
+                        }  
                     })
                 })
             }
@@ -303,18 +350,19 @@
 <body class="easyui-layout" style="width: 100%;height: 100%;background-color: #ffffff">
 <div  class="u-content">
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
-        <input id="search_v_no" type="text" placeholder="终端编号"/> <button id="search">搜索</button>
-        <button id="insert" style="float: right;margin-top:15px;">批量导入</button>
-        <button id="add" style="float: right;margin-top:15px;">增加</button>
+        <input id="search_v_no" type="text" placeholder="终端编号"/> 
+         <?php $operlist=explode(',',$_SESSION['OperList']); if(in_array('查看',$operlist)){?><button id="search">搜索</button><?php }?>
+         <?php if(in_array('添加',$operlist)){?><button id="insert" style="float: right;margin-top:15px;">批量导入</button>
+        <button id="add" style="float: right;margin-top:15px;">增加</button><?php }?>
     </div>
     <table id="dg" class="easyui-datagrid"
-           url="../ajaction/v1/?menuid=101115&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true">
+           url="../ajaction/v1/?menuid=101115&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true" singleSelect="true">
         <thead>
         <tr>
             <th data-options="field:'v_term_no',width:'15%'">终端编号</th>
             <th data-options="field:'v_term_name',width:'15%'">终端名称</th>
             <th data-options="field:'mile_count',width:'15%'">累计里程</th>
-            <th data-options="field:'store_name',width:'15%'">所属工厂</th>
+            <th data-options="field:'store_name',width:'15%'">所属修理厂</th>
             <th data-options="field:'remark',width:'15%'">备注</th>
             <th data-options="field:'_operate',width:'26%',formatter:formatOption">操作</th>
         </tr>
@@ -332,14 +380,14 @@
 					</td>
 
 				<td>
-                      <input id="up_vehicleNumber" class="easyui-textbox" style="width: 150px;" />
+                      <input id="up_vehicleNumber" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
                 <td>
                     车载终端名称：
 					</td>
 
 				<td>
-                     <input id="up_vehicleName" class="easyui-textbox" style="width: 150px;" />
+                     <input id="up_vehicleName" class="easyui-textbox" style="width: 150px;" required="true" />
                 </td>
             </tr>
             <tr>
@@ -347,7 +395,7 @@
                         修理厂名称：
                         </td>
                     <td>
-                         <input id="uprepairID"  style="width: 150px;" />
+                         <input id="uprepairID"  style="width: 150px;" required="true" />
                     </td>
                 </tr>
 			<tr>
@@ -402,14 +450,14 @@
 						</td>
 
 				<td>
-						  <input id="vehicleNumber" class="easyui-textbox" style="width: 150px;" />
+						  <input id="vehicleNumber" class="easyui-textbox" style="width: 150px;" required="true" />
 					</td>
 					<td>
 						车载终端名称：
 						</td>
 
 				<td>
-						 <input id="vehicleName" class="easyui-textbox" style="width: 150px;" />
+						 <input id="vehicleName" class="easyui-textbox" style="width: 150px;" required="true" />
 					</td>
 				</tr>
 				<tr>
@@ -417,7 +465,7 @@
 						修理厂名称：
 						</td>
 					<td>
-						 <input id="repairID"  style="width: 150px;" />
+						 <input id="repairID"  style="width: 150px;" required="true" />
 					</td>
 				</tr>
 				<tr>

@@ -1,3 +1,7 @@
+<?php
+session_start();
+$operlist = $_SESSION['OperList'];
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,6 +40,7 @@
                     var res = data.items;
                     $("#tireBrand").combobox('loadData',res);
                     $("#update_tireBrand").combobox('loadData',res);
+                    $("#all_tireBrand").combobox('loadData',res);
                 }
             });
 			$('#tireBrand').combobox({
@@ -51,7 +56,6 @@
                         success:function(data){
                             var res = data.items;
                             $("#all").combobox('loadData',res);
-                            console.log(res);
                         }
                     });
                     $("#all").combobox({
@@ -78,6 +82,30 @@
                         }
                     });
                     $("#update_all").combobox({
+                        valueField:'id',
+                        textField:'name',
+                        type:'json'
+                    })
+                }
+            })
+
+            $('#all_tireBrand').combobox({
+                valueField:'id',
+                textField:'name',
+                type:'json',
+                onSelect:function(res){
+                    console.log('res',res);
+                    $.ajax({
+                        url:'../ajaction/v1/?menuid=0&cmd=get_all_tireparam&brand_id='+res.id,
+                        type:'POST',
+                        dataType:'json',
+                        success:function(data){
+                            var res = data.items;
+                            $("#add_all").combobox('loadData',res);
+                            //console.log(res);
+                        }
+                    });
+                    $("#add_all").combobox({
                         valueField:'id',
                         textField:'name',
                         type:'json'
@@ -115,15 +143,66 @@
                     data:{'factory_code':factory_code,'brand_id_val':brand_id_val,'norms_id_val':norms_id_val,'sensor_id_val':sensor_id_val,'figure_value':figure_val},
                     dataType:'json',
                     success:function(data){
-                    //console.log(data);
-                    $('#addTire').dialog('close');
-                     $.messager.show({
-                            title : '操作成功',
-                            msg:'轮胎添加成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-                     reload();
+                    if(data.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#addTire').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        } 
+                    }
+                });
+            });
+            //批量添加
+            $('#all_save').bind('click',function(){
+
+                var brand_id_val = $('#all_tireBrand').combobox('getValue');
+                var norms_id_val = $('#add_all').combobox('getValue');
+                //var tire_switch = $('#all_tireNumber').val();
+                var figure_mile = $('#all_pr').textbox('getText');
+                var ttire_switch=$("input[id='all_tireNumber']").is(':checked');
+                //alert(tire_switch);
+                var tire_switch;
+                if(ttire_switch == false){
+                    tire_switch='off';
+                }else{
+                    tire_switch='on';
+                }
+                //alert(tire_switch);
+                $.ajax({
+                    url:'../ajaction/v1/?menuid=111110&cmd=addmore',
+                    type:'post',
+                    data:{'brand_id_val':brand_id_val,'norms_id_val':norms_id_val,'tire_switch':tire_switch,'figure_mile':figure_mile},
+                    dataType:'json',
+                    success:function(data){
+                        
+                        if(data.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#addTire').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        } 
                     }
                 });
             });
@@ -143,15 +222,23 @@
                     data:{'factory_code':factory_code,'brand_id_val':brand_id_val,'norms_id_val':norms_id_val,'sensor_id_val':sensor_id_val,'figure_value':figure_val,'tire_id':tire_id},
                     dataType:'json',
                     success:function(data){
-                    console.log(data);
-                    $('#dlg').dialog('close');
-                     $.messager.show({
-                            title : '操作成功',
-                            msg:'轮胎修改成功！',
-                            timeout:1000,
-                            showType:'show',  
-                            });
-                     reload();
+                    if(data.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#dlg').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        } 
                     }
 
                 })
@@ -166,6 +253,19 @@
 			//打开批量增加弹出框
 			$('#addall').on('click',function(){
 				 $('#addalltire').dialog('open').dialog('setTitle','批量增加轮胎');
+                 $.ajax({
+                    url:'../ajaction/v1/?menuid=111110&cmd=qry_tireswitch',
+                    type:'post',
+                    dataType:'json',
+                    success:function(data){
+                         //console.log(data);
+                         $('#all_pr').textbox('setText',data.figure_mile);
+                         $('#all_tireBrand').combobox('setValue',data.brand_id);
+                         $('#add_all').combobox('setValue',data.tire_param_id);
+                         $('#all_tireNumber').attr("checked",true);
+                    }
+                 });
+                
 			});
 			//打开增加弹出框
 			$('#add').on('click',function(){
@@ -174,8 +274,21 @@
 			$('#pr').textbox('setValue','5');
 			})
         })
+        
+        var operlist='<?php echo $operlist;?>';
         function formatOption(value, row, index) {
-            return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; " onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:4px;" onclick="deleteData('+index+')">删除</a>';
+            var str='';
+           
+            if(operlist.indexOf('修改') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px;" onclick="editUser('+index+')">编辑</a>';
+            }
+            
+            if(operlist.indexOf('删除') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+            }
+            
+            return str;
+
         }
         function reload(){
              $.ajax({
@@ -192,7 +305,7 @@
             $('#dg').datagrid('selectRow', index);
             var row = $('#dg').datagrid('getSelected');
             if (row){
-                 console.log("row", row);
+                //console.log("row", row);
                 $('#dlg').dialog('open').dialog('setTitle','轮胎编辑');
                 $("#update_tire_id").val(row.tire_id);
                 $("#update_sensor").val(row.sensor_id);
@@ -206,7 +319,7 @@
                 $('#update_pr').textbox('setValue',row.figure_value);
             }
         }
-        function deleteData(index){
+        function deletData(index){
             $('#dg').datagrid('selectRow', index);
             var row = $('#dg').datagrid('getSelected');
             if(row){
@@ -216,18 +329,28 @@
                     $.ajax({
                         url: '../ajaction/v1/?menuid=111110&cmd=del',
                         type: 'post',
+                        dataType:'json',
                         data: {
                             'tire_id': tire_id
                         },
                         success: function(data) {
-                            $('#alarm').dialog('close');
+                            if(data.status=="OK"){
                             $.messager.show({
-                            title : '操作成功',
-                            msg:'轮胎删除成功！',
-                            timeout:3000,
-                            showType:'show',  
-                            });
-                        reload();
+                                    title : '操作成功',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#alarm').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        } 
                         }
                     })
                 })
@@ -368,11 +491,12 @@
 <div  class="u-content">
     <div id="tb" style="margin-bottom: 10px;margin-top: 10px;background-color: white;padding-left: 19px;padding-right:39px;line-height: 54px;">
         <input id="factory_code" type="text" placeholder="轮胎编号"/>
-        <input id="sensor_no" type="text" placeholder="传感器编号"/> <button id="search">搜索</button>
-        <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;margin-right:10px;">增加</button>
+        <input id="sensor_no" type="text" placeholder="传感器编号"/> 
+         <?php $operlist=explode(',',$_SESSION['OperList']); if(in_array('查看',$operlist)){?><button id="search">搜索</button><?php }?>
+        <?php if(in_array('添加',$operlist)){?> <button id="addall" style="float: right;margin-top: 15px;">批量增加</button> <button id="add" style="float: right;margin-top: 15px;margin-right:10px;">增加</button><?php }?>
     </div>
     <table id="dg" class="easyui-datagrid"
-          url="../ajaction/v1/?menuid=111110&cmd=qry&t=1" rownumbers="false" pagination="true" striped="true">
+          url="../ajaction/v1/?menuid=111110&cmd=qry&t=1" rownumbers="false" pagination="true" striped="true" singleSelect="true">
         <thead>
         <tr>
             <th data-options="field:'tire_id',width:'8%'">编号</th>
@@ -382,15 +506,15 @@
             <th data-options="field:'norms_name',width:'10%'">轮胎规格</th>
             <th data-options="field:'class_name',width:'8%'">层级</th>
             <th data-options="field:'figure_name',width:'8%'">花纹</th>
-			<th data-options="field:'figure_value',width:'8%'">花纹深度</th>
+			<th data-options="field:'figure_value',width:'10%'">花纹深度(Cm)</th>
             <th data-options="field:'brand_name',width:'8%'">品牌</th>
             <th data-options="field:'status',width:'10%'">状态</th>
-            <th data-options="field:'speed_ul',width:'10%'">速度上限</th>
-            <th data-options="field:'temp_ul',width:'10%'">温度上限</th>
-            <th data-options="field:'pressure_ul',width:'10%'">胎压上限</th>
-            <th data-options="field:'pressure_ll',width:'10%'">胎压下限</th>
-            <th data-options="field:'mile_count',width:'10%'">总里程</th>
-            <th data-options="field:'_operate',width:'10%',formatter:formatOption">操作</th>
+            <th data-options="field:'speed_ul',width:'10%'">速度上限(Km/h)</th>
+            <th data-options="field:'temp_ul',width:'10%'">温度上限(℃)</th>
+            <th data-options="field:'pressure_ul',width:'10%'">胎压上限(Kg)</th>
+            <th data-options="field:'pressure_ll',width:'10%'">胎压下限(Kg)</th>
+            <th data-options="field:'mile_count',width:'10%'">总里程(Km)</th>
+            <th data-options="field:'_operate',width:'12%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
@@ -406,13 +530,13 @@
                     <td>
                         <input id="update_tire_id" type="text" style="display:none">
                         <input id="update_sensor" type="text" style="display:none">
-                        <input id="update_tireNumber" class="easyui-textbox" style="width: 150px;"/>
+                        <input id="update_tireNumber" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
                     <td>
                         品牌：
 						</td>
                     <td>
-                        <input id="update_tireBrand" class="easyui-combobox" style="width: 150px;" />
+                        <input id="update_tireBrand" class="easyui-combobox" style="width: 150px;" required="true" />
                     </td>
                 </tr>
                 <tr>
@@ -420,7 +544,7 @@
                         规格/层级/花纹：
 						</td>
                     <td colspan="3">
-                        <input id="update_all" class="easyui-combobox"  style="width: 430px;" />
+                        <input id="update_all" class="easyui-combobox"  style="width: 430px;" required="true" />
                     </td>
                 </tr>
                 <tr>
@@ -434,7 +558,7 @@
                         花纹深度：
 						</td>
                     <td>
-                        <input id="update_pr" class="easyui-textbox" style="width: 150px;" />
+                        <input id="update_pr" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
 
                 </tr>
@@ -463,13 +587,13 @@
                         轮胎编码：
                     </td>
                     <td>
-                        <input id="tireNumber" class="easyui-textbox"  style="width: 150px;"/>
+                        <input id="tireNumber" class="easyui-textbox"  style="width: 150px;" required="true" />
                     </td>
                     <td>
                         品牌：
 							</td>
                     <td>
-                        <input id="tireBrand" class="easyui-combobox" style="width: 150px;" />
+                        <input id="tireBrand" class="easyui-combobox" style="width: 150px;" required="true" />
                     </td>
                 </tr>
                 <tr>
@@ -477,7 +601,7 @@
                         规格/层级/花纹：
                     </td>
                     <td colspan="3">
-                        <input id="all" class="easyui-combobox" style="width: 430px;" />
+                        <input id="all" class="easyui-combobox" style="width: 430px;" required="true" />
                     </td>
                 </tr>
                 <tr>
@@ -485,13 +609,13 @@
                         传感器编号：
                     </td>
                     <td>
-                        <input id="sensor" class="easyui-combobox" style="width: 150px;" />
+                        <input id="sensor" class="easyui-combobox" style="width: 150px;" required="true" />
                     </td>
                     <td>
                         花纹深度：
                     </td>
                     <td>
-                        <input id="pr" class="easyui-textbox" style="width: 150px;" />
+                        <input id="pr" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
 
                 </tr>
@@ -519,21 +643,27 @@
                         入库开关：
                     </td>
                     <td>
-                        <input id="all_tireNumber" style="width: 50px;" type="checkbox"/>
+                        <input id="all_tireNumber"  style="width: 50px;" type="checkbox" required="true" />
                     </td>
                     <td>
                         品牌：
-						</td>
+					</td>
                     <td>
-                        <input id="all_tireBrand" style="width: 200px;" />
+                        <input id="all_tireBrand"  class="easyui-combobox" style="width: 200px;" required="true" />
                     </td>
                 </tr>
                 <tr>
                     <td>
                         规格/层级/花纹：
                     </td>
-                    <td colspan="3">
-                        <input id="all_all" style="width: 400px;" />
+                    <td>
+                        <input id="add_all" class="easyui-combobox" style="width: 150px;" required="true" />
+                    </td>
+                    <td>
+                        花纹深度：
+                    </td>
+                    <td>
+                        <input id="all_pr" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
                 </tr>
 				<tr style="text-align: center">

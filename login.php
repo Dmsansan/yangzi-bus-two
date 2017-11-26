@@ -17,70 +17,114 @@
 	<script src="lib/ligerUI/js/ligerui.all.js" type="text/javascript"></script> 
 	<link href="css/homepagecss/loginCss.css" type="text/css" rel="stylesheet"/>
 	<script type="text/javascript">
-function f_redirect()
-{
-	window.location.href="main.php";
-}
-function reset(){
-	$('#userid').val("");
-	$('#userkey').val("");
-}
-function f_error()
-{
-	return;
-	$.ligerDialog.confirm("登陆失败，继续进入？", function (yes) {
-                    if (yes){
-							window.location.href="main.php";
-					}
-	});	
-}
-function LoginSystem()
-{
-	//
-	var userid=document.getElementById("userid").value;
-	var userpass=document.getElementById("userkey").value;
-	userpass=$.md5(userpass);
-	if(userid==""){
-		//alert("ee");
-		top.$.ligerDialog.error(' 请输入用户名!');
-		//document.getElementById("userid").focus();
-		return;
-	}
-	
-	//这里开始登陆
-	$.ajax({
-		url: "ajaction/v1/?menuid=0", type: "POST",
-        data: { cmd:"login",userid: userid,password:userpass ,rnd: Math.random() },
-        success: function (responseText) {
-				//alert(responseText);
-			responseText=$.trim(responseText);
-			
-			if(typeof(responseText)=="undefined" || responseText=="" || responseText==null){
-				//服务器没有数据反回
-				top.$.ligerDialog.error("未知错误");
-				f_error();
-			}else{
-				var dataObj = eval("("+responseText+")");
-									
-					if (dataObj.status == "OK") {
-							f_redirect();
-					}else {
-						top.$.ligerDialog.error(dataObj.reason);
-						f_error();
-					}
-			}
-        },
-        error: function () {
-			top.$.ligerDialog.error('登陆失败!请检查网络');
-			f_error();
+        $( function() {
+          //获取cookie
+          var cusername = getCookie('customername');
+          var cpassword = getCookie('customerpass');
+          if(cusername != "" && cpassword != ""){
+            $("#userid").val(cusername);
+            $("#userkey").val(cpassword);
+          }
+        })
+
+        function f_redirect()
+        {
+            if($('#rememberpass').is(':checked')){
+              setCookie('customername', $('#userid').val().trim(), 7)
+              setCookie('customerpass', $('#userkey').val().trim(), 7)
+            }else{
+              setCookie('customername', '', 7)
+              setCookie('customerpass', '', 7)
+            }
+        	window.location.href="main.php";
         }
-    });
-	
-}
+        function reset(){
+        	$('#userid').val("");
+        	$('#userkey').val("");
+        }
+        function f_error()
+        {
+        	return;
+        	$.ligerDialog.confirm("登陆失败，继续进入？", function (yes) {
+                            if (yes){
+        							window.location.href="main.php";
+        					}
+        	});	
+        }
+        function LoginSystem()
+        {
+        	//
+        	var userid=document.getElementById("userid").value;
+        	var userpass=document.getElementById("userkey").value;
+        	userpass=$.md5(userpass);
+        	if(userid==""){
+        		//alert("ee");
+        		top.$.ligerDialog.error(' 请输入用户名!');
+        		//document.getElementById("userid").focus();
+        		return;
+        	}
+        	
+        	//这里开始登陆
+        	$.ajax({
+        		url: "ajaction/v1/?menuid=0", type: "POST",
+                data: { cmd:"login",userid: userid,password:userpass ,rnd: Math.random() },
+                success: function (responseText) {
+        				//alert(responseText);
+        			responseText=$.trim(responseText);
+        			
+        			if(typeof(responseText)=="undefined" || responseText=="" || responseText==null){
+        				//服务器没有数据反回
+        				top.$.ligerDialog.error("未知错误");
+        				f_error();
+        			}else{
+        				var dataObj = eval("("+responseText+")");
+        									
+        					if (dataObj.status == "OK") {
+        							f_redirect();
+        					}else{
+        						top.$.ligerDialog.error(dataObj.reason);
+        						f_error();
+        					}
+        			}
+                },
+                error: function () {
+        			top.$.ligerDialog.error('登陆失败!请检查网络');
+        			f_error();
+                }
+            });
+        	
+        }
+        //设置cookie
+        //var passKey = '4c05c54d952b11e691d76c0b843ea7f9';
+        function setCookie(cname, cvalue, exdays) {
+            var d = new Date();
+            d.setTime(d.getTime() + (exdays*24*60*60*1000));
+            var expires = "expires="+d.toUTCString();
+            document.cookie = cname + "=" + escape(cvalue) + "; " + expires;
+        }
+        //获取cookie
+        function getCookie(cname) {
+            var name = cname + "=";
+            var ca = document.cookie.split(';');
+            for(var i=0; i<ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0)==' ') c = c.substring(1);
+                if (c.indexOf(name) != -1){
+                  var cnameValue = unescape(c.substring(name.length, c.length));
+                  return cnameValue;
+                } 
+            }
+            return "";
+        }
+        //清除cookie  
+        function clearCookie(cname) {  
+            setCookie(cname, "", -1);  
+        }
+
+       
 </script>
 <style type="text/css">
-
-*{overflow:hidden; font-size:9pt;}
+    *{overflow:hidden; font-size:9pt;}
         body {
             margin-left: 0px;
             margin-top: 0px;
@@ -129,7 +173,7 @@ function LoginSystem()
                                                 <td height="40">&nbsp;</td>
                                                 <td height="40" style="padding-left:160px;width: 30px; height: 30px; font-size: 16px;  color: grey;">
                                                    
-                                                    记住密码：<input type="checkbox" value="" checked="checked" style="width: 18px; height: 18px;"></td>
+                                                    记住密码：<input type="checkbox" id="rememberpass"  checked="checked" style="width: 18px; height: 18px;"></td>
 
                                             </tr>
 

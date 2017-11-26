@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿<?php
+session_start();
+$operlist = $_SESSION['OperList'];
+?>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -31,10 +35,8 @@
 						data:{'tire_id':tire_id},
 						success:function(data){
 							if(data.status="OK"){
-								console.log('jieshu',data);
 								$('#tire_alarm').dialog('close');
 								loadgrid(carNumber);
-							console.log('sdfghjk',carNumber);
 							}
 							
 						}
@@ -65,11 +67,26 @@
 				$.ajax({
 					url:'../ajaction/v1/?menuid=121010&cmd=add',
 					type:'POST',
+					dataType:'json',
 					data:{'plate_no':plate_no,'wheel_count_val':wheel_count_val,'terminal_id_val':terminal_id_val,'remark':remark},
 					success:function(data){
-						
-						reload();
-						$('#addUser').dialog('close');
+						 if(data.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#addUser').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        } 
 						
 					}
 					
@@ -124,9 +141,6 @@
                    var msg=data.rows;
 				   $('#company').combobox('loadData',msg);
 				   $('#up_company').combobox('loadData',msg);
-                    
-                    
-                    console.log('data', data);
                 }
             });
 
@@ -160,10 +174,26 @@
 				$.ajax({
 					url:'../ajaction/v1/?menuid=121010&cmd=edit',
 					type:'post',
+					dataType:'json',
 					data:{'plate_no':plate_no,'wheel_count_val':wheel_count_val,'terminal_id_val':terminal_id_val,'remark':remark},
 					success:function(data){
-						reload();
-					 $('#dlg').dialog('close');	
+					 if(data.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#dlg').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        } 
 					}
 				})
 			});
@@ -204,16 +234,12 @@
 						type:'POST',
 						dataType:'json',
 						success:function(data){
-							console.log('88888',data);
-							//var res =data.items;
 
 							$('#tire_pr').combobox("loadData", data.items);
 						}
 					});
 					
 				 }
-				 		
-			console.log('dddd',row);
 			});
 			$('#tire_pr').combobox({
 						valueField:'id',
@@ -280,7 +306,7 @@
 					type:'post',
 					success:function(data){
 						if(data.status!='OK'){
-							$.messager.alert('警告','错误','info');
+							$.messager.alert('警告','轮胎安装失败！','info');
 						}else{	
 							$.messager.show({
                             title : '操作成功',
@@ -317,10 +343,23 @@
 			})
 		} 
 
+       
+        var operlist='<?php echo $operlist;?>';
         function formatOption(value, row, index) {
-            return '<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a> <a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+            var str='';
+           
+            if(operlist.indexOf('修改') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #1c66dc; font-size: 12px; border:1px solid #1c66dc;padding:2px 10px; border-radius:4px; margin-left:20px;" onclick="editUser('+index+')">编辑</a>';
+            }
+            
+            if(operlist.indexOf('删除') != -1){
+                str+='<a href="#" style="text-decoration: none;color: #efad2c; font-size: 12px; border:1px solid #efad2c;padding:2px 10px; border-radius:4px; margin-left:6px;" onclick="deletData('+index+')">删除</a>';
+            }
+            
+            return str;
+
         }
-      //修改车辆记录
+        //修改车辆记录
         function editUser(index) {
             $('#dg').datagrid('selectRow', index);
             var row = $('#dg').datagrid('getSelected');
@@ -345,11 +384,26 @@
 					$.ajax({
 						url:'../ajaction/v1/?menuid=121010&cmd=del ',
 						type:'POST',
+						dataType:'json',
 						data:{'plate_no':plate_no},
 						success:function(data){
-							reload();
-							$('#alarm').dialog('close');
-							console.log('delete',data);
+							 if(data.status=="OK"){
+                            $.messager.show({
+                                    title : '操作成功',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
+                            reload();
+                            $('#alarm').dialog('close');
+                        }else{
+                            $.messager.show({
+                                    title : '操作失败',
+                                    msg:data.reason,
+                                    timeout:3000,
+                                    showType:'show',  
+                                    }); 
+                        } 
 						}
 					})
 				})
@@ -559,22 +613,22 @@
 <div style=""></div>
 <div data-options="region:'west',title:'车辆列表'" style="width:39%;border-right:1px soild #ff0f0f">
     <div style="width: 100%;height:49%;" title="车辆列表">
-    	<div id="toolbar" style="height:64px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:10px;">
+    	<div id="toolbar" style="height:94px; background-color: white;padding-left: 19px;padding-right:39px;padding-top:10px;">
            
             <div id="t-bottom">
-                车牌号码：<input id="searchnumber" data-options="prompt:'车牌号码'" class="easyui-textbox"  />车载终端：<input id="vterm_no" data-options="prompt:'终端号码'" class="easyui-textbox" /></br>
-                <div style="margin-top:10px;margin-bottom:10px;">
+                车牌号码：<input id="searchnumber" data-options="prompt:'车牌号码'" class="easyui-textbox"  /></br>
+                <div style="margin-bottom:5px;margin-top:5px;">
+                车载终端：<input id="vterm_no" data-options="prompt:'终端号码'" class="easyui-textbox" />
+                 <?php $operlist=explode(',',$_SESSION['OperList']); if(in_array('查看',$operlist)){?><button id="searchButton"  style="margin-left: 5px;">搜索</button><?php }?>
+				 <?php if(in_array('添加',$operlist)){?><button id="add" style="margin-right: 5px;">增加</button><?php }?>
+				 </div>
+            
                 日期从：<input id="start_date" data-options="prompt:'起始时间'" class="easyui-datebox" style="width:140px" />
              	至<input id="end_time" data-options="prompt:'结束时间'" class="easyui-datebox" style="width:140px"/>
-             	<button id="searchButton"  style="margin-left: 10px;">搜索</button>
-				<button id="add" style="margin-right: 10px;">增加</button>
-             </div>
-             	
-                
             </div>
         </div>
 
-        <table id="dg" class="easyui-datagrid" style="width: 100%;" url="../ajaction/v1/?menuid=121010&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true">
+        <table id="dg" class="easyui-datagrid" style="width: 100%;" url="../ajaction/v1/?menuid=121010&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true" singleSelect="true">
             <thead>
             <tr>
                 <th field="plate_no" width="20%" >车牌号码</th>
@@ -589,18 +643,18 @@
 </div>
 <div data-options="region:'center',title:'轮胎列表'" > 
 <table id="tire_dg" class="easyui-datagrid" width="100%" style="background-color: #ffb3b3" style="padding-top:20px;"
-       toolbar="#tire_tb" singleSelect="true" fitColumns="true" striped="true">
+       toolbar="#tire_tb" singleSelect="true" fitColumns="true" striped="true" singleSelect='true'>
     <thead style="width: 100%">
     <tr>
         <th field="place" width="10%" >轮胎位置</th>
-        <th field="sensor_no" width="10%" >传感器编号</th>
+        <th field="sensor_no" width="12%" >传感器编号</th>
         <th field="factory_code" width="10%" >轮胎号码</th>
-        <th field="brand_name" width="10%" >品牌</th>
-        <th field="norms_name" width="10%" >规格/层级/花纹</th>
-        <th field="speed_ul" width="10%" >速度上限</th>
-        <th field="temp_ul" width="10%" >温度上限</th>
-        <th field="pressure_ul" width="10%" >胎压上限</th>
-		<th field="pressure_ll" width="10%" >胎压下限</th>
+        <th field="brand_name" width="8%" >品牌</th>
+        <th field="norms_name" width="11%" >规格/层级/花纹</th>
+        <!--<th field="speed_ul" width="10%" >速度上限</th>-->
+        <th field="temp_ul" width="13%" >温度上限(℃)</th>
+        <th field="pressure_ul" width="13%" >胎压上限(Kg)</th>
+		<th field="pressure_ll" width="13%" >胎压下限(Kg)</th>
         <th field="name6" width="10%"  formatter="Option">操作</th>
     </tr>
     </thead>
@@ -657,7 +711,7 @@
 	 <div id="tire_alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 166px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
         <div style="background-color: #ffffff;height:121px;margin:1px;">
 
-            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">数据删除无法恢复，确定删除？</span>
+            <span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">确定卸载轮胎？</span>
         <div  style="width:100%;">
             <button id="tire_sure"></button>
             <button id="tire_cancel"></button>
@@ -770,7 +824,7 @@
      </div>
 <div id="alarm" class="easyui-dialog" style="text-align: center;width:310px;height: 163px;background-color: #bdc4d4" data-options="closed:true,modal:true" >
 	<div style="background-color: #ffffff;height:121px;margin:1px;">		
-		<span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">用户删除无法恢复，确定删除？</span>
+		<span style="font-size:14px;color:#333333;font-weight: bold;display: inline-block;height: 78px;line-height: 78px;">车辆删除无法恢复，确定删除？</span>
         <div  style="width:100%;">
             <button id="sure"></button>
             <button id="cancel"></button>
