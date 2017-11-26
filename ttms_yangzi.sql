@@ -1,7 +1,7 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : 本地Mysql数据库连接
+Source Server         : localhost
 Source Server Version : 50553
 Source Host           : localhost:3306
 Source Database       : ttms_yangzi
@@ -10,13 +10,13 @@ Target Server Type    : MYSQL
 Target Server Version : 50553
 File Encoding         : 65001
 
-Date: 2017-11-15 19:36:57
+Date: 2017-11-26 13:53:09
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for `admins`
+-- Table structure for admins
 -- ----------------------------
 DROP TABLE IF EXISTS `admins`;
 CREATE TABLE `admins` (
@@ -40,18 +40,20 @@ CREATE TABLE `admins` (
   `login_times` int(11) DEFAULT '0' COMMENT '登录次数',
   `reg_ip` varchar(64) DEFAULT NULL COMMENT '注册时使用的IP',
   `reg_stamp` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' COMMENT '注册时间',
+  `company_id` int(11) unsigned DEFAULT NULL COMMENT '分公司ID',
   PRIMARY KEY (`admin_id`),
   UNIQUE KEY `admin_name` (`admin_name`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admins
 -- ----------------------------
-INSERT INTO `admins` VALUES ('1', 'admin', '25d55ad283aa400af464c76d713c07ad', null, '系统管理员', 'admin@ttms.com', '', '', null, null, '默认登录账号', '1', '6', 'N', null, '', '0000-00-00 00:00:00', '0', null, '0000-00-00 00:00:00');
-INSERT INTO `admins` VALUES ('2', '轮胎注册', '579646aad11fae4dd295812fb4526245', null, '轮胎注册', '', '', '', null, null, '轮胎信息录入员', '1', '6', 'N', null, '', '0000-00-00 00:00:00', '0', null, '0000-00-00 00:00:00');
+INSERT INTO `admins` VALUES ('1', 'admin', '25d55ad283aa400af464c76d713c07ad', null, '系统管理员', 'admin@ttms.com', '', '', null, null, '默认登录账号', '1', '0', 'N', null, '', '0000-00-00 00:00:00', '0', null, '0000-00-00 00:00:00', '0');
+INSERT INTO `admins` VALUES ('2', '轮胎注册', '25d55ad283aa400af464c76d713c07ad', null, '轮胎注册', '', '', '', null, null, '轮胎信息录入员', '3', '0', 'N', null, '', '0000-00-00 00:00:00', '0', null, '0000-00-00 00:00:00', '0');
+INSERT INTO `admins` VALUES ('3', '王司机', '550e1bafe077ff0b0b67f4e32f29d751', null, '老王', '', '', '', null, null, '栏目权限测试', '4', '6', 'N', null, null, '2017-11-17 10:03:14', '0', null, '0000-00-00 00:00:00', '14');
 
 -- ----------------------------
--- Table structure for `brand`
+-- Table structure for brand
 -- ----------------------------
 DROP TABLE IF EXISTS `brand`;
 CREATE TABLE `brand` (
@@ -65,7 +67,7 @@ CREATE TABLE `brand` (
   PRIMARY KEY (`brand_id`),
   UNIQUE KEY `brand_no` (`brand_no`),
   UNIQUE KEY `brand_name` (`brand_name`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of brand
@@ -75,7 +77,7 @@ INSERT INTO `brand` VALUES ('6', null, '鲁朗', '普通参数', '67I/U/R', '12p
 INSERT INTO `brand` VALUES ('7', null, '特绑', '备注', '67T/E/R', '77PR', '螺旋花纹');
 
 -- ----------------------------
--- Table structure for `bt_history_log`
+-- Table structure for bt_history_log
 -- ----------------------------
 DROP TABLE IF EXISTS `bt_history_log`;
 CREATE TABLE `bt_history_log` (
@@ -145,7 +147,7 @@ INSERT INTO `bt_history_log` VALUES ('1', '2', null, null, '9', '6.70', '0', '33
 INSERT INTO `bt_history_log` VALUES ('2', '2', null, null, '9', '7.00', '0', '34', '0', '10', '7.80', '0', '36', '0', '11', '8.80', '0', '35', '0', '12', '8.90', '0', '35', '0', '13', '8.80', '0', '36', '0', '14', '7.70', '0', '38', '0', null, null, '0', '255', '0', null, null, '0', '255', '0', null, null, '0', '255', '0', null, null, '0', '255', '0', '2017-10-29 14:31:15');
 
 -- ----------------------------
--- Table structure for `bt_real_log`
+-- Table structure for bt_real_log
 -- ----------------------------
 DROP TABLE IF EXISTS `bt_real_log`;
 CREATE TABLE `bt_real_log` (
@@ -225,7 +227,7 @@ INSERT INTO `bt_real_log` VALUES ('1', '1', null, null, '3', '6.80', '0', '30', 
 INSERT INTO `bt_real_log` VALUES ('2', '2', null, null, '9', '7.70', '0', '36', '0', '10', '7.60', '0', '35', '', '11', '8.20', '0', '33', '0', '12', '7.70', '0', '36', '0', '13', '7.80', '0', '38', '0', '14', '8.70', '0', '35', '0', null, null, '0', '255', '0', null, null, '0', '255', '0', null, null, '0', '255', '0', null, null, '0', '255', '0', '2017-10-30 13:22:20', '正常', '正常', '正常', '正常', '正常', '正常', '正常', '正常', '正常', '正常');
 
 -- ----------------------------
--- Table structure for `bus_alarm_log`
+-- Table structure for bus_alarm_log
 -- ----------------------------
 DROP TABLE IF EXISTS `bus_alarm_log`;
 CREATE TABLE `bus_alarm_log` (
@@ -254,7 +256,7 @@ CREATE TABLE `bus_alarm_log` (
 INSERT INTO `bus_alarm_log` VALUES ('1', '1', '3', '1', '1', '10.00', '9.00', '4.00', '40', '35', '20', '60', '40', '0', '1', '2017-10-31 13:46:16');
 
 -- ----------------------------
--- Table structure for `bus_info`
+-- Table structure for bus_info
 -- ----------------------------
 DROP TABLE IF EXISTS `bus_info`;
 CREATE TABLE `bus_info` (
@@ -270,18 +272,22 @@ CREATE TABLE `bus_info` (
   `v_term_id` int(11) DEFAULT NULL COMMENT '车载终端ID',
   `remark` varchar(200) DEFAULT NULL COMMENT '备注',
   `add_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `company_id` int(255) unsigned DEFAULT NULL,
+  `roules_id` int(10) unsigned DEFAULT NULL,
   PRIMARY KEY (`bus_id`),
   UNIQUE KEY `plate_no` (`plate_no`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bus_info
 -- ----------------------------
-INSERT INTO `bus_info` VALUES ('1', '苏A8888', '', '', '5462', '0', '', '6', null, '1', '测试', '2017-11-14 10:04:52');
-INSERT INTO `bus_info` VALUES ('2', '苏A6666', '', '', '78910', '0', '', '6', null, '2', 'a4b0', '2017-11-14 10:05:00');
+INSERT INTO `bus_info` VALUES ('1', '苏A8888', '', '', '5462', '0', '', '6', null, '1', '测试', '2017-11-14 10:04:52', null, null);
+INSERT INTO `bus_info` VALUES ('2', '苏A6666', '', '', '78910', '0', '', '6', null, '2', 'a4b0', '2017-11-14 10:05:00', null, null);
+INSERT INTO `bus_info` VALUES ('3', '1-5612', '', '', '0', '0', '', '6', null, '3', '备注1', '2017-11-17 17:00:12', null, null);
+INSERT INTO `bus_info` VALUES ('4', '5624', '', '', '0', '0', '', '6', null, '7', '宇通', '2017-11-17 06:21:50', '14', '92');
 
 -- ----------------------------
--- Table structure for `class`
+-- Table structure for class
 -- ----------------------------
 DROP TABLE IF EXISTS `class`;
 CREATE TABLE `class` (
@@ -303,7 +309,26 @@ INSERT INTO `class` VALUES ('3', null, '77PR', null);
 INSERT INTO `class` VALUES ('4', null, '22PR', null);
 
 -- ----------------------------
--- Table structure for `figure_type`
+-- Table structure for company
+-- ----------------------------
+DROP TABLE IF EXISTS `company`;
+CREATE TABLE `company` (
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `remark` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `company_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=20 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of company
+-- ----------------------------
+INSERT INTO `company` VALUES ('14', '备注', '公司二');
+INSERT INTO `company` VALUES ('16', '大厂公司', '分公司三');
+INSERT INTO `company` VALUES ('17', '南京扬子公交最大的分公司', '江南分公司');
+INSERT INTO `company` VALUES ('18', '', '11');
+
+-- ----------------------------
+-- Table structure for figure_type
 -- ----------------------------
 DROP TABLE IF EXISTS `figure_type`;
 CREATE TABLE `figure_type` (
@@ -322,7 +347,7 @@ CREATE TABLE `figure_type` (
 INSERT INTO `figure_type` VALUES ('1', null, '一般花纹', '');
 
 -- ----------------------------
--- Table structure for `modules`
+-- Table structure for modules
 -- ----------------------------
 DROP TABLE IF EXISTS `modules`;
 CREATE TABLE `modules` (
@@ -339,26 +364,22 @@ CREATE TABLE `modules` (
   `remark` varchar(300) DEFAULT NULL COMMENT '模块说明',
   PRIMARY KEY (`module_id`),
   UNIQUE KEY `module_name` (`module_name`)
-) ENGINE=MyISAM AUTO_INCREMENT=141011 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=141012 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of modules
 -- ----------------------------
-INSERT INTO `modules` VALUES ('10', '10', '-1', 'images/icon/62.png', '1', '10', '系统管理', '系统管理', '', '0', null);
-INSERT INTO `modules` VALUES ('11', '11', '-1', 'images/icon/85.png', '1', '11', '轮胎管理', '轮胎管理', '', '0', null);
-INSERT INTO `modules` VALUES ('12', '12', '-1', 'images/icon/cl.png', '1', '12', '车辆管理', '车辆管理', '', '0', null);
-INSERT INTO `modules` VALUES ('13', '13', '-1', 'images/icon/jc.png', '1', '13', '监测系统', '监测系统', '', '0', null);
-INSERT INTO `modules` VALUES ('14', '14', '-1', 'images/icon/29.png', '1', '14', '系统日志', '系统日志', '', '0', null);
-INSERT INTO `modules` VALUES ('1010', '1010', '10', 'images/icon/37.png', '2', '1010', '用户权限管理', '用户权限管理', '', '0', null);
+INSERT INTO `modules` VALUES ('10', '10', '-1', 'iconCls:\'icon-ok\'', '1', '10', '系统管理', '系统管理', '', '0', null);
+INSERT INTO `modules` VALUES ('11', '11', '-1', 'iconCls:\'icon-help\'', '1', '11', '轮胎管理', '轮胎管理', '', '0', null);
+INSERT INTO `modules` VALUES ('12', '12', '-1', 'iconCls:\'icon-search\'', '1', '12', '车辆管理', '车辆管理', '', '0', null);
+INSERT INTO `modules` VALUES ('13', '13', '-1', 'iconCls:\'icon-redo\'', '1', '13', '监测系统', '监测系统', '', '0', null);
+INSERT INTO `modules` VALUES ('14', '14', '-1', 'iconCls:\'icon-filter\'', '1', '14', '报表分析', '报表分析', '', '0', null);
+INSERT INTO `modules` VALUES ('1010', '1010', '10', 'iconCls:\'icon-filter\'', '2', '1010', '用户权限管理', '用户权限管理', '', '0', null);
 INSERT INTO `modules` VALUES ('101010', '101010', '1010', 'images/icon/33.png', '3', '101010', '角色管理', '角色管理', 'module_sys/sys.roles_show.php', '0', null);
 INSERT INTO `modules` VALUES ('101011', '101011', '1010', 'images/icon/37.png', '3', '101011', '用户管理', '用户管理', 'module_sys/sys.users_show.php', '0', null);
 INSERT INTO `modules` VALUES ('1011', '1011', '10', 'images/icon/1.png', '2', '1011', '基本数据管理', '基本数据管理', '', '0', null);
-INSERT INTO `modules` VALUES ('101110', '101110', '1011', 'images/icon/37.png', '3', '101110', '车队(仓库)管理', '车队(仓库)管理', 'module_sys/sys.store_show.php', '0', null);
-INSERT INTO `modules` VALUES ('101111', '101111', '1011', 'images/icon/sc.png', '3', '101111', '手持终端管理', '手持终端管理', 'module_sys/sys.terminal_show.php', '0', null);
-INSERT INTO `modules` VALUES ('101112', '101112', '1011', 'images/icon/27.png', '3', '101112', '轮胎品牌管理', '轮胎品牌管理', 'module_sys/sys.brand_show.php', '0', null);
-INSERT INTO `modules` VALUES ('101113', '101113', '1011', 'images/icon/27.png', '3', '101113', '轮胎规格管理', '轮胎规格管理', 'module_sys/sys.norms_show.php', '0', null);
-INSERT INTO `modules` VALUES ('101114', '101114', '1011', 'images/icon/27.png', '3', '101114', '轮胎层级管理', '轮胎层级管理', 'module_sys/sys.class_show.php', '0', null);
-INSERT INTO `modules` VALUES ('101115', '101115', '1011', 'images/icon/27.png', '3', '101115', '轮胎花纹管理', '轮胎花纹管理', 'module_sys/sys.figure_show.php', '0', null);
+INSERT INTO `modules` VALUES ('101110', '101110', '1011', 'images/icon/37.png', '3', '101110', '修理厂管理', '修理厂管理', 'module_sys/repairDepotManger.php', '0', null);
+INSERT INTO `modules` VALUES ('101112', '101112', '1011', 'images/icon/27.png', '3', '101112', '轮胎基本参数管理', '轮胎基本参数管理', 'module_sys/tireParameter.php', '0', null);
 INSERT INTO `modules` VALUES ('101116', '101116', '1011', 'images/icon/27.png', '3', '101116', '车载终端管理', '车载终端管理', 'module_sys/sys.vehicle_show.php', '0', null);
 INSERT INTO `modules` VALUES ('1110', '1110', '11', 'images/icon/37.png', '2', '1110', '轮胎相关管理', '轮胎相关管理', '', '0', null);
 INSERT INTO `modules` VALUES ('111010', '111010', '1110', 'images/icon/33.png', '3', '111010', '轮胎参数管理', '轮胎参数管理', 'module_11/sys.tireparam_show.php', '0', null);
@@ -366,27 +387,28 @@ INSERT INTO `modules` VALUES ('111011', '111011', '1110', 'images/icon/33.png', 
 INSERT INTO `modules` VALUES ('1111', '1111', '11', 'images/icon/1.png', '2', '1111', '轮胎维护', '轮胎维护', '', '0', null);
 INSERT INTO `modules` VALUES ('111110', '111110', '1111', 'images/icon/37.png', '3', '111110', '轮胎管理', '轮胎管理', 'module_11/sys.tireinfo_show.php', '0', null);
 INSERT INTO `modules` VALUES ('1210', '1210', '12', 'images/icon/37.png', '2', '1210', '车辆管理', '车辆管理', '', '0', null);
-INSERT INTO `modules` VALUES ('121010', '121010', '1210', 'images/icon/33.png', '3', '121010', '车辆维护', '车辆维护', 'module_12/sys.bus_manage.php', '0', null);
+INSERT INTO `modules` VALUES ('121010', '121010', '1210', 'images/icon/33.png', '3', '121010', '车辆维护', '车辆维护', 'module_12/vehicle.php', '0', null);
 INSERT INTO `modules` VALUES ('1310', '1310', '13', 'images/icon/37.png', '2', '1310', '实时状态', '实时状态', '', '0', null);
 INSERT INTO `modules` VALUES ('131010', '131010', '1310', 'images/icon/33.png', '3', '131010', '车辆轮胎状态', '车辆轮胎状态', 'module_13/sys.real_show.php', '0', null);
 INSERT INTO `modules` VALUES ('1311', '1311', '13', 'images/icon/1.png', '2', '1311', '历史状态', '历史状态', '', '0', null);
 INSERT INTO `modules` VALUES ('131110', '131110', '1311', 'images/icon/37.png', '3', '131110', '车辆轮胎历史状态', '车辆轮胎历史状态', 'module_13/sys.his_show.php', '0', null);
 INSERT INTO `modules` VALUES ('131210', '131210', '1311', 'images/icon/37.png', '3', '131210', '告警历史状态', '告警历史状态', 'module_13/sys.alarm_his131210_show.php', '0', null);
-INSERT INTO `modules` VALUES ('1313', '1313', '13', 'images/icon/37.png', '2', '1313', '轮胎使用查询', '轮胎使用查询', '', '0', null);
-INSERT INTO `modules` VALUES ('131112', '131112', '1311', 'images/icon/37.png', '3', '131112', '胎压告警历史', '胎压告警历史', 'module_13/sys.alarm_his131112_show.php', '0', null);
-INSERT INTO `modules` VALUES ('131311', '131311', '1313', 'images/icon/33.png', '3', '131311', '轮胎运行总时长总里程查询', '轮胎运行总时长总里程查询', 'module_13/sys.tire_runhis_show.php', '0', null);
-INSERT INTO `modules` VALUES ('1315', '1315', '13', 'images/icon/37.png', '2', '1315', '库存状态查询', '库存状态查询', '', '0', null);
+INSERT INTO `modules` VALUES ('1313', '1313', '15', 'images/icon/37.png', '2', '1313', '轮胎使用查询', '轮胎使用查询', '', '0', null);
+INSERT INTO `modules` VALUES ('15', '15', '-1', 'iconCls:\'icon-undo\'', '1', '15', '统计分析', '统计分析', null, '0', null);
+INSERT INTO `modules` VALUES ('131311', '131311', '1313', 'images/icon/33.png', '3', '131311', '轮胎总时长总里程查询', '轮胎总时长总里程查询', 'module_13/sys.tire_runhis_show.php', '0', null);
+INSERT INTO `modules` VALUES ('1315', '1315', '15', 'images/icon/37.png', '2', '1315', '库存状态查询', '库存状态查询', '', '0', null);
 INSERT INTO `modules` VALUES ('131510', '131510', '1315', 'images/icon/33.png', '3', '131510', '轮胎库存查询', '轮胎库存查询', 'module_13/sys.tirestore_charts_show.php', '0', null);
-INSERT INTO `modules` VALUES ('1316', '1316', '13', 'images/icon/37.png', '2', '1316', '统计分析', '统计分析', '', '0', null);
+INSERT INTO `modules` VALUES ('1316', '1316', '15', 'images/icon/37.png', '2', '1316', '统计分析', '统计分析', '', '0', null);
 INSERT INTO `modules` VALUES ('131610', '131610', '1316', 'images/icon/33.png', '3', '131610', '轮胎历史曲线', '轮胎历史曲线', 'module_13/sys.tirehis_charts_10.php', '0', null);
 INSERT INTO `modules` VALUES ('131612', '131612', '1316', 'images/icon/33.png', '3', '131612', '轮胎历史告警', '轮胎历史告警', 'module_13/sys.tirehis_charts_12.php', '0', null);
-INSERT INTO `modules` VALUES ('1410', '1410', '14', 'images/icon/37.png', '2', '1410', '历史记录', '历史记录', '', '0', null);
-INSERT INTO `modules` VALUES ('141010', '141010', '1410', 'images/icon/33.png', '3', '141010', '历史记录查询', '历史记录查询', 'module_14/sys.sys_his141010_show.php', '0', null);
-INSERT INTO `modules` VALUES ('111111', '111111', '1111', 'images/icon/37.png', '3', '111111', '轮胎配送', '轮胎配送', 'module_11/sys.tire_manage.php', '0', null);
-INSERT INTO `modules` VALUES ('131614', '131614', '1316', 'images/icon/33.png', '3', '131614', '车辆车速分析', '车辆车速分析', 'module_13/sys.carspeed_charts_show.php', '0', null);
+INSERT INTO `modules` VALUES ('1410', '1410', '14', 'images/icon/37.png', '2', '1410', '报表分析', '报表分析', '', '0', null);
+INSERT INTO `modules` VALUES ('141010', '141010', '1410', 'images/icon/33.png', '3', '141010', '车辆轮胎时长里程报表', '车辆轮胎时长里程报表', 'module_13/tirecourse.php', '0', null);
+INSERT INTO `modules` VALUES ('141011', '141011', '1410', 'images/icon/33.png', '3', '141011', '轮胎保养记录报表', '轮胎保养记录报表', 'module_13/tireProtect.php', '0', null);
+INSERT INTO `modules` VALUES ('101117', '101117', '1011', 'images/iocn/33.png', '3', '101117', '分公司管理', '分公司管理', 'module_sys/sys.company_show.php', '0', null);
+INSERT INTO `modules` VALUES ('101118', '101118', '1011', 'images/icon/33.png', '3', '101118', '线路管理', '线路管理', 'module_sys/sys.roules_show.php', '0', null);
 
 -- ----------------------------
--- Table structure for `norms`
+-- Table structure for norms
 -- ----------------------------
 DROP TABLE IF EXISTS `norms`;
 CREATE TABLE `norms` (
@@ -407,7 +429,7 @@ INSERT INTO `norms` VALUES ('2', null, '275/80R22.5', '');
 INSERT INTO `norms` VALUES ('3', null, '77pr/889', '');
 
 -- ----------------------------
--- Table structure for `roles`
+-- Table structure for roles
 -- ----------------------------
 DROP TABLE IF EXISTS `roles`;
 CREATE TABLE `roles` (
@@ -420,18 +442,37 @@ CREATE TABLE `roles` (
   `remark` varchar(300) DEFAULT NULL COMMENT '角色说明',
   PRIMARY KEY (`role_id`),
   UNIQUE KEY `role_name` (`role_name`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of roles
 -- ----------------------------
-INSERT INTO `roles` VALUES ('1', '超级管理员', '超级管理员', '10;1010;101010;101011;1011;101110;101111;101112;101113;101114;101115;101116;11;1110;111010;111011;1111;111110;111111;12;1210;121010;13;1310;131010;1311;131110;131210;131112;1313;131311;1315;131510;1316;131610;131612;131614;14;1410;141010', '系统管理;用户权限管理;角色管理;用户管理;基本数据管理;车队(仓库)管理;手持终端管理;轮胎品牌管理;轮胎规格管理;轮胎层级管理;轮胎花纹管理;车载终端管理;轮胎管理;轮胎相关管理;轮胎参数管理;传感器管理;轮胎维护;轮胎管理;轮胎配送;车辆管理;车辆管理;车辆维护;监测系统;实时状态;车辆轮胎状态;历史状态;车辆轮胎历史状态;告警历史状态;胎压告警历史;轮胎使用查询;轮胎运行总时长总里程查询;库存状态查询;轮胎库存查询;统计分析;轮胎历史曲线;轮胎历史告警;车辆车速分析;系统日志;历史记录;历史记录查询', '添加;修改;删除', '拥有系统所有权限');
-INSERT INTO `roles` VALUES ('2', '手持终端人员', '手持终端人员', '10;1010;101010;101011;1011;101110;101111;101112;101113;101114;101115;101116;11;1110;111010;111011;1111;111110;111111;12;1210;121010', '系统管理;用户权限管理;角色管理;用户管理;基本数据管理;车队(仓库)管理;手持终端管理;轮胎品牌管理;轮胎规格管理;轮胎层级管理;轮胎花纹管理;车载终端管理;轮胎管理;轮胎相关管理;轮胎参数管理;传感器管理;轮胎维护;轮胎管理;轮胎配送;车辆管理;车辆管理;车辆维护', '添加;修改;删除', 'APP轮胎信息录入人员');
-INSERT INTO `roles` VALUES ('3', '胎管员', '胎管员', '1011;101110;101111;101112;101113;101114;101115;101116;11;1110;111010;111011;1111;111110;111111;12;1210;121010;13;1310;131010;1311;131110;131210;1313;131310;131311;1315;131510;1316;131610;131612;131614', '基本数据管理;车队(仓库)管理;手持终端管理;轮胎品牌管理;轮胎规格管理;轮胎层级管理;轮胎花纹管理;车载终端管理;轮胎管理;轮胎相关管理;轮胎参数管理;传感器管理;轮胎维护;轮胎管理;轮胎配送;车辆管理;车辆管理;车辆维护;监测系统;实时状态;车辆轮胎状态;历史状态;车辆轮胎历史状态;告警历史状态;轮胎使用查询;轮胎使用总时间查询;轮胎运行总时长总里程查询;库存状态查询;轮胎库存查询;统计分析;轮胎历史曲线;轮胎历史告警;车辆车速分析', '', '测试');
-INSERT INTO `roles` VALUES ('4', '司机', '司机', '1310;131010;1313;131310;131311', '实时状态;车辆轮胎状态;轮胎使用查询;轮胎使用总时间查询;轮胎运行总时长总里程查询', '查看', '车队一司机');
+INSERT INTO `roles` VALUES ('1', '超级管理员', '超级管理员', '10;1010;101010;101011;1011;101110;101112;101116;101117;101118;11;1110;111010;111011;1111;111110;12;1210;121010;13;1310;131010;1311;131110;131210;14;1410;141010;141011;15;1313;131311;1315;131510;1316;131610;131612;101111;101113;101114;101115;111111;131112;131614', '系统管理,用户权限管理,角色管理,用户管理,基本数据管理,修理厂管理,轮胎基本参数管理,车载终端管理,分公司管理,线路管理,轮胎管理,轮胎相关管理,轮胎参数管理,传感器管理,轮胎维护,轮胎管理,车辆管理,车辆管理,车辆维护,监测系统,实时状态,车辆轮胎状态,历史状态,车辆轮胎历史状态,告警历史状态,报表分析,报表分析,车辆轮胎时长里程报表,轮胎保养记录报表,统计分析,轮胎使用查询,轮胎总时长总里程查询,库存状态查询,轮胎库存查询,统计分析,轮胎历史曲线,轮胎历史告警,101111,101113,101114,101115,111111,131112,131614', '查看,修改,删除,添加', '拥有系统所有权限');
+INSERT INTO `roles` VALUES ('2', '手持终端人员', '手持终端人员', '11;1110;111010;111011;1111;111110;111111', '轮胎管理,轮胎相关管理,轮胎参数管理,传感器管理,轮胎维护,轮胎管理,轮胎配送', '添加,删除,修改,查看', 'APP轮胎信息录入人员');
+INSERT INTO `roles` VALUES ('3', '胎管员', '胎管员', '1011;101110;101111;101112;101113;101114;101115;101116;11;1110;111010;111011;1111;111110;111111;12;1210;121010;13;1310;131010;1311;131110;131210;1313;131310;131311;1315;131510;1316;131610;131612;131614;101117;101118;15', '系统管理,用户权限管理,角色管理,用户管理,基本数据管理,车队(仓库)管理,手持终端管理,轮胎品牌管理,轮胎规格管理,轮胎层级管理,轮胎花纹管理,车载终端管理,分公司管理,线路管理', '', '测试');
+INSERT INTO `roles` VALUES ('4', '司机', '司机', '10;1010;101010;101011;1011;101110;101112;101116;101117;101118', '系统管理,用户权限管理,角色管理,用户管理,基本数据管理,修理厂管理,轮胎基本参数管理,车载终端管理,分公司管理,线路管理', '查看,添加,删除,修改', '车队一司机');
+INSERT INTO `roles` VALUES ('5', '仓库管理人员', '仓库管理人员', '1010;101010;101011;101110;101116;101117;101118;101111;101113;101114;101115;', '用户权限管理,角色管理,用户管理,修理厂管理,车载终端管理,分公司管理,线路管理,101111,101113,101114,101115,', '添加,修改', '管理仓库');
 
 -- ----------------------------
--- Table structure for `sensor`
+-- Table structure for roules
+-- ----------------------------
+DROP TABLE IF EXISTS `roules`;
+CREATE TABLE `roules` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `remark` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  `roules_name` varchar(255) CHARACTER SET utf8 DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM AUTO_INCREMENT=95 DEFAULT CHARSET=latin1;
+
+-- ----------------------------
+-- Records of roules
+-- ----------------------------
+INSERT INTO `roules` VALUES ('92', '测试', '线路三');
+INSERT INTO `roules` VALUES ('93', '宁航线', '808');
+INSERT INTO `roules` VALUES ('94', '上班线路', '158');
+
+-- ----------------------------
+-- Table structure for sensor
 -- ----------------------------
 DROP TABLE IF EXISTS `sensor`;
 CREATE TABLE `sensor` (
@@ -444,7 +485,7 @@ CREATE TABLE `sensor` (
   `remark` varchar(200) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`sensor_id`),
   UNIQUE KEY `sensor_no` (`sensor_no`)
-) ENGINE=MyISAM AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=40 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sensor
@@ -457,16 +498,29 @@ INSERT INTO `sensor` VALUES ('5', 'a1b12', '10.00', '0.00', '125', '-40', '批�
 INSERT INTO `sensor` VALUES ('6', 'a1b13', '10.00', '0.00', '125', '-40', '批量添加传感器');
 INSERT INTO `sensor` VALUES ('7', 'a1b14', '10.00', '0.00', '125', '-40', '批量添加传感器');
 INSERT INTO `sensor` VALUES ('8', 'a1b15', '10.00', '0.00', '125', '-40', '批量添加传感器');
-INSERT INTO `sensor` VALUES ('9', 'a1b16', '10.00', '0.00', '125', '-40', '批量添加传感器');
 INSERT INTO `sensor` VALUES ('10', 'a4b01', '10.00', '0.00', '125', '-40', '备注');
 INSERT INTO `sensor` VALUES ('11', 'a4b02', '10.00', '0.00', '125', '-40', '备注');
 INSERT INTO `sensor` VALUES ('12', 'a4b03', '10.00', '0.00', '125', '-40', '备注');
 INSERT INTO `sensor` VALUES ('13', 'a4b04', '10.00', '0.00', '125', '-40', '备注');
 INSERT INTO `sensor` VALUES ('14', 'a4b05', '10.00', '0.00', '125', '-40', '备注');
 INSERT INTO `sensor` VALUES ('15', 'a4b06', '10.00', '0.00', '125', '-40', '备注');
+INSERT INTO `sensor` VALUES ('16', '34611', '12.50', '6.50', '125', '-40', 'test add_stamp');
+INSERT INTO `sensor` VALUES ('17', 'a1b21', '10.00', '4.00', '125', '-90', '');
+INSERT INTO `sensor` VALUES ('18', 'a1b22', '10.00', '4.00', '125', '-90', '');
+INSERT INTO `sensor` VALUES ('19', 'a1b23', '10.00', '4.00', '125', '-90', '');
+INSERT INTO `sensor` VALUES ('20', 'a1b24', '10.00', '4.00', '125', '-90', '');
+INSERT INTO `sensor` VALUES ('21', 'a1b25', '10.00', '4.00', '125', '-90', '');
+INSERT INTO `sensor` VALUES ('22', 'a1b26', '10.00', '4.00', '125', '-90', '');
+INSERT INTO `sensor` VALUES ('23', '3d5d1', '12.00', '6.50', '125', '-40', '');
+INSERT INTO `sensor` VALUES ('24', '3d5d2', '12.00', '6.50', '125', '-40', '');
+INSERT INTO `sensor` VALUES ('25', '3d5d3', '12.00', '6.50', '125', '-40', '');
+INSERT INTO `sensor` VALUES ('26', '3d5d4', '12.00', '6.50', '125', '-40', '');
+INSERT INTO `sensor` VALUES ('27', '3d5d5', '12.00', '6.50', '125', '-40', '');
+INSERT INTO `sensor` VALUES ('28', '3d5d6', '12.00', '6.50', '125', '-40', '');
+INSERT INTO `sensor` VALUES ('39', 'a1b16', '12.50', '6.50', '125', '-40', '');
 
 -- ----------------------------
--- Table structure for `store`
+-- Table structure for store
 -- ----------------------------
 DROP TABLE IF EXISTS `store`;
 CREATE TABLE `store` (
@@ -487,7 +541,7 @@ CREATE TABLE `store` (
   PRIMARY KEY (`store_id`),
   UNIQUE KEY `store_name` (`store_name`),
   UNIQUE KEY `store_no` (`store_no`)
-) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of store
@@ -499,7 +553,7 @@ INSERT INTO `store` VALUES ('4', null, 'C004', '马鞍山修理厂', '稔田', '
 INSERT INTO `store` VALUES ('5', null, 'C005', '淳化修理厂', '范圣贤', '1345678776', '1313978789', null, null, null, null, null, '淳化', '主要修理厂');
 
 -- ----------------------------
--- Table structure for `sys_log`
+-- Table structure for sys_log
 -- ----------------------------
 DROP TABLE IF EXISTS `sys_log`;
 CREATE TABLE `sys_log` (
@@ -510,7 +564,7 @@ CREATE TABLE `sys_log` (
   `admin_id` int(11) DEFAULT NULL COMMENT '操作员',
   `log_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '记录时间',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=143 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=565 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of sys_log
@@ -657,9 +711,431 @@ INSERT INTO `sys_log` VALUES ('139', '通用功能', '登录', 'admin登录了�
 INSERT INTO `sys_log` VALUES ('140', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-15 10:26:02');
 INSERT INTO `sys_log` VALUES ('141', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-15 13:36:39');
 INSERT INTO `sys_log` VALUES ('142', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-15 18:22:25');
+INSERT INTO `sys_log` VALUES ('143', '轮胎管理', '新增', '添加了新轮胎52111000', '1', '2017-11-16 15:33:03');
+INSERT INTO `sys_log` VALUES ('144', '传感器管理', '新增', '添加了新传感器34611', '1', '2017-11-16 15:36:54');
+INSERT INTO `sys_log` VALUES ('145', '车载终端管理', '新增', '添加了新车载终端3461', '1', '2017-11-16 15:37:38');
+INSERT INTO `sys_log` VALUES ('146', '轮胎管理', '新增', '添加了新轮胎34611000', '1', '2017-11-16 15:38:00');
+INSERT INTO `sys_log` VALUES ('147', '传感器管理', '新增', '添加了新传感器a1b21', '1', '2017-11-16 16:17:44');
+INSERT INTO `sys_log` VALUES ('148', '传感器管理', '新增', '添加了新传感器a1b22', '1', '2017-11-16 16:17:44');
+INSERT INTO `sys_log` VALUES ('149', '传感器管理', '新增', '添加了新传感器a1b23', '1', '2017-11-16 16:17:44');
+INSERT INTO `sys_log` VALUES ('150', '传感器管理', '新增', '添加了新传感器a1b24', '1', '2017-11-16 16:17:44');
+INSERT INTO `sys_log` VALUES ('151', '传感器管理', '新增', '添加了新传感器a1b25', '1', '2017-11-16 16:17:44');
+INSERT INTO `sys_log` VALUES ('152', '传感器管理', '新增', '添加了新传感器a1b26', '1', '2017-11-16 16:17:44');
+INSERT INTO `sys_log` VALUES ('153', '车载终端管理', '新增', '添加了新车载终端a1b2', '1', '2017-11-16 16:18:34');
+INSERT INTO `sys_log` VALUES ('154', '轮胎管理', '新增', '添加了新轮胎a1b21000', '1', '2017-11-16 16:20:11');
+INSERT INTO `sys_log` VALUES ('155', '轮胎管理', '新增', '添加了新轮胎a1b22000', '1', '2017-11-16 16:20:57');
+INSERT INTO `sys_log` VALUES ('156', '轮胎管理', '新增', '添加了新轮胎a1b23000', '1', '2017-11-16 16:22:11');
+INSERT INTO `sys_log` VALUES ('157', '轮胎管理', '新增', '添加了新轮胎a1b24000', '1', '2017-11-16 16:23:05');
+INSERT INTO `sys_log` VALUES ('158', '轮胎管理', '删除', '删除了轮胎信息a1b11000', '1', '2017-11-16 16:50:54');
+INSERT INTO `sys_log` VALUES ('159', '轮胎管理', '删除', '删除了轮胎信息d4511000', '1', '2017-11-16 16:51:37');
+INSERT INTO `sys_log` VALUES ('160', '轮胎管理', '删除', '删除了轮胎信息d5611000', '1', '2017-11-16 16:54:10');
+INSERT INTO `sys_log` VALUES ('161', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-16 21:57:22');
+INSERT INTO `sys_log` VALUES ('162', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-16 22:11:51');
+INSERT INTO `sys_log` VALUES ('163', '轮胎管理', '修改', '修改了轮胎信息a1b14000', '1', '2017-11-16 22:26:28');
+INSERT INTO `sys_log` VALUES ('164', '轮胎管理', '修改', '修改了轮胎信息a1b14000', '1', '2017-11-16 22:26:57');
+INSERT INTO `sys_log` VALUES ('165', '轮胎管理', '修改', '修改了轮胎信息a1b14000', '1', '2017-11-16 22:36:34');
+INSERT INTO `sys_log` VALUES ('166', '轮胎管理', '修改', '修改了轮胎信息a1b14000', '1', '2017-11-16 22:36:49');
+INSERT INTO `sys_log` VALUES ('167', '轮胎管理', '修改', '修改了轮胎信息a4b03000', '1', '2017-11-16 22:38:29');
+INSERT INTO `sys_log` VALUES ('168', '轮胎管理', '修改', '修改了轮胎信息a4b03000', '1', '2017-11-16 22:38:43');
+INSERT INTO `sys_log` VALUES ('169', '轮胎管理', '修改', '修改了轮胎信息a1b16000', '1', '2017-11-16 22:44:27');
+INSERT INTO `sys_log` VALUES ('170', '轮胎管理', '修改', '修改了轮胎信息a1b16000', '1', '2017-11-16 22:46:05');
+INSERT INTO `sys_log` VALUES ('171', '轮胎管理', '修改', '修改了轮胎信息a1b15000', '1', '2017-11-16 22:47:49');
+INSERT INTO `sys_log` VALUES ('172', '轮胎管理', '修改', '修改了轮胎信息a1b14000', '1', '2017-11-16 22:50:05');
+INSERT INTO `sys_log` VALUES ('173', '轮胎管理', '修改', '修改了轮胎信息a1b15000', '1', '2017-11-16 22:50:42');
+INSERT INTO `sys_log` VALUES ('174', '轮胎管理', '修改', '修改了轮胎信息a1b14000', '1', '2017-11-16 22:51:22');
+INSERT INTO `sys_log` VALUES ('175', '车辆管理', '新增', '添加了新车辆1-5612', '1', '2017-11-16 23:38:21');
+INSERT INTO `sys_log` VALUES ('176', '车辆管理', '修改', '修改了车辆信息1-5612', '1', '2017-11-16 23:39:15');
+INSERT INTO `sys_log` VALUES ('177', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-17 08:29:37');
+INSERT INTO `sys_log` VALUES ('178', '分公司管理', '修改', '修改了分公司信息', '1', '2017-11-17 09:21:17');
+INSERT INTO `sys_log` VALUES ('179', '分公司管理', '修改', '修改了分公司信息', '1', '2017-11-17 09:21:28');
+INSERT INTO `sys_log` VALUES ('180', '分公司管理', '新增', '添加了新分公司', '1', '2017-11-17 09:27:10');
+INSERT INTO `sys_log` VALUES ('181', '分公司管理', '删除', '删除了分公司信息分公司三', '1', '2017-11-17 09:28:08');
+INSERT INTO `sys_log` VALUES ('182', '分公司管理', '新增', '添加了新分公司', '1', '2017-11-17 09:29:24');
+INSERT INTO `sys_log` VALUES ('183', '线路管理', '修改', '修改了分公司信息', '1', '2017-11-17 09:36:45');
+INSERT INTO `sys_log` VALUES ('184', '线路管理', '新增', '添加了新线路', '1', '2017-11-17 09:37:24');
+INSERT INTO `sys_log` VALUES ('185', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-17 09:56:08');
+INSERT INTO `sys_log` VALUES ('186', '角色管理', '修改', '修改了角色信息手持终端人员', '1', '2017-11-17 09:56:28');
+INSERT INTO `sys_log` VALUES ('187', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-17 09:57:33');
+INSERT INTO `sys_log` VALUES ('188', '角色管理', '修改', '修改了角色信息胎管员', '1', '2017-11-17 09:57:54');
+INSERT INTO `sys_log` VALUES ('189', '角色管理', '修改', '修改了角色信息胎管员', '1', '2017-11-17 09:58:09');
+INSERT INTO `sys_log` VALUES ('190', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-17 09:59:03');
+INSERT INTO `sys_log` VALUES ('191', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-17 09:59:19');
+INSERT INTO `sys_log` VALUES ('192', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-17 09:59:34');
+INSERT INTO `sys_log` VALUES ('193', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-17 10:01:43');
+INSERT INTO `sys_log` VALUES ('194', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-17 10:02:19');
+INSERT INTO `sys_log` VALUES ('195', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-17 10:02:28');
+INSERT INTO `sys_log` VALUES ('196', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-17 10:02:42');
+INSERT INTO `sys_log` VALUES ('197', '用户管理', '新增', '添加了新用户王司机', '1', '2017-11-17 10:03:14');
+INSERT INTO `sys_log` VALUES ('198', '用户管理', '修改', '修改了用户信息王司机', '1', '2017-11-17 10:03:31');
+INSERT INTO `sys_log` VALUES ('199', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-17 10:43:14');
+INSERT INTO `sys_log` VALUES ('200', '通用功能', '登录', '王司机登录了系统', '3', '2017-11-17 10:44:57');
+INSERT INTO `sys_log` VALUES ('201', '角色管理', '修改', '修改了角色信息司机', '3', '2017-11-17 10:46:26');
+INSERT INTO `sys_log` VALUES ('202', '通用功能', '登出', '王司机登出了系统', '3', '2017-11-17 10:46:36');
+INSERT INTO `sys_log` VALUES ('203', '通用功能', '登录', '王司机登录了系统', '3', '2017-11-17 10:46:54');
+INSERT INTO `sys_log` VALUES ('204', '角色管理', '修改', '修改了角色信息司机', '3', '2017-11-17 10:47:24');
+INSERT INTO `sys_log` VALUES ('205', '通用功能', '登出', '王司机登出了系统', '3', '2017-11-17 10:47:35');
+INSERT INTO `sys_log` VALUES ('206', '通用功能', '登录', '王司机登录了系统', '3', '2017-11-17 10:47:41');
+INSERT INTO `sys_log` VALUES ('207', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-17 10:58:14');
+INSERT INTO `sys_log` VALUES ('208', '通用功能', '登录', '王司机登录了系统', '3', '2017-11-17 11:12:22');
+INSERT INTO `sys_log` VALUES ('209', '通用功能', '登出', '王司机登出了系统', '3', '2017-11-17 11:23:27');
+INSERT INTO `sys_log` VALUES ('210', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-17 11:23:38');
+INSERT INTO `sys_log` VALUES ('211', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-17 11:27:31');
+INSERT INTO `sys_log` VALUES ('212', '通用功能', '登录', '王司机登录了系统', '3', '2017-11-17 11:27:39');
+INSERT INTO `sys_log` VALUES ('213', '通用功能', '登出', '王司机登出了系统', '3', '2017-11-17 11:28:13');
+INSERT INTO `sys_log` VALUES ('214', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-17 11:28:16');
+INSERT INTO `sys_log` VALUES ('215', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-17 11:28:59');
+INSERT INTO `sys_log` VALUES ('216', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-17 11:29:06');
+INSERT INTO `sys_log` VALUES ('217', '通用功能', '登录', '王司机登录了系统', '3', '2017-11-17 11:29:11');
+INSERT INTO `sys_log` VALUES ('218', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-17 11:29:45');
+INSERT INTO `sys_log` VALUES ('219', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-17 11:30:35');
+INSERT INTO `sys_log` VALUES ('220', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-17 11:30:37');
+INSERT INTO `sys_log` VALUES ('221', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-17 11:30:42');
+INSERT INTO `sys_log` VALUES ('222', '通用功能', '登录', '王司机登录了系统', '3', '2017-11-17 11:30:48');
+INSERT INTO `sys_log` VALUES ('223', '通用功能', '登出', '王司机登出了系统', '3', '2017-11-17 11:30:58');
+INSERT INTO `sys_log` VALUES ('224', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-17 11:31:00');
+INSERT INTO `sys_log` VALUES ('225', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-17 11:32:05');
+INSERT INTO `sys_log` VALUES ('226', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-17 11:32:06');
+INSERT INTO `sys_log` VALUES ('227', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-17 11:33:18');
+INSERT INTO `sys_log` VALUES ('228', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-17 11:33:39');
+INSERT INTO `sys_log` VALUES ('229', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-17 11:33:56');
+INSERT INTO `sys_log` VALUES ('230', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-17 11:34:30');
+INSERT INTO `sys_log` VALUES ('231', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-17 11:36:59');
+INSERT INTO `sys_log` VALUES ('232', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-17 11:56:09');
+INSERT INTO `sys_log` VALUES ('233', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-17 11:57:25');
+INSERT INTO `sys_log` VALUES ('234', '用户管理', '修改', '修改了用户信息轮胎注册', '1', '2017-11-17 16:37:43');
+INSERT INTO `sys_log` VALUES ('235', '车辆管理', '修改', '修改了车辆信息1-5612', '1', '2017-11-17 17:00:12');
+INSERT INTO `sys_log` VALUES ('236', '轮胎替换管理', '卸载', '苏A6666在00000000001号位卸载了轮胎', '1', '2017-11-17 17:07:24');
+INSERT INTO `sys_log` VALUES ('237', '轮胎替换管理', '安装', '苏A6666在1号位安装了轮胎', '1', '2017-11-17 17:08:12');
+INSERT INTO `sys_log` VALUES ('238', '轮胎替换管理', '卸载', '苏A6666在00000000001号位卸载了轮胎', '1', '2017-11-17 17:09:32');
+INSERT INTO `sys_log` VALUES ('239', '轮胎替换管理', '卸载', '苏A8888在00000000002号位卸载了轮胎', '1', '2017-11-17 17:09:33');
+INSERT INTO `sys_log` VALUES ('240', '轮胎替换管理', '安装', '苏A6666在1号位安装了轮胎', '1', '2017-11-17 17:11:17');
+INSERT INTO `sys_log` VALUES ('241', '轮胎替换管理', '安装', '苏A8888在1号位安装了轮胎', '1', '2017-11-17 17:11:58');
+INSERT INTO `sys_log` VALUES ('242', '轮胎替换管理', '卸载', '苏A8888在00000000001号位卸载了轮胎', '1', '2017-11-17 17:13:18');
+INSERT INTO `sys_log` VALUES ('243', '轮胎替换管理', '卸载', '苏A6666在00000000002号位卸载了轮胎', '1', '2017-11-17 17:13:19');
+INSERT INTO `sys_log` VALUES ('244', '轮胎替换管理', '安装', '苏A8888在1号位安装了轮胎', '1', '2017-11-17 17:13:43');
+INSERT INTO `sys_log` VALUES ('245', '轮胎替换管理', '安装', '1-5612在1号位安装了轮胎', '1', '2017-11-17 17:14:35');
+INSERT INTO `sys_log` VALUES ('246', '轮胎管理', '新增', '添加了新轮胎0000aa43', '1', '2017-11-17 17:17:45');
+INSERT INTO `sys_log` VALUES ('247', '轮胎替换管理', '卸载', '苏A8888在00000000003号位卸载了轮胎', '1', '2017-11-17 18:26:53');
+INSERT INTO `sys_log` VALUES ('248', '轮胎替换管理', '安装', '苏A8888在2号位安装了轮胎', '1', '2017-11-17 18:27:32');
+INSERT INTO `sys_log` VALUES ('249', '轮胎替换管理', '卸载', '苏A8888在00000000002号位卸载了轮胎', '1', '2017-11-17 18:43:12');
+INSERT INTO `sys_log` VALUES ('250', '轮胎替换管理', '安装', '苏A8888在2号位安装了轮胎', '1', '2017-11-17 18:43:17');
+INSERT INTO `sys_log` VALUES ('251', '轮胎替换管理', '卸载', '苏A8888在00000000002号位卸载了轮胎', '1', '2017-11-17 18:43:56');
+INSERT INTO `sys_log` VALUES ('252', '轮胎替换管理', '卸载', '苏A8888在00000000001号位卸载了轮胎', '1', '2017-11-17 18:43:57');
+INSERT INTO `sys_log` VALUES ('253', '轮胎替换管理', '安装', '苏A8888在2号位安装了轮胎', '1', '2017-11-17 18:44:35');
+INSERT INTO `sys_log` VALUES ('254', '轮胎替换管理', '卸载', '苏A8888在00000000002号位卸载了轮胎', '1', '2017-11-17 18:49:16');
+INSERT INTO `sys_log` VALUES ('255', '轮胎替换管理', '卸载', '苏A8888在00000000004号位卸载了轮胎', '1', '2017-11-17 18:49:16');
+INSERT INTO `sys_log` VALUES ('256', '轮胎替换管理', '卸载', '苏A8888在00000000005号位卸载了轮胎', '1', '2017-11-17 18:49:23');
+INSERT INTO `sys_log` VALUES ('257', '轮胎替换管理', '安装', '苏A8888在1号位安装了轮胎', '1', '2017-11-17 18:49:46');
+INSERT INTO `sys_log` VALUES ('258', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-20 09:30:03');
+INSERT INTO `sys_log` VALUES ('259', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-20 09:30:23');
+INSERT INTO `sys_log` VALUES ('260', '分公司管理', '新增', '添加了新分公司', '1', '2017-11-20 09:35:50');
+INSERT INTO `sys_log` VALUES ('261', '分公司管理', '修改', '修改了分公司信息', '1', '2017-11-20 09:36:08');
+INSERT INTO `sys_log` VALUES ('262', '线路管理', '新增', '添加了新线路', '1', '2017-11-20 09:36:28');
+INSERT INTO `sys_log` VALUES ('263', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 11:35:17');
+INSERT INTO `sys_log` VALUES ('264', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-21 13:31:20');
+INSERT INTO `sys_log` VALUES ('265', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-21 13:34:27');
+INSERT INTO `sys_log` VALUES ('266', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-21 13:37:04');
+INSERT INTO `sys_log` VALUES ('267', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-21 13:52:17');
+INSERT INTO `sys_log` VALUES ('268', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-21 13:57:52');
+INSERT INTO `sys_log` VALUES ('269', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-21 14:15:20');
+INSERT INTO `sys_log` VALUES ('270', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-21 14:17:15');
+INSERT INTO `sys_log` VALUES ('271', '角色管理', '修改', '修改了角色信息手持终端人员', '1', '2017-11-21 14:18:02');
+INSERT INTO `sys_log` VALUES ('272', '角色管理', '新增', '添加了新角色仓库管理人员', '1', '2017-11-21 14:20:43');
+INSERT INTO `sys_log` VALUES ('273', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-21 14:40:58');
+INSERT INTO `sys_log` VALUES ('274', '角色管理', '修改', '修改了角色信息司机', '1', '2017-11-21 14:52:51');
+INSERT INTO `sys_log` VALUES ('275', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-21 14:52:59');
+INSERT INTO `sys_log` VALUES ('276', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 14:57:14');
+INSERT INTO `sys_log` VALUES ('277', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-21 14:57:19');
+INSERT INTO `sys_log` VALUES ('278', '通用功能', '登录', '王司机登录了系统', '3', '2017-11-21 14:57:28');
+INSERT INTO `sys_log` VALUES ('279', '通用功能', '登出', '王司机登出了系统', '3', '2017-11-21 14:57:40');
+INSERT INTO `sys_log` VALUES ('280', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 14:57:44');
+INSERT INTO `sys_log` VALUES ('281', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 15:59:22');
+INSERT INTO `sys_log` VALUES ('282', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 15:59:46');
+INSERT INTO `sys_log` VALUES ('283', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:00:25');
+INSERT INTO `sys_log` VALUES ('284', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:01:29');
+INSERT INTO `sys_log` VALUES ('285', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:07:56');
+INSERT INTO `sys_log` VALUES ('286', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:16:21');
+INSERT INTO `sys_log` VALUES ('287', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:16:42');
+INSERT INTO `sys_log` VALUES ('288', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:17:29');
+INSERT INTO `sys_log` VALUES ('289', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:17:49');
+INSERT INTO `sys_log` VALUES ('290', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:24:10');
+INSERT INTO `sys_log` VALUES ('291', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:24:33');
+INSERT INTO `sys_log` VALUES ('292', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:24:38');
+INSERT INTO `sys_log` VALUES ('293', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:33:35');
+INSERT INTO `sys_log` VALUES ('294', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:34:16');
+INSERT INTO `sys_log` VALUES ('295', '通用功能', '登录', '王司机登录了系统', '3', '2017-11-21 16:34:55');
+INSERT INTO `sys_log` VALUES ('296', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:42:01');
+INSERT INTO `sys_log` VALUES ('297', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:42:05');
+INSERT INTO `sys_log` VALUES ('298', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:43:01');
+INSERT INTO `sys_log` VALUES ('299', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:44:05');
+INSERT INTO `sys_log` VALUES ('300', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:44:26');
+INSERT INTO `sys_log` VALUES ('301', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:48:54');
+INSERT INTO `sys_log` VALUES ('302', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 16:49:44');
+INSERT INTO `sys_log` VALUES ('303', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:02:09');
+INSERT INTO `sys_log` VALUES ('304', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:03:01');
+INSERT INTO `sys_log` VALUES ('305', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:03:06');
+INSERT INTO `sys_log` VALUES ('306', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:03:16');
+INSERT INTO `sys_log` VALUES ('307', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:05:33');
+INSERT INTO `sys_log` VALUES ('308', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:06:07');
+INSERT INTO `sys_log` VALUES ('309', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:06:12');
+INSERT INTO `sys_log` VALUES ('310', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:06:54');
+INSERT INTO `sys_log` VALUES ('311', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:07:19');
+INSERT INTO `sys_log` VALUES ('312', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:07:56');
+INSERT INTO `sys_log` VALUES ('313', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:08:28');
+INSERT INTO `sys_log` VALUES ('314', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:09:29');
+INSERT INTO `sys_log` VALUES ('315', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:12:17');
+INSERT INTO `sys_log` VALUES ('316', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:12:58');
+INSERT INTO `sys_log` VALUES ('317', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:13:32');
+INSERT INTO `sys_log` VALUES ('318', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:16:51');
+INSERT INTO `sys_log` VALUES ('319', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:17:05');
+INSERT INTO `sys_log` VALUES ('320', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:17:33');
+INSERT INTO `sys_log` VALUES ('321', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:25:53');
+INSERT INTO `sys_log` VALUES ('322', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:26:43');
+INSERT INTO `sys_log` VALUES ('323', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:35:32');
+INSERT INTO `sys_log` VALUES ('324', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:50:04');
+INSERT INTO `sys_log` VALUES ('325', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:50:16');
+INSERT INTO `sys_log` VALUES ('326', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:56:42');
+INSERT INTO `sys_log` VALUES ('327', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-21 17:57:33');
+INSERT INTO `sys_log` VALUES ('328', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 08:22:05');
+INSERT INTO `sys_log` VALUES ('329', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 08:24:10');
+INSERT INTO `sys_log` VALUES ('330', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 08:33:42');
+INSERT INTO `sys_log` VALUES ('331', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 08:53:44');
+INSERT INTO `sys_log` VALUES ('332', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 08:56:33');
+INSERT INTO `sys_log` VALUES ('333', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:00:25');
+INSERT INTO `sys_log` VALUES ('334', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:04:41');
+INSERT INTO `sys_log` VALUES ('335', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:09:33');
+INSERT INTO `sys_log` VALUES ('336', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:09:55');
+INSERT INTO `sys_log` VALUES ('337', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:11:12');
+INSERT INTO `sys_log` VALUES ('338', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:14:53');
+INSERT INTO `sys_log` VALUES ('339', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:15:05');
+INSERT INTO `sys_log` VALUES ('340', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 09:16:25');
+INSERT INTO `sys_log` VALUES ('341', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:19:03');
+INSERT INTO `sys_log` VALUES ('342', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:21:09');
+INSERT INTO `sys_log` VALUES ('343', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:45:25');
+INSERT INTO `sys_log` VALUES ('344', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:47:46');
+INSERT INTO `sys_log` VALUES ('345', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 09:49:30');
+INSERT INTO `sys_log` VALUES ('346', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:49:36');
+INSERT INTO `sys_log` VALUES ('347', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 09:49:52');
+INSERT INTO `sys_log` VALUES ('348', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:49:57');
+INSERT INTO `sys_log` VALUES ('349', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:55:42');
+INSERT INTO `sys_log` VALUES ('350', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 09:59:43');
+INSERT INTO `sys_log` VALUES ('351', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:00:55');
+INSERT INTO `sys_log` VALUES ('352', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 10:01:26');
+INSERT INTO `sys_log` VALUES ('353', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:01:42');
+INSERT INTO `sys_log` VALUES ('354', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 10:02:23');
+INSERT INTO `sys_log` VALUES ('355', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:02:35');
+INSERT INTO `sys_log` VALUES ('356', '角色管理', '修改', '修改了角色信息仓库管理人员', '1', '2017-11-22 10:03:00');
+INSERT INTO `sys_log` VALUES ('357', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:03:30');
+INSERT INTO `sys_log` VALUES ('358', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 10:04:01');
+INSERT INTO `sys_log` VALUES ('359', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 10:04:35');
+INSERT INTO `sys_log` VALUES ('360', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 10:05:07');
+INSERT INTO `sys_log` VALUES ('361', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:07:42');
+INSERT INTO `sys_log` VALUES ('362', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 10:08:09');
+INSERT INTO `sys_log` VALUES ('363', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:08:34');
+INSERT INTO `sys_log` VALUES ('364', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 10:10:59');
+INSERT INTO `sys_log` VALUES ('365', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:11:09');
+INSERT INTO `sys_log` VALUES ('366', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:15:49');
+INSERT INTO `sys_log` VALUES ('367', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 10:16:19');
+INSERT INTO `sys_log` VALUES ('368', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 10:17:29');
+INSERT INTO `sys_log` VALUES ('369', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:17:34');
+INSERT INTO `sys_log` VALUES ('370', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 10:17:48');
+INSERT INTO `sys_log` VALUES ('371', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:17:53');
+INSERT INTO `sys_log` VALUES ('372', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 10:19:37');
+INSERT INTO `sys_log` VALUES ('373', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:26:24');
+INSERT INTO `sys_log` VALUES ('374', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:26:53');
+INSERT INTO `sys_log` VALUES ('375', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:27:54');
+INSERT INTO `sys_log` VALUES ('376', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 10:28:08');
+INSERT INTO `sys_log` VALUES ('377', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:28:13');
+INSERT INTO `sys_log` VALUES ('378', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 10:42:54');
+INSERT INTO `sys_log` VALUES ('379', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-22 13:36:02');
+INSERT INTO `sys_log` VALUES ('380', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 13:36:06');
+INSERT INTO `sys_log` VALUES ('381', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 13:38:16');
+INSERT INTO `sys_log` VALUES ('382', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 13:58:48');
+INSERT INTO `sys_log` VALUES ('383', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 13:58:55');
+INSERT INTO `sys_log` VALUES ('384', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 14:17:09');
+INSERT INTO `sys_log` VALUES ('385', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 14:17:17');
+INSERT INTO `sys_log` VALUES ('386', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 14:18:44');
+INSERT INTO `sys_log` VALUES ('387', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 14:18:48');
+INSERT INTO `sys_log` VALUES ('388', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 14:24:12');
+INSERT INTO `sys_log` VALUES ('389', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 15:04:36');
+INSERT INTO `sys_log` VALUES ('390', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 15:07:03');
+INSERT INTO `sys_log` VALUES ('391', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 15:20:18');
+INSERT INTO `sys_log` VALUES ('392', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 15:20:23');
+INSERT INTO `sys_log` VALUES ('393', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 15:20:44');
+INSERT INTO `sys_log` VALUES ('394', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 15:20:50');
+INSERT INTO `sys_log` VALUES ('395', '角色管理', '修改', '修改了角色信息胎管员', '1', '2017-11-22 15:26:17');
+INSERT INTO `sys_log` VALUES ('396', '角色管理', '修改', '修改了角色信息胎管员', '1', '2017-11-22 15:26:26');
+INSERT INTO `sys_log` VALUES ('397', '角色管理', '修改', '修改了角色信息手持终端人员', '1', '2017-11-22 15:26:55');
+INSERT INTO `sys_log` VALUES ('398', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 15:59:50');
+INSERT INTO `sys_log` VALUES ('399', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 16:07:37');
+INSERT INTO `sys_log` VALUES ('400', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 16:07:41');
+INSERT INTO `sys_log` VALUES ('401', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 16:07:55');
+INSERT INTO `sys_log` VALUES ('402', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 16:08:01');
+INSERT INTO `sys_log` VALUES ('403', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 16:08:39');
+INSERT INTO `sys_log` VALUES ('404', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 16:40:04');
+INSERT INTO `sys_log` VALUES ('405', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 16:40:09');
+INSERT INTO `sys_log` VALUES ('406', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-22 16:41:04');
+INSERT INTO `sys_log` VALUES ('407', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 16:41:19');
+INSERT INTO `sys_log` VALUES ('408', '轮胎参数管理', '修改', '修改了轮胎参数信息4', '1', '2017-11-22 17:07:57');
+INSERT INTO `sys_log` VALUES ('409', '轮胎参数管理', '修改', '修改了轮胎参数信息4', '1', '2017-11-22 17:08:02');
+INSERT INTO `sys_log` VALUES ('410', '轮胎参数管理', '新增', '添加了新轮胎参数5', '1', '2017-11-22 17:08:48');
+INSERT INTO `sys_log` VALUES ('411', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-22 18:21:14');
+INSERT INTO `sys_log` VALUES ('412', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 08:25:24');
+INSERT INTO `sys_log` VALUES ('413', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 09:04:04');
+INSERT INTO `sys_log` VALUES ('414', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 14:08:08');
+INSERT INTO `sys_log` VALUES ('415', '传感器管理', '新增', '添加了新传感器11', '1', '2017-11-23 14:26:47');
+INSERT INTO `sys_log` VALUES ('416', '传感器管理', '新增', '添加了新传感器21', '1', '2017-11-23 14:28:17');
+INSERT INTO `sys_log` VALUES ('417', '传感器管理', '删除', '删除了传感器信息21', '1', '2017-11-23 14:32:18');
+INSERT INTO `sys_log` VALUES ('418', '传感器管理', '删除', '删除了传感器信息11', '1', '2017-11-23 14:32:28');
+INSERT INTO `sys_log` VALUES ('419', '用户管理', '修改', '修改了用户信息轮胎注册', '1', '2017-11-23 14:34:31');
+INSERT INTO `sys_log` VALUES ('420', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 14:34:35');
+INSERT INTO `sys_log` VALUES ('421', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 14:34:52');
+INSERT INTO `sys_log` VALUES ('422', '用户管理', '修改', '修改了用户信息轮胎注册', '1', '2017-11-23 14:34:59');
+INSERT INTO `sys_log` VALUES ('423', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 14:35:02');
+INSERT INTO `sys_log` VALUES ('424', '通用功能', '登录', '轮胎注册登录了系统', '2', '2017-11-23 14:35:09');
+INSERT INTO `sys_log` VALUES ('425', '通用功能', '登出', '轮胎注册登出了系统', '2', '2017-11-23 14:35:24');
+INSERT INTO `sys_log` VALUES ('426', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 14:35:26');
+INSERT INTO `sys_log` VALUES ('427', '传感器管理', '新增', '添加了新传感器11', '1', '2017-11-23 14:35:53');
+INSERT INTO `sys_log` VALUES ('428', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 14:36:01');
+INSERT INTO `sys_log` VALUES ('429', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 14:36:07');
+INSERT INTO `sys_log` VALUES ('430', '用户管理', '修改', '修改了用户信息轮胎注册', '1', '2017-11-23 14:56:49');
+INSERT INTO `sys_log` VALUES ('431', '用户管理', '修改', '修改了用户信息admin', '1', '2017-11-23 14:57:35');
+INSERT INTO `sys_log` VALUES ('432', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 14:57:38');
+INSERT INTO `sys_log` VALUES ('433', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 14:57:44');
+INSERT INTO `sys_log` VALUES ('434', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 14:57:48');
+INSERT INTO `sys_log` VALUES ('435', '通用功能', '登录', '轮胎注册登录了系统', '2', '2017-11-23 14:57:56');
+INSERT INTO `sys_log` VALUES ('436', '传感器管理', '新增', '添加了新传感器21', '2', '2017-11-23 14:58:35');
+INSERT INTO `sys_log` VALUES ('437', '传感器管理', '新增', '添加了新传感器31', '2', '2017-11-23 15:01:37');
+INSERT INTO `sys_log` VALUES ('438', '传感器管理', '新增', '添加了关联轮胎31000', '2', '2017-11-23 15:01:37');
+INSERT INTO `sys_log` VALUES ('439', '传感器管理', '新增', '添加了新传感器41', '2', '2017-11-23 15:04:36');
+INSERT INTO `sys_log` VALUES ('440', '传感器管理', '新增', '添加了关联轮胎41000', '2', '2017-11-23 15:04:36');
+INSERT INTO `sys_log` VALUES ('441', '通用功能', '', '修改了密码', '2', '2017-11-23 15:08:26');
+INSERT INTO `sys_log` VALUES ('442', '通用功能', '登出', '轮胎注册登出了系统', '2', '2017-11-23 15:08:29');
+INSERT INTO `sys_log` VALUES ('443', '通用功能', '登录', '轮胎注册登录了系统', '2', '2017-11-23 15:08:37');
+INSERT INTO `sys_log` VALUES ('444', '通用功能', '', '修改了密码', '2', '2017-11-23 15:08:55');
+INSERT INTO `sys_log` VALUES ('445', '通用功能', '登出', '轮胎注册登出了系统', '2', '2017-11-23 15:08:57');
+INSERT INTO `sys_log` VALUES ('446', '通用功能', '登录', '轮胎注册登录了系统', '2', '2017-11-23 15:09:09');
+INSERT INTO `sys_log` VALUES ('447', '通用功能', '登出', '轮胎注册登出了系统', '2', '2017-11-23 15:09:20');
+INSERT INTO `sys_log` VALUES ('448', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:09:41');
+INSERT INTO `sys_log` VALUES ('449', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 16:09:46');
+INSERT INTO `sys_log` VALUES ('450', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:10:32');
+INSERT INTO `sys_log` VALUES ('451', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:10:39');
+INSERT INTO `sys_log` VALUES ('452', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:14:26');
+INSERT INTO `sys_log` VALUES ('453', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:23:13');
+INSERT INTO `sys_log` VALUES ('454', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 16:23:20');
+INSERT INTO `sys_log` VALUES ('455', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:24:41');
+INSERT INTO `sys_log` VALUES ('456', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 16:24:45');
+INSERT INTO `sys_log` VALUES ('457', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:24:59');
+INSERT INTO `sys_log` VALUES ('458', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 16:25:03');
+INSERT INTO `sys_log` VALUES ('459', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:26:11');
+INSERT INTO `sys_log` VALUES ('460', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 16:26:15');
+INSERT INTO `sys_log` VALUES ('461', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:26:22');
+INSERT INTO `sys_log` VALUES ('462', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 16:26:25');
+INSERT INTO `sys_log` VALUES ('463', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:26:27');
+INSERT INTO `sys_log` VALUES ('464', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 16:27:08');
+INSERT INTO `sys_log` VALUES ('465', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:27:09');
+INSERT INTO `sys_log` VALUES ('466', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 16:27:12');
+INSERT INTO `sys_log` VALUES ('467', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:27:19');
+INSERT INTO `sys_log` VALUES ('468', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 16:27:22');
+INSERT INTO `sys_log` VALUES ('469', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 16:27:36');
+INSERT INTO `sys_log` VALUES ('470', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 17:51:02');
+INSERT INTO `sys_log` VALUES ('471', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 17:51:05');
+INSERT INTO `sys_log` VALUES ('472', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-23 17:55:02');
+INSERT INTO `sys_log` VALUES ('473', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-23 18:00:16');
+INSERT INTO `sys_log` VALUES ('474', '角色管理', '修改', '修改了角色信息', '1', '2017-11-23 19:30:45');
+INSERT INTO `sys_log` VALUES ('475', '角色管理', '修改', '修改了角色信息手持终端人员', '1', '2017-11-23 19:31:01');
+INSERT INTO `sys_log` VALUES ('476', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-24 08:45:20');
+INSERT INTO `sys_log` VALUES ('477', '角色管理', '新增', '添加了新角色超级管理员2', '1', '2017-11-24 10:02:01');
+INSERT INTO `sys_log` VALUES ('478', '角色管理', '删除', '删除了角色信息超级管理员2', '1', '2017-11-24 10:02:57');
+INSERT INTO `sys_log` VALUES ('479', '角色管理', '新增', '添加了新角色11', '1', '2017-11-24 10:15:25');
+INSERT INTO `sys_log` VALUES ('480', '角色管理', '删除', '删除了角色信息11', '1', '2017-11-24 10:15:33');
+INSERT INTO `sys_log` VALUES ('481', '角色管理', '新增', '添加了新角色11', '1', '2017-11-24 10:15:48');
+INSERT INTO `sys_log` VALUES ('482', '角色管理', '删除', '删除了角色信息11', '1', '2017-11-24 10:15:52');
+INSERT INTO `sys_log` VALUES ('483', '角色管理', '新增', '添加了新角色22', '1', '2017-11-24 10:16:36');
+INSERT INTO `sys_log` VALUES ('484', '角色管理', '删除', '删除了角色信息22', '1', '2017-11-24 10:16:47');
+INSERT INTO `sys_log` VALUES ('485', '角色管理', '修改', '修改了角色信息', '1', '2017-11-24 10:22:10');
+INSERT INTO `sys_log` VALUES ('486', '角色管理', '修改', '修改了角色信息超级管理员', '1', '2017-11-24 10:22:24');
+INSERT INTO `sys_log` VALUES ('487', '用户管理', '新增', '添加了新用户11', '1', '2017-11-24 10:47:15');
+INSERT INTO `sys_log` VALUES ('488', '用户管理', '修改', '修改了用户信息1122', '1', '2017-11-24 10:47:33');
+INSERT INTO `sys_log` VALUES ('489', '用户管理', '删除', '删除了用户信息1122', '1', '2017-11-24 10:47:38');
+INSERT INTO `sys_log` VALUES ('490', '用户管理', '新增', '添加了新用户11', '1', '2017-11-24 10:47:47');
+INSERT INTO `sys_log` VALUES ('491', '用户管理', '删除', '删除了用户信息11', '1', '2017-11-24 10:47:51');
+INSERT INTO `sys_log` VALUES ('492', '用户管理', '新增', '添加了新用户11', '1', '2017-11-24 10:48:13');
+INSERT INTO `sys_log` VALUES ('493', '用户管理', '删除', '删除了用户信息11', '1', '2017-11-24 10:48:19');
+INSERT INTO `sys_log` VALUES ('494', '用户管理', '新增', '添加了新用户11', '1', '2017-11-24 10:50:08');
+INSERT INTO `sys_log` VALUES ('495', '用户管理', '删除', '删除了用户信息11', '1', '2017-11-24 10:50:14');
+INSERT INTO `sys_log` VALUES ('496', '用户管理', '新增', '添加了新用户111', '1', '2017-11-24 10:53:35');
+INSERT INTO `sys_log` VALUES ('497', '用户管理', '删除', '删除了用户信息111', '1', '2017-11-24 10:53:39');
+INSERT INTO `sys_log` VALUES ('498', '用户管理', '修改', '修改了用户信息轮胎注册', '1', '2017-11-24 10:54:18');
+INSERT INTO `sys_log` VALUES ('499', '用户管理', '修改', '修改了用户信息轮胎注册', '1', '2017-11-24 10:54:30');
+INSERT INTO `sys_log` VALUES ('500', '用户管理', '修改', '修改了用户信息admin1', '1', '2017-11-24 11:09:20');
+INSERT INTO `sys_log` VALUES ('501', '用户管理', '修改', '修改了用户信息admin', '1', '2017-11-24 11:09:59');
+INSERT INTO `sys_log` VALUES ('502', '用户管理', '修改', '修改了用户信息admin', '1', '2017-11-24 11:16:18');
+INSERT INTO `sys_log` VALUES ('503', '用户管理', '修改', '修改了用户信息王司机', '1', '2017-11-24 11:22:05');
+INSERT INTO `sys_log` VALUES ('504', '用户管理', '修改', '修改了用户信息轮胎注册', '1', '2017-11-24 11:32:40');
+INSERT INTO `sys_log` VALUES ('505', '用户管理', '修改', '修改了用户信息轮胎注册', '1', '2017-11-24 11:32:59');
+INSERT INTO `sys_log` VALUES ('506', '用户管理', '修改', '修改了用户信息轮胎注册', '1', '2017-11-24 11:35:28');
+INSERT INTO `sys_log` VALUES ('507', '车队(仓库)管理', '新增', '添加了新车队(仓库)淳化修理厂1', '1', '2017-11-24 11:57:27');
+INSERT INTO `sys_log` VALUES ('508', '车队(仓库)管理', '修改', '修改了车队(仓库)信息淳化修理厂1', '1', '2017-11-24 11:57:48');
+INSERT INTO `sys_log` VALUES ('509', '车队(仓库)管理', '删除', '删除了车队(仓库)信息淳化修理厂1', '1', '2017-11-24 11:57:55');
+INSERT INTO `sys_log` VALUES ('510', '轮胎品牌管理', '新增', '添加了新的轮胎参数', '1', '2017-11-24 12:45:30');
+INSERT INTO `sys_log` VALUES ('511', '轮胎品牌管理', '删除', '删除了品牌信息1', '1', '2017-11-24 12:45:36');
+INSERT INTO `sys_log` VALUES ('512', '轮胎品牌管理', '新增', '添加了新的轮胎参数', '1', '2017-11-24 12:45:40');
+INSERT INTO `sys_log` VALUES ('513', '轮胎品牌管理', '修改', '修改了参数信息', '1', '2017-11-24 12:45:45');
+INSERT INTO `sys_log` VALUES ('514', '轮胎品牌管理', '删除', '删除了品牌信息12', '1', '2017-11-24 12:45:50');
+INSERT INTO `sys_log` VALUES ('515', '轮胎品牌管理', '新增', '添加了新的轮胎参数', '1', '2017-11-24 12:45:59');
+INSERT INTO `sys_log` VALUES ('516', '轮胎品牌管理', '删除', '删除了品牌信息1', '1', '2017-11-24 12:46:03');
+INSERT INTO `sys_log` VALUES ('517', '轮胎品牌管理', '新增', '添加了新的轮胎参数', '1', '2017-11-24 12:46:16');
+INSERT INTO `sys_log` VALUES ('518', '轮胎品牌管理', '删除', '删除了品牌信息12', '1', '2017-11-24 12:46:20');
+INSERT INTO `sys_log` VALUES ('519', '轮胎品牌管理', '新增', '添加了新的轮胎参数', '1', '2017-11-24 12:46:29');
+INSERT INTO `sys_log` VALUES ('520', '轮胎品牌管理', '删除', '删除了品牌信息12', '1', '2017-11-24 12:46:33');
+INSERT INTO `sys_log` VALUES ('521', '轮胎品牌管理', '新增', '添加了新的轮胎参数', '1', '2017-11-24 12:47:32');
+INSERT INTO `sys_log` VALUES ('522', '轮胎品牌管理', '删除', '删除了品牌信息1', '1', '2017-11-24 12:47:37');
+INSERT INTO `sys_log` VALUES ('523', '车载终端管理', '新增', '添加了新车载终端1', '1', '2017-11-24 13:23:01');
+INSERT INTO `sys_log` VALUES ('524', '车载终端管理', '修改', '修改了车载终端信息1', '1', '2017-11-24 13:23:18');
+INSERT INTO `sys_log` VALUES ('525', '车载终端管理', '修改', '修改了车载终端信息1', '1', '2017-11-24 13:23:30');
+INSERT INTO `sys_log` VALUES ('526', '车载终端管理', '修改', '修改了车载终端信息1', '1', '2017-11-24 13:23:36');
+INSERT INTO `sys_log` VALUES ('527', '车载终端管理', '修改', '修改了车载终端信息1', '1', '2017-11-24 13:23:49');
+INSERT INTO `sys_log` VALUES ('528', '车载终端管理', '修改', '修改了车载终端信息1', '1', '2017-11-24 13:25:13');
+INSERT INTO `sys_log` VALUES ('529', '车载终端管理', '修改', '修改了车载终端信息1', '1', '2017-11-24 13:25:19');
+INSERT INTO `sys_log` VALUES ('530', '车载终端管理', '删除', '删除了车载终端信息1', '1', '2017-11-24 13:25:24');
+INSERT INTO `sys_log` VALUES ('531', '车载终端管理', '修改', '修改了车载终端信息3d5d', '1', '2017-11-24 13:25:36');
+INSERT INTO `sys_log` VALUES ('532', '分公司管理', '新增', '添加了新分公司', '1', '2017-11-24 13:33:55');
+INSERT INTO `sys_log` VALUES ('533', '分公司管理', '新增', '添加了新分公司', '1', '2017-11-24 13:33:57');
+INSERT INTO `sys_log` VALUES ('534', '分公司管理', '修改', '修改了分公司信息', '1', '2017-11-24 13:34:12');
+INSERT INTO `sys_log` VALUES ('535', '分公司管理', '删除', '删除了分公司信息22', '1', '2017-11-24 13:34:14');
+INSERT INTO `sys_log` VALUES ('536', '轮胎参数管理', '修改', '修改了轮胎参数信息3', '1', '2017-11-24 13:54:07');
+INSERT INTO `sys_log` VALUES ('537', '轮胎参数管理', '修改', '修改了轮胎参数信息5', '1', '2017-11-24 14:02:09');
+INSERT INTO `sys_log` VALUES ('538', '轮胎参数管理', '修改', '修改了轮胎参数信息2', '1', '2017-11-24 14:02:36');
+INSERT INTO `sys_log` VALUES ('539', '通用功能', '登出', 'admin登出了系统', '1', '2017-11-24 14:04:58');
+INSERT INTO `sys_log` VALUES ('540', '通用功能', '登录', 'admin登录了系统', '1', '2017-11-24 14:04:59');
+INSERT INTO `sys_log` VALUES ('541', '轮胎参数管理', '新增', '添加了新轮胎参数6', '1', '2017-11-24 14:06:11');
+INSERT INTO `sys_log` VALUES ('542', '轮胎参数管理', '修改', '修改了轮胎参数信息6', '1', '2017-11-24 14:06:16');
+INSERT INTO `sys_log` VALUES ('543', '轮胎参数管理', '删除', '删除了轮胎参数信息6', '1', '2017-11-24 14:06:21');
+INSERT INTO `sys_log` VALUES ('544', '传感器管理', '新增', '添加了新传感器111111', '1', '2017-11-24 14:13:47');
+INSERT INTO `sys_log` VALUES ('545', '传感器管理', '新增', '添加了新传感器121', '1', '2017-11-24 14:13:58');
+INSERT INTO `sys_log` VALUES ('546', '传感器管理', '删除', '删除了传感器信息111111', '1', '2017-11-24 14:14:06');
+INSERT INTO `sys_log` VALUES ('547', '传感器管理', '删除', '删除了传感器信息121', '1', '2017-11-24 14:14:13');
+INSERT INTO `sys_log` VALUES ('548', '传感器管理', '删除', '删除了传感器信息41', '1', '2017-11-24 14:14:22');
+INSERT INTO `sys_log` VALUES ('549', '传感器管理', '删除', '删除了传感器信息31', '1', '2017-11-24 14:14:29');
+INSERT INTO `sys_log` VALUES ('550', '传感器管理', '新增', '添加了新传感器1', '1', '2017-11-24 14:14:48');
+INSERT INTO `sys_log` VALUES ('551', '传感器管理', '删除', '删除了传感器信息a1b16', '1', '2017-11-24 14:14:59');
+INSERT INTO `sys_log` VALUES ('552', '传感器管理', '删除', '删除了传感器信息11', '1', '2017-11-24 14:14:59');
+INSERT INTO `sys_log` VALUES ('553', '传感器管理', '删除', '删除了传感器信息1', '1', '2017-11-24 14:15:39');
+INSERT INTO `sys_log` VALUES ('554', '传感器管理', '删除', '删除了传感器信息21', '1', '2017-11-24 14:17:39');
+INSERT INTO `sys_log` VALUES ('555', '传感器管理', '新增', '添加了新传感器1', '1', '2017-11-24 14:18:38');
+INSERT INTO `sys_log` VALUES ('556', '传感器管理', '删除', '删除了传感器信息1', '1', '2017-11-24 14:18:48');
+INSERT INTO `sys_log` VALUES ('557', '传感器管理', '新增', '添加了新传感器a1b16', '1', '2017-11-24 14:32:28');
+INSERT INTO `sys_log` VALUES ('558', '轮胎管理', '删除', '删除了轮胎信息a1b16000', '1', '2017-11-24 14:34:13');
+INSERT INTO `sys_log` VALUES ('559', '轮胎管理', '修改', '修改了轮胎信息a1b15000', '1', '2017-11-24 14:38:55');
+INSERT INTO `sys_log` VALUES ('560', '车辆管理', '新增', '添加了新车辆1', '1', '2017-11-24 14:58:39');
+INSERT INTO `sys_log` VALUES ('561', '车辆管理', '修改', '修改了车辆信息1', '1', '2017-11-24 14:58:50');
+INSERT INTO `sys_log` VALUES ('562', '车辆管理', '修改', '修改了车辆信息1', '1', '2017-11-24 14:59:43');
+INSERT INTO `sys_log` VALUES ('563', '车辆管理', '删除', '删除了车辆信息1', '1', '2017-11-24 15:03:27');
+INSERT INTO `sys_log` VALUES ('564', '轮胎替换管理', '安装', '苏A8888在2号位安装了轮胎', '1', '2017-11-24 15:23:35');
 
 -- ----------------------------
--- Table structure for `terminal`
+-- Table structure for terminal
 -- ----------------------------
 DROP TABLE IF EXISTS `terminal`;
 CREATE TABLE `terminal` (
@@ -679,7 +1155,7 @@ CREATE TABLE `terminal` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `tire_addmore`
+-- Table structure for tire_addmore
 -- ----------------------------
 DROP TABLE IF EXISTS `tire_addmore`;
 CREATE TABLE `tire_addmore` (
@@ -690,16 +1166,19 @@ CREATE TABLE `tire_addmore` (
   `add_stamp` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '时间',
   `store_id` int(11) DEFAULT '0' COMMENT '仓库(车队)编号',
   `admin_name` varchar(20) DEFAULT NULL COMMENT '手续终端用户名',
+  `figure_mile` float(11,2) unsigned DEFAULT NULL COMMENT '花纹深度',
   PRIMARY KEY (`id`),
   UNIQUE KEY `admin_name` (`admin_name`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=22 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tire_addmore
 -- ----------------------------
+INSERT INTO `tire_addmore` VALUES ('20', '5', '4', 'on', '2017-11-23 14:22:46', '6', 'admin', '6.70');
+INSERT INTO `tire_addmore` VALUES ('21', '5', '4', 'on', '2017-11-23 14:58:13', '6', '轮胎注册', '6.70');
 
 -- ----------------------------
--- Table structure for `tire_exchg_log`
+-- Table structure for tire_exchg_log
 -- ----------------------------
 DROP TABLE IF EXISTS `tire_exchg_log`;
 CREATE TABLE `tire_exchg_log` (
@@ -716,7 +1195,7 @@ CREATE TABLE `tire_exchg_log` (
   `log_stamp` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00' ON UPDATE CURRENT_TIMESTAMP COMMENT '记录时间',
   `figure_mile` float(11,1) unsigned DEFAULT NULL COMMENT '装车花纹深度',
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=18 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=28 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tire_exchg_log
@@ -727,20 +1206,30 @@ INSERT INTO `tire_exchg_log` VALUES ('3', '1', '1', '1', '1', '2017-10-29 16:49:
 INSERT INTO `tire_exchg_log` VALUES ('4', '1', '1', '1', '5', '2017-10-29 16:50:10', '2017-10-29 16:59:30', '0', '560', '卸下', '2017-11-15 14:48:00', '6.5');
 INSERT INTO `tire_exchg_log` VALUES ('5', '2', '1', '1', '1', '2017-10-29 16:59:32', '2017-10-29 16:59:32', '0', '0', '装上', '2017-11-15 14:47:58', '6.5');
 INSERT INTO `tire_exchg_log` VALUES ('6', '3', '1', '1', '1', '2017-10-29 16:59:46', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-15 14:47:56', '6.5');
-INSERT INTO `tire_exchg_log` VALUES ('7', '4', '1', '1', '2', '2017-10-29 16:59:53', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-15 14:47:54', '6.5');
-INSERT INTO `tire_exchg_log` VALUES ('8', '5', '1', '1', '3', '2017-10-29 16:59:59', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-15 14:47:52', '6.5');
-INSERT INTO `tire_exchg_log` VALUES ('9', '6', '1', '1', '4', '2017-10-29 17:00:05', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-15 14:47:49', '6.5');
-INSERT INTO `tire_exchg_log` VALUES ('10', '7', '1', '1', '5', '2017-10-29 17:00:10', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-15 14:47:48', '6.5');
+INSERT INTO `tire_exchg_log` VALUES ('7', '4', '1', '1', '2', '2017-10-29 16:59:53', '2017-11-17 17:09:33', '0', '1642180', '卸下', '2017-11-17 17:09:33', '6.5');
+INSERT INTO `tire_exchg_log` VALUES ('8', '5', '1', '1', '3', '2017-10-29 16:59:59', '2017-11-17 18:26:53', '0', '1646814', '卸下', '2017-11-17 18:26:53', '6.5');
+INSERT INTO `tire_exchg_log` VALUES ('9', '6', '1', '1', '4', '2017-10-29 17:00:05', '2017-11-17 18:49:16', '0', '1648151', '卸下', '2017-11-17 18:49:16', '6.5');
+INSERT INTO `tire_exchg_log` VALUES ('10', '7', '1', '1', '5', '2017-10-29 17:00:10', '2017-11-17 18:49:23', '0', '1648153', '卸下', '2017-11-17 18:49:23', '6.5');
 INSERT INTO `tire_exchg_log` VALUES ('11', '8', '1', '1', '6', '2017-10-29 17:00:15', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-15 14:47:32', '6.5');
-INSERT INTO `tire_exchg_log` VALUES ('12', '9', '2', '2', '1', '2017-10-30 13:18:48', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-15 14:47:35', '6.5');
-INSERT INTO `tire_exchg_log` VALUES ('13', '10', '2', '2', '2', '2017-10-30 13:18:56', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-15 14:47:37', '6.5');
+INSERT INTO `tire_exchg_log` VALUES ('12', '9', '2', '2', '1', '2017-10-30 13:18:48', '2017-11-17 17:07:24', '0', '1568916', '卸下', '2017-11-17 17:07:24', '6.5');
+INSERT INTO `tire_exchg_log` VALUES ('13', '10', '2', '2', '2', '2017-10-30 13:18:56', '2017-11-17 17:13:19', '0', '1569263', '卸下', '2017-11-17 17:13:19', '6.5');
 INSERT INTO `tire_exchg_log` VALUES ('14', '11', '2', '2', '3', '2017-10-30 13:19:01', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-15 14:47:39', '6.5');
 INSERT INTO `tire_exchg_log` VALUES ('15', '12', '2', '2', '4', '2017-10-30 13:19:07', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-15 14:47:41', '6.5');
 INSERT INTO `tire_exchg_log` VALUES ('16', '13', '2', '2', '5', '2017-10-30 13:19:14', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-15 14:47:43', '6.5');
 INSERT INTO `tire_exchg_log` VALUES ('17', '14', '2', '2', '6', '2017-10-30 13:19:21', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-15 14:47:46', '6.5');
+INSERT INTO `tire_exchg_log` VALUES ('18', '9', '2', '2', '1', '2017-11-17 17:08:12', '2017-11-17 17:09:32', '78910', '80', '卸下', '2017-11-17 17:09:32', null);
+INSERT INTO `tire_exchg_log` VALUES ('19', '17', '2', '2', '1', '2017-11-17 17:11:17', '0000-00-00 00:00:00', '78910', '0', '装上', '2017-11-17 17:11:17', null);
+INSERT INTO `tire_exchg_log` VALUES ('20', '4', '1', '1', '1', '2017-11-17 17:11:58', '2017-11-17 17:13:18', '5462', '80', '卸下', '2017-11-17 17:13:18', null);
+INSERT INTO `tire_exchg_log` VALUES ('21', '10', '1', '1', '1', '2017-11-17 17:13:43', '2017-11-17 18:43:57', '5462', '5414', '卸下', '2017-11-17 18:43:57', null);
+INSERT INTO `tire_exchg_log` VALUES ('22', '4', '3', '3', '1', '2017-11-17 17:14:35', '0000-00-00 00:00:00', '0', '0', '装上', '2017-11-17 17:14:35', null);
+INSERT INTO `tire_exchg_log` VALUES ('23', '5', '1', '1', '2', '2017-11-17 18:27:32', '2017-11-17 18:43:12', '5462', '940', '卸下', '2017-11-17 18:43:12', null);
+INSERT INTO `tire_exchg_log` VALUES ('24', '5', '1', '1', '2', '2017-11-17 18:43:17', '2017-11-17 18:43:56', '5462', '39', '卸下', '2017-11-17 18:43:56', null);
+INSERT INTO `tire_exchg_log` VALUES ('25', '10', '1', '1', '2', '2017-11-17 18:44:35', '2017-11-17 18:49:16', '5462', '281', '卸下', '2017-11-17 18:49:16', null);
+INSERT INTO `tire_exchg_log` VALUES ('26', '6', '1', '1', '1', '2017-11-17 18:49:46', '0000-00-00 00:00:00', '5462', '0', '装上', '2017-11-17 18:49:46', null);
+INSERT INTO `tire_exchg_log` VALUES ('27', '5', '1', '1', '2', '2017-11-24 15:23:35', '0000-00-00 00:00:00', '5462', '0', '装上', '2017-11-24 15:23:35', null);
 
 -- ----------------------------
--- Table structure for `tire_info`
+-- Table structure for tire_info
 -- ----------------------------
 DROP TABLE IF EXISTS `tire_info`;
 CREATE TABLE `tire_info` (
@@ -751,7 +1240,7 @@ CREATE TABLE `tire_info` (
   `history_state` varchar(20) DEFAULT NULL COMMENT '轮胎原始状态',
   `brand_id` int(11) DEFAULT NULL COMMENT '轮胎品牌',
   `tire_param_id` int(11) DEFAULT NULL COMMENT '轮胎参数ID',
-  `figure_value` int(11) DEFAULT NULL COMMENT '花纹深度',
+  `figure_value` float(11,1) DEFAULT NULL COMMENT '花纹深度',
   `rated_mile` int(11) DEFAULT '180000' COMMENT '额定里程',
   `rated_hour` int(11) DEFAULT NULL COMMENT '标称使用小时数',
   `order_num` varchar(24) DEFAULT NULL COMMENT '订单号',
@@ -777,28 +1266,39 @@ CREATE TABLE `tire_info` (
   PRIMARY KEY (`tire_id`),
   UNIQUE KEY `tire_id` (`tire_id`),
   UNIQUE KEY `factory_code` (`factory_code`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=30 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tire_info
 -- ----------------------------
-INSERT INTO `tire_info` VALUES ('1', '1', 'd5611', 'd5611000', null, '5', '4', '0', '0', '0', '', '0.00', '', '卸下', '2017-10-26 13:04:59', '0000-00-00 00:00:00', '00000000000', '00000000000', '', '00000000000', '2017-10-29 16:59:30', '2017-10-29 16:01:11', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000004', '');
-INSERT INTO `tire_info` VALUES ('2', '3', 'd4511', 'd4511000', null, '6', '2', '0', '0', '0', '', '0.00', '', '卸下', '2017-10-26 13:17:07', '0000-00-00 00:00:00', '00000000000', '00000000000', '', '00000000000', '2017-10-29 16:59:32', '2017-10-29 16:27:46', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000002', '');
-INSERT INTO `tire_info` VALUES ('3', '4', 'a1b11', 'a1b11000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-29 16:58:08', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A8888', '00000000001', '2017-10-29 16:59:46', '2017-10-29 16:59:46', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000006', '');
-INSERT INTO `tire_info` VALUES ('4', '5', 'a1b12', 'a1b12000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-29 16:58:46', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A8888', '00000000002', '2017-10-29 16:59:53', '2017-10-29 16:59:53', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000007', '');
-INSERT INTO `tire_info` VALUES ('5', '6', 'a1b13', 'a1b13000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-29 16:58:53', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A8888', '00000000003', '2017-10-29 16:59:59', '2017-10-29 16:59:59', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000008', '');
-INSERT INTO `tire_info` VALUES ('6', '7', 'a1b14', 'a1b14000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-29 16:59:00', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A8888', '00000000004', '2017-10-29 17:00:05', '2017-10-29 17:00:05', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000009', '');
-INSERT INTO `tire_info` VALUES ('7', '8', 'a1b15', 'a1b15000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-29 16:59:06', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A8888', '00000000005', '2017-10-29 17:00:10', '2017-10-29 17:00:10', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000010', '');
-INSERT INTO `tire_info` VALUES ('8', '9', 'a1b16', 'a1b16000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-29 16:59:12', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A8888', '00000000006', '2017-10-29 17:00:15', '2017-10-29 17:00:15', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000011', '');
-INSERT INTO `tire_info` VALUES ('9', '10', 'a4b01', 'a4b01000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:31', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A6666', '00000000001', '2017-10-30 13:18:48', '2017-10-30 13:18:48', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000012', '');
-INSERT INTO `tire_info` VALUES ('10', '11', 'a4b02', 'a4b02000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:38', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A6666', '00000000002', '2017-10-30 13:18:56', '2017-10-30 13:18:56', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000013', '');
-INSERT INTO `tire_info` VALUES ('11', '12', 'a4b03', 'a4b03000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:44', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A6666', '00000000003', '2017-10-30 13:19:01', '2017-10-30 13:19:01', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000014', '');
-INSERT INTO `tire_info` VALUES ('12', '13', 'a4b04', 'a4b04000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:49', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A6666', '00000000004', '2017-10-30 13:19:07', '2017-10-30 13:19:07', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000015', '');
-INSERT INTO `tire_info` VALUES ('13', '14', 'a4b05', 'a4b05000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:55', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A6666', '00000000005', '2017-10-30 13:19:14', '2017-10-30 13:19:14', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000016', '');
-INSERT INTO `tire_info` VALUES ('14', '15', 'a4b06', 'a4b06000', null, '5', '4', '0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:18:00', '0000-00-00 00:00:00', '00000000000', '00000000000', '苏A6666', '00000000006', '2017-10-30 13:19:21', '2017-10-30 13:19:21', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000017', '');
+INSERT INTO `tire_info` VALUES ('4', '5', 'a1b12', 'a1b12000', null, '5', '4', '0.0', '0', '0', '', '0.00', '', '装上', '2017-10-29 16:58:46', '2017-11-16 15:29:25', '00000000000', '00000000000', '1-5612', '00000000001', '2017-11-17 17:14:35', '2017-10-29 16:59:53', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000022', '');
+INSERT INTO `tire_info` VALUES ('5', '6', 'a1b13', 'a1b13000', null, '5', '4', '0.0', '0', '0', '', '0.00', '', '装上', '2017-10-29 16:58:53', '2017-11-16 15:29:27', '00000000000', '00000000000', '苏A8888', '00000000002', '2017-11-24 15:23:35', '2017-10-29 16:59:59', '0000-00-00 00:00:00', '5462', '0', '0', null, null, '00000000027', '');
+INSERT INTO `tire_info` VALUES ('6', '7', 'a1b14', 'a1b14000', null, '5', '4', '6.3', '0', '0', '', '0.00', '', '装上', '2017-10-29 16:59:00', '2017-11-16 15:29:30', '00000000000', '00000000000', '苏A8888', '00000000001', '2017-11-17 18:49:46', '2017-10-29 17:00:05', '0000-00-00 00:00:00', '5462', '0', '0', null, null, '00000000026', '');
+INSERT INTO `tire_info` VALUES ('7', '8', 'a1b15', 'a1b15000', null, '5', '4', '5.5', '0', '0', '', '0.00', '', '卸下', '2017-10-29 16:59:06', '2017-11-16 15:29:33', '00000000000', '00000000000', '', '00000000000', '2017-11-17 18:49:23', '2017-10-29 17:00:10', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000010', '');
+INSERT INTO `tire_info` VALUES ('9', '10', 'a4b01', 'a4b01000', null, '5', '4', '0.0', '0', '0', '', '0.00', '', '卸下', '2017-10-30 13:17:31', '2017-11-16 15:29:38', '00000000000', '00000000000', '', '00000000000', '2017-11-17 17:09:32', '2017-10-30 13:18:48', '0000-00-00 00:00:00', '78910', '0', '0', null, null, '00000000018', '');
+INSERT INTO `tire_info` VALUES ('10', '11', 'a4b02', 'a4b02000', null, '5', '4', '0.0', '0', '0', '', '0.00', '', '卸下', '2017-10-30 13:17:38', '2017-11-16 15:29:40', '00000000000', '00000000000', '', '00000000000', '2017-11-17 18:49:16', '2017-10-30 13:18:56', '0000-00-00 00:00:00', '5462', '0', '0', null, null, '00000000025', '');
+INSERT INTO `tire_info` VALUES ('11', '12', 'a4b03', 'a4b03000', null, '5', '4', '1.0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:44', '2017-11-16 15:29:43', '00000000000', '00000000000', '苏A6666', '00000000003', '2017-10-30 13:19:01', '2017-10-30 13:19:01', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000014', '');
+INSERT INTO `tire_info` VALUES ('12', '13', 'a4b04', 'a4b04000', null, '5', '4', '0.0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:49', '2017-11-16 15:29:46', '00000000000', '00000000000', '苏A6666', '00000000004', '2017-10-30 13:19:07', '2017-10-30 13:19:07', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000015', '');
+INSERT INTO `tire_info` VALUES ('13', '14', 'a4b05', 'a4b05000', null, '5', '4', '0.0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:17:55', '2017-11-16 15:29:49', '00000000000', '00000000000', '苏A6666', '00000000005', '2017-10-30 13:19:14', '2017-10-30 13:19:14', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000016', '');
+INSERT INTO `tire_info` VALUES ('14', '15', 'a4b06', 'a4b06000', null, '5', '4', '0.0', '0', '0', '', '0.00', '', '装上', '2017-10-30 13:18:00', '2017-11-16 15:29:51', '00000000000', '00000000000', '苏A6666', '00000000006', '2017-10-30 13:19:21', '2017-10-30 13:19:21', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000017', '');
+INSERT INTO `tire_info` VALUES ('15', '2', '52111', '52111000', null, '5', '3', '0.0', '0', '0', '', '0.00', '', '', '2017-11-16 15:33:03', '0000-00-00 00:00:00', '00000000000', '00000000000', null, '00000000000', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('16', '16', '34611', '34611000', null, '5', '4', '0.0', '0', '0', '', '0.00', '', '', '2017-11-16 15:38:00', '2017-11-17 15:38:00', '00000000000', '00000000000', null, '00000000000', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('17', '17', 'a1b21', 'a1b21000', null, '5', '4', '0.0', '0', '0', '', '0.00', '', '装上', '2017-11-16 16:20:11', '2017-11-16 16:20:11', '00000000000', '00000000000', '苏A6666', '00000000001', '2017-11-17 17:11:17', '2017-11-17 17:11:17', '0000-00-00 00:00:00', '78910', '0', '0', null, null, '00000000019', '');
+INSERT INTO `tire_info` VALUES ('18', '18', 'a1b22', 'a1b22000', null, '5', '4', '0.0', '0', '0', '', '0.00', '', '', '2017-11-16 16:20:57', '2017-11-16 16:20:57', '00000000000', '00000000000', null, '00000000000', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('19', '19', 'a1b23', 'a1b23000', null, '5', '4', '5.0', '0', '0', '', '0.00', '', '', '2017-11-16 16:22:11', '2017-11-16 16:22:11', '00000000000', '00000000000', null, '00000000000', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('20', '20', 'a1b24', 'a1b24000', null, '5', '4', '5.0', '0', '0', '', '0.00', '', '', '2017-11-16 16:23:05', '2017-11-16 16:23:05', '00000000000', '00000000000', null, '00000000000', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('21', '23', '3d5d1', '3d5d1000', null, '5', '4', '0.0', '0', '0', '0', '0.00', '0', '装上', '2017-11-17 06:21:50', '0000-00-00 00:00:00', '00000000000', '00000000000', '5624', '00000000001', '2017-11-17 06:21:50', '2017-11-17 06:21:50', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('22', '24', '3d5d2', '3d5d2000', null, '5', '4', '0.0', '0', '0', '0', '0.00', '0', '装上', '2017-11-17 06:21:51', '0000-00-00 00:00:00', '00000000000', '00000000000', '5624', '00000000002', '2017-11-17 06:21:51', '2017-11-17 06:21:51', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('23', '25', '3d5d3', '3d5d3000', null, '5', '4', '0.0', '0', '0', '0', '0.00', '0', '装上', '2017-11-17 06:21:51', '0000-00-00 00:00:00', '00000000000', '00000000000', '5624', '00000000003', '2017-11-17 06:21:51', '2017-11-17 06:21:51', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('24', '26', '3d5d4', '3d5d4000', null, '5', '4', '0.0', '0', '0', '0', '0.00', '0', '装上', '2017-11-17 06:21:51', '0000-00-00 00:00:00', '00000000000', '00000000000', '5624', '00000000004', '2017-11-17 06:21:51', '2017-11-17 06:21:51', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('25', '27', '3d5d5', '3d5d5000', null, '5', '4', '0.0', '0', '0', '0', '0.00', '0', '装上', '2017-11-17 06:21:51', '0000-00-00 00:00:00', '00000000000', '00000000000', '5624', '00000000005', '2017-11-17 06:21:51', '2017-11-17 06:21:51', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('26', '28', '3d5d6', '3d5d6000', null, '5', '4', '0.0', '0', '0', '0', '0.00', '0', '装上', '2017-11-17 06:21:51', '0000-00-00 00:00:00', '00000000000', '00000000000', '5624', '00000000006', '2017-11-17 06:21:51', '2017-11-17 06:21:51', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('28', '33', '31', '31000', null, '5', '4', '0.0', '0', '0', '0', '0.00', '0', '', '2017-11-23 15:01:37', '0000-00-00 00:00:00', '00000000000', '00000000000', null, '00000000000', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('27', '1', 'd5611', '0000aa43', null, '5', '4', '5.0', '0', '0', '', '0.00', '', '', '2017-11-17 17:17:45', '2017-11-17 17:17:45', '00000000000', '00000000000', null, '00000000000', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
+INSERT INTO `tire_info` VALUES ('29', '34', '41', '41000', null, '5', '4', '6.7', '0', '0', '0', '0.00', '0', '', '2017-11-23 15:04:36', '0000-00-00 00:00:00', '00000000000', '00000000000', null, '00000000000', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0000-00-00 00:00:00', '0', '0', '0', null, null, '00000000000', '');
 
 -- ----------------------------
--- Table structure for `tire_param_info`
+-- Table structure for tire_param_info
 -- ----------------------------
 DROP TABLE IF EXISTS `tire_param_info`;
 CREATE TABLE `tire_param_info` (
@@ -821,17 +1321,18 @@ CREATE TABLE `tire_param_info` (
   `figure_mile2` int(11) unsigned DEFAULT NULL COMMENT '极限花纹深度',
   PRIMARY KEY (`tire_param_id`),
   UNIQUE KEY `brand_id` (`brand_id`,`norms_id`,`class_id`,`figure_id`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of tire_param_info
 -- ----------------------------
-INSERT INTO `tire_param_info` VALUES ('4', '杭州', '5', '5', '5', '6', '20.00', '0.00', '200', '20', '10', '8', '2000', '4000', '10000', '4', '2');
-INSERT INTO `tire_param_info` VALUES ('2', '南京', '6', '5', '6', '6', '10.00', '0.00', '200', '120', '20', '0', '4000', '8000', '0', '4', '2');
-INSERT INTO `tire_param_info` VALUES ('3', '米其林', '5', '6', '5', '5', '10.00', '4.00', '200', '90', '20', '4', '2000', '4000', '10000', '7', '5');
+INSERT INTO `tire_param_info` VALUES ('4', '杭州', '5', '5', '5', '6', '20.00', '0.00', '200', '20', '10', '8', '2000', '4000', '0', '4', '2');
+INSERT INTO `tire_param_info` VALUES ('2', '南京', '6', '5', '6', '6', '10.00', '0.00', '200', '120', '20', '0', '4000', '8000', '0', '6', '2');
+INSERT INTO `tire_param_info` VALUES ('3', '米其林', '5', '6', '5', '5', '10.00', '4.00', '200', '90', '20', '4', '2000', '4000', '0', '7', '5');
+INSERT INTO `tire_param_info` VALUES ('5', '固特异', '5', '6', '6', '5', '10.00', '0.00', '200', '150', '1', '10', '50000', '80000', '0', '10', '1');
 
 -- ----------------------------
--- Table structure for `vehicle_term`
+-- Table structure for vehicle_term
 -- ----------------------------
 DROP TABLE IF EXISTS `vehicle_term`;
 CREATE TABLE `vehicle_term` (
@@ -845,7 +1346,7 @@ CREATE TABLE `vehicle_term` (
   `remark` varchar(200) DEFAULT NULL COMMENT '备注',
   PRIMARY KEY (`v_term_id`),
   UNIQUE KEY `v_term_no` (`v_term_no`)
-) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of vehicle_term
@@ -854,9 +1355,12 @@ INSERT INTO `vehicle_term` VALUES ('1', '', '001', '001', '2017-11-09 15:21:41',
 INSERT INTO `vehicle_term` VALUES ('2', '', 'a4b0', 'a4b0', '2017-11-10 13:50:29', '2', '0', '');
 INSERT INTO `vehicle_term` VALUES ('3', '', '003', '003', '2017-11-09 15:21:38', '6', '0', '');
 INSERT INTO `vehicle_term` VALUES ('4', '', '004', '004', '2017-11-09 15:21:33', '6', '0', '手持终端');
+INSERT INTO `vehicle_term` VALUES ('5', '', '3461', '3461', '2017-11-16 15:37:38', '6', '0', '');
+INSERT INTO `vehicle_term` VALUES ('6', '', 'a1b2', 'a1b2', '2017-11-16 16:18:34', '6', '0', '');
+INSERT INTO `vehicle_term` VALUES ('7', '', '3d5d', '3d5d', '2017-11-24 13:25:36', '2', '0', '');
 
 -- ----------------------------
--- Event structure for `real_to_his`
+-- Event structure for real_to_his
 -- ----------------------------
 DROP EVENT IF EXISTS `real_to_his`;
 DELIMITER ;;
