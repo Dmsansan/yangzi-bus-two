@@ -66,100 +66,7 @@ $modules_arr = $_SESSION['module_list'];
                     dataType:'json',
                     type:'POST',
                     success:function(data){
-                        console.log('sansan',data);
-                       $("#tire_count").html(data.tire_count);
-                       $("#sennor_count").html(data.sensor_count);
-                       if(data.sensor_count != 0){
-                       $("#sennor_tire_count").progressbar({
-                            value:parseInt(data.tire_count/data.sensor_count*100)
-                       });
-                        }else{
-                            $("#sennor_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                        }
-                       $("#kc_count").html(data.kc_tire_count);
-                       if(data.tire_count != 0){
-                       $("#kc_tire_count").progressbar({
-                            value:parseInt(data.kc_tire_count/data.tire_count*100)
-                       });
-                   }else{
-                         $("#kc_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                   }
-                       $("#zc_count").html(data.zc_tire_count);
-                       if(data.tire_count != 0){
-                       $("#zc_tire_count").progressbar({
-                            value:parseInt(data.zc_tire_count/data.tire_count*100)
-                       });
-                    }else{
-                         $("#zc_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#bf_count").html(data.bf_tire_count);
-                        if(data.tire_count != 0){
-                        $("#bf_tire_count").progressbar({
-                            value:parseInt(data.bf_tire_count/data.tire_count*100)
-                       });
-                    }else{
-                        $("#bf_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#bus_count").html(data.bus_count);
-                        $("#yy_count").html(data.yy_bus_count);
-                        if(data.bus_count != 0){
-                        $("#yy_bus_count").progressbar({
-                            value:parseInt(data.yy_bus_count/data.bus_count*100)
-                       });
-                        }else{
-                            $("#yy_bus_count").progressbar({
-                                value:parseInt(0)
-                           });
-                        }
-                         $("#bff_count").html(data.bf_bus_count);
-                         if(data.bus_count != 0){
-                        $("#bf_bus_count").progressbar({
-                            value:parseInt(data.bf_bus_count/data.bus_count*100)
-                       });
-                    }else{
-                         $("#bf_bus_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#alarm_count").html(data.alarm_count);
-                        $("#height_count").html(data.height_alarm_count);
-                        if(data.alarm_count != 0){
-                        $("#height_alarm_count").progressbar({
-                            value:parseInt(data.height_alarm_count/data.alarm_count*100)
-                       });
-                    }else{
-                        $("#height_alarm_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#low_count").html(data.low_alarm_count);
-                        if(data.alarm_count != 0){
-                        $("#low_alarm_count").progressbar({
-                            value:parseInt(data.low_alarm_count/data.alarm_count*100)
-                       });
-                    }else{
-                        $("#low_alarm_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#wendu_count").html(data.height_wendu_count);
-                        if(data.alarm_count != 0){
-                        $("#height_wendu_count").progressbar({
-                            value:parseInt(data.height_wendu_count/data.alarm_count*100)
-                       });
-                    }else{
-                         $("#height_wendu_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
+                        init_shouye(data);
 
                     }
                 });
@@ -169,111 +76,20 @@ $modules_arr = $_SESSION['module_list'];
          $('#fcompany').combobox({
             valueField:'id',
             textField:'company_name', 
+             loadFilter:function(data){
+                data.unshift({id:'',company_name:'所有'});
+                return data;
+            },
             onSelect:function(rec){
                 $.ajax({
                     url:'./ajaction/v1/?menuid=0&cmd=get_index_data&company_id='+rec.id,
                     dataType:'json',
                     type:'POST',
                     success:function(data){
-                        console.log('sansan',data);
-                         $("#tire_count").html(data.tire_count);
-                       $("#sennor_count").html(data.sensor_count);
-                       if(data.sensor_count != 0){
-                       $("#sennor_tire_count").progressbar({
-                            value:parseInt(data.tire_count/data.sensor_count*100)
-                       });
-                        }else{
-                            $("#sennor_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                        }
-                       $("#kc_count").html(data.kc_tire_count);
-                       if(data.tire_count != 0){
-                       $("#kc_tire_count").progressbar({
-                            value:parseInt(data.kc_tire_count/data.tire_count*100)
-                       });
-                   }else{
-                         $("#kc_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                   }
-                       $("#zc_count").html(data.zc_tire_count);
-                       if(data.tire_count != 0){
-                       $("#zc_tire_count").progressbar({
-                            value:parseInt(data.zc_tire_count/data.tire_count*100)
-                       });
-                    }else{
-                         $("#zc_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#bf_count").html(data.bf_tire_count);
-                        if(data.tire_count != 0){
-                        $("#bf_tire_count").progressbar({
-                            value:parseInt(data.bf_tire_count/data.tire_count*100)
-                       });
-                    }else{
-                        $("#bf_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#bus_count").html(data.bus_count);
-                        $("#yy_count").html(data.yy_bus_count);
-                        if(data.bus_count != 0){
-                        $("#yy_bus_count").progressbar({
-                            value:parseInt(data.yy_bus_count/data.bus_count*100)
-                       });
-                        }else{
-                            $("#yy_bus_count").progressbar({
-                                value:parseInt(0)
-                           });
-                        }
-                         $("#bff_count").html(data.bf_bus_count);
-                         if(data.bus_count != 0){
-                        $("#bf_bus_count").progressbar({
-                            value:parseInt(data.bf_bus_count/data.bus_count*100)
-                       });
-                    }else{
-                         $("#bf_bus_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#alarm_count").html(data.alarm_count);
-                        $("#height_count").html(data.height_alarm_count);
-                        if(data.alarm_count != 0){
-                        $("#height_alarm_count").progressbar({
-                            value:parseInt(data.height_alarm_count/data.alarm_count*100)
-                       });
-                    }else{
-                        $("#height_alarm_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#low_count").html(data.low_alarm_count);
-                        if(data.alarm_count != 0){
-                        $("#low_alarm_count").progressbar({
-                            value:parseInt(data.low_alarm_count/data.alarm_count*100)
-                       });
-                    }else{
-                        $("#low_alarm_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#wendu_count").html(data.height_wendu_count);
-                        if(data.alarm_count != 0){
-                        $("#height_wendu_count").progressbar({
-                            value:parseInt(data.height_wendu_count/data.alarm_count*100)
-                       });
-                    }else{
-                         $("#height_wendu_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-
+                        init_shouye(data);
                     }
                 });
                 //var url = './ajaction/v1/?menuid=0&cmd=get_index_data&store_id='+rec.store.id;
-                console.log();
                 /* $('#company').combobox('loadData',rec); */
 
             }
@@ -281,117 +97,26 @@ $modules_arr = $_SESSION['module_list'];
         //线路选择数据筛选选择
         $('#roules').combobox({
             valueField:'id',
-            textField:'roules_name', 
+            textField:'roules_name',
+             loadFilter:function(data){
+                data.unshift({id:'',roules_name:'所有'});
+                return data;
+            }, 
             onSelect:function(rec){
                 $.ajax({
                     url:'./ajaction/v1/?menuid=0&cmd=get_index_data&roules_id='+rec.id,
                     dataType:'json',
                     type:'POST',
                     success:function(data){
-                        console.log('sansan',data);
-                         $("#tire_count").html(data.tire_count);
-                       $("#sennor_count").html(data.sensor_count);
-                       if(data.sensor_count != 0){
-                       $("#sennor_tire_count").progressbar({
-                            value:parseInt(data.tire_count/data.sensor_count*100)
-                       });
-                        }else{
-                            $("#sennor_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                        }
-                       $("#kc_count").html(data.kc_tire_count);
-                       if(data.tire_count != 0){
-                       $("#kc_tire_count").progressbar({
-                            value:parseInt(data.kc_tire_count/data.tire_count*100)
-                       });
-                   }else{
-                         $("#kc_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                   }
-                       $("#zc_count").html(data.zc_tire_count);
-                       if(data.tire_count != 0){
-                       $("#zc_tire_count").progressbar({
-                            value:parseInt(data.zc_tire_count/data.tire_count*100)
-                       });
-                    }else{
-                         $("#zc_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#bf_count").html(data.bf_tire_count);
-                        if(data.tire_count != 0){
-                        $("#bf_tire_count").progressbar({
-                            value:parseInt(data.bf_tire_count/data.tire_count*100)
-                       });
-                    }else{
-                        $("#bf_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#bus_count").html(data.bus_count);
-                        $("#yy_count").html(data.yy_bus_count);
-                        if(data.bus_count != 0){
-                        $("#yy_bus_count").progressbar({
-                            value:parseInt(data.yy_bus_count/data.bus_count*100)
-                       });
-                        }else{
-                            $("#yy_bus_count").progressbar({
-                                value:parseInt(0)
-                           });
-                        }
-                         $("#bff_count").html(data.bf_bus_count);
-                         if(data.bus_count != 0){
-                        $("#bf_bus_count").progressbar({
-                            value:parseInt(data.bf_bus_count/data.bus_count*100)
-                       });
-                    }else{
-                         $("#bf_bus_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#alarm_count").html(data.alarm_count);
-                        $("#height_count").html(data.height_alarm_count);
-                        if(data.alarm_count != 0){
-                        $("#height_alarm_count").progressbar({
-                            value:parseInt(data.height_alarm_count/data.alarm_count*100)
-                       });
-                    }else{
-                        $("#height_alarm_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#low_count").html(data.low_alarm_count);
-                        if(data.alarm_count != 0){
-                        $("#low_alarm_count").progressbar({
-                            value:parseInt(data.low_alarm_count/data.alarm_count*100)
-                       });
-                    }else{
-                        $("#low_alarm_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#wendu_count").html(data.height_wendu_count);
-                        if(data.alarm_count != 0){
-                        $("#height_wendu_count").progressbar({
-                            value:parseInt(data.height_wendu_count/data.alarm_count*100)
-                       });
-                    }else{
-                         $("#height_wendu_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-
+                        init_shouye(data);
                     }
                 });
                 //var url = './ajaction/v1/?menuid=0&cmd=get_index_data&store_id='+rec.store.id;
-                console.log();
                 /* $('#company').combobox('loadData',rec); */
 
             }
         });
-
+        
         //获取修理厂列表
         $.ajax({
                 url:'./ajaction/v1/?menuid=0&cmd=get_all_stores',
@@ -408,7 +133,6 @@ $modules_arr = $_SESSION['module_list'];
                 success:function(data){
                     var team=data.items;
                     $('#fcompany').combobox('loadData',team);
-                    console.log('msg',data);
                 }
             });
          //获取线路列表
@@ -418,7 +142,6 @@ $modules_arr = $_SESSION['module_list'];
                 success:function(data){
                     var team=data.items;
                     $('#roules').combobox('loadData',team);
-                    console.log('msg',data);
                 }
             });
         //获取首页数据
@@ -426,100 +149,7 @@ $modules_arr = $_SESSION['module_list'];
             url:'./ajaction/v1/?menuid=0&cmd=get_index_data',
             dataType:'json',
             success:function(data){
-                console.log(data);
-               $("#tire_count").html(data.tire_count);
-                       $("#sennor_count").html(data.sensor_count);
-                       if(data.sensor_count != 0){
-                       $("#sennor_tire_count").progressbar({
-                            value:parseInt(data.tire_count/data.sensor_count*100)
-                       });
-                        }else{
-                            $("#sennor_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                        }
-                       $("#kc_count").html(data.kc_tire_count);
-                       if(data.tire_count != 0){
-                       $("#kc_tire_count").progressbar({
-                            value:parseInt(data.kc_tire_count/data.tire_count*100)
-                       });
-                   }else{
-                         $("#kc_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                   }
-                       $("#zc_count").html(data.zc_tire_count);
-                       if(data.tire_count != 0){
-                       $("#zc_tire_count").progressbar({
-                            value:parseInt(data.zc_tire_count/data.tire_count*100)
-                       });
-                    }else{
-                         $("#zc_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#bf_count").html(data.bf_tire_count);
-                        if(data.tire_count != 0){
-                        $("#bf_tire_count").progressbar({
-                            value:parseInt(data.bf_tire_count/data.tire_count*100)
-                       });
-                    }else{
-                        $("#bf_tire_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#bus_count").html(data.bus_count);
-                        $("#yy_count").html(data.yy_bus_count);
-                        if(data.bus_count != 0){
-                        $("#yy_bus_count").progressbar({
-                            value:parseInt(data.yy_bus_count/data.bus_count*100)
-                       });
-                        }else{
-                            $("#yy_bus_count").progressbar({
-                                value:parseInt(0)
-                           });
-                        }
-                         $("#bff_count").html(data.bf_bus_count);
-                         if(data.bus_count != 0){
-                        $("#bf_bus_count").progressbar({
-                            value:parseInt(data.bf_bus_count/data.bus_count*100)
-                       });
-                    }else{
-                         $("#bf_bus_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#alarm_count").html(data.alarm_count);
-                        $("#height_count").html(data.height_alarm_count);
-                        if(data.alarm_count != 0){
-                        $("#height_alarm_count").progressbar({
-                            value:parseInt(data.height_alarm_count/data.alarm_count*100)
-                       });
-                    }else{
-                        $("#height_alarm_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#low_count").html(data.low_alarm_count);
-                        if(data.alarm_count != 0){
-                        $("#low_alarm_count").progressbar({
-                            value:parseInt(data.low_alarm_count/data.alarm_count*100)
-                       });
-                    }else{
-                        $("#low_alarm_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
-                        $("#wendu_count").html(data.height_wendu_count);
-                        if(data.alarm_count != 0){
-                        $("#height_wendu_count").progressbar({
-                            value:parseInt(data.height_wendu_count/data.alarm_count*100)
-                       });
-                    }else{
-                         $("#height_wendu_count").progressbar({
-                            value:parseInt(0)
-                       });
-                    }
+             init_shouye(data);
             }
         });
         $('#jnkc').jclock({ withDate: true, withWeek: true });
@@ -628,6 +258,102 @@ $modules_arr = $_SESSION['module_list'];
     function changepass(){
         $('#changepass').dialog('open').dialog('setTitle', '修改密码');
     }
+    //加载首页数据
+    function init_shouye(data){
+              $("#tire_count").html(data.tire_count);
+                       $("#sennor_count").html(data.sensor_count);
+                       if(data.sensor_count != 0){
+                       $("#sennor_tire_count").progressbar({
+                            value:parseInt(data.tire_count/data.sensor_count*100)
+                       });
+                        }else{
+                            $("#sennor_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                        }
+                       $("#kc_count").html(data.kc_tire_count);
+                       if(data.tire_count != 0){
+                       $("#kc_tire_count").progressbar({
+                            value:parseInt(data.kc_tire_count/data.tire_count*100)
+                       });
+                   }else{
+                         $("#kc_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                   }
+                       $("#zc_count").html(data.zc_tire_count);
+                       if(data.tire_count != 0){
+                       $("#zc_tire_count").progressbar({
+                            value:parseInt(data.zc_tire_count/data.tire_count*100)
+                       });
+                    }else{
+                         $("#zc_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#bf_count").html(data.bf_tire_count);
+                        if(data.tire_count != 0){
+                        $("#bf_tire_count").progressbar({
+                            value:parseInt(data.bf_tire_count/data.tire_count*100)
+                       });
+                    }else{
+                        $("#bf_tire_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#bus_count").html(data.bus_count);
+                        $("#yy_count").html(data.yy_bus_count);
+                        if(data.bus_count != 0){
+                        $("#yy_bus_count").progressbar({
+                            value:parseInt(data.yy_bus_count/data.bus_count*100)
+                       });
+                        }else{
+                            $("#yy_bus_count").progressbar({
+                                value:parseInt(0)
+                           });
+                        }
+                         $("#bff_count").html(data.bf_bus_count);
+                         if(data.bus_count != 0){
+                        $("#bf_bus_count").progressbar({
+                            value:parseInt(data.bf_bus_count/data.bus_count*100)
+                       });
+                    }else{
+                         $("#bf_bus_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#alarm_count").html(data.alarm_count);
+                        $("#height_count").html(data.height_alarm_count);
+                        if(data.alarm_count != 0){
+                        $("#height_alarm_count").progressbar({
+                            value:parseInt(data.height_alarm_count/data.alarm_count*100)
+                       });
+                    }else{
+                        $("#height_alarm_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#low_count").html(data.low_alarm_count);
+                        if(data.alarm_count != 0){
+                        $("#low_alarm_count").progressbar({
+                            value:parseInt(data.low_alarm_count/data.alarm_count*100)
+                       });
+                    }else{
+                        $("#low_alarm_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+                        $("#wendu_count").html(data.height_wendu_count);
+                        if(data.alarm_count != 0){
+                        $("#height_wendu_count").progressbar({
+                            value:parseInt(data.height_wendu_count/data.alarm_count*100)
+                       });
+                    }else{
+                         $("#height_wendu_count").progressbar({
+                            value:parseInt(0)
+                       });
+                    }
+    }
     </script>
 </head>
 <body  class="easyui-layout" >
@@ -696,18 +422,18 @@ $modules_arr = $_SESSION['module_list'];
                                 <div style="height: 40px;">
                                     <span style="display:inline-block;font-size: 12px;font-weight: bold;line-height:40px;">注册轮胎数量：</span>
                                     <span id="sennor_count"></span>
-                                    <span id="sennor_tire_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd ;"></span>
+                                    <span id="sennor_tire_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#d8dde7 ;"></span>
                                     <span  style="display:inline-block;font-size: 12px;margin-left:5%;font-weight: bold;line-height:40px;">库存轮胎数量：</span>
                                     <span id="kc_count"></span>
-                                    <span id="kc_tire_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd "></span>
+                                    <span id="kc_tire_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#d8dde7 "></span>
                                 </div>
                                 <div style="height: 40px;">
                                     <span style="display:inline-block;font-size: 12px;font-weight: bold;line-height:40px;">装车轮胎数量：</span>
                                     <span id="zc_count"></span>
-                                    <span id="zc_tire_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd "></span>
+                                    <span id="zc_tire_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#d8dde7 "></span>
                                     <span style="display:inline-block;font-size: 12px;margin-left:5%;font-weight: bold;line-height:40px;">报废轮胎数量：</span>
                                     <span id="bf_count"></span>
-                                    <span id="bf_tire_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd "></span>
+                                    <span id="bf_tire_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#d8dde7 "></span>
 
                                 </div>
                             </div>
@@ -722,10 +448,10 @@ $modules_arr = $_SESSION['module_list'];
 
                                 <span style="display:inline-block;font-size: 12px;font-weight: bold;line-height:80px;">运营中车辆数：</span>
                                 <span id="yy_count"></span>
-                                <span id="yy_bus_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd "></span>
+                                <span id="yy_bus_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#d8dde7 "></span>
                                 <span style="display:inline-block;font-size: 12px;margin-left:5%;font-weight: bold;line-height:80px;">报废车辆数量：</span>
                                 <span id="bff_count"></span>
-                                <span id="bf_bus_count"style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd "></span>
+                                <span id="bf_bus_count"style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#d8dde7 "></span>
                             </div>
                         </div>
                     </div>
@@ -744,15 +470,15 @@ $modules_arr = $_SESSION['module_list'];
                             <div style="height: 40px;">
                                 <span style="display:inline-block;font-size: 12px;font-weight: bold;line-height:40px;">高压报警条数：</span>
                                 <span id="height_count"></span>
-                                <span id="height_alarm_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd "></span>
+                                <span id="height_alarm_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#d8dde7 "></span>
                                 <span style="display:inline-block;font-size: 12px;margin-left:5%;font-weight: bold;line-height:40px;">高温报警条数：</span>
                                 <span id="wendu_count"></span>
-                                <span id="height_wendu_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd "></span>
+                                <span id="height_wendu_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#d8dde7 "></span>
                             </div>
                             <div style="height: 40px;">
                                 <span style="display:inline-block;font-size: 12px;font-weight: bold;line-height:40px;">低压报警条数：</span>
                                 <span id="low_count"></span>
-                                <span id="low_alarm_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#3ab0fd "></span>
+                                <span id="low_alarm_count" style="display: inline-block;width: 25%;height: 25px;vertical-align: middle;border-radius: 5px; background-color:#d8dde7 "></span>
                                 
 
                             </div>

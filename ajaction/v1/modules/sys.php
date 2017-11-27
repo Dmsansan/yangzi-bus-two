@@ -808,12 +808,19 @@ class sys {
     	global $module_name,$cmd_name;
 
     	$store_id = mysql_escape_string(trim($_REQUEST["store_id"].""));
-
+    	$company_id = mysql_escape_string(trim($_REQUEST["company_id"].""));
+    	$roules_id = mysql_escape_string(trim($_REQUEST["roules_id"].""));
 
     		$tire_sql = "select * from tire_info";
     		if($store_id != ""){
     			$tire_sql .= " where sensor_id
-    		in (SELECT sensor_id FROM sensor where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		in (SELECT sensor_id FROM sensor where substr(sensor_no,1,4) in (SELECT v_term_no FROM vehicle_term where store_id='$store_id'))";
+    		}
+    		if($company_id != ""){
+    			$tire_sql .= " where plate_no in (select plate_no from bus_info where company_id='$company_id')";
+    		}
+    		if($roules_id != ""){
+    			$tire_sql .=" where plate_no in (select plate_no from bus_info where roules_id='$roules_id')";
     		}
     		$res = $this->conn->query($tire_sql);
     		//轮胎总数
@@ -821,17 +828,31 @@ class sys {
     		//注册轮胎数量=轮胎总数/传感器数量
     		$sensor_sql = "select * from sensor";
     		if($store_id != ""){
-    			$sensor_sql .= " ";
+    			$sensor_sql .= " where substr(sensor_no,1,4) in (SELECT v_term_no FROM vehicle_term where store_id='$store_id')";
     		}
+    		if($company_id != ""){
+    			$sensor_sql .= " where substr(sensor_no,1,4) in (select v_term_no from vehicle_term where v_term_id in (select v_term_id from bus_info where company_id='$company_id'))";
+    		}
+    		if($roules_id != ""){
+    			$sensor_sql .= " where substr(sensor_no,1,4) in (select v_term_no from vehicle_term where v_term_id in (select v_term_id from bus_info where roules_id='$roules_id'))";
+    		}
+
     		$sensor_res = $this->conn->query($sensor_sql);
     		$sensor_count = $this->conn->num_rows($sensor_res);
     		//装车轮胎数量
-    		$zc_tire_sql = "select * from tire_info where plate_no!=''";
+    		$zc_tire_sql = "select * from tire_info where status='装上'";
 
     		if($store_id != ""){
-    			$zc_tire_sql .= "  and plate_no
-    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    			$zc_tire_sql .= "   and sensor_id
+    		in (SELECT sensor_id FROM sensor where substr(sensor_no,1,4) in (SELECT v_term_no FROM vehicle_term where store_id='$store_id'))";
     		}
+    		if($company_id != ""){
+    			$zc_tire_sql .= " and plate_no in (select plate_no from bus_info where company_id='$company_id')";
+    		}
+    		if($roules_id != ""){
+    			$zc_tire_sql .= " and plate_no in (select plate_no from bus_info where roules_id='$roules_id')";
+    		}
+
     		$zc_tire_res = $this->conn->query($zc_tire_sql);
     		$zc_tire_count = $this->conn->num_rows($zc_tire_res);
     		//库存轮胎数量
@@ -841,6 +862,15 @@ class sys {
     			$kc_tire_sql .= "  and plate_no
     		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
     		}
+    		
+    		if($company_id != ""){
+    			$kc_tire_sql .= "  and plate_no in (select plate_no from bus_info where company_id='$company_id')";
+    		}
+
+    		if($roules_id != ""){
+    			$kc_tire_sql .= "  and plate_no in (select plate_no from bus_info where roules_id='$roules_id')";
+    		}
+
     		$kc_tire_res = $this->conn->query($kc_tire_sql);
     		$kc_tire_count = $this->conn->num_rows($kc_tire_res);
     		//报废轮胎数量
@@ -850,6 +880,13 @@ class sys {
     			$bf_tire_sql .= "  and plate_no
     		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
     		}
+    		if($company_id != ""){
+    			$bf_tire_sql .= "  and plate_no in (select plate_no from bus_info where company_id='$company_id')";
+    		}
+    		if($roules_id != ""){
+    			$bf_tire_sql .= "  and plate_no in (select plate_no from bus_info where roules_id='$roules_id')";
+    		}
+
     		$bf_tire_res = $this->conn->query($bf_tire_sql);
     		$bf_tire_count = $this->conn->num_rows($bf_tire_res);
     		//车辆总数
@@ -857,6 +894,12 @@ class sys {
     		if($store_id != ""){
     			$bus_sql .= " where plate_no
     		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
+    		if($company_id != ""){
+    			$bus_sql .= " where company_id='$company_id'";
+    		}
+    		if($roules_id != ""){
+    			$bus_sql .= " where roules_id='$roules_id'";
     		}
     		$bus_res = $this->conn->query($bus_sql);
     		$bus_count = $this->conn->num_rows($bus_res);
@@ -866,6 +909,14 @@ class sys {
     		if($store_id !=""){
     			$yy_bus_sql .=" where bus_id
     		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
+
+    		if($company_id != ""){
+    			$yy_bus_sql .= " where bus_id in (select bus_id from bus_info where company_id='$company_id')";
+    		}
+
+    		if($roules_id != ""){
+    			$yy_bus_sql .= " where bus_id in (select bus_id from bus_info where roules_id='$roules_id')";
     		}
 
     		$yy_bus_res = $this->conn->query($yy_bus_sql);
@@ -878,6 +929,13 @@ class sys {
     			$alarm_sql .=" where bus_id
     		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
     		}
+    		if($company_id != ""){
+    			$alarm_sql .= " where bus_id in (select bus_id from bus_info where company_id='$company_id')";
+    		}
+
+    		if($roules_id != ""){
+    			$alarm_sql .= " where bus_id in (select bus_id from bus_info where roules_id='$roules_id')";
+    		}
     		$alarm_res = $this->conn->query($alarm_sql);
     		$alarm_count = $this->conn->num_rows($alarm_res);
     		//高压报警记录总数
@@ -885,6 +943,13 @@ class sys {
     		if($store_id != ""){
     			$height_alarm_sql .= "   and bus_id
     		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
+    		if($company_id != ""){
+    			$height_alarm_sql .= " and bus_id in (select bus_id from bus_info where company_id='$company_id')";
+    		}
+
+    		if($roules_id != ""){
+    			$height_alarm_sql .= " where bus_id in (select bus_id from bus_info where roules_id='$roules_id')";
     		}
     		$height_alarm_res = $this->conn->query($height_alarm_sql);
     		$height_alarm_count = $this->conn->num_rows($height_alarm_res);
@@ -894,6 +959,13 @@ class sys {
     			$low_alarm_sql .= " and bus_id
     		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
     		}
+    		if($company_id != ""){
+    			$low_alarm_sql .= " and bus_id in (select bus_id from bus_info where company_id='$company_id')";
+    		}
+
+    		if($roules_id != ""){
+    			$low_alarm_sql .= " and bus_id in (select bus_id from bus_info where roules_id='$roules_id')";
+    		}
     		$low_alarm_res = $this->conn->query($low_alarm_sql);
     		$low_alarm_count = $this->conn->num_rows($low_alarm_res);
     		//高温报警记录总数
@@ -901,6 +973,13 @@ class sys {
     		if($store_id != ""){
     			$height_wendu_sql .= "  and bus_id
     		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='$store_id'))";
+    		}
+    		if($company_id != ""){
+    			$height_wendu_sql .= " and bus_id in (select bus_id from bus_info where company_id='$company_id')";
+    		}
+
+    		if($roules_id != ""){
+    			$height_wendu_sql .= " and bus_id in (select bus_id from bus_info where roules_id='$roules_id')";
     		}
     		$height_wendu_res = $this->conn->query($height_wendu_sql);
     	

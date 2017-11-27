@@ -63,12 +63,14 @@ $operlist = $_SESSION['OperList'];
 				var plate_no=$('#tireNumber').textbox('getText');
 				var wheel_count_val=$('#tire_count').combobox('getText');
 				var terminal_id_val=$('#tireVehicle').combobox('getValue');
+				var company_id=$('#company').combobox('getValue');
+				var roules_id=$('#roules').combobox('getValue');
 				var remark=$('#remark').combobox('getText');
 				$.ajax({
 					url:'../ajaction/v1/?menuid=121010&cmd=add',
 					type:'POST',
 					dataType:'json',
-					data:{'plate_no':plate_no,'wheel_count_val':wheel_count_val,'terminal_id_val':terminal_id_val,'remark':remark},
+					data:{'plate_no':plate_no,'wheel_count_val':wheel_count_val,'terminal_id_val':terminal_id_val,'company_id':company_id,'roules_id':roules_id,'remark':remark},
 					success:function(data){
 						 if(data.status=="OK"){
                             $.messager.show({
@@ -127,24 +129,51 @@ $operlist = $_SESSION['OperList'];
                    var msg=data.rows;
 				   $('#tireVehicle').combobox('loadData',msg);
 				    $('#up_tireVehicle').combobox('loadData',msg);
-                    
-                    
-                    console.log('data', data);
                 }
             });
-            //加载全部分公司；
+            //加载全部分公司
 			$.ajax({
                 url: '../ajaction/v1/?menuid=0&cmd=get_all_company',
                 type: 'post',
                 dataType: 'json',
                 success: function(data) {
-                   var msg=data.rows;
+                   var msg=data.items;
 				   $('#company').combobox('loadData',msg);
 				   $('#up_company').combobox('loadData',msg);
                 }
             });
 
+			$('#company').combobox({
+				valueField:'id',
+				textField:'company_name',
+			})
 
+			$('#up_company').combobox({
+				valueField:'id',
+				textField:'company_name',
+			})
+
+			 //加载全部线路
+			$.ajax({
+                url: '../ajaction/v1/?menuid=0&cmd=get_all_roules',
+                type: 'post',
+                dataType: 'json',
+                success: function(data) {
+                   var msg=data.items;
+				   $('#roules').combobox('loadData',msg);
+				   $('#up_roules').combobox('loadData',msg);
+                }
+            });
+
+			$('#roules').combobox({
+				valueField:'id',
+				textField:'roules_name',
+			})
+
+			$('#up_roules').combobox({
+				valueField:'id',
+				textField:'roules_name',
+			})
 
 			$('#cancel').bind('click',function(){
 				$('#alarm').dialog('close');
@@ -170,12 +199,14 @@ $operlist = $_SESSION['OperList'];
 				var plate_no=$('#up_tireNumber').textbox('getText');
 				var wheel_count_val=$('#up_tireCount').combobox('getText');
 				var terminal_id_val=$('#up_tireVehicle').combobox('getValue');
+				var company_id=$('#up_company').combobox('getValue');
+				var roules_id=$('#up_roules').combobox('getValue');
 				var remark=$('#up_remark').combobox('getText');
 				$.ajax({
 					url:'../ajaction/v1/?menuid=121010&cmd=edit',
 					type:'post',
 					dataType:'json',
-					data:{'plate_no':plate_no,'wheel_count_val':wheel_count_val,'terminal_id_val':terminal_id_val,'remark':remark},
+					data:{'plate_no':plate_no,'wheel_count_val':wheel_count_val,'terminal_id_val':terminal_id_val,'company_id':company_id,'roules_id':roules_id,'remark':remark},
 					success:function(data){
 					 if(data.status=="OK"){
                             $.messager.show({
@@ -369,6 +400,10 @@ $operlist = $_SESSION['OperList'];
 				$('#up_tireNumber').textbox('setValue',row.plate_no);
 				$('#up_tireVehicle').combobox('setValue',row.v_term_no);
 				$('#up_tireCount').combobox('setValue',row.wheel_count);
+
+				$('#up_company').combobox('setValue',row.company_id);
+				$('#up_roules').combobox('setValue',row.roules_id);
+
 				$('#up_remark').textbox('setValue',row.remark);
 				
             }
@@ -732,13 +767,13 @@ $operlist = $_SESSION['OperList'];
                         车牌号码：
 						 </td>
                     <td>
-                        <input id="up_tireNumber" class="easyui-textbox" style="width: 150px;" />
+                        <input id="up_tireNumber" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
                     <td>
                         车载终端：
 						 </td>
                     <td>
-                        <input id="up_tireVehicle" class="easyui-combobox"  style="width: 150px;" />
+                        <input id="up_tireVehicle" class="easyui-combobox"  style="width: 150px;" required="true" />
                     </td>
                 </tr>
                 <tr>
@@ -746,15 +781,27 @@ $operlist = $_SESSION['OperList'];
                         车轮数：
 						 </td>
                     <td>
-                        <input id="up_tireCount" class="easyui-combobox"  style="width: 150px;" />
+                        <input id="up_tireCount" class="easyui-combobox"  style="width: 150px;" required="true" />
+                    </td>
+                    <td>
+                        分公司：
+						 </td>
+                    <td>
+                        <input id="up_company" class="easyui-combobox"  style="width: 150px;" />
                     </td>
                 </tr>
                 <tr>
+                	<td>
+                        线路：
+					</td>
+                    <td>
+                        <input id="up_roules" class="easyui-combobox" style="width:150px;" />
+                    </td>
                     <td>
                         备注：
 					</td>
-                    <td colspan="3">
-                        <input id="up_remark" class="easyui-textbox" style="width:450px;" />
+                    <td>
+                        <input id="up_remark" class="easyui-textbox" style="width:150px;" />
                     </td>
                 </tr>
 				<tr style="text-align: center;margin-top:15px;">
@@ -783,13 +830,13 @@ $operlist = $_SESSION['OperList'];
                         车牌号码：
                     </td>
                     <td>
-                        <input id="tireNumber" class="easyui-textbox" style="width: 150px;" />
+                        <input id="tireNumber" class="easyui-textbox" style="width: 150px;" required="true" />
                     </td>
                     <td>
                         车载终端：
                     </td>
                     <td>
-                        <input id="tireVehicle"  style="width: 150px;" />
+                        <input id="tireVehicle"  style="width: 150px;" required="true" />
                     </td>
                 </tr>
                 <tr>
@@ -797,7 +844,21 @@ $operlist = $_SESSION['OperList'];
                         车轮数：
                     </td>
                     <td>
-                        <input id="tire_count" class="easyui-combobox" style="width: 150px;" />
+                        <input id="tire_count" class="easyui-combobox" style="width: 150px;" required="true" />
+                    </td>
+                     <td>
+                        分公司：
+                    </td>
+                    <td>
+                        <input id="company" class="easyui-combobox" style="width: 150px;" />
+                    </td>
+                 </tr>
+                 <tr>
+                 	 <td>
+                        线路：
+                    </td>
+                    <td>
+                        <input id="roules" class="easyui-combobox" style="width: 150px;" />
                     </td>
                     <td>
                         备注：

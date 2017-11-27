@@ -53,6 +53,9 @@ class realtime_mon {
 		$plate_no=mysql_escape_string(trim($_REQUEST["plate_no"].""));
 		$store_id=mysql_escape_string(trim($_REQUEST["store_id"].""));
 
+        $company_id=mysql_escape_string(trim($_REQUEST["company_id"].""));
+        $roules_id=mysql_escape_string(trim($_REQUEST["roules_id"].""));
+
 		$sql="select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
                 on a.bus_id=b.bus_id where b.plate_no like '%$plate_no%'";
 
@@ -66,6 +69,16 @@ class realtime_mon {
 			//b.v_term_id in(select v_term_id from vehicle_term where store_id=9)
 			$sql.= " and b.v_term_id in (select v_term_id from vehicle_term where store_id=$store_id)"; 
 		}
+        if($company_id!="0" && $company_id!=""){
+            //$sql.= " and b.bus_info=$store_id"; 
+            //b.v_term_id in(select v_term_id from vehicle_term where store_id=9)
+            $sql.= " and b.company_id ='$company_id'"; 
+        }
+        if($roules_id!="0" && $roules_id!=""){
+            //$sql.= " and b.bus_info=$store_id"; 
+            //b.v_term_id in(select v_term_id from vehicle_term where store_id=9)
+            $sql.= " and b.roules_id='$roules_id'"; 
+        }
 		
         $sql.=" order by pressureco desc,tempo desc";
 		//

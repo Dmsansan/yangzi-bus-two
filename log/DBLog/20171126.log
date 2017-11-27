@@ -1,0 +1,1360 @@
+
+------------------
+-时间:02:01:40-
+-错误信息:错误的SQL语句: [select * from tire_info where sensor_id
+    		in (SELECT sensor_id FROM sensor where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:Unknown column 'v_term_id' in 'IN/ALL/ANY subquery'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:40-
+-错误信息:错误的SQL语句: [select * from sensor ]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:40-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no!=''  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:40-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and mile_count=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:40-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and bus_mile_count!=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:40-
+-错误信息:错误的SQL语句: [select * from bus_info where plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:40-
+-错误信息:错误的SQL语句: [select * from bt_real_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:40-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:40-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul   and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:40-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:40-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul  and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:43-
+-错误信息:错误的SQL语句: [select * from tire_info where sensor_id
+    		in (SELECT sensor_id FROM sensor where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:Unknown column 'v_term_id' in 'IN/ALL/ANY subquery'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:43-
+-错误信息:错误的SQL语句: [select * from sensor ]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:43-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no!=''  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:43-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and mile_count=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:43-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and bus_mile_count!=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:43-
+-错误信息:错误的SQL语句: [select * from bus_info where plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:43-
+-错误信息:错误的SQL语句: [select * from bt_real_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:43-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:43-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul   and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:43-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:01:43-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul  and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:02:59:03-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:03-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:03-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:03-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A8888']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:07-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA6666-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:07-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA6666-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:07-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA6666-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:07-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A6666']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA6666-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:13-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:13-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:13-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:13-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A8888']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:21-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:21-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:21-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:21-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A8888']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:26-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:26-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:26-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:26-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A8888']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:41-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:41-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:41-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:59:41-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A8888']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:04:02:34-
+-错误信息:错误的SQL语句: [select * from tire_info where sensor_id
+    		in (SELECT sensor_id FROM sensor where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:Unknown column 'v_term_id' in 'IN/ALL/ANY subquery'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:34-
+-错误信息:错误的SQL语句: [select * from sensor ]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:34-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no!=''  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:34-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and mile_count=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:34-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and bus_mile_count!=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:34-
+-错误信息:错误的SQL语句: [select * from bus_info where plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:34-
+-错误信息:错误的SQL语句: [select * from bt_real_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul   and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul  and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:36-
+-错误信息:错误的SQL语句: [select * from tire_info where sensor_id
+    		in (SELECT sensor_id FROM sensor where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:Unknown column 'v_term_id' in 'IN/ALL/ANY subquery'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:36-
+-错误信息:错误的SQL语句: [select * from sensor ]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:36-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no!=''  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:36-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and mile_count=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:36-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and bus_mile_count!=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:36-
+-错误信息:错误的SQL语句: [select * from bus_info where plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:36-
+-错误信息:错误的SQL语句: [select * from bt_real_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul   and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:02:36-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul  and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='2'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=2-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:09:39-
+-错误信息:错误的SQL语句: [select * from tire_info where sensor_id
+    		in (SELECT sensor_id FROM sensor where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:Unknown column 'v_term_id' in 'IN/ALL/ANY subquery'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:09:39-
+-错误信息:错误的SQL语句: [select * from sensor ]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:09:39-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no!=''  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:09:39-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and mile_count=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:09:39-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and bus_mile_count!=0  and plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:09:39-
+-错误信息:错误的SQL语句: [select * from bus_info where plate_no
+    		in (SELECT plate_no FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:09:39-
+-错误信息:错误的SQL语句: [select * from bt_real_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:09:39-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:09:39-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul   and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:09:39-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:09:39-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul  and bus_id
+    		in (SELECT bus_id FROM bus_info where v_term_id in (SELECT v_term_id FROM vehicle_term where store_id='6'))]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=6-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:13-
+-错误信息:错误的SQL语句: [select * from sensor where substr(sensor,1,4) in (select v_term_no from vehicle_term where v_term_id in (select v_term_id from bus_info where company_id='14'))]-
+-错误内容:Unknown column 'sensor' in 'IN/ALL/ANY subquery'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:13-
+-错误信息:错误的SQL语句: [select * from tire_info where status='装上']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:13-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and mile_count=0]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:13-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and bus_mile_count!=0]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:13-
+-错误信息:错误的SQL语句: [select * from bus_info]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:13-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:13-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:13-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:13-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:13-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:15-
+-错误信息:错误的SQL语句: [select * from sensor where substr(sensor,1,4) in (select v_term_no from vehicle_term where v_term_id in (select v_term_id from bus_info where company_id='16'))]-
+-错误内容:Unknown column 'sensor' in 'IN/ALL/ANY subquery'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=16-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:15-
+-错误信息:错误的SQL语句: [select * from tire_info where status='装上']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=16-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:15-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and mile_count=0]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=16-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:15-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and bus_mile_count!=0]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=16-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:15-
+-错误信息:错误的SQL语句: [select * from bus_info]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=16-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:15-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=16-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:15-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=16-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:15-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=16-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:15-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=16-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:15-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=16-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:24-
+-错误信息:错误的SQL语句: [select * from sensor where substr(sensor,1,4) in (select v_term_no from vehicle_term where v_term_id in (select v_term_id from bus_info where company_id='14'))]-
+-错误内容:Unknown column 'sensor' in 'IN/ALL/ANY subquery'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:24-
+-错误信息:错误的SQL语句: [select * from tire_info where status='装上']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:24-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and mile_count=0]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:24-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and bus_mile_count!=0]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:24-
+-错误信息:错误的SQL语句: [select * from bus_info]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:24-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:24-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:24-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:24-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:24-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:28-
+-错误信息:错误的SQL语句: [select * from sensor where substr(sensor,1,4) in (select v_term_no from vehicle_term where v_term_id in (select v_term_id from bus_info where company_id='14'))]-
+-错误内容:Unknown column 'sensor' in 'IN/ALL/ANY subquery'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:28-
+-错误信息:错误的SQL语句: [select * from tire_info where status='装上']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:28-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and mile_count=0]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:28-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and bus_mile_count!=0]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:28-
+-错误信息:错误的SQL语句: [select * from bus_info]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:28-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:28-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:28-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:28-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:41:28-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:42:18-
+-错误信息:错误的SQL语句: [select * from sensor where substr(sensor,1,4) in (select v_term_no from vehicle_term where v_term_id in (select v_term_id from bus_info where company_id='14'))]-
+-错误内容:Unknown column 'sensor' in 'IN/ALL/ANY subquery'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:42:18-
+-错误信息:错误的SQL语句: [select * from tire_info where status='装上']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:42:18-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and mile_count=0]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:42:18-
+-错误信息:错误的SQL语句: [select * from tire_info where plate_no='' and bus_mile_count!=0]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:42:18-
+-错误信息:错误的SQL语句: [select * from bus_info]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:42:18-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:42:18-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:42:18-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:42:18-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:42:18-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=14-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:58:49-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul where bus_id in (select bus_id from bus_info where roules_id='92')]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where bus_id in (select bus_id from bus_info where roules_id='92')' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&roules_id=92-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:58:49-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll and bus_id in (select bus_id from bus_info where roules_id='92')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&roules_id=92-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:04:58:49-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul and bus_id in (select bus_id from bus_info where roules_id='92')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=0&cmd=get_index_data&roules_id=92-
+-错误页面地址:http://localhost:8080/YangziBUS2/main.php-
+------------------
+
+------------------
+-时间:05:33:06-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=$company_id=$roules_id=) order by pressureco desc,tempo desc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by pressureco desc,tempo desc' at line 2-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=$company_id=$roules_id=-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:05:33:08-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=$company_id=$roules_id=) order by pressureco desc,tempo desc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by pressureco desc,tempo desc' at line 2-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=$company_id=$roules_id=-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:05:33:09-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=$company_id=$roules_id=) order by pressureco desc,tempo desc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by pressureco desc,tempo desc' at line 2-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=$company_id=$roules_id=-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:05:33:11-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=$company_id=$roules_id=) order by pressureco desc,tempo desc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by pressureco desc,tempo desc' at line 2-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=$company_id=$roules_id=-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:05:33:12-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=$company_id=$roules_id=) order by pressureco desc,tempo desc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by pressureco desc,tempo desc' at line 2-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=$company_id=$roules_id=-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:05:33:14-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=$company_id=$roules_id=) order by pressureco desc,tempo desc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by pressureco desc,tempo desc' at line 2-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=$company_id=$roules_id=-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:05:33:16-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=0$company_id=0$roules_id=0) order by pressureco desc,tempo desc]-
+-错误内容:Unknown column '0$company_id' in 'where clause'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=0$company_id=0$roules_id=0-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:05:34:06-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=$company_id=$roules_id=) order by pressureco desc,tempo desc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by pressureco desc,tempo desc' at line 2-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=$company_id=$roules_id=-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:05:34:32-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=$company_id=16$roules_id=) order by pressureco desc,tempo desc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by pressureco desc,tempo desc' at line 2-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=$company_id=16$roules_id=-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:05:34:34-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=$company_id=14$roules_id=) order by pressureco desc,tempo desc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by pressureco desc,tempo desc' at line 2-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=$company_id=14$roules_id=-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:05:34:35-
+-错误信息:错误的SQL语句: [select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
+                on a.bus_id=b.bus_id where b.plate_no!='' and b.plate_no is not null and b.v_term_id in (select v_term_id from vehicle_term where store_id=$company_id=0$roules_id=) order by pressureco desc,tempo desc]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near ') order by pressureco desc,tempo desc' at line 2-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id=$company_id=0$roules_id=-
+-错误页面地址:http://localhost:8080/YangziBUS2/module_13/sys.real_show.php-
+------------------

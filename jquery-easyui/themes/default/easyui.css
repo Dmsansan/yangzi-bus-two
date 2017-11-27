@@ -2442,14 +2442,14 @@
   border-radius: 5px 0 0 5px;
 }
 .progressbar {
-  border-color: #95B8E7;
+  border-color: #d8dde7;
 }
 .progressbar-text {
   color: #000000;
   font-size: 12px;
 }
 .progressbar-value .progressbar-text {
-  background-color: #ffe48d;
+  background-color: #3ab0fd;
   color: #000000;
 }
 .searchbox-button {

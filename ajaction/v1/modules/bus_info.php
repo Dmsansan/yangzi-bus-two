@@ -74,6 +74,9 @@ class bus_info {
 		$v_term_id=mysql_escape_string(trim($_REQUEST["terminal_id_val"].""));
 		$remark=mysql_escape_string(trim($_REQUEST["remark"].""));
 		
+		$compnay_id=mysql_escape_string(trim($_REQUEST["company_id"].""));//分公司ID
+		$roules_id=mysql_escape_string(trim($_REQUEST["roules_id"].""));//线路ID
+
 		if($plate_no == ""){
 			$arr = array ('status'=>'ERROR','reason'=>'参数不完整');
 			echo json_encode($arr);
@@ -81,9 +84,9 @@ class bus_info {
 		}
 		
 		$sql="insert into bus_info (plate_no,bus_no,bus_type,factory,wheel_count,speed_limit,
-                v_term_id,remark,add_stamp)
+                v_term_id,remark,add_stamp,company_id,roules_id)
 		values ('$plate_no','$bus_no','$bus_type','$factory','$wheel_count','$speed_limit',
-                '$v_term_id','$remark',now())";
+                '$v_term_id','$remark',now(),'$compnay_id','$roules_id')";
 		$this->conn->query($sql);
 		if($this->conn->affected_rows()>0){
             $str="添加了新车辆".$plate_no;
@@ -116,6 +119,9 @@ class bus_info {
 
 		$plate_no=mysql_escape_string(trim($_REQUEST["plate_no"].""));
 
+		$company_id=mysql_escape_string(trim($_REQUEST["company_id"].""));//分公司ID
+		$roules_id=mysql_escape_string(trim($_REQUEST["roules_id"].""));//线路ID
+
 		if($plate_no == ""){
 			$arr = array ('status'=>'ERROR','reason'=>'缺少必要的参数');
 			echo json_encode($arr);
@@ -145,6 +151,9 @@ class bus_info {
 		$fields[]=" v_term_id='$v_term_id'";
 		$fields[]=" remark='$remark'";
 		
+		$fields[]=" company_id='$company_id'";
+		$fields[]=" roules_id='$roules_id'";
+
 		$sql.=implode(",",$fields);
 		$sql.=" where plate_no='$plate_no'";
 		

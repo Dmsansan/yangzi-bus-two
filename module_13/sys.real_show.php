@@ -52,7 +52,7 @@
       }
 	  function f_reload() {
             var manager = $("#maingrid4").ligerGetGridManager();			
-            manager.set({url:'../ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id='+com_store.getValue()});
+            manager.set({url:'../ajaction/v1/?menuid=131010&cmd=qry&t=1&store_id='+com_store.getValue()+'&company_id='+com_company.getValue()+'&roules_id='+com_roules.getValue()});
 			//manager.loadData(true);
         };
 		
@@ -121,19 +121,20 @@
 				//
 				serchpanel();
 				
+				//***Add By Sisansan start***//
 				com_store=$("#store_id").ligerComboBox({
-						width:196,
-						valueField:'store_id',
-						textField:'store_name',
-						/*data:obj,
-						url: "../ajaction/sysaction/get_all_roles.php?rnd=" + Math.random(),*/
-						isMultiSelect: false ,
-						onSelected:function(value,text){
-							//选择了车队
-							clearTimeout(tout);
-							f_reload();
-							
-						}
+				width:196,
+				left:260,
+				valueField:'store_id',
+				textField:'store_name',
+				/*data:obj,
+				url: "../ajaction/sysaction/get_all_roles.php?rnd=" + Math.random(),*/
+				isMultiSelect: false ,
+				onSelected:function(value,text){
+				//选择了车队
+				clearTimeout(tout);
+				f_reload();			
+				  }
 				});
 				$.ajax({
                 type: "POST",
@@ -160,11 +161,91 @@
 				error:function(){
 					//alert("获取车队列表");
 				}
+				});
 				
+			    com_company=$("#company_id").ligerComboBox({
+				width:196,
+				left:260,
+				valueField:'id',
+				textField:'company_name',
+				/*data:obj,
+				url: "../ajaction/sysaction/get_all_roles.php?rnd=" + Math.random(),*/
+				isMultiSelect: false ,
+				onSelected:function(value,text){
+				//选择了车队
+				clearTimeout(tout);
+				f_reload();			
+				  }
+				});
+				$.ajax({
+                type: "POST",
+                /*url: "../ajaction/sysaction/get_all_store.php?rnd=" + Math.random(),*/				
+				url:"../ajaction/v1/?menuid=0&cmd=get_all_company",
+				success:function (result) {
+					//
+					var obj = eval("("+result+")");
+					if(obj.status!="OK"){
+						alert(obj.reason);
+						return;
+					}
+					//obj=obj.items;
+                    /*for (var n in obj.items) {
+                        if (obj.items[n] == "null" || obj.items[n] == null)
+                            obj.items[n] = "";
+                    }*/
+					obj.items.unshift({"id":"0","company_name":"所有"});
+					com_company.setData(obj.items);
+					//com_store.selectValue("0");
+					
+					
+				},
+				error:function(){
+					//alert("获取车队列表");
+				}
+				});
 				
-			});
+				  com_roules=$("#roules_id").ligerComboBox({
+				width:196,
+				left:260,
+				valueField:'id',
+				textField:'roules_name',
+				/*data:obj,
+				url: "../ajaction/sysaction/get_all_roles.php?rnd=" + Math.random(),*/
+				isMultiSelect: false ,
+				onSelected:function(value,text){
+				//选择了车队
+				clearTimeout(tout);
+				f_reload();			
+				  }
+				});
 				
-				
+				$.ajax({
+                type: "POST",
+                /*url: "../ajaction/sysaction/get_all_store.php?rnd=" + Math.random(),*/				
+				url:"../ajaction/v1/?menuid=0&cmd=get_all_roules",
+				success:function (result) {
+					//
+					var obj = eval("("+result+")");
+					if(obj.status!="OK"){
+						alert(obj.reason);
+						return;
+					}
+					//obj=obj.items;
+                    /*for (var n in obj.items) {
+                        if (obj.items[n] == "null" || obj.items[n] == null)
+                            obj.items[n] = "";
+                    }*/
+					obj.items.unshift({"id":"0","roules_name":"所有"});
+					com_roules.setData(obj.items);
+					//com_store.selectValue("0");
+					
+					
+				},
+				error:function(){
+					//alert("获取车队列表");
+				}
+				});
+				//***Add By Sisansan end***//	
 				
 			/*
 			tire_param_id	int auto_increment,
@@ -435,6 +516,10 @@ function selectgridRow(index){
     <div id="toolbar" ></div>
 	<div style="position: absolute;width:80px;top:15px;left:70px">修理厂:</div>
     <div id="xxcc" style="position: absolute;width:280px;top:2px;left:120px"><input type="text" id="store_id"  name="store_id"/></td></div>	
+    <div style="position: absolute;width:80px;top:15px;left:320px">分公司:</div>
+    <div id="xxcc" style="position: absolute;width:280px;top:2px;left:370px"><input type="text" id="company_id"  name="company_id"/></td></div>	
+    <div style="position: absolute;width:80px;top:15px;left:570px">线路:</div>
+    <div id="xxcc" style="position: absolute;width:280px;top:2px;left:610px"><input type="text" id="roules_id"  name="roules_id"/></td></div>	
 	<div id="grid">
 		<div id="maingrid4" style="margin:0px"></div>
 		<!--<div id="toolbar1"></div>-->		
