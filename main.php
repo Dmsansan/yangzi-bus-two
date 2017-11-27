@@ -1,6 +1,7 @@
 <?php
 session_start();
 $modules_arr = $_SESSION['module_list'];
+$company_id = $_SESSION['CompanyID'];
 //print_r($_SESSION['OperList']);die;
 ?>
 <!DOCTYPE html>
@@ -396,11 +397,12 @@ $modules_arr = $_SESSION['module_list'];
 
         <div id="center_page" title="首页" style="overflow-y: hidden;">
             <div id="i-center">
-                <div id="center_top" style="padding-top: 20px;padding-left: 1%">
+               <div id="center_top" style="padding-top: 20px;padding-left: 1%">
                     修理厂：
                     <input id="company" class="easyui-combobox" name="company" />
-                    分公司：
+                    <?php if($company_id == "" || $company_id == 0){?> 分公司：
                     <input id="fcompany" class="easyui-combobox" name="fcompany" />
+                    <?php }?>
                     线路：
                     <input id="roules" class="easyui-combobox" name="roules" />
                     <!--<label for="carteam">车队：</label>

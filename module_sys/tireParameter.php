@@ -121,10 +121,11 @@ $operlist = $_SESSION['OperList'];
                 var class_name=$('#class_name').textbox('getText');
                 var figure_name=$('#figure_name').textbox('getText');
                 var remark=$('#remark').textbox('getText');
+                var brand_no=$('#brand_no').textbox('getText');
                 $.ajax({
                     url:'../ajaction/v1/?menuid=101112&cmd=add',
                     type:'POST',
-                    data:{'brand_name':brand_name,'norms_name':norms_name,'class_name':class_name,'figure_name':figure_name,'remark':remark},
+                    data:{'brand_name':brand_name,'norms_name':norms_name,'class_name':class_name,'figure_name':figure_name,'remark':remark,'brand_no':brand_no},
                     dataType:'json',
                     success:function(data){
                         if(data.status=="OK"){
@@ -157,12 +158,12 @@ $operlist = $_SESSION['OperList'];
                 var norms_name=$('#up_norms_name').textbox('getText');
                 var class_name=$('#up_class_name').textbox('getText');
                 var figure_name=$('#up_figure_name').textbox('getText');
-               
+                var brand_no=$('#up_brand_no').textbox('getText');
                 
                 $.ajax({
                     url:'../ajaction/v1/?menuid=101112&cmd=edit',
                     type:'POST',
-                    data:{'brand_name':brand_name,'brand_id':brand_id,'remark':remark,'norms_name':norms_name,'class_name':class_name,'figure_name':figure_name},
+                    data:{'brand_name':brand_name,'brand_id':brand_id,'remark':remark,'norms_name':norms_name,'class_name':class_name,'figure_name':figure_name,'brand_no':brand_no},
                     success:function(data){
                   
                         var res = eval('(' + data + ')')
@@ -248,6 +249,7 @@ $operlist = $_SESSION['OperList'];
                 $('#up_class_name').textbox('setValue',row.class_name);
                 $('#up_figure_name').textbox('setValue',row.figure_name);
                 $('#up_remark').textbox('setValue',row.remark);
+                $('#up_brand_no').textbox('setValue',row.brand_no);
             }
         };
         //删除操作
@@ -300,7 +302,7 @@ $operlist = $_SESSION['OperList'];
            url="../ajaction/v1/?menuid=101112&cmd=qry&t=1" striped="true" rownumbers="false" pagination="true" singleSelect="true">
         <thead>
         <tr>
-            <!--<th data-options="field:'itemid',width:200">参数编号</th>-->
+            <th data-options="field:'brand_no',width:150">品牌编号</th>
             <th data-options="field:'brand_name',width:155">品牌名称</th>
 
             <th data-options="field:'norms_name',width:155">规格名称</th>
@@ -347,6 +349,13 @@ $operlist = $_SESSION['OperList'];
                 </td>
             </tr>
             <tr>
+                <td>
+                    品牌编号：
+                    </td>
+                <td>
+                     <input id="up_brand_no" class="easyui-textbox" style="width: 150px;" required="true" />
+                </td>
+
                 <td>
                     备注：
                     </td>
@@ -407,10 +416,16 @@ $operlist = $_SESSION['OperList'];
             </tr>
             <tr>
                 <td>
+                   品牌编号：
+                   </td>
+                   <td>
+                      <input id="brand_no" class="easyui-textbox" style="width: 150px;" required="true" />
+                </td>
+                <td>
                    备注：
                    </td>
-                   <td colspan="3">
-                      <input id="remark" class="easyui-textbox" style="width: 470px;" />
+                   <td>
+                      <input id="remark" class="easyui-textbox" style="width: 150px;" />
                 </td>
 
             </tr>

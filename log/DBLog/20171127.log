@@ -1,0 +1,742 @@
+
+------------------
+-时间:10:23:09-
+-错误信息:错误的SQL语句: [select a.*,b.v_term_no from bus_info as a left join vehicle_term as b on a.v_term_id=b.v_term_id where compnay_id='14' limit 0, 10]-
+-错误内容:Unknown column 'compnay_id' in 'where clause'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=121010&cmd=qry&t=1-
+-错误页面地址:http://localhost/YangziBUS2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:10:23:09-
+-错误信息:错误的SQL语句: [select a.*,b.v_term_no from bus_info as a left join vehicle_term as b on a.v_term_id=b.v_term_id where compnay_id='14' limit 0, 10]-
+-错误内容:Unknown column 'compnay_id' in 'where clause'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=121010&cmd=qry&t=1-
+-错误页面地址:http://localhost/YangziBUS2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:10:23:47-
+-错误信息:错误的SQL语句: [update admins set admin_name='王司机', role_id=司机, password='25d55ad283aa400af464c76d713c07ad', real_name='老王', tel='', mobile='', remark='栏目权限测试', email='', is_term='N', store_id='6', company_id='14' where admin_id=3]-
+-错误内容:Unknown column '司机' in 'field list'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=101011&cmd=edit-
+-错误页面地址:http://localhost/YangziBUS2/module_sys/sys.users_show.php-
+------------------
+
+------------------
+-时间:10:50:01-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A6666' where b.company_id='14']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where b.company_id='14'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:01-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A6666' where b.company_id='14' limit 0,10]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:07-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where b.company_id='14'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:07-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14' limit 0,10]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:09-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where b.company_id='14'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:09-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14' limit 0,10]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:09-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where b.company_id='14'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:09-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14' limit 0,10]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:09-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where b.company_id='14'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:09-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14' limit 0,10]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:10-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where b.company_id='14'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:10-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14' limit 0,10]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:10-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where b.company_id='14'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:10-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14' limit 0,10]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:10-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where b.company_id='14'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:10-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14' limit 0,10]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:11-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where b.company_id='14'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:11-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14' limit 0,10]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:11-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where b.company_id='14'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:11-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14' limit 0,10]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:21-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14']-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where b.company_id='14'' at line 3-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:10:50:21-
+-错误信息:错误的SQL语句: [select a.*,b.plate_no,b.mile_count as b_mc,c.factory_code,c.fst_place_stamp,c.status from tire_exchg_log as a 
+                left join bus_info as b on a.bus_id=b.bus_id
+                left join tire_info as c on a.tire_id=c.tire_id where b.plate_no ='苏A8888' where b.company_id='14' limit 0,10]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131311&cmd=qry-
+-错误页面地址:http://localhost/YangziBUS2/module_13/tirecourse.php-
+------------------
+
+------------------
+-时间:11:04:06-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:04:06-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:04:06-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:04:06-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A8888']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:04:27-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:04:27-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:04:27-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:04:27-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A8888']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:04:33-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:04:33-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:04:33-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:04:33-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A8888']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:06:03-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:06:03-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:06:03-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:06:03-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A8888']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:09:57-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:09:57-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:09:57-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:09:57-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A8888']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:10:00-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:10:00-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:10:00-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:10:00-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A8888']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:10:27-
+-错误信息:错误的SQL语句: [select * from norms]-
+-错误内容:Table 'ttms_yangzi.norms' doesn't exist-
+-错误号:1146-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:10:27-
+-错误信息:错误的SQL语句: [select * from class]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:10:27-
+-错误信息:错误的SQL语句: [select * from figure_type]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:11:10:27-
+-错误信息:错误的SQL语句: [select count(*) as cnt from tire_info as a
+                left join tire_param_info as b on a.tire_param_id=b.tire_param_id 
+                left join sensor as c on a.sensor_id=c.sensor_id where a.plate_no = '苏A8888']-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=131010&cmd=qrytire&plate_no=%E8%8B%8FA8888-
+-错误页面地址:http://localhost/YangziBUS2/module_13/sys.real_show.php-
+------------------
+
+------------------
+-时间:02:20:04-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111111','120','20','100','50','')]-
+-错误内容:Duplicate entry '111111' for key 'sensor_no'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:04-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111112','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:04-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111113','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:04-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111114','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:04-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111115','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:04-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111116','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:09-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111111','120','20','100','50','')]-
+-错误内容:Duplicate entry '111111' for key 'sensor_no'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:09-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111112','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:09-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111113','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:09-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111114','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:09-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111115','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:09-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111116','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:10-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111111','120','20','100','50','')]-
+-错误内容:Duplicate entry '111111' for key 'sensor_no'-
+-错误号:1062-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:10-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111112','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:10-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111113','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:10-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111114','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:10-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111115','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:20:10-
+-错误信息:错误的SQL语句: [insert into sensor (sensor_no,pressure_ul,pressure_ll,temp_ul,temp_ll,remark)
+                    values ('111116','120','20','100','50','')]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=111011&cmd=add-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_11/sys.sensor_show.php-
+------------------
+
+------------------
+-时间:02:41:02-
+-错误信息:错误的SQL语句: [select a.*,b.v_term_no from bus_info as a left join vehicle_term as b on a.v_term_id=b.v_term_id where b.v_term_no='001' where a.add_stamp >= '2017-11-08 00:00:00' and a.add_stamp <= '2017-11-27 23:59:59' limit 0, 10]-
+-错误内容:You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'where a.add_stamp >= '2017-11-08 00:00:00' and a.add_stamp <= '2017-11-27 23:59:' at line 1-
+-错误号:1064-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=121010&cmd=qry&plate_no=&bdate=2017-11-08&edate=2017-11-27&vterm_no=001-
+-错误页面地址:http://192.168.1.233/YangziBUS2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:04:10:42-
+-错误信息:错误的SQL语句: [update tire_info set bus_mile_count=5462,status='装上',plate_no='苏A8888', place='5', place_stamp=now(),figure_mile='2.2',bf='0' where tire_id='7']-
+-错误内容:Unknown column 'figure_mile' in 'field list'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8FA8888&tire_id_val=7&place_no_val=5&figure_mile=2.2-
+-错误页面地址:http://localhost/YangziBUS2/module_12/vehicle.php-
+------------------
+
+------------------
+-时间:04:10:50-
+-错误信息:错误的SQL语句: [update tire_info set bus_mile_count=5462,status='装上',plate_no='苏A8888', place='5', place_stamp=now(),figure_mile='2.2',bf='0' where tire_id='9']-
+-错误内容:Unknown column 'figure_mile' in 'field list'-
+-错误号:1054-
+-错误脚本:/YangziBUS2/ajaction/v1/?menuid=121011&cmd=addtire&plate_no=%E8%8B%8FA8888&tire_id_val=9&place_no_val=5&figure_mile=2.2-
+-错误页面地址:http://localhost/YangziBUS2/module_12/vehicle.php-
+------------------

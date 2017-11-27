@@ -51,16 +51,17 @@ class brand {
 		$norms_name=mysql_escape_string(trim($_REQUEST["norms_name"].""));
 		$class_name=mysql_escape_string(trim($_REQUEST["class_name"].""));
 		$figure_name=mysql_escape_string(trim($_REQUEST["figure_name"].""));
+		$brand_no=mysql_escape_string(trim($_REQUEST["brand_no"].""));
 		$remark=mysql_escape_string(trim($_REQUEST["remark"].""));
 		//echo $remark;die();
-		if($brand_name=="" || $norms_name=="" || $class_name=="" || $figure_name==""){
+		if($brand_name=="" || $norms_name=="" || $class_name=="" || $figure_name=="" || $brand_no==""){
 			$arr = array ('status'=>'ERROR','reason'=>'参数不完整');
 			echo json_encode($arr);
 			die();
 		}
 		
-		$sql="insert into brand (brand_name,remark,norms_name,class_name,figure_name)
-		values ('$brand_name','$remark','$norms_name','$class_name','$figure_name')";
+		$sql="insert into brand (brand_name,remark,norms_name,class_name,figure_name,brand_no)
+		values ('$brand_name','$remark','$norms_name','$class_name','$figure_name','$brand_no')";
 		$this->conn->query($sql);
 		/*$norms_sql = "insert into norms (norms_name,remark)
 		values ('$norms_name','$remark')";
@@ -99,13 +100,13 @@ class brand {
 		$figure_name=mysql_escape_string(trim($_REQUEST["figure_name"].""));
 		$remark=mysql_escape_string(trim($_REQUEST["remark"].""));
 		$brand_id=mysql_escape_string(trim($_REQUEST["brand_id"].""));
-
+		$brand_no=mysql_escape_string(trim($_REQUEST["brand_no"].""));
 		if($brand_id == ""){
 			$arr = array ('status'=>'ERROR','reason'=>'缺少必要的参数');
 			echo json_encode($arr);
 			die();
 		}
-		if($brand_name == "" && $remark=="" && $norms_name=="" && $class_name=="" && $figure_name=""){
+		if($brand_name == "" && $remark=="" && $norms_name=="" && $class_name=="" && $figure_name=="" && $brand_no==""){
 			$arr = array ('status'=>'ERROR','reason'=>'未指定修改项');
 			echo json_encode($arr);
 			die();
@@ -120,6 +121,7 @@ class brand {
 		$fields[]=" norms_name='$norms_name'";
 		$fields[]=" class_name='$class_name'";
 		$fields[]=" figure_name='$figure_name'";
+		$fields[]=" brand_no='$brand_no'";
 		$fields[]=" remark='$remark'";
 		
 		$sql.=implode(",",$fields);

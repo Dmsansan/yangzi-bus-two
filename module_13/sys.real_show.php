@@ -1,4 +1,8 @@
-﻿<html >
+﻿<?php 
+session_start();
+$company_id=$_SESSION['CompanyID'];
+?>
+<html >
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>车辆及轮胎实时状态</title>
@@ -87,7 +91,8 @@
 
            }
 		   
-		function showMessage(id){
+		function showMessage(id,alarm){
+			//alert(alarm);
 			if(id){
 				$('#dialog').show();
 			 $('#tablemessage').ligerGrid({ 
@@ -96,7 +101,77 @@
 				dataAction: 'server', //服务器排序
                 usePager: true,       //服务器分页
 				onSuccess:function(data,grid){
-					console.log('data',data);
+					//console.log('data',data);
+					if(alarm.indexOf('1') != -1){
+						$('#left_one').attr('src','../css/img/two.png');
+						$('#left_one').mouseout(function(){
+							$('#left_one').attr('src','../css/img/two.png');
+						}) 
+					}else{
+						$('#left_one').attr('src','../css/img/chelun_selectedonetwo.png');
+						$('#left_one').mouseout(function(){
+							$('#left_one').attr('src','../css/img/chelun_selectedonetwo.png');
+						}) 
+					}
+
+					if(alarm.indexOf('2') != -1){
+						$('#right_one').attr('src','../css/img/two.png');
+						$('#right_one').mouseout(function(){
+							$('#right_one').attr('src','../css/img/two.png');
+						}) 
+					}else{
+						$('#right_one').attr('src','../css/img/chelun_selectedonetwo.png');
+						$('#right_one').mouseout(function(){
+							$('#right_one').attr('src','../css/img/chelun_selectedonetwo.png');
+						}) 
+					}
+
+					if(alarm.indexOf('3') != -1){
+						$('#leftbehint_one').attr('src','../css/img/two.png');
+						$('#leftbehit_one').mouseout(function(){
+							$('#leftbehit_one').attr('src','../css/img/two.png');
+						}) 
+					}else{
+						$('#leftbehit_one').attr('src','../css/img/chelun_selectedonetwo.png');
+						$('#leftbehit_one').mouseout(function(){
+							$('#leftbehit_one').attr('src','../css/img/chelun_selectedonetwo.png');
+						}) 
+					}
+
+					if(alarm.indexOf('4') != -1){
+						$('#leftbehit_two').attr('src','../css/img/two.png');
+						$('#leftbehit_two').mouseout(function(){
+							$('#leftbehit_two').attr('src','../css/img/two.png');
+						}) 
+					}else{
+						$('#leftbehit_two').attr('src','../css/img/chelun_selectedonetwo.png');
+						$('#leftbehit_two').mouseout(function(){
+							$('#leftbehit_two').attr('src','../css/img/chelun_selectedonetwo.png');
+						}) 
+					}
+					if(alarm.indexOf('5') != -1){
+						$('#rightbehit_one').attr('src','../css/img/two.png');
+						$('#rightbehit_one').mouseout(function(){
+							$('#rightbehit_one').attr('src','../css/img/two.png');
+						}) 
+					}else{
+						$('#rightbehit_one').attr('src','../css/img/chelun_selectedonetwo.png');
+						$('#rightbehit_one').mouseout(function(){
+							$('#rightbehit_one').attr('src','../css/img/chelun_selectedonetwo.png');
+						}) 
+					}
+
+					if(alarm.indexOf('6') != -1){
+						$('#rightbehit_two').attr('src','../css/img/two.png');
+						$('#rightbehit_two').mouseout(function(){
+							$('#rightbehit_two').attr('src','../css/img/two.png');
+						}) 
+					}else{
+						$('#rightbehit_two').attr('src','../css/img/chelun_selectedonetwo.png');
+						$('#rightbehit_two').mouseout(function(){
+							$('#rightbehit_two').attr('src','../css/img/chelun_selectedonetwo.png');
+						}) 
+					}
 				},
 				onError:f_Error
 			
@@ -113,6 +188,7 @@
 				});
 				$('#test').on('click',function(){
 					$('#dialog').hide();
+					//$('#left_one').attr('src','../css/img/chelun_selectedonetwo.png');
 				})
 				  
                 //$("#grid").height(document.documentElement.clientHeight - $(".toolbar").height());
@@ -269,18 +345,28 @@
 							
 							var html="";
 							var nalarm=0;
-							
+							var nn=new Array();
 							if(row.overflow_pressure1>0 || row.overflow_pressure2>0 || row.overflow_pressure3>0 || row.overflow_pressure4>0 || row.overflow_pressure5>0 || row.overflow_pressure6>0){
 								nalarm=1;
+								<?php 
+								$j=1;
+							    for($j;$j<=6;$j++){
+							    ?>
+								if(row.overflow_pressure<?php echo $j;?>>0){
+									nn[<?php echo $j;?>]=<?php echo $j?>;
+								}else{
+									nn[<?php echo $j?>]="";
+								}
+							  <?php }?>
 							}							
 							if(row.overflow_temp1>0 || row.overflow_temp2>0 || row.overflow_temp3>0 || row.overflow_temp4>0 || row.overflow_temp5>0 || row.overflow_temp6>0){
 								nalarm=1;
 							}	
 							if(nalarm>0){
-								html="<img src='../images/icon/tips-selected.png' onclick=\"showMessage('"+row.Plate_No+"')\"/>";
+								html="<img src='../images/icon/tips-selected.png' onclick=\"showMessage('"+row.Plate_No+"','"+nn+"')\"/>";
 								
 							}else{
-								html="<img src='../images/icon/news_selected.png' onclick=\"showMessage('"+row.Plate_No+"')\"/>";
+								html="<img src='../images/icon/news_selected.png' onclick=\"showMessage('"+row.Plate_No+"','"+nn+"')\"/>";
 							}						
 							return html;
 						}					
@@ -339,9 +425,9 @@
 				
             });			
 			
-		selectRow=$('#tablemessage').ligerGrid({
+		    selectRow=$('#tablemessage').ligerGrid({
 						checkbox: false,
-						columns: [{display: '轮胎编号', name: 'tire_rfid',width:90},
+						columns: [{display: '轮胎编号', name: 'factory_code',width:90},
 							{display:"轮胎号位",name:'place',aligin:'center',width:50},
 							{display: '品牌', name: 'brand_name',width:80},
 							{display: '花纹深度(Cm)', name: 'figure_value',width:90},
@@ -352,48 +438,37 @@
 						],
 					
 			});
-			 $('#left_one').mouseover(function(){
+
+			/*$('#left_one').mouseover(function(){
 				$('#left_one').attr('src','../css/img/two.png');
 				selectgridRow(0);
 			});
-			$('#left_one').mouseout(function(){
-				$('#left_one').attr('src','../css/img/chelun_selectedonetwo.png');
-			}) 
+			
 			 $('#right_one').mouseover(function(){
 				 selectgridRow(1);
 				$('#right_one').attr('src','../css/img/two.png');
 			});
-			$('#right_one').mouseout(function(){
-				$('#right_one').attr('src','../css/img/chelun_selectedonetwo.png');
-			}) 
+			
 			 $('#leftbehint_one').mouseover(function(){
 				  selectgridRow(2);
 				$('#leftbehint_one').attr('src','../css/img/two.png');
 			});
-			$('#leftbehint_two').mouseout(function(){
-				$('#leftbehint_two').attr('src','../css/img/chelun_selectedonetwo.png');
-			}) 
+			
 			 $('#leftbehint_two').mouseover(function(){
 				  selectgridRow(3);
 				$('#leftbehint_two').attr('src','../css/img/two.png');
 			});
-			$('#leftbehint_one').mouseout(function(){
-				$('#leftbehint_one').attr('src','../css/img/chelun_selectedonetwo.png');
-			}) 
+			
 			 $('#rightbehint_one').mouseover(function(){
 				  selectgridRow(4);
 				$('#rightbehint_one').attr('src','../css/img/two.png');
 			});
-			$('#rightbehint_one').mouseout(function(){
-				$('#rightbehint_one').attr('src','../css/img/chelun_selectedonetwo.png');
-			}) 
-			 $('#rightbehint_two').mouseover(function(){
+			
+			$('#rightbehint_two').mouseover(function(){
 				  selectgridRow(5);
 				$('#rightbehint_two').attr('src','../css/img/two.png');
-			});
-			$('#rightbehint_two').mouseout(function(){
-				$('#rightbehint_two').attr('src','../css/img/chelun_selectedonetwo.png');
-			}) 
+			});*/
+			
         });
 		
 		function f_Error(){
@@ -516,10 +591,11 @@ function selectgridRow(index){
     <div id="toolbar" ></div>
 	<div style="position: absolute;width:80px;top:15px;left:70px">修理厂:</div>
     <div id="xxcc" style="position: absolute;width:280px;top:2px;left:120px"><input type="text" id="store_id"  name="store_id"/></td></div>	
-    <div style="position: absolute;width:80px;top:15px;left:320px">分公司:</div>
+    <?php if($company_id==""||$company_id==0){?><div style="position: absolute;width:80px;top:15px;left:320px">分公司:</div>
     <div id="xxcc" style="position: absolute;width:280px;top:2px;left:370px"><input type="text" id="company_id"  name="company_id"/></td></div>	
-    <div style="position: absolute;width:80px;top:15px;left:570px">线路:</div>
-    <div id="xxcc" style="position: absolute;width:280px;top:2px;left:610px"><input type="text" id="roules_id"  name="roules_id"/></td></div>	
+    <?php }?>
+    <div <?php if($company_id==""||$company_id==0){?> style="position: absolute;width:80px;top:15px;left:570px" <?php }else{?> style="position: absolute;width:80px;top:15px;left:320px"<?php }?>>线路:</div>
+    <div id="xxcc" <?php if($company_id==""||$company_id==0){?> style="position: absolute;width:280px;top:2px;left:610px" <?php }else{?> style="position: absolute;width:280px;top:2px;left:370px" <?php }?>><input type="text" id="roules_id"  name="roules_id"/></td></div>	
 	<div id="grid">
 		<div id="maingrid4" style="margin:0px"></div>
 		<!--<div id="toolbar1"></div>-->		
@@ -562,9 +638,7 @@ function selectgridRow(index){
 </div>
 <table  style="width:230px;height:340px;background:url('../css/img/chesheng.png') no-repeat center center; ">
         <tr style="height: 68px">
-
         </tr>
-    
     <tr>
         <td style="width:42px"></td>
         <td><img id="left_one" onfocus=this.blur() onclick="selectgridRow(0)" src="../css/img/chelun_selectedonetwo.png"></td>

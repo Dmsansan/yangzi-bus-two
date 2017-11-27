@@ -327,12 +327,13 @@ $operlist = $_SESSION['OperList'];
 		}
 		function saveTire(plateNumber){
 		$('#tire_save').on('click',function(){
-				 var tire_id_val=$('#tire_sensor').combobox('getValue');
-				 var plate_no=plateNumber; 
-				var place_no_val=$('#tire_pr').combobox('getValue');			
+				var tire_id_val=$('#tire_sensor').combobox('getValue');
+				var plate_no=plateNumber; 
+				var place_no_val=$('#tire_pr').combobox('getValue');
+				var figure_mile=$('#figure_mile').textbox('getText');;			
 			//绑定轮胎
 			$.ajax({
-					url:'../ajaction/v1/?menuid=121011&cmd=addtire&plate_no='+plate_no+'&tire_id_val='+tire_id_val+'&place_no_val='+place_no_val,
+					url:'../ajaction/v1/?menuid=121011&cmd=addtire&plate_no='+plate_no+'&tire_id_val='+tire_id_val+'&place_no_val='+place_no_val+'&figure_mile='+figure_mile,
 					dataType:'json',
 					type:'post',
 					success:function(data){
@@ -700,8 +701,8 @@ $operlist = $_SESSION['OperList'];
     </div>
     </div>
 
-	 <div id="tire_dlg" class="easyui-dialog" data-options="closed:true" style="width:450px;height:302px;background-color: #bdc4d4">
-        <div style="background-color: #ffffff;height:240px;margin:10px;">
+	 <div id="tire_dlg" class="easyui-dialog" data-options="closed:true" style="width:450px;height:352px;background-color: #bdc4d4">
+        <div style="background-color: #ffffff;height:290px;margin:10px;">
              <span style=" display: inline-block; margin-left: 10px; font-size: 14px; margin-top: 10px; font-family: 微软雅黑;">基本信息</span>
             <table style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
                 <tr>
@@ -726,6 +727,15 @@ $operlist = $_SESSION['OperList'];
 						</td>
 				<td>
                         <input id="tire_pr" class="easyui-combobox" style="width: 150px;" />
+                    </td>
+
+                </tr>
+                 <tr>	
+                    <td>
+                        花纹深度(Cm)：
+						</td>
+				<td>
+                        <input id="figure_mile" class="easyui-textbox" style="width: 150px;" />
                     </td>
 
                 </tr>

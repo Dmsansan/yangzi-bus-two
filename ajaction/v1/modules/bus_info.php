@@ -214,6 +214,9 @@ class bus_info {
 				$where1.=" and";
 			$where1.=" plate_no like '%$plate_no%'";
 		}
+		if($_SESSION["CompanyID"]!=""&&$_SESSION["CompanyID"]!="0"){
+			$sql .=" where company_id='$_SESSION[CompanyID]'";
+		}
 		if($v_term_no!=""){
 			$sql .= " where b.v_term_no='$v_term_no'";
 		}
@@ -322,6 +325,9 @@ class bus_info {
 			else
 				$where1.=" and";
 			$where1.=" add_stamp >= '$begin_date'";
+		}
+		if($_SESSION["CompanyID"]!=""&&$_SESSION["CompanyID"]!="0"){
+			$sql .=" where company_id='$_SESSION[CompanyID]'";
 		}
 		if($end_date!=""){
 			if($where=="")

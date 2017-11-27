@@ -484,6 +484,11 @@ class tire_info {
                 else
                     $rec[figure_name]="";
                 $rec[place]=$tire_position[intval($rec[place])];
+                if($rec[bf]==1){
+                	$rec[bf]='是';
+                }else{
+                	$rec[bf]='否';
+                }
 				array_push($rows,$rec);
 			}
 			$arr['rows']=$rows;

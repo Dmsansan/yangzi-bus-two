@@ -74,6 +74,9 @@ class tire_mile_count {
         if($plate_no != ""){
         	$sql .= " where b.plate_no ='$plate_no'";
         }
+        if($_SESSION[CompanyID]!=""||$_SESSION[CompanyID]!=0){
+            $sql .= " and b.company_id='$_SESSION[CompanyID]'";
+        }
         $res_count = $this->conn->query($sql);
         $arr['total']=$this->conn->num_rows($res_count);
 
@@ -177,6 +180,9 @@ class tire_mile_count {
         }
         if($plate_no != ""){
             $sql .= " and b.plate_no ='$plate_no'";
+        }
+        if($_SESSION[CompanyID]!=""&&$_SESSION[CompanyID]!=0){
+            $sql .= " and b.company_id='$_SESSION[CompanyID]'";
         }
         if($start_time != "" && $end_time != ""){
             $start_time .= " 00:00:00";

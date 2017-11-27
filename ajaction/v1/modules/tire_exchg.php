@@ -39,6 +39,8 @@ class tire_exchg {
 		$tire_id_val=mysql_escape_string(trim($_REQUEST["tire_id_val"].""));
 		$place_no_val=mysql_escape_string(trim($_REQUEST["place_no_val"].""));
 		
+		$figure_mile=mysql_escape_string(trim($_REQUEST["figure_mile"].""));
+
 		if($plate_no == "" || $tire_id_val=="" || $place_no_val==""){
 			$arr = array ('status'=>'ERROR','reason'=>'参数不完整');
 			echo json_encode($arr);
@@ -48,6 +50,15 @@ class tire_exchg {
         //1、确定该轮胎没有被安装；
         $sql="select * from tire_info where tire_id='$tire_id_val'";
         $ret=$this->conn->query_first($sql);
+        //致标志位
+        $param_id=$ret[tire_param_id];
+        $param_sql="select figure_mile2 from  tire_param_info where tire_param_id='$param_id'";
+        $param_ret=$this->conn->query_first($param_sql);
+        if($figure_mile < $param_ret[figure_mile2]){
+        	$bf=1;
+        }else{
+        	$bf=0;
+        }
         if(!$ret){
 			$arr = array ('status'=>'ERROR','reason'=>'未找到指定的轮胎！');
 			echo json_encode($arr);
@@ -80,9 +91,9 @@ class tire_exchg {
 
         //4、安装轮胎。
         if($fst_place_stamp=="0000-00-00 00:00:00")
-            $sql="update tire_info set bus_mile_count={$ret1[mile_count]},status='装上',plate_no='$plate_no', place='$place_no_val', place_stamp=now(), fst_place_stamp=now() where tire_id='$tire_id_val'";
+            $sql="update tire_info set bus_mile_count={$ret1[mile_count]},status='装上',plate_no='$plate_no', place='$place_no_val', place_stamp=now(), fst_place_stamp=now(),figure_value='$figure_mile',bf='$bf' where tire_id='$tire_id_val'";
         else
-            $sql="update tire_info set bus_mile_count={$ret1[mile_count]},status='装上',plate_no='$plate_no', place='$place_no_val', place_stamp=now() where tire_id='$tire_id_val'";
+            $sql="update tire_info set bus_mile_count={$ret1[mile_count]},status='装上',plate_no='$plate_no', place='$place_no_val', place_stamp=now(),figure_value='$figure_mile',bf='$bf' where tire_id='$tire_id_val'";
 		$this->conn->query($sql);
 		if($this->conn->affected_rows()>0){
             $str=$plate_no."在".$place_no_val."号位安装了轮胎";
@@ -92,9 +103,9 @@ class tire_exchg {
             
             //5、更新轮胎替换日志
             $sql="insert into tire_exchg_log (tire_id,bus_id,v_term_id,place,
-                    install_stamp,uninstall_stamp,mile_count,stamp_count,action,log_stamp) value
+                    install_stamp,uninstall_stamp,mile_count,stamp_count,action,log_stamp,figure_mile) value
                     ('$tire_id_val','$ret1[bus_id]','$ret1[v_term_id]','$place_no_val',
-                    NOW(),'0000-00-00 00:00:00','$ret1[mile_count]',0,'装上',NOW())";
+                    NOW(),'0000-00-00 00:00:00','$ret1[mile_count]',0,'装上',NOW(),'$figure_mile')";
             $this->conn->query($sql);
             $exchg_id=$this->conn->insert_id();
             $sql="update tire_info set exchg_id='$exchg_id' where tire_id='$tire_id_val'";

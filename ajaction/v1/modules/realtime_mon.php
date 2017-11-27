@@ -53,7 +53,11 @@ class realtime_mon {
 		$plate_no=mysql_escape_string(trim($_REQUEST["plate_no"].""));
 		$store_id=mysql_escape_string(trim($_REQUEST["store_id"].""));
 
-        $company_id=mysql_escape_string(trim($_REQUEST["company_id"].""));
+        if($_SESSION[CompanyID]!=""||$_SESSION[CompanyID]!=0){
+            $company_id=$_SESSION[CompanyID];
+        }else{
+            $company_id = mysql_escape_string(trim($_REQUEST["company_id"].""));
+        }
         $roules_id=mysql_escape_string(trim($_REQUEST["roules_id"].""));
 
 		$sql="select distinct a.*,a.overflow_pressure1+a.overflow_pressure2+a.overflow_pressure3+a.overflow_pressure4+a.overflow_pressure5+a.overflow_pressure6  as pressureco ,a.overflow_temp1+a.overflow_temp2+a.overflow_temp3+a.overflow_temp4+a.overflow_temp5+a.overflow_temp6  as tempo,b.plate_no,b.speed_limit,b.mile_count,b.wheel_count from bt_real_log as a left join bus_info as b
@@ -74,6 +78,7 @@ class realtime_mon {
             //b.v_term_id in(select v_term_id from vehicle_term where store_id=9)
             $sql.= " and b.company_id ='$company_id'"; 
         }
+        
         if($roules_id!="0" && $roules_id!=""){
             //$sql.= " and b.bus_info=$store_id"; 
             //b.v_term_id in(select v_term_id from vehicle_term where store_id=9)
@@ -416,31 +421,31 @@ menuid=131010&cmd=qrytire&plate_no=车牌号
         }
 
         $arr_norms=array();
-        $sql="select * from norms";
+        $sql="select * from brand";
         $res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
             while ($rec=$this->conn->fetch_array($res)){
-				$arr_norms[$rec[norms_id]]=$rec[norms_name];
+				$arr_norms[$rec[brand_id]]=$rec[norms_name];
 			}
             $this->conn->free_result($res);
         }
 
         $arr_class=array();
-        $sql="select * from class";
+        $sql="select * from brand";
         $res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
             while ($rec=$this->conn->fetch_array($res)){
-				$arr_class[$rec[class_id]]=$rec[class_name];
+				$arr_class[$rec[brand_id]]=$rec[class_name];
 			}
             $this->conn->free_result($res);
         }
 
         $arr_figure_type=array();
-        $sql="select * from figure_type";
+        $sql="select * from brand";
         $res=$this->conn->query($sql);
 		if($this->conn->num_rows($res)>0){
             while ($rec=$this->conn->fetch_array($res)){
-				$arr_figure_type[$rec[figure_id]]=$rec[figure_name];
+				$arr_figure_type[$rec[brand_id]]=$rec[figure_name];
 			}
             $this->conn->free_result($res);
         }
@@ -495,7 +500,17 @@ menuid=131010&cmd=qrytire&plate_no=车牌号
                 else
                     $rec[figure_name]="";
                 $rec[place]=$tire_position[intval($rec[place])];
-
+                $alarm_sql = "select * from bus_alarm_log where tire_id='$rec[tire_id]'";
+                $alarm_res=$this->conn->query($alarm_sql);
+                $rec[info_7]=$this->conn->num_rows($alarm_res);
+                $exchg_sql = "select * from tire_exchg_log where tire_id='$rec[tire_id]'";
+                $exchg_res=$this->conn->query($exchg_sql);
+                if($this->conn->num_rows($exchg_res)>=2){
+                    $rec[info_8]='是';
+                }else{
+                    $rec[info_8]='否';
+                }
+                
 				array_push($rows,$rec);
 			}
 			$arr['Rows']=$rows;

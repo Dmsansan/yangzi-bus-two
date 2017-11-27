@@ -514,12 +514,19 @@ $operlist = $_SESSION['OperList'];
             <th data-options="field:'pressure_ul',width:'10%'">胎压上限(Kg)</th>
             <th data-options="field:'pressure_ll',width:'10%'">胎压下限(Kg)</th>
             <th data-options="field:'mile_count',width:'10%'">总里程(Km)</th>
+            <th data-options="field:'bf',width:'10%',styler:cellStyler">是否报废</th>
             <th data-options="field:'_operate',width:'12%',formatter:formatOption">操作</th>
         </tr>
         </thead>
     </table>
-    
-    <div id="dlg" class="easyui-dialog" data-options="closed:true" style="width:750px;height: 400px;background-color: #bdc4d4">
+    <script type="text/javascript">
+        function cellStyler(value,row,index){
+            if (value == '是'){
+                return 'background-color:#ffee00;color:red;';
+            }
+        }
+    </script>
+    <div id="dlg" class="easyui-dialog" data-options="closed:true,modal:true" style="width:750px;height: 400px;background-color: #bdc4d4">
         <div style="background-color: #ffffff;height:340px;margin:10px;">
              <span style=" display: inline-block; margin-left: 10px; font-size: 14px; margin-top: 10px; font-family: 微软雅黑;">基本信息</span>
             <table style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
@@ -578,7 +585,7 @@ $operlist = $_SESSION['OperList'];
             </table>
         </div>
     </div>
-    <div id="addTire" class="easyui-dialog" data-options="closed:true" style="width:650px;height: 400px;background-color: #bdc4d4">
+    <div id="addTire" class="easyui-dialog" data-options="closed:true,modal:true" style="width:650px;height: 400px;background-color: #bdc4d4">
         <div style="background-color: #ffffff;height:340px;margin:10px;">
              <span style=" display: inline-block; margin-left: 10px; font-size: 14px; margin-top: 10px; font-family: 微软雅黑;">基本信息</span>
             <table style="width: 100%;height: 80%;padding-right: 28px;padding-left: 24px;">
