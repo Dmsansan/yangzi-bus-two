@@ -27,15 +27,24 @@ $operlist = $_SESSION['OperList'];
             if (row){
 				var tire_id = row.tire_id;
                 $('#tire_alarm').dialog('open').dialog('setTitle','卸载轮胎');
-				$('#tire_sure').on('click',function(){	
+				$('#tire_sure').unbind('click').on('click',function(){	
 					$.ajax({
-						url:'../ajaction/v1/?menuid=121011&cmd=removeTire',
+						url:'../ajaction/v1/?menuid=121011&cmd=removeTire&rnd='+Math.random(),
 						dataType:'json',
 						type:'post',
+						cache:false,
 						data:{'tire_id':tire_id},
+						
 						success:function(data){
+							console.log('jj',data);
 							if(data.status="OK"){
 								$('#tire_alarm').dialog('close');
+								 $.messager.show({
+                                    title : '卸载成功',
+                                    msg:'卸载成功',
+                                    timeout:3000,
+                                    showType:'show',  
+                                    });
 								loadgrid(carNumber);
 							}
 							
@@ -206,7 +215,7 @@ $operlist = $_SESSION['OperList'];
 					url:'../ajaction/v1/?menuid=121010&cmd=edit',
 					type:'post',
 					dataType:'json',
-					data:{'plate_no':plate_no,'wheel_count_val':wheel_count_val,'terminal_id_val':terminal_id_val,'company_id':company_id,'roules_id':roules_id,'remark':remark},
+					data:{'plate_no':plate_no,'wheel_count_val':wheel_count_val,'terminal_id_val':terminal_id_val,'company_id':company_id,'roules_id':roules_id,'remark':remark,'rnd':Math.random()},
 					success:function(data){
 					 if(data.status=="OK"){
                             $.messager.show({
@@ -226,6 +235,7 @@ $operlist = $_SESSION['OperList'];
                                     }); 
                         } 
 					}
+					
 				})
 			});
 			//搜索操作
@@ -248,7 +258,7 @@ $operlist = $_SESSION['OperList'];
 					}
 				}
 				})
-			})
+			});
 			
 			//安装轮胎
 			$('#install_tire').on('click',function(){
@@ -264,6 +274,7 @@ $operlist = $_SESSION['OperList'];
 						url:'../ajaction/v1/?menuid=0&cmd=get_all_place&plate_no='+plateNumber,
 						type:'POST',
 						dataType:'json',
+						cache:false,
 						success:function(data){
 
 							$('#tire_pr').combobox("loadData", data.items);
@@ -294,7 +305,6 @@ $operlist = $_SESSION['OperList'];
 				url:'../ajaction/v1/?menuid=0&cmd=get_all_tireparam',
 				dataType:'json',
 				success:function(data){
-					console.log('sssa',data);
 					$('#tire_all').combobox('loadData',data.items);
 				}
 			});
@@ -326,19 +336,25 @@ $operlist = $_SESSION['OperList'];
 		})
 		}
 		function saveTire(plateNumber){
-		$('#tire_save').on('click',function(){
+			
+		$('#tire_save').unbind('click').on('click',function(){
+			
 				var tire_id_val=$('#tire_sensor').combobox('getValue');
 				var plate_no=plateNumber; 
 				var place_no_val=$('#tire_pr').combobox('getValue');
-				var figure_mile=$('#figure_mile').textbox('getText');;			
+				var figure_mile=$('#figure_mile').textbox('getText');		
 			//绑定轮胎
 			$.ajax({
-					url:'../ajaction/v1/?menuid=121011&cmd=addtire&plate_no='+plate_no+'&tire_id_val='+tire_id_val+'&place_no_val='+place_no_val+'&figure_mile='+figure_mile,
+					url:'../ajaction/v1/?menuid=121011&cmd=addtire&plate_no='+plate_no+'&tire_id_val='+tire_id_val+'&place_no_val='+place_no_val+'&figure_mile='+figure_mile+'&rnd='+Math.random(),
 					dataType:'json',
+					
 					type:'post',
 					success:function(data){
+						console.log('dataTire',data);
 						if(data.status!='OK'){
 							$.messager.alert('警告','轮胎安装失败！','info');
+							$('#tire_dlg').dialog('close');
+							return;
 						}else{	
 							$.messager.show({
                             title : '操作成功',
@@ -346,8 +362,13 @@ $operlist = $_SESSION['OperList'];
                             timeout:3000,
                             showType:'show',  
                             });
-							loadgrid(carNumber);
 							$('#tire_dlg').dialog('close');
+							 $('#tire_pr').combobox('clear');
+							 $('#tire_sensor').combobox('clear');
+							 $('#tire_all').combobox('clear'); 
+							 $('#figure_mile').textbox('clear')
+							loadgrid(carNumber);
+						
 						}
 					}
 				});
@@ -362,7 +383,6 @@ $operlist = $_SESSION['OperList'];
 				dataType:'json',
 				type:'GET',
 				success:function(data){
-					console.log('success',data);
 					if(data.Rows){
 					$('#tire_dg').datagrid('loadData',data.Rows);
 					}else{
@@ -416,11 +436,13 @@ $operlist = $_SESSION['OperList'];
 			if(row){
 				$('#alarm').dialog('open').dialog('setTitle','删除记录');
 				var plate_no=row.plate_no;
+				$('#sure').unbind('click');
 				$('#sure').bind('click',function(){
 					$.ajax({
 						url:'../ajaction/v1/?menuid=121010&cmd=del ',
 						type:'POST',
 						dataType:'json',
+				
 						data:{'plate_no':plate_no},
 						success:function(data){
 							 if(data.status=="OK"){
@@ -440,7 +462,9 @@ $operlist = $_SESSION['OperList'];
                                     showType:'show',  
                                     }); 
                         } 
-						}
+						},
+						cache:false,
+						
 					})
 				})
 				

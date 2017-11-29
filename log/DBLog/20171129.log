@@ -1,0 +1,324 @@
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from tire_info where status='装上' and bf!=1]-
+-错误内容:Unknown column 'bf' in 'where clause'-
+-错误号:1054-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from tire_info where status in('卸下','') and bf!=1]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from tire_info where bf=1]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_info]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from tire_info where status='装上' and bf!=1]-
+-错误内容:Unknown column 'bf' in 'where clause'-
+-错误号:1054-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from tire_info where status in('卸下','') and bf!=1]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from tire_info where bf=1]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_info]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&store_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from tire_info where status='装上' and bf!=1]-
+-错误内容:Unknown column 'bf' in 'where clause'-
+-错误号:1054-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from tire_info where status in('卸下','') and bf!=1]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from tire_info where bf=1]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_info]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&company_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from tire_info where status='装上' and bf!=1]-
+-错误内容:Unknown column 'bf' in 'where clause'-
+-错误号:1054-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&roules_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from tire_info where status in('卸下','') and bf!=1]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&roules_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from tire_info where bf=1]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&roules_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_info]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&roules_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bt_real_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&roules_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&roules_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure>pressure_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&roules_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where pressure<pressure_ll]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&roules_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
+
+------------------
+-时间:09:05:34-
+-错误信息:错误的SQL语句: [select * from bus_alarm_log where temp>temp_ul]-
+-错误内容:-
+-错误号:-
+-错误脚本:/YangziBus2/ajaction/v1/?menuid=0&cmd=get_index_data&roules_id=-
+-错误页面地址:http://localhost/YangziBus2/main.php-
+------------------
